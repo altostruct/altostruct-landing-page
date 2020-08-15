@@ -80,7 +80,7 @@ const IndexPage = () => {
                   Get contact
                 </Typography.Title>
                 <Typography.Title underline style={{ textAlign: "center" }}>
-                  erik.rehn@altostruct.se
+                  erik.rehn<wbr></wbr>@<wbr></wbr>altostruct.se
                 </Typography.Title>
               </Col>
             </Row>
