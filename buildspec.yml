@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+  pre_build:
+    commands:
+      - touch .env
+      - echo BUILD_VERSION=$CODEBUILD_BUILD_NUMBER >> .env
+      - date +"BUILD_DATE=%D:%T" >> .env
+  build:
+    commands:
+      - echo "Running build"
+      - npm install
+      - npm run clean
+      - npm run build
+
+artifacts:
+  files:
+    - "**/*"
+  base-directory: public
+
+cache:
+  paths:
+    - "node_modules/**/*"
