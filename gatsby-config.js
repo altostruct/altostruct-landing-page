@@ -4,11 +4,20 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://www.altostruct.com`,
     title: `Altostruct`,
     description: `Consulting for the cloud`,
     author: `Erik Rehn`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-165864928-1",
+        head: true,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: { name: "src", path: `${__dirname}/src/` },
