@@ -20,28 +20,28 @@ import AltostructAngleLogo, {
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
     query ContactImage {
-      ContactImage: file(relativePath: { eq: "image/contact.jpg" }) {
+      ContactImage: file(relativePath: { eq: "images/contact.jpg" }) {
         childImageSharp {
           fluid(quality: 50) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      CloudImage: file(relativePath: { eq: "image/cloud.jpg" }) {
+      CloudImage: file(relativePath: { eq: "images/cloud.jpg" }) {
         childImageSharp {
           fluid(quality: 50) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      SwedishFlag: file(relativePath: { eq: "image/swedish-flag.png" }) {
+      SwedishFlag: file(relativePath: { eq: "images/swedish-flag.png" }) {
         childImageSharp {
           fluid(quality: 50) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      GraphQL: file(relativePath: { eq: "image/graphql.png" }) {
+      GraphQL: file(relativePath: { eq: "images/graphql.png" }) {
         childImageSharp {
           fluid(quality: 50) {
             ...GatsbyImageSharpFluid
@@ -80,23 +80,36 @@ const IndexPage = () => {
           className="content"
           style={{ marginBottom: "15vh", minHeight: "20vh" }}
         >
-          <Row>
-            <Col span={12}>
+          <Row align="middle" gutter={[50, 50]} justify="space-between">
+            <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
               <Typography.Title type="secondary" className="big-text" level={4}>
-                <span>We build</span>
+                <span>Vi bygger</span>
                 <TextLoop
                   interval={1000}
                   children={["React", "AWS", "Sites", "IOS", "GraphQL"]}
                 />
               </Typography.Title>
+              <Typography.Text>
+                Vi är ett par webbkonsulter med inrikting på AWS, lokerade i
+                Stockholm. Vårt team består av
+                <br></br>
+                <br></br>
+                <ul>
+                  <li>React konsulter</li>
+                  <li>Cloud konsulter</li>
+                  <li>UX/UI konsulter</li>
+                </ul>
+              </Typography.Text>
             </Col>
-            <Col span={12}>
+            <Col xs={{ order: 1, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade>
                 <Rotate top right>
                   <AltostructAngleCololessLogo
                     style={{
-                      width: "100%",
+                      marginRight: "10%",
+                      width: "80%",
                       maxWidth: "100vh",
+                      float: "right",
                     }}
                   ></AltostructAngleCololessLogo>
                 </Rotate>
@@ -111,7 +124,7 @@ const IndexPage = () => {
           <Row align="top" justify="center">
             <Col span={13}>
               <Typography.Paragraph style={{ textAlign: "center" }}>
-                Who are we?
+                Vilka är vi?
               </Typography.Paragraph>
             </Col>
             <Col md={15} sm={24}>
@@ -122,13 +135,13 @@ const IndexPage = () => {
                   color: "rgb(22, 22, 22)",
                 }}
               >
-                We are a consultant agency with a focus on simplicity and
-                efficiency. At Altostuct, we build powerful web applications
-                using the latest within web development. <br></br>
+                På Altostruct tror på enkelhet och rätt verktyg för rätt jobb.
+                Med hjälp av det senaste inom cloud och webteknologi bygger vi
+                din applikation för att säkerställ en så bra produkt som
+                möjligt.<br></br>
                 <br></br>
-                If you are looking to build something of your very own, don't
-                hesitate to get in contact{" "}
-                <a href="mailto: info@altostruct.se">with us!</a>
+                Tveka inte på att kontakta{" "}
+                <a href="mailto: info@altostruct.se">oss</a>
               </Typography.Paragraph>
               <Divider></Divider>
             </Col>
@@ -142,14 +155,6 @@ const IndexPage = () => {
             <Col sm={24}>
               <Fade>
                 <div>
-                  <Typography.Title
-                    type="secondary"
-                    underline={false}
-                    style={{ textAlign: "center", height: "0px" }}
-                    level={4}
-                  >
-                    our focus
-                  </Typography.Title>
                   <Typography.Title
                     underline
                     className="big-text"
@@ -165,9 +170,9 @@ const IndexPage = () => {
                     underline={false}
                     style={{ textAlign: "center", height: "0px" }}
                   >
-                    We want to help you build powerful products with ease
-                    <br></br> using the power of the cloud.
-                    <br></br>
+                    Vi har flera år jobbat inom cloud
+                    <br></br> och vi hjälper gärna till
+                    <br></br> med din utveckling
                   </Typography.Paragraph>
                 </div>
               </Fade>
@@ -177,8 +182,8 @@ const IndexPage = () => {
       </div>
       <div className="container section">
         <div className="content">
-          <Row gutter={[30, 0]} justify="center" align="middle">
-            <Col sm={12}>
+          <Row gutter={[30, 30]} justify="center" align="middle">
+            <Col xs={{ order: 1, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade left>
                 <Img
                   style={{ width: "100%", maxHeight: "50vh" }}
@@ -186,15 +191,14 @@ const IndexPage = () => {
                 />
               </Fade>
             </Col>
-            <Col sm={12}>
+            <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade right>
                 <Typography.Title style={{ fontSize: "5vh" }}>
                   We love the cloud
                 </Typography.Title>
                 <Typography.Paragraph style={{ fontSize: "2vh" }}>
-                  At Altostruct we all are passionate about both web and cloud
-                  technology. We have been working with the cloud ever since the
-                  beginning.
+                  Vi brinner för molnet. Enkla att arbeta med och kommer igång
+                  snabbt. Erbjuder en helhetslösning eller bara utvecklare!
                 </Typography.Paragraph>
               </Fade>
             </Col>
@@ -203,18 +207,18 @@ const IndexPage = () => {
       </div>
       <div className="container section">
         <div className="content">
-          <Row gutter={[30, 0]} justify="center" align="middle">
-            <Col sm={24} md={12}>
+          <Row gutter={[30, 40]} justify="center" align="middle">
+            <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade left>
                 <Typography.Paragraph style={{ fontSize: "2vh" }}>
-                  Get in contact
+                  Kontakta oss på email
                 </Typography.Paragraph>
                 <Typography.Title style={{ fontSize: "5vh" }}>
                   info<wbr></wbr>@<wbr></wbr>altostruct.se
                 </Typography.Title>
               </Fade>
             </Col>
-            <Col sm={24} md={12}>
+            <Col xs={{ order: 1, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade right>
                 <Img
                   style={{ width: "100%" }}
