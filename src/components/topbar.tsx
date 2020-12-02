@@ -16,8 +16,7 @@ export const Topbar = () => {
   }, [])
 
   return (
-    <div className={"topbar " + (scrollPosition < 100 ? "shadow" : "")}>
-      {scrollPosition}
+    <div className={"topbar " + (scrollPosition > 100 ? "shadow" : "")}>
       <img
         style={{ height: "4vh", margin: "auto", marginLeft: "3vh" }}
         src={require("../assets/logo.svg")}

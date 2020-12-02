@@ -24,8 +24,11 @@ body {
   margin: 0;
   background-color: $backgroundColor;
   width: 100vw;
-  height: 100pc;
-  overflow-x: hidden;
+  overflow-x: initial;
+}
+
+.hide {
+  color: transparent;
 }
 
 .middle {
@@ -157,16 +160,27 @@ li {
   -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
   box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
-  background-color: red;
 }
 
+.scroll-down-icon {
+  font-size: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 1%;
+  transition: 3s;
+
+  animation: appear 1s ease infinite;
+}
 .topbar {
   position: fixed;
   height: 8vh;
   width: 100vw;
   display: flex;
   top: 0;
-  transition: 1s;
+  transition: 0.5s;
+  background-color: white;
+  z-index: 100;
 }
 
 .content {
@@ -217,6 +231,18 @@ li {
   }
   to {
     fill: black;
+  }
+}
+
+@keyframes appear {
+  0% {
+  }
+
+  50% {
+    color: transparent;
+  }
+
+  100% {
   }
 }
 

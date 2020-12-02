@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
     "@contentful/rich-text-react-renderer": "^14.1.1",
     "@types/react-helmet": "^6.0.0",
     "antd": "^4.4.1",
