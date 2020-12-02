@@ -153,6 +153,22 @@ li {
   }
 }
 
+.shadow {
+  -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+  background-color: red;
+}
+
+.topbar {
+  position: fixed;
+  height: 8vh;
+  width: 100vw;
+  display: flex;
+  top: 0;
+  transition: 1s;
+}
+
 .content {
   min-height: 80vh;
   padding-bottom: 10vh;

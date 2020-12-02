@@ -12,10 +12,11 @@ import Fade from "react-reveal/Fade"
 import { useStaticQuery, graphql } from "gatsby"
 import TextLoop from "react-text-loop"
 import Rotate from "react-reveal/Rotate"
-
+import { ScrollDown } from "../components/scoll-down"
 import AltostructAngleLogo, {
   AltostructAngleCololessLogo,
 } from "../components/altostruct-angle-icon"
+import { Topbar } from "../components/topbar"
 
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
@@ -51,11 +52,11 @@ const IndexPage = () => {
     }
   `)
 
-  const [index, setIndex] = React.useState(0)
-
   return (
     <>
       <SEO title="Home" />
+      <Topbar></Topbar>
+      <ScrollDown></ScrollDown>
       <div className="fullscreen">
         <div
           style={{
