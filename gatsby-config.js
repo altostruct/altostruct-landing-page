@@ -10,6 +10,7 @@ module.exports = {
     author: `Erik Rehn`,
   },
   plugins: [
+    "gatsby-plugin-robots-txt",
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,

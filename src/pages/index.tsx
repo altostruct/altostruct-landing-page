@@ -49,6 +49,13 @@ const IndexPage = () => {
           }
         }
       }
+      CodeImage: file(relativePath: { eq: "images/code-image.png" }) {
+        childImageSharp {
+          fluid(quality: 50) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -90,15 +97,15 @@ const IndexPage = () => {
                   children={["React", "AWS", "Sites", "IOS", "GraphQL"]}
                 />
               </Typography.Title>
-              <Typography.Text>
-                Vi är ett par webbkonsulter med inrikting på AWS, lokerade i
-                Stockholm. Vårt team består av
+              <Typography.Text className="paragraph">
+                Vi är några webbutvecklare med inriktning inom AWS och har
+                kontor i Stockholm. Altostruct består av
                 <br></br>
                 <br></br>
                 <ul>
-                  <li>React konsulter</li>
-                  <li>Cloud konsulter</li>
-                  <li>UX/UI konsulter</li>
+                  <li className="paragraph">React utvecklare</li>
+                  <li className="paragraph">Cloud konsulter</li>
+                  <li className="paragraph">UX/UI designers</li>
                 </ul>
               </Typography.Text>
             </Col>
@@ -124,25 +131,24 @@ const IndexPage = () => {
         <div className="content ">
           <Row align="top" justify="center">
             <Col span={13}>
-              <Typography.Paragraph style={{ textAlign: "center" }}>
+              <Typography.Title style={{ textAlign: "center" }}>
                 Vilka är vi?
-              </Typography.Paragraph>
+              </Typography.Title>
             </Col>
             <Col md={15} sm={24}>
               <Typography.Paragraph
                 style={{
                   fontSize: "4vh",
                   textAlign: "center",
-                  color: "rgb(22, 22, 22)",
                 }}
               >
-                På Altostruct tror på enkelhet och rätt verktyg för rätt jobb.
-                Med hjälp av det senaste inom cloud och webteknologi bygger vi
-                din applikation för att säkerställ en så bra produkt som
-                möjligt.<br></br>
+                Vi på altostruct hjälper dig att bygga din applikation med hjälp
+                av det senaste inom cloud och webbteknologi. Vi ser till att du
+                får en framtidssäker produkt med den senaste teknologin.
                 <br></br>
-                Tveka inte på att kontakta{" "}
-                <a href="mailto: info@altostruct.se">oss</a>
+                <br></br>
+                Tveka inte att kontakta oss på <br></br>
+                <a href="mailto: info@altostruct.se">info@alstruct.se</a>
               </Typography.Paragraph>
               <Divider></Divider>
             </Col>
@@ -152,35 +158,30 @@ const IndexPage = () => {
 
       <div className="container section">
         <div className="content">
-          <Row justify="center">
-            <Col sm={24}>
-              <Fade>
-                <div>
-                  <Typography.Title
-                    underline
-                    className="big-text"
-                    style={{
-                      textAlign: "center",
-                    }}
-                  >
-                    Agile cloud<br></br>development
-                  </Typography.Title>
-
-                  <Typography.Paragraph
-                    type="secondary"
-                    underline={false}
-                    style={{ textAlign: "center", height: "0px" }}
-                  >
-                    Vi har flera år jobbat inom cloud
-                    <br></br> och vi hjälper gärna till
-                    <br></br> med din utveckling
-                  </Typography.Paragraph>
-                </div>
+          <Row gutter={[30, 30]} justify="center" align="middle">
+            <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
+              <Fade left>
+                <Typography.Title style={{ fontSize: "5vh" }}>
+                  We have developers!
+                </Typography.Title>
+                <Typography.Paragraph className="paragraph">
+                  Behöver du utvecklare? Våra medarbetare är snabba och flexibla
+                  och kan hjälpa dig med alla typer av projekt.
+                </Typography.Paragraph>
+              </Fade>
+            </Col>
+            <Col xs={{ order: 1, span: 24 }} md={{ order: 2, span: 12 }}>
+              <Fade right>
+                <Img
+                  style={{ width: "100%", maxHeight: "50vh" }}
+                  fluid={query.CodeImage.childImageSharp.fluid}
+                />
               </Fade>
             </Col>
           </Row>
         </div>
       </div>
+
       <div className="container section">
         <div className="content">
           <Row gutter={[30, 30]} justify="center" align="middle">
@@ -197,9 +198,10 @@ const IndexPage = () => {
                 <Typography.Title style={{ fontSize: "5vh" }}>
                   We love the cloud
                 </Typography.Title>
-                <Typography.Paragraph style={{ fontSize: "2vh" }}>
-                  Vi brinner för molnet. Enkla att arbeta med och kommer igång
-                  snabbt. Erbjuder en helhetslösning eller bara utvecklare!
+                <Typography.Paragraph className="paragraph">
+                  Vi älskar molnet! Vi kan hjälpa dig att snabbt få upp ett
+                  fungerande prototyp. Behöver du en helhetslösning? Vi hjälper
+                  till från en idé fram till en slutprodukt.
                 </Typography.Paragraph>
               </Fade>
             </Col>
@@ -306,7 +308,7 @@ const IndexPage = () => {
         </div>
       </div>
 
-      <div className="container section">
+      {/* <div className="container section">
         <div className="content">
           <Row gutter={[0, 150]}>
             <Col sm={24}>
@@ -355,7 +357,7 @@ const IndexPage = () => {
             </Col>
           </Row>
         </div>
-      </div>
+      </div> */}
       <div className="container section">
         <div className="content">
           <Row gutter={[20, 80]} justify="center" align="middle">
