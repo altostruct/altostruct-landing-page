@@ -158,7 +158,7 @@ const IndexPage = () => {
             <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade left>
                 <Typography.Title style={{ fontSize: "5vh" }}>
-                  We have developers!
+                  Vi har utvecklare!
                 </Typography.Title>
                 <Typography.Paragraph className="paragraph">
                   Behöver du utvecklare? Våra medarbetare är snabba och flexibla
@@ -192,12 +192,12 @@ const IndexPage = () => {
             <Col xs={{ order: 2, span: 24 }} md={{ order: 2, span: 12 }}>
               <Fade right>
                 <Typography.Title style={{ fontSize: "5vh" }}>
-                  We love the cloud
+                  Vi älskar molnet!
                 </Typography.Title>
                 <Typography.Paragraph className="paragraph">
-                  Vi älskar molnet! Vi kan hjälpa dig att snabbt få upp en
-                  fungerande prototyp. Behöver du en helhetslösning? Vi hjälper
-                  till från idéstadiet ända fram till slutprodukten.
+                  Vi kan hjälpa dig att snabbt få upp en fungerande prototyp.
+                  Behöver du en helhetslösning? Vi hjälper till från idéstadiet
+                  ända fram till slutprodukten.
                 </Typography.Paragraph>
               </Fade>
             </Col>
