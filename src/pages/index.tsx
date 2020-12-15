@@ -195,9 +195,9 @@ const IndexPage = () => {
                   We love the cloud
                 </Typography.Title>
                 <Typography.Paragraph className="paragraph">
-                  Vi älskar molnet! Vi kan hjälpa dig att snabbt få upp ett
+                  Vi älskar molnet! Vi kan hjälpa dig att snabbt få upp en
                   fungerande prototyp. Behöver du en helhetslösning? Vi hjälper
-                  till från en idé fram till en slutprodukt.
+                  till från idéstadiet ända fram till slutprodukten.
                 </Typography.Paragraph>
               </Fade>
             </Col>
