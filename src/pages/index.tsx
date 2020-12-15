@@ -1,12 +1,9 @@
 import React from "react"
 import { Typography, Row, Col, Divider, Card } from "antd"
 import SEO from "../components/seo"
-import AWSLogo from "../components/aws-icon"
 import Logo from "../components/logo"
-import NodeLogo from "../components/node-icon"
 import Footer from "../components/footer"
 import "../styles/index.scss"
-import ReactLogo from "../components/react-icon"
 import Img from "gatsby-image"
 import Fade from "react-reveal/Fade"
 import { useStaticQuery, graphql } from "gatsby"
@@ -98,9 +95,8 @@ const IndexPage = () => {
                 />
               </Typography.Title>
               <Typography.Text className="paragraph">
-                Vi är några webbutvecklare med inriktning inom AWS och har
-                kontor i Stockholm. Altostruct består av
-                <br></br>
+                Vi är några webbutvecklare med inriktning AWS och har kontor i
+                Stockholm. Altostruct består av:<br></br>
                 <br></br>
                 <ul>
                   <li className="paragraph">React utvecklare</li>
