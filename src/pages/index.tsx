@@ -148,7 +148,7 @@ const IndexPage = () => {
                 <br></br>
                 <br></br>
                 Tveka inte att kontakta oss på <br></br>
-                <a href="mailto: info@altostruct.se">info@alstruct.se</a>
+                <a href="mailto: info@altostruct.se">info@altostruct.se</a>
               </Typography.Paragraph>
               <Divider></Divider>
             </Col>
