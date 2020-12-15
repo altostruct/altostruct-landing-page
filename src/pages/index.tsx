@@ -140,7 +140,7 @@ const IndexPage = () => {
               >
                 Vi på altostruct hjälper dig att bygga din applikation med hjälp
                 av det senaste inom cloud och webbteknologi. Vi ser till att du
-                får en framtidssäker produkt med den senaste teknologin.
+                får en framtidssäker och kostnadseffektiv produkt.
                 <br></br>
                 <br></br>
                 Tveka inte att kontakta oss på <br></br>
