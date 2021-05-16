@@ -10,6 +10,7 @@ module.exports = {
     author: `Erik Rehn`,
   },
   plugins: [
+    "gatsby-plugin-postcss",
     "gatsby-plugin-robots-txt",
     `gatsby-plugin-sitemap`,
     {
@@ -41,10 +42,8 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-antd`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
-
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -56,7 +55,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: "src/images/favicon.svg",
+        icon: "src/assets/favicon.svg",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

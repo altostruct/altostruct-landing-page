@@ -1,0 +1,211 @@
+$minSize: 992px;
+$midSize: 1100px;
+$largeSize: 2000px;
+$backgroundColor: rgb(255, 255, 255);
+$primaryColor: rgb(20, 20, 20);
+
+$logoLengths: 42px, 20px, 26px, 36px, 35px, 26px, 21px, 35px, 33px, 26px, 42px,
+  20px, 26px, 36px, 35px, 26px, 20px, 35px, 33px, 26px;
+
+$logoScale: 6;
+
+.white {
+  background: white;
+}
+
+.colorless {
+  * {
+    stroke: black !important ;
+    stroke-width: 2px !important;
+    fill: white;
+  }
+  padding: 10px;
+}
+
+li {
+  font-size: 20px;
+}
+
+.secondary {
+  background-color: rgb(36, 36, 36);
+  h1 {
+    color: white !important;
+  }
+  h4 {
+    color: rgb(216, 215, 215) !important;
+  }
+}
+.fullscreen {
+  height: 100vh;
+}
+
+.hover-card {
+  -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.75);
+}
+
+.ant-typography {
+  font-size: 16px;
+}
+
+.big-text {
+  * {
+    font-size: 10vh !important;
+    white-space: pre-line;
+    width: 100%;
+  }
+
+  font-size: 15vh !important;
+  line-height: 14vh !important;
+  white-space: pre-line;
+  width: 100%;
+
+  @media screen and (max-width: $midSize) {
+    * {
+      font-size: 6vh !important;
+      line-height: 1vh !important;
+    }
+
+    font-size: 10vh !important;
+    line-height: 10vh !important;
+  }
+
+  @media screen and (max-width: $minSize) {
+    * {
+      font-size: 4vh !important;
+      line-height: 1vh !important;
+    }
+
+    font-size: 7vh !important;
+    line-height: 10vh !important;
+  }
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.footer {
+  width: 100vw;
+  min-height: 40vh;
+  display: flex;
+
+  background-color: #0f6e88;
+
+  b {
+    color: white !important;
+    font-size: 2vh;
+  }
+
+  h1 {
+    color: white !important;
+    font-size: 4vh;
+    font-weight: 300;
+  }
+
+  .content {
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    min-height: 40vh;
+    padding: 10vh;
+
+    @media screen and (max-width: $minSize) {
+      width: 90vw;
+    }
+  }
+}
+
+.shadow {
+  -webkit-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 10px 21px -8px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-down-icon {
+  font-size: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 1%;
+  transition: 3s;
+
+  animation: appear 1s ease infinite;
+}
+.topbar {
+  position: fixed;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  top: 0;
+  transition: 0.5s;
+  background-color: white;
+  z-index: 100;
+}
+
+.content {
+  min-height: 80vh;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+  margin: auto;
+  width: 60vw;
+
+  @media screen and (min-width: $largeSize) {
+    width: 40vw;
+  }
+
+  @media screen and (max-width: $minSize) {
+    width: 80vw;
+    min-height: 60vh;
+    min-height: 0vh;
+    padding-top: 5vh !important;
+    padding-bottom: 5vh !important;
+  }
+
+  &.full {
+    width: 100vw;
+    @media screen and (max-width: $minSize) {
+      width: 80vw;
+    }
+  }
+}
+
+#logo {
+  @for $i from 1 through 20 {
+    path:nth-child(#{$i}) {
+      fill: transparent;
+      stroke-dasharray: nth($logoLengths, $i) * $logoScale;
+      stroke-dashoffset: nth($logoLengths, $i) * $logoScale;
+      animation: line-anim 4s ease forwards ($i * 0.2s),
+        fill 1s ease forwards length($logoLengths) * 0.1s + 0.8s;
+    }
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: black;
+  }
+}
+
+@keyframes appear {
+  0% {
+  }
+
+  50% {
+    color: transparent;
+  }
+
+  100% {
+  }
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

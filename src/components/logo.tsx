@@ -1,11 +1,11 @@
+import "./Logo.scss"
 import React from "react"
 
 const Logo = () => {
   return (
     <svg
       id="logo"
-      width="58"
-      height="11"
+      width="100%"
       viewBox="0 0 58 11"
       xmlns="http://www.w3.org/2000/svg"
     >
