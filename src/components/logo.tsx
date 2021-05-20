@@ -1,16 +1,16 @@
 import React from "react"
+import style from "./Logo.module.scss"
 
 const Logo = () => {
   return (
     <svg
-      id="logo"
-      width="58"
-      height="11"
+      id={style["logo"]}
+      width="100%"
       viewBox="0 0 58 11"
       xmlns="http://www.w3.org/2000/svg"
     >
       <mask
-        id="path-1-outside-1"
+        id={style["path-1-outside-1"]}
         maskUnits="userSpaceOnUse"
         x="-0.484009"
         y="0.119995"

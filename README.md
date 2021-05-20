@@ -15,63 +15,6 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/404
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/404.html
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-20d9aa5af98e8d3143e4.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-20d9aa5af98e8d3143e4.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-89125636a1edafb15efb.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-89125636a1edafb15efb.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-edb8d7a41944654b917b.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/app-edb8d7a41944654b917b.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/chunk-map.json
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/commons-093c22e7490da11d3eec.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/commons-093c22e7490da11d3eec.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-404-tsx-2dffd26f82896bcf5c2b.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-404-tsx-2dffd26f82896bcf5c2b.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-06c029c39e0ca3467504.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-06c029c39e0ca3467504.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-384d24c9925f502676d1.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-384d24c9925f502676d1.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-501e6fd99a6d622e3644.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-501e6fd99a6d622e3644.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-83241baa7ca703156e71.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-83241baa7ca703156e71.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-926425975783562f4380.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-926425975783562f4380.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-cd00540a8ce393066ff4.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-cd00540a8ce393066ff4.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-fd5df6f01a6580a1adf5.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/component---src-pages-index-tsx-fd5df6f01a6580a1adf5.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/framework-a4af6e22a78404f2df50.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/framework-a4af6e22a78404f2df50.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/framework-d9cf0f47b747b267fae2.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/framework-d9cf0f47b747b267fae2.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/icons
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/index.html
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/manifest.webmanifest
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/page-data
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/sitemap.xml
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/static
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/styles-8d3db5124725dcff78a7.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/styles-8d3db5124725dcff78a7.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/styles-c2fe8482057191dca484.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/styles-c2fe8482057191dca484.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/styles.8205758d4060acbeb299.css
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-9a86fdb05c498be2b04b.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-9a86fdb05c498be2b04b.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-44c53c0b29b8f2f74de3.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-44c53c0b29b8f2f74de3.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-067a7bad2d834ce7b07b.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-067a7bad2d834ce7b07b.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-312b5cff43e59bb7a8a2.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-312b5cff43e59bb7a8a2.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-9931c6878653b69a7916.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-9931c6878653b69a7916.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-ea17eae518b1f41178d6.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-ea17eae518b1f41178d6.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-fcb09aa826493e9036c3.js
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack-runtime-fcb09aa826493e9036c3.js.map
-/Users/erikrehn/Desktop/altostruct/altostruct-landing-page/public/webpack.stats.json
     Use the Gatsby CLI to create a new site, specifying the default starter.
 
     ```shell
