@@ -181,6 +181,9 @@ li {
         fill 1s ease forwards length($logoLengths) * 0.1s + 0.8s;
     }
   }
+
+  @media only screen and (max-width: 600px) {
+  }
 }
 
 @keyframes fill {

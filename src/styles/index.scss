@@ -2,12 +2,16 @@
   scroll-snap-type: y mandatory;
   width: 100vw;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  @media only screen and (max-width: 600px) {
+    scroll-snap-type: none;
+  }
 }
 
 .fullpage {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
@@ -15,17 +19,25 @@
   overflow: hidden;
   margin-bottom: 10vh;
   margin-top: 10vh;
+
+  @media only screen and (max-width: 600px) {
+    min-height: 40vh;
+    margin-bottom: 0vh;
+    margin-top: 0vh;
+    scroll-snap-align: none;
+    scroll-snap-stop: none;
+  }
 }
 
 .scroll-snap {
   scroll-snap-align: start;
   position: relative;
-  display: flex;
-  overflow: hidden;
 }
 
 .content {
-  width: 24em;
+  width: 100vw;
+  padding: 3vh;
+  max-width: 100vh;
 }
 
 .dark {
@@ -39,4 +51,27 @@
   user-select: none;
   -webkit-user-drag: none;
   user-drag: none;
+}
+
+@keyframes slideInFromLeft {
+  100% {
+    transform: translateX(-100%);
+  }
+  0% {
+    transform: translateX(0);
+  }
+}
+.warning-label-container {
+  transform: rotate(4deg);
+  margin-bottom: 1vh;
+}
+
+.warning-label {
+  background-color: yellow;
+  display: inline-block;
+  padding: 5px;
+  animation: 90s linear 0s 1 slideInFromLeft;
+  animation-iteration-count: infinite;
+  font-weight: 800;
+  white-space: nowrap;
 }

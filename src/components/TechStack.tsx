@@ -86,19 +86,20 @@ function TechStack({ cards }: IProps) {
             className="flex"
           >
             <div className="p-10 text-center m-auto">
-              <h1 className="text-5xl pb-1 font-bold">{cards[i].title}</h1>
-              <p className="pb-1 unselectable">{cards[i].description}</p>
-
-              <div className="w-52 h-52 flex">
+              <div className="flex">
                 <img
                   className="unselectable m-auto"
                   src={cards[i].image}
                   style={{
                     height: "100%",
-                    objectFit: "cover",
+                    objectFit: "contain",
                   }}
                 ></img>
               </div>
+              <h1 className="unselectable text-4xl pb-1 font-bold">
+                {cards[i].title}
+              </h1>
+              <p className="pb-1 unselectable">{cards[i].description}</p>
             </div>
           </animated.div>
         </animated.div>
