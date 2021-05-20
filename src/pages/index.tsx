@@ -14,21 +14,21 @@ const IndexPage = () => {
     query ContactImage {
       CloudImage: file(relativePath: { eq: "assets/cloud.jpg" }) {
         childImageSharp {
-          fluid(quality: 50) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       Stockholm: file(relativePath: { eq: "assets/stockholm.png" }) {
         childImageSharp {
-          fluid(quality: 50) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       GraphQL: file(relativePath: { eq: "assets/graphql.png" }) {
         childImageSharp {
-          fluid(quality: 50) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
