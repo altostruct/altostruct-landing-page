@@ -8,6 +8,7 @@ import VisibilitySensor from "react-visibility-sensor"
 // @ts-ignore: No package for type
 import Reveal from "react-reveal/Reveal"
 import { Arrow } from "../components/Arrow"
+import { KeyIcon } from "../components/KeyIcon"
 
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
@@ -105,7 +106,7 @@ const IndexPage = () => {
               <Logo></Logo>
             </div>
             <br></br>
-            <p className="text-center">
+            <p className="text-center font-mono">
               Cloud and web consulting for startups and innovative companies
             </p>
           </div>
@@ -159,11 +160,10 @@ const IndexPage = () => {
                   way of working suits large organizations with big projects.
                   However, in many startups, there is often a need to develop
                   prototypes quickly and agile. To service this need, we started
-                  Altostruct. All of us at Altostruct are from the startup world
+                  Altostruct."
+                  {/*All of us at Altostruct are from the startup world
                   and love the energetic and agile process that is required to
-                  get your product to the market in time. To ensure this, during
-                  the startup period of your company, payments can be reduced up
-                  to 50 %."
+                  get your product to the market in time. */}
                 </Reveal>
               </p>
               <br></br>
@@ -173,9 +173,22 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="fullpage">
-          <div>
-            <h1></h1>
+        <div className="h-1/2 fullpage mt-12 mb-12">
+          <div className="content flex m-auto">
+            <div className="w-8/12 float-left">
+              <h1 className="text-5xl mb-2 md:text-7xl font-bold">
+                Our three <i>key features...</i>
+              </h1>
+              <p>
+                We of course offers more than these but it sounds a lot nicer
+                when there is only three
+              </p>
+            </div>
+            <div className="w-4/12 animate-ping hover: flex transform rotate-45 float-left">
+              <div className="m-auto w-full">
+                <KeyIcon />
+              </div>
+            </div>
           </div>
         </div>
         <NumberPage
@@ -187,7 +200,7 @@ const IndexPage = () => {
               periods before revenue, payment can be{" "}
               <u>
                 <b>reduced by up to 50%</b>
-              </u>
+              </u>{" "}
               to ensure that we reach the market in time. At Altostruct we
               believe in you idéa and are proud to say that we small part
               partners with the majority of our projects.
@@ -205,13 +218,7 @@ const IndexPage = () => {
               </u>
               . which means that we can relate to the long nights, the important
               meetings and the passion for the product. At Altostruct, we live,
-              breathe, and love the startup way of working. We believe that to
-              reach the market quickly and scalable, your company needs to use
-              all the tools at your disposal. Consequently, we are strong
-              advocators of using the latest technology within your field. Using
-              Amazon Web Services, React, NodeJS, GraphQL, and other technology,
-              Altostruct is able to offer quick sustainable solutions at a low
-              cost.
+              breathe, and love the startup way of working.
             </>
           }
         ></NumberPage>
@@ -220,15 +227,41 @@ const IndexPage = () => {
           title="Latest technology"
           description={
             <>
-              We believe that to reach a market quickly and scalable you need to
-              use all the tools at your disposal. Therefore we are strong
-              advocators of using the latest technology within your field. Using
-              Amazon Web Services, React, NodeJS, GraphQL, and other technology,
-              we at Altostruct have built sustainable solutions quickly and at a
-              low cost.
+              We believe that to reach the market quickly and scalable, your
+              company needs to use all the tools at your disposal. Consequently,
+              we are strong advocators of using the latest technology within
+              your field.
             </>
           }
         ></NumberPage>
+
+        <div className="fullpage">
+          <div className="content m-auto">
+            <div className="w-full">
+              <a href="https://www.linkedin.com/in/erik-rehn-b12556194/">
+                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
+                  <img
+                    className="rounded-full"
+                    src="https://media-exp1.licdn.com/dms/image/C4D03AQGqhvLfd3lBhQ/profile-displayphoto-shrink_800_800/0/1607296447335?e=1626912000&v=beta&t=oQSt2cSyOjfm7Z8LfMiFVvtwEoXKeqdfFU-ME8EvfZs"
+                  ></img>
+                </div>
+              </a>
+              <p className="text-md md:text-xl font-mono">
+                <Reveal>
+                  "All of us at Altostruct are from the startup world and love
+                  the energetic and agile process that is required to get your
+                  product to the market in time."
+                </Reveal>
+              </p>
+              <br></br>
+              <small className="uppercase float-right">
+                Erik Rehn, co-founder, CTO(Cheifs Taco Officer)
+              </small>
+            </div>
+          </div>
+        </div>
+
+        <div className="h-24 w-full"></div>
         <div className="fullpage" style={{ height: "130vh" }}>
           <VisibilitySensor scrollDelay={1} partialVisibility>
             {({ isVisible }) => {
@@ -237,13 +270,13 @@ const IndexPage = () => {
                   <div className="mt-2 md:pt-10">
                     <div className="w-screen text-center flex -mb-64">
                       <div className="w-full p-10  m-auto">
-                        <h1 className="text-7xl font-extrabold">
+                        <h1 className="text-7xl pb-2 font-extrabold">
                           Our tech stack?
                         </h1>
                         <p className="md:w-96 m-auto">
                           Here are some of technologies we work with on a daily
-                          basis. We ofcourse work with a lot more but I did not
-                          have the time to find icons for all out.
+                          basis. We of course work with a lot more but I did not
+                          have the time to find icons for all.
                         </p>
                       </div>
                     </div>
@@ -288,14 +321,14 @@ const IndexPage = () => {
         </div>
 
         <div className="fullpage">
-          <div className="content p-1  m-auto pb-96">
+          <div className="content p-1 m-auto pb-64 md:pb-96">
             <div className="pb-96">
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32 ">
                 <div className="float-left w-10/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Tendium
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-2xl">
+                  <p className="text-gray-700 text-sm md:text-lg">
                     Intelligent procurement watching system using AI to find
                     perfect matches for you. Altostruct helped build the
                     customer portal using GraphQL and Amazon web services.
@@ -313,7 +346,7 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Foodfacts
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-2xl">
+                  <p className="text-gray-700 text-sm md:text-lg">
                     Intelligent procurement watching system using AI to find
                     perfect matches for you. Altostruct helped build the
                     customer portal using GraphQL and Amazon web services.
@@ -331,7 +364,7 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Stella Polaris
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-2xl">
+                  <p className="text-gray-700 text-sm md:text-lg">
                     Intelligent procurement watching system using AI to find
                     perfect matches for you. Altostruct helped build the
                     customer portal using GraphQL and Amazon web services.
@@ -349,7 +382,7 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Nrlyze
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-2xl">
+                  <p className="text-gray-700 text-sm md:text-lg">
                     Intelligent procurement watching system using AI to find
                     perfect matches for you. Altostruct helped build the
                     customer portal using GraphQL and Amazon web services.
@@ -396,7 +429,7 @@ const IndexPage = () => {
         </div>
         <div className="dark">
           <div className="fullpage">
-            <div className="m-auto mt-16 content">
+            <div className="m-auto mt-16 content h-96 md:h-screen ">
               <div className="flex text-white">
                 <div className="m-auto">
                   <h1 className="text-3xl md:text-6xl font-extrabold">
@@ -408,7 +441,7 @@ const IndexPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="absolute transform -translate-x-1/2 left-1/2 w-1/3 bg-red-200 bottom-10">
+              <div className="absolute transform -translate-x-1/2 -translate-y-full left-1/2 w-1/3 bg-red-200 bottom-3">
                 <Img
                   className="m-auto"
                   style={{ width: "100%", maxHeight: "50vh" }}

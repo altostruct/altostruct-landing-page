@@ -36,8 +36,10 @@
 
 .content {
   width: 100vw;
-  padding: 3vh;
   max-width: 100vh;
+  @media only screen and (max-width: 600px) {
+    padding: 5vh;
+  }
 }
 
 .dark {
