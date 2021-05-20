@@ -41,8 +41,7 @@ const IndexPage = () => {
       image:
         "https://pbs.twimg.com/profile_images/1262824892535373825/BiXDFDDp_400x400.jpg",
       title: "NodeJS",
-      description:
-        "I think most of us see NodeJS as a family member at this point(This site was built using it)",
+      description: "We love NodeJS(This site was built using it)",
     },
     {
       image:
@@ -54,21 +53,18 @@ const IndexPage = () => {
     {
       image: "https://www.python.org/static/opengraph-icon-200x200.png",
       title: "Python",
-      description:
-        "We <3 Python. Using Flask we created a AI server exposing a deep neural net as an API.",
+      description: "We <3 Python",
     },
     {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDablGa_xaGvUTE9ihIjQ0Yo-jCMFKdqnoQ&usqp=CAU",
       title: "React",
-      description:
-        "Used both React for web and React Native for mobile development! Simple yet so powerful. What is not to love?",
+      description: "Simple yet so powerful. What is not to love?",
     },
     {
       image: query.GraphQL.childImageSharp.fluid.src,
       title: "GraphQL",
-      description:
-        "Started working with it in 2018! Both with Graphene and Apollo!",
+      description: "Loving GraphQL since 2018!",
     },
   ]
 
@@ -161,10 +157,13 @@ const IndexPage = () => {
                 <Reveal>
                   "Many consulting agencies are built for big companies. Their
                   way of working suits large organizations with big projects.
-                  However, in many startups, there is a need to develop
-                  prototype quickly and agile. Therefore, we started Altostruct.
-                  We all are from the startup world and love the agile process.
-                  We would like to share it with as many as possible."
+                  However, in many startups, there is often a need to develop
+                  prototypes quickly and agile. To service this need, we started
+                  Altostruct. All of us at Altostruct are from the startup world
+                  and love the energetic and agile process that is required to
+                  get your product to the market in time. To ensure this, during
+                  the startup period of your company, payments can be reduced up
+                  to 50 %."
                 </Reveal>
               </p>
               <br></br>
@@ -195,13 +194,19 @@ const IndexPage = () => {
           title="Dedicated developers"
           description={
             <>
-              Unlike many other consulting agencies{" "}
+              Unlike many other consulting agencies,{" "}
               <u>
                 <b>we are also a startup.</b>
-              </u>{" "}
-              The long nights, the important meetings, and the passion for the
-              product. At Altostruct we live, breathe, and love the startup way
-              of working.
+              </u>
+              . which means that we can relate to the long nights, the important
+              meetings and the passion for the product. At Altostruct, we live,
+              breathe, and love the startup way of working. We believe that to
+              reach the market quickly and scalable, your company needs to use
+              all the tools at your disposal. Consequently, we are strong
+              advocators of using the latest technology within your field. Using
+              Amazon Web Services, React, NodeJS, GraphQL, and other technology,
+              Altostruct is able to offer quick sustainable solutions at a low
+              cost.
             </>
           }
         ></NumberPage>
