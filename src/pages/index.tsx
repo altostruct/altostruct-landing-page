@@ -169,7 +169,7 @@ const IndexPage = () => {
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Emilio Gustavsson, co-founder, COO(Cheifs Onion Officier)
+                Emilio Gustavsson, co-founder, COO(Cheifs Onion Officer)
               </small>
             </div>
           </div>
