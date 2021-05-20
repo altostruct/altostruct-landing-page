@@ -85,7 +85,7 @@ function TechStack({ cards }: IProps) {
             }}
             className="flex"
           >
-            <div className="p-10 text-center m-auto">
+            <div className="p-1 text-center m-auto">
               <div className="flex">
                 <img
                   className="unselectable m-auto"

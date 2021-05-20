@@ -173,6 +173,11 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
+        <div className="fullpage">
+          <div>
+            <h1></h1>
+          </div>
+        </div>
         <NumberPage
           number="1."
           title="Flexible pricing"
