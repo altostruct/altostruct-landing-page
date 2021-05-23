@@ -168,7 +168,7 @@ const IndexPage = () => {
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Emilio Gustavsson, co-founder, COO(Cheifs Onion Officer)
+                Emilio Gustavsson, co-founder
               </small>
             </div>
           </div>
@@ -255,7 +255,7 @@ const IndexPage = () => {
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Erik Rehn, co-founder, CTO(Cheifs Taco Officer)
+                Erik Rehn, co-founder
               </small>
             </div>
           </div>
@@ -296,7 +296,9 @@ const IndexPage = () => {
               <div className="warning-label-container absolute left-0 mt-48 z-0 md:mt-42">
                 <div className="warning-label">
                   <p className="text-3xl">
-                    {new Array(35).fill("DO NOT TRUST US").join(" • ")}
+                    {new Array(35)
+                      .fill("DO NOT TAKE OUR WORD FOR IT")
+                      .join(" • ")}
                   </p>
                 </div>
               </div>
