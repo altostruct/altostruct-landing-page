@@ -57,10 +57,10 @@
 
 @keyframes slideInFromLeft {
   100% {
-    transform: translateX(-100%);
+    transform: translate(-100%, -50%);
   }
   0% {
-    transform: translateX(0);
+    transform: translate(0, -50%);
   }
 }
 .warning-label-container {

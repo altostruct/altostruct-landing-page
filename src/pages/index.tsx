@@ -176,7 +176,7 @@ const IndexPage = () => {
         <div className="h-1/2 fullpage mt-12 mb-12">
           <div className="content flex m-auto">
             <div className="w-8/12 float-left">
-              <h1 className="text-5xl mb-2 md:text-7xl font-bold">
+              <h1 className="text-3xl mb-2 md:text-7xl font-bold">
                 Our three <i>key features...</i>
               </h1>
               <p>
