@@ -20,6 +20,23 @@ const IndexPage = () => {
           }
         }
       }
+
+      Emilio: file(relativePath: { eq: "assets/emilio.jpeg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      Erik: file(relativePath: { eq: "assets/erik.jpeg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
       Stockholm: file(relativePath: { eq: "assets/stockholm.png" }) {
         childImageSharp {
           fluid(quality: 100) {
@@ -148,10 +165,11 @@ const IndexPage = () => {
             <div className="w-full">
               <a href="https://www.linkedin.com/in/emilio-gustavsson-737983147/">
                 <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
-                  <img
-                    className="rounded-full"
-                    src="https://media-exp1.licdn.com/dms/image/C4E03AQHLC2xDvb_ILA/profile-displayphoto-shrink_200_200/0/1560703931489?e=1624492800&v=beta&t=88x_kiiHB_XBQJGBBvUs80VVIuoBD17C3s9-KY5P_WY"
-                  ></img>
+                  <Img
+                    className="m-auto"
+                    style={{ width: "100%", maxHeight: "50vh" }}
+                    fluid={query.Emilio.childImageSharp.fluid}
+                  />
                 </div>
               </a>
               <p className="text-md md:text-xl font-mono">
@@ -240,10 +258,11 @@ const IndexPage = () => {
             <div className="w-full">
               <a href="https://www.linkedin.com/in/erik-rehn-b12556194/">
                 <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
-                  <img
-                    className="rounded-full"
-                    src="https://media-exp1.licdn.com/dms/image/C4D03AQGqhvLfd3lBhQ/profile-displayphoto-shrink_800_800/0/1607296447335?e=1626912000&v=beta&t=oQSt2cSyOjfm7Z8LfMiFVvtwEoXKeqdfFU-ME8EvfZs"
-                  ></img>
+                  <Img
+                    className="m-auto"
+                    style={{ width: "100%", maxHeight: "50vh" }}
+                    fluid={query.Erik.childImageSharp.fluid}
+                  />
                 </div>
               </a>
               <p className="text-md md:text-xl font-mono">
