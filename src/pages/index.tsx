@@ -100,7 +100,7 @@ const IndexPage = () => {
             className="col-span-2 absolute transform scale-90 -translate-y-10 md:-translate-y-0 opacity-10 md:opacity-100 md:relative font-extrabold md:col-span-1"
             style={{ fontSize: "50vh" }}
           >
-            {props.number}
+            <Reveal>{props.number}</Reveal>
           </div>
           <div className="flex col-span-2 md:col-span-1">
             <div className="m-auto">
@@ -164,9 +164,9 @@ const IndexPage = () => {
           <div className="content m-auto">
             <div className="w-full">
               <a href="https://www.linkedin.com/in/emilio-gustavsson-737983147/">
-                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
+                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2  mb-10 ">
                   <Img
-                    className="m-auto"
+                    className="m-auto overflow-hidden rounded-full  "
                     style={{ width: "100%", maxHeight: "50vh" }}
                     fluid={query.Emilio.childImageSharp.fluid}
                   />
@@ -259,7 +259,7 @@ const IndexPage = () => {
               <a href="https://www.linkedin.com/in/erik-rehn-b12556194/">
                 <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
                   <Img
-                    className="m-auto"
+                    className="m-auto overflow-hidden rounded-full  "
                     style={{ width: "100%", maxHeight: "50vh" }}
                     fluid={query.Erik.childImageSharp.fluid}
                   />
@@ -309,16 +309,20 @@ const IndexPage = () => {
             }}
           </VisibilitySensor>
         </div>
-        <div className="fullpage h-screen">
+        <div className="fullpage">
           <div className="content m-auto">
-            <div className="m-auto">
-              <div className="warning-label-container absolute left-0 mt-48 z-0 md:mt-42">
-                <div className="warning-label">
-                  <p className="text-3xl">
-                    {new Array(35)
-                      .fill("DO NOT TAKE OUR WORD FOR IT")
-                      .join(" • ")}
-                  </p>
+            <div className="m-auto ">
+              <div className="pb-10 md:pb-20">
+                <div className="w-10 h-10 absolute left-0 top-0 warning-center">
+                  <div className="warning-label-container">
+                    <div className="warning-label">
+                      <p className="text-4xl">
+                        {new Array(35)
+                          .fill("DO NOT TAKE OUR WORD FOR IT")
+                          .join(" • ")}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -328,16 +332,18 @@ const IndexPage = () => {
                   listen <br></br>to our <br></br>customers
                 </p>
               </i>
-              <div className="absolute bottom-10 text-6xl left-1/2 transform -translate-x-1/2">
-                <div className="animate-bounce">
-                  <div className="animate-pulse">
-                    <Arrow></Arrow>
-                  </div>
+            </div>
+            <p className="text-right pb-20">
+              * they are not made up we promise
+            </p>
+            <div className="absolute bottom-10 text-6xl left-1/2 transform -translate-x-1/2">
+              <div className="animate-bounce">
+                <div className="animate-pulse">
+                  <Arrow></Arrow>
                 </div>
               </div>
             </div>
             <br></br>
-            <p className="text-right">* they are not made up we promise</p>
           </div>
         </div>
 

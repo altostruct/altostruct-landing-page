@@ -11,12 +11,11 @@
 }
 
 .fullpage {
-  min-height: 100vh;
+  min-height: 50vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   position: relative;
   display: flex;
-  overflow: hidden;
   margin-bottom: 10vh;
   margin-top: 10vh;
 
@@ -63,17 +62,21 @@
     transform: translate(0, -50%);
   }
 }
+
 .warning-label-container {
-  transform: rotate(4deg);
   margin-bottom: 1vh;
 }
 
 .warning-label {
   background-color: yellow;
   display: inline-block;
-  padding: 5px;
+  padding: 10px;
   animation: 120s linear 0s 1 slideInFromLeft;
   animation-iteration-count: infinite;
   font-weight: 800;
   white-space: nowrap;
+}
+
+.warning-center {
+  transform: rotate(4deg);
 }

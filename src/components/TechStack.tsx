@@ -99,7 +99,9 @@ function TechStack({ cards }: IProps) {
               <h1 className="unselectable text-4xl pb-1 font-bold">
                 {cards[i].title}
               </h1>
-              <p className="pb-1 unselectable">{cards[i].description}</p>
+              <p className="pb-1 unselectable font-mono">
+                {cards[i].description}
+              </p>
             </div>
           </animated.div>
         </animated.div>
