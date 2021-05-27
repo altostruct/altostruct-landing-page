@@ -37,7 +37,7 @@ const IndexPage = () => {
         }
       }
 
-      Stockholm: file(relativePath: { eq: "assets/stockholm.png" }) {
+      Stockholm: file(relativePath: { eq: "assets/stockholm.jpeg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -351,7 +351,7 @@ const IndexPage = () => {
           <div className="content p-1 m-auto pb-64 md:pb-96">
             <div className="pb-96">
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32 ">
-                <div className="float-left w-10/12">
+                <div className="float-left w-11/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Tendium
                   </h1>
@@ -361,58 +361,40 @@ const IndexPage = () => {
                     customer portal using GraphQL and Amazon web services.
                   </p>
                 </div>
-                <div className="float-left flex m-auto w-0 md:2/12">
-                  <img
-                    className="w-full"
-                    src="https://tendium.ai/se/wp-content/uploads/sites/3/2020/05/Tendium_logo.svg"
-                  ></img>
-                </div>
               </div>
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32 ">
-                <div className="float-left w-10/12">
+                <div className="float-left w-11/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Foodfacts
                   </h1>
                   <p className="text-gray-700 text-sm md:text-lg">
-                    Intelligent procurement watching system using AI to find
-                    perfect matches for you. Altostruct helped build the
-                    customer portal using GraphQL and Amazon web services.
+                    Stockholm based startup focusing on providing product data
+                    using AI. Altostruct helped out build their mobile
+                    application as well as their backend API.
                   </p>
-                </div>
-                <div className="float-left flex m-auto w-0 md:2/12">
-                  <img
-                    className="w-full"
-                    src="https://images.squarespace-cdn.com/content/v1/5e1f7c9f5befaa48195e7825/1615794292296-8LL1XGQ1QXZH1SN0KS5S/ke17ZwdGBToddI8pDm48kP0L8Sp7uR8r-tv67D-_eZV7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0pF-iG7-huG6Vk1ZMWheK73oFQ5L1c6PuyqM3piR2oKj6FE9aj_z8a04KUMQJPlJlg/FoodFacts-screens-white.png?format=1500w"
-                  ></img>
                 </div>
               </div>
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32  ">
-                <div className="float-left w-10/12">
+                <div className="float-left w-11/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Stella Polaris
                   </h1>
                   <p className="text-gray-700 text-sm md:text-lg">
-                    Intelligent procurement watching system using AI to find
-                    perfect matches for you. Altostruct helped build the
-                    customer portal using GraphQL and Amazon web services.
+                    MedTech startup who goals is to provide consumers a
+                    healthier life using big-data and AI. Altostruct helped with
+                    deploying the model in a scalable way.
                   </p>
-                </div>
-                <div className="float-left flex m-auto w-0 md:2/12">
-                  <img
-                    className="w-full"
-                    src="https://i2.wp.com/stellapolaris.ai/wp-content/uploads/2018/12/Logo-v6-e1543856647483.png?fit=70%2C71&ssl=1"
-                  ></img>
                 </div>
               </div>
               <div className="overflow-auto flex  shadow-2xl p-10 hover:shadow-md">
-                <div className="float-left w-10/12">
+                <div className="float-left w-11/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Nrlyze
                   </h1>
                   <p className="text-gray-700 text-sm md:text-lg">
-                    Intelligent procurement watching system using AI to find
-                    perfect matches for you. Altostruct helped build the
-                    customer portal using GraphQL and Amazon web services.
+                    Startup who looks at how to efficiently as possible heat up
+                    houses. Altostruct helped Nrlyze to build a customer portal
+                    as well as an API to expose their data to collaborators.
                   </p>
                 </div>
                 <div className="float-left flex m-auto w-0 md:2/12">
@@ -468,7 +450,7 @@ const IndexPage = () => {
                   </p>
                 </div>
               </div>
-              <div className="absolute transform -translate-x-1/2 -translate-y-full left-1/2 w-1/3 bg-red-200 bottom-3">
+              <div className="absolute transform -translate-x-1/2 -translate-y-full left-1/2 w-1/3 bg-red-200 bottom-0">
                 <Img
                   className="m-auto"
                   style={{ width: "100%", maxHeight: "50vh" }}
