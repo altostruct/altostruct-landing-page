@@ -9,6 +9,7 @@ import VisibilitySensor from "react-visibility-sensor"
 import Reveal from "react-reveal/Reveal"
 import { Arrow } from "../components/Arrow"
 import { KeyIcon } from "../components/KeyIcon"
+import { Footer } from "../components/Footer"
 
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
@@ -105,7 +106,7 @@ const IndexPage = () => {
           <div className="flex col-span-2 md:col-span-1">
             <div className="m-auto">
               <h1 className="text-6xl font-semibold mb-6">{props.title}</h1>
-              <p className="text-xl">{props.description}</p>
+              <p className="font-thin">{props.description}</p>
             </div>
           </div>
         </div>
@@ -142,7 +143,7 @@ const IndexPage = () => {
                   What do you mean by "startup consulting"? Ordinary consulting
                   agencies work great for huge corporations having long-term
                   projects. However, many startups are not able to make such a
-                  commitment. Therefore we thought we should offer an
+                  commitment. Therefore, we thought we should offer an
                   alternative.
                 </p>
               </div>
@@ -186,7 +187,7 @@ const IndexPage = () => {
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Emilio Gustavsson, co-founder
+                Emilio Gustavsson, COO, co-founder
               </small>
             </div>
           </div>
@@ -195,11 +196,12 @@ const IndexPage = () => {
           <div className="content flex m-auto">
             <div className="w-8/12 float-left">
               <h1 className="text-3xl mb-2 md:text-7xl font-bold">
-                Our three <i>key features...</i>
+                Our three <i>key attributes...</i>
               </h1>
-              <p>
-                We of course offers more than these but it sounds a lot nicer
-                when there is only three
+              <p className="font-thin">
+                Of course, we offer a lot more than just these three attributes,
+                but for some reason, bigger companies always list things in
+                three, so we decided to do the same.
               </p>
             </div>
             <div className="w-4/12 animate-ping hover: flex transform rotate-45 float-left">
@@ -214,14 +216,9 @@ const IndexPage = () => {
           title="Flexible pricing"
           description={
             <>
-              We offer a flexible solution tailored to your needs. During
-              periods before revenue, payment can be{" "}
-              <u>
-                <b>reduced by up to 50%</b>
-              </u>{" "}
-              to ensure that we reach the market in time. At Altostruct we
-              believe in you idéa and are proud to say that we small part
-              partners with the majority of our projects.
+              We offer flexible solutions for payment tailored to your needs. At
+              Altostruct we believe in you idéa and are proud to say that we are
+              part-owners in the majority of our clients.
             </>
           }
         ></NumberPage>
@@ -230,11 +227,8 @@ const IndexPage = () => {
           title="Dedicated developers"
           description={
             <>
-              Unlike many other consulting agencies,{" "}
-              <u>
-                <b>we are also a startup.</b>
-              </u>
-              . which means that we can relate to the long nights, the important
+              Unlike many other consulting agencies, we are also a startup,
+              which means that we can relate to the long nights, the important
               meetings and the passion for the product. At Altostruct, we live,
               breathe, and love the startup way of working.
             </>
@@ -252,7 +246,6 @@ const IndexPage = () => {
             </>
           }
         ></NumberPage>
-
         <div className="fullpage">
           <div className="content m-auto">
             <div className="w-full">
@@ -269,17 +262,16 @@ const IndexPage = () => {
                 <Reveal>
                   "All of us at Altostruct are from the startup world and love
                   the energetic and agile process that is required to get your
-                  product to the market in time."
+                  product to market in time."
                 </Reveal>
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Erik Rehn, co-founder
+                Erik Rehn, CTO, co-founder
               </small>
             </div>
           </div>
         </div>
-
         <div className="h-24 w-full"></div>
         <div className="fullpage" style={{ height: "130vh" }}>
           <VisibilitySensor scrollDelay={1} partialVisibility>
@@ -293,9 +285,9 @@ const IndexPage = () => {
                           Our tech stack?
                         </h1>
                         <p className="md:w-96 m-auto">
-                          Here are some of technologies we work with on a daily
-                          basis. We of course work with a lot more but I did not
-                          have the time to find icons for all.
+                          Here are some of the technologies we work with on a
+                          daily basis. We work with a lot more but I did not
+                          have time to find icons for all
                         </p>
                       </div>
                     </div>
@@ -326,16 +318,16 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full text-6xl md:text-8xl font-bold md:text-1xl text-center mt-10">
+            <div className="w-full pb-10 text-6xl md:text-8xl font-bold md:text-1xl text-center mt-10">
               <i>
                 <p>
                   listen <br></br>to our <br></br>customers
                 </p>
               </i>
             </div>
-            <p className="text-right pb-20">
+            {/* <p className="text-right pb-20">
               * they are not made up we promise
-            </p>
+            </p> */}
             <div className="absolute bottom-10 text-6xl left-1/2 transform -translate-x-1/2">
               <div className="animate-bounce">
                 <div className="animate-pulse">
@@ -348,54 +340,82 @@ const IndexPage = () => {
         </div>
 
         <div className="fullpage">
-          <div className="content p-1 m-auto pb-64 md:pb-96">
+          <div className="content p-1 m-auto">
             <div className="pb-96">
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32 ">
-                <div className="float-left w-11/12">
+                <div className="float-left w-12/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Tendium
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg">
-                    Intelligent procurement watching system using AI to find
-                    perfect matches for you. Altostruct helped build the
-                    customer portal using GraphQL and Amazon web services.
+                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                    Intelligent procurement watching system that uses AI to find
+                    perfect matches for you. Altostruct was there from day one.
+                    We helped build and design the customer portal using React,
+                    GraphQL and Amazon Web Services.
                   </p>
+                  <a
+                    target="_blank"
+                    href="https://www.tendeye.com/"
+                    className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
+                  >
+                    Link to project
+                  </a>
                 </div>
               </div>
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32 ">
-                <div className="float-left w-11/12">
+                <div className="float-left w-12/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Foodfacts
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg">
-                    Stockholm based startup focusing on providing product data
-                    using AI. Altostruct helped out build their mobile
-                    application as well as their backend API.
+                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                    Startup that provides better product data using AI.
+                    Altostruct helped build their IOS/Android application as
+                    well as their REST API. We used Amazon Web Services along
+                    with NodeJS for this project.
                   </p>
+                  <a
+                    target="_blank"
+                    href="https://apps.apple.com/se/app/foodfacts/id1551098296"
+                    className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
+                  >
+                    Link to project
+                  </a>
                 </div>
               </div>
               <div className="overflow-auto flex shadow-2xl p-10 hover:shadow-md mb-32  ">
-                <div className="float-left w-11/12">
+                <div className="float-left w-12/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Stella Polaris
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg">
-                    MedTech startup who goals is to provide consumers a
-                    healthier life using big-data and AI. Altostruct helped with
-                    deploying the model in a scalable way.
+                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                    MedTech startup whose primary goal is to help customers
+                    achieve a healthier lifestyle using big-data and AI. We
+                    helped deploy their AI models in a scalable way.
                   </p>
+                  <a
+                    href="https://stellapolaris.ai/"
+                    className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
+                  >
+                    Link to project
+                  </a>
                 </div>
               </div>
               <div className="overflow-auto flex  shadow-2xl p-10 hover:shadow-md">
-                <div className="float-left w-11/12">
+                <div className="float-left w-12/12">
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Nrlyze
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg">
-                    Startup who looks at how to efficiently as possible heat up
-                    houses. Altostruct helped Nrlyze to build a customer portal
+                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                    Startup that strives to heat up houses as efficiently as
+                    possible. Altostruct helped Nrlyze build a customer portal
                     as well as an API to expose their data to collaborators.
                   </p>
+                  <a
+                    href="http://nrlyze-site.website-eu-central-1.linodeobjects.com/login"
+                    className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
+                  >
+                    Link to project
+                  </a>
                 </div>
                 <div className="float-left flex m-auto w-0 md:2/12">
                   <img
@@ -405,8 +425,6 @@ const IndexPage = () => {
                 </div>
               </div>
             </div>
-            <div className="h-9 w-full"></div>
-            <div className="h-96 w-full"></div>
           </div>
 
           {/* <div className="fullpage">
@@ -441,12 +459,13 @@ const IndexPage = () => {
             <div className="m-auto mt-16 content h-96 md:h-screen ">
               <div className="flex text-white">
                 <div className="m-auto">
-                  <h1 className="text-3xl md:text-6xl font-extrabold">
+                  <h1 className="text-3xl md:text-6xl mb-6 font-extrabold">
                     Located in <br></br>central Stockholm
                   </h1>
-                  <p>
-                    Building you application right next to you. Make sure you
-                    have the located where the towns{" "}
+                  <p className="text-lg">
+                    We are located in central Stockholm. It is always easy to
+                    get in touch with us. Do not hesitate to email or give us a
+                    call! Or better yet, how about a small fika? 🍪
                   </p>
                 </div>
               </div>
@@ -459,8 +478,8 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
-          <div className="mt-20"></div>
-          <div className="fullpage">
+
+          {/* <div className="fullpage">
             <div>
               <div className="text-white  absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
                 <h1 className="text-4xl md:text-8xl mb-10 font-extrabold">
@@ -476,6 +495,8 @@ const IndexPage = () => {
               </div>
             </div>
           </div>
+          <Footer /> */}
+          <Footer />
         </div>
       </div>
     </>

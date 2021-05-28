@@ -6,8 +6,8 @@ export const Arrow = () => {
       focusable="false"
       style={{ transform: "rotate(90deg)" }}
       data-icon="double-right"
-      width="1em"
-      height="1em"
+      width="0.75em"
+      height="0.75em"
       fill="currentColor"
       aria-hidden="true"
     >
