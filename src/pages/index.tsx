@@ -106,7 +106,7 @@ const IndexPage = () => {
           <div className="flex col-span-2 md:col-span-1">
             <div className="m-auto">
               <h1 className="text-6xl font-semibold mb-6">{props.title}</h1>
-              <p className="font-thin">{props.description}</p>
+              <p className="">{props.description}</p>
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@ const IndexPage = () => {
               <h1 className="text-3xl mb-2 md:text-7xl font-bold">
                 Our three <i>key attributes...</i>
               </h1>
-              <p className="font-thin">
+              <p className="">
                 Of course, we offer a lot more than just these three attributes,
                 but for some reason, bigger companies always list things in
                 three, so we decided to do the same.
