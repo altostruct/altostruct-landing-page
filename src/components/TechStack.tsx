@@ -90,6 +90,7 @@ function TechStack({ cards }: IProps) {
                 <img
                   className="unselectable m-auto"
                   src={cards[i].image}
+                  alt={cards[i].title}
                   style={{
                     height: "100%",
                     objectFit: "contain",

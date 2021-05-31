@@ -10,7 +10,7 @@ import Reveal from "react-reveal/Reveal"
 import { Arrow } from "../components/Arrow"
 import { KeyIcon } from "../components/KeyIcon"
 import { Footer } from "../components/Footer"
-import SEO from "src/components/SEO"
+import SEO from "../components/SEO"
 
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
@@ -119,7 +119,7 @@ const IndexPage = () => {
     <>
       <SEO
         title="Altostruct - Startup consulting"
-        description="Cloud and web consulting for startups and innovative companies"
+        description="Cloud and web consulting for startups based in Stockholm"
         lang="en"
       />
       <div className="fullpage-container">
@@ -169,7 +169,10 @@ const IndexPage = () => {
         <div className="fullpage">
           <div className="content m-auto">
             <div className="w-full">
-              <a href="https://www.linkedin.com/in/emilio-gustavsson-737983147/">
+              <a
+                rel="noopener"
+                href="https://www.linkedin.com/in/emilio-gustavsson-737983147/"
+              >
                 <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2  mb-10 ">
                   <Img
                     className="m-auto overflow-hidden rounded-full  "
@@ -254,7 +257,10 @@ const IndexPage = () => {
         <div className="fullpage">
           <div className="content m-auto">
             <div className="w-full">
-              <a href="https://www.linkedin.com/in/erik-rehn-b12556194/">
+              <a
+                rel="noopener"
+                href="https://www.linkedin.com/in/erik-rehn-b12556194/"
+              >
                 <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
                   <Img
                     className="m-auto overflow-hidden rounded-full  "
@@ -352,13 +358,14 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Tendium
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                  <p className="text-gray-900 text-sm md:text-lg mb-10">
                     Intelligent procurement watching system that uses AI to find
                     perfect matches for you. Altostruct was there from day one.
                     We helped build and design the customer portal using React,
                     GraphQL and Amazon Web Services.
                   </p>
                   <a
+                    rel="noopener"
                     target="_blank"
                     href="https://www.tendeye.com/"
                     className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
@@ -372,13 +379,14 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Foodfacts
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                  <p className="text-gray-900 text-sm md:text-lg mb-10">
                     Startup that provides better product data using AI.
                     Altostruct helped build their IOS/Android application as
                     well as their REST API. We used Amazon Web Services along
                     with NodeJS for this project.
                   </p>
                   <a
+                    rel="noopener"
                     target="_blank"
                     href="https://apps.apple.com/se/app/foodfacts/id1551098296"
                     className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
@@ -392,12 +400,13 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Stella Polaris
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                  <p className="text-gray-900 text-sm md:text-lg mb-10">
                     MedTech startup whose primary goal is to help customers
                     achieve a healthier lifestyle using big-data and AI. We
                     helped deploy their AI models in a scalable way.
                   </p>
                   <a
+                    rel="noopener"
                     href="https://stellapolaris.ai/"
                     className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
                   >
@@ -410,12 +419,13 @@ const IndexPage = () => {
                   <h1 className="text-5xl md:text-7xl mb-10 font-bold">
                     Nrlyze
                   </h1>
-                  <p className="text-gray-700 text-sm md:text-lg mb-10">
+                  <p className="text-gray-900 text-sm md:text-lg mb-10">
                     Startup that strives to heat up houses as efficiently as
                     possible. Altostruct helped Nrlyze build a customer portal
                     as well as an API to expose their data to collaborators.
                   </p>
                   <a
+                    rel="noopener"
                     href="http://nrlyze-site.website-eu-central-1.linodeobjects.com/login"
                     className="w-full md:w-auto text-center bg-blue-500 hover:scale-110 transform transition float-right text-white p-3 rounded"
                   >
