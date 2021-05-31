@@ -10,6 +10,7 @@ import Reveal from "react-reveal/Reveal"
 import { Arrow } from "../components/Arrow"
 import { KeyIcon } from "../components/KeyIcon"
 import { Footer } from "../components/Footer"
+import SEO from "src/components/SEO"
 
 const IndexPage = () => {
   const query = useStaticQuery(graphql`
@@ -116,7 +117,11 @@ const IndexPage = () => {
 
   return (
     <>
-      {/* <SEO title="Home" /> */}
+      <SEO
+        title="Altostruct - Startup consulting"
+        description="Cloud and web consulting for startups and innovative companies"
+        lang="en"
+      />
       <div className="fullpage-container">
         <div className="fullpage w-full h-full">
           <div className="absolute w-full p-4 md:p-0 md:w-1/3 left-1/2 transform -translate-x-1/2 bottom-1/3">

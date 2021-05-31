@@ -5,8 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.altostruct.com`,
-    title: `Altostruct`,
-    description: `Consulting for the cloud`,
+    title: `Altostruct - Startup consulting`,
+    description: `Cloud and web consulting for startups and innovative companies`,
     author: `Erik Rehn`,
   },
   plugins: [
