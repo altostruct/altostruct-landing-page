@@ -225,8 +225,8 @@ const IndexPage = () => {
           description={
             <>
               We offer flexible solutions for payment tailored to your needs. At
-              Altostruct we believe in you idéa and are proud to say that we are
-              part-owners in the majority of our clients.
+              Altostruct we believe in your idéa and are proud to say that we
+              are part-owners in the majority of our clients.
             </>
           }
         ></NumberPage>
