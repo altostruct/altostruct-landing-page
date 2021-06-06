@@ -51,7 +51,7 @@ export const Footer = () => {
             <h2 className="text-4xl md:text-5xl font-sans  mb-10 underline">
               core team
             </h2>
-            {card("Erik Rehn", "CTO", "erik.rehn@gmail.com")}
+            {card("Erik Rehn", "CEO", "erik.rehn@gmail.com")}
             {card("Emilio Gustavsson", "COO", "emilio.gustavsson@gmail.com")}
             {card("Gustav Kasche", "Lead Developer", "gustav.kasche@gmail.com")}
           </div>

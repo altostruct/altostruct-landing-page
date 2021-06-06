@@ -278,7 +278,7 @@ const IndexPage = () => {
               </p>
               <br></br>
               <small className="uppercase float-right">
-                Erik Rehn, CTO, co-founder
+                Erik Rehn, CEO, co-founder
               </small>
             </div>
           </div>
