@@ -128,7 +128,7 @@ const IndexPage = () => {
   return (
     <>
       <SEO
-        title="Altostruct - Startup consulting"
+        title="Startup consulting for cloud and web"
         description="Stockholm based cloud and web consulting for startups"
         lang="en"
       />
