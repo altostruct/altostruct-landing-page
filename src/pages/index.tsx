@@ -132,8 +132,8 @@ const IndexPage = () => {
         description="Stockholm based cloud and web consulting for startups"
         lang="en"
       />
-      <span className=" bg-white rounded-b-lg  border fixed z-20 left-1/2 transform -translate-x-1/2 p-1 ">
-        <div className="w-24 ">
+      <span className="w-screen flex md:w-auto bg-white rounded-b-lg  border fixed z-20 left-1/2 transform -translate-x-1/2 p-1 ">
+        <div className="w-24 m-auto ">
           <Logo></Logo>
         </div>
       </span>
@@ -309,13 +309,13 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="h-24 w-full"></div>
+        <div className="h-56 w-full"></div>
         <div className="fullpage" style={{ height: "130vh" }}>
-          <VisibilitySensor scrollDelay={1} partialVisibility>
+          <VisibilitySensor delayedCall scrollDelay={1000} partialVisibility>
             {({ isVisible }) => {
               if (isVisible) {
                 return (
-                  <div className="mt-2 md:pt-10">
+                  <div className="mt-10 md:pt-10">
                     <div className="w-screen text-center flex -mb-64">
                       <div className="w-full p-10  m-auto">
                         <h1 className="text-7xl pb-2 font-extrabold">
