@@ -23,6 +23,16 @@ const IndexPage = () => {
         }
       }
 
+      BackgroundDust: file(
+        relativePath: { eq: "assets/background-dust.jpeg" }
+      ) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
       Emilio: file(relativePath: { eq: "assets/emilio.jpeg" }) {
         childImageSharp {
           fluid(quality: 100) {
@@ -119,19 +129,35 @@ const IndexPage = () => {
     <>
       <SEO
         title="Altostruct - Startup consulting"
-        description="Cloud and web consulting for startups based in Stockholm"
+        description="Stockholm based cloud and web consulting for startups"
         lang="en"
       />
-      <div className="fullpage-container">
-        <div className="fullpage w-full h-full">
-          <div className="absolute w-full p-4 md:p-0 md:w-1/3 left-1/2 transform -translate-x-1/2 bottom-1/3">
-            <div className="w-full">
-              <Logo></Logo>
+      <span className=" bg-white rounded-b-lg  border fixed z-20 left-1/2 transform -translate-x-1/2 p-1 ">
+        <div className="w-24 ">
+          <Logo></Logo>
+        </div>
+      </span>
+      <div className="fixed z-10 fullpage-container">
+        <div className="fullpage p-4 w-full h-full">
+          <div className="m-auto ">
+            <div>
+              <Reveal>
+                <div className="flex absolute w-full h-full top-0 left-0">
+                  <Img
+                    className="opacity-50 md:opacity-100 m-auto mt-0 w-96 h-96"
+                    fluid={query.BackgroundDust.childImageSharp.fluid}
+                  ></Img>
+                </div>
+              </Reveal>
+              <div className="w-full h-full relative ">
+                <h1 className="text-5xl text-center md:text-7xl font-extrabold ">
+                  Consulting for startups <br></br> and innovative companies
+                </h1>
+                <p className="mt-10 text-xl text-center font-mono">
+                  Stockholm based cloud and web consulting agency cloud
+                </p>
+              </div>
             </div>
-            <br></br>
-            <p className="text-center font-mono">
-              Cloud and web consulting for startups and innovative companies
-            </p>
           </div>
         </div>
         <div className="fullpage mb-10">
