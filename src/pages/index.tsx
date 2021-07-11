@@ -7,6 +7,8 @@ import TechStack from "../components/TechStack"
 import VisibilitySensor from "react-visibility-sensor"
 // @ts-ignore: No package for type
 import Reveal from "react-reveal/Reveal"
+// @ts-ignore: No package for type
+import Slide from "react-reveal/Slide"
 import { Arrow } from "../components/Arrow"
 import { KeyIcon } from "../components/KeyIcon"
 import { Footer } from "../components/Footer"
@@ -50,6 +52,14 @@ const IndexPage = () => {
       }
 
       Stockholm: file(relativePath: { eq: "assets/stockholm.jpeg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      Coffee: file(relativePath: { eq: "assets/coffee.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -124,7 +134,48 @@ const IndexPage = () => {
       </div>
     )
   }
+  interface ImageWithTitleProps {
+    title: string
+    description: React.ReactNode
+    imageSrc: any
+    reverse?: boolean
+  }
 
+  const ImageWithTitle = (props: ImageWithTitleProps) => {
+    let arr = [
+      <div className="col-span-2 md:col-span-1 flex z-20">
+        <div className="m-auto">
+          <Slide right={props.reverse} left={!props.reverse}>
+            <h1 className="text-5xl md:text-7xl font-bold mb-2">
+              {props.title}
+            </h1>
+            <p className="text-md md:text-xl">{props.description}</p>
+          </Slide>
+        </div>
+      </div>,
+      <div className="opacity-100 order-1 md:order-none w-full md:opacity-100 col-span-2 md:col-span-1 transform -translate-y-3">
+        <Slide right={!props.reverse} left={props.reverse}>
+          <Img
+            className="h-64 m-auto md:h-full"
+            style={{
+              maxHeight: "50vh",
+            }}
+            fluid={props.imageSrc}
+          />
+        </Slide>
+      </div>,
+    ]
+
+    if (props.reverse) arr = arr.reverse()
+
+    return (
+      <div className="fullpage mb-10">
+        <div className="grid gap-10 gap-y-10 grid-cols-2 content m-auto">
+          {arr}
+        </div>
+      </div>
+    )
+  }
   return (
     <>
       <SEO
@@ -138,7 +189,7 @@ const IndexPage = () => {
         </div>
       </span>
       <div className="fixed z-10 fullpage-container">
-        <div className="fullpage p-4 w-full h-full">
+        <div className="fullpage p-4 w-full h-4/5">
           <div className="m-auto ">
             <div>
               <Reveal>
@@ -160,41 +211,50 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="fullpage mb-10">
-          <div className="grid grid-cols-2 content m-auto">
-            <div className="col-span-1 flex z-20">
-              <div
-                className="m-auto"
-                style={{ transform: "translate(7.5%, 0%)" }}
-              >
-                <h1 className="text-5xl md:text-7xl font-bold mb-2">
-                  Startup Consulting
-                </h1>
-                <p className="text-md md:text-xl">
-                  What do you mean by "startup consulting"? Ordinary consulting
-                  agencies work great for huge corporations having long-term
-                  projects. However, many startups are not able to make such a
-                  commitment. Therefore, we thought we should offer an
-                  alternative.
-                </p>
-              </div>
-            </div>
 
-            <div className="opacity-50 md:opacity-100 col-span-1 transform -translate-y-3">
-              <Img
-                style={{
-                  width: "100%",
-                  maxHeight: "50vh",
-                  transform: "translate(-7.5%, 0%)",
-                }}
-                fluid={query.CloudImage.childImageSharp.fluid}
-              />
-            </div>
-          </div>
-        </div>
+        <ImageWithTitle
+          description={
+            <>
+              What do you mean by "startup consulting"? Ordinary consulting
+              agencies work great for huge corporations having long-term
+              projects. However, many startups are not able to make such a
+              commitment. Therefore, we thought we should offer an alternative.
+            </>
+          }
+          title="Startup Consulting"
+          imageSrc={query.CloudImage.childImageSharp.fluid}
+        ></ImageWithTitle>
+
+        <ImageWithTitle
+          description={
+            <>
+              Our focus is on web applications based on cloud and scalable
+              infrastructure, the perfect match for quickly growing companies!
+              Our team consists of new talent from KTH mixed with senior
+              developers, giving your company a mix of new modern thoughts
+              combined with expertise that comes with experience.
+            </>
+          }
+          reverse
+          title="Altowhat?"
+          imageSrc={query.Coffee.childImageSharp.fluid}
+        ></ImageWithTitle>
+
+        <ImageWithTitle
+          description={
+            <>
+              Altostruct is a cloud consulting agency focusing on startups.
+              Since 2020 we have worked with many different companies, helping
+              them build everything from mobile apps to AI deployment models.
+            </>
+          }
+          title="What do you guys do?"
+          imageSrc={query.Coffee.childImageSharp.fluid}
+        ></ImageWithTitle>
+
         <div className="fullpage">
           <div className="content m-auto">
-            <div className="w-full">
+            <div className="w-full h-auto md:h-96">
               <a
                 rel="noopener"
                 href="https://www.linkedin.com/in/emilio-gustavsson-737983147/"
@@ -226,6 +286,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
+
         <div className="h-1/2 fullpage mt-12 mb-12">
           <div className="content flex m-auto">
             <div className="w-8/12 float-left">
@@ -315,7 +376,7 @@ const IndexPage = () => {
             {({ isVisible }) => {
               if (isVisible) {
                 return (
-                  <div className="mt-10 md:pt-10">
+                  <div id="techstack" className="mt-10 md:pt-10">
                     <div className="w-screen text-center flex -mb-64">
                       <div className="w-full p-10  m-auto">
                         <h1 className="text-7xl pb-2 font-extrabold">
