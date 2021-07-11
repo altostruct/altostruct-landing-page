@@ -66,6 +66,15 @@ const IndexPage = () => {
           }
         }
       }
+
+      Team: file(relativePath: { eq: "assets/team.jpg" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
       GraphQL: file(relativePath: { eq: "assets/graphql.png" }) {
         childImageSharp {
           fluid(quality: 100) {
@@ -228,6 +237,19 @@ const IndexPage = () => {
         <ImageWithTitle
           description={
             <>
+              Altostruct is a cloud consulting agency focusing on startups.
+              Since 2020 we have worked with many different companies, helping
+              them build everything from mobile apps to AI deployment models.
+            </>
+          }
+          reverse
+          title="What are we?"
+          imageSrc={query.Team.childImageSharp.fluid}
+        ></ImageWithTitle>
+
+        <ImageWithTitle
+          description={
+            <>
               Our focus is on web applications based on cloud and scalable
               infrastructure, the perfect match for quickly growing companies!
               Our team consists of new talent from KTH mixed with senior
@@ -235,20 +257,7 @@ const IndexPage = () => {
               combined with expertise that comes with experience.
             </>
           }
-          reverse
           title="Altowhat?"
-          imageSrc={query.Coffee.childImageSharp.fluid}
-        ></ImageWithTitle>
-
-        <ImageWithTitle
-          description={
-            <>
-              Altostruct is a cloud consulting agency focusing on startups.
-              Since 2020 we have worked with many different companies, helping
-              them build everything from mobile apps to AI deployment models.
-            </>
-          }
-          title="What do you guys do?"
           imageSrc={query.Coffee.childImageSharp.fluid}
         ></ImageWithTitle>
 
