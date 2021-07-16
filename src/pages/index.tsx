@@ -135,7 +135,9 @@ const IndexPage = () => {
           </div>
           <div className="flex col-span-2 md:col-span-1">
             <div className="m-auto">
-              <h1 className="text-6xl font-semibold mb-6">{props.title}</h1>
+              <h1 className="text-6xl md:text-7xl font-bold mb-4 gradient-text">
+                {props.title}
+              </h1>
               <p className="">{props.description}</p>
             </div>
           </div>
@@ -227,7 +229,7 @@ const IndexPage = () => {
               What do you mean by "startup consulting"? Ordinary consulting
               agencies work great for huge corporations having long-term
               projects. However, many startups are not able to make such a
-              commitment. Therefore, we thought we should offer an alternative.
+              commitment. Therefore, we thought we would offer an alternative.
             </>
           }
           title="Startup Consulting"
