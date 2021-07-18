@@ -128,7 +128,7 @@ const IndexPage = () => {
       <div className="fullpage h-3/4">
         <div className="grid grid-cols-2 content m-auto">
           <div
-            className="col-span-2 absolute transform scale-90 -translate-y-10 md:-translate-y-0 opacity-10 md:opacity-100 md:relative font-extrabold md:col-span-1"
+            className="col-span-2 md:text-right md:pr-12 absolute transform scale-90 -translate-y-10 md:-translate-y-0 opacity-10 md:opacity-100 md:relative font-extrabold md:col-span-1"
             style={{ fontSize: "50vh" }}
           >
             <Reveal>{props.number}</Reveal>
