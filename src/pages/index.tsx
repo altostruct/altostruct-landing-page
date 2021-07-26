@@ -206,13 +206,13 @@ const IndexPage = () => {
               <Reveal>
                 <div className="flex absolute w-full h-full top-0 left-0">
                   <Img
-                    className="opacity-50 md:opacity-100 m-auto mt-0 w-96 h-96"
+                    className="opacity-50 md:opacity-80 m-auto mt-0 w-96 h-96"
                     fluid={query.BackgroundDust.childImageSharp.fluid}
                   ></Img>
                 </div>
               </Reveal>
               <div className="w-full h-full relative ">
-                <h1 className="text-5xl text-center md:text-7xl font-extrabold ">
+                <h1 className="text-5xl mt-32 text-center md:text-7xl font-extrabold ">
                   Consulting for startups <br></br> and innovative companies
                 </h1>
                 <p className="mt-10 text-xl text-center font-mono">
