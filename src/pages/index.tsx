@@ -216,7 +216,7 @@ const IndexPage = () => {
                   Consulting for startups <br></br> and innovative companies
                 </h1>
                 <p className="mt-10 text-xl text-center font-mono">
-                  Stockholm based cloud and web consulting agency cloud
+                  Stockholm based cloud and web consulting agency
                 </p>
               </div>
             </div>
