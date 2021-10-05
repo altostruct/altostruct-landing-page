@@ -1,0 +1,38 @@
+.topbar {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .content {
+    flex-basis: 50rem;
+    flex-grow: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    padding: 1em;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .brand {
+    display: grid;
+    place-items: center;
+  }
+}

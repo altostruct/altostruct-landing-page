@@ -1,0 +1,17 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --primary-color: royalblue;
+}
+
+html,
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+}
