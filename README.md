@@ -1,3 +1,31 @@
+# Altostruct landing page
+
+_woop woop_
+
+## Todo
+
+---
+
+- Hemsida
+  - Header
+  - Språkväljare
+  - Presentation section
+  - Who are we?
+  - Our projects
+  - What you will get from us
+  - The faces of Altostruct
+  - Contact us
+  - Footer
+- Jobba hos oss
+  - Beskrivande text
+  - Formulär
+- Projekt
+  - Nrlyze
+  - Saluto
+  - Odyssey
+  - Tendium
+  - Foodfacts
+
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
     <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
