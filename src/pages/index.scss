@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.fakeimg {
+  grid-row: 1 / 2;
+  grid-column: 4 / 8;
+  background: linear-gradient(
+    135deg,
+    rgba(65, 105, 225, 0.25),
+    rgba(128, 0, 128, 0.25)
+  );
+}
