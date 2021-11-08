@@ -17,7 +17,6 @@
   position: relative;
   display: flex;
   padding-bottom: 10vh;
-  margin-top: 10vh;
 
   @media only screen and (max-width: 600px) {
     min-height: 40vh;
@@ -41,10 +40,10 @@
 }
 
 .gradient-text {
-  background: linear-gradient(-45deg, #414edf, black, #1420a5, black);
+  background: black;
   background-size: 400% 400%;
 
-  animation: shinyGradient 5s ease infinite;
+  animation: shinyGradient 8s ease infinite;
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -59,10 +58,10 @@
 
 .content {
   width: 100vw;
-  max-width: 60rem;
+  max-width: 65rem;
 
+  padding: 2vw;
   @media only screen and (max-width: 600px) {
-    padding: 5vh;
   }
 }
 

@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
 import Logo from "../components/Logo"
+import Background from "../assets/background.svg"
 import "../styles/index.scss"
 import Img from "gatsby-image"
 import TechStack from "../components/TechStack"
@@ -14,76 +15,19 @@ import { KeyIcon } from "../components/KeyIcon"
 import { Footer } from "../components/Footer"
 import SEO from "../components/SEO"
 
-const IndexPage = () => {
-  const query = useStaticQuery(graphql`
-    query ContactImage {
-      CloudImage: file(relativePath: { eq: "assets/cloud.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+import { useTranslation } from "gatsby-plugin-react-i18next"
 
-      BackgroundDust: file(
-        relativePath: { eq: "assets/background-dust.jpeg" }
-      ) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+const OurProjects = () => {
+  return (
+    <div>
+      <div className="w-1/2"></div>
+    </div>
+  )
+}
 
-      Emilio: file(relativePath: { eq: "assets/emilio.jpeg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      Erik: file(relativePath: { eq: "assets/erik.jpeg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      Stockholm: file(relativePath: { eq: "assets/stockholm.jpeg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      Coffee: file(relativePath: { eq: "assets/coffee.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      Team: file(relativePath: { eq: "assets/team.jpg" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-
-      GraphQL: file(relativePath: { eq: "assets/graphql.png" }) {
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const IndexPage = (props: any) => {
+  const query = props.data
+  const { t } = useTranslation()
 
   const cards = [
     {
@@ -126,7 +70,7 @@ const IndexPage = () => {
   const NumberPage = (props: NumberPageProps) => {
     return (
       <div className="fullpage h-3/4">
-        <div className="grid grid-cols-2 content m-auto">
+        <div className="grid grid-cols-2 content align-middle m-auto">
           <div
             className="col-span-2 md:text-right md:pr-12 absolute transform scale-90 -translate-y-10 md:-translate-y-0 opacity-10 md:opacity-100 md:relative font-extrabold md:col-span-1"
             style={{ fontSize: "50vh" }}
@@ -148,121 +92,130 @@ const IndexPage = () => {
   interface ImageWithTitleProps {
     title: string
     description: React.ReactNode
-    imageSrc: any
+    // imageSrc: any
     reverse?: boolean
   }
 
   const ImageWithTitle = (props: ImageWithTitleProps) => {
     let arr = [
-      <div className="col-span-2 md:col-span-1 flex z-20">
+      <div className="col-span-2 pb-4 md:col-span-2 flex z-20">
         <div className="m-auto">
           <Slide right={props.reverse} left={!props.reverse}>
-            <h1 className="text-5xl md:text-7xl font-bold mb-2">
+            <h1 className="text-6xl md:text-7xl font-bold mb-4 gradient-text">
               {props.title}
             </h1>
-            <p className="text-md md:text-xl">{props.description}</p>
+            <p className="text-md md:text-lg ">{props.description}</p>
           </Slide>
         </div>
       </div>,
-      <div className="opacity-100 order-1 md:order-none w-full md:opacity-100 col-span-2 md:col-span-1 transform -translate-y-3">
-        <Slide right={!props.reverse} left={props.reverse}>
-          <Img
-            className="h-64 m-auto md:h-full"
-            style={{
-              maxHeight: "50vh",
-            }}
-            fluid={props.imageSrc}
-          />
-        </Slide>
-      </div>,
+      // <div className="opacity-100 m-auto order-1 md:order-none w-full md:opacity-100 col-span-2 md:col-span-2 ">
+      //   <Slide right={!props.reverse} left={props.reverse}>
+      //     <Img
+      //       className="h-64 rounded-lg m-auto md:h-full"
+      //       style={{
+      //         maxHeight: "50vh",
+      //       }}
+      //       fluid={props.imageSrc}
+      //     />
+      //   </Slide>
+      // </div>,
     ]
 
     if (props.reverse) arr = arr.reverse()
 
     return (
       <div className="fullpage mb-10">
-        <div className="grid gap-10 gap-y-10 grid-cols-2 content m-auto">
+        <div className="grid gap-10 text-center gap-y-10 grid-cols-2 content m-auto">
           {arr}
         </div>
       </div>
     )
   }
+
   return (
     <>
       <SEO
-        title="Startup consulting for cloud and web"
-        description="Stockholm based cloud and web consulting for startups"
+        title={t("Startup consulting for cloud and web")}
+        description={t("Stockholm based cloud and web consulting for startups")}
         lang="en"
       />
+      <SEO
+        title={"Startup consulting for cloud and web"}
+        description={"Stockholm based cloud and web consulting for startups"}
+        lang="swe"
+      />
+
       <span className="w-screen flex md:w-auto bg-white rounded-b-lg  border fixed z-20 left-1/2 transform -translate-x-1/2 p-1 ">
         <div className="w-24 m-auto ">
           <Logo></Logo>
         </div>
       </span>
-      <div className="fixed z-10 fullpage-container">
-        <div className="fullpage p-4 w-full h-4/5">
+      <div className="fixed z-1 fullpage-container">
+        <div
+          style={{
+            background: `url(${Background})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+          className="fullpage  p-4 w-full h-full"
+        >
           <div className="m-auto ">
             <div>
-              <Reveal>
-                <div className="flex absolute w-full h-full top-0 left-0">
-                  <Img
-                    className="opacity-50 md:opacity-80 m-auto mt-0 w-96 h-96"
-                    fluid={query.BackgroundDust.childImageSharp.fluid}
-                  ></Img>
-                </div>
-              </Reveal>
-              <div className="w-full h-full relative ">
-                <h1 className="text-5xl mt-32 text-center md:text-7xl font-extrabold ">
-                  Consulting for startups <br></br> and innovative companies
+              <div className="w-full text-center h-full relative ">
+                <h1 className="text-5xl mt-32  md:text-7xl font-extrabold ">
+                  {t("Consulting for startups and innovative companies")}
                 </h1>
-                <p className="mt-10 text-xl text-center font-mono">
-                  Stockholm based cloud and web consulting agency cloud
+                <p className="mt-10 text-xl font-mono">
+                  {t("Stockholm based cloud and web consulting agency")}
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-        <ImageWithTitle
-          description={
-            <>
-              What do you mean by "startup consulting"? Ordinary consulting
+        <div className="flex mt-32">
+          <div className="w-full md:w-1/2 m-auto">
+            <ImageWithTitle
+              description={
+                <>
+                  {t(`What do you mean by "startup consulting"? Ordinary consulting
               agencies work great for huge corporations having long-term
               projects. However, many startups are not able to make such a
-              commitment. Therefore, we thought we would offer an alternative.
-            </>
-          }
-          title="Startup Consulting"
-          imageSrc={query.CloudImage.childImageSharp.fluid}
-        ></ImageWithTitle>
+              commitment. Therefore, we thought we would offer an alternative.`)}
+                </>
+              }
+              title={t("Startup Consulting")}
+              // imageSrc={query.CloudImage.childImageSharp.fluid}
+            ></ImageWithTitle>
+            <ImageWithTitle
+              description={
+                <>
+                  Altostruct is a cloud consulting agency focusing on startups.
+                  Since 2020 we have worked with many different companies,
+                  helping them build everything from mobile apps to AI
+                  deployment models.
+                </>
+              }
+              reverse
+              title="What are we?"
+              // imageSrc={query.Team.childImageSharp.fluid}
+            ></ImageWithTitle>
+            <ImageWithTitle
+              description={
+                <>
+                  Our focus is on web applications based on cloud and scalable
+                  infrastructure, the perfect match for quickly growing
+                  companies! Our team consists of new talent from KTH mixed with
+                  senior developers, giving your company a mix of new modern
+                  thoughts combined with expertise that comes with experience.
+                </>
+              }
+              title="Altowhat?"
+              // imageSrc={query.Coffee.childImageSharp.fluid}
+            ></ImageWithTitle>
+          </div>
+        </div>
 
-        <ImageWithTitle
-          description={
-            <>
-              Altostruct is a cloud consulting agency focusing on startups.
-              Since 2020 we have worked with many different companies, helping
-              them build everything from mobile apps to AI deployment models.
-            </>
-          }
-          reverse
-          title="What are we?"
-          imageSrc={query.Team.childImageSharp.fluid}
-        ></ImageWithTitle>
-
-        <ImageWithTitle
-          description={
-            <>
-              Our focus is on web applications based on cloud and scalable
-              infrastructure, the perfect match for quickly growing companies!
-              Our team consists of new talent from KTH mixed with senior
-              developers, giving your company a mix of new modern thoughts
-              combined with expertise that comes with experience.
-            </>
-          }
-          title="Altowhat?"
-          imageSrc={query.Coffee.childImageSharp.fluid}
-        ></ImageWithTitle>
-
+        <OurProjects></OurProjects>
         <div className="fullpage">
           <div className="content m-auto">
             <div className="w-full h-auto md:h-96">
@@ -297,7 +250,6 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-
         <div className="h-1/2 fullpage mt-12 mb-12">
           <div className="content flex m-auto">
             <div className="w-8/12 float-left">
@@ -310,7 +262,7 @@ const IndexPage = () => {
                 three, so we decided to do the same.
               </p>
             </div>
-            <div className="w-4/12 animate-ping hover: flex transform rotate-45 float-left">
+            <div className="w-4/12 hover: flex transform rotate-45 float-left">
               <div className="m-auto w-full">
                 <KeyIcon />
               </div>
@@ -359,11 +311,19 @@ const IndexPage = () => {
                 rel="noopener"
                 href="https://www.linkedin.com/in/erik-rehn-b12556194/"
               >
-                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10 ">
+                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2 rounded-full overflow-hidden mb-10  ">
                   <Img
                     className="m-auto overflow-hidden rounded-full  "
                     style={{ width: "100%", maxHeight: "50vh" }}
                     fluid={query.Erik.childImageSharp.fluid}
+                  />
+                </div>
+
+                <div className="hover:rotate-180 transition-all w-40 md:absolute md:bottom-5 left-1/2 md:right-0 md:left-auto relative transform -translate-x-1/2  mb-10 ">
+                  <Img
+                    className="m-auto overflow-hidden rounded-full  "
+                    style={{ width: "100%", maxHeight: "50vh" }}
+                    fluid={query.Emilio.childImageSharp.fluid}
                   />
                 </div>
               </a>
@@ -447,7 +407,6 @@ const IndexPage = () => {
             <br></br>
           </div>
         </div>
-
         <div className="fullpage">
           <div className="content p-1 m-auto">
             <div className="pb-96">
@@ -617,3 +576,73 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+
+    CloudImage: file(relativePath: { eq: "assets/cloud.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    Emilio: file(relativePath: { eq: "assets/emilio.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    Erik: file(relativePath: { eq: "assets/erik.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    Stockholm: file(relativePath: { eq: "assets/stockholm.jpeg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    Coffee: file(relativePath: { eq: "assets/coffee.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    Team: file(relativePath: { eq: "assets/team.jpg" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    GraphQL: file(relativePath: { eq: "assets/graphql.png" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

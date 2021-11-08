@@ -25,6 +25,13 @@ module.exports = {
       options: { name: "src", path: `${__dirname}/src/` },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         commonmark: true,
@@ -58,8 +65,31 @@ module.exports = {
         icon: "src/assets/favicon.png",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`en`, `swe`],
+        defaultLanguage: `en`,
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: "/:lang?/blog/:uid",
+            getLanguageFromPath: true,
+          },
+          {
+            matchPath: "/preview",
+            languages: ["en"],
+          },
+        ],
+      },
+    },
   ],
 }
