@@ -6,24 +6,32 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
-import Carousel from "@components/Carousel/Carousel";
-import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import TeamImage from "../images/team.jpeg";
+import NrlyzeImage from "../images/nrlyze.png";
+import FoodfactsImage from "../images/foodfacts.png";
+import InfernceImage from "../images/inference.jpeg";
+
+import TextAnimation from "@components/TextAnimation/TextAnimation";
 // import SEO from "../components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
-const IndexPage = () => {
+function IndexPage<T>() {
   return (
     <main className="page">
       <Topbar></Topbar>
 
-      <div className="content screen-height">
+      <div className="content screen-height title">
         <div className="split-content">
           <section>
-            <h1>
-              Flexibla utvecklare.
-              <br />
+            <h1 style={{ whiteSpace: "nowrap" }}>
+              <TextAnimation>
+                {[
+                  "Flexibla utvecklare.",
+                  "Utvecklare i stockholm.",
+                  "Webutvecklare.",
+                  "Solutions architects.",
+                ]}
+              </TextAnimation>
               <span className="primary">För startups.</span>
             </h1>
             <p>
@@ -35,7 +43,7 @@ const IndexPage = () => {
             <Button type="secondary">See våra projekt</Button>
           </section>
         </div>
-        <div className="split-content">
+        <div className="split-content ">
           <CardStack
             className="center"
             cards={[
@@ -75,7 +83,7 @@ const IndexPage = () => {
         <div className="split-content">
           <section>
             <h2>
-              Showcase
+              Showcase,
               <span className="primary"> Mitt Nrlyze.</span>
             </h2>
             <p>
@@ -83,18 +91,23 @@ const IndexPage = () => {
               startups. Vi finns här för att stötta er under er resa från
               startup och framåt!
             </p>
+            <Button type="primary">View project</Button>
           </section>
         </div>
-        <div className="split-content"></div>
+        <div className="split-content">
+          <img src={NrlyzeImage}></img>
+        </div>
       </div>
 
       <div className="content half-screen">
-        <div className="split-content"></div>
+        <div className="split-content">
+          <img src={InfernceImage} />
+        </div>
         <div className="split-content">
           <section>
             <h2>
-              Showcase
-              <span className="primary"> Saluto.</span>
+              Showcase,
+              <span className="primary"> Inference Labs.</span>
             </h2>
             <p>
               En Medtech startup med målet att hjälpa sina kunder nå ett
@@ -102,7 +115,45 @@ const IndexPage = () => {
               få rekommendationer på hur de kan förbättra sin hälsa och sitt
               allmänna välmående.
             </p>
+            <Button type="primary">View project</Button>
           </section>
+        </div>
+      </div>
+
+      <div className="content half-screen">
+        <div className="split-content">
+          <section>
+            <h2>
+              Showcase,
+              <span className="primary"> Foodfacts.</span>
+            </h2>
+            <p>
+              Stockholms-baserade utvecklare med skräddarsydda lösningar för
+              startups. Vi finns här för att stötta er under er resa från
+              startup och framåt!
+            </p>
+            <Button type="primary">View project</Button>
+          </section>
+        </div>
+        <div className="split-content">
+          <img src={FoodfactsImage}></img>
+        </div>
+      </div>
+
+      <div className="content">
+        <div className="center-content cols mark">
+          <div>
+            <p>Antal projekt</p>
+            <h1>25 +</h1>
+          </div>
+          <div>
+            <p>Antal utvecklare</p>
+            <h1>10+</h1>
+          </div>
+          <div>
+            <p>Startat</p>
+            <h1>2020</h1>
+          </div>
         </div>
       </div>
 
@@ -126,9 +177,10 @@ const IndexPage = () => {
           />
         </div>
       </div>
+
       <Footer></Footer>
     </main>
   );
-};
+}
 
 export default IndexPage;

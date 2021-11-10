@@ -1,7 +1,7 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #6558f5;
+  --primary-color: #3135a9;
   --primary-color-inv: white;
 }
 
@@ -10,6 +10,17 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
+}
+main {
+  display: flex;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
 h1 {
@@ -20,6 +31,16 @@ h1 {
   font-size: 48px;
   font-weight: 800;
   margin: 0;
+  max-width: 100%;
+}
+
+.background-cover {
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100vw;
+  height: 100vw;
+  position: absolute;
+  overflow: visible;
 }
 
 h2 {
@@ -31,13 +52,17 @@ h2 {
   font-weight: 800;
   margin: 0;
 }
+h3 {
+  font-size: 24px;
+  margin: 0;
+}
 
 body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .primary {
-  color: #6558f5;
+  color: var(--primary-color);
 }
 
 .center {
@@ -45,10 +70,17 @@ body {
 }
 
 .content {
+  margin: auto;
   display: flex;
   width: 70vw;
-  height: 40vh;
-  margin-left: 15vw;
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 80rem;
+  justify-content: space-between;
 }
 
 .half-screen {
@@ -68,12 +100,21 @@ body {
   text-align: center;
   margin: auto;
   width: 50vw;
+  min-height: 30vh;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .split-content {
-  width: 50%;
+  overflow: unset;
   margin-top: auto;
+  flex: 0 0 auto;
+  width: 50%;
   margin-bottom: auto;
+  padding: 0.5em;
+  height: fit-content;
 }
 
 .panel {
@@ -104,4 +145,22 @@ p {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 20px;
   color: rgb(54, 49, 61);
+}
+
+.divider {
+  background-color: #dddcdc;
+  height: 1px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.cols {
+  display: flex;
+  gap: 4em;
+  justify-content: center;
+  align-items: center;
+}
+
+.mark {
+  // border-bottom: solid 4px var(--primary-color);
 }
