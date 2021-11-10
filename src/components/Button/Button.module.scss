@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
-  padding: 0.5em;
+  padding: 0.6em;
   border-radius: 0.3em;
   cursor: pointer;
 }
@@ -24,7 +24,6 @@
 .secondary {
   background-color: var(--primary-color-inv);
   color: var(--primary-color);
-  border: solid rgb(222, 222, 222) 1px;
 }
 
 .shiny {
