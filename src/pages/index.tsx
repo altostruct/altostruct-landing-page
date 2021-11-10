@@ -10,6 +10,7 @@ import TeamImage from "../images/team.jpeg";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
 import InfernceImage from "../images/inference.jpeg";
+import MainImage from "../images/main.svg";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 // import SEO from "../components/SEO/SEO";
@@ -179,6 +180,7 @@ function IndexPage<T>() {
       </div>
 
       <Footer></Footer>
+      <img src={MainImage} className="top-image" />
     </main>
   );
 }
