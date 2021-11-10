@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "altostruct-website-gatsby",
