@@ -3,9 +3,12 @@
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
+  font-family: inherit;
+  font-size: inherit;
   padding: 0.6em 1.2em;
   border-radius: 0.3em;
   cursor: pointer;
+  transition: opacity 50ms ease;
 }
 
 .primary {
@@ -14,11 +17,11 @@
 }
 
 .primary:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .secondary:hover {
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .secondary {

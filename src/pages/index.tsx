@@ -40,7 +40,7 @@ function IndexPage<T>() {
               startup och framåt!
             </p>
             <Button className="space-right">Kontakta oss</Button>
-            <Button type="secondary">See våra projekt</Button>
+            <Button type="secondary">Se våra projekt</Button>
           </section>
         </div>
         <div className="split-content ">
@@ -91,7 +91,7 @@ function IndexPage<T>() {
               startups. Vi finns här för att stötta er under er resa från
               startup och framåt!
             </p>
-            <Button type="primary">View project</Button>
+            <Button type="primary">Se projekt</Button>
           </section>
         </div>
         <div className="split-content">
@@ -115,7 +115,7 @@ function IndexPage<T>() {
               få rekommendationer på hur de kan förbättra sin hälsa och sitt
               allmänna välmående.
             </p>
-            <Button type="primary">View project</Button>
+            <Button type="primary">Se projekt</Button>
           </section>
         </div>
       </div>
@@ -132,7 +132,7 @@ function IndexPage<T>() {
               startups. Vi finns här för att stötta er under er resa från
               startup och framåt!
             </p>
-            <Button type="primary">View project</Button>
+            <Button type="primary">Se projekt</Button>
           </section>
         </div>
         <div className="split-content">
@@ -198,17 +198,28 @@ function IndexPage<T>() {
               <label htmlFor="phone">Telefonnummer</label>
               <input type="number" id="phone" />
               <br />
-              <input type="checkbox" id="callme" />
-              <label htmlFor="callme" style={{ display: "inline-block" }}>
-                Ska vi ringa dig under vanliga arbetstider?
-              </label>
             </div>
             <div style={{ flexGrow: 1 }}>
               <label htmlFor="message">Meddelande</label>
               <textarea id="message" rows={10}></textarea>
-              <span style={{ float: "right" }}>
-                <Button type="primary">Skicka</Button>
-              </span>
+              <div style={{ textAlign: "right" }}>
+                <label
+                  htmlFor="callme"
+                  style={{
+                    display: "inline-block",
+                    marginRight: "1em",
+                    cursor: "pointer",
+                  }}
+                >
+                  Jag vill bli uppringd under vanliga arbetstider
+                </label>
+                <input type="checkbox" id="callme" />
+                <br />
+                <br />
+                <Button type="primary" formAction="submit">
+                  Skicka
+                </Button>
+              </div>
             </div>
           </form>
         </section>

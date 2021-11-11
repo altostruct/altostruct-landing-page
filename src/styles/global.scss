@@ -2,7 +2,7 @@
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #222222;
+  --text-color: #36313d;
   --primary-color: #ff6502;
   --primary-color-inv: white;
 }
@@ -94,11 +94,11 @@ h3 {
 }
 
 .half-screen {
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .screen-height {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .card {
@@ -148,11 +148,9 @@ a {
   }
 }
 
-button,
 p {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  color: rgb(54, 49, 61);
+  font-size: 1.125em;
+  line-height: 1.6;
 }
 
 .divider {
@@ -170,5 +168,5 @@ p {
 }
 
 .mark {
-  // border-bottom: solid 4px var(--primary-color);
+  border-bottom: solid 4px var(--primary-color);
 }
