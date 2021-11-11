@@ -21,12 +21,11 @@ main {
   display: flex;
 }
 
-
 .end-image {
   position: relative;
   left: 0;
   width: 100vw;
-  height: 20em;
+  height: 10em;
 
   img {
     right: 0;
@@ -34,8 +33,45 @@ main {
     position: absolute;
     float: right;
     width: fit-content;
-    bottom: -6em;
+    bottom: -10em;
+    max-height: 100vh;
   }
+}
+
+.image-left {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 0em;
+
+  img {
+    left: 0;
+    height: 20em;
+    position: absolute;
+    width: fit-content;
+    bottom: -10em;
+    max-height: 100vh;
+    transform: scale(-1, -1);
+    opacity: 0.5;
+  }
+}
+
+.image-right {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 0em;
+
+  img {
+    right: 0;
+    height: 20em;
+    position: absolute;
+    width: fit-content;
+    bottom: -10em;
+    max-height: 100vh;
+    opacity: 0.5;
+  }
+}
 
 label {
   display: block;
@@ -108,6 +144,7 @@ h3 {
   max-width: 80rem;
   justify-content: space-between;
   overflow-y: visible;
+  z-index: 2;
 }
 
 .half-screen {
@@ -190,11 +227,15 @@ p {
 
 .cols {
   display: flex;
-  gap: 4em;
+  gap: 5em;
   justify-content: center;
   align-items: center;
 }
 
+.super-title {
+  font-size: 6em;
+}
+
 .mark {
-  border-bottom: solid 4px var(--primary-color);
+  // border-bottom: solid 2px var(--primary-color);
 }

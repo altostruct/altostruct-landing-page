@@ -142,21 +142,31 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content">
+      <div className="image-right">
+        <img src={EndImage} />
+      </div>
+
+      <div
+        className="content"
+        style={{ paddingBottom: "6em", paddingTop: "6em" }}
+      >
         <div className="center-content cols mark">
           <div>
             <p>Antal projekt</p>
-            <h1>25 +</h1>
+            <h1 className="super-title">25+</h1>
           </div>
           <div>
             <p>Antal utvecklare</p>
-            <h1>10+</h1>
+            <h1 className="super-title">10+</h1>
           </div>
           <div>
             <p>Startat</p>
-            <h1>2020</h1>
+            <h1 className="super-title">2020</h1>
           </div>
         </div>
+      </div>
+      <div className="image-left">
+        <img src={EndImage} />
       </div>
 
       <div className="content screen-height">
@@ -170,9 +180,6 @@ function IndexPage<T>() {
             }}
           />
         </div>
-      </div>
-      <div className="end-image">
-        <img src={EndImage} />
       </div>
 
       <div className="content" style={{ marginBottom: "4em" }}>
@@ -220,6 +227,10 @@ function IndexPage<T>() {
             </div>
           </form>
         </section>
+      </div>
+
+      <div className="end-image">
+        <img src={EndImage} />
       </div>
 
       <Footer></Footer>
