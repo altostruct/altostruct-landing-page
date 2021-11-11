@@ -27,8 +27,8 @@ function IndexPage<T>() {
               <TextAnimation>
                 {[
                   "Flexibla utvecklare.",
-                  "Utvecklare i stockholm.",
-                  "Webutvecklare.",
+                  "Utvecklare i Stockholm.",
+                  "Webbutvecklare.",
                   "Solutions architects.",
                 ]}
               </TextAnimation>
@@ -48,16 +48,16 @@ function IndexPage<T>() {
             className="center"
             cards={[
               {
-                description: "",
+                description: "Så himla nice.",
                 image:
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDablGa_xaGvUTE9ihIjQ0Yo-jCMFKdqnoQ&usqp=CAU",
-                title: "asd",
+                title: "React",
               },
               {
-                description: "",
+                description: "Jomen absolut.",
                 image:
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDablGa_xaGvUTE9ihIjQ0Yo-jCMFKdqnoQ&usqp=CAU",
-                title: "asd",
+                  "https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png",
+                title: "Node.js",
               },
             ]}
           ></CardStack>
@@ -71,10 +71,10 @@ function IndexPage<T>() {
             <p>
               Altostruct är en konsultfirma som arbetar primärt med molntjänster
               och har ett särskilt fokus på startups. Sedan 2020 har vi arbetat
-              med många olika företag och hjälpt dem skapa allt ifrån mobilappar
-              till AI organisationsmodeller.
+              med många olika företag och hjälpt dem skapa allt från mobilappar
+              till AI-organisationsmodeller.
             </p>
-            <Button type="shiny">Läs mer om våran vision</Button>
+            <Button type="shiny">Läs mer om vår vision</Button>
           </section>
         </div>
       </div>
@@ -82,9 +82,9 @@ function IndexPage<T>() {
       <div className="content half-screen">
         <div className="split-content">
           <section>
+            <label>Showcase</label>
             <h2>
-              Showcase,
-              <span className="primary"> Mitt Nrlyze.</span>
+              <span className="primary">Mitt Nrlyze</span>
             </h2>
             <p>
               Stockholms-baserade utvecklare med skräddarsydda lösningar för
@@ -105,9 +105,9 @@ function IndexPage<T>() {
         </div>
         <div className="split-content">
           <section>
+            <label>Showcase</label>
             <h2>
-              Showcase,
-              <span className="primary"> Inference Labs.</span>
+              <span className="primary">Inference Labs</span>
             </h2>
             <p>
               En Medtech startup med målet att hjälpa sina kunder nå ett
@@ -123,9 +123,9 @@ function IndexPage<T>() {
       <div className="content half-screen">
         <div className="split-content">
           <section>
+            <label>Showcase</label>
             <h2>
-              Showcase,
-              <span className="primary"> Foodfacts.</span>
+              <span className="primary">Foodfacts</span>
             </h2>
             <p>
               Stockholms-baserade utvecklare med skräddarsydda lösningar för
@@ -176,6 +176,42 @@ function IndexPage<T>() {
             }}
           />
         </div>
+      </div>
+
+      <div className="content" style={{ marginBottom: "4em" }}>
+        <section>
+          <h2 style={{ marginBottom: "1em" }}>Kontakta oss</h2>
+
+          <form
+            action="/contact"
+            method="POST"
+            className="content"
+            style={{ padding: 0, gap: "4em" }}
+          >
+            <div>
+              <label htmlFor="fullname">För- och efternamn</label>
+              <input type="text" id="fullname" />
+              <label htmlFor="companyname">Namn på företag</label>
+              <input type="text" id="companyname" />
+              <label htmlFor="">Mejladress</label>
+              <input type="email" id="email" />
+              <label htmlFor="phone">Telefonnummer</label>
+              <input type="number" id="phone" />
+              <br />
+              <input type="checkbox" id="callme" />
+              <label htmlFor="callme" style={{ display: "inline-block" }}>
+                Ska vi ringa dig under vanliga arbetstider?
+              </label>
+            </div>
+            <div style={{ flexGrow: 1 }}>
+              <label htmlFor="message">Meddelande</label>
+              <textarea id="message" rows={10}></textarea>
+              <span style={{ float: "right" }}>
+                <Button type="primary">Skicka</Button>
+              </span>
+            </div>
+          </form>
+        </section>
       </div>
 
       <Footer></Footer>

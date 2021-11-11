@@ -12,9 +12,21 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
+  font-family: "Poppins", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-rendering: optimizeLegibility;
 }
 main {
   display: flex;
+}
+
+label {
+  display: block;
+  font-size: 1.125em;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-bottom: 0.2em;
 }
 
 img {
@@ -57,10 +69,6 @@ h2 {
 h3 {
   font-size: 24px;
   margin: 0;
-}
-
-body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .primary {
