@@ -176,7 +176,7 @@ function IndexPage<T>() {
 
       <div className="content screen-height">
         <div className="center-content">
-          <h2>Ansikterna bakom Altostruct</h2>
+          <h2>Ansiktena bakom Altostruct</h2>
           <img
             src={TeamImage}
             style={{
