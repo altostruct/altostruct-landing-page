@@ -1,3 +1,5 @@
+$small-screen: 920px;
+
 #root {
   overflow: hidden;
   width: 100%;
@@ -32,6 +34,11 @@
 
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
     0 10px 10px -10px rgba(50, 50, 73, 0.3);
+
+  @media screen and (max-width: $small-screen) {
+    max-width: 20vh;
+    max-height: 30vh;
+  }
 }
 
 #root {
@@ -46,5 +53,9 @@
 
   img {
     width: 50%;
+  }
+
+  @media screen and (max-width: $small-screen) {
+    height: 35vh;
   }
 }

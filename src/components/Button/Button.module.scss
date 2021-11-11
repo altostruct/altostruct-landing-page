@@ -1,3 +1,5 @@
+$small-screen: 920px;
+
 .button {
   border: none;
   box-sizing: border-box;
@@ -9,6 +11,13 @@
   border-radius: 0.3em;
   cursor: pointer;
   transition: opacity 50ms ease;
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    border-radius: 0.5em;
+  }
 }
 
 .primary {

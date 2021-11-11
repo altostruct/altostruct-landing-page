@@ -23,7 +23,7 @@ function IndexPage<T>() {
       <Topbar></Topbar>
       <img src={MainImage} className="top-image" />
       <div className="content screen-height title">
-        <div className="split-content">
+        <div className="split-content sm-screen-height">
           <section>
             <h1 style={{ whiteSpace: "nowrap" }}>
               <TextAnimation>
@@ -66,7 +66,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content" style={{ marginTop: "10vh" }}>
+      <div className="content">
         <div className="center-content">
           <section>
             <h1>Cloud- och webbkonsulter för startups</h1>
@@ -81,7 +81,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen">
+      <div className="content half-screen sm-flex-reverse">
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -124,7 +124,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen">
+      <div className="content half-screen sm-flex-reverse">
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -186,7 +186,10 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content" style={{ marginBottom: "4em" }}>
+      <div
+        className="content outline"
+        style={{ padding: "2em", marginTop: "30vh" }}
+      >
         <section>
           <h2 style={{ marginBottom: "1em" }}>Kontakta oss</h2>
 
@@ -196,7 +199,7 @@ function IndexPage<T>() {
             className="content"
             style={{ padding: 0, gap: "4em" }}
           >
-            <div>
+            <div className="contact-form">
               <label htmlFor="fullname">För- och efternamn</label>
               <input type="text" id="fullname" />
               <label htmlFor="companyname">Namn på företag</label>
