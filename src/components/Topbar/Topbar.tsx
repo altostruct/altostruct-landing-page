@@ -12,8 +12,8 @@ const Topbar = () => {
         </a>
       </nav>
       <nav>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
   );

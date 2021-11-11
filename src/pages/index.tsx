@@ -41,11 +41,15 @@ function IndexPage<T>() {
               startups. Vi finns här för att stötta er under er resa från
               startup och framåt!
             </p>
-            <Button className="space-right">Kontakta oss</Button>
-            <Button type="secondary">Se våra projekt</Button>
+            <Button className="space-right" link="#contact">
+              Kontakta oss
+            </Button>
+            <Button type="secondary" link="#about">
+              Se våra projekt
+            </Button>
           </section>
         </div>
-        <div className="split-content ">
+        <div className="split-content">
           <CardStack
             className="center"
             cards={[
@@ -66,7 +70,8 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content">
+      <div id="about" />
+      <div className="content md-margin-top-10">
         <div className="center-content">
           <section>
             <h1>Cloud- och webbkonsulter för startups</h1>
@@ -186,6 +191,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
+      <div id="contact" />
       <div
         className="content outline"
         style={{ padding: "2em", marginTop: "30vh" }}

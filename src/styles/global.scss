@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-
 $small-screen: 920px;
 :root {
   --bg-color: #ffffff;
@@ -202,7 +201,7 @@ h3 {
 
     section {
       margin: auto;
-      margin-bottom: 30%;
+      margin-bottom: 20%;
     }
   }
 }
@@ -305,4 +304,10 @@ p {
 
 .mark {
   // border-bottom: solid 2px var(--primary-color);
+}
+
+.md-margin-top-10 {
+  @media screen and (min-width: $small-screen) {
+    margin-top: 15vh;
+  }
 }
