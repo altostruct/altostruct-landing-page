@@ -66,10 +66,10 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content">
+      <div className="content" style={{ marginTop: "10vh" }}>
         <div className="center-content">
           <section>
-            <h1>Hitta utvecklare har aldrig varit enklare</h1>
+            <h1>Cloud- och webbkonsulter för startups</h1>
             <p>
               Altostruct är en konsultfirma som arbetar primärt med molntjänster
               och har ett särskilt fokus på startups. Sedan 2020 har vi arbetat
