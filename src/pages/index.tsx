@@ -11,6 +11,7 @@ import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
 import InfernceImage from "../images/inference.jpeg";
 import MainImage from "../images/main.svg";
+import EndImage from "../images/end.svg";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 // import SEO from "../components/SEO/SEO";
@@ -20,7 +21,7 @@ function IndexPage<T>() {
   return (
     <main className="page">
       <Topbar></Topbar>
-
+      <img src={MainImage} className="top-image" />
       <div className="content screen-height title">
         <div className="split-content">
           <section>
@@ -158,14 +159,6 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      {/* <div className="content">
-        <div className="center-content">
-          <p>
-            Klick här för att läsa mer om om våran resa med våra grymma kunder
-          </p>
-          <Button type="secondary">Läs mer</Button>
-        </div>
-      </div> */}
       <div className="content screen-height">
         <div className="center-content">
           <h2>Ansikterna bakom Altostruct</h2>
@@ -178,9 +171,11 @@ function IndexPage<T>() {
           />
         </div>
       </div>
+      <div className="end-image">
+        <img src={EndImage} />
+      </div>
 
       <Footer></Footer>
-      <img src={MainImage} className="top-image" />
     </main>
   );
 }
