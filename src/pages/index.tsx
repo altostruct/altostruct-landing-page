@@ -90,7 +90,7 @@ function IndexPage<T>() {
             </h2>
             <p>
               Nrlyze har skapat ett system av trådlösa sensorer och mottagare
-              som kan optimera parametrar gällande värmesystem i byggnader.Vårt
+              som kan optimera parametrar gällande värmesystem i byggnader. Vårt
               system ger Nrlyze kunder en portal som tillåter dem att överse
               byggnaderna de har installerat sensorer i och få sin data
               presenterad i grafer.
@@ -136,8 +136,7 @@ function IndexPage<T>() {
               Foodfacts skapar digitala lösningar som gör information om
               livsmedel mer lättillgängligt och transparent. Altostruct hjälpte
               till att bygga dels deras AWS molninfrastruktur, dels deras
-              IOS/Android applikation som hjälper deras kunder skanna och hitta
-              bättre produkter.
+              IOS/Android applikation.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>
