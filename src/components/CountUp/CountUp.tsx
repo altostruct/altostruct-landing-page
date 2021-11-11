@@ -8,6 +8,7 @@ const CountUp = (props: {
   doneSuffix?: string;
 }) => {
   const { start, end, doneSuffix = "" } = props;
+  const [done, setDone] = useState<boolean>(false);
 
   return (
     <>
@@ -18,7 +19,15 @@ const CountUp = (props: {
         formattingFn={(value) => value + doneSuffix}
       >
         {({ countUpRef, start }) => (
-          <VisibilitySensor onChange={start} delayedCall>
+          <VisibilitySensor
+            onChange={(visible) => {
+              if (!done && visible) {
+                setDone(true);
+                start();
+              }
+            }}
+            delayedCall
+          >
             <span ref={countUpRef} />
           </VisibilitySensor>
         )}
