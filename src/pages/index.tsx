@@ -89,9 +89,11 @@ function IndexPage<T>() {
               <span className="primary">Mitt Nrlyze</span>
             </h2>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              Nrlyze har skapat ett system av trådlösa sensorer och mottagare
+              som kan optimera parametrar gällande värmesystem i byggnader.Vårt
+              system ger Nrlyze kunder en portal som tillåter dem att överse
+              byggnaderna de har installerat sensorer i och få sin data
+              presenterad i grafer.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>
@@ -130,9 +132,12 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              En startup som erbjuder bätte produktinfo med hjälp av AI.
+              Foodfacts skapar digitala lösningar som gör information om
+              livsmedel mer lättillgängligt och transparent. Altostruct hjälpte
+              till att bygga dels deras AWS molninfrastruktur, dels deras
+              IOS/Android applikation som hjälper deras kunder skanna och hitta
+              bättre produkter.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>
