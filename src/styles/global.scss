@@ -12,10 +12,15 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
+  font-family: "Poppins", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  text-rendering: optimizeLegibility;
 }
 main {
   display: flex;
 }
+
 
 .end-image {
   position: relative;
@@ -31,6 +36,13 @@ main {
     width: fit-content;
     bottom: -6em;
   }
+
+label {
+  display: block;
+  font-size: 1.125em;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-bottom: 0.2em;
 }
 
 img {
@@ -75,10 +87,6 @@ h3 {
   margin: 0;
 }
 
-body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
-}
-
 .primary {
   color: var(--primary-color);
 }
@@ -103,11 +111,11 @@ body {
 }
 
 .half-screen {
-  height: 70vh;
+  min-height: 70vh;
 }
 
 .screen-height {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .card {
@@ -168,11 +176,9 @@ a {
   }
 }
 
-button,
 p {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-  color: rgb(54, 49, 61);
+  font-size: 1.125em;
+  line-height: 1.6;
 }
 
 .divider {
@@ -190,5 +196,5 @@ p {
 }
 
 .mark {
-  // border-bottom: solid 4px var(--primary-color);
+  border-bottom: solid 4px var(--primary-color);
 }

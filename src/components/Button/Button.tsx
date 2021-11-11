@@ -5,13 +5,15 @@ interface ButtonProps {
   children?: string;
   className?: string;
   type?: "primary" | "secondary" | "shiny";
+  formAction?: "submit" | "reset";
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, type = "primary", className } = props;
+  const { children, type = "primary", className, formAction } = props;
 
   return (
     <button
+      type={formAction}
       className={[
         className,
         style.button,

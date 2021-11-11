@@ -26,6 +26,9 @@
   max-height: 600px;
   will-change: transform;
   border-radius: 10px;
+  display: grid;
+  place-items: center;
+  text-align: center;
 
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
     0 10px 10px -10px rgba(50, 50, 73, 0.3);
@@ -39,6 +42,7 @@
   max-width: 400px;
   max-height: 600px;
   overflow: visible;
+  user-select: none;
 
   img {
     width: 50%;
