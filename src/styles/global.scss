@@ -2,8 +2,8 @@
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #36313d;
-  --primary-color: #ff6502;
+  --text-color: #222222;
+  --primary-color: #313ba9;
   --primary-color-inv: white;
 }
 
@@ -20,6 +20,22 @@ body {
 main {
   display: flex;
 }
+
+
+.end-image {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 20em;
+
+  img {
+    right: 0;
+    height: 20em;
+    position: absolute;
+    float: right;
+    width: fit-content;
+    bottom: -6em;
+  }
 
 label {
   display: block;
@@ -51,8 +67,8 @@ h1 {
 .background-cover {
   -o-background-size: cover;
   background-size: cover;
-  width: 100vw;
-  height: 100vw;
+  width: 10vw;
+  height: 10vw;
   position: absolute;
   overflow: visible;
 }
@@ -91,6 +107,7 @@ h3 {
 
   max-width: 80rem;
   justify-content: space-between;
+  overflow-y: visible;
 }
 
 .half-screen {
@@ -117,6 +134,16 @@ h3 {
   position: absolute;
 }
 
+.top-image {
+  width: 140vw;
+  position: absolute;
+  object-fit: cover;
+  overflow: visible;
+  max-height: 1000vh;
+  left: -50vw;
+  opacity: 0.2;
+}
+
 .split-content {
   overflow: unset;
   margin-top: auto;
@@ -125,6 +152,7 @@ h3 {
   margin-bottom: auto;
   padding: 0.5em;
   height: fit-content;
+  align-content: flex-start;
 }
 
 .panel {
