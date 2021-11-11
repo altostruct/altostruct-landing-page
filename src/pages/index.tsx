@@ -177,7 +177,7 @@ function IndexPage<T>() {
           <div>
             <p className="no-break">Startat</p>
             <h1 className="super-title">
-              <CountUp start={2016} end={2020} />
+              <CountUp end={2020} start={new Date().getFullYear() + 10} />
             </h1>
           </div>
         </div>
