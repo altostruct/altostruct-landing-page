@@ -6,6 +6,7 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
+import CountUp from "@components/CountUp/CountUp";
 import TeamImage from "../images/team.jpeg";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
@@ -161,16 +162,23 @@ function IndexPage<T>() {
       >
         <div className="center-content cols mark">
           <div>
-            <p>Antal projekt</p>
-            <h1 className="super-title">25+</h1>
+            <p className="no-break">Antal projekt</p>
+            <h1 className="super-title">
+              <CountUp start={0} end={25} doneSuffix="+" />
+            </h1>
           </div>
           <div>
-            <p>Antal utvecklare</p>
-            <h1 className="super-title">10+</h1>
+            <p className="no-break">Antal utvecklare</p>
+
+            <h1 className="super-title">
+              <CountUp start={0} end={10} doneSuffix="+" />
+            </h1>
           </div>
           <div>
-            <p>Startat</p>
-            <h1 className="super-title">2020</h1>
+            <p className="no-break">Startat</p>
+            <h1 className="super-title">
+              <CountUp start={2016} end={2020} />
+            </h1>
           </div>
         </div>
       </div>

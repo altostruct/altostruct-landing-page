@@ -291,11 +291,17 @@ p {
   margin-bottom: 1em;
 }
 
+.no-break {
+  white-space: nowrap;
+}
+
 .cols {
   display: flex;
   gap: 5em;
   justify-content: center;
   align-items: center;
+  div {
+  }
 }
 
 .super-title {
