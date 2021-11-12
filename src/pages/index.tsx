@@ -54,7 +54,12 @@ function IndexPage<T>() {
   return (
     <main className="page">
       <Topbar></Topbar>
-      <img src={MainImage} className="top-image" />
+
+      <div className="top-image-wrapper">
+        <img src={MainImage} className="top-image" />
+        <div className="top-image-fade"></div>
+      </div>
+
       <div className="content screen-height title">
         <div className="split-content sm-screen-height">
           <section>
@@ -116,7 +121,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen sm-flex-reverse">
+      <div className="content half-screen sm-flex-reverse" id="customers">
         <div className="split-content">
           <section>
             <label>Showcase</label>

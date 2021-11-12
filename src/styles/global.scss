@@ -3,8 +3,8 @@ $small-screen: 920px;
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #313ba9;
-  --primary-color-0-5: #313ba963;
+  --primary-color: #ff6502;
+  --primary-color-0-5: #ff650263;
   --primary-color-inv: white;
 }
 
@@ -234,12 +234,26 @@ h3 {
   overflow: visible;
   max-height: none;
   left: -50vw;
-  opacity: 0.2;
+  opacity: 1;
+  z-index: -1;
   @media screen and (max-width: $small-screen) {
     opacity: 0.6;
     width: 200vw;
     left: -70vw;
   }
+}
+
+.top-image-wrapper {
+  isolation: isolate;
+  position: relative;
+}
+
+.top-image-fade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  z-index: 1;
 }
 
 .split-content {
