@@ -8,12 +8,12 @@ const Topbar = () => {
     <header className="topbar">
       <nav>
         <a className="brand" href="/">
-          <Brand></Brand>
+          <Brand />
         </a>
       </nav>
       <nav>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="#customers">Kunder</a>
+        <a href="#contact">Kontakta oss</a>
       </nav>
     </header>
   );

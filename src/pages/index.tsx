@@ -10,15 +10,47 @@ import TeamImage from "../images/team.jpeg";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
 import InfernceImage from "../images/inference.jpeg";
+import emailjs from "emailjs-com";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
+import { useRef } from "react";
 // import SEO from "../components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
 function IndexPage<T>() {
+  const form = useRef();
+  const email: React.MutableRefObject<HTMLInputElement> = useRef();
+  const callMe: React.MutableRefObject<HTMLInputElement> = useRef();
+
+  const sendEmail = (event) => {
+    event.preventDefault();
+
+    if (callMe.current.checked) {
+      callMe.current.value = "Please call me!";
+    }
+
+    emailjs
+      .sendForm(
+        "service_xf3l6xg",
+        "template_sjt8u7f",
+        form.current,
+        "user_k0ZJNxep5Jd9wlP37YY93"
+      )
+      .then(
+        (result) => {
+          alert(
+            `Tack för ditt meddelande! Vi svarar till din mejladress (${email.current.value}) så snart vi kan. 🎈`
+          );
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <main className="page">
-      <Topbar></Topbar>
+      <Topbar />
 
       <div className="content screen-height title">
         <div className="split-content">
@@ -64,7 +96,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content">
+      <div className="content" id="about">
         <div className="center-content">
           <section>
             <h1>Hitta utvecklare har aldrig varit enklare</h1>
@@ -74,12 +106,11 @@ function IndexPage<T>() {
               med många olika företag och hjälpt dem skapa allt från mobilappar
               till AI-organisationsmodeller.
             </p>
-            <Button type="shiny">Läs mer om vår vision</Button>
           </section>
         </div>
       </div>
 
-      <div className="content half-screen">
+      <div className="content half-screen" id="customers">
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -178,33 +209,33 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content" style={{ marginBottom: "4em" }}>
+      <div className="content" style={{ marginBottom: "4em" }} id="contact">
         <section>
           <h2 style={{ marginBottom: "1em" }}>Kontakta oss</h2>
 
           <form
-            action="/contact"
-            method="POST"
+            ref={form}
+            onSubmit={sendEmail}
             className="content"
             style={{ padding: 0, gap: "4em" }}
           >
             <div>
-              <label htmlFor="fullname">För- och efternamn</label>
-              <input type="text" id="fullname" />
-              <label htmlFor="companyname">Namn på företag</label>
-              <input type="text" id="companyname" />
+              <label htmlFor="fullName">För- och efternamn</label>
+              <input type="text" id="fullName" name="from_name" />
+              <label htmlFor="companyName">Namn på företag</label>
+              <input type="text" id="companyName" name="company" />
               <label htmlFor="">Mejladress</label>
-              <input type="email" id="email" />
+              <input type="email" id="email" name="reply_to" ref={email} />
               <label htmlFor="phone">Telefonnummer</label>
-              <input type="number" id="phone" />
+              <input type="number" id="phone" name="phone" />
               <br />
             </div>
             <div style={{ flexGrow: 1 }}>
               <label htmlFor="message">Meddelande</label>
-              <textarea id="message" rows={10}></textarea>
+              <textarea id="message" name="message" rows={10}></textarea>
               <div style={{ textAlign: "right" }}>
                 <label
-                  htmlFor="callme"
+                  htmlFor="callMe"
                   style={{
                     display: "inline-block",
                     marginRight: "1em",
@@ -213,9 +244,13 @@ function IndexPage<T>() {
                 >
                   Jag vill bli uppringd under vanliga arbetstider
                 </label>
-                <input type="checkbox" id="callme" />
-                <br />
-                <br />
+                <input
+                  ref={callMe}
+                  type="checkbox"
+                  id="callMe"
+                  name="call_me"
+                  style={{ marginRight: "2em" }}
+                />
                 <Button type="primary" formAction="submit">
                   Skicka
                 </Button>
@@ -225,7 +260,7 @@ function IndexPage<T>() {
         </section>
       </div>
 
-      <Footer></Footer>
+      <Footer />
     </main>
   );
 }

@@ -16,6 +16,7 @@ body {
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
 }
 main {
   display: flex;
@@ -88,7 +89,7 @@ h3 {
   padding-right: 1.5rem;
   margin-left: auto;
   margin-right: auto;
-
+  scroll-margin: 6em;
   max-width: 80rem;
   justify-content: space-between;
 }
