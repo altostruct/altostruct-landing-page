@@ -38,9 +38,8 @@ function IndexPage<T>() {
               <span className="primary">För startups.</span>
             </h1>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              Stockholms-baserade webutvecklare med skräddarsydda lösningar för
+              startups.
             </p>
             <Button className="space-right" link="#contact">
               Kontakta oss
