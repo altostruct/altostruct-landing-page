@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
-
+$small-screen: 920px;
 :root {
   --bg-color: #ffffff;
-  --text-color: #36313d;
-  --primary-color: #ff6502;
+  --text-color: #222222;
+  --primary-color: #313ba9;
+  --primary-color-0-5: #313ba963;
   --primary-color-inv: white;
 }
 
@@ -22,12 +23,73 @@ main {
   display: flex;
 }
 
+.end-image {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 10em;
+
+  img {
+    right: 0;
+    height: 20em;
+    position: absolute;
+    float: right;
+    width: fit-content;
+    bottom: -10em;
+    max-height: 100vh;
+  }
+}
+
+.image-left {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 0em;
+
+  img {
+    left: 0;
+    height: 20em;
+    position: absolute;
+    width: fit-content;
+    bottom: -10em;
+    max-height: 100vh;
+    transform: scale(-1, -1);
+    opacity: 0.5;
+  }
+}
+
+.image-right {
+  position: relative;
+  left: 0;
+  width: 100vw;
+  height: 0em;
+
+  img {
+    right: 0;
+    height: 20em;
+    position: absolute;
+    width: fit-content;
+    bottom: -10em;
+    max-height: 100vh;
+    opacity: 0.5;
+  }
+}
+
 label {
   display: block;
   font-size: 1.125em;
   font-weight: 700;
   opacity: 0.75;
   margin-bottom: 0.2em;
+
+  @media screen and (max-width: $small-screen) {
+    text-align: center;
+  }
+}
+.sm-flex-reverse {
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column-reverse;
+  }
 }
 
 img {
@@ -36,6 +98,19 @@ img {
   max-height: 100%;
   max-height: 50vh;
   object-fit: contain;
+  @media screen and (max-width: 600px) {
+    max-height: 20vh;
+  }
+}
+
+.contact-form {
+  width: 100%;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+  }
 }
 
 h1 {
@@ -47,13 +122,17 @@ h1 {
   font-weight: 800;
   margin: 0;
   max-width: 100%;
+
+  @media screen and (max-width: $small-screen) {
+    font-size: 30px;
+  }
 }
 
 .background-cover {
   -o-background-size: cover;
   background-size: cover;
-  width: 100vw;
-  height: 100vw;
+  width: 10vw;
+  height: 10vw;
   position: absolute;
   overflow: visible;
 }
@@ -66,6 +145,10 @@ h2 {
   font-size: 36px;
   font-weight: 800;
   margin: 0;
+  @media screen and (max-width: $small-screen) {
+    text-align: center;
+    font-size: 26px;
+  }
 }
 h3 {
   font-size: 24px;
@@ -92,6 +175,15 @@ h3 {
   scroll-margin: 6em;
   max-width: 80rem;
   justify-content: space-between;
+  overflow-y: visible;
+  z-index: 2;
+
+  @media screen and (max-width: $small-screen) {
+    width: 90%;
+    padding: 0;
+    flex-wrap: wrap;
+    padding-top: 4em;
+  }
 }
 
 .half-screen {
@@ -99,7 +191,20 @@ h3 {
 }
 
 .screen-height {
-  min-height: 100vh;
+  @media screen and (min-width: $small-screen) {
+    min-height: 100vh;
+  }
+}
+.sm-screen-height {
+  @media screen and (max-width: $small-screen) {
+    min-height: 80vh;
+    display: flex;
+
+    section {
+      margin: auto;
+      margin-bottom: 20%;
+    }
+  }
 }
 
 .card {
@@ -112,20 +217,46 @@ h3 {
   margin: auto;
   width: 50vw;
   min-height: 30vh;
+  @media screen and (max-width: $small-screen) {
+    width: 90%;
+    flex-wrap: wrap;
+  }
 }
 
 .absolute {
   position: absolute;
 }
 
+.top-image {
+  width: 140vw;
+  position: absolute;
+  object-fit: cover;
+  overflow: visible;
+  max-height: none;
+  left: -50vw;
+  opacity: 0.2;
+  @media screen and (max-width: $small-screen) {
+    opacity: 0.6;
+    width: 200vw;
+    left: -70vw;
+  }
+}
+
 .split-content {
   overflow: unset;
   margin-top: auto;
-  flex: 0 0 auto;
   width: 50%;
   margin-bottom: auto;
   padding: 0.5em;
   height: fit-content;
+  align-content: flex-start;
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+  }
+  @media screen and (min-width: $small-screen) {
+    flex: 0 0 auto;
+  }
 }
 
 .panel {
@@ -149,8 +280,13 @@ a {
   }
 }
 
+.outline {
+  border: solid var(--primary-color-0-5) 1px;
+  border-radius: 10px;
+}
+
 p {
-  font-size: 1.125em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
@@ -161,13 +297,29 @@ p {
   margin-bottom: 1em;
 }
 
+.no-break {
+  white-space: nowrap;
+}
+
 .cols {
   display: flex;
-  gap: 4em;
+  gap: 5em;
   justify-content: center;
   align-items: center;
+  div {
+  }
+}
+
+.super-title {
+  font-size: 6em;
 }
 
 .mark {
-  border-bottom: solid 4px var(--primary-color);
+  // border-bottom: solid 2px var(--primary-color);
+}
+
+.md-margin-top-10 {
+  @media screen and (min-width: $small-screen) {
+    margin-top: 15vh;
+  }
 }

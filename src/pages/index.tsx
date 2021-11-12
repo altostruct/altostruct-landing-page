@@ -6,11 +6,14 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
+import CountUp from "@components/CountUp/CountUp";
 import TeamImage from "../images/team.jpeg";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
 import InfernceImage from "../images/inference.jpeg";
 import emailjs from "emailjs-com";
+import MainImage from "../images/main.svg";
+import EndImage from "../images/end.svg";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 import { useRef } from "react";
@@ -50,10 +53,10 @@ function IndexPage<T>() {
 
   return (
     <main className="page">
-      <Topbar />
-
+      <Topbar></Topbar>
+      <img src={MainImage} className="top-image" />
       <div className="content screen-height title">
-        <div className="split-content">
+        <div className="split-content sm-screen-height">
           <section>
             <h1 style={{ whiteSpace: "nowrap" }}>
               <TextAnimation>
@@ -67,15 +70,18 @@ function IndexPage<T>() {
               <span className="primary">För startups.</span>
             </h1>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              Stockholms-baserade webutvecklare med skräddarsydda lösningar för
+              startups.
             </p>
-            <Button className="space-right">Kontakta oss</Button>
-            <Button type="secondary">Se våra projekt</Button>
+            <Button className="space-right" link="#contact">
+              Kontakta oss
+            </Button>
+            <Button type="secondary" link="#about">
+              Se våra projekt
+            </Button>
           </section>
         </div>
-        <div className="split-content ">
+        <div className="split-content">
           <CardStack
             className="center"
             cards={[
@@ -99,7 +105,7 @@ function IndexPage<T>() {
       <div className="content" id="about">
         <div className="center-content">
           <section>
-            <h1>Hitta utvecklare har aldrig varit enklare</h1>
+            <h1>Cloud- och webbkonsulter för startups</h1>
             <p>
               Altostruct är en konsultfirma som arbetar primärt med molntjänster
               och har ett särskilt fokus på startups. Sedan 2020 har vi arbetat
@@ -110,7 +116,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen" id="customers">
+      <div className="content half-screen sm-flex-reverse">
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -118,9 +124,11 @@ function IndexPage<T>() {
               <span className="primary">Mitt Nrlyze</span>
             </h2>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              Nrlyze har skapat ett system av trådlösa sensorer och mottagare
+              som kan optimera parametrar gällande värmesystem i byggnader. Vårt
+              system ger Nrlyze kunder en portal som tillåter dem att överse
+              byggnaderna de har installerat sensorer i och få sin data
+              presenterad i grafer.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>
@@ -151,7 +159,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen">
+      <div className="content half-screen sm-flex-reverse">
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -159,9 +167,11 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              Stockholms-baserade utvecklare med skräddarsydda lösningar för
-              startups. Vi finns här för att stötta er under er resa från
-              startup och framåt!
+              En startup som erbjuder bätte produktinfo med hjälp av AI.
+              Foodfacts skapar digitala lösningar som gör information om
+              livsmedel mer lättillgängligt och transparent. Altostruct hjälpte
+              till att bygga dels deras AWS molninfrastruktur, dels deras
+              IOS/Android applikation.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>
@@ -171,34 +181,37 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content">
+      <div className="image-right">
+        <img src={EndImage} />
+      </div>
+
+      <div
+        className="content"
+        style={{ paddingBottom: "6em", paddingTop: "6em" }}
+      >
         <div className="center-content cols mark">
           <div>
-            <p>Antal projekt</p>
-            <h1>25 +</h1>
+            <p className="no-break">Antal projekt</p>
+            <h1 className="super-title">25+</h1>
           </div>
           <div>
-            <p>Antal utvecklare</p>
-            <h1>10+</h1>
+            <p className="no-break">Antal utvecklare</p>
+
+            <h1 className="super-title">10+</h1>
           </div>
           <div>
-            <p>Startat</p>
-            <h1>2020</h1>
+            <p className="no-break">Startat</p>
+            <h1 className="super-title">2020</h1>
           </div>
         </div>
       </div>
+      <div className="image-left">
+        <img src={EndImage} />
+      </div>
 
-      {/* <div className="content">
-        <div className="center-content">
-          <p>
-            Klick här för att läsa mer om om våran resa med våra grymma kunder
-          </p>
-          <Button type="secondary">Läs mer</Button>
-        </div>
-      </div> */}
       <div className="content screen-height">
         <div className="center-content">
-          <h2>Ansikterna bakom Altostruct</h2>
+          <h2>Ansiktena bakom Altostruct</h2>
           <img
             src={TeamImage}
             style={{
@@ -260,7 +273,11 @@ function IndexPage<T>() {
         </section>
       </div>
 
-      <Footer />
+      <div className="end-image">
+        <img src={EndImage} />
+      </div>
+
+      <Footer></Footer>
     </main>
   );
 }

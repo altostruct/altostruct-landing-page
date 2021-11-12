@@ -6,12 +6,21 @@ interface ButtonProps {
   className?: string;
   type?: "primary" | "secondary" | "shiny";
   formAction?: "submit" | "reset";
+  link?: string;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, type = "primary", className, formAction } = props;
+  const { children, type = "primary", link, className, formAction } = props;
 
-  return (
+  const LinkWrapper = (cmp: JSX.Element) => {
+    if (link) {
+      return <a href={link}>{cmp}</a>;
+    } else {
+      return cmp;
+    }
+  };
+
+  return LinkWrapper(
     <button
       type={formAction}
       className={[
