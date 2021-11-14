@@ -7,14 +7,26 @@ interface ButtonProps {
   type?: "primary" | "secondary" | "shiny";
   formAction?: "submit" | "reset";
   link?: string;
+  openNewTab?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, type = "primary", link, className, formAction } = props;
+  const {
+    children,
+    openNewTab,
+    type = "primary",
+    link,
+    className,
+    formAction,
+  } = props;
 
   const LinkWrapper = (cmp: JSX.Element) => {
     if (link) {
-      return <a href={link}>{cmp}</a>;
+      return (
+        <a target={openNewTab ? "_blank" : undefined} href={link}>
+          {cmp}
+        </a>
+      );
     } else {
       return cmp;
     }

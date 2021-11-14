@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useSprings, animated, interpolate } from "react-spring";
 import { useGesture } from "react-use-gesture";
+import Swipe from "../../images/swipe.png";
+
 import * as style from "./CardStack.module.scss";
 import { graphql, useStaticQuery } from "gatsby";
 
@@ -27,6 +29,7 @@ interface IProps {
 
 function CardStack(p: IProps) {
   const { cards, className } = p;
+  const [showGesture, setShowGesture] = useState(true);
 
   const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
   const [props, set] = useSprings(cards.length, (i: number) => ({
@@ -62,49 +65,56 @@ function CardStack(p: IProps) {
   );
 
   return (
-    <div id={style["root"]} className={className}>
-      {props.map(({ x, y, rot, scale }, i) => (
-        <animated.div
-          key={i}
-          style={{
-            // TODO fix deprecated function
-            transform: interpolate(
-              [x, y],
-              (x, y) => `translate3d(${x}px,${y}px,0)`
-            ),
-          }}
-        >
+    <>
+      <div
+        id={style["root"]}
+        onMouseDown={() => {
+          setShowGesture(false);
+        }}
+        className={className}
+      >
+        {showGesture && <img className={style.swipe} src={Swipe}></img>}
+        {props.map(({ x, y, rot, scale }, i) => (
           <animated.div
-            {...bind(i)}
+            key={i}
             style={{
-              transform: interpolate([rot, scale], trans),
-              cursor: "grab",
+              // TODO fix deprecated function
+              transform: interpolate(
+                [x, y],
+                (x, y) => `translate3d(${x}px,${y}px,0)`
+              ),
             }}
-            className="flex"
           >
-            <div className="p-1 text-center m-auto">
-              <div className="flex">
-                <img
-                  className="unselectable m-auto"
-                  src={cards[i].image}
-                  alt={cards[i].title}
-                  style={{
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                ></img>
+            <animated.div
+              {...bind(i)}
+              style={{
+                transform: interpolate([rot, scale], trans),
+                cursor: "grab",
+              }}
+              className="flex"
+            >
+              <div className={style.content}>
+                <div className="flex">
+                  <img
+                    className="unselectable m-auto"
+                    src={cards[i].image}
+                    alt={cards[i].title}
+                    style={{
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  ></img>
+                </div>
+
+                <p className="pb-1 unselectable font-mono">
+                  {cards[i].description}
+                </p>
               </div>
-              <h1 className="unselectable text-4xl pb-1 font-bold">
-                {cards[i].title}
-              </h1>
-              <p className="pb-1 unselectable font-mono">
-                {cards[i].description}
-              </p>
-            </div>
+            </animated.div>
           </animated.div>
-        </animated.div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 }
 

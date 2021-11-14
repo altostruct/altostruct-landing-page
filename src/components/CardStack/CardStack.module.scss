@@ -1,4 +1,5 @@
-$small-screen: 920px;
+$small-screen: 720px;
+$mid-screen: 920px;
 
 #root {
   overflow: hidden;
@@ -29,16 +30,70 @@ $small-screen: 920px;
   will-change: transform;
   border-radius: 10px;
   display: grid;
+
   place-items: center;
   text-align: center;
 
   box-shadow: 0 12.5px 100px -10px rgba(50, 50, 73, 0.4),
     0 10px 10px -10px rgba(50, 50, 73, 0.3);
+}
 
-  @media screen and (max-width: $small-screen) {
-    max-width: 20vh;
-    max-height: 30vh;
+@keyframes swipe {
+  0% {
+    display: block;
+    opacity: 0.1;
+    transform: translate(0em, 0em);
   }
+
+  25% {
+    transform: translate(-10em, -2em) rotate(-20deg);
+    display: block;
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate(0em, 0em);
+    display: block;
+    opacity: 0.1;
+  }
+
+  75% {
+    transform: translate(10em, -2em) rotate(20deg);
+    display: block;
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(0em, 0em);
+    display: block;
+    opacity: 0.1;
+  }
+}
+
+.swipeContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  transition: opacity 1s;
+  z-index: 1;
+  background-color: red;
+}
+
+.swipe {
+  opacity: 0.3;
+
+  display: block;
+  position: absolute;
+  animation-name: swipe;
+  z-index: 10;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.content {
+  padding: 0.5rem;
 }
 
 #root {
@@ -49,13 +104,8 @@ $small-screen: 920px;
   max-width: 400px;
   max-height: 600px;
   overflow: visible;
-  user-select: none;
 
   img {
     width: 50%;
-  }
-
-  @media screen and (max-width: $small-screen) {
-    height: 35vh;
   }
 }
