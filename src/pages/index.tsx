@@ -6,13 +6,14 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
-import CountUp from "@components/CountUp/CountUp";
+// import CountUp from "@components/CountUp/CountUp";
 import TeamImage from "../images/team.jpeg";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
 import InfernceImage from "../images/inference.jpeg";
 import MainImage from "../images/main.svg";
 import EndImage from "../images/end.svg";
+import Icon from "@components/Icon";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 // import SEO from "../components/SEO/SEO";
@@ -22,7 +23,7 @@ function IndexPage<T>() {
   return (
     <main className="page">
       <Topbar></Topbar>
-      <img src={MainImage} className="top-image" />
+      <Icon.Square className="top-image" />
       <div className="content screen-height title">
         <div className="split-content sm-screen-height">
           <section>
@@ -137,11 +138,10 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              En startup som erbjuder bätte produktinfo med hjälp av AI.
-              Foodfacts skapar digitala lösningar som gör information om
-              livsmedel mer lättillgängligt och transparent. Altostruct hjälpte
-              till att bygga dels deras AWS molninfrastruktur, dels deras
-              IOS/Android applikation.
+              Foodfacts skapar digitala lösningar som med hjälp av AI gör
+              information om livsmedel lättillgängligt och transparent.
+              Altostruct hjälpte till att bygga dels deras AWS
+              molninfrastruktur, dels deras IOS/Android applikation.
             </p>
             <Button type="primary">Se projekt</Button>
           </section>

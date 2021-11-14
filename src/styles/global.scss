@@ -201,7 +201,7 @@ h3 {
 
     section {
       margin: auto;
-      margin-bottom: 20%;
+      margin-bottom: 25%;
     }
   }
 }
@@ -227,17 +227,22 @@ h3 {
 }
 
 .top-image {
-  width: 140vw;
+  width: 100vw;
   position: absolute;
   object-fit: cover;
   overflow: visible;
   max-height: none;
-  left: -50vw;
+  left: -30vw;
+  top: -30vw;
   opacity: 0.2;
   @media screen and (max-width: $small-screen) {
-    opacity: 0.6;
-    width: 200vw;
-    left: -70vw;
+    opacity: 0.2;
+    width: 300vw;
+    left: -80vw;
+    top: -90vw;
+    * {
+      stroke-width: 2px !important;
+    }
   }
 }
 
