@@ -1,51 +1,23 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
+  // Used for github pages
+  pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
     siteUrl: `https://www.altostruct.com`,
     title: `Altostruct - Startup consulting`,
     description: `Cloud and web consulting for startups and innovative companies`,
-    author: `Erik Rehn`,
+    author: `Erik Rehn & Joakim Tornert`,
   },
   plugins: [
     "gatsby-plugin-postcss",
-    "gatsby-plugin-robots-txt",
-    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "UA-165864928-1",
-        head: true,
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: { name: "src", path: `${__dirname}/src/` },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        commonmark: true,
-        footnotes: true,
-        pedantic: true,
-        gfm: true,
-        plugins: [
-          {
-            resolve: "gatsby-remark-images",
-            options: {
-              maxWidth: 750,
-              linkImageToOriginal: false,
-            },
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -55,11 +27,24 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: "src/assets/favicon.png",
+        icon: "src/images/favicon.png",
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        implementation: require("sass"),
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
   ],
-}
+};

@@ -1,0 +1,29 @@
+$small-screen: 720px;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  background-color: white;
+  z-index: 1000;
+
+  .brand {
+    font-size: 1.125em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+  }
+
+  @media screen and (max-width: $small-screen) {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+  }
+}

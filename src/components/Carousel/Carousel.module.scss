@@ -1,0 +1,33 @@
+$width: max(60vh, 20vw);
+$height: max(60vh, 20vw);
+
+.child {
+  width: $width;
+  height: $height;
+  float: right;
+
+  display: inline-table;
+}
+
+.children {
+  display: inline-flex;
+}
+
+.arrows {
+  bottom: 10px;
+  position: absolute;
+  width: 100%;
+}
+
+.carousel {
+  width: $width;
+  height: $height;
+  overflow: hidden;
+  position: relative;
+}
+
+.wrapper {
+  width: $width;
+  height: $height;
+  position: relative;
+}
