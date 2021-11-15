@@ -12,7 +12,9 @@ const Topbar = () => {
         </a>
       </nav>
       <nav>
-        <a href="#customers">Kunder</a>
+        <a href="#customers" style={{ marginRight: "1em" }}>
+          Kunder
+        </a>
         <a href="#contact">Kontakta oss</a>
       </nav>
     </header>

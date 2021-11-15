@@ -20,8 +20,6 @@ $small-screen: 720px;
     display: flex;
     align-items: center;
     padding: 1em;
-    grid-gap: 3vh;
-    gap: 3vh;
   }
 
   @media screen and (max-width: $small-screen) {
