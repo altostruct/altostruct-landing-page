@@ -19,6 +19,8 @@ function TextAnimation(props: TextAnimationProps) {
 
   return (
     <>
+      <noscript>{children[0]}</noscript>
+
       {!done ? (
         <Typist
           onTypingDone={() => {

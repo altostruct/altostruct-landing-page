@@ -71,9 +71,14 @@ function CardStack(p: IProps) {
         onMouseDown={() => {
           setShowGesture(false);
         }}
+        onTouchMove={() => {
+          setShowGesture(false);
+        }}
         className={className}
       >
-        {showGesture && <img className={style.swipe} src={Swipe}></img>}
+        {showGesture && (
+          <img alt="swipehand" className={style.swipe} src={Swipe}></img>
+        )}
         {props.map(({ x, y, rot, scale }, i) => (
           <animated.div
             key={i}

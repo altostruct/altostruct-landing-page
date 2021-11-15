@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p>Copyright &copy; 2021 Altostruct AB</p>
-      <div>
+      <p>
         Icons made by{" "}
         <a
           href="https://www.flaticon.com/authors/dreamstale"
@@ -17,7 +17,7 @@ const Footer = () => {
         <a href="https://www.flaticon.com/" title="Flaticon">
           www.flaticon.com
         </a>
-      </div>
+      </p>
     </footer>
   );
 };

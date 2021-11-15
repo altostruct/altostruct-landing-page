@@ -124,9 +124,10 @@ h1 {
   font-weight: 800;
   margin: 0;
   max-width: 100%;
+  overflow: hidden;
 
   @media screen and (max-width: $small-screen) {
-    font-size: 36px;
+    font-size: 35px;
   }
 }
 
@@ -284,8 +285,9 @@ h3 {
   margin-top: auto;
   width: 50%;
   margin-bottom: auto;
-  padding: 0.5em;
+  margin-right: 0.5em;
   height: fit-content;
+
   align-content: flex-start;
 
   @media screen and (max-width: $mid-screen) {

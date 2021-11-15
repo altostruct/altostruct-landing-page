@@ -10,7 +10,7 @@ import Button from "@components/Button/Button";
 import TeamImage from "../images/team.png";
 import NrlyzeImage from "../images/nrlyze.png";
 import FoodfactsImage from "../images/foodfacts.png";
-import InfernceImage from "../images/inference.jpeg";
+import InfernceImage from "../images/inference.png";
 import emailjs from "emailjs-com";
 
 import EndImage from "../images/end.svg";
@@ -18,6 +18,7 @@ import Icon from "@components/Icon";
 
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 import { useRef } from "react";
+import SEO from "@components/SEO/SEO";
 // import SEO from "../components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
@@ -54,6 +55,16 @@ function IndexPage<T>() {
 
   return (
     <main className="page">
+      <SEO
+        title="Startup consulting for cloud and web"
+        description="Stockholm based cloud and web consulting for startups"
+        lang="en"
+      />
+      <SEO
+        title="Startup consulting for cloud and web"
+        description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
+        lang="swe"
+      />
       <Topbar></Topbar>
       <div className="content screen-height title">
         <Icon.Square className="top-image" />
@@ -62,10 +73,14 @@ function IndexPage<T>() {
             <h1 style={{ whiteSpace: "nowrap" }}>
               <TextAnimation>
                 {[
-                  "Flexibla utvecklare.",
-                  "I Stockholm.",
+                  // Keep best one on top
+                  // since that is the one used when
+                  // no javascript is enabled
                   "Webbutvecklare.",
-                  "Solutions architects.",
+                  "Flexibla tider.",
+                  "I Stockholm.",
+                  "Cloud architects.",
+                  "Noll bindningstid.",
                 ]}
               </TextAnimation>
               <span className="primary">För startups.</span>
@@ -263,7 +278,7 @@ function IndexPage<T>() {
               <input type="text" id="fullName" name="from_name" />
               <label htmlFor="companyName">Namn på företag</label>
               <input type="text" id="companyName" name="company" />
-              <label htmlFor="">Mejladress</label>
+              <label htmlFor="email">Mejladress</label>
               <input type="email" id="email" name="reply_to" ref={email} />
               <label htmlFor="phone">Telefonnummer</label>
               <input type="number" id="phone" name="phone" />

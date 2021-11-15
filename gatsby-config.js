@@ -1,8 +1,11 @@
 module.exports = {
+  // Used for github pages
   pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "altostruct-website-gatsby",
+    siteUrl: `https://www.altostruct.com`,
+    title: `Altostruct - Startup consulting`,
+    description: `Cloud and web consulting for startups and innovative companies`,
+    author: `Erik Rehn & Joakim Tornert`,
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -16,9 +19,15 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        icon: "src/images/icon.png",
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: "src/images/favicon.png",
       },
     },
     {
