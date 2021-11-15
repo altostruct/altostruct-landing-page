@@ -27,7 +27,7 @@ function IndexPage<T>() {
   const email: React.MutableRefObject<HTMLInputElement> = useRef();
   const callMe: React.MutableRefObject<HTMLInputElement> = useRef();
 
-  const sendEmail = (event) => {
+  const sendEmail = (event: any) => {
     event.preventDefault();
 
     if (callMe.current.checked) {
@@ -42,7 +42,7 @@ function IndexPage<T>() {
         "user_k0ZJNxep5Jd9wlP37YY93"
       )
       .then(
-        (result) => {
+        () => {
           alert(
             `Tack för ditt meddelande! Vi svarar till din mejladress (${email.current.value}) så snart vi kan. 🎈`
           );
@@ -79,7 +79,7 @@ function IndexPage<T>() {
                   "Webbutvecklare.",
                   "Flexibla tider.",
                   "I Stockholm.",
-                  "Cloud architects.",
+                  "Molnarkitekter.",
                   "Noll bindningstid.",
                 ]}
               </TextAnimation>

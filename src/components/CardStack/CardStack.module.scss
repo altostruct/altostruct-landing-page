@@ -80,6 +80,10 @@ $mid-screen: 920px;
   left: 40%;
   animation-duration: 4s;
   animation-iteration-count: infinite;
+
+  @media screen and (max-width: $small-screen) {
+    width: 25% !important;
+  }
 }
 
 .content {
