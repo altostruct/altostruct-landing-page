@@ -78,6 +78,8 @@ function IndexPage<T>() {
                   // no javascript is enabled
                   "Webbutvecklare.",
                   "Flexibla tider.",
+                  "IOS Appar.",
+                  "Starta imorgon.",
                   "I Stockholm.",
                   "Molnarkitekter.",
                   "Noll bindningstid.",

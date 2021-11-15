@@ -12,6 +12,7 @@ const Topbar = () => {
         </a>
       </nav>
       <nav>
+        {/* Simulates css grids, since it is not supported ios */}
         <a href="#customers" style={{ marginRight: "1em" }}>
           Kunder
         </a>
