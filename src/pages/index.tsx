@@ -79,16 +79,18 @@ function IndexPage<T>() {
                   "Webbutvecklare.",
                   "Flexibla tider.",
                   "IOS Appar.",
-                  "Starta imorgon.",
-                  "I Stockholm.",
+                  "Fasta priser.",
+                  "Designers.",
+                  "Börjar imorgon.",
                   "Molnarkitekter.",
+                  "I Stockholm.",
                   "Noll bindningstid.",
                 ]}
               </TextAnimation>
               <span className="primary">För startups.</span>
             </h1>
-            <p>
-              <span className="white-bg-text">
+            <p className="subtitle">
+              <span className="white-bg-text subtitle">
                 Webbutvecklare i Stockholm med skräddarsydda lösningar för
                 startups.
               </span>
@@ -112,7 +114,7 @@ function IndexPage<T>() {
                 title: "Node.js",
               },
               {
-                description: "Nytt frontend med ReactJS",
+                description: "Bygga nytt frontend med ReactJS",
                 image:
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDablGa_xaGvUTE9ihIjQ0Yo-jCMFKdqnoQ&usqp=CAU",
                 title: "React",
@@ -138,7 +140,6 @@ function IndexPage<T>() {
         <div className="center-content">
           <section>
             <h1>
-              {" "}
               <span className="white-bg-text">
                 Cloud- och webbkonsulter för startups
               </span>
@@ -155,7 +156,10 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen sm-flex-reverse" id="customers">
+      <div
+        className="content showcase half-screen sm-flex-reverse"
+        id="customers"
+      >
         <div className="split-content">
           <section>
             <label>Showcase</label>
@@ -164,11 +168,10 @@ function IndexPage<T>() {
             </h2>
             <p>
               <span className="white-bg-text">
-                Nrlyze har skapat ett system av trådlösa sensorer och mottagare
-                som kan optimera parametrar gällande värmesystem i byggnader.
-                Vårt system ger Nrlyze kunder en portal som tillåter dem att
-                överse byggnaderna de har installerat sensorer i och få sin data
-                presenterad i grafer.
+                Nrlyze har skapat ett system av trådlösa sensorer som kan
+                optimera parametrar gällande värmesystem i byggnader. Altostruct
+                hjälpte Nrlyze bygga en portal som tillåter dem att överse
+                byggnaderna och få sin data presenterad i grafer.
               </span>
             </p>
             <Button openNewTab link="https://www.nrlyze.se/" type="primary">
@@ -181,7 +184,7 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content half-screen">
+      <div className="content showcase half-screen">
         <div className="split-content">
           <img src={InfernceImage} />
         </div>
@@ -193,15 +196,14 @@ function IndexPage<T>() {
             </h2>
             <p>
               En Medtech startup med målet att hjälpa sina kunder nå ett
-              friskare liv. Genom att logga sina måltider och vanor ska de kunna
-              få rekommendationer på hur de kan förbättra sin hälsa och sitt
-              allmänna välmående.
+              friskare liv. Altostruct hjälpte bygga en webbapplikation som
+              läkarna kan använda som supportverktyg vid beslutsfattning
             </p>
           </section>
         </div>
       </div>
 
-      <div className="content half-screen sm-flex-reverse">
+      <div className="content showcase half-screen sm-flex-reverse">
         <div className="split-content">
           <section>
             <label>Showcase</label>
