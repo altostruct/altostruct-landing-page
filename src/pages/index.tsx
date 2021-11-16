@@ -211,10 +211,10 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              Foodfacts skapar digitala lösningar som med hjälp av AI gör
+              Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör
               information om livsmedel lättillgängligt och transparent.
-              Altostruct hjälpte till att bygga dels deras AWS
-              molninfrastruktur, dels deras IOS/Android applikation.
+              Altostruct hjälpte till att bygga deras AWS molninfrastruktur och
+              deras IOS/Android applikation.
             </p>
             <Button openNewTab link="https://www.foodfacts.se/" type="primary">
               Se projekt
