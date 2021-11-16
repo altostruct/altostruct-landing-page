@@ -5,7 +5,7 @@ $mid-screen: 920px;
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #313ba9;
+  --primary-color: #0f559b;
   --primary-color-0-5: #ff650263;
   --primary-color-inv: white;
 }
@@ -89,7 +89,7 @@ label {
   }
 }
 .sm-flex-reverse {
-  @media screen and (max-width: $small-screen) {
+  @media screen and (max-width: $mid-screen) {
     flex-direction: column-reverse;
   }
 }
@@ -231,7 +231,7 @@ h3 {
   min-height: 30vh;
 
   @media screen and (max-width: $small-screen) {
-    width: 90%;
+    width: 100%;
     flex-wrap: wrap;
   }
 }
@@ -299,6 +299,13 @@ h3 {
   }
 }
 
+.showcase {
+  @media screen and (max-width: $small-screen) {
+    p {
+      text-align: center;
+    }
+  }
+}
 .panel {
   border: solid black 10px;
 }
