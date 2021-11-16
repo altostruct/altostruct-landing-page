@@ -6,6 +6,11 @@ const Footer = () => {
     <footer className="footer">
       <p>Copyright &copy; 2021 Altostruct AB</p>
       <p>
+        Kontakt: <a href="mailto:info@altostruct.se">info@altostruct.se</a>
+      </p>
+      <p>Org nr: 559244-1561</p>
+      <p>Stockholms län, Lidingö</p>
+      <p>
         Icons made by{" "}
         <a
           href="https://www.flaticon.com/authors/dreamstale"
