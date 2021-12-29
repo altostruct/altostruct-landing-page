@@ -22,35 +22,71 @@ import SEO from "@components/SEO/SEO";
 // import SEO from "../components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
-function IndexPage<T>() {
-  const form = useRef();
-  const email: React.MutableRefObject<HTMLInputElement> = useRef();
-  const callMe: React.MutableRefObject<HTMLInputElement> = useRef();
+interface FormInput {
+  fullName?: string;
+  email?: string;
+  companyName?: string;
+  phone?: string;
+  message?: string;
+}
 
-  const sendEmail = (event: any) => {
+function IndexPage<T>() {
+  const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = async (event: any) => {
+    // Pervents a default post request associated with the form
     event.preventDefault();
 
-    if (callMe.current.checked) {
-      callMe.current.value = "Please call me!";
+    // if no form exist in the ref something went very wrong
+    if (!form.current) {
+      console.error("Something must have gone wrong...");
+      return false;
     }
 
-    emailjs
-      .sendForm(
+    const validateInput = (input: FormInput) => {
+      const errors: string[] = [];
+
+      if (!input.fullName) errors.push("Provide a name!");
+      if (!input.email) errors.push("Provide an email!");
+      if (!input.companyName) errors.push("Provide a company name!");
+      if (!input.phone) errors.push("Provide a phone nr!");
+      if (!input.message) errors.push("Provide a message!");
+
+      if (errors.length === 0) return null;
+      return errors;
+    };
+
+    const values: FormInput = {
+      companyName: form.current.companyName.value,
+      email: form.current.email.value,
+      message: form.current.message.value,
+      fullName: form.current.fullName.value,
+      phone: form.current.phone.value,
+    };
+
+    const errors = validateInput(values);
+
+    if (errors !== null) {
+      alert(errors.join("\n"));
+      return;
+    }
+
+    console.log(form.current.fullName.value);
+
+    try {
+      await emailjs.sendForm(
         "service_xf3l6xg",
         "template_sjt8u7f",
         form.current,
         "user_k0ZJNxep5Jd9wlP37YY93"
-      )
-      .then(
-        () => {
-          alert(
-            `Tack för ditt meddelande! Vi svarar till din mejladress (${email.current.value}) så snart vi kan. 🎈`
-          );
-        },
-        (error) => {
-          console.log(error.text);
-        }
       );
+
+      alert(
+        `Tack för ditt meddelande! Vi svarar till din mejladress (${values.email}) så snart vi kan. 🎈`
+      );
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -136,7 +172,16 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content" id="about">
+      <div
+        style={{
+          // Adding some extra padding due to the shadow for the card
+          // since it on small screen takes up more than the whole screen.
+          // Better solutions might exists but this works for now :)
+          marginTop: "4em",
+        }}
+        className="content"
+        id="about"
+      >
         <div className="center-content">
           <section>
             <h1>
@@ -211,10 +256,10 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              Foodfacts skapar digitala lösningar som med hjälp av AI gör
+              Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör
               information om livsmedel lättillgängligt och transparent.
-              Altostruct hjälpte till att bygga dels deras AWS
-              molninfrastruktur, dels deras IOS/Android applikation.
+              Altostruct hjälpte till att bygga deras AWS molninfrastruktur och
+              deras IOS/Android applikation.
             </p>
             <Button openNewTab link="https://www.foodfacts.se/" type="primary">
               Se projekt
@@ -277,13 +322,13 @@ function IndexPage<T>() {
             className="content"
             style={{ padding: 0, gap: "4em" }}
           >
-            <div className="contact-form">
+            <div className="contact-form" style={{ flexGrow: 1, width: "50%" }}>
               <label htmlFor="fullName">För- och efternamn</label>
               <input type="text" id="fullName" name="from_name" />
               <label htmlFor="companyName">Namn på företag</label>
               <input type="text" id="companyName" name="company" />
               <label htmlFor="email">Mejladress</label>
-              <input type="email" id="email" name="reply_to" ref={email} />
+              <input type="email" id="email" name="reply_to" />
               <label htmlFor="phone">Telefonnummer</label>
               <input type="number" id="phone" name="phone" />
               <br />
@@ -291,24 +336,35 @@ function IndexPage<T>() {
             <div style={{ flexGrow: 1 }}>
               <label htmlFor="message">Meddelande</label>
               <textarea id="message" name="message" rows={10}></textarea>
-              <div style={{ textAlign: "right" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  alignItems: "center",
+                  marginBottom: "1em",
+                }}
+              >
                 <label
                   htmlFor="callMe"
                   style={{
                     display: "inline-block",
                     marginRight: "1em",
                     cursor: "pointer",
+                    width: "100%",
+                    textAlign: "right",
                   }}
                 >
                   Jag vill bli uppringd under vanliga arbetstider
                 </label>
-                <input
-                  ref={callMe}
-                  type="checkbox"
-                  id="callMe"
-                  name="call_me"
-                  style={{ marginRight: "2em" }}
-                />
+                <input type="checkbox" id="callMe" name="call_me" />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  alignItems: "center",
+                }}
+              >
                 <Button type="primary" formAction="submit">
                   Skicka
                 </Button>

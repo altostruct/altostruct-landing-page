@@ -83,11 +83,8 @@ label {
   font-weight: 700;
   opacity: 0.75;
   margin-bottom: 0.2em;
-
-  @media screen and (max-width: $small-screen) {
-    text-align: center;
-  }
 }
+
 .sm-flex-reverse {
   @media screen and (max-width: $mid-screen) {
     flex-direction: column-reverse;
@@ -102,16 +99,6 @@ img {
   object-fit: contain;
   @media screen and (max-width: 600px) {
     max-height: 20vh;
-  }
-}
-
-.contact-form {
-  width: 100%;
-
-  input {
-    box-sizing: border-box;
-    width: 100%;
-    position: relative;
   }
 }
 
@@ -297,6 +284,12 @@ h3 {
   @media screen and (min-width: $mid-screen) {
     flex: 0 0 auto;
   }
+
+  @media screen and (max-width: $small-screen) {
+    label {
+      text-align: center;
+    }
+  }
 }
 
 .showcase {
@@ -372,8 +365,6 @@ p {
 }
 
 .contact-form {
-  width: 100%;
-
   input {
     box-sizing: border-box;
     width: 100%;
