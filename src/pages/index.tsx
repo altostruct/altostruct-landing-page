@@ -172,7 +172,16 @@ function IndexPage<T>() {
         </div>
       </div>
 
-      <div className="content" id="about">
+      <div
+        style={{
+          // Adding some extra padding due to the shadow for the card
+          // since it on small screen takes up more than the whole screen.
+          // Better solutions might exists but this works for now :)
+          marginTop: "4em",
+        }}
+        className="content"
+        id="about"
+      >
         <div className="center-content">
           <section>
             <h1>
