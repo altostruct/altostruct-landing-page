@@ -23,34 +23,30 @@ import SEO from "@components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
 function IndexPage<T>() {
-  const form = useRef();
-  const email: React.MutableRefObject<HTMLInputElement> = useRef();
-  const callMe: React.MutableRefObject<HTMLInputElement> = useRef();
+  const form = useRef<any>();
 
   const sendEmail = (event: any) => {
+    if (!form.current) return false;
+
     event.preventDefault();
 
-    if (callMe.current.checked) {
-      callMe.current.value = "Please call me!";
-    }
-
-    emailjs
-      .sendForm(
-        "service_xf3l6xg",
-        "template_sjt8u7f",
-        form.current,
-        "user_k0ZJNxep5Jd9wlP37YY93"
-      )
-      .then(
-        () => {
-          alert(
-            `Tack för ditt meddelande! Vi svarar till din mejladress (${email.current.value}) så snart vi kan. 🎈`
-          );
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    // emailjs
+    //   .sendForm(
+    //     "service_xf3l6xg",
+    //     "template_sjt8u7f",
+    //     form.current,
+    //     "user_k0ZJNxep5Jd9wlP37YY93"
+    //   )
+    //   .then(
+    //     () => {
+    //       alert(
+    //         `Tack för ditt meddelande! Vi svarar till din mejladress (${form.current.email}) så snart vi kan. 🎈`
+    //       );
+    //     },
+    //     (error) => {
+    //       console.log(error.text);
+    //     }
+    //   );
   };
 
   return (
@@ -277,13 +273,13 @@ function IndexPage<T>() {
             className="content"
             style={{ padding: 0, gap: "4em" }}
           >
-            <div className="contact-form">
+            <div className="contact-form" style={{ flexGrow: 1, width: "50%" }}>
               <label htmlFor="fullName">För- och efternamn</label>
               <input type="text" id="fullName" name="from_name" />
               <label htmlFor="companyName">Namn på företag</label>
               <input type="text" id="companyName" name="company" />
               <label htmlFor="email">Mejladress</label>
-              <input type="email" id="email" name="reply_to" ref={email} />
+              <input type="email" id="email" name="reply_to" />
               <label htmlFor="phone">Telefonnummer</label>
               <input type="number" id="phone" name="phone" />
               <br />
@@ -291,24 +287,35 @@ function IndexPage<T>() {
             <div style={{ flexGrow: 1 }}>
               <label htmlFor="message">Meddelande</label>
               <textarea id="message" name="message" rows={10}></textarea>
-              <div style={{ textAlign: "right" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  alignItems: "center",
+                  marginBottom: "1em",
+                }}
+              >
                 <label
                   htmlFor="callMe"
                   style={{
                     display: "inline-block",
                     marginRight: "1em",
                     cursor: "pointer",
+                    width: "80%",
+                    textAlign: "right",
                   }}
                 >
                   Jag vill bli uppringd under vanliga arbetstider
                 </label>
-                <input
-                  ref={callMe}
-                  type="checkbox"
-                  id="callMe"
-                  name="call_me"
-                  style={{ marginRight: "2em" }}
-                />
+                <input type="checkbox" id="callMe" name="call_me" />
+              </div>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  alignItems: "center",
+                }}
+              >
                 <Button type="primary" formAction="submit">
                   Skicka
                 </Button>
