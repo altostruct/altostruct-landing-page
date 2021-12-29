@@ -22,31 +22,71 @@ import SEO from "@components/SEO/SEO";
 // import SEO from "../components/SEO/SEO";
 // import useTranslation from "src/hooks/useTranslation";
 
+interface FormInput {
+  fullName?: string;
+  email?: string;
+  companyName?: string;
+  phone?: string;
+  message?: string;
+}
+
 function IndexPage<T>() {
-  const form = useRef<any>();
+  const form = useRef<HTMLFormElement | null>(null);
 
-  const sendEmail = (event: any) => {
-    if (!form.current) return false;
-
+  const sendEmail = async (event: any) => {
+    // Pervents a default post request associated with the form
     event.preventDefault();
 
-    // emailjs
-    //   .sendForm(
-    //     "service_xf3l6xg",
-    //     "template_sjt8u7f",
-    //     form.current,
-    //     "user_k0ZJNxep5Jd9wlP37YY93"
-    //   )
-    //   .then(
-    //     () => {
-    //       alert(
-    //         `Tack för ditt meddelande! Vi svarar till din mejladress (${form.current.email}) så snart vi kan. 🎈`
-    //       );
-    //     },
-    //     (error) => {
-    //       console.log(error.text);
-    //     }
-    //   );
+    // if no form exist in the ref something went very wrong
+    if (!form.current) {
+      console.error("Something must have gone wrong...");
+      return false;
+    }
+
+    const validateInput = (input: FormInput) => {
+      const errors: string[] = [];
+
+      if (!input.fullName) errors.push("Provide a name!");
+      if (!input.email) errors.push("Provide an email!");
+      if (!input.companyName) errors.push("Provide a company name!");
+      if (!input.phone) errors.push("Provide a phone nr!");
+      if (!input.message) errors.push("Provide a message!");
+
+      if (errors.length === 0) return null;
+      return errors;
+    };
+
+    const values: FormInput = {
+      companyName: form.current.companyName.value,
+      email: form.current.email.value,
+      message: form.current.message.value,
+      fullName: form.current.fullName.value,
+      phone: form.current.phone.value,
+    };
+
+    const errors = validateInput(values);
+
+    if (errors !== null) {
+      alert(errors.join("\n"));
+      return;
+    }
+
+    console.log(form.current.fullName.value);
+
+    try {
+      await emailjs.sendForm(
+        "service_xf3l6xg",
+        "template_sjt8u7f",
+        form.current,
+        "user_k0ZJNxep5Jd9wlP37YY93"
+      );
+
+      alert(
+        `Tack för ditt meddelande! Vi svarar till din mejladress (${values.email}) så snart vi kan. 🎈`
+      );
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
