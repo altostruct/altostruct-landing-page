@@ -301,7 +301,7 @@ function IndexPage<T>() {
                     display: "inline-block",
                     marginRight: "1em",
                     cursor: "pointer",
-                    width: "80%",
+                    width: "100%",
                     textAlign: "right",
                   }}
                 >
