@@ -10,3 +10,22 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     },
   });
 };
+
+const LANGUGES = ["swe", "en"];
+
+exports.onCreatePage = async ({ graphql, actions, page, ...rest }) => {
+  //
+
+  const { createPage } = actions;
+
+  for (const lang of LANGUGES) {
+    console.log("Creating path for ", lang, page.path);
+    createPage({
+      component: page.component,
+      path: `${lang}${page.path}`,
+      context: {
+        lang,
+      },
+    });
+  }
+};
