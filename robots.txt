@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.altostruct.com/altostruct-landing-page/sitemap/sitemap-index.xml
+Host: https://www.altostruct.com
