@@ -10,8 +10,6 @@ $mid-screen: 920px;
   margin-left: auto;
   height: fit-content;
 
-  align-content: flex-start;
-
   @media screen and (max-width: $mid-screen) {
     width: 100%;
   }

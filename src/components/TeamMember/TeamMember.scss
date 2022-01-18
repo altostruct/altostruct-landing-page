@@ -6,7 +6,6 @@ $mid-screen: 920px;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1px;
@@ -25,20 +24,18 @@ $mid-screen: 920px;
   font-size: 12px;
   line-height: 18px;
   margin: auto;
+  margin-left: 0;
 
   color: #5c5c5c;
 }
 
 .split-members {
+  display: flex;
+  flex-direction: column;
   overflow: unset;
-  margin-top: auto;
+  margin: auto;
   width: 100%;
-  margin-bottom: 50px;
-  margin-right: auto;
-  margin-left: auto;
   height: fit-content;
-
-  align-content: flex-start;
 
   @media screen and (max-width: $mid-screen) {
     width: 100%;
@@ -57,7 +54,6 @@ $mid-screen: 920px;
 
 .mail {
   box-sizing: border-box;
-  display: flex;
   justify-content: flex-end;
   font-size: 12px;
   line-height: 18px;
@@ -71,4 +67,17 @@ $mid-screen: 920px;
   line-height: 45px;
 
   color: #000000;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
+.presentation-image {
+  width: 150px;
+  height: 169.63px;
+  left: 0px;
+  top: -10px;
 }

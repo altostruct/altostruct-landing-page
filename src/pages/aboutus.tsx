@@ -5,35 +5,41 @@ import Icon from "@components/Icon";
 import "@styles/global.scss";
 import "./aboutus.scss";
 import TeamMember from "@components/TeamMember/TeamMember";
+
 function AboutUs() {
   const teamMembers = [
     {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. Aenean massa. 
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies. 
+      Quisque interdum dolor nec aliquam aliquam. 
+      Mauris id massa dui. 
+      Vivamus hendrerit tincidunt mattis. `,
       mail: "rasmus.holmgren@altostruct.se",
       id: 1,
     },
     {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. Aenean massa. 
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
       mail: "rasmus.holmgren@altostruct.se",
       id: 2,
     },
     {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
-        Aenean commodo ligula eget dolor. Aenean massa. 
-        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
       mail: "rasmus.holmgren@altostruct.se",
       id: 3,
     },
@@ -43,7 +49,7 @@ function AboutUs() {
     <main className="page">
       <Topbar></Topbar>
       <div className="title content screen-height">
-        <Icon.Square className="top-image" />
+        {/* <Icon.Square className="top-image" /> */}
 
         <div className="aboutus-content">
           <div>
