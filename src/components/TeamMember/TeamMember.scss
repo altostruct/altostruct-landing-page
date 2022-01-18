@@ -1,0 +1,70 @@
+$small-screen: 720px;
+$mid-screen: 920px;
+
+.presentation {
+  display: flex;
+  font-size: 0.9em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+// .mail {
+//   font-size: 0.7em;
+//   text-align: end;
+// }
+
+.team-title {
+  font-size: 0.7em;
+  font-weight: 700;
+  opacity: 0.75;
+  margin-bottom: 0.2em;
+  text-align: left;
+}
+
+.split-members {
+  overflow: unset;
+  margin-top: auto;
+  width: 100%;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  height: fit-content;
+
+  align-content: flex-start;
+
+  @media screen and (max-width: $mid-screen) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: $mid-screen) {
+    flex: 0 0 auto;
+  }
+
+  @media screen and (max-width: $small-screen) {
+    label {
+      text-align: center;
+    }
+  }
+}
+
+.mail {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  font-size: small;
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+    text-align: flex-end;
+    justify-content: center;
+    border-radius: 0.5em;
+  }
+}
+
+.name {
+  font-size: 1.5em;
+  margin-bottom: 0.2em;
+  text-align: left;
+}

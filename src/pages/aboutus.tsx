@@ -4,9 +4,9 @@ import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 import "@styles/global.scss";
 import "./aboutus.scss";
-
+import TeamMember from "@components/TeamMember/TeamMember";
 function AboutUs() {
-  const team = [
+  const teamMembers = [
     {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
@@ -25,7 +25,17 @@ function AboutUs() {
         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
         Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
       mail: "rasmus.holmgren@altostruct.se",
-      id: 1,
+      id: 2,
+    },
+    {
+      name: "Rasmus Holmgren",
+      title: "Fullstack developer",
+      presentation: `Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+        Aenean commodo ligula eget dolor. Aenean massa. 
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+        Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.`,
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 3,
     },
   ];
 
@@ -35,28 +45,15 @@ function AboutUs() {
       <div className="title content screen-height">
         <Icon.Square className="top-image" />
         <div className="aboutus-content">
-          <div className="sm-screen-height">
+          <div>
             <label>Om vårt</label>
             <h1 className="primary">Team</h1>
           </div>
-
-          {team.map((teamMember) => (
-            <div className="split-members" key={teamMember.id}>
-              <h2>{teamMember.name}</h2>
-              <label>{teamMember.title}</label>
-              <p>
-                <span className="aboutus-presentation">
-                  {teamMember.presentation}
-                </span>
-              </p>
-              <a
-                className="aboutus-mail primary"
-                href={"mailto:" + teamMember.mail}
-              >
-                {teamMember.mail}
-              </a>
-            </div>
-          ))}
+          <div>
+            {teamMembers.map((teamMember) => (
+              <TeamMember member={teamMember} key={teamMember.id}></TeamMember>
+            ))}
+          </div>
         </div>
       </div>
       <Footer></Footer>

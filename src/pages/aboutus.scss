@@ -26,38 +26,3 @@ $mid-screen: 920px;
     }
   }
 }
-
-.split-members {
-  overflow: unset;
-  margin-top: auto;
-  width: 100%;
-  margin-bottom: auto;
-  margin-right: auto;
-  margin-left: auto;
-  height: fit-content;
-
-  align-content: flex-start;
-
-  @media screen and (max-width: $mid-screen) {
-    width: 100%;
-  }
-
-  @media screen and (min-width: $mid-screen) {
-    flex: 0 0 auto;
-  }
-
-  @media screen and (max-width: $small-screen) {
-    label {
-      text-align: center;
-    }
-  }
-}
-
-.aboutus-presentation {
-  font-size: 0.9em;
-}
-
-.aboutus-mail {
-  font-size: 0.7em;
-  text-align: end;
-}
