@@ -44,9 +44,10 @@ function AboutUs() {
       <Topbar></Topbar>
       <div className="title content screen-height">
         <Icon.Square className="top-image" />
+
         <div className="aboutus-content">
           <div>
-            <label>Om vårt</label>
+            <h3 className="aboutus-title">Om vårt</h3>
             <h1 className="primary">Team</h1>
           </div>
           <div>
@@ -56,6 +57,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
+
       <Footer></Footer>
     </main>
   );

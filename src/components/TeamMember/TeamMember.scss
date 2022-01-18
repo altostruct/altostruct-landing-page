@@ -2,8 +2,11 @@ $small-screen: 720px;
 $mid-screen: 920px;
 
 .presentation {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
   display: flex;
-  font-size: 0.9em;
   margin-left: auto;
   margin-right: auto;
   margin-top: 1px;
@@ -16,11 +19,14 @@ $mid-screen: 920px;
 // }
 
 .team-title {
-  font-size: 0.7em;
-  font-weight: 700;
-  opacity: 0.75;
-  margin-bottom: 0.2em;
-  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 18px;
+  margin: auto;
+
+  color: #5c5c5c;
 }
 
 .split-members {
@@ -53,18 +59,16 @@ $mid-screen: 920px;
   box-sizing: border-box;
   display: flex;
   justify-content: flex-end;
-  font-size: small;
-
-  @media screen and (max-width: $small-screen) {
-    width: 100%;
-    text-align: flex-end;
-    justify-content: center;
-    border-radius: 0.5em;
-  }
+  font-size: 12px;
+  line-height: 18px;
 }
 
 .name {
-  font-size: 1.5em;
-  margin-bottom: 0.2em;
-  text-align: left;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 45px;
+
+  color: #000000;
 }

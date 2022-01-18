@@ -16,7 +16,7 @@ function TeamMember(props: TeamProps) {
   return (
     <div className="split-members">
       <h2 className="name">{member.name}</h2>
-      <h3 className="team-title">{member.title}</h3>
+      <h4 className="team-title">{member.title}</h4>
       <div className="presentation">
         <span>{member.presentation}</span>
       </div>
