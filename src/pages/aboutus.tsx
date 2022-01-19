@@ -65,7 +65,7 @@ function AboutUs() {
           </div>
         </div>
       </div>
-
+      <Icon.Bottom></Icon.Bottom>
       <Footer></Footer>
     </main>
   );
