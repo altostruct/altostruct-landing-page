@@ -2,7 +2,6 @@ $small-screen: 720px;
 $mid-screen: 920px;
 
 .presentation {
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
@@ -18,7 +17,6 @@ $mid-screen: 920px;
 // }
 
 .team-title {
-  font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -60,7 +58,6 @@ $mid-screen: 920px;
 }
 
 .name {
-  font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
@@ -80,4 +77,5 @@ $mid-screen: 920px;
   height: 169.63px;
   left: 0px;
   top: -10px;
+  border-radius: 50%;
 }

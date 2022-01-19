@@ -48,6 +48,8 @@ function AboutUs() {
   return (
     <main className="page">
       <Topbar></Topbar>
+      <Icon.Top className="top-icon" />
+
       <div className="title content screen-height">
         {/* <Icon.Square className="top-image" /> */}
 

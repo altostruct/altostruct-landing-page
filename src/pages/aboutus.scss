@@ -27,11 +27,15 @@ $mid-screen: 920px;
 
 .aboutus-title {
   margin: auto;
-  font-family: Poppins;
   font-style: normal;
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
 
   color: #5c5c5c;
+}
+
+.top-icon {
+  position: absolute;
+  left: auto;
 }
