@@ -101,7 +101,7 @@ function AboutUs() {
       Vivamus hendrerit tincidunt mattis. `,
 
       mail: "rasmus.holmgren@altostruct.se",
-      id: 7,
+      id: 8,
     },
   ];
 
