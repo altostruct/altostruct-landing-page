@@ -9,19 +9,19 @@ import TeamMember from "@components/TeamMember/TeamMember";
 function AboutUs() {
   const teamMembers = [
     {
-      name: "Rasmus Holmgren",
-      title: "Fullstack developer",
+      name: "Erik Rehn",
+      title: "CEO & Cloud Consultant",
       presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
       Etiam condimentum ligula sed augue congue, et bibendum sem ultricies. 
       Quisque interdum dolor nec aliquam aliquam. 
       Mauris id massa dui. 
       Vivamus hendrerit tincidunt mattis. `,
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "erik.rehn@altostruct.se",
       id: 1,
     },
     {
-      name: "Rasmus Holmgren",
-      title: "Fullstack developer",
+      name: "Emilio Gustavsson",
+      title: "Solutions architect & backend developer",
       presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
       Quisque interdum dolor nec aliquam aliquam.
@@ -32,6 +32,66 @@ function AboutUs() {
       id: 2,
     },
     {
+      name: "Gustav Kasche",
+      title: "Lead UX/Frontend developer",
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 3,
+    },
+    {
+      name: "Joakim Tornert",
+      title: "Webb developer",
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 4,
+    },
+    {
+      name: "Axel Hedengren",
+      title: "Communications manager",
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 5,
+    },
+    {
+      name: "Alrik Jonek",
+      title: "Backend developer",
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 6,
+    },
+    {
+      name: "Gustav Rubbestad",
+      title: "Fullstack developer",
+      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
+      Quisque interdum dolor nec aliquam aliquam.
+      Mauris id massa dui.
+      Vivamus hendrerit tincidunt mattis. `,
+
+      mail: "rasmus.holmgren@altostruct.se",
+      id: 7,
+    },
+    {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
       presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -41,7 +101,7 @@ function AboutUs() {
       Vivamus hendrerit tincidunt mattis. `,
 
       mail: "rasmus.holmgren@altostruct.se",
-      id: 3,
+      id: 7,
     },
   ];
 
