@@ -65,8 +65,9 @@ function AboutUs() {
           </div>
         </div>
       </div>
-      <Icon.Bottom></Icon.Bottom>
-      <Footer></Footer>
+      <Icon.Middle className="middle-icon"></Icon.Middle>
+      <Icon.Bottom className="bottom-icon"></Icon.Bottom>
+      {/* <Footer></Footer> */}
     </main>
   );
 }

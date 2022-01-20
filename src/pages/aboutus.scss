@@ -37,5 +37,18 @@ $mid-screen: 920px;
 
 .top-icon {
   position: absolute;
-  left: auto;
+  left: 0%;
+  top: 0%;
+}
+
+.middle-icon {
+  position: absolute;
+  right: 0%;
+  top: 20%;
+}
+
+.bottom-icon {
+  position: absolute;
+  left: 0;
+  top: 80%;
 }
