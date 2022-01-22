@@ -23,8 +23,10 @@ $mid-screen: 920px;
   line-height: 18px;
   margin: auto;
   margin-left: 0;
-
   color: #5c5c5c;
+  @media screen and (max-width: $small-screen) {
+    margin: auto;
+  }
 }
 
 .split-members {
@@ -44,9 +46,7 @@ $mid-screen: 920px;
   }
 
   @media screen and (max-width: $small-screen) {
-    label {
-      text-align: center;
-    }
+    text-align: center;
   }
 }
 
@@ -70,6 +70,11 @@ $mid-screen: 920px;
   display: flex;
   justify-content: center;
   justify-content: space-around;
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .presentation-image {

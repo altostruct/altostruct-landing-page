@@ -26,7 +26,7 @@ function AboutUs() {
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
     },
-    /*
+
     {
       name: "Emilio Gustavsson",
       title: "Solutions architect & backend developer",
@@ -38,6 +38,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 2,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Gustav Kasche",
@@ -50,6 +52,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 3,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Joakim Tornert",
@@ -62,6 +66,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 4,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Axel Hedengren",
@@ -74,6 +80,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 5,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Alrik Jonek",
@@ -86,6 +94,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 6,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Gustav Rubbestad",
@@ -98,6 +108,8 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 7,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
     {
       name: "Rasmus Holmgren",
@@ -110,8 +122,9 @@ function AboutUs() {
 
       mail: "rasmus.holmgren@altostruct.se",
       id: 8,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
-    */
   ];
 
   return (
@@ -122,10 +135,10 @@ function AboutUs() {
       <div className="title content screen-height">
         {/* <Icon.Square className="top-image" /> */}
 
-        <div className="aboutus-content">
+        <div className="aboutus-content sm-screen-height">
           <div>
-            <h3 className="aboutus-title">Om vårt</h3>
-            <h1 className="primary">Team</h1>
+            <h3 className="aboutus-title secondary-title">Om vårt</h3>
+            <h1 className="aboutus-title primary-title">Team</h1>
           </div>
           <div>
             {teamMembers.map((teamMember) => (

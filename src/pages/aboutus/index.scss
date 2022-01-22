@@ -19,39 +19,63 @@ $mid-screen: 920px;
   }
 
   @media screen and (max-width: $small-screen) {
-    label {
-      text-align: center;
-    }
+    flex-direction: column;
   }
 }
 
 .aboutus-title {
-  margin: 150px;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-  font-style: normal;
+  margin: auto;
+  @media screen and (max-width: $small-screen) {
+    text-align: center;
+  }
+}
+
+.secondary-title {
   font-weight: bold;
   font-size: 20px;
   line-height: 30px;
-
   color: #5c5c5c;
+}
+
+.primary-title {
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 90px;
+  color: #0f559b;
 }
 
 .top-icon {
   position: absolute;
   left: 0%;
   top: 0%;
+  @media screen and (max-width: $small-screen) {
+    opacity: 0.2;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
 }
 
 .middle-icon {
   position: absolute;
   right: 0%;
   top: 20%;
+  @media screen and (max-width: $small-screen) {
+    opacity: 0.2;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
 }
 
 .bottom-icon {
   position: absolute;
   left: 0;
   top: 80%;
+  @media screen and (max-width: $small-screen) {
+    opacity: 0.2;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
 }
