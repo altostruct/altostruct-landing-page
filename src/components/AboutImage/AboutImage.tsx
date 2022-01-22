@@ -1,28 +1,18 @@
-import DefaultImage1 from "../../images/aboutTest.png";
 // import PaintImage1 from ""
 import React, { useEffect, useState } from "react";
 
 interface ImageProps {
-  id: number;
+  frontImage: string;
+  backImage: string;
 }
 function AboutImage(props: ImageProps) {
-  var defaultImage = DefaultImage1;
-  switch (props.id) {
-    case 1:
-      defaultImage = DefaultImage1;
+  const [isFlipped, setIsFlipped] = React.useState<boolean>(false);
+  let image = props.frontImage;
+  if (isFlipped) {
+    image = props.backImage;
   }
-
-  var flipped = false;
-  const [image, setImage] = React.useState(defaultImage);
-
   function imageClick() {
-    if (flipped) {
-      setImage(defaultImage);
-      flipped = false;
-    } else {
-      setImage(null);
-      flipped = true;
-    }
+    setIsFlipped(!isFlipped);
   }
   return (
     <div>

@@ -3,11 +3,16 @@ import Footer from "@components/Footer/Footer";
 import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 import "@styles/global.scss";
-import "./aboutus.scss";
-import TeamMember from "@components/TeamMember/TeamMember";
+import "./index.scss";
+import TeamMember, { Member } from "@components/TeamMember/TeamMember";
+import { MemberName } from "typescript";
+import ErikFrontImage from "./assets/frontImage.jpg";
+import ErikBackImage from "./assets/aboutTest.png";
 
 function AboutUs() {
-  const teamMembers = [
+  //interface
+  //bilder
+  const teamMembers: Member[] = [
     {
       name: "Erik Rehn",
       title: "CEO & Cloud Consultant",
@@ -18,7 +23,10 @@ function AboutUs() {
       Vivamus hendrerit tincidunt mattis. `,
       mail: "erik.rehn@altostruct.se",
       id: 1,
+      frontImage: ErikFrontImage,
+      backImage: ErikBackImage,
     },
+    /*
     {
       name: "Emilio Gustavsson",
       title: "Solutions architect & backend developer",
@@ -103,6 +111,7 @@ function AboutUs() {
       mail: "rasmus.holmgren@altostruct.se",
       id: 8,
     },
+    */
   ];
 
   return (

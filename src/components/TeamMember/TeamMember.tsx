@@ -3,20 +3,27 @@ import "./TeamMember.scss";
 import AboutImage from "@components/AboutImage/AboutImage";
 
 interface TeamProps {
-  member: {
-    name: string;
-    title: string;
-    presentation: string;
-    mail: string;
-    id: number;
-  };
+  member: Member;
+}
+
+export interface Member {
+  name: string;
+  title: string;
+  presentation: string;
+  mail: string;
+  id: number;
+  frontImage: string;
+  backImage: string;
 }
 
 function TeamMember(props: TeamProps) {
   const member = props.member;
   return (
     <div className="flex-container">
-      <AboutImage id={props.member.id}></AboutImage>
+      <AboutImage
+        frontImage={props.member.frontImage}
+        backImage={props.member.backImage}
+      ></AboutImage>
       {/* <img className="presentation-image" src={PaintImage} alt="Paint image" /> */}
       <div className="split-members">
         <h2 className="name">{member.name}</h2>
