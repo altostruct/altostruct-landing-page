@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import "./TeamMember.scss";
 import AboutImage from "@components/AboutImage/AboutImage";
+import MailIcon from "../../pages/aboutus/assets/emailIcon.png";
 
 interface TeamProps {
   member: Member;
@@ -31,8 +32,9 @@ function TeamMember(props: TeamProps) {
         <div className="presentation">
           <span>{member.presentation}</span>
         </div>
-        <div className="mail">
-          <a className="primary" href={"mailto:" + member.mail}>
+        <div className="mail-container">
+          <img className="mail-icon" src={MailIcon} alt="Mail icon" />
+          <a className="primary mail" href={"mailto:" + member.mail}>
             {member.mail}
           </a>
         </div>
