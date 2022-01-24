@@ -8,6 +8,7 @@ import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 import { MemberName } from "typescript";
 import ErikFrontImage from "./assets/frontImage.jpg";
 import ErikBackImage from "./assets/aboutTest.png";
+import ImageFlip from "@components/ImageFlip/ImageFlip";
 
 function AboutUs() {
   //interface
@@ -133,8 +134,6 @@ function AboutUs() {
       <Icon.Top className="top-icon" />
 
       <div className="title content screen-height">
-        {/* <Icon.Square className="top-image" /> */}
-
         <div className="aboutus-content sm-screen-height">
           <div>
             <h3 className="aboutus-title secondary-title">Om vårt</h3>

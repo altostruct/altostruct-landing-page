@@ -87,7 +87,7 @@ $mid-screen: 920px;
 .flex-container {
   display: flex;
   justify-content: center;
-  justify-content: space-around;
+
   @media screen and (max-width: $small-screen) {
     flex-direction: column;
     justify-content: center;
@@ -99,7 +99,6 @@ $mid-screen: 920px;
   position: relative;
   width: 150px;
   height: 150px;
-  margin: 37px;
   box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
 }
