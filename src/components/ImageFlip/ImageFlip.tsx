@@ -1,4 +1,4 @@
-import "./imageFlip.scss";
+import "./ImageFlip.scss";
 import React, { useEffect, useState } from "react";
 
 interface ImageProps {
