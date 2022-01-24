@@ -10,11 +10,12 @@ interface TeamProps {
 export interface Member {
   name: string;
   title: string;
-  presentation: string;
+  presentation?: string;
   mail: string;
   id: number;
   frontImage: string;
-  backImage: string;
+  backImage?: string;
+  link?: string;
 }
 
 function TeamMember(props: TeamProps) {
@@ -24,6 +25,7 @@ function TeamMember(props: TeamProps) {
       <ImageFlip
         frontImage={props.member.frontImage}
         backImage={props.member.backImage}
+        link={props.member.link}
       ></ImageFlip>
       <div className="split-members">
         <h2 className="name">{member.name}</h2>

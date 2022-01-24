@@ -7,6 +7,7 @@ import "./index.scss";
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 import ErikFrontImage from "./assets/frontImage.jpg";
 import ErikBackImage from "./assets/aboutTest.png";
+import AddFrontImage from "./assets/AddFrontImage.png";
 
 function AboutUs() {
   //interface
@@ -34,7 +35,6 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-
       mail: "rasmus.holmgren@altostruct.se",
       id: 2,
       frontImage: ErikFrontImage,
@@ -48,7 +48,6 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-
       mail: "rasmus.holmgren@altostruct.se",
       id: 3,
       frontImage: ErikFrontImage,
@@ -90,7 +89,6 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-
       mail: "rasmus.holmgren@altostruct.se",
       id: 6,
       frontImage: ErikFrontImage,
@@ -104,7 +102,6 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-
       mail: "rasmus.holmgren@altostruct.se",
       id: 7,
       frontImage: ErikFrontImage,
@@ -118,7 +115,6 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-
       mail: "rasmus.holmgren@altostruct.se",
       id: 8,
       frontImage: ErikFrontImage,
@@ -141,6 +137,17 @@ function AboutUs() {
             {teamMembers.map((teamMember) => (
               <TeamMember member={teamMember} key={teamMember.id}></TeamMember>
             ))}
+            <TeamMember
+              member={{
+                name: "Lägg till person!",
+                title:
+                  "Är du näst på denna lista? Tveka inte på att skriva till oss!",
+                mail: "erik.rehn@altostruct.se",
+                id: 1,
+                frontImage: AddFrontImage,
+                link: "mailto:rasmus.holmgren@altostruct.se",
+              }}
+            ></TeamMember>
           </div>
         </div>
       </div>
