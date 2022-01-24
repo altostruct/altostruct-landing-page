@@ -49,6 +49,8 @@ $mid-screen: 920px;
   top: 0%;
   @media screen and (max-width: $small-screen) {
     opacity: 0.2;
+    width: 100vw;
+    top: -15vw;
     * {
       stroke-width: 3px !important;
     }
@@ -58,9 +60,10 @@ $mid-screen: 920px;
 .middle-icon {
   position: absolute;
   right: 0%;
-  top: 20%;
+  top: 50%;
   @media screen and (max-width: $small-screen) {
     opacity: 0.2;
+    width: 60vw;
     * {
       stroke-width: 3px !important;
     }
@@ -70,9 +73,10 @@ $mid-screen: 920px;
 .bottom-icon {
   position: absolute;
   left: 0;
-  top: 80%;
+  top: 200%;
   @media screen and (max-width: $small-screen) {
     opacity: 0.2;
+    width: 60vw;
     * {
       stroke-width: 3px !important;
     }

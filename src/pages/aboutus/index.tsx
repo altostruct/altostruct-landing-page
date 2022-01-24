@@ -5,10 +5,8 @@ import Icon from "@components/Icon";
 import "@styles/global.scss";
 import "./index.scss";
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
-import { MemberName } from "typescript";
 import ErikFrontImage from "./assets/frontImage.jpg";
 import ErikBackImage from "./assets/aboutTest.png";
-import ImageFlip from "@components/ImageFlip/ImageFlip";
 
 function AboutUs() {
   //interface
