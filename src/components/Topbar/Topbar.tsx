@@ -13,10 +13,13 @@ const Topbar = () => {
       </nav>
       <nav>
         {/* Simulates css grids, since it is not supported ios */}
-        <a href="#customers" style={{ marginRight: "1em" }}>
+        <a href="/#customers" style={{ marginRight: "1em" }}>
           Kunder
         </a>
-        <a href="#contact">Kontakta oss</a>
+        <a href="/aboutus" style={{ marginRight: "1em" }}>
+          Om oss
+        </a>
+        <a href="/#contact">Kontakta oss</a>
       </nav>
     </header>
   );
