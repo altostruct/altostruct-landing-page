@@ -4,14 +4,14 @@ import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 import "@styles/global.scss";
 import "./index.scss";
+
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 import ErikFrontImage from "./assets/frontImage.jpg";
 import ErikBackImage from "./assets/aboutTest.png";
+
 import AddFrontImage from "./assets/AddFrontImage.png";
 
 function AboutUs() {
-  //interface
-  //bilder
   const teamMembers: Member[] = [
     {
       name: "Erik Rehn",
@@ -35,7 +35,7 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "emilio.gustavsson@altostruct.se",
       id: 2,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -48,7 +48,7 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "gustav.kasche@altostruct.se",
       id: 3,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -62,7 +62,7 @@ function AboutUs() {
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
 
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "joakim.tornert@altostruct.se",
       id: 4,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -76,7 +76,7 @@ function AboutUs() {
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
 
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "axel.hedengren@altostruct.se",
       id: 5,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -89,7 +89,7 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "alrik.jonek@altostruct.se",
       id: 6,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -102,7 +102,7 @@ function AboutUs() {
       Quisque interdum dolor nec aliquam aliquam.
       Mauris id massa dui.
       Vivamus hendrerit tincidunt mattis. `,
-      mail: "rasmus.holmgren@altostruct.se",
+      mail: "gustav.rubbestad@altostruct.se",
       id: 7,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -142,10 +142,10 @@ function AboutUs() {
                 name: "Lägg till person!",
                 title:
                   "Är du näst på denna lista? Tveka inte på att skriva till oss!",
-                mail: "erik.rehn@altostruct.se",
+                mail: "info@altostruct.se",
                 id: 1,
                 frontImage: AddFrontImage,
-                link: "mailto:rasmus.holmgren@altostruct.se",
+                link: "mailto:info@altostruct.se",
               }}
             ></TeamMember>
           </div>
@@ -153,7 +153,7 @@ function AboutUs() {
       </div>
       <Icon.Middle className="middle-icon"></Icon.Middle>
       <Icon.Bottom className="bottom-icon"></Icon.Bottom>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </main>
   );
 }
