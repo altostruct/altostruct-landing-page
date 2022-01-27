@@ -153,8 +153,6 @@ function AboutUs() {
       </div>
       <Icon.Middle className="middle-icon"></Icon.Middle>
       <Icon.Bottom className="bottom-icon"></Icon.Bottom>
-      <Icon.Middle className="middle-icon"></Icon.Middle>
-      <Icon.Bottom className="bottom-icon"></Icon.Bottom>
       <Footer></Footer>
     </main>
   );
