@@ -19,7 +19,7 @@ function ImageFlip(props: ImageProps) {
         className={"image-inner" + " " + (isFlipped ? "image-flip-front" : "")}
       >
         <div className="image-front">
-          <a href={props.link}>
+          <a href={props.link} target={"_blank"}>
             <img
               className="presentation-image"
               src={props.frontImage}

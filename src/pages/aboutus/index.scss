@@ -1,6 +1,14 @@
 $small-screen: 720px;
 $mid-screen: 920px;
 
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
 .aboutus-content {
   overflow: unset;
   margin-top: 100px;
@@ -12,9 +20,7 @@ $mid-screen: 920px;
 
   @media screen and (max-width: $mid-screen) {
     width: 100%;
-  }
-
-  @media screen and (max-width: $mid-screen) {
+    flex: 0 0 auto;
     flex-direction: column;
   }
 
@@ -31,15 +37,15 @@ $mid-screen: 920px;
 
 .secondary-title {
   font-weight: bold;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.125em;
+  line-height: 1.2em;
   color: #5c5c5c;
 }
 
 .primary-title {
   font-weight: bold;
-  font-size: 60px;
-  line-height: 90px;
+  font-size: 48px;
+  line-height: 60px;
   color: #0f559b;
 }
 
@@ -61,16 +67,19 @@ $mid-screen: 920px;
   position: absolute;
   right: 0%;
   top: 10%;
+  @media screen and (max-width: $mid-screen) {
+    top: 20%;
+    right: 0%;
+    opacity: 0.7;
+    width: 20vw;
+  }
   @media screen and (max-width: $small-screen) {
-    top: 40%;
+    top: 60%;
     opacity: 0.2;
-    width: 60vw;
+    width: 30vw;
     * {
       stroke-width: 3px !important;
     }
-  }
-  @media screen and (max-width: $mid-screen) {
-    top: 20%;
   }
 }
 
@@ -78,15 +87,18 @@ $mid-screen: 920px;
   position: absolute;
   left: 0;
   top: 80%;
+  @media screen and (max-width: $mid-screen) {
+    top: 70%;
+    opacity: 0.7;
+    width: 20vw;
+  }
   @media screen and (max-width: $small-screen) {
-    top: 210%;
+    top: 290%;
+    left: 0%;
     opacity: 0.2;
-    width: 60vw;
+    width: 30vw;
     * {
       stroke-width: 3px !important;
     }
-  }
-  @media screen and (max-width: $mid-screen) {
-    top: 70%;
   }
 }

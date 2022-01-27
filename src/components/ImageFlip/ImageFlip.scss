@@ -8,6 +8,7 @@
   margin-right: 37px;
   margin-left: 37px;
   margin-top: 19px;
+  cursor: pointer;
 }
 
 .image-inner {
@@ -15,7 +16,7 @@
   width: 150px;
   height: 150px;
   text-align: center;
-  transition: transform 0.8s;
+  transition: transform 0.5s;
   transform-style: preserve-3d;
 }
 
