@@ -1,12 +1,22 @@
 $small-screen: 720px;
 $mid-screen: 920px;
-
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+  background-image: url(./assets/background_left.svg),
+    url(./assets/background_right.svg);
+  background-repeat: repeat-y, repeat-y;
+  background-position: left 0% top 80%, right 0% top 10%;
+  @media screen and (max-width: $mid-screen) {
+    background-size: 20%, 20%;
+  }
+  @media screen and (max-width: $small-screen) {
+    background-position: left 0% top 30%, right 0% top 0%;
+    background-size: 30%, 30%;
+  }
 }
 
 .aboutus-content {
