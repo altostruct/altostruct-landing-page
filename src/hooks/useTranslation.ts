@@ -1,9 +1,10 @@
+import { stringify } from "postcss";
 import * as react from "react";
 
 // perhaps nice to have a class which contains all the methods
 // but it is really up to you Rasmus :)
 class Translator {}
-
+const LANGUAGES = ["swe", "en"];
 const DEFAULT_LANGUAGE = "swe";
 /**
  *
@@ -15,7 +16,14 @@ const DEFAULT_LANGUAGE = "swe";
  */
 const useTranslation = () => {
   // How do we get this one??
-  const language = DEFAULT_LANGUAGE;
+  let language = DEFAULT_LANGUAGE;
+  const currentPath = window.location.href
+  for (const lang of LANGUAGES) {
+     if(currentPath.startsWith("/" + lang + "/") || (currentPath == lang)){
+      language =  lang;
+     }
+   }
+ 
 
   // TODO
   // 1. read in file from locales folder
@@ -37,14 +45,15 @@ const useTranslation = () => {
   //    value with the varible.
 
   const t = (text: string, varibles?: Record<string, any>): string => {
-    const translations = require("@locales/en/translation.json");
-
+    const translations = require("@locales/" + language + "/translation.json");
     return translations[text] || text;
   };
 
-  const setLanguge = (language: string) => {};
+  const setLanguage = (language: string) => {
+    window.location.href = "/" + language + "/";
+  };
 
-  return { t, language, setLanguge };
+  return { t, language: language, setLanguage: setLanguage };
 };
 
 export default useTranslation;
