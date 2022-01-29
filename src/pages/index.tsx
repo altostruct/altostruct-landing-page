@@ -281,13 +281,14 @@ function IndexPage<T>() {
       >
         <div className="center-content cols mark">
           <div>
+            <p className="no-break">Antal teknologier</p>
+            <h1 className="super-title">32</h1>
+          </div>
+          <div>
             <p className="no-break">Antal projekt</p>
             <h1 className="super-title">25+</h1>
           </div>
-          <div>
-            <p className="no-break">Antal utvecklare</p>
-            <h1 className="super-title">10+</h1>
-          </div>
+
           <div>
             <p className="no-break">Startat</p>
             <h1 className="super-title">2020</h1>

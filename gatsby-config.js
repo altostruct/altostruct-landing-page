@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: `https://www.altostruct.com`,
     title: `Altostruct - Startup consulting`,
     description: `Cloud and web consulting for startups and innovative companies`,
-    author: `Erik Rehn & Joakim Tornert`,
+    author: `Erik Rehn, Joakim Tornert & Rasmus Holmgren`,
   },
   plugins: [
     "gatsby-plugin-postcss",
