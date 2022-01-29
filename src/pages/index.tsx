@@ -73,8 +73,6 @@ function IndexPage<T>() {
       return;
     }
 
-    console.log(form.current.fullName.value);
-
     try {
       await emailjs.sendForm(
         "service_xf3l6xg",
@@ -199,7 +197,7 @@ function IndexPage<T>() {
               <span className="white-bg-text">
                 {t(
                   "Altostruct är en konsultfirma som arbetar primärt med" +
-                    "molntjänster och har ett särskilt fokus på startups. Sedan 2020" +
+                    "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
                     "har vi arbetat med många olika företag och hjälpt dem skapa allt" +
                     "från mobilappar till AI-organisationsmodeller."
                 )}

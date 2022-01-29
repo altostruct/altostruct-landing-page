@@ -1,11 +1,12 @@
 module.exports = {
-  // Used for github pages
+  // Used for github pages will be overritten when
+  // deploying to production.
   pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
     siteUrl: `https://www.altostruct.com`,
     title: `Altostruct - Startup consulting`,
     description: `Cloud and web consulting for startups and innovative companies`,
-    author: `Erik Rehn & Joakim Tornert`,
+    author: `Rasmus Holmgren, Erik Rehn & Joakim Tornert`,
   },
   plugins: [
     "gatsby-plugin-postcss",
@@ -45,6 +46,15 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "locales",
+        path: "locales",
+      },
+      __key: "locales",
     },
   ],
 };

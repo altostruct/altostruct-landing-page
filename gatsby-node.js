@@ -6,6 +6,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       alias: {
         "@components": path.resolve(__dirname, "src/components"),
         "@styles": path.resolve(__dirname, "src/styles"),
+        "@locales": path.resolve(__dirname, "locales"),
       },
     },
   });

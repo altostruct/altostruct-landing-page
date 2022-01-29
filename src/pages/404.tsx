@@ -4,9 +4,6 @@ import Button from "@components/Button/Button";
 import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 
-// styles
-
-// markup
 const NotFoundPage = () => {
   return (
     <main className="page">
