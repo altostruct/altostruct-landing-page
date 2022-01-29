@@ -126,28 +126,32 @@ function AboutUs() {
     <main className="page">
       <Topbar></Topbar>
       <Icon.Top className="top-icon" />
-
-      <div className="title content screen-height">
-        <div className="aboutus-content sm-screen-height">
-          <div>
-            <h3 className="aboutus-title secondary-title">Om vårt</h3>
-            <h1 className="aboutus-title primary-title">Team</h1>
-          </div>
-          <div>
-            {teamMembers.map((teamMember) => (
-              <TeamMember member={teamMember} key={teamMember.id}></TeamMember>
-            ))}
-            <TeamMember
-              member={{
-                name: "Lägg till person!",
-                title:
-                  "Är du näst på denna lista? Tveka inte på att skriva till oss!",
-                mail: "info@altostruct.se",
-                id: 1,
-                frontImage: AddFrontImage,
-                link: "mailto:info@altostruct.se",
-              }}
-            ></TeamMember>
+      <div className="background">
+        <div className="title content screen-height">
+          <div className="aboutus-content sm-screen-height">
+            <div>
+              <h3 className="aboutus-title secondary-title">Om vårt</h3>
+              <h1 className="aboutus-title primary-title">Team</h1>
+            </div>
+            <div>
+              {teamMembers.map((teamMember) => (
+                <TeamMember
+                  member={teamMember}
+                  key={teamMember.id}
+                ></TeamMember>
+              ))}
+              <TeamMember
+                member={{
+                  name: "Lägg till person!",
+                  title:
+                    "Är du näst på denna lista? Tveka inte på att skriva till oss!",
+                  mail: "info@altostruct.se",
+                  id: 1,
+                  frontImage: AddFrontImage,
+                  link: "mailto:info@altostruct.se",
+                }}
+              ></TeamMember>
+            </div>
           </div>
         </div>
       </div>

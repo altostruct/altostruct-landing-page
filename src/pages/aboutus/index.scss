@@ -6,16 +6,24 @@ $mid-screen: 920px;
   min-height: 100vh;
   overflow-x: hidden;
   width: 100%;
+}
+
+.background {
   background-image: url(./assets/background_left.svg),
     url(./assets/background_right.svg);
-  background-repeat: repeat-y, repeat-y;
-  background-position: left 0% top 80%, right 0% top 10%;
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 0% top 100%, right 0% top 0;
+
   @media screen and (max-width: $mid-screen) {
-    background-size: 20%, 20%;
+    background-position: 0 500px, right 0% top 20vh;
+    background-size: 15%, 15%;
+    background-repeat: repeat-y, repeat-y;
   }
   @media screen and (max-width: $small-screen) {
-    background-position: left 0% top 30%, right 0% top 0%;
-    background-size: 30%, 30%;
+    background-position: left 0% top 60px, right 0% top 100px;
+    background-repeat: repeat-y, repeat-y;
+    background-size: 20%, 20%;
   }
 }
 
@@ -64,8 +72,8 @@ $mid-screen: 920px;
   left: 0%;
   top: 0%;
   @media screen and (max-width: $small-screen) {
-    opacity: 0.2;
     width: 100vw;
+    opacity: 0;
     top: -15vw;
     * {
       stroke-width: 3px !important;
