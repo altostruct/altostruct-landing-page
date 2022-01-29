@@ -27,7 +27,7 @@ const useTranslation = () => {
   //    ...
   //    "Hej": "Hello"
   //    ...
-  //    in the file we want to replace "Hej with hello"
+  //    in the file we want to replace "Hej" with "Hello"
   //    b)
   //    If the text does not exists in the translations folder
   //    output a warning to the log and the use the text. For
@@ -36,8 +36,9 @@ const useTranslation = () => {
   // 4. If the text containes "replacement values" replace the
   //    value with the varible.
 
-  const t = (text: string, variable?: Record<string, any>): string => {
+  const t = (text: string, varibles?: Record<string, any>): string => {
     const translations = require("@locales/en/translation.json");
+
     return translations[text] || text;
   };
 
