@@ -285,8 +285,8 @@ function IndexPage<T>() {
             <h1 className="super-title">25+</h1>
           </div>
           <div>
-            <p className="no-break">Antal utvecklare</p>
-            <h1 className="super-title">10+</h1>
+            <p className="no-break">Baserat i</p>
+            <h1 className="super-title">Stockholm</h1>
           </div>
           <div>
             <p className="no-break">Startat</p>
