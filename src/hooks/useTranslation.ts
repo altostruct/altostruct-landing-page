@@ -17,10 +17,10 @@ const DEFAULT_LANGUAGE = "swe";
 const useTranslation = () => {
   // How do we get this one??
   let language = DEFAULT_LANGUAGE;
-  const currentPath = window.location.href
+  const currentPath = window.location.pathname
   for (const lang of LANGUAGES) {
-     if(currentPath.startsWith("/" + lang + "/") || (currentPath == lang)){
-      language =  lang;
+     if(currentPath.startsWith("/" + lang) || (currentPath == lang)){
+      language = lang;
      }
    }
  
@@ -46,14 +46,42 @@ const useTranslation = () => {
 
   const t = (text: string, varibles?: Record<string, any>): string => {
     const translations = require("@locales/" + language + "/translation.json");
+   
+    if(!translations.hasOwnProperty(text)){
+      console.warn("No translation for: '" + text + "'");
+    }
     return translations[text] || text;
   };
 
   const setLanguage = (language: string) => {
-    window.location.href = "/" + language + "/";
-  };
-
+    let currentPathSplit = currentPath.split("/");
+    let newPath;
+    let isLangSet = false;
+    
+    for (const lang of LANGUAGES) {
+    //when a language is set
+    if(currentPath.includes(lang)){
+      currentPathSplit[currentPathSplit.indexOf(lang)] = language;
+      newPath = currentPathSplit.join("/");
+      window.location.pathname = newPath;
+      isLangSet = true;
+      break;
+    }
+  }
+  //when no language is set
+  if(!isLangSet){
+    if(currentPath == "/"){
+      window.location.pathname = "/" + language;
+    }
+    else{
+      currentPathSplit.splice(0, 0, language);
+      newPath = currentPathSplit.join("/");
+      window.location.pathname = newPath;
+    }
+    } 
+}
   return { t, language: language, setLanguage: setLanguage };
 };
 
 export default useTranslation;
+
