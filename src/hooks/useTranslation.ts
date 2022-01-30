@@ -16,13 +16,17 @@ const DEFAULT_LANGUAGE = "swe";
  */
 const useTranslation = () => {
   // How do we get this one??
+  const isBrowser = typeof window !== "undefined"
   let language = DEFAULT_LANGUAGE;
-  const currentPath = window.location.pathname
+  let currentPath : string;
+  if(isBrowser){
+  currentPath = window.location.pathname
   for (const lang of LANGUAGES) {
      if(currentPath.startsWith("/" + lang) || (currentPath == lang)){
       language = lang;
      }
    }
+  }
  
 
   // TODO
@@ -54,6 +58,9 @@ const useTranslation = () => {
   };
 
   const setLanguage = (language: string) => {
+    if(!isBrowser){
+      return;
+    }
     let currentPathSplit = currentPath.split("/");
     let newPath;
     let isLangSet = false;
