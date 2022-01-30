@@ -3,8 +3,10 @@ import { Link } from "gatsby";
 import Button from "@components/Button/Button";
 import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
+import useTranslation from "../hooks/useTranslation";
 
 const NotFoundPage = () => {
+  const { t, setLanguage, language } = useTranslation();
   return (
     <main className="page">
       <Topbar></Topbar>
@@ -13,16 +15,16 @@ const NotFoundPage = () => {
         <div className="split-content sm-screen-height">
           <section>
             <h1 style={{ whiteSpace: "nowrap" }}>
-              404 <br />
-              Not found
+              {t("404")} <br />
+              {t("Not found")}
             </h1>
             <p>
               <span className="white-bg-text">
-                Kunde tyvärr inte hitta din sida.
+                {t("Kunde tyvärr inte hitta din sida.")}
               </span>
             </p>
             <Button className="space-right" link="/">
-              Tillbaka
+              {t("Tillbaka")}
             </Button>
           </section>
         </div>

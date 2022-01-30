@@ -81,7 +81,10 @@ function IndexPage<T>() {
       );
 
       alert(
-        `Tack för ditt meddelande! Vi svarar till din mejladress (${values.email}) så snart vi kan. 🎈`
+        t(
+          `Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈`,
+          { email: values.email }
+        )
       );
     } catch (error) {
       console.error(error);
@@ -133,10 +136,10 @@ function IndexPage<T>() {
               </span>
             </p>
             <Button className="space-right" link="#contact">
-              Kontakta oss
+              {t("Kontakta oss")}
             </Button>
             <Button type="secondary" link="#about">
-              Se våra projekt
+              {t("Se våra projekt")}
             </Button>
           </section>
         </div>
@@ -369,7 +372,7 @@ function IndexPage<T>() {
                 }}
               >
                 <Button type="primary" formAction="submit">
-                  Skicka
+                  {t("Skicka")}
                 </Button>
               </div>
             </div>
