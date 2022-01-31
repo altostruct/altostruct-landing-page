@@ -21,6 +21,7 @@ const useTranslation = () => {
   let currentPath : string;
   if(isBrowser){
   currentPath = window.location.pathname
+  console.log("Current path:" + currentPath)
   for (const lang of LANGUAGES) {
      if(currentPath.startsWith("/" + lang) || (currentPath == lang)){
       language = lang;
@@ -70,6 +71,7 @@ const useTranslation = () => {
     if(currentPath.includes(lang)){
       currentPathSplit[currentPathSplit.indexOf(lang)] = language;
       newPath = currentPathSplit.join("/");
+      console.log("New path:" + newPath)
       window.location.pathname = newPath;
       isLangSet = true;
       break;
