@@ -28,6 +28,7 @@ const useTranslation = () => {
      }
    }
   }
+  console.log("Current language:" + language);
  
 
   // TODO
