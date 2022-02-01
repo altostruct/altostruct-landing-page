@@ -206,7 +206,6 @@ function IndexPage<T>() {
           </section>
         </div>
       </div>
-      <p>{language}</p>
       <div
         className="content showcase half-screen sm-flex-reverse"
         id="customers"
