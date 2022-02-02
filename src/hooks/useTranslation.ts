@@ -18,26 +18,27 @@ const DEFAULT_LANGUAGE = "swe";
  * @returns a translated string
  */
 const useTranslation = () => {
-  // How do we get this one??
   const isBrowser = typeof window !== "undefined"
  
+  //default fallback
   let language = DEFAULT_LANGUAGE;
   let currentPath : string;
   
+  //get current language from URL
   if(isBrowser){
   currentPath = window.location.pathname
-  console.log("Current path:" + currentPath)
+  console.log("Current path:" + currentPath)//debug
   for (const lang of LANGUAGES) {
      if(currentPath.startsWith("/" + lang) || (currentPath == lang)){
       language = lang;
      }
-     //used for testing
+     //used for testing on github domain
      if(currentPath.startsWith("/altostruct-landing-page/" + lang)){
       language = lang;
      }
    }
   }
-  console.log("Current language:" + language);
+  console.log("Current language:" + language);//debug
  
 
   // TODO
@@ -59,6 +60,7 @@ const useTranslation = () => {
   // 4. If the text containes "replacement values" replace the
   //    value with the varible.
 
+  /**Returns a translated string with values of any existing variable.*/
   const t = (text: string, variables?: Record<string, any>): string => {
     const translations = require("@locales/" + language + "/translation.json");
    
@@ -79,20 +81,24 @@ const useTranslation = () => {
     return text
   };
 
+  /**Sets the URL to the correct language.*/
   const setLanguage = (language: string) => {
     if(!isBrowser){
       return;
     }
     let currentPathSplit = currentPath.split("/");
-    let newPath;
+    //fallback if set fails
+    let newPath = "/" + DEFAULT_LANGUAGE;
+    
     let isLangSet = false;
     
     for (const lang of LANGUAGES) {
     //when a language is set
     if(currentPath.includes(lang)){
+      //replace current language with new
       currentPathSplit[currentPathSplit.indexOf(lang)] = language;
       newPath = currentPathSplit.join("/");
-      console.log("New path:" + newPath)
+      console.log("New path:" + newPath) //debug
       window.location.pathname = newPath;
       isLangSet = true;
       break;
@@ -100,14 +106,10 @@ const useTranslation = () => {
   }
   //when no language is set
   if(!isLangSet){
-    if(currentPath == "/"){
-      window.location.pathname = "/" + language;
-    }
-    else{
-      currentPathSplit.splice(0, 0, language);
+      //insert language in the URL
+      currentPathSplit.splice(1, 0, language);
       newPath = currentPathSplit.join("/");
       window.location.pathname = newPath;
-    }
     } 
 }
   return { t, language: language, setLanguage: setLanguage };
