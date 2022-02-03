@@ -1,5 +1,6 @@
 import * as React from "react";
 import "./Topbar.scss";
+import LanguageSelector from "@components/LanguageSelector/LanguageSelector";
 
 import Brand from "../Brand/Brand";
 
@@ -17,6 +18,7 @@ const Topbar = () => {
           Kunder
         </a>
         <a href="#contact">Kontakta oss</a>
+        <LanguageSelector></LanguageSelector>
       </nav>
     </header>
   );
