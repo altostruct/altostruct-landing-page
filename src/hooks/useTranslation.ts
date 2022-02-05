@@ -1,10 +1,6 @@
 import { stringify } from "postcss";
 import * as react from "react";
 
-// perhaps nice to have a class which contains all the methods
-// but it is really up to you Rasmus :)
-class Translator {}
-
 const translationConfig = require("../../i18next-parser.config.js");
 const LANGUAGES = translationConfig.locales;
 
@@ -16,6 +12,7 @@ const DEFAULT_LANGUAGE = "swe";
  *        with replacements t("Hello {{name}}", {name: "Erik"})
  *
  * @returns a translated string
+ * @param currentPath the current path as a string
  */
 const useTranslation = (currentPath: string) => {
   //default fallback
@@ -56,10 +53,9 @@ const useTranslation = (currentPath: string) => {
   const setLanguage = (language: string) => {
     //remove the first element, allways starts with a dash
     let currentPathSplit = currentPath.split("/").slice(1);
-    //fallback if set fails
-    let newPath = "/" + DEFAULT_LANGUAGE;
 
     const isLanguageSet = LANGUAGES.includes(currentPathSplit[0]);
+
     const languagePrefix = language === DEFAULT_LANGUAGE ? null : language;
 
     if (isLanguageSet) {
@@ -72,7 +68,6 @@ const useTranslation = (currentPath: string) => {
         .join("/");
     }
   };
-  //when no language is set
   return { t, language: language, setLanguage: setLanguage };
 };
 
