@@ -35,7 +35,6 @@ const LanguageSelector = () => {
     },
   };
 
-  console.log();
   function withoutCurrentLang() {
     let selectableLanguages: { [key: string]: Language } = {};
     Object.assign(selectableLanguages, allLanguages);

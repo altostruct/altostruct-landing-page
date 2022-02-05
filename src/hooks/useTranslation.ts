@@ -27,7 +27,7 @@ const useTranslation = () => {
   //get current language from URL
   if (isBrowser) {
     currentPath = window.location.pathname;
-    console.log("Current path:" + currentPath); //debug
+
     for (const lang of LANGUAGES) {
       if (currentPath.startsWith("/" + lang) || currentPath == lang) {
         language = lang;
@@ -38,11 +38,10 @@ const useTranslation = () => {
       }
     }
   }
-  console.log("Current language:" + language); //debug
 
   /**Returns a translated string with values of any existing variable.*/
   const t = (text: string, variables?: Record<string, any>): string => {
-    const translations = zrequire("@locales/" + language + "/translation.json");
+    const translations = require("@locales/" + language + "/translation.json");
 
     if (!translations.hasOwnProperty(text)) {
       console.warn("No translation for: '" + text + "'");
@@ -62,9 +61,6 @@ const useTranslation = () => {
 
   /**Sets the URL to the correct language.*/
   const setLanguage = (language: string) => {
-    if (!isBrowser) {
-      return;
-    }
     //remove the first element, allways starts with a dash
     let currentPathSplit = currentPath.split("/").slice(1);
     //fallback if set fails
