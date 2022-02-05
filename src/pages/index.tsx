@@ -30,9 +30,10 @@ interface FormInput {
   message?: string;
 }
 
-function IndexPage<T>() {
+function IndexPage<T>(props: any) {
+  console.log(props);
   const form = useRef<HTMLFormElement | null>(null);
-  const { t, setLanguage, language } = useTranslation();
+  const { t, setLanguage, language } = useTranslation(props.location.pathname);
   const sendEmail = async (event: any) => {
     // Pervents a default post request associated with the form
     event.preventDefault();
@@ -103,7 +104,7 @@ function IndexPage<T>() {
         description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
         lang="swe"
       />
-      <Topbar></Topbar>
+      <Topbar pathName={props.location.pathname}></Topbar>
 
       <div className="content screen-height title">
         <Icon.Square className="top-image" />

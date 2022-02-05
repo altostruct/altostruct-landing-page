@@ -5,11 +5,11 @@ import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 import useTranslation from "../hooks/useTranslation";
 
-const NotFoundPage = () => {
-  const { t, setLanguage, language } = useTranslation();
+const NotFoundPage = (props: any) => {
+  const { t, setLanguage, language } = useTranslation(props.location.pathname);
   return (
     <main className="page">
-      <Topbar></Topbar>
+      <Topbar pathName={props.location.pathname}></Topbar>
       <div className="content screen-height title">
         <Icon.Square className="top-image" />
         <div className="split-content sm-screen-height">

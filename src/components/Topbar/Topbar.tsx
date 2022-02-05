@@ -4,7 +4,11 @@ import LanguageSelector from "@components/LanguageSelector/LanguageSelector";
 
 import Brand from "../Brand/Brand";
 
-const Topbar = () => {
+interface TopbarProps {
+  pathName: string;
+}
+
+const Topbar = (props: TopbarProps) => {
   return (
     <header className="topbar">
       <nav>
@@ -18,7 +22,7 @@ const Topbar = () => {
           Kunder
         </a>
         <a href="#contact">Kontakta oss</a>
-        <LanguageSelector></LanguageSelector>
+        <LanguageSelector pathName={props.pathName}></LanguageSelector>
       </nav>
     </header>
   );

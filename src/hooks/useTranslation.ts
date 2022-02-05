@@ -17,25 +17,18 @@ const DEFAULT_LANGUAGE = "swe";
  *
  * @returns a translated string
  */
-const useTranslation = () => {
-  const isBrowser = typeof window !== "undefined";
-
+const useTranslation = (currentPath: string) => {
   //default fallback
   let language = DEFAULT_LANGUAGE;
-  let currentPath: string;
 
   //get current language from URL
-  if (isBrowser) {
-    currentPath = window.location.pathname;
-
-    for (const lang of LANGUAGES) {
-      if (currentPath.startsWith("/" + lang) || currentPath == lang) {
-        language = lang;
-      }
-      //used for testing on github domain
-      if (currentPath.startsWith("/altostruct-landing-page/" + lang)) {
-        language = lang;
-      }
+  for (const lang of LANGUAGES) {
+    if (currentPath.startsWith("/" + lang) || currentPath == lang) {
+      language = lang;
+    }
+    //used for testing on github domain
+    if (currentPath.startsWith("/altostruct-landing-page/" + lang)) {
+      language = lang;
     }
   }
 

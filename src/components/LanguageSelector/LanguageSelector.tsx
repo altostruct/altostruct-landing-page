@@ -4,6 +4,10 @@ import useTranslation from "../../hooks/useTranslation";
 import swedishIcon from "./assets/swedishFlag.png";
 import englishIcon from "./assets/usFlag.png";
 
+interface LanguageSelectorProps {
+  pathName: string;
+}
+
 interface Language {
   language: string;
   image: string;
@@ -14,8 +18,8 @@ interface LanguageInterface {
   [key: string]: Language;
 }
 
-const LanguageSelector = () => {
-  const { t, setLanguage, language } = useTranslation();
+const LanguageSelector = (props: LanguageSelectorProps) => {
+  const { t, setLanguage, language } = useTranslation(props.pathName);
   let currentLanguage = language;
 
   function clicked(selectedLanguage: string) {
