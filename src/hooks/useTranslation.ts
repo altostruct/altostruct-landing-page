@@ -8,8 +8,8 @@ const DEFAULT_LANGUAGE = "swe";
 /**
  *
  * Usage:
- *        without any replacements t("Hello")
- *        with replacements t("Hello {{name}}", {name: "Erik"})
+ *        without any replacements "t("Hello")"
+ *        with replacements "t("Hello {{name}}""", {name: "Erik"})
  *
  * @returns a translated string
  * @param currentPath the current path as a string
