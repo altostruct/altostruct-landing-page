@@ -82,7 +82,7 @@ function IndexPage<T>() {
 
       alert(
         t(
-          `Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈`,
+          "Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈",
           { email: values.email }
         )
       );
@@ -197,10 +197,12 @@ function IndexPage<T>() {
             </h1>
             <p>
               <span className="white-bg-text">
-                {t(`Altostruct är en konsultfirma som arbetar primärt med
-                molntjänster och har ett särskilt fokus på startups. Sedan 2020
-                har vi arbetat med många olika företag och hjälpt dem skapa allt
-                från mobilappar till AI-organisationsmodeller.`)}
+                {t(
+                  "Altostruct är en konsultfirma som arbetar primärt med " +
+                    "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
+                    "har vi arbetat med många olika företag och hjälpt dem skapa allt " +
+                    "från mobilappar till AI-organisationsmodeller."
+                )}
               </span>
             </p>
           </section>
@@ -218,10 +220,12 @@ function IndexPage<T>() {
             </h2>
             <p>
               <span className="white-bg-text">
-                {t(`Nrlyze har skapat ett system av trådlösa sensorer som kan
-                optimera parametrar gällande värmesystem i byggnader. Altostruct
-                hjälpte Nrlyze bygga en portal som tillåter dem att överse
-                byggnaderna och få sin data presenterad i grafer.`)}
+                {t(
+                  "Nrlyze har skapat ett system av trådlösa sensorer som kan " +
+                    "optimera parametrar gällande värmesystem i byggnader. Altostruct " +
+                    "hjälpte Nrlyze bygga en portal som tillåter dem att överse " +
+                    "byggnaderna och få sin data presenterad i grafer."
+                )}
               </span>
             </p>
             <Button openNewTab link="https://www.nrlyze.se/" type="primary">
@@ -245,9 +249,11 @@ function IndexPage<T>() {
               <span className="primary">{t("Inference Labs")}</span>
             </h2>
             <p>
-              {t(`En Medtech startup med målet att hjälpa sina kunder nå ett
-              friskare liv. Altostruct hjälpte bygga en webbapplikation som
-              läkarna kan använda som supportverktyg vid beslutsfattning`)}
+              {t(
+                "En Medtech startup med målet att hjälpa sina kunder nå ett " +
+                  "friskare liv. Altostruct hjälpte bygga en webbapplikation som " +
+                  "läkarna kan använda som supportverktyg vid beslutsfattning."
+              )}
             </p>
           </section>
         </div>
@@ -261,10 +267,12 @@ function IndexPage<T>() {
               <span className="primary">Foodfacts</span>
             </h2>
             <p>
-              {t(`Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör
-              information om livsmedel lättillgängligt och transparent.
-              Altostruct hjälpte till att bygga deras AWS molninfrastruktur och
-              deras IOS/Android applikation.`)}
+              {t(
+                "Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör " +
+                  "information om livsmedel lättillgängligt och transparent. " +
+                  "Altostruct hjälpte till att bygga deras AWS molninfrastruktur och " +
+                  "deras IOS/Android applikation."
+              )}
             </p>
             <Button openNewTab link="https://www.foodfacts.se/" type="primary">
               {t("Se projekt")}
