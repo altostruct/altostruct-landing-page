@@ -1,37 +1,69 @@
 import * as React from "react";
 import "./LanguageSelector.scss";
 import useTranslation from "../../hooks/useTranslation";
-import swedishIcon from "./assets/sweden_icon.png";
-import englishIcon from "./assets/usa_icon.png";
+import swedishIcon from "./assets/swedishFlag.png";
+import englishIcon from "./assets/usFlag.png";
+
+interface Language {
+  language: string;
+  image: string;
+  id: string;
+}
 
 interface LanguageInterface {
-  [key: string]: any;
+  [key: string]: Language;
 }
 
 const LanguageSelector = () => {
   const { t, setLanguage, language } = useTranslation();
+  let currentLanguage = language;
 
-  function clicked() {
-    setLanguage(selectableLanguages[language].nextLanguage);
+  function clicked(selectedLanguage: string) {
+    setLanguage(selectedLanguage);
   }
 
-  const selectableLanguages: LanguageInterface = {
+  const allLanguages: { [key: string]: Language } = {
     swe: {
-      nextLanguage: "en",
-      image: englishIcon,
+      language: "swe",
+      image: swedishIcon,
+      id: "swe",
     },
     en: {
-      nextLanguage: "swe",
-      image: swedishIcon,
+      language: "en",
+      image: englishIcon,
+      id: "en",
     },
   };
 
+  console.log();
+  function withoutCurrentLang() {
+    let selectableLanguages: { [key: string]: Language } = {};
+    Object.assign(selectableLanguages, allLanguages);
+    delete selectableLanguages[currentLanguage];
+    return selectableLanguages;
+  }
+
+  let selectableLanguages: LanguageInterface = withoutCurrentLang();
+
   return (
-    <img
-      className="language-icon"
-      src={selectableLanguages[language].image}
-      onClick={clicked}
-    ></img>
+    <div className="dropdown">
+      <img
+        className="language-icon"
+        alt="Selected language"
+        src={allLanguages[currentLanguage].image}
+      ></img>
+      <div className="dropdown-content">
+        {Object.keys(selectableLanguages).map((selectableLanguage) => (
+          <img
+            className="language-icon"
+            src={selectableLanguages[selectableLanguage].image}
+            alt="Language icon"
+            onClick={() => clicked(selectableLanguage)}
+            key={selectableLanguages[selectableLanguage].id}
+          ></img>
+        ))}
+      </div>
+    </div>
   );
 };
 
