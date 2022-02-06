@@ -59,13 +59,15 @@ const useTranslation = (currentPath: string) => {
     const languagePrefix = language === DEFAULT_LANGUAGE ? null : language;
 
     if (isLanguageSet) {
-      window.location.pathname = [languagePrefix, ...currentPathSplit.slice(1)]
-        .filter((subPath) => subPath !== null)
-        .join("/");
+      window.location.pathname =
+        [languagePrefix, ...currentPathSplit.slice(1)]
+          .filter((subPath) => subPath !== null)
+          .join("/") + "index.html";
     } else {
-      window.location.pathname = [languagePrefix, ...currentPathSplit]
-        .filter((subPath) => subPath !== null)
-        .join("/");
+      window.location.pathname =
+        [languagePrefix, ...currentPathSplit]
+          .filter((subPath) => subPath !== null)
+          .join("/") + "index.html";
     }
   };
   return { t, language: language, setLanguage: setLanguage };
