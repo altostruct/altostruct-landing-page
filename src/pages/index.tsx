@@ -31,7 +31,6 @@ interface FormInput {
 }
 
 function IndexPage<T>(props: any) {
-  console.log(props);
   const form = useRef<HTMLFormElement | null>(null);
   const { t, setLanguage, language } = useTranslation(props.location.pathname);
   const sendEmail = async (event: any) => {
