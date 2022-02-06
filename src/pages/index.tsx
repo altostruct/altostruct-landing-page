@@ -126,7 +126,7 @@ function IndexPage<T>(props: any) {
                   t("Noll bindningstid."),
                 ]}
               </TextAnimation>
-              <span className="primary">För startups.</span>
+              <span className="primary">{t("För startups")}.</span>
             </h1>
             <p className="subtitle">
               <span className="white-bg-text subtitle">
@@ -216,7 +216,7 @@ function IndexPage<T>(props: any) {
           <section>
             <label>{t("Showcase")}</label>
             <h2>
-              <span className="primary">Mitt Nrlyze</span>
+              <span className="primary">{t("Mitt Nrlyze")}</span>
             </h2>
             <p>
               <span className="white-bg-text">
@@ -264,7 +264,7 @@ function IndexPage<T>(props: any) {
           <section>
             <label>{t("Showcase")}</label>
             <h2>
-              <span className="primary">Foodfacts</span>
+              <span className="primary">{t("Foodfacts")}</span>
             </h2>
             <p>
               {t(
