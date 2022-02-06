@@ -16,11 +16,11 @@ function AboutUs() {
     {
       name: "Erik Rehn",
       title: "CEO & Cloud Consultant",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies. 
-      Quisque interdum dolor nec aliquam aliquam. 
-      Mauris id massa dui. 
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Cloudkonsult med fokus på applikationer. " +
+        "Mer specifikt uppskalningsprocessen av en applikation där det läggs stor vikt vid att vara innovativ och effektiv. " +
+        "En riktig GraphQL- och Typescriptfantast som brinner för startup livet och allt som kommer med det. " +
+        "Dricker troligtvis mer kaffe än vad någon borde.",
       mail: "erik.rehn@altostruct.se",
       id: 1,
       frontImage: ErikFrontImage,
@@ -30,11 +30,12 @@ function AboutUs() {
     {
       name: "Emilio Gustavsson",
       title: "Solutions architect & backend developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Python-utvecklare med fokus på molntjänster. " +
+        "Har erfarenhet av Java men det är inte längre relevant. " +
+        "Mycket av min tid går åt till att utveckla backend av applikationer, databaser och API-integrationer. " +
+        "Resten av min tid går åt till löpande bokföringen och att undvika skatteverket." +
+        "Är från Uruguay men kan inte spela fotboll.",
       mail: "emilio.gustavsson@altostruct.se",
       id: 2,
       frontImage: ErikFrontImage,
@@ -56,11 +57,11 @@ function AboutUs() {
     {
       name: "Joakim Tornert",
       title: "Webb developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Mjukvarunörd och Clean Coding-predikant " +
+        "som gärna lägger fokus på säkerhet och användarupplevelser. " +
+        "Helt enkelt en väldigt nyfiken person " +
+        "som älskar att lära sig nya saker och diskutera om allt i livet.",
 
       mail: "joakim.tornert@altostruct.se",
       id: 4,
@@ -97,11 +98,9 @@ function AboutUs() {
     {
       name: "Gustav Rubbestad",
       title: "Fullstack developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Fullstack-utvecklare med en udda dubbelspecialisering inom cybersäkerhet och UX. " +
+        "Kreativ problemlösare och etisk hackare, amatörmusiker på fritiden.",
       mail: "gustav.rubbestad@altostruct.se",
       id: 7,
       frontImage: ErikFrontImage,
