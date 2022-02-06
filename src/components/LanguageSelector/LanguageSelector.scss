@@ -1,0 +1,20 @@
+.language-icon {
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

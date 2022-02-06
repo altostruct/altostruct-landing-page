@@ -1,5 +1,6 @@
 module.exports = {
-  // Used for github pages
+  // Used for github pages will be overritten when
+  // deploying to production.
   pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
     siteUrl: `https://www.altostruct.com`,
@@ -46,6 +47,15 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "locales",
+        path: "locales",
+      },
+      __key: "locales",
     },
   ],
 };

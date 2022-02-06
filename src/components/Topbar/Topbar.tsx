@@ -1,9 +1,16 @@
 import * as React from "react";
 import "./Topbar.scss";
+import LanguageSelector from "@components/LanguageSelector/LanguageSelector";
+import useTranslation from "../../hooks/useTranslation";
 
 import Brand from "../Brand/Brand";
 
-const Topbar = () => {
+interface TopbarProps {
+  pathName: string;
+}
+
+const Topbar = (props: TopbarProps) => {
+  const { t, setLanguage, language } = useTranslation(props.pathName);
   return (
     <header className="topbar">
       <nav>
@@ -14,9 +21,10 @@ const Topbar = () => {
       <nav>
         {/* Simulates css grids, since it is not supported ios */}
         <a href="#customers" style={{ marginRight: "1em" }}>
-          Kunder
+          {t("Kunder")}
         </a>
-        <a href="#contact">Kontakta oss</a>
+        <a href="#contact">{t("Kontakta oss")}</a>
+        <LanguageSelector pathName={props.pathName}></LanguageSelector>
       </nav>
     </header>
   );

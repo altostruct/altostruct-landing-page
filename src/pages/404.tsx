@@ -3,29 +3,28 @@ import { Link } from "gatsby";
 import Button from "@components/Button/Button";
 import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
+import useTranslation from "../hooks/useTranslation";
 
-// styles
-
-// markup
-const NotFoundPage = () => {
+const NotFoundPage = (props: any) => {
+  const { t, setLanguage, language } = useTranslation(props.location.pathname);
   return (
     <main className="page">
-      <Topbar></Topbar>
+      <Topbar pathName={props.location.pathname}></Topbar>
       <div className="content screen-height title">
         <Icon.Square className="top-image" />
         <div className="split-content sm-screen-height">
           <section>
             <h1 style={{ whiteSpace: "nowrap" }}>
-              404 <br />
-              Not found
+              {t("404")} <br />
+              {t("Not found")}
             </h1>
             <p>
               <span className="white-bg-text">
-                Kunde tyvärr inte hitta din sida.
+                {t("Kunde tyvärr inte hitta din sida.")}
               </span>
             </p>
             <Button className="space-right" link="/">
-              Tillbaka
+              {t("Tillbaka")}
             </Button>
           </section>
         </div>
