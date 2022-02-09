@@ -24,7 +24,7 @@ const Topbar = (props: TopbarProps) => {
           {t("Kunder")}
         </a>
         <a href="/aboutus" style={{ marginRight: "1em" }}>
-          Om oss
+          {t("Om oss")}
         </a>
         <a href="#contact">{t("Kontakta oss")}</a>
         <LanguageSelector pathName={props.pathName}></LanguageSelector>
