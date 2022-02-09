@@ -15,7 +15,7 @@ function AboutUs(props: any) {
   const teamMembers: Member[] = [
     {
       name: "Erik Rehn",
-      title: t("CEO & Cloud Consultant"),
+      title: "CEO & Cloud Consultant",
       presentation: t(
         "Cloudkonsult med fokus på applikationer. " +
           "Mer specifikt uppskalningsprocessen av en applikation där det läggs stor vikt vid att vara innovativ och effektiv. " +
@@ -55,7 +55,7 @@ function AboutUs(props: any) {
       presentation: t(
         "Mjukvarunörd och Clean Coding-predikant som gärna lägger fokus på säkerhet och användarupplevelser. " +
           "Helt enkelt en väldigt nyfiken person som älskar att lära sig nya saker " +
-          "och diskutera om livets alla håll och kanter"
+          "och diskutera om livets alla håll och kanter."
       ),
 
       mail: "joakim.tornert@altostruct.se",
@@ -80,7 +80,7 @@ function AboutUs(props: any) {
         "Utvecklare med stor passion för teknik och mjukvaruutveckling. " +
           "Erfarenhet inom utveckling och underhåll av webbapplikationer med hjälp av en agil arbetsprocess " +
           "där anpassningsbarhet och kontakt med kund värdesätts högst." +
-          'Kämpar med Gustav K om titeln "kontorets pingismästare"'
+          'Kämpar med Gustav K om titeln "kontorets pingismästare".'
       ),
 
       mail: "alrik.jonek@altostruct.se",
