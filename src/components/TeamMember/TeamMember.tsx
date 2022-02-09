@@ -13,7 +13,7 @@ export interface Member {
   presentation?: string;
   mail: string;
   id: number;
-  frontImage: string;
+  frontImage?: string;
   backImage?: string;
   link?: string;
 }

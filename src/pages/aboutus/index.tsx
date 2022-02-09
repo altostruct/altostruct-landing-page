@@ -6,8 +6,6 @@ import "@styles/global.scss";
 import "./index.scss";
 
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
-import ErikFrontImage from "./assets/frontImage.jpg";
-import ErikBackImage from "./assets/aboutTest.png";
 
 import AddFrontImage from "./assets/AddFrontImage.png";
 
@@ -23,8 +21,6 @@ function AboutUs() {
         "Dricker troligtvis mer kaffe än vad någon borde.",
       mail: "erik.rehn@altostruct.se",
       id: 1,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
 
     {
@@ -38,8 +34,6 @@ function AboutUs() {
         "Är från Uruguay men kan inte spela fotboll.",
       mail: "emilio.gustavsson@altostruct.se",
       id: 2,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Gustav Kasche",
@@ -49,8 +43,6 @@ function AboutUs() {
         "Kontorets pingismästare och amatörtennisens McEnroe. ",
       mail: "gustav.kasche@altostruct.se",
       id: 3,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Joakim Tornert",
@@ -62,8 +54,6 @@ function AboutUs() {
 
       mail: "joakim.tornert@altostruct.se",
       id: 4,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Axel Hedengren",
@@ -75,8 +65,6 @@ function AboutUs() {
         "Korrekturläste denna beskrivning fler gånger än vill erkännas.",
       mail: "axelhedengren@gmail.com",
       id: 5,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Alrik Jonek",
@@ -89,8 +77,6 @@ function AboutUs() {
 
       mail: "alrik.jonek@altostruct.se",
       id: 6,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Gustav Rubbestad",
@@ -100,8 +86,6 @@ function AboutUs() {
         "Kreativ problemlösare och etisk hackare, amatörmusiker på fritiden.",
       mail: "gustav.rubbestad@altostruct.se",
       id: 7,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
     {
       name: "Rasmus Holmgren",
@@ -111,8 +95,6 @@ function AboutUs() {
         "Intresserad av hur saker och ting fungerar och är alltid öppen för att lära mig nya saker.",
       mail: "rasmus.holmgren@altostruct.se",
       id: 8,
-      frontImage: ErikFrontImage,
-      backImage: ErikBackImage,
     },
   ];
 

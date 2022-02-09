@@ -2,12 +2,17 @@ import "./ImageFlip.scss";
 import React, { useEffect, useState } from "react";
 
 interface ImageProps {
-  frontImage: string;
+  frontImage?: string;
   backImage?: string;
   link?: string;
 }
 function ImageFlip(props: ImageProps) {
   const [isFlipped, setIsFlipped] = React.useState<boolean>(false);
+
+  if (!props.frontImage && !props.backImage) {
+    return null;
+  }
+
   function flipImage() {
     if (props.backImage) {
       setIsFlipped(!isFlipped);
