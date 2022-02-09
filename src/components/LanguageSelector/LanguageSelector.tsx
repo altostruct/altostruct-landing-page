@@ -51,7 +51,7 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
   return (
     <div className="dropdown">
       <img
-        className="language-icon"
+        className="front-icon"
         alt="Selected language"
         src={allLanguages[currentLanguage].image}
       ></img>
