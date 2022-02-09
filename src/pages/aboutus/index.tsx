@@ -34,7 +34,7 @@ function AboutUs() {
         "Python-utvecklare med fokus på molntjänster. " +
         "Har erfarenhet av Java men det är inte längre relevant. " +
         "Mycket av min tid går åt till att utveckla backend av applikationer, databaser och API-integrationer. " +
-        "Resten av min tid går åt till löpande bokföringen och att undvika skatteverket." +
+        "Resten av min tid går åt till löpande bokföringen. " +
         "Är från Uruguay men kan inte spela fotboll.",
       mail: "emilio.gustavsson@altostruct.se",
       id: 2,
@@ -46,7 +46,7 @@ function AboutUs() {
       title: "Lead UX/Frontend developer",
       presentation:
         "Utvecklare som älskar att lära sig nya teknologier. " +
-        "Kontorets pingismästare och amatör tennisens McEnroe.",
+        "Kontorets pingismästare och amatörtennisens McEnroe. ",
       mail: "gustav.kasche@altostruct.se",
       id: 3,
       frontImage: ErikFrontImage,
@@ -56,10 +56,9 @@ function AboutUs() {
       name: "Joakim Tornert",
       title: "Webb developer",
       presentation:
-        "Mjukvarunörd och Clean Coding-predikant " +
-        "som gärna lägger fokus på säkerhet och användarupplevelser. " +
-        "Helt enkelt en väldigt nyfiken person " +
-        "som älskar att lära sig nya saker och diskutera om allt i livet.",
+        "Mjukvarunörd och Clean Coding-predikant som gärna lägger fokus på säkerhet och användarupplevelser. " +
+        "Helt enkelt en väldigt nyfiken person som älskar att lära sig nya saker " +
+        "och diskutera om livets alla håll och kanter",
 
       mail: "joakim.tornert@altostruct.se",
       id: 4,
@@ -69,13 +68,12 @@ function AboutUs() {
     {
       name: "Axel Hedengren",
       title: "Communications manager",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
-
-      mail: "axel.hedengren@altostruct.se",
+      presentation:
+        "Kommunikatör vars fokus är att informera om händelser rörande företaget " +
+        "samt om företagets många spännande projekt " +
+        "Språkfantast som bara njuter av att få vara med på ett hörn av en innovativ startup." +
+        "Korrekturläste denna beskrivning fler gånger än vill erkännas.",
+      mail: "axelhedengren@gmail.com",
       id: 5,
       frontImage: ErikFrontImage,
       backImage: ErikBackImage,
@@ -83,11 +81,12 @@ function AboutUs() {
     {
       name: "Alrik Jonek",
       title: "Backend developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Utvecklare med stor passion för teknik och mjukvaruutveckling. " +
+        "Erfarenhet inom utveckling och underhåll av webbapplikationer med hjälp av en agil arbetsprocess " +
+        "där anpassningsbarhet och kontakt med kund värdesätts högst." +
+        'Kämpar med Gustav K om titeln "kontorets pingismästare"',
+
       mail: "alrik.jonek@altostruct.se",
       id: 6,
       frontImage: ErikFrontImage,
@@ -107,11 +106,9 @@ function AboutUs() {
     {
       name: "Rasmus Holmgren",
       title: "Fullstack developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Brinner för allt som har med teknik att göra men speciellt för mjukvara. " +
+        "Intresserad av hur saker och ting fungerar och är alltid öppen för att lära mig nya saker.",
       mail: "rasmus.holmgren@altostruct.se",
       id: 8,
       frontImage: ErikFrontImage,
