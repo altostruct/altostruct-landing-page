@@ -66,8 +66,8 @@ function AboutUs(props: any) {
       title: "Communications manager",
       presentation: t(
         "Kommunikatör vars fokus är att informera om händelser rörande företaget " +
-          "samt om företagets många spännande projekt " +
-          "Språkfantast som bara njuter av att få vara med på ett hörn av en innovativ startup." +
+          "samt om företagets många spännande projekt. " +
+          "Språkfantast som bara njuter av att få vara med på ett hörn av en innovativ startup. " +
           "Korrekturläste denna beskrivning fler gånger än vill erkännas."
       ),
       mail: "axelhedengren@gmail.com",
@@ -79,7 +79,7 @@ function AboutUs(props: any) {
       presentation: t(
         "Utvecklare med stor passion för teknik och mjukvaruutveckling. " +
           "Erfarenhet inom utveckling och underhåll av webbapplikationer med hjälp av en agil arbetsprocess " +
-          "där anpassningsbarhet och kontakt med kund värdesätts högst." +
+          "där anpassningsbarhet och kontakt med kund värdesätts högst. " +
           'Kämpar med Gustav K om titeln "kontorets pingismästare".'
       ),
 
