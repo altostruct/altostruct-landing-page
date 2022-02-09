@@ -44,11 +44,9 @@ function AboutUs() {
     {
       name: "Gustav Kasche",
       title: "Lead UX/Frontend developer",
-      presentation: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Etiam condimentum ligula sed augue congue, et bibendum sem ultricies.
-      Quisque interdum dolor nec aliquam aliquam.
-      Mauris id massa dui.
-      Vivamus hendrerit tincidunt mattis. `,
+      presentation:
+        "Utvecklare som älskar att lära sig nya teknologier. " +
+        "Kontorets pingismästare och amatör tennisens McEnroe.",
       mail: "gustav.kasche@altostruct.se",
       id: 3,
       frontImage: ErikFrontImage,
