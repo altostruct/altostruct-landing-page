@@ -1,0 +1,122 @@
+$small-screen: 720px;
+$mid-screen: 920px;
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.background {
+  background-image: url(./assets/background_left.svg),
+    url(./assets/background_right.svg);
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: left 0% top 100%, right 0% top 0;
+
+  @media screen and (max-width: $mid-screen) {
+    background-position: 0 500px, right 0% top 20vh;
+    background-size: 15%, 15%;
+    background-repeat: repeat-y, repeat-y;
+  }
+  @media screen and (max-width: $small-screen) {
+    background-position: left 0% top 60px, right 0% top 100px;
+    background-repeat: repeat-y, repeat-y;
+    background-size: 20%, 20%;
+  }
+}
+
+.aboutus-content {
+  overflow: unset;
+  margin-top: 100px;
+  width: 70%;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  height: fit-content;
+
+  @media screen and (max-width: $mid-screen) {
+    width: 100%;
+    flex: 0 0 auto;
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
+}
+
+.aboutus-title {
+  @media screen and (max-width: $small-screen) {
+    text-align: center;
+  }
+}
+
+.secondary-title {
+  font-weight: bold;
+  font-size: 1.125em;
+  line-height: 1.2em;
+  color: #5c5c5c;
+}
+
+.primary-title {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 60px;
+  color: #0f559b;
+}
+
+.top-icon {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  @media screen and (max-width: $small-screen) {
+    width: 100vw;
+    opacity: 0;
+    top: -15vw;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
+}
+
+.middle-icon {
+  position: absolute;
+  right: 0%;
+  top: 10%;
+  @media screen and (max-width: $mid-screen) {
+    top: 20%;
+    right: 0%;
+    opacity: 0.7;
+    width: 20vw;
+  }
+  @media screen and (max-width: $small-screen) {
+    top: 60%;
+    opacity: 0.2;
+    width: 30vw;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
+}
+
+.bottom-icon {
+  position: absolute;
+  left: 0;
+  top: 80%;
+  @media screen and (max-width: $mid-screen) {
+    top: 70%;
+    opacity: 0.7;
+    width: 20vw;
+  }
+  @media screen and (max-width: $small-screen) {
+    top: 290%;
+    left: 0%;
+    opacity: 0.2;
+    width: 30vw;
+    * {
+      stroke-width: 3px !important;
+    }
+  }
+}
