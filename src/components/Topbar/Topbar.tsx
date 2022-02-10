@@ -26,7 +26,10 @@ const Topbar = (props: TopbarProps) => {
         <a className="button-spacing" href={languagePrefix + "#customers"}>
           {t("Kunder")}
         </a>
-        <a className="button-spacing" href={languagePrefix + "aboutus"}>
+        <a
+          className="button-spacing"
+          href={languagePrefix + "aboutus/index.html"}
+        >
           {t("Om oss")}
         </a>
         <a className="button-spacing" href={languagePrefix + "#contact"}>
