@@ -58,6 +58,7 @@ const useTranslation = (currentPath: string) => {
 
     const languagePrefix = language === DEFAULT_LANGUAGE ? null : language;
 
+    window.location.hash = "";
     if (isLanguageSet) {
       window.location.pathname =
         [languagePrefix, ...currentPathSplit.slice(1)]
