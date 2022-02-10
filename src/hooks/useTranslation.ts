@@ -4,7 +4,7 @@ import * as react from "react";
 const translationConfig = require("../../i18next-parser.config.js");
 const LANGUAGES = translationConfig.locales;
 
-const DEFAULT_LANGUAGE = "swe";
+export const DEFAULT_LANGUAGE = "swe";
 /**
  *
  * Usage:
