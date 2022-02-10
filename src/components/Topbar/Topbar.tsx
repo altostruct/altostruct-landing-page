@@ -23,13 +23,15 @@ const Topbar = (props: TopbarProps) => {
       </nav>
       <nav>
         {/* Simulates css grids, since it is not supported ios */}
-        <a href={languagePrefix + "#customers"} style={{ marginRight: "1em" }}>
+        <a className="button-spacing" href={languagePrefix + "#customers"}>
           {t("Kunder")}
         </a>
-        <a href={languagePrefix + "aboutus"} style={{ marginRight: "1em" }}>
+        <a className="button-spacing" href={languagePrefix + "aboutus"}>
           {t("Om oss")}
         </a>
-        <a href={languagePrefix + "#contact"}>{t("Kontakta oss")}</a>
+        <a className="button-spacing" href={languagePrefix + "#contact"}>
+          {t("Kontakta oss")}
+        </a>
         <LanguageSelector pathName={props.pathName}></LanguageSelector>
       </nav>
     </header>
