@@ -9,6 +9,7 @@ import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 
 import AddFrontImage from "./assets/AddFrontImage.png";
 import useTranslation from "../../hooks/useTranslation";
+import SEO from "@components/SEO/SEO";
 
 function AboutUs(props: any) {
   const { t, setLanguage, language } = useTranslation(props.location.pathname);
@@ -110,6 +111,17 @@ function AboutUs(props: any) {
 
   return (
     <main className="page">
+      <SEO
+        title="About us"
+        description="Stockholm based cloud and web consulting for startups"
+        lang="en"
+      />
+      <SEO
+        title="About us"
+        description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
+        lang="swe"
+      />
+
       <Topbar pathName={props.location.pathname}></Topbar>
       <Icon.Top className="top-icon" />
       <div className="background">
