@@ -64,7 +64,7 @@ function IndexPage<T>(props: any) {
       message: form.current.message.value,
       fullName: form.current.fullName.value,
       phone: form.current.phone.value,
-      call_me: form.current.call_me.value = true
+      call_me: form.current.call_me.value === true
     };
 
 
