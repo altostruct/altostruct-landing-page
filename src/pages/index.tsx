@@ -28,7 +28,7 @@ interface FormInput {
   companyName?: string;
   phone?: string;
   message?: string;
-  call_me?: boolean;
+  call_me?: string;
 }
 
 function IndexPage<T>(props: any) {
@@ -64,9 +64,8 @@ function IndexPage<T>(props: any) {
       message: form.current.message.value,
       fullName: form.current.fullName.value,
       phone: form.current.phone.value,
-      call_me: form.current.call_me.value === true
+      call_me: (form.current.call_me.value === true).toString()
     };
-
 
     const errors = validateInput(values);
 
@@ -74,6 +73,7 @@ function IndexPage<T>(props: any) {
       alert(errors.join("\n"));
       return;
     }
+
 
     try {
       await emailjs.sendForm(
@@ -371,7 +371,7 @@ function IndexPage<T>(props: any) {
                     textAlign: "right",
                   }}
                 >
-                  {t("Jag gillar att prata i telefon, ring mig! :)")}
+                  {t("Jag gillar att prata i telefon, ring mig!")}
                 </label>
                 <input type="checkbox" id="callMe" name="call_me" />
               </div>
