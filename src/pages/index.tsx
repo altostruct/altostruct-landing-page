@@ -28,6 +28,7 @@ interface FormInput {
   companyName?: string;
   phone?: string;
   message?: string;
+  call_me?: string;
 }
 
 function IndexPage<T>(props: any) {
@@ -45,11 +46,13 @@ function IndexPage<T>(props: any) {
     const validateInput = (input: FormInput) => {
       const errors: string[] = [];
 
-      if (!input.fullName) errors.push("Provide a name!");
+      //TODO: The push errors needs to be more beautiful
+
+      // if (!input.fullName) errors.push("Provide a name!");
       if (!input.email) errors.push("Provide an email!");
-      if (!input.companyName) errors.push("Provide a company name!");
-      if (!input.phone) errors.push("Provide a phone nr!");
-      if (!input.message) errors.push("Provide a message!");
+      // if (!input.companyName) errors.push("Provide a company name!");
+      // if (!input.phone) errors.push("Provide a phone nr!");
+      // if (!input.message) errors.push("Provide a message!");
 
       if (errors.length === 0) return null;
       return errors;
@@ -61,6 +64,7 @@ function IndexPage<T>(props: any) {
       message: form.current.message.value,
       fullName: form.current.fullName.value,
       phone: form.current.phone.value,
+      call_me: (form.current.call_me.value === true).toString()
     };
 
     const errors = validateInput(values);
@@ -70,7 +74,6 @@ function IndexPage<T>(props: any) {
       return;
     }
 
-    console.log(form.current.fullName.value);
 
     try {
       await emailjs.sendForm(
@@ -199,9 +202,9 @@ function IndexPage<T>(props: any) {
               <span className="white-bg-text">
                 {t(
                   "Altostruct är en konsultfirma som arbetar primärt med " +
-                    "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
-                    "har vi arbetat med många olika företag och hjälpt dem skapa allt " +
-                    "från mobilappar till AI-organisationsmodeller."
+                  "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
+                  "har vi arbetat med många olika företag och hjälpt dem skapa allt " +
+                  "från mobilappar till AI-organisationsmodeller."
                 )}
               </span>
             </p>
@@ -222,9 +225,9 @@ function IndexPage<T>(props: any) {
               <span className="white-bg-text">
                 {t(
                   "Nrlyze har skapat ett system av trådlösa sensorer som kan " +
-                    "optimera parametrar gällande värmesystem i byggnader. Altostruct " +
-                    "hjälpte Nrlyze bygga en portal som tillåter dem att överse " +
-                    "byggnaderna och få sin data presenterad i grafer."
+                  "optimera parametrar gällande värmesystem i byggnader. Altostruct " +
+                  "hjälpte Nrlyze bygga en portal som tillåter dem att överse " +
+                  "byggnaderna och få sin data presenterad i grafer."
                 )}
               </span>
             </p>
@@ -251,8 +254,8 @@ function IndexPage<T>(props: any) {
             <p>
               {t(
                 "En Medtech startup med målet att hjälpa sina kunder nå ett " +
-                  "friskare liv. Altostruct hjälpte bygga en webbapplikation som " +
-                  "läkarna kan använda som supportverktyg vid beslutsfattning."
+                "friskare liv. Altostruct hjälpte bygga en webbapplikation som " +
+                "läkarna kan använda som supportverktyg vid beslutsfattning."
               )}
             </p>
           </section>
@@ -269,9 +272,9 @@ function IndexPage<T>(props: any) {
             <p>
               {t(
                 "Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör " +
-                  "information om livsmedel lättillgängligt och transparent. " +
-                  "Altostruct hjälpte till att bygga deras AWS molninfrastruktur och " +
-                  "deras IOS/Android applikation."
+                "information om livsmedel lättillgängligt och transparent. " +
+                "Altostruct hjälpte till att bygga deras AWS molninfrastruktur och " +
+                "deras IOS/Android applikation."
               )}
             </p>
             <Button openNewTab link="https://www.foodfacts.se/" type="primary">
@@ -339,7 +342,7 @@ function IndexPage<T>(props: any) {
             <div className="contact-form" style={{ flexGrow: 1, width: "50%" }}>
               <label htmlFor="fullName">{t("För- och efternamn")}</label>
               <input type="text" id="fullName" name="from_name" />
-              <label htmlFor="companyName">{t("Namn på företag")}</label>
+              <label htmlFor="companyName">{t("Företag")}</label>
               <input type="text" id="companyName" name="company" />
               <label htmlFor="email">{t("Mejladress")}</label>
               <input type="email" id="email" name="reply_to" />
@@ -368,7 +371,7 @@ function IndexPage<T>(props: any) {
                     textAlign: "right",
                   }}
                 >
-                  {t("Jag vill bli uppringd under vanliga arbetstider")}
+                  {t("Jag gillar att prata i telefon, ring mig!")}
                 </label>
                 <input type="checkbox" id="callMe" name="call_me" />
               </div>
