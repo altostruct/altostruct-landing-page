@@ -64,7 +64,7 @@ function IndexPage<T>(props: any) {
       message: form.current.message.value,
       fullName: form.current.fullName.value,
       phone: form.current.phone.value,
-      call_me: (form.current.call_me.value === true).toString()
+      call_me: (form.current.call_me.value === true).toString(),
     };
 
     const errors = validateInput(values);
@@ -73,7 +73,6 @@ function IndexPage<T>(props: any) {
       alert(errors.join("\n"));
       return;
     }
-
 
     try {
       await emailjs.sendForm(
@@ -202,15 +201,18 @@ function IndexPage<T>(props: any) {
               <span className="white-bg-text">
                 {t(
                   "Altostruct är en konsultfirma som arbetar primärt med " +
-                  "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
-                  "har vi arbetat med många olika företag och hjälpt dem skapa allt " +
-                  "från mobilappar till AI-organisationsmodeller."
+                    "molntjänster och har ett särskilt fokus på startups. Sedan 2020 " +
+                    "har vi arbetat med många olika företag och hjälpt dem skapa allt " +
+                    "från mobilappar till AI-organisationsmodeller."
                 )}
               </span>
             </p>
           </section>
         </div>
       </div>
+
+      {/* KARUSELL HÄR */}
+
       <div
         className="content showcase half-screen sm-flex-reverse"
         id="customers"
@@ -225,9 +227,9 @@ function IndexPage<T>(props: any) {
               <span className="white-bg-text">
                 {t(
                   "Nrlyze har skapat ett system av trådlösa sensorer som kan " +
-                  "optimera parametrar gällande värmesystem i byggnader. Altostruct " +
-                  "hjälpte Nrlyze bygga en portal som tillåter dem att överse " +
-                  "byggnaderna och få sin data presenterad i grafer."
+                    "optimera parametrar gällande värmesystem i byggnader. Altostruct " +
+                    "hjälpte Nrlyze bygga en portal som tillåter dem att överse " +
+                    "byggnaderna och få sin data presenterad i grafer."
                 )}
               </span>
             </p>
@@ -254,8 +256,8 @@ function IndexPage<T>(props: any) {
             <p>
               {t(
                 "En Medtech startup med målet att hjälpa sina kunder nå ett " +
-                "friskare liv. Altostruct hjälpte bygga en webbapplikation som " +
-                "läkarna kan använda som supportverktyg vid beslutsfattning."
+                  "friskare liv. Altostruct hjälpte bygga en webbapplikation som " +
+                  "läkarna kan använda som supportverktyg vid beslutsfattning."
               )}
             </p>
           </section>
@@ -272,9 +274,9 @@ function IndexPage<T>(props: any) {
             <p>
               {t(
                 "Foodfacts skapar digitala lösningar som med hjälp av AI vilket gör " +
-                "information om livsmedel lättillgängligt och transparent. " +
-                "Altostruct hjälpte till att bygga deras AWS molninfrastruktur och " +
-                "deras IOS/Android applikation."
+                  "information om livsmedel lättillgängligt och transparent. " +
+                  "Altostruct hjälpte till att bygga deras AWS molninfrastruktur och " +
+                  "deras IOS/Android applikation."
               )}
             </p>
             <Button openNewTab link="https://www.foodfacts.se/" type="primary">
