@@ -21,7 +21,7 @@ function Carousel(props: CarouselProps) {
   const l = (children as JSX.Element[]).length || 1;
 
   return (
-    <div className={style.wrapper + " card"}>
+    <div className={style.wrapper}>
       <div className={style.carousel}>
         <Transition addEndListener={() => {}} in ontimeout={100}>
           {(props) => {
@@ -40,8 +40,8 @@ function Carousel(props: CarouselProps) {
           }}
         </Transition>
         <div className={style.arrows}>
-          <button onClick={() => setIndex((index - 1 + l) % l)}>Prev</button>
-          <button onClick={() => setIndex((index + 1) % l)}>Next</button>
+          <button onClick={() => setIndex((index - 1 + l) % l)}>&#60;</button>
+          <button onClick={() => setIndex((index + 1) % l)}>&#62;</button>
         </div>
       </div>
     </div>

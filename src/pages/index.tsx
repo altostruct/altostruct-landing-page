@@ -6,6 +6,8 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
+import Carousel from "@components/Carousel/Carousel";
+import CardWithHoverInfo from "@components/CardWithHoverInfo/CardWithHoverInfo";
 // import CountUp from "@components/CountUp/CountUp";
 import TeamImage from "../images/team.png";
 import NrlyzeImage from "../images/nrlyze.png";
@@ -211,7 +213,39 @@ function IndexPage<T>(props: any) {
         </div>
       </div>
 
-      {/* KARUSELL HÄR */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ margin: "2em 0" }}>Några fler projekt</h1>
+        {/* <Carousel> */}
+        <div className="content">
+          <CardWithHoverInfo
+            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
+            description="Nrlyze"
+          ></CardWithHoverInfo>
+          <CardWithHoverInfo
+            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
+            description="Nrlyze"
+          ></CardWithHoverInfo>
+          <CardWithHoverInfo
+            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
+            description="Nrlyze"
+          ></CardWithHoverInfo>
+          <CardWithHoverInfo
+            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
+            description="Nrlyze"
+          ></CardWithHoverInfo>
+          <CardWithHoverInfo
+            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
+            description="Nrlyze"
+          ></CardWithHoverInfo>
+        </div>
+        {/* </Carousel> */}
+      </div>
 
       <div
         className="content showcase half-screen sm-flex-reverse"
