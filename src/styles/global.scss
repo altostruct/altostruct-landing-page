@@ -237,6 +237,13 @@ h3 {
   top: -40vw;
   z-index: -1;
   opacity: 0.4;
+
+  @for $i from 1 through 20 {
+    path:nth-child(#{$i}) {
+      color: red;
+    }
+  }
+
   @media screen and (max-width: $small-screen) {
     opacity: 0.2;
     width: 200vw;
