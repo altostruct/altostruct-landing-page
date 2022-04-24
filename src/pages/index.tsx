@@ -6,6 +6,7 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import CardStack from "@components/CardStack/CardStack";
 import Button from "@components/Button/Button";
+import Carousel from "@components/Carousel/Carousel";
 // import CountUp from "@components/CountUp/CountUp";
 import TeamImage from "../images/team.png";
 import NrlyzeImage from "../images/nrlyze.png";
@@ -28,6 +29,7 @@ interface FormInput {
   companyName?: string;
   phone?: string;
   message?: string;
+  call_me?: string;
 }
 
 function IndexPage<T>(props: any) {
@@ -45,11 +47,13 @@ function IndexPage<T>(props: any) {
     const validateInput = (input: FormInput) => {
       const errors: string[] = [];
 
-      if (!input.fullName) errors.push("Provide a name!");
+      //TODO: The push errors needs to be more beautiful
+
+      // if (!input.fullName) errors.push("Provide a name!");
       if (!input.email) errors.push("Provide an email!");
-      if (!input.companyName) errors.push("Provide a company name!");
-      if (!input.phone) errors.push("Provide a phone nr!");
-      if (!input.message) errors.push("Provide a message!");
+      // if (!input.companyName) errors.push("Provide a company name!");
+      // if (!input.phone) errors.push("Provide a phone nr!");
+      // if (!input.message) errors.push("Provide a message!");
 
       if (errors.length === 0) return null;
       return errors;
@@ -61,6 +65,7 @@ function IndexPage<T>(props: any) {
       message: form.current.message.value,
       fullName: form.current.fullName.value,
       phone: form.current.phone.value,
+      call_me: (form.current.call_me.value === true).toString(),
     };
 
     const errors = validateInput(values);
@@ -69,8 +74,6 @@ function IndexPage<T>(props: any) {
       alert(errors.join("\n"));
       return;
     }
-
-    console.log(form.current.fullName.value);
 
     try {
       await emailjs.sendForm(
@@ -208,6 +211,7 @@ function IndexPage<T>(props: any) {
           </section>
         </div>
       </div>
+
       <div
         className="content showcase half-screen sm-flex-reverse"
         id="customers"
@@ -339,7 +343,7 @@ function IndexPage<T>(props: any) {
             <div className="contact-form" style={{ flexGrow: 1, width: "50%" }}>
               <label htmlFor="fullName">{t("För- och efternamn")}</label>
               <input type="text" id="fullName" name="from_name" />
-              <label htmlFor="companyName">{t("Namn på företag")}</label>
+              <label htmlFor="companyName">{t("Företag")}</label>
               <input type="text" id="companyName" name="company" />
               <label htmlFor="email">{t("Mejladress")}</label>
               <input type="email" id="email" name="reply_to" />
@@ -368,7 +372,7 @@ function IndexPage<T>(props: any) {
                     textAlign: "right",
                   }}
                 >
-                  {t("Jag vill bli uppringd under vanliga arbetstider")}
+                  {t("Jag gillar att prata i telefon, ring mig!")}
                 </label>
                 <input type="checkbox" id="callMe" name="call_me" />
               </div>

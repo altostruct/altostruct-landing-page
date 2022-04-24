@@ -1,5 +1,5 @@
-$width: max(60vh, 20vw);
-$height: max(60vh, 20vw);
+$width: auto;
+$height: auto;
 
 .child {
   width: $width;
@@ -10,13 +10,32 @@ $height: max(60vh, 20vw);
 }
 
 .children {
-  display: inline-flex;
+  display: flex;
+  gap: 2em;
 }
 
 .arrows {
-  bottom: 10px;
-  position: absolute;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+
+  button {
+    background-color: transparent;
+    border: 1px solid rgb(0 0 0 / 0.25);
+    padding: 0;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+    font-weight: 700;
+    font-family: inherit;
+    font-size: 2em;
+
+    &:hover {
+      color: rgb(0 0 0 / 0.75);
+    }
+  }
 }
 
 .carousel {
@@ -30,4 +49,5 @@ $height: max(60vh, 20vw);
   width: $width;
   height: $height;
   position: relative;
+  margin: 4em auto;
 }
