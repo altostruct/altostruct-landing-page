@@ -71,6 +71,7 @@ $mid-screen: 920px;
   position: absolute;
   left: 0%;
   top: 0%;
+
   @media screen and (max-width: $small-screen) {
     width: 100vw;
     opacity: 0;

@@ -23,9 +23,7 @@ const Topbar = (props: TopbarProps) => {
       </nav>
       <nav>
         {/* Simulates css grids, since it is not supported ios */}
-        <a className="button-spacing" href={languagePrefix + "#customers"}>
-          {t("Kunder")}
-        </a>
+
         <a
           className="button-spacing"
           href={languagePrefix + "aboutus/index.html"}
