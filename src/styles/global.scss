@@ -232,10 +232,11 @@ h3 {
   position: absolute;
   object-fit: cover;
   overflow: visible;
+  display: none;
   max-height: none;
   left: -50vw;
   top: -40vw;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.4;
   @media screen and (max-width: $small-screen) {
     opacity: 0.2;

@@ -1,5 +1,6 @@
 $width: auto;
 $height: auto;
+$padding: 10vw;
 
 .children {
   width: fit-content;
@@ -7,7 +8,7 @@ $height: auto;
   white-space: nowrap;
   gap: 2em;
   margin: 0px auto;
-  padding: 0px 5vw;
+  padding: 0px $padding;
 }
 
 .arrows {
@@ -35,10 +36,11 @@ $height: auto;
 }
 
 .carousel {
-  width: 80vw;
+  width: 90%;
   display: flex;
   height: $height;
   position: relative;
+  margin: auto;
 }
 
 .container {
@@ -47,16 +49,55 @@ $height: auto;
   height: auto;
   overflow-x: visible;
   overflow-y: hidden;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   border-radius: 20px;
-  background-image: linear-gradient(
-    to right,
-    red 0%,
-    rgba(0, 0, 0, 0) 20%,
-    rgba(0, 0, 0, 0) 80%,
-    red 100%
-  );
+  // z-index: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary-color) rgb(0 0 0 / 0.1);
+  position: relative;
+  // background-image: linear-gradient(
+  //   to right,
+  //   red 0%,
+  //   rgba(0, 0, 0, 0) 20%,
+  //   rgba(0, 0, 0, 0) 80%,
+  //   red 100%
+  // );
 }
+
+.carousel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: calc(100% - 1rem);
+  width: $padding;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white 10%,
+    transparent
+  );;
+}
+
+.carousel::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: calc(100% - 1rem);
+  width: $padding;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to left,
+    white 0%,
+    white 10%,
+    transparent
+  );;
+}
+
 
 .filler_right {
   width: 100px;
@@ -70,10 +111,10 @@ $height: auto;
 }
 
 .wrapper {
-  width: $width;
+  width: 100%;
   height: $height;
   position: relative;
-  margin: 4em auto;
+  // margin: 4em auto;
 
   ::-webkit-scrollbar {
     height: 10px;

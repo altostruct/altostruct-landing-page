@@ -28,21 +28,24 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  text-align: center;
-  font-size: 25px;
+  font-size: 1rem;
   background-color: rgb(39, 86, 156, 0);
+  display: grid;
+  place-content: center;
+  text-align: center;
   white-space: pre-line;
   transition: background-color ease-in-out 0.4s;
   h2 {
-    margin-top: calc(50% - 35px);
+    padding-bottom: 0.1em;
     transition: opacity ease-in-out 0.4s;
     overflow-wrap: break-word;
     opacity: 0;
+    color: white;
   }
 }
 
 .description:hover {
-  background-color: rgb(39, 86, 156, 0.6);
+  background-color: rgb(39, 86, 156, 0.8);
   h2 {
     opacity: 1;
   }
