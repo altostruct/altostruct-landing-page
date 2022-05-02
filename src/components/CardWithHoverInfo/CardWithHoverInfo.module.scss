@@ -1,0 +1,49 @@
+.card {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  display: inline-block;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.description {
+  border-radius: 20px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+  background-color: rgb(39, 86, 156, 0);
+  white-space: pre-line;
+  transition: background-color ease-in-out 0.4s;
+  h2 {
+    margin-top: calc(50% - 35px);
+    transition: opacity ease-in-out 0.4s;
+    overflow-wrap: break-word;
+    opacity: 0;
+  }
+}
+
+.description:hover {
+  background-color: rgb(39, 86, 156, 0.6);
+  h2 {
+    opacity: 1;
+  }
+}

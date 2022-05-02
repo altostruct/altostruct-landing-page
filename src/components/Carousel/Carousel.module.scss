@@ -1,17 +1,13 @@
 $width: auto;
 $height: auto;
 
-.child {
-  width: $width;
-  height: $height;
-  float: right;
-
-  display: inline-table;
-}
-
 .children {
+  width: fit-content;
   display: flex;
+  white-space: nowrap;
   gap: 2em;
+  margin: 0px auto;
+  padding: 0px 5vw;
 }
 
 .arrows {
@@ -39,10 +35,38 @@ $height: auto;
 }
 
 .carousel {
-  width: $width;
+  width: 80vw;
+  display: flex;
   height: $height;
-  overflow: hidden;
   position: relative;
+}
+
+.container {
+  flex: 1;
+  margin: auto;
+  height: auto;
+  overflow-x: visible;
+  overflow-y: hidden;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  background-image: linear-gradient(
+    to right,
+    red 0%,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0) 80%,
+    red 100%
+  );
+}
+
+.filler_right {
+  width: 100px;
+  height: 200px;
+  background: linear-gradient(to right, rgba(0, 0%, 0%, 0), white);
+}
+.filler_left {
+  width: 100px;
+  height: 200px;
+  background: linear-gradient(to left, rgba(0, 0%, 0%, 0), white);
 }
 
 .wrapper {
@@ -50,4 +74,17 @@ $height: auto;
   height: $height;
   position: relative;
   margin: 4em auto;
+
+  ::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(229, 229, 229, 1);
+    border-radius: 20px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(39, 86, 156);
+    border-radius: 20px;
+  }
 }
