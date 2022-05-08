@@ -15,7 +15,7 @@ const to = (i: number) => ({
   delay: i * 100,
 });
 
-const from = (i: number) => ({ x: 0, rot: 0, scale: 1.5, y: -1000 });
+const from = (i: number) => ({ x: 0, rot: 0 });
 // This is being used down there in the view, it interpolates rotation and scale into a css transform
 const trans = (r: number, s: number) =>
   `perspective(1500px) rotateX(30deg) rotateY(${
