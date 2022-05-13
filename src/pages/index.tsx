@@ -220,38 +220,9 @@ function IndexPage<T>(props: any) {
           alignItems: "center",
         }}
       >
-        <h1 style={{ margin: "2em 0" }}>Några fler projekt</h1>
+        <h1 style={{ margin: "2em 0 1em" }}>{t("Nyheter!")}</h1>
 
-        <Carousel>
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/nrlyze-65e8c54783aba0c7ca352ea5fe471e7a.png"
-            description="Nrlyze"
-          />
-          <CardWithHoverInfo
-            img="http://www.altostruct.com/static/inference-64d54896a64b38e86bed0b8351caebea.png"
-            description="Inference Labs"
-          />
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/foodfacts-3cb07a82dbc3f4de6cd53a383c88ac7b.png"
-            description="Foodfacts"
-          />
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/foodfacts-3cb07a82dbc3f4de6cd53a383c88ac7b.png"
-            description="Foodfacts"
-          />
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/foodfacts-3cb07a82dbc3f4de6cd53a383c88ac7b.png"
-            description="Foodfacts"
-          />
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/foodfacts-3cb07a82dbc3f4de6cd53a383c88ac7b.png"
-            description="Foodfacts"
-          />
-          <CardWithHoverInfo
-            img="https://www.altostruct.com/static/foodfacts-3cb07a82dbc3f4de6cd53a383c88ac7b.png"
-            description="Foodfacts"
-          />
-        </Carousel>
+        <Carousel t={t}></Carousel>
       </div>
 
       <div

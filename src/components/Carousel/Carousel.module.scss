@@ -1,5 +1,3 @@
-$width: auto;
-$height: auto;
 $padding: 10vw;
 
 .children {
@@ -38,7 +36,7 @@ $padding: 10vw;
 .carousel {
   width: 90%;
   display: flex;
-  height: $height;
+  height: auto;
   position: relative;
   margin: auto;
 }
@@ -49,19 +47,11 @@ $padding: 10vw;
   height: auto;
   overflow-x: visible;
   overflow-y: hidden;
-  padding-bottom: 50px;
+  padding: 50px 0px;
   border-radius: 20px;
-  // z-index: 1;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) rgb(0 0 0 / 0.1);
   position: relative;
-  // background-image: linear-gradient(
-  //   to right,
-  //   red 0%,
-  //   rgba(0, 0, 0, 0) 20%,
-  //   rgba(0, 0, 0, 0) 80%,
-  //   red 100%
-  // );
 }
 
 .carousel::before {
@@ -73,12 +63,7 @@ $padding: 10vw;
   width: $padding;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(
-    to right,
-    white 0%,
-    white 10%,
-    transparent
-  );;
+  background: linear-gradient(to right, white 0%, white 10%, transparent);
 }
 
 .carousel::after {
@@ -90,31 +75,13 @@ $padding: 10vw;
   width: $padding;
   z-index: 1;
   pointer-events: none;
-  background: linear-gradient(
-    to left,
-    white 0%,
-    white 10%,
-    transparent
-  );;
-}
-
-
-.filler_right {
-  width: 100px;
-  height: 200px;
-  background: linear-gradient(to right, rgba(0, 0%, 0%, 0), white);
-}
-.filler_left {
-  width: 100px;
-  height: 200px;
-  background: linear-gradient(to left, rgba(0, 0%, 0%, 0), white);
+  background: linear-gradient(to left, white 0%, white 10%, transparent);
 }
 
 .wrapper {
   width: 100%;
-  height: $height;
+  height: auto;
   position: relative;
-  // margin: 4em auto;
 
   ::-webkit-scrollbar {
     height: 10px;

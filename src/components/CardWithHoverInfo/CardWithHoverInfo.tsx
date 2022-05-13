@@ -2,25 +2,33 @@ import React, { useState } from 'react';
 import * as style2 from './CardWithHoverInfo.module.scss';
 
 interface CardWithHoverInfoProps {
-  img: string;
-  description: string;
+  date: string;
+  content: string;
+  url: string;
 }
 
 const CardWithHoverInfo = (props: CardWithHoverInfoProps) => {
-  const image_source = props.img;
-  const title = props.description;
+  const redirect = () => {
+    //Opens url in new tab
+    let a = document.createElement('a');
+    a.target = '_blank';
+    a.href = props.url;
+    a.click();
+  };
 
   return (
-    <div className={style2.card}>
+    <div className={style2.card} onClick={redirect}>
       <div className={style2.container}>
-        <div className={style2.background}>
-          <img className={style2.image} src={image_source} />
-        </div>
-        <div className={style2.description + ' tooltip'}>
-          <h2>{title}</h2>
+        <div className={style2.background}></div>
+        <div className={style2.content}>
+          <div>
+            <h2 className={style2.date}>{props.date}</h2>
+            <h2>{props.content}</h2>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default CardWithHoverInfo;
