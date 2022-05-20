@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 $small-screen: 720px;
 $mid-screen: 920px;
 
@@ -15,7 +15,7 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  font-family: "Poppins", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: 'Poppins', Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
@@ -232,10 +232,11 @@ h3 {
   position: absolute;
   object-fit: cover;
   overflow: visible;
+  display: none;
   max-height: none;
   left: -50vw;
   top: -40vw;
-  z-index: -1;
+  z-index: -10;
   opacity: 0.4;
 
   @for $i from 1 through 20 {
