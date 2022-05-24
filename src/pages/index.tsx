@@ -214,18 +214,6 @@ function IndexPage<T>(props: any) {
       </div>
 
       <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h1 style={{ margin: "2em 0 1em" }}>{t("Nyheter!")}</h1>
-
-        <Carousel t={t}></Carousel>
-      </div>
-
-      <div
         className="content showcase half-screen sm-flex-reverse"
         id="customers"
       >
@@ -404,6 +392,18 @@ function IndexPage<T>(props: any) {
           </form>
         </section>
       </div>
+
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ margin: "2em 0 1em" }}>{t("Nyheter!")}</h1>
+      </div>
+
+      <Carousel t={t}></Carousel>
 
       <div className="end-image">
         <img src={EndImage} />

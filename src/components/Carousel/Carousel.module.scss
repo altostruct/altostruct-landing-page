@@ -1,12 +1,10 @@
-$padding: 10vw;
-
 .children {
   width: fit-content;
   display: flex;
   white-space: nowrap;
   gap: 2em;
   margin: 0px auto;
-  padding: 0px $padding;
+  padding: 0px 5vw;
 }
 
 .arrows {
@@ -42,10 +40,10 @@ $padding: 10vw;
 }
 
 .container {
-  flex: 1;
+  flex: 0.8;
   margin: auto;
   height: auto;
-  overflow-x: visible;
+  overflow-x: scroll;
   overflow-y: hidden;
   padding: 50px 0px;
   border-radius: 20px;
@@ -55,24 +53,26 @@ $padding: 10vw;
 }
 
 .carousel::before {
+  flex: 0.1;
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 10%;
   height: calc(100% - 1rem);
-  width: $padding;
+  width: 10%;
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(to right, white 0%, white 10%, transparent);
 }
 
 .carousel::after {
+  flex: 0.1;
   content: "";
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10%;
   height: calc(100% - 1rem);
-  width: $padding;
+  width: 10%;
   z-index: 1;
   pointer-events: none;
   background: linear-gradient(to left, white 0%, white 10%, transparent);

@@ -20,7 +20,7 @@
   height: 100%;
   width: 100%;
   position: absolute;
-  background-color: rgba($color: #807b7b, $alpha: 0.8);
+  background-color: rgba(229, 229, 229, 1);
   border-radius: 20px;
   .image {
     object-fit: cover;
@@ -36,35 +36,49 @@
   width: calc(100% - 20px);
   position: absolute;
   background-color: transparent;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
   white-space: pre-line;
   transition: background-color ease-in-out 0.4s;
   opacity: 1;
-  h2 {
-    overflow: hidden;
-    font-size: 1.2rem;
-    max-height: 100%;
-    max-width: 100%;
-    height: auto;
-    line-height: 1.618em;
-    transition: opacity ease-in-out 0.4s;
-    overflow-wrap: break-word;
-    opacity: 1;
-    color: #eeeeee;
-  }
+
   .date {
-    color: #222;
+    top: 0px;
+    width: 100%;
+    color: #333;
     font-size: 1.5rem;
   }
   div {
-    max-height: 100%;
+    height: auto;
+    max-height: calc(100% - 80px);
+    position: absolute;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    width: calc(100% - 20px);
+    top: 40px;
+    bottom: 40px;
+
+    h2 {
+      overflow: hidden;
+      font-size: 1.2rem;
+      max-height: 100%;
+      max-width: 100%;
+      height: auto;
+      line-height: 1.618em;
+      transition: opacity ease-in-out 0.4s;
+      overflow-wrap: break-word;
+      opacity: 1;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
   }
 }
 
 .content:hover {
-  background-color: var(--primary-color);
+  background-color: #0f559bd9;
 }
