@@ -26,7 +26,7 @@ jobs:
       - name: Install packages and build the app
         run: |
           # Install node packages
-          npm install
+          npm install --force
           # Build the app
           npm run build
       # Deploy to the S3 server
