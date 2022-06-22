@@ -27,16 +27,16 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
         />
         <path
           d="M486.55,176.42l44.16,76.49a47.28,47.28,0,0,1-17.25,64.38L325.64,425.72"
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.97"
         />
         <path
@@ -44,8 +44,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.93"
         />
         <path
@@ -53,8 +53,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.9"
         />
         <path
@@ -62,8 +62,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.87"
         />
         <path
@@ -71,8 +71,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.84"
         />
         <path
@@ -80,8 +80,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.8"
         />
         <path
@@ -89,8 +89,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.77"
         />
         <path
@@ -98,8 +98,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.74"
         />
         <line
@@ -109,8 +109,8 @@ function Square(props: IconProps) {
           y2="822.17"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.74"
         />
         <path
@@ -118,8 +118,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.71"
         />
         <path
@@ -127,8 +127,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.67"
         />
         <path
@@ -136,8 +136,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.64"
         />
         <path
@@ -145,8 +145,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.61"
         />
         <path
@@ -154,8 +154,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.58"
         />
         <path
@@ -163,8 +163,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.54"
         />
         <path
@@ -172,8 +172,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.51"
         />
         <path
@@ -181,8 +181,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.48"
         />
         <path
@@ -190,8 +190,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.45"
         />
         <path
@@ -199,8 +199,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.41"
         />
         <path
@@ -208,8 +208,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.38"
         />
         <path
@@ -217,8 +217,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.35"
         />
         <path
@@ -226,8 +226,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.32"
         />
         <path
@@ -235,8 +235,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.28"
         />
         <path
@@ -244,8 +244,8 @@ function Square(props: IconProps) {
           transform="translate(331.23 381.01)"
           fill="none"
           stroke="#006ac9"
-          stroke-miterlimit="10"
-          stroke-width="0.78"
+          strokeMiterlimit="10"
+          strokeWidth="0.78"
           opacity="0.25"
         />
       </g>

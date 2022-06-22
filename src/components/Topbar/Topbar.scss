@@ -9,9 +9,12 @@ $small-screen: 720px;
   right: 0;
   padding-left: 15vw;
   padding-right: 15vw;
-  background-color: white;
+  background-color: rgb(4, 1, 26);
   z-index: 1000;
 
+  * {
+    color: white;
+  }
   .brand {
     font-size: 1.125em;
   }

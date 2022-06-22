@@ -1,5 +1,6 @@
 import { stringify } from "postcss";
 import * as react from "react";
+import useLocation from "./useLocation";
 
 const translationConfig = require("../../i18next-parser.config.js");
 const LANGUAGES = translationConfig.locales;
@@ -14,7 +15,9 @@ export const DEFAULT_LANGUAGE = "swe";
  * @returns a translated string
  * @param currentPath the current path as a string
  */
-const useTranslation = (currentPath: string) => {
+const useTranslation = () => {
+  const currentPath = useLocation();
+
   //default fallback
   let language = DEFAULT_LANGUAGE;
 

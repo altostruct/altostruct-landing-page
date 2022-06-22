@@ -10,7 +10,7 @@ interface TopbarProps {
 }
 
 const Topbar = (props: TopbarProps) => {
-  const { t, setLanguage, language } = useTranslation(props.pathName);
+  const { t, setLanguage, language } = useTranslation();
   //language part of url, no language if default
   const languagePrefix =
     language == DEFAULT_LANGUAGE ? "/" : "/" + language + "/";
@@ -24,14 +24,24 @@ const Topbar = (props: TopbarProps) => {
       <nav>
         {/* Simulates css grids, since it is not supported ios */}
 
-        <a
-          className="button-spacing"
-          href={languagePrefix + "aboutus/index.html"}
-        >
-          {t("Om oss")}
+        <a className="button-spacing" href={languagePrefix + "#contact"}>
+          {t("React")}
         </a>
+
+        <a className="button-spacing" href={languagePrefix + "#contact"}>
+          {t("Kubernetes")}
+        </a>
+
+        <a className="button-spacing" href={languagePrefix + "#contact"}>
+          {t("AWS")}
+        </a>
+        <div className="button-spacing">I</div>
+
         <a className="button-spacing" href={languagePrefix + "#contact"}>
           {t("Kontakta oss")}
+        </a>
+        <a className="button-spacing" href={languagePrefix + "#contact"}>
+          {t("Om oss")}
         </a>
         <LanguageSelector pathName={props.pathName}></LanguageSelector>
       </nav>

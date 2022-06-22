@@ -1,11 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 $small-screen: 720px;
 $mid-screen: 920px;
 
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #0f559b;
+  --primary-color: #2b50aa;
   --primary-color-0-5: #ff650263;
   --primary-color-inv: white;
 }
@@ -15,11 +19,12 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  font-family: 'Poppins', Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: "Poppins", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 main {
   display: flex;
@@ -147,6 +152,7 @@ h3 {
 
 .primary {
   color: var(--primary-color);
+  fill: var(--primary-color);
 }
 
 .center {
@@ -208,7 +214,6 @@ h3 {
   -ms-user-select: none;
   user-select: none;
   -webkit-user-drag: none;
-  user-drag: none;
 }
 
 .center-content {
@@ -354,16 +359,10 @@ p {
   gap: 5em;
   justify-content: center;
   align-items: center;
-  div {
-  }
 }
 
 .super-title {
   font-size: 6em;
-}
-
-.mark {
-  // border-bottom: solid 2px var(--primary-color);
 }
 
 .md-margin-top-10 {

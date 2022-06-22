@@ -19,7 +19,7 @@ interface LanguageInterface {
 }
 
 const LanguageSelector = (props: LanguageSelectorProps) => {
-  const { t, setLanguage, language } = useTranslation(props.pathName);
+  const { t, setLanguage, language } = useTranslation();
   let currentLanguage = language;
 
   function clicked(selectedLanguage: string) {

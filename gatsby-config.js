@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   // Used for github pages will be overritten when
   // deploying to production.
@@ -9,9 +11,13 @@ module.exports = {
     author: `Erik Rehn, Joakim Tornert & Rasmus Holmgren`,
   },
   plugins: [
+    "gatsby-transformer-typescript-css-modules",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-react-svg",
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -48,7 +54,13 @@ module.exports = {
       },
       __key: "images",
     },
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

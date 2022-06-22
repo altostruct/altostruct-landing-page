@@ -1,0 +1,70 @@
+.section {
+  background-color: white;
+
+  &.dark {
+    background-color: rgb(4, 1, 26);
+    color: rgb(226, 223, 223);
+  }
+
+  .backgroundImage {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: translate(-5px, 10px);
+    width: 50%;
+
+    @media screen and (max-width: 750px) {
+      width: 100%;
+    }
+
+    &.full {
+      width: 100%;
+      svg {
+        width: 100%;
+        max-height: none;
+      }
+    }
+  }
+
+  svg {
+    width: 100%;
+    max-height: none;
+  }
+
+  .content {
+    &.left {
+      margin-left: 50%;
+    }
+    &.right {
+      margin-right: 50%;
+    }
+    &.center {
+      margin: auto;
+      width: 60%;
+      padding: 0;
+      text-align: center;
+
+      @media screen and (max-width: 750px) {
+        width: 100%;
+      }
+    }
+    &.full {
+      margin-right: 0%;
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  display: flex;
+  position: relative;
+  // align-items: center;
+
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  transform: translate(0%, -10%);
+
+  @media screen and (max-width: 750px) {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+  }
+
+  width: 100vw;
+}

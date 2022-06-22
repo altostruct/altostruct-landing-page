@@ -1,3 +1,3 @@
-declare module "*.svg" {
-  export = any;
-}
+// declare module "*.svg" {
+//   export = any;
+// }

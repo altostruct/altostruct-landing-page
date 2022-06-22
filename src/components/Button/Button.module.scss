@@ -8,7 +8,6 @@ $small-screen: 720px;
   font-family: inherit;
   font-size: inherit;
   padding: 0.6em 1.2em;
-  border-radius: 0.3em;
   cursor: pointer;
   transition: opacity 50ms ease;
 
@@ -16,7 +15,6 @@ $small-screen: 720px;
     width: 100%;
     text-align: center;
     justify-content: center;
-    border-radius: 0.5em;
   }
 }
 
@@ -65,7 +63,6 @@ $small-screen: 720px;
   z-index: -1;
   transition: opacity 0.25s linear;
   opacity: 0;
-  border-radius: 0.3em;
 }
 
 .shiny:hover::before {

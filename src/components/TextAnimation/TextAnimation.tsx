@@ -8,7 +8,7 @@ interface TextAnimationProps {
 
 function TextAnimation(props: TextAnimationProps) {
   const { repeat = true, children } = props;
-  const delay = 200;
+  const delay = 700;
   const [done, setDone] = useState(false);
 
   useEffect(() => {
@@ -31,12 +31,14 @@ function TextAnimation(props: TextAnimationProps) {
             const prevLength = child?.length;
             return [
               child,
-              <Typist.Backspace count={prevLength} delay={delay} />,
-            ];
+              repeat ? (
+                <Typist.Backspace count={prevLength} delay={delay} />
+              ) : undefined,
+            ].filter(Boolean);
           })}
         </Typist>
       ) : (
-        <>&nbsp;</>
+        children[0]
       )}
     </>
   );

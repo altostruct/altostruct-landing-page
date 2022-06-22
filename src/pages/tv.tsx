@@ -5,7 +5,7 @@ import useTranslation from "../hooks/useTranslation";
 import Icon from "@components/Icon";
 
 function TVPage(props: any) {
-  const { t } = useTranslation(props.location.pathname);
+  const { t } = useTranslation();
   return (
     <>
       <div style={{ position: "absolute", top: "-50%" }}>
