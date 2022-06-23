@@ -73,16 +73,14 @@ function DefaultPage(props: DefaultPageProps) {
           )}
         </div>
       </div>
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <h1 className="md:text-8xl text-5xl">
+      <div className=" absolute left-5 top-1/2 -translate-y-1/2">
+        <h1 className="md:text-6xl text-5xl">
           <span className="text-white">
-            <TextAnimation>{["CLOUD", "AWS", "AZURE"]}</TextAnimation>
+            A consulting agency <br></br>
           </span>
-          <span className="primary">{t("KONSULTER")}</span>
+          <span className="text-white">{t("located in Stockholm")}</span>
         </h1>
-        <p className="text-white py-2">
-          {t("AWS KONSULTER PLACERADE I STOCKHOLM")}
-        </p>
+        <p className="text-white py-2">{t("Bygger cloud")}</p>
         <div className="flex gap-2">
           <Button>Contact us</Button>
           <Button type="secondary">{t("Om oss")}</Button>

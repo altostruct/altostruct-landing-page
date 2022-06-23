@@ -20,16 +20,19 @@ import {
   Line,
   Box,
   SpotLight,
+  Sky,
 } from "@react-three/drei";
 import img from "../../images/lambda.png";
 import map from "./map";
 import roads from "./roads";
 import {
   AmbientLight,
+  CubeTexture,
   CubeTextureLoader,
   Fog,
   MeshDistanceMaterial,
   Scene,
+  Texture,
 } from "three";
 // import img2 from "../../images/foodfacts.png";
 
@@ -137,8 +140,11 @@ function Building(props: BuildingProps) {
   const { size, position } = props;
   const [x, z] = position;
   const [w, h, l] = size;
+  const [blue] = useState(Math.random() < 0.1);
 
   const [hover, setHover] = useState(false);
+
+  let color = h > 230 ? "rgb(1, 6, 35)" : "rgb(255, 255, 255)";
 
   return (
     <group
@@ -150,12 +156,10 @@ function Building(props: BuildingProps) {
       }}
       position={[x + w / 2, h / 2, z + l / 2]}
     >
-      <Box args={[...size]}>
+      <Box args={[...size]} castShadow>
         <meshPhongMaterial
           shininess={4}
-          color={
-            !hover ? (dark ? "rgb(13, 13, 13)" : "white") : "rgb(246, 93, 54)"
-          }
+          color={!hover ? (dark ? "rgb(8, 0, 34)" : color) : "rgb(246, 93, 54)"}
           attach="material"
         />
       </Box>
@@ -165,7 +169,7 @@ function Building(props: BuildingProps) {
           side={THREE.DoubleSide}
           wireframe
           wireframeLinewidth={3}
-          color="rgb(92, 92, 92)"
+          color={dark ? "rgb(34, 33, 33)" : "rgb(157, 155, 155)"}
           attach="material"
         />
       </Box>
@@ -183,6 +187,14 @@ function random2() {
 
 let i = 0;
 
+function SkyBox() {
+  const { scene } = useThree();
+
+  const texture = new CubeTexture();
+  scene.background = texture;
+  return null;
+}
+
 function Town() {
   const start: {
     x: number;
@@ -195,9 +207,9 @@ function Town() {
     x: 2470,
     y: 359,
     z: 1518,
-    rx: -0.3,
+    rx: -0.6,
     ry: 1,
-    rz: 0.3,
+    rz: 0.5,
   };
 
   const position: {
@@ -273,6 +285,7 @@ function Town() {
 
   const camera = useRef<any>();
   const spotlight = useRef<any>();
+  const spotlight2 = useRef<any>();
   const buildings = 10;
   const cols = 20;
   const rows = 20;
@@ -320,7 +333,9 @@ function Town() {
   });
 
   useFrame(() => {
-    console.log((spotlight.current.angle += 0.01));
+    if (spotlight.current && dark)
+      console.log((spotlight.current.angle += 0.001));
+    console.log((spotlight2.current.angle -= 0.001));
   });
 
   return (
@@ -329,17 +344,28 @@ function Town() {
         ref={camera}
         args={[400, 10, 10, 10000]}
         makeDefault
-        rotation={[-0.23, 1, 0.197]}
+        rotation={[-0.23, 1, 0.23]}
         position={[2470, 559, 1518]}
       />
+
       <SpotLight
         ref={spotlight}
         position={[1000.808030841272, 300, 600.438980817084]}
-        intensity={3}
-        angle={deg2rad(10)}
-        attenuation={2500}
+        intensity={6}
+        angle={deg2rad(170)}
+        attenuation={200}
         distance={3000}
       ></SpotLight>
+
+      <SpotLight
+        ref={spotlight2}
+        position={[2000.808030841272, 300, 300.438980817084]}
+        intensity={6}
+        angle={deg2rad(0)}
+        attenuation={200}
+        distance={3000}
+      ></SpotLight>
+
       {/* <OrbitControls
         onChange={console.log}
         makeDefault
@@ -370,11 +396,19 @@ function Town() {
         {/* <Box castShadow receiveShadow args={[10, 10, 10]} position={[0, 5, 0]}>
         <meshStandardMaterial attach="material" color="white" />
       </Box> */}
-        <gridHelper
+        {/* <Plane
+          rotation={[-deg2rad(90), deg2rad(0), deg2rad(0)]}
+          args={[2000, 4000, 100, 100]}
+          position={[2000 / 2, -1, 2000 / 2]}
+        >
+          <meshBasicMaterial color="#ffffff" attach="material" />
+        </Plane> */}
+
+        {/* <gridHelper
           receiveShadow
           position={[0, -1, 0]}
-          args={[10000, 20, "black", 0x080808]}
-        ></gridHelper>
+          args={[10000, 20, "white", "#000000"]}
+        ></gridHelper> */}
       </group>
     </>
   );
@@ -386,6 +420,8 @@ export default () => {
   const [p, setP] = useState<number>();
   const [canvasReady, setCanvasReady] = useState(false);
 
+  const [test, setTest] = useState<any>({});
+
   useEffect(() => {
     setP(window.innerWidth);
   }, []);
@@ -395,22 +431,112 @@ export default () => {
       <Suspense fallback="asd">
         <Canvas
           style={{
-            backgroundColor: dark ? "rgb(4, 1, 26)" : "white",
+            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
             width: "100%",
             height: window.innerHeight * 1.4,
             display: "inline-block",
           }}
           dpr={window.devicePixelRatio}
         >
-          <ambientLight
-            ref={sunRef}
-            intensity={dark ? 1 : 2}
-
-            // position={[1000, 270, 1000]}
-          />
+          <ambientLight ref={sunRef} intensity={dark ? 2 : 0.6} />
+          {/* <Sky
+            distance={2800}
+            rayleigh={0.1}
+            turbidity={0.1}
+            azimuth={0.3}
+            mieCoefficient={0}
+            mieDirectionalG={10}
+            {...test}
+          ></Sky> */}
 
           <Town />
         </Canvas>
+        {/* <div className="absolute w-36 h-96 top-20 left-0 bg-red-300">
+          Distance
+          <input
+            type="range"
+            onChange={(t) => {
+              console.log(t.target.value);
+              setTest({
+                ...test,
+                distance: t.target.value,
+              });
+            }}
+            min="1"
+            max="3000"
+            value={test.distance}
+          />
+          rayleigh
+          <input
+            type="range"
+            onChange={(t) => {
+              setTest({
+                ...test,
+                rayleigh: t.target.value,
+              });
+            }}
+            min="0"
+            max="1"
+            step="0.01"
+            value={test.rayleigh}
+          />
+          turbidity
+          <input
+            type="range"
+            onChange={(t) => {
+              setTest({
+                ...test,
+                turbidity: t.target.value,
+              });
+            }}
+            min="0"
+            max="1"
+            step="0.01"
+            value={test.turbidity}
+          />
+          azimuth
+          <input
+            type="range"
+            onChange={(t) => {
+              setTest({
+                ...test,
+                azimuth: t.target.value,
+              });
+            }}
+            min="0"
+            max="1"
+            step="0.01"
+            value={test.azimuth}
+          />
+          mieCoefficient
+          <input
+            type="range"
+            onChange={(t) => {
+              setTest({
+                ...test,
+                mieCoefficient: t.target.value,
+              });
+            }}
+            min="0"
+            max="1"
+            step="0.01"
+            value={test.mieCoefficient}
+          />
+          mieDirectionalG
+          <input
+            type="range"
+            onChange={(t) => {
+              setTest({
+                ...test,
+                mieDirectionalG: t.target.value,
+              });
+            }}
+            min="0"
+            max="1"
+            step="0.01"
+            value={test.mieDirectionalG}
+          />
+        </div> */}
       </Suspense>
     </>
   );
