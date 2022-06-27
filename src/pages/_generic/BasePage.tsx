@@ -17,6 +17,8 @@ import StrokedSvg from "@components/StrokedSvg";
 import TextAnimation from "@components/TextAnimation/TextAnimation";
 import Carousel from "@components/Carousel/Carousel";
 import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
+
 import useTranslation from "../../hooks/useTranslation";
 
 interface DefaultPageProps {
@@ -73,17 +75,35 @@ function DefaultPage(props: DefaultPageProps) {
           )}
         </div>
       </div>
-      <div className=" absolute left-32 top-1/2 -translate-y-1/2">
-        <h1 className="md:text-6xl text-5xl uppercase font-light ">
-          <span className="text-black">
-            A consulting agency <br></br>
+
+      <div className=" absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
+        <h1 className="md:text-8xl text-center text-5xl uppercase">
+          <span className="text-3xl font-light">
+            {t("KONSULTER I STOCKHOLM INOM")}
+            <br></br>
           </span>
-          <span className="text-black">{t("located in Stockholm")}</span>
+
+          <div className="flex">
+            <span className="text-black flex m-auto gap-2">
+              <span>CLOUD</span>
+              <span> / </span>
+              <span className="overflow-hidden border-solid">
+                <Slide left>{"AWS"}</Slide>
+              </span>
+            </span>
+          </div>
         </h1>
-        <p className="text-black py-2">{t("Bygger cloud")}</p>
-        <div className="flex gap-2">
-          <Button>Contact us</Button>
-          <Button type="secondary">{t("Om oss")}</Button>
+        <p className="text-black text-center py-2 text-xl">
+          {t(
+            "Altostruct är en konsultfirma som arbetar primärt med molntjänster och web teknologier."
+          )}
+          <br></br>
+        </p>
+        <div className="flex pt-2">
+          <div className="flex m-auto gap-2">
+            <Button className="p-20 ">{t("Läs mer")}</Button>
+            {/* <Button type="secondary">{t("Om oss")}</Button> */}
+          </div>
         </div>
       </div>
 
@@ -111,7 +131,7 @@ function DefaultPage(props: DefaultPageProps) {
         <Section
           dark
           style={{
-            minHeight: "120vh",
+            minHeight: "160vh",
           }}
           position="center"
           backgroundImage={

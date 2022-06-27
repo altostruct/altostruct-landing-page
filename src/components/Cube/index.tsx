@@ -352,7 +352,7 @@ function Town() {
         ref={spotlight}
         position={[1000.808030841272, 300, 600.438980817084]}
         intensity={6}
-        angle={deg2rad(170)}
+        angle={deg2rad(150)}
         attenuation={200}
         distance={3000}
       ></SpotLight>
@@ -361,7 +361,7 @@ function Town() {
         ref={spotlight2}
         position={[2000.808030841272, 300, 300.438980817084]}
         intensity={6}
-        angle={deg2rad(0)}
+        angle={deg2rad(150)}
         attenuation={200}
         distance={3000}
       ></SpotLight>
@@ -438,7 +438,7 @@ export default () => {
           }}
           dpr={window.devicePixelRatio}
         >
-          <ambientLight ref={sunRef} intensity={dark ? 2 : 0.6} />
+          <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
           {/* <Sky
             distance={2800}
             rayleigh={0.1}

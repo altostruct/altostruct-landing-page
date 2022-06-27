@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import * as React from "react";
 import * as style from "./Button.module.scss";
 
@@ -35,15 +36,7 @@ const Button = (props: ButtonProps) => {
   return LinkWrapper(
     <button
       type={formAction}
-      className={[
-        className,
-        style.button,
-        (() => {
-          if (type === "primary") return style.primary;
-          if (type === "secondary") return style.secondary;
-          if (type === "shiny") return style.shiny;
-        })(),
-      ].join(" ")}
+      className={classNames(className, style.button, style[type])}
     >
       {children}
     </button>
