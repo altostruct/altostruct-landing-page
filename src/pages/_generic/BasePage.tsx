@@ -73,14 +73,14 @@ function DefaultPage(props: DefaultPageProps) {
           )}
         </div>
       </div>
-      <div className=" absolute left-5 top-1/2 -translate-y-1/2">
-        <h1 className="md:text-6xl text-5xl">
-          <span className="text-white">
+      <div className=" absolute left-32 top-1/2 -translate-y-1/2">
+        <h1 className="md:text-6xl text-5xl uppercase font-light ">
+          <span className="text-black">
             A consulting agency <br></br>
           </span>
-          <span className="text-white">{t("located in Stockholm")}</span>
+          <span className="text-black">{t("located in Stockholm")}</span>
         </h1>
-        <p className="text-white py-2">{t("Bygger cloud")}</p>
+        <p className="text-black py-2">{t("Bygger cloud")}</p>
         <div className="flex gap-2">
           <Button>Contact us</Button>
           <Button type="secondary">{t("Om oss")}</Button>

@@ -36,7 +36,7 @@ import {
 } from "three";
 // import img2 from "../../images/foodfacts.png";
 
-const dark = true;
+const dark = false;
 // const map = `
 // x 5 5 | 3 3
 // x 5 5 | 3 3
@@ -144,7 +144,7 @@ function Building(props: BuildingProps) {
 
   const [hover, setHover] = useState(false);
 
-  let color = h > 230 ? "rgb(1, 6, 35)" : "rgb(255, 255, 255)";
+  let color = h > 230 ? "rgb(255, 255, 255)" : "rgb(255, 255, 255)";
 
   return (
     <group
