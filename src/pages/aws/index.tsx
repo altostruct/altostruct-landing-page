@@ -1,10 +1,9 @@
 import Footer from "@components/Footer/Footer";
 import Topbar from "@components/Topbar/Topbar";
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import useTranslation from "../../hooks/useTranslation";
 
-import BasePage from "../_generic/BasePage";
+import BasePage from "../../templates/_generic/BasePage";
 
 function Index() {
   const { t } = useTranslation();
@@ -13,6 +12,8 @@ function Index() {
       <Topbar pathName=""></Topbar>
 
       <BasePage
+        mainCategory={t("CLOUD")}
+        techonology={t("AWS")}
         image={<p>asd</p>}
         inDepthDescription={t(
           "En person som älskar det den gör kommer alltid utföra sina uppgifter bättre och mer effektivt än någon som inte gör det. " +

@@ -11,6 +11,7 @@ module.exports = {
     author: `Erik Rehn, Joakim Tornert & Rasmus Holmgren`,
   },
   plugins: [
+    "gatsby-transformer-json",
     "gatsby-transformer-typescript-css-modules",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
@@ -50,7 +51,7 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./static",
       },
       __key: "images",
     },

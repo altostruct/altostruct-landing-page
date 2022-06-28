@@ -59,7 +59,7 @@
   position: relative;
   // align-items: center;
 
-  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
   transform: translate(0%, -10%);
 
   @media screen and (max-width: 750px) {
