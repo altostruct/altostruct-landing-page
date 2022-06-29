@@ -39,6 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // const canvasBuffer = await getCanvasBuffer();
   // fs.writeFileSync("static/images/city/light.webp", canvasBuffer);
 
+  fs.mkdirSync("src/assets", { recursive: true });
   const houses = await buildHouses("assets/houses.png");
   fs.writeFileSync("./src/assets/houses.json", JSON.stringify(houses));
 
