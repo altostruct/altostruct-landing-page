@@ -10,18 +10,17 @@ function Index() {
   return (
     <>
       <Topbar pathName=""></Topbar>
-
       <BasePage
         mainCategory={t("CLOUD")}
         techonology={t("AWS")}
         image={<p>asd</p>}
         inDepthDescription={t(
-          "En person som älskar det den gör kommer alltid utföra sina uppgifter bättre och mer effektivt än någon som inte gör det. " +
-            "Detta kan visserligen låta uppenbart, men kan vara svårt att realisera i praktiken. Men vi kan garantera att detta hittills" +
-            " stämt in bra på oss. Vi har, sedan starten av företaget, alltid erbjudit våra kunder konsulter som brinner för sitt arbete och som därför gör allt för att skapa en så bra produkt som möjligt. "
+          "Letar ni efter Seniora AWS konsulter i Stockholm? Då har ni kommit helt rätt. " +
+            "Vi har arbetat med AWS ända sedan början och brinner helhjärtat för att bygga lösningar på cloud. " +
+            "Med våra seniora AWS konsulter får ni allting ni behöver för att ta er produkt till nästa nivå."
         )}
-        title="Amazon web services"
-        titleDescription="Amazon web services"
+        title="HUR KAN VI HJÄLPA DIG?"
+        titleDescription="Hur kan vi hjälpa dig?"
       ></BasePage>
       <Footer />
     </>

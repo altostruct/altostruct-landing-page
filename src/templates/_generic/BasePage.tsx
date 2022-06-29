@@ -43,7 +43,11 @@ function Cite(props: CiteProps) {
       <Fade>
         <h3>"{cite}"</h3>
       </Fade>
-      <p>{author}</p>
+      <Fade>
+        <div className="mt-1">
+          <cite>{author}</cite>
+        </div>
+      </Fade>
     </div>
   );
 }
@@ -116,15 +120,16 @@ function DefaultPage(props: DefaultPageProps) {
           </div>
         </h1>
         <p className="text-black text-center py-2 text-lg md:text-xl">
-          {t(
-            "Altostruct är en konsultfirma som arbetar primärt med molntjänster och web teknologier."
-          )}
+          {t("Konsultbolaget som faktiskt älskar programmering")}
           <br></br>
         </p>
         <div className="flex pt-2">
           <div className="flex m-auto gap-2">
+            <Button type="secondary" link="#info" className="p-20 ">
+              {t("Om oss")}
+            </Button>
             <Button link="#info" className="p-20 ">
-              {t("Läs mer")}
+              {t("Kontakta oss")}
             </Button>
             {/* <Button type="secondary">{t("Om oss")}</Button> */}
           </div>
@@ -136,67 +141,80 @@ function DefaultPage(props: DefaultPageProps) {
         style={{ backgroundColor: "white", zIndex: 1, position: "relative" }}
       >
         <Section dark position="center">
-          <div id="info">
+          <div className="pt-16" id="info">
             <div>
               <Fade>
-                <h2 className="text-6xl">{titleDescription}</h2>
+                <h1>{titleDescription}</h1>
               </Fade>
-              <p className="py-10">{inDepthDescription}</p>
+              <Fade>
+                <p className="py-10 text-lg">{inDepthDescription}</p>
+              </Fade>
               <div className="flex align-middle flex-col">
                 <CardGrid
                   animatedOnView
                   cols={2}
                   grid={[
                     {
-                      title: "Foodfacts",
+                      title: "App byggd på AWS",
                       description: "",
-                      backgroundColor: "#ffffff",
+                      backgroundColor: "rgb(4, 1, 26)",
                       image: <img src={foodfactsImage} />,
                     },
-
                     {
-                      title: "Nrlyze",
+                      title: "Datadriven platform på AWS",
                       description: "",
                       image: <img src={nrlyzeImage} />,
-                      backgroundColor: "#ffffff",
+                      backgroundColor: "rgb(4, 1, 26)",
                     },
                   ]}
                 ></CardGrid>
-                <div className="py-5 mb-36">
-                  <Button>{t("See more projects")}</Button>
-                </div>
               </div>
             </div>
           </div>
 
-          <p>Vad säger våra kunder?</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "3em" }}>
-            <Cite
-              cite={
-                "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
-                " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
-              }
-              author={t("Peter Vesterberg - Founder Foodfacts")}
-            ></Cite>
-            <Cite
-              cite={
-                "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån" +
-                "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
-              }
-              author={t("Erik Standin Pers - Founder Foodfacts")}
-            ></Cite>
+          <div className="pt-32">
+            <Fade>
+              <h1 className="mb-8">
+                {t("Tro ni inte på oss! Lyssna på vad våra kunder säger")}
+              </h1>
+            </Fade>
+            <div
+              style={{ display: "flex", flexDirection: "column", gap: "3em" }}
+            >
+              <Cite
+                cite={
+                  "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
+                  " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
+                }
+                author={t("Peter Vesterberg - CEO Saluto AB")}
+              ></Cite>
+              <Cite
+                cite={
+                  "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån" +
+                  "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+                }
+                author={t("Erik Standin Pers - Founder Foodfacts")}
+              ></Cite>
+              <p className="text-xs">
+                {t(
+                  "* Många fler citat ifrån kunder till men det är för mycket att läsa. Vi är allvarliga," +
+                    " 100% av våra tidigare kunder skulle rekomendera oss."
+                )}
+              </p>
+              <div className="py-5 mb-32">
+                <Button>{t("Bli vår nästa nöjda kund")}</Button>
+              </div>
+            </div>
           </div>
         </Section>
 
         <Section position="full">
-          <Fade>
-            <h3 className="shiny" style={{ textAlign: "center" }}>
-              {t("Nyheter ifrån oss")}
-            </h3>
+          {/* <Fade>
+            <h3 style={{ textAlign: "center" }}>{t("Nyheter ifrån oss")}</h3>
           </Fade>
           <div className="mb-36">
             <Carousel></Carousel>
-          </div>
+          </div> */}
           <Form />
         </Section>
       </div>
