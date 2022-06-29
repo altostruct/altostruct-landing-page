@@ -41,9 +41,9 @@ function Cite(props: CiteProps) {
   return (
     <div>
       <Fade>
-        <h1>"{cite}"</h1>
+        <h3>"{cite}"</h3>
       </Fade>
-      <pre>{author}</pre>
+      <p>{author}</p>
     </div>
   );
 }
@@ -99,9 +99,9 @@ function DefaultPage(props: DefaultPageProps) {
         </div>
       </div>
 
-      <div className=" absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <h1 className="md:text-8xl text-center text-5xl uppercase">
-          <span className="text-3xl font-light">
+      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
+        <h1 className="md:text-8xl text-center text-6xl uppercase">
+          <span className="text-xl md:text-3xl font-light">
             {t("KONSULTER I STOCKHOLM INOM")}
           </span>
 
@@ -115,7 +115,7 @@ function DefaultPage(props: DefaultPageProps) {
             </span>
           </div>
         </h1>
-        <p className="text-black text-center py-2 text-xl">
+        <p className="text-black text-center py-2 text-lg md:text-xl">
           {t(
             "Altostruct är en konsultfirma som arbetar primärt med molntjänster och web teknologier."
           )}
@@ -135,35 +135,7 @@ function DefaultPage(props: DefaultPageProps) {
       <div
         style={{ backgroundColor: "white", zIndex: 1, position: "relative" }}
       >
-        <Section position="center">
-          <p>Vad säger våra kunder?</p>
-          <div style={{ display: "flex", flexDirection: "column", gap: "3em" }}>
-            <Cite
-              cite="Altostruct ger oss möjligheten att bygga våran platform snabbare"
-              author="Peter Vesterberg"
-            ></Cite>
-            <Cite
-              cite="Altostruct ger oss möjligheten att bygga våran platform snabbare"
-              author="Peter Vesterberg"
-            ></Cite>
-            <Cite
-              cite="Altostruct ger oss möjligheten att bygga våran platform snabbare"
-              author="Peter Vesterberg"
-            ></Cite>
-          </div>
-        </Section>
-        <Section
-          dark
-          style={{
-            minHeight: "160vh",
-          }}
-          position="center"
-          backgroundImage={
-            <StrokedSvg>
-              <House></House>
-            </StrokedSvg>
-          }
-        >
+        <Section dark position="center">
           <div id="info">
             <div>
               <Fade>
@@ -173,44 +145,58 @@ function DefaultPage(props: DefaultPageProps) {
               <div className="flex align-middle flex-col">
                 <CardGrid
                   animatedOnView
+                  cols={2}
                   grid={[
                     {
                       title: "Foodfacts",
                       description: "",
-                      backgroundColor: "#08011e",
+                      backgroundColor: "#ffffff",
                       image: <img src={foodfactsImage} />,
                     },
-                    {
-                      title: "Bintess",
-                      description: "",
-                      backgroundColor: "#08011e",
-                      image: <img src={bintessLogo}></img>,
-                    },
+
                     {
                       title: "Nrlyze",
                       description: "",
                       image: <img src={nrlyzeImage} />,
-                      backgroundColor: "#08011e",
+                      backgroundColor: "#ffffff",
                     },
                   ]}
                 ></CardGrid>
-                <div className="py-5">
+                <div className="py-5 mb-36">
                   <Button>{t("See more projects")}</Button>
                 </div>
               </div>
             </div>
           </div>
+
+          <p>Vad säger våra kunder?</p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "3em" }}>
+            <Cite
+              cite={
+                "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
+                " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
+              }
+              author={t("Peter Vesterberg - Founder Foodfacts")}
+            ></Cite>
+            <Cite
+              cite={
+                "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån" +
+                "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+              }
+              author={t("Erik Standin Pers - Founder Foodfacts")}
+            ></Cite>
+          </div>
         </Section>
 
-        <Section backgroundImage={<img />} position="full">
+        <Section position="full">
           <Fade>
-            <pre className="shiny" style={{ textAlign: "center" }}>
+            <h3 className="shiny" style={{ textAlign: "center" }}>
               {t("Nyheter ifrån oss")}
-            </pre>
+            </h3>
           </Fade>
-          <Carousel></Carousel>
-        </Section>
-        <Section dark position="full">
+          <div className="mb-36">
+            <Carousel></Carousel>
+          </div>
           <Form />
         </Section>
       </div>

@@ -53,10 +53,6 @@ const Topbar = (props: TopbarProps) => {
           {t("React")}
         </a>
 
-        <a className="button-spacing" href={languagePrefix + "kubernetes"}>
-          {t("Kubernetes")}
-        </a>
-
         <a className="button-spacing" href={languagePrefix + "aws"}>
           {t("AWS")}
         </a>
