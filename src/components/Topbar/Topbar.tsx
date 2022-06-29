@@ -6,10 +6,6 @@ import useTranslation, { DEFAULT_LANGUAGE } from "../../hooks/useTranslation";
 import Brand from "../Brand/Brand";
 import classNames from "classnames";
 
-interface TopbarProps {
-  pathName: string;
-}
-
 const Topbar = (props: TopbarProps) => {
   const { t, setLanguage, language } = useTranslation();
   //language part of url, no language if default
@@ -37,7 +33,7 @@ const Topbar = (props: TopbarProps) => {
   return (
     <header
       className={classNames("topbar", {
-        "bg-white": !isAtTop,
+        "bg-white": true,
         border: !isAtTop,
       })}
     >

@@ -5,17 +5,11 @@ import Topbar from "@components/Topbar/Topbar";
 import React, { ReactNode, Suspense, useState } from "react";
 
 import Img from "gatsby-image";
-import HouseBackground from "@components/HouseBackground";
-import ThreeImages from "@components/ThreeImages";
 import Section from "@components/Section";
-import House from "./assets/newHouse.svg";
 import foodfactsImage from "../../images/foodfacts.png";
 import nrlyzeImage from "../../images/nrlyze.png";
-import bintessLogo from "../../images/Bintess_logo.webp";
 import CardGrid from "@components/CardGrids";
-import StrokedSvg from "@components/StrokedSvg";
-import TextAnimation from "@components/TextAnimation/TextAnimation";
-import Carousel from "@components/Carousel/Carousel";
+
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
