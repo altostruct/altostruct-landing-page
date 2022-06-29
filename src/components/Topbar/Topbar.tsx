@@ -17,13 +17,15 @@ const Topbar = (props: TopbarProps) => {
     language == DEFAULT_LANGUAGE ? "/" : "/" + language + "/";
 
   const threshold = 100;
-  const [isAtTop, setIsAtTop] = React.useState(window.scrollY < threshold);
+  const [isAtTop, setIsAtTop] = React.useState(true);
 
   React.useEffect(() => {
     const onScoll = () => {
       if (window.scrollY > threshold) setIsAtTop(false);
       if (window.scrollY < threshold) setIsAtTop(true);
     };
+
+    if (window.scrollY > threshold) setIsAtTop(false);
 
     window.addEventListener("scroll", () => {
       onScoll();
