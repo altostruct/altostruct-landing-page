@@ -1,16 +1,18 @@
-import AnimatedLogo from "@components/AnimatedLogo";
+import * as React from "react";
 import Footer from "@components/Footer/Footer";
-import Form from "@components/Form";
-import Section from "@components/Section";
 import Topbar from "@components/Topbar/Topbar";
-import React, { Suspense } from "react";
+import Icon from "@components/Icon";
+import "@styles/global.scss";
+import "./index.scss";
+
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
+
+import AddFrontImage from "./assets/AddFrontImage.png";
 import useTranslation from "../../hooks/useTranslation";
+import SEO from "@components/SEO/SEO";
 
-const Cube = React.lazy(() => import("@components/City"));
-
-function AboutPage() {
-  const { t, setLanguage, language } = useTranslation();
+function AboutUs(props: any) {
+  const { t, setLanguage, language } = useTranslation(props.location.pathname);
   const teamMembers: Member[] = [
     {
       name: "Erik Rehn",
@@ -108,49 +110,52 @@ function AboutPage() {
   ];
 
   return (
-    <>
-      <Topbar></Topbar>
-      <div className="h-screen w-screen mt-16">
-        <div className="w-full absolute h-screen overflow-hidden z-10">
-          <div className="m-auto">
-            <Suspense fallback={null}>
-              <Cube />
-            </Suspense>
-          </div>
-        </div>
-        <div className="relative z-10 p-8 flex w-full  md:w-1/2 bg-white h-full">
-          <div className="m-auto ">
-            <div className="pt-10 p-10 w-full">
-              <h2>"Have fun and learn by doing"</h2>
-              <p className="pt-6">
-                Det viktigaste för oss är att man brinner för det projekt man
-                håller på med. Vi tror inte på föreläsningar från dyra experter,
-                inte tråkiga eftermiddagar där man bara lyssnar eller
-                obligatoriska kurser som ingen vill göra. Vi tror att personer
-                som gillar det hen gör lär sig bäst. Därför har vi fokus på eget
-                arbete och alla hos oss får betald tid för att arbeta med
-                valfritt eget projekt.
-              </p>
+    <main className="page">
+      <SEO
+        title="About us"
+        description="Stockholm based cloud and web consulting for startups"
+        lang="en"
+      />
+      <SEO
+        title="About us"
+        description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
+        lang="swe"
+      />
+
+      <Topbar pathName={props.location.pathname}></Topbar>
+      <Icon.Top className="top-icon" />
+      <div className="background">
+        <div className="title content screen-height">
+          <div className="aboutus-content sm-screen-height">
+            <div>
+              <h3 className="aboutus-title secondary-title">{t("Om vårt")}</h3>
+              <h1 className="aboutus-title primary-title">{t("Team")}</h1>
+            </div>
+            <div>
+              {teamMembers.map((teamMember) => (
+                <TeamMember
+                  member={teamMember}
+                  key={teamMember.id}
+                ></TeamMember>
+              ))}
+              <TeamMember
+                member={{
+                  name: t("Lägg till person!"),
+                  title: t(
+                    "Är du näst på denna lista? Tveka inte på att skriva till oss!"
+                  ),
+                  mail: "info@altostruct.se",
+                  id: 1,
+                  frontImage: AddFrontImage,
+                  link: "mailto:info@altostruct.se",
+                }}
+              ></TeamMember>
             </div>
           </div>
         </div>
       </div>
-      {/* <div>
-        <h1>Vårt grymma team</h1>
-        <div className="flex w-full ">
-          <div className="m-auto w-2/5">
-            {teamMembers.map((teamMember) => (
-              <TeamMember member={teamMember} key={teamMember.id}></TeamMember>
-            ))}
-          </div>
-        </div>
-      </div> */}
-      <Section position="full">
-        <Form></Form>
-      </Section>
       <Footer></Footer>
-    </>
+    </main>
   );
 }
-
-export default AboutPage;
+export default AboutUs;
