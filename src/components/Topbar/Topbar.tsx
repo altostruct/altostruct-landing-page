@@ -61,7 +61,7 @@ const Topbar = (props: TopbarProps) => {
         <a className="button-spacing" href={languagePrefix + "#contact"}>
           {t("Kontakta oss")}
         </a>
-        <a className="button-spacing" href={languagePrefix + "#contact"}>
+        <a className="button-spacing" href={languagePrefix + "about"}>
           {t("Om oss")}
         </a>
         <LanguageSelector pathName={props.pathName}></LanguageSelector>

@@ -120,7 +120,7 @@ function DefaultPage(props: DefaultPageProps) {
           </div>
         </h1>
         <p className="text-black text-center py-2 text-lg md:text-xl">
-          {t("Konsultbolaget som faktiskt älskar programmering")}
+          {t("Konsultbolaget som älskar cloud och webben")}
           <br></br>
         </p>
         <div className="flex pt-2">
@@ -175,7 +175,7 @@ function DefaultPage(props: DefaultPageProps) {
           <div className="pt-32">
             <Fade>
               <h1 className="mb-8">
-                {t("Tro ni inte på oss! Lyssna på vad våra kunder säger")}
+                {t("Lita inte på oss! Lyssna på vad våra kunder säger")}
               </h1>
             </Fade>
             <div
