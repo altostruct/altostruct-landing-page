@@ -1,7 +1,7 @@
 const path = require("path");
 const getCanvasBuffer = require("./scripts/get-canvas-buffer");
 const buildHouses = require("./scripts/build-houses");
-const buildRoads = require("./scripts/build-houses copy");
+const buildRoads = require("./scripts/build-roads");
 const fs = require("fs");
 const sharp = require("sharp");
 
