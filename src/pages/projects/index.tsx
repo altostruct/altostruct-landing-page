@@ -30,20 +30,6 @@ function CustomerCase(props: CustomerCaseProps) {
 }
 
 function Projects() {
-  const { data } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "src/images/foodfacts.png" }) {
-        childImageSharp {
-          # Specify the image processing specifications right in the query.
-          # Makes it trivial to update as your page's design changes.
-          fixed(width: 125, height: 125) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <Topbar pathName=""></Topbar>

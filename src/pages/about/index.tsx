@@ -11,6 +11,8 @@ const Cube = React.lazy(() => import("@components/City"));
 
 function AboutPage() {
   const { t, setLanguage, language } = useTranslation();
+  const isSSR = typeof globalThis.window === "undefined";
+
   const teamMembers: Member[] = [
     {
       name: "Erik Rehn",
@@ -24,7 +26,6 @@ function AboutPage() {
       mail: "erik.rehn@altostruct.se",
       id: 1,
     },
-
     {
       name: "Emilio Gustavsson",
       title: "Solutions architect & backend developer",
@@ -113,9 +114,11 @@ function AboutPage() {
       <div className="h-screen w-screen mt-16">
         <div className="w-full absolute h-screen overflow-hidden z-10">
           <div className="m-auto">
-            <Suspense fallback={null}>
-              <Cube />
-            </Suspense>
+            {!isSSR && (
+              <Suspense fallback={<></>}>
+                <Cube />
+              </Suspense>
+            )}
           </div>
         </div>
         <div className="relative z-10 p-8 flex w-full  md:w-1/2 bg-white h-full">

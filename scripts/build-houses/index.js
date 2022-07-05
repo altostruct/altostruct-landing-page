@@ -81,9 +81,11 @@ function buildHouses(path) {
               )
             );
           }
-          console.log(
-            `Finished building houses at cord: ${y}/${heightMap.length}`
-          );
+
+          if (y % 100 === 0)
+            console.log(
+              `Finished building houses at cord: ${y}/${heightMap.length}`
+            );
         }
         res(output);
       });
