@@ -1,1 +1,0 @@
-{"version":3,"file":"component---src-pages-about-index-tsx-2a8abfe19e6b50653eab.js","mappings":"gKAMA,UAJA,WACE,OAAO","sources":["webpack://altostruct-website-gatsby/./src/pages/about/index.tsx"],"sourcesContent":["import React from \"react\";\n\nfunction AboutPage() {\n  return <p></p>;\n}\n\nexport default AboutPage;\n"],"names":[],"sourceRoot":""}
