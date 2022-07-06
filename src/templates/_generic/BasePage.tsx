@@ -9,7 +9,7 @@ import Section from "@components/Section";
 import foodfactsImage from "../../images/foodfacts.png";
 import nrlyzeImage from "../../images/nrlyze.png";
 import CardGrid from "@components/CardGrids";
-
+import City from "@components/City";
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
 
@@ -89,11 +89,7 @@ function DefaultPage(props: DefaultPageProps) {
             height: "140vh",
           }}
         >
-          {!isSSR && (
-            <Suspense fallback={""}>
-              <Cube />
-            </Suspense>
-          )}
+          {!isSSR && <City />}
         </div>
       </div>
 
