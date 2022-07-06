@@ -13,6 +13,7 @@ import {
 import img from "../../images/lambda.png";
 import map from "../../assets/houses.json";
 import roads from "../../assets/roads.json";
+import CSSTransitionGroup from "react-transition-group"; // ES6
 
 const dark = false;
 const deg2rad = (degrees: number) => degrees * (Math.PI / 180);
@@ -340,7 +341,7 @@ export default () => {
 
   return (
     <>
-      <Fade ssrFadeout delay={500}>
+      <Fade duration={1000} ssrFadeout delay={400}>
         <div>
           <Canvas
             gl={{ preserveDrawingBuffer: true }}
