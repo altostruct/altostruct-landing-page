@@ -380,3 +380,20 @@ p {
   -webkit-box-shadow: 9px 11px 10px -5px #99999970;
   box-shadow: 9px 11px 10px -5px #99999941;
 }
+
+.fadeIn {
+  margin-top: 25px;
+  font-size: 21px;
+  text-align: center;
+
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

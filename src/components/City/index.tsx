@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import TWEEN, { Tween } from "@tweenjs/tween.js";
 import Fade from "react-reveal/Fade";
@@ -339,27 +339,29 @@ export default () => {
   const sunRef = useRef<any>();
   const ref = useRef<HTMLCanvasElement>(null);
 
+  useEffect(() => {
+    if (!ref.current) return;
+    ref.current.className = "fadeIn";
+  }, [ref]);
+
   return (
     <>
-      <Fade duration={1000} ssrFadeout delay={400}>
-        <div>
-          <Canvas
-            gl={{ preserveDrawingBuffer: true }}
-            ref={ref}
-            id="background"
-            style={{
-              backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
-              width: "100%",
-              height: window.innerHeight * 1.4,
-              display: "inline-block",
-            }}
-            dpr={window.devicePixelRatio}
-          >
-            <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
-            <Town />
-          </Canvas>
-        </div>
-      </Fade>
+      <Canvas
+        className="fadeIn"
+        gl={{ preserveDrawingBuffer: true }}
+        ref={ref}
+        id="background"
+        style={{
+          backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+          width: "100%",
+          height: window.innerHeight * 1.4,
+          display: "inline-block",
+        }}
+        dpr={window.devicePixelRatio}
+      >
+        <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
+        <Town />
+      </Canvas>
     </>
   );
 };
