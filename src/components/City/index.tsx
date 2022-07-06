@@ -339,22 +339,24 @@ export default () => {
 
   return (
     <>
-      <Fade>
-        <Canvas
-          gl={{ preserveDrawingBuffer: true }}
-          ref={ref}
-          id="background"
-          style={{
-            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
-            width: "100%",
-            height: window.innerHeight * 1.4,
-            display: "inline-block",
-          }}
-          dpr={window.devicePixelRatio}
-        >
-          <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
-          <Town />
-        </Canvas>
+      <Fade delay={500}>
+        <div>
+          <Canvas
+            gl={{ preserveDrawingBuffer: true }}
+            ref={ref}
+            id="background"
+            style={{
+              backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+              width: "100%",
+              height: window.innerHeight * 1.4,
+              display: "inline-block",
+            }}
+            dpr={window.devicePixelRatio}
+          >
+            <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
+            <Town />
+          </Canvas>
+        </div>
       </Fade>
     </>
   );
