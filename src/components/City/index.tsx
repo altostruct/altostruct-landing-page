@@ -337,40 +337,24 @@ export default () => {
   const sunRef = useRef<any>();
   const ref = useRef<HTMLCanvasElement>(null);
 
-  const [visible, setVisible] = useState(true);
-  // useEffect(() => {
-  //   const canvas = ref.current;
-  //   if (!canvas) return;
-  //   (canvas as any).preserveDrawingBuffer = true;
-
-  //   const mimeType = "image/png";
-
-  //   setTimeout(() => {
-  //     canvas.toBlob((blob) => saveBufferToFile("blob.png", blob!), mimeType);
-  //   }, 40);
-  //   // Convert canvas to Blob, then Blob to ArrayBuffer.
-  // }, [ref.current]);
-
   return (
     <>
       <Fade>
-        {visible && (
-          <Canvas
-            gl={{ preserveDrawingBuffer: true }}
-            ref={ref}
-            id="background"
-            style={{
-              backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
-              width: "100%",
-              height: window.innerHeight * 1.4,
-              display: "inline-block",
-            }}
-            dpr={window.devicePixelRatio}
-          >
-            <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
-            <Town />
-          </Canvas>
-        )}
+        <Canvas
+          gl={{ preserveDrawingBuffer: true }}
+          ref={ref}
+          id="background"
+          style={{
+            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+            width: "100%",
+            height: window.innerHeight * 1.4,
+            display: "inline-block",
+          }}
+          dpr={window.devicePixelRatio}
+        >
+          <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
+          <Town />
+        </Canvas>
       </Fade>
     </>
   );
