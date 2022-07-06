@@ -341,9 +341,8 @@ export default () => {
 
   return (
     <>
-      <div>
+      <div className="fadeIn">
         <Canvas
-          className="fadeIn"
           gl={{ preserveDrawingBuffer: true }}
           ref={ref}
           // onCreated={() => {
