@@ -5,13 +5,16 @@ import useTranslation, { DEFAULT_LANGUAGE } from "../../hooks/useTranslation";
 
 import Fade from "react-reveal/Fade";
 import Slide from "react-reveal/Slide";
+import Flip from "react-reveal/Flip";
+import Reveal from "react-reveal/Reveal";
 
 import Brand from "../Brand/Brand";
 import classNames from "classnames";
 
-const Topbar = (props: TopbarProps) => {
+const Topbar = (props: any) => {
   const { t, setLanguage, language } = useTranslation();
   const [expanded, setExpanded] = React.useState(false);
+  const ref = React.useRef<HTMLDivElement>(null);
 
   //language part of url, no language if default
   const languagePrefix =
@@ -34,6 +37,15 @@ const Topbar = (props: TopbarProps) => {
 
     return window.removeEventListener("scroll", onScoll);
   }, []);
+
+  React.useEffect(() => {
+    if (!ref.current) return;
+    if (expanded) {
+      ref.current.className = "expandedHambuger";
+    } else {
+      ref.current.className = "notExpandedHambuger";
+    }
+  }, [expanded]);
 
   return (
     <>
@@ -77,12 +89,18 @@ const Topbar = (props: TopbarProps) => {
           className="flex md:hidden text-xl cursor-pointer"
           onClick={() => setExpanded(!expanded)}
         >
-          ☰
+          <div ref={ref}>
+            <svg viewBox="0 0 100 100" width="20" height="20">
+              <rect y="0" width="100" height="20"></rect>
+              <rect y="40" width="100" height="20"></rect>
+              <rect y="80" width="100" height="20"></rect>
+            </svg>
+          </div>
         </nav>
       </header>
 
       {expanded && (
-        <div className=" bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
+        <div className="md:hidden bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
           <div className="m-auto flex-col flex text-5xl">
             <Fade delay={0}>
               <a className="button-spacing" href={languagePrefix + "aws"}>

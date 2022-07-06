@@ -36,3 +36,31 @@ $small-screen: 720px;
     padding-right: 2.5vw;
   }
 }
+
+.expandedHambuger {
+  svg {
+    * {
+      transition: all 0.5s;
+    }
+
+    :nth-child(1) {
+      transform: translate(10%, 10%) rotate(45deg);
+    }
+
+    :nth-child(2) {
+      transform: translate(-30%, 50%) rotate(-45deg);
+    }
+
+    :nth-child(3) {
+      opacity: 0;
+    }
+  }
+}
+
+.notExpandedHambuger {
+  svg {
+    * {
+      transition: all 0.5s;
+    }
+  }
+}
