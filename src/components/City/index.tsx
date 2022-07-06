@@ -257,7 +257,8 @@ function Town() {
     }
   }
 
-  useFrame((ev) => {
+  useFrame(() => {
+    // TODO remove from code
     if ((window as any).PREVIEW) return;
 
     TWEEN.update();
@@ -339,7 +340,7 @@ export default () => {
 
   return (
     <>
-      <Fade delay={500}>
+      <Fade ssrFadeout delay={500}>
         <div>
           <Canvas
             gl={{ preserveDrawingBuffer: true }}
