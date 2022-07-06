@@ -66,7 +66,6 @@ function Card(props: CardProps) {
       const waitDuration = 0.1;
       const p = 0.1;
 
-      console.log((p * y) / rows);
       ref.current.animate(
         [
           {
@@ -110,11 +109,15 @@ function Card(props: CardProps) {
       className={styles.card}
     >
       <div className={styles.content}>
-        <div className={styles.imageAndTitle}>
-          <h3>{title}</h3>
-          <div className={styles.image}>{image}</div>
+        <div className={styles.innerContent}>
+          <div className={styles.imageAndTitle}>
+            <div className={styles.title}>
+              <h3>{title}</h3>
+            </div>
+            {image && <div className={styles.image}>{image}</div>}
+          </div>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

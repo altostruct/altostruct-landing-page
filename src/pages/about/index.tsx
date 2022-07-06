@@ -6,6 +6,7 @@ import Topbar from "@components/Topbar/Topbar";
 import React, { Suspense } from "react";
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 import useTranslation from "../../hooks/useTranslation";
+import CardGrid from "@components/CardGrids";
 
 const Cube = React.lazy(() => import("@components/City"));
 
@@ -122,22 +123,66 @@ function AboutPage() {
           </div>
         </div>
         <div className="relative z-10 p-8 flex w-full  md:w-1/2 bg-white h-full">
-          <div className="m-auto ">
-            <div className="pt-10 p-10 w-full">
-              <h2>"Have fun and learn by doing"</h2>
-              <p className="pt-6">
-                Det viktigaste för oss är att man brinner för det projekt man
-                håller på med. Vi tror inte på föreläsningar från dyra experter,
-                inte tråkiga eftermiddagar där man bara lyssnar eller
-                obligatoriska kurser som ingen vill göra. Vi tror att personer
-                som gillar det hen gör lär sig bäst. Därför har vi fokus på eget
-                arbete och alla hos oss får betald tid för att arbeta med
-                valfritt eget projekt.
+          <div className="m-auto">
+            <div className="md:p-10 w-full">
+              <h1 className="text-6xl ">
+                "Amaze the customer, like a startup"
+              </h1>
+              <p className="pt-6 text-xl">
+                Altostruct är ett Stockholmsbaserat är ett konsultbolag inom
+                cloud- och webbtjänster. Sedan 2020 har vi arbetat med cloud,
+                mobilappar,
               </p>
             </div>
           </div>
         </div>
       </div>
+
+      <Section position="center" className="py-60" dark>
+        <div className="p-0 md:p-10">
+          <h3 className="pt-10 pb-10 text-6xl">Allt på molnet</h3>
+          <CardGrid
+            animatedOnView
+            cols={2}
+            grid={[
+              {
+                title: t("GDPR + cloud"),
+                description: t(
+                  "Med hjälp av den senaste teknologin kan du se till att ditt moln följer GDPR."
+                ),
+                backgroundColor: "var(--bg-dark)",
+              },
+              {
+                title: t("Skalbar mobilapp"),
+                description:
+                  "Bygg din mobilapp redo för allt. Genom Flutter kan du bygga din mobilapp",
+                backgroundColor: "var(--bg-dark)",
+              },
+              {
+                title: t("ELT & datamining"),
+                description: "We are currentl",
+                backgroundColor: "var(--bg-dark)",
+              },
+              {
+                title: t("Egetbyggt API"),
+                description: "Vi har byggt vårt eget API",
+                backgroundColor: "var(--bg-dark)",
+              },
+            ]}
+          ></CardGrid>
+        </div>
+
+        <div className="p-10 pt-48">
+          <h2 className="text-6xl">
+            Love your work and the rest solves itself
+          </h2>
+          <p className="pt-6">
+            Dessa två koncept är något vi på Altostruct tror starkt på. Vi anser
+            att en av de viktigaste faktorerna för framgång är att våra
+            utvecklare brinner för sina projekt. Varje vecka
+          </p>
+        </div>
+      </Section>
       {/* <div>
         <h1>Vårt grymma team</h1>
         <div className="flex w-full ">

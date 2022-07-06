@@ -1,9 +1,25 @@
+$bg-color: rgb(4, 1, 26);
+$dot-color: rgb(110, 110, 110);
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 25px;
+
 .section {
   background-color: white;
 
   &.dark {
-    background-color: rgb(4, 1, 26);
     color: rgb(226, 223, 223);
+
+    background: linear-gradient(
+          90deg,
+          $bg-color ($dot-space - $dot-size),
+          transparent 1%
+        )
+        center,
+      linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+      $dot-color;
+    background-size: $dot-space $dot-space;
   }
 
   .backgroundImage {
@@ -32,6 +48,8 @@
   }
 
   .content {
+    margin: auto;
+
     &.left {
       margin-left: 50%;
     }
@@ -49,9 +67,10 @@
       }
     }
     &.full {
-      margin-right: 0%;
-      margin-left: 0%;
       width: 100%;
+      margin: auto;
+
+      max-width: 100em;
     }
   }
 
@@ -59,12 +78,12 @@
   position: relative;
   // align-items: center;
 
-  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
+  // clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
   transform: translate(0%, -5%);
 
-  @media screen and (max-width: 750px) {
-    clip-path: polygon(0 2%, 100% 0, 100% 98%, 0% 100%);
-  }
+  // @media screen and (max-width: 750px) {
+  //   clip-path: polygon(0 2%, 100% 0, 100% 98%, 0% 100%);
+  // }
 
   width: 100vw;
 }
