@@ -385,8 +385,8 @@ p {
   margin-top: 25px;
   font-size: 21px;
   text-align: center;
-
-  animation: fadein 1s;
+  opacity: 0;
+  animation: fadein 1s linear 0.5s 1 normal forwards;
 }
 
 @keyframes fadein {

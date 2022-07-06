@@ -339,29 +339,28 @@ export default () => {
   const sunRef = useRef<any>();
   const ref = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
-    if (!ref.current) return;
-    ref.current.className = "fadeIn";
-  }, [ref]);
-
   return (
     <>
-      <Canvas
-        className="fadeIn"
-        gl={{ preserveDrawingBuffer: true }}
-        ref={ref}
-        id="background"
-        style={{
-          backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
-          width: "100%",
-          height: window.innerHeight * 1.4,
-          display: "inline-block",
-        }}
-        dpr={window.devicePixelRatio}
-      >
-        <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
-        <Town />
-      </Canvas>
+      <div>
+        <Canvas
+          className="fadeIn"
+          gl={{ preserveDrawingBuffer: true }}
+          ref={ref}
+          // onCreated={() => {
+          //   animate();
+          // }}
+          style={{
+            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+            width: "100%",
+            height: window.innerHeight * 1.4,
+            display: "inline-block",
+          }}
+          dpr={window.devicePixelRatio}
+        >
+          <ambientLight ref={sunRef} intensity={dark ? 2 : 1} />
+          <Town />
+        </Canvas>
+      </div>
     </>
   );
 };
