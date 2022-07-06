@@ -338,16 +338,25 @@ function Town() {
 export default () => {
   const sunRef = useRef<any>();
   const ref = useRef<HTMLCanvasElement>(null);
+  const parent = useRef<HTMLDivElement>(null);
+  const [state, setState] = useState("HEELU");
 
   return (
     <>
-      <div className="fadeIn">
+      <div
+        ref={parent}
+        style={{
+          opacity: 0,
+        }}
+      >
         <Canvas
           gl={{ preserveDrawingBuffer: true }}
           ref={ref}
-          // onCreated={() => {
-          //   animate();
-          // }}
+          onCreated={() => {
+            if (!parent.current) return;
+            parent.current.className = "fadeIn";
+            // setState(state + "Done");
+          }}
           style={{
             backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
             width: "100%",
