@@ -110,10 +110,9 @@ h1 {
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 400;
   margin: 0;
   max-width: 100%;
-  overflow: hidden;
 
   @media screen and (max-width: $small-screen) {
     font-size: 35px;
@@ -324,10 +323,6 @@ section {
 a {
   color: var(--text-color);
   text-decoration: none;
-
-  &:hover {
-    opacity: 0.75;
-  }
 }
 
 .outline {
@@ -386,7 +381,7 @@ p {
   font-size: 21px;
   text-align: center;
   opacity: 0;
-  animation: fadein 1s linear 0.5s 1 normal forwards;
+  animation: fadein 0.3s linear 0s 1 normal forwards;
   animation-delay: 1000ms;
 }
 

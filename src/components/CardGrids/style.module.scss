@@ -1,12 +1,12 @@
 .grid {
   display: grid;
   position: relative;
-  gap: 1em;
+  gap: 0.3em;
 
   @media screen and (max-width: 750px) {
     grid-template-columns: 100% !important;
-    width: 80%;
-    margin-left: 10%;
+    width: 95%;
+    margin-left: 2.5%;
   }
 
   .card {
@@ -14,50 +14,64 @@
 
     cursor: pointer;
     background-color: white;
+    color: black;
     border: solid rgb(255, 255, 255) 1px;
     position: relative;
 
+    background-color: rgb(251, 250, 253);
     .content {
-      padding: 1em;
+      overflow: hidden;
+      padding: 5em;
+
+      @media screen and (max-width: 750px) {
+        padding: 3em;
+      }
+
       position: absolute;
       height: 100%;
       width: 100%;
 
-      display: flex;
       .innerContent {
-        margin: auto;
+        height: 100%;
       }
 
       .imageAndTitle {
-        margin: auto;
+        height: 100%;
         display: flex;
         flex-direction: column;
 
         .title {
-          min-height: 4em;
-
-          @media screen and (max-width: 750px) {
-            min-height: 2em;
-          }
+          flex-grow: 0;
         }
 
         h3 {
           flex: 0;
           text-align: center;
-          margin-bottom: 1em;
+          font-size: 2em;
+          font-weight: 600;
+          margin-bottom: 0.5em;
         }
 
         .image {
-          margin: auto;
-          margin: auto;
-          height: 60%;
+          flex-grow: 1;
+          display: flex;
           img {
-            max-height: 100%;
+            margin-top: auto;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
           }
         }
-      }
-      .description {
-        height: 20%;
+
+        .description {
+          text-align: center;
+          margin-bottom: 1em;
+        }
+
+        .link {
+          text-align: center;
+          margin-bottom: 1em;
+        }
       }
     }
   }

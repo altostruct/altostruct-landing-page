@@ -12,13 +12,9 @@ import Brand from "../Brand/Brand";
 import classNames from "classnames";
 
 const Topbar = (props: any) => {
-  const { t, setLanguage, language } = useTranslation();
+  const { t, languagePrefix } = useTranslation();
   const [expanded, setExpanded] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
-
-  //language part of url, no language if default
-  const languagePrefix =
-    language == DEFAULT_LANGUAGE ? "/" : "/" + language + "/";
 
   const threshold = 100;
   const [isAtTop, setIsAtTop] = React.useState(true);
@@ -75,7 +71,7 @@ const Topbar = (props: any) => {
           <a className="button-spacing" href={languagePrefix + "#contact"}>
             {t("Kontakta oss")}
           </a>
-          <a className="button-spacing" href={languagePrefix + "#contact"}>
+          <a className="button-spacing" href={languagePrefix + "cases"}>
             {t("Cases")}
           </a>
           <a className="button-spacing" href={languagePrefix + "about"}>
@@ -121,7 +117,7 @@ const Topbar = (props: any) => {
               </a>
             </Fade>
             <Fade delay={300}>
-              <a className="button-spacing" href={languagePrefix + "#contact"}>
+              <a className="button-spacing" href={languagePrefix + "cases"}>
                 {t("Cases")}
               </a>
             </Fade>

@@ -6,6 +6,7 @@ interface SectionProps {
   children: ReactNode;
   dark?: boolean;
   backgroundImage?: ReactNode;
+  bottomImage?: ReactNode;
   style?: React.CSSProperties;
   className?: string;
   position?: "left" | "right" | "center" | "full";
@@ -18,17 +19,20 @@ const Section = (props: SectionProps) => {
     style: _style,
     dark = false,
     backgroundImage,
+    bottomImage,
     position = "left",
   } = props;
+
+  console.log("bottomImage", bottomImage);
   return (
     <div
       className={classNames(
         style.section,
         {
           [style.dark]: dark,
+          [style.light]: !dark,
         },
-        className,
-        "px-5 md:px-20 py-32"
+        className
       )}
       style={_style}
     >
@@ -43,6 +47,9 @@ const Section = (props: SectionProps) => {
       )}
       <div className={classNames(style.content, { [style[position]]: true })}>
         {children}
+        {bottomImage && (
+          <div className={classNames(style.bottomImage, {})}>{bottomImage}</div>
+        )}
       </div>
     </div>
   );

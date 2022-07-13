@@ -20,7 +20,7 @@ function Index() {
             "Med våra seniora AWS konsulter får ni allting ni behöver för att ta er produkt till nästa nivå."
         )}
         title="HUR KAN VI HJÄLPA DIG?"
-        titleDescription="Hur kan vi hjälpa dig?"
+        titleDescription={t("Solution architects")}
       ></BasePage>
       <Footer />
     </>

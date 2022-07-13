@@ -9,7 +9,7 @@ $small-screen: 720px;
   font-size: inherit;
   padding: 0.6em 2.2em;
   cursor: pointer;
-  transition: opacity 50ms ease;
+  transition: all 50ms ease;
   border-radius: 2em;
 
   @media screen and (max-width: $small-screen) {
@@ -25,11 +25,11 @@ $small-screen: 720px;
 }
 
 .primary:hover {
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .secondary:hover {
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .secondary {

@@ -7,6 +7,7 @@ import React, { Suspense } from "react";
 import TeamMember, { Member } from "@components/TeamMember/TeamMember";
 import useTranslation from "../../hooks/useTranslation";
 import CardGrid from "@components/CardGrids";
+import Fade from "react-reveal/Fade";
 
 const Cube = React.lazy(() => import("@components/City"));
 
@@ -112,7 +113,7 @@ function AboutPage() {
   return (
     <>
       <Topbar></Topbar>
-      <div className="h-screen w-screen mt-16">
+      <div className="h-screen w-screen mt-16 bg-white ">
         <div className="w-full absolute h-screen overflow-hidden z-10">
           <div className="m-auto">
             {!isSSR && (
@@ -125,14 +126,18 @@ function AboutPage() {
         <div className="relative z-10 p-8 flex w-full  md:w-1/2 bg-white h-full">
           <div className="m-auto">
             <div className="md:p-10 w-full">
-              <h1 className="text-6xl ">
-                "Amaze the customer, like a startup"
-              </h1>
-              <p className="pt-6 text-xl">
-                Altostruct är ett Stockholmsbaserat är ett konsultbolag inom
-                cloud- och webbtjänster. Sedan 2020 har vi arbetat med cloud,
-                mobilappar,
-              </p>
+              <Fade>
+                <h1 className="text-6xl ">
+                  "Amaze the customer, like a startup"
+                </h1>
+              </Fade>
+              <Fade delay={500}>
+                <p className="pt-6 text-xl">
+                  Altostruct är ett Stockholmsbaserat är ett konsultbolag inom
+                  cloud- och webbtjänster. Sedan 2020 har vi arbetat med cloud,
+                  mobilappar,
+                </p>
+              </Fade>
             </div>
           </div>
         </div>

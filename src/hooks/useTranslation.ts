@@ -74,7 +74,12 @@ const useTranslation = () => {
           .join("/") + "index.html";
     }
   };
-  return { t, language: language, setLanguage: setLanguage };
+
+  //language part of url, no language if default
+  const languagePrefix =
+    language == DEFAULT_LANGUAGE ? "/" : "/" + language + "/";
+
+  return { t, language: language, setLanguage: setLanguage, languagePrefix };
 };
 
 export default useTranslation;

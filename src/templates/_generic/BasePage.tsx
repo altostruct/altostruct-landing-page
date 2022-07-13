@@ -1,7 +1,5 @@
 import Button from "@components/Button/Button";
-import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
-import Topbar from "@components/Topbar/Topbar";
 import React, { ReactNode, Suspense, useState } from "react";
 
 import Img from "gatsby-image";
@@ -15,6 +13,7 @@ import Slide from "react-reveal/Slide";
 
 import useTranslation from "../../hooks/useTranslation";
 import { graphql, useStaticQuery } from "gatsby";
+import CityHead from "@components/CityHead";
 
 interface DefaultPageProps {
   title: string;
@@ -60,9 +59,19 @@ function DefaultPage(props: DefaultPageProps) {
           }
         }
       }
+
+      cloud: file(relativePath: { eq: "images/backgrounds/cloud-app.png" }) {
+        childImageSharp {
+          # Specify the image processing specifications right in the query.
+          # Makes it trivial to update as your page's design changes.
+          fixed(width: 900, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `);
-  const { t } = useTranslation();
+  const { t, languagePrefix } = useTranslation();
   const {
     title,
     mainCategory,
@@ -75,107 +84,79 @@ function DefaultPage(props: DefaultPageProps) {
 
   return (
     <div>
-      <div
-        className="h-screen"
-        style={{
-          height: "140vh",
-        }}
-      >
-        <div
-          style={{
-            position: "fixed",
-            width: "100vw",
-            zIndex: 0,
-            height: "140vh",
-          }}
-        >
-          {!isSSR && <City />}
-        </div>
-      </div>
-
-      <div className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2">
-        <h1 className="md:text-8xl text-center text-6xl uppercase">
-          <Fade>
-            <span className="text-xl md:text-3xl font-light">
-              {t("KONSULTER I STOCKHOLM INOM")}
-            </span>
-          </Fade>
-
-          <div className="flex">
-            <span className="text-black flex m-auto gap-2">
-              <Fade delay={500}>
-                <span>{mainCategory}</span>
-                <span> / </span>
-                <span className="overflow-hidden border-solid">
-                  <Slide delay={700} left>
-                    {techonology}
-                  </Slide>
-                </span>
-              </Fade>
-            </span>
-          </div>
-        </h1>
-        <Fade delay={800}>
-          <p className="text-black text-center py-2 text-lg md:text-xl">
-            {t("Konsultbolaget som älskar cloud och webben")}
-            <br></br>
-          </p>
-        </Fade>
-        <Fade delay={1000}>
-          <div className="flex pt-2">
-            <div className="flex m-auto gap-2">
-              <Button type="secondary" link="#info" className="p-20 ">
-                {t("Om oss")}
-              </Button>
-              <Button link="#info" className="p-20 ">
-                {t("Kontakta oss")}
-              </Button>
-              {/* <Button type="secondary">{t("Om oss")}</Button> */}
-            </div>
-          </div>
-        </Fade>
-      </div>
+      <CityHead {...props} />
 
       {/* <div className={style.content}> */}
       <div
         style={{ backgroundColor: "white", zIndex: 1, position: "relative" }}
       >
-        <Section dark position="center">
-          <div className="pt-16" id="info">
+        <Section
+          bottomImage={
+            <Img
+              fixed={data.cloud.childImageSharp.fixed}
+              imgStyle={{
+                objectFit: "contain",
+              }}
+            ></Img>
+          }
+          position="center"
+        >
+          <div id="info">
             <div>
               <Fade>
-                <h1>{titleDescription}</h1>
+                <p className="text-3xl mb-3 text-orange-400">
+                  {t("Vad kan vi erbjuda dig?")}
+                </p>
+                <h1 className="text-6xl font-semibold">{titleDescription}</h1>
               </Fade>
               <Fade>
                 <p className="py-10 text-lg">{inDepthDescription}</p>
               </Fade>
-              <div className="flex align-middle flex-col">
-                <CardGrid
-                  animatedOnView
-                  cols={2}
-                  grid={[
-                    {
-                      title: "App byggd på AWS",
-                      description: "",
-                      backgroundColor: "rgb(4, 1, 26)",
-                      image: <img src={foodfactsImage} />,
-                    },
-                    {
-                      title: "Datadriven platform på AWS",
-                      description: "",
-                      image: <img src={nrlyzeImage} />,
-                      backgroundColor: "rgb(4, 1, 26)",
-                    },
-                  ]}
-                ></CardGrid>
-              </div>
             </div>
           </div>
+        </Section>
 
-          <div className="pt-32">
+        <Section position="full">
+          <div className="text-center">
             <Fade>
-              <h1 className="mb-8">
-                {t("Lita inte på oss! Lyssna på vad våra kunder säger")}
+              <h1 className="text-8xl font-semibold">
+                {t("Några ")}
+                <i className="text-blue-400">{t("project ")}</i>
+              </h1>
+            </Fade>
+          </div>
+          <div className="p-0 md:p-32 pt-20">
+            <CardGrid
+              animatedOnView
+              cols={2}
+              grid={[
+                {
+                  title: t("Mobilapp"),
+                  description: t(
+                    "Modern och skalbar app redo för framtiden. Byggd på AWS med React Native."
+                  ),
+                  link: "https://www.foodfacts.se/",
+                  image: <img src={foodfactsImage} />,
+                },
+                {
+                  title: "Datadriven platform",
+                  description:
+                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
+                  link: "https://www.foodfacts.se/",
+                  image: <img src={nrlyzeImage} />,
+                },
+              ]}
+            ></CardGrid>
+          </div>
+        </Section>
+
+        <Section dark position="center">
+          <div>
+            <Fade>
+              <h1 className="text-6xl font-bold mb-10">
+                {t("Lyssna vad våra ")}
+                <i className="text-green-500">{t("grymma kunder ")}</i>
+                {t("har att säga")}
               </h1>
             </Fade>
             <div
@@ -201,22 +182,26 @@ function DefaultPage(props: DefaultPageProps) {
                     " 100% av våra tidigare kunder skulle rekomendera oss."
                 )}
               </p>
-              <div className="py-5 mb-32">
-                <Button>{t("Bli vår nästa nöjda kund")}</Button>
+              <div className="py-5">
+                <Button link="#contact">{t("Bli vår nästa nöjda kund")}</Button>
               </div>
             </div>
           </div>
         </Section>
 
-        <Section position="full">
-          {/* <Fade>
+        <div id="contact">
+          <Section position="full">
+            {/* <Fade>
             <h3 style={{ textAlign: "center" }}>{t("Nyheter ifrån oss")}</h3>
-          </Fade>
-          <div className="mb-36">
+            </Fade>
+            <div className="mb-36">
             <Carousel></Carousel>
           </div> */}
-          <Form />
-        </Section>
+            <div className="p-4 md:p-32">
+              <Form />
+            </div>
+          </Section>
+        </div>
       </div>
       {/* </div> */}
     </div>

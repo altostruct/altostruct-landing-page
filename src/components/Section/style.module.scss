@@ -6,7 +6,7 @@ $dot-size: 1px;
 $dot-space: 25px;
 
 .section {
-  background-color: white;
+  position: relative;
 
   &.dark {
     color: rgb(226, 223, 223);
@@ -22,22 +22,21 @@ $dot-space: 25px;
     background-size: $dot-space $dot-space;
   }
 
-  .backgroundImage {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    transform: translate(-5px, 10px);
-    width: 50%;
-
-    @media screen and (max-width: 750px) {
-      width: 100%;
+  &.light {
+    .content {
+      background-color: white;
     }
+  }
 
-    &.full {
-      width: 100%;
-      svg {
-        width: 100%;
-        max-height: none;
+  .bottomImage {
+    display: flex;
+    width: 100%;
+
+    align-items: center;
+    object-fit: contain;
+    div {
+      margin: auto;
+      img {
       }
     }
   }
@@ -49,18 +48,22 @@ $dot-space: 25px;
 
   .content {
     margin: auto;
+    max-width: 120em;
 
     &.left {
       margin-left: 50%;
     }
+
     &.right {
       margin-right: 50%;
     }
     &.center {
       margin: auto;
-      width: 60%;
-      padding: 0;
+      padding-left: 20%;
+      padding-right: 20%;
       text-align: center;
+      padding-top: 10em;
+      padding-bottom: 10em;
 
       @media screen and (max-width: 750px) {
         width: 100%;
@@ -76,10 +79,10 @@ $dot-space: 25px;
 
   display: flex;
   position: relative;
+
   // align-items: center;
 
   // clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);
-  transform: translate(0%, -5%);
 
   // @media screen and (max-width: 750px) {
   //   clip-path: polygon(0 2%, 100% 0, 100% 98%, 0% 100%);

@@ -1,11 +1,13 @@
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import ReactVisibilitySensor from "react-visibility-sensor";
+import useTranslation from "../../hooks/useTranslation";
 import * as styles from "./style.module.scss";
 
 interface CardProps {
   title: string;
   description: string;
+  link?: string;
   image?: ReactNode;
   index?: number;
   cols?: number;
@@ -50,54 +52,56 @@ function Card(props: CardProps) {
     cols = 0,
     visible,
     x = 0,
+    link,
     y = 0,
     rows = 0,
   } = props;
   const ref = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    if (ref.current) {
-      if (!ref.current.animate) return;
+  // useEffect(() => {
+  //   if (ref.current) {
+  //     if (!ref.current.animate) return;
 
-      const { offsetLeft, offsetTop } = ref.current;
-      ref.current.style.zIndex = (100 - index!).toString();
-      const xAnimDuration = 0.4;
-      const yAnimDuration = 0.4;
-      const waitDuration = 0.1;
-      const p = 0.1;
+  //     const { offsetLeft, offsetTop } = ref.current;
+  //     ref.current.style.zIndex = (100 - index!).toString();
+  //     const xAnimDuration = 0.4;
+  //     const yAnimDuration = 0.4;
+  //     const waitDuration = 0.1;
+  //     const p = 0.1;
 
-      ref.current.animate(
-        [
-          {
-            transform: `translate(-${offsetLeft}px,  -${offsetTop}px)`,
-            offset: 0,
-          },
-          {
-            transform: `translate(0px,  -${offsetTop}px)`,
-            offset: xAnimDuration * (x / cols),
-          },
-          {
-            transform: `translate(0px,  -${offsetTop}px)`,
-            offset: xAnimDuration + waitDuration + (p * x) / cols,
-          },
-          {
-            transform: `translate(0px,  0px)`,
-            offset:
-              waitDuration +
-              (p * x) / cols +
-              xAnimDuration +
-              yAnimDuration * (y / rows),
-          },
-          { transform: `translate(0px,  0px)`, offset: 1 },
-        ],
-        {
-          duration: 1500,
-          fill: "forwards",
-        }
-      );
-      // ref.current.className = ref.current.className + " " + styles.animate;
-    }
-  }, [ref.current]);
+  //     ref.current.animate(
+  //       [
+  //         {
+  //           transform: `translate(-${offsetLeft}px,  -${offsetTop}px)`,
+  //           offset: 0,
+  //         },
+  //         {
+  //           transform: `translate(0px,  -${offsetTop}px)`,
+  //           offset: xAnimDuration * (x / cols),
+  //         },
+  //         {
+  //           transform: `translate(0px,  -${offsetTop}px)`,
+  //           offset: xAnimDuration + waitDuration + (p * x) / cols,
+  //         },
+  //         {
+  //           transform: `translate(0px,  0px)`,
+  //           offset:
+  //             waitDuration +
+  //             (p * x) / cols +
+  //             xAnimDuration +
+  //             yAnimDuration * (y / rows),
+  //         },
+  //         { transform: `translate(0px,  0px)`, offset: 1 },
+  //       ],
+  //       {
+  //         duration: 1500,
+  //         fill: "forwards",
+  //       }
+  //     );
+  //     // ref.current.className = ref.current.className + " " + styles.animate;
+  //   }
+  // }, [ref.current]);
 
   const expand = () => {};
 
@@ -113,10 +117,15 @@ function Card(props: CardProps) {
           <div className={styles.imageAndTitle}>
             <div className={styles.title}>
               <h3>{title}</h3>
+              <div className={styles.description}>{description}</div>
+              {link && (
+                <div className={styles.link}>
+                  <a className="text-blue-400">{t("Läs mer")}</a>
+                </div>
+              )}
             </div>
             {image && <div className={styles.image}>{image}</div>}
           </div>
-          <div className={styles.description}>{description}</div>
         </div>
       </div>
     </div>
