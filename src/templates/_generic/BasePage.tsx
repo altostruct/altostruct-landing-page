@@ -122,6 +122,7 @@ function DefaultPage(props: DefaultPageProps) {
               <h1 className="text-8xl font-semibold">
                 {t("Några ")}
                 <i className="text-blue-400">{t("project ")}</i>
+                {t("som vi har gjort ")}
               </h1>
             </Fade>
           </div>
@@ -131,12 +132,26 @@ function DefaultPage(props: DefaultPageProps) {
               cols={2}
               grid={[
                 {
-                  title: t("Mobilapp"),
+                  title: t("Mobilapp med cloud"),
                   description: t(
                     "Modern och skalbar app redo för framtiden. Byggd på AWS med React Native."
                   ),
                   link: "https://www.foodfacts.se/",
                   image: <img src={foodfactsImage} />,
+                },
+                {
+                  title: "Datadriven platform",
+                  description:
+                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
+                  link: "https://www.foodfacts.se/",
+                  image: <img src={nrlyzeImage} />,
+                },
+                {
+                  title: "Datadriven platform",
+                  description:
+                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
+                  link: "https://www.foodfacts.se/",
+                  image: <img src={nrlyzeImage} />,
                 },
                 {
                   title: "Datadriven platform",

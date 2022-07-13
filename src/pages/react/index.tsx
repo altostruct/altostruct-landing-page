@@ -20,7 +20,7 @@ function Index() {
             "ett effektivt sett. "
         )}
         title="REACT"
-        titleDescription="REACT + ALTO = <3"
+        titleDescription="React och webutvecklare "
       ></BasePage>
       <Footer />
     </>
