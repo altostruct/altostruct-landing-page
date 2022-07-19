@@ -3,8 +3,9 @@
   position: relative;
   gap: 0.3em;
 
-  @media screen and (max-width: 750px) {
+  @media screen and (max-width: 1000px) {
     grid-template-columns: 100% !important;
+
     width: 95%;
     margin-left: 2.5%;
   }
@@ -12,19 +13,22 @@
   .card {
     height: 100%;
 
+    @media screen and (max-width: 1000px) {
+    }
+
     cursor: pointer;
     background-color: white;
     color: black;
     border: solid rgb(255, 255, 255) 1px;
     position: relative;
 
-    background-color: rgb(250, 253, 253);
+    background-color: rgb(244, 247, 247);
     .content {
       overflow: hidden;
       padding: 5em;
 
-      @media screen and (max-width: 750px) {
-        padding: 3em;
+      @media screen and (max-width: 1000px) {
+        padding: 1em;
       }
 
       position: absolute;
@@ -50,6 +54,9 @@
           font-size: 2em;
           font-weight: 600;
           margin-bottom: 0.5em;
+          @media screen and (max-width: 1000px) {
+            font-size: 1.5em;
+          }
         }
 
         .image {
@@ -66,11 +73,17 @@
         .description {
           text-align: center;
           margin-bottom: 1em;
+          @media screen and (max-width: 1000px) {
+            margin-bottom: 0.5em;
+          }
         }
 
         .link {
           text-align: center;
           margin-bottom: 1em;
+          @media screen and (max-width: 750px) {
+            margin-bottom: 0.5em;
+          }
         }
       }
     }

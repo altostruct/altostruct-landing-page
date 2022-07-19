@@ -64,7 +64,7 @@ function DefaultPage(props: DefaultPageProps) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           # Makes it trivial to update as your page's design changes.
-          fixed(width: 900, quality: 100) {
+          fixed(width: 600, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -117,12 +117,12 @@ function DefaultPage(props: DefaultPageProps) {
         </Section>
 
         <Section position="full">
-          <div className="text-center">
+          <div className="text-center w-10/12 m-auto">
             <Fade>
-              <h1 className="text-8xl font-semibold">
-                {t("Några ")}
-                <i className="text-blue-400">{t("project ")}</i>
-                {t("som vi har gjort ")}
+              <h1 className="text-6xl md:text-8xl max-w-4xl m-auto font-semibold">
+                {t("Några project ")}
+                <i className="text-blue-400">{t("som vi ")}</i>
+                {t("har gjort ")}
               </h1>
             </Fade>
           </div>
@@ -134,30 +134,33 @@ function DefaultPage(props: DefaultPageProps) {
                 {
                   title: t("Mobilapp med cloud"),
                   description: t(
-                    "Modern och skalbar app redo för framtiden. Byggd på AWS med React Native."
+                    "Modern och skalbar app redo för framtiden. I sammarbete med ett offshore team ledde Altostruct utvecklingen. Byggd på AWS med React Native."
                   ),
                   link: "https://www.foodfacts.se/",
                   image: <img src={foodfactsImage} />,
                 },
                 {
                   title: "Datadriven platform",
-                  description:
-                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
+                  description: t(
+                    "Hemsida byggd med REST och Cloud. Design och utveckling gjordes hos oss. Byggd med React, AWS och Linode."
+                  ),
                   link: "https://www.foodfacts.se/",
                   image: <img src={nrlyzeImage} />,
                 },
                 {
-                  title: "Datadriven platform",
-                  description:
-                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
+                  title: "SAAS på cloud",
+                  description: t(
+                    "Bigdata scraping sedan NLP integration. En helhetslösning på AWS med skalbarhet i tanke."
+                  ),
                   link: "https://www.foodfacts.se/",
                   image: <img src={nrlyzeImage} />,
                 },
                 {
-                  title: "Datadriven platform",
-                  description:
-                    "Hemsida byggd med REST och Cloud. Byggd med React och Linode.",
-                  link: "https://www.foodfacts.se/",
+                  title: "Hälsoapp med GDPR",
+                  description: t(
+                    "Vi utvärderade olika svenska molnleverantörer för att bygga en GPDR säkrad cross-cloud lösning. Sedan byggde API och app"
+                  ),
+                  link: "https://www.saluto.se/",
                   image: <img src={nrlyzeImage} />,
                 },
               ]}

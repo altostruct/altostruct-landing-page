@@ -10,6 +10,7 @@ import CardGrid from "@components/CardGrids";
 import Fade from "react-reveal/Fade";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
+import Button from "@components/Button/Button";
 const Cube = React.lazy(() => import("@components/City"));
 
 function CasePage() {
@@ -65,7 +66,7 @@ function CasePage() {
                 <p className="pt-6 text-xl">
                   Altostruct är ett Stockholmsbaserat är ett konsultbolag inom
                   cloud- och webbtjänster. Sedan 2020 har vi arbetat med cloud,
-                  mobilappar,
+                  mobilappar och webutveckling.
                 </p>
               </Fade>
             </div>
@@ -73,17 +74,13 @@ function CasePage() {
         </div>
       </div>
 
-      <Section position="center" className="py-20" dark>
+      <Section position="center" dark>
         <div className="py-10">
           <h2 className="text-6xl">
             {t("Enkel och kundvänlig cloudbaserad webbportal")}
           </h2>
-          <div className="flex mt-2">
-            <label className="m-auto bg-white text-2xl text-black  p-1 font-bold">
-              Nrlyze
-            </label>
-          </div>
-          <p className="mt-2">
+
+          <p className="mt-10">
             {t(
               "Att ändra vanor är svårt, men med Salutos skräddarsydda råd får du " +
                 "en bättre grund för att veta vad just du ska fokusera på för en " +
@@ -99,19 +96,14 @@ function CasePage() {
             />
           </div>
 
-          <p className="my-3">
-            {t(
-              "Att ändra vanor är svårt, men med Salutos skräddarsydda råd får du " +
-                "en bättre grund för att veta vad just du ska fokusera på för en " +
-                "långsiktigt god hälsa. Saluto samarbetar med andra hälsoaktörer som " +
-                "kan hjälpa till med ytterligare tester, bedömningar och behandlingar."
-            )}
-          </p>
+          <div className="my-3">
+            <Button>{t("Länk till projekt")}</Button>
+          </div>
         </div>
       </Section>
 
-      <Section position="center" className="py-10">
-        <div className="p-10">
+      <Section position="center">
+        <div>
           <div className="my-10 -rotate-45">
             <Img
               fixed={saluto.saluto.childImageSharp.fixed}
@@ -144,12 +136,68 @@ function CasePage() {
                 "kan hjälpa till med ytterligare tester, bedömningar och behandlingar."
             )}
           </p>
+
+          <div className="my-10">
+            <Button>{t("Länk till projekt")}</Button>
+          </div>
         </div>
       </Section>
 
-      <Section position="full">
-        <Form></Form>
+      <Section position="center">
+        <div>
+          <div className="my-10 -rotate-45">
+            <Img
+              fixed={saluto.saluto.childImageSharp.fixed}
+              objectFit="cover"
+              objectPosition="50% 50%"
+            ></Img>
+          </div>
+          <h2 className="text-6xl">{t("App & API på 4 månader")}</h2>
+          <p className="pt-6">
+            {t(
+              "Att ändra vanor är svårt, men med Salutos skräddarsydda råd får du " +
+                "en bättre grund för att veta vad just du ska fokusera på för en " +
+                "långsiktigt god hälsa. Saluto samarbetar med andra hälsoaktörer som " +
+                "kan hjälpa till med ytterligare tester, bedömningar och behandlingar."
+            )}
+          </p>
+          <div className="my-10 rotate-12">
+            <Img
+              fixed={saluto.saluto.childImageSharp.fixed}
+              objectFit="cover"
+              objectPosition="50% 50%"
+            ></Img>
+          </div>
+          <h2 className="text-4xl">{t("Swedish Cloud + Flutter = true")}</h2>
+          <p className="pt-6">
+            {t(
+              "Att ändra vanor är svårt, men med Salutos skräddarsydda råd får du " +
+                "en bättre grund för att veta vad just du ska fokusera på för en " +
+                "långsiktigt god hälsa. Saluto samarbetar med andra hälsoaktörer som " +
+                "kan hjälpa till med ytterligare tester, bedömningar och behandlingar."
+            )}
+          </p>
+
+          <div className="my-10">
+            <Button>{t("Länk till projekt")}</Button>
+          </div>
+        </div>
       </Section>
+
+      <div id="contact">
+        <Section position="full">
+          {/* <Fade>
+            <h3 style={{ textAlign: "center" }}>{t("Nyheter ifrån oss")}</h3>
+            </Fade>
+            <div className="mb-36">
+            <Carousel></Carousel>
+          </div> */}
+          <div className="p-4 md:p-32">
+            <Form />
+          </div>
+        </Section>
+      </div>
+
       <Footer></Footer>
     </>
   );

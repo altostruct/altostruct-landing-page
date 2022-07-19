@@ -135,7 +135,7 @@ function AboutPage() {
                 <p className="pt-6 text-xl">
                   Altostruct är ett Stockholmsbaserat är ett konsultbolag inom
                   cloud- och webbtjänster. Sedan 2020 har vi arbetat med cloud,
-                  mobilappar,
+                  mobilappar och webutveckling.
                 </p>
               </Fade>
             </div>
@@ -177,14 +177,22 @@ function AboutPage() {
           ></CardGrid>
         </div>
 
-        <div className="p-10 pt-48">
-          <h2 className="text-6xl">
-            Love your work and the rest solves itself
-          </h2>
+        <div className="p-10 pt-48 text-xl">
+          <h2 className="text-6xl">Enjoy your work and learning-by-doing</h2>
           <p className="pt-6">
             Dessa två koncept är något vi på Altostruct tror starkt på. Vi anser
             att en av de viktigaste faktorerna för framgång är att våra
-            utvecklare brinner för sina projekt. Varje vecka
+            utvecklare brinner för sina projekt. Vi tror därför inte på långa
+            eftermiddagar fyllda av långa föreläsningar eller kurser som ingen
+            vill delta i. Vi tror snarare att personer lär sig bäst av att vara
+            involverade i projekt dem gillar och tror på.
+          </p>
+          <p className="pt-6">
+            En person som älskar det den gör kommer alltid utföra sina uppgifter
+            bättre och mer effektivt än någon som inte gör det. Hos Altostruct
+            ska alla få möjligheten att lära sig för att de själva vill
+            utvecklas. Därför strävar vi alltid efter att para ihop rätt person
+            med rätt projekt.
           </p>
         </div>
       </Section>
@@ -198,9 +206,19 @@ function AboutPage() {
           </div>
         </div>
       </div> */}
-      <Section position="full">
-        <Form></Form>
-      </Section>
+      <div id="contact">
+        <Section position="full">
+          {/* <Fade>
+            <h3 style={{ textAlign: "center" }}>{t("Nyheter ifrån oss")}</h3>
+            </Fade>
+            <div className="mb-36">
+            <Carousel></Carousel>
+          </div> */}
+          <div className="p-4 md:p-32">
+            <Form />
+          </div>
+        </Section>
+      </div>
       <Footer></Footer>
     </>
   );
