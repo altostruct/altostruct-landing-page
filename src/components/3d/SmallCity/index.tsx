@@ -1,4 +1,3 @@
-import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import TWEEN, { Tween } from "@tweenjs/tween.js";
@@ -9,129 +8,22 @@ import {
   Line,
   Box,
   SpotLight,
+  OrbitControls,
+  Circle,
 } from "@react-three/drei";
-import img from "../../images/lambda.png";
-import map from "../../assets/houses.json";
-import roads from "../../assets/roads.json";
+import map from "../../../assets/houses.json";
+import roads from "../../../assets/roads.json";
 import CSSTransitionGroup from "react-transition-group"; // ES6
+import { Building, BuildingProps, Car } from "../utils";
 
 const dark = false;
 const deg2rad = (degrees: number) => degrees * (Math.PI / 180);
-
-interface BuildingProps {
-  readonly position: [number, number];
-  readonly size: [number, number, number];
-}
-
-interface CarProps {
-  trip: [number, number][];
-}
-
-function Car(props: CarProps) {
-  const { trip } = props;
-  const route = [...trip, trip[0]];
-  const VELOCITY = 10;
-  const car = useRef<any>();
-  const size = [80, 1, 1] as const;
-
-  const distance = (x1: number, x2: number, y1: number, y2: number) => {
-    return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** (1 / 2);
-  };
-
-  useFrame(() => {
-    const { current } = car;
-    current.material.uniforms.dashOffset.value -= VELOCITY;
-  });
-
-  const [startX, startZ] = trip[0];
-
-  let length = 0;
-  for (let i = 1; i < route.length; i++) {
-    const [prevX, prevY] = route[i - 1];
-    const [x, y] = route[i];
-    length += distance(x, prevX, y, prevY);
-  }
-
-  const carLength = 100;
-  const colors = [
-    "rgb(161, 249, 161)",
-    // "rgb(47, 58, 212)",
-    // "rgb(212, 154, 47)",
-    // "rgb(212, 83, 47)",
-  ];
-
-  return (
-    <group position={[startX, 5, startZ]}>
-      <Line
-        color={colors[Math.floor(Math.random() * colors.length)]}
-        gapSize={length - carLength}
-        dashed
-        lineWidth={1}
-        dashOffset={Math.floor(Math.random() * length)}
-        dashSize={carLength}
-        ref={car}
-        alphaWrite={1}
-        points={[
-          ...trip.slice(1).map((v) => [v[0] - startX, 0, v[1] - startZ]),
-          [0, 0, 0] as any,
-        ]}
-      >
-        <meshLambertMaterial
-          reflectivity={1}
-          refractionRatio={1}
-          color="rgb(255, 0, 0)"
-          attach="material"
-        />
-      </Line>
-    </group>
-  );
-}
-
-function Building(props: BuildingProps) {
-  const { size, position } = props;
-  const [x, z] = position;
-  const [w, h, l] = size;
-  const [blue] = useState(Math.random() < 0.1);
-
-  const [hover, setHover] = useState(false);
-
-  let color = h > 230 ? "rgb(255, 255, 255)" : "rgb(255, 255, 255)";
-
-  return (
-    <group
-      onPointerOver={() => {
-        if (window.innerWidth > 700) setHover(true);
-      }}
-      onPointerOut={() => {
-        setHover(false);
-      }}
-      position={[x + w / 2, h / 2, z + l / 2]}
-    >
-      <Box args={[...size]} castShadow>
-        <meshPhongMaterial
-          shininess={4}
-          color={!hover ? (dark ? "rgb(8, 0, 34)" : color) : "rgb(246, 93, 54)"}
-          attach="material"
-        />
-      </Box>
-
-      <Box args={[...size]}>
-        <meshLambertMaterial
-          side={THREE.DoubleSide}
-          wireframe
-          wireframeLinewidth={3}
-          color={dark ? "rgb(34, 33, 33)" : "rgb(157, 155, 155)"}
-          attach="material"
-        />
-      </Box>
-    </group>
-  );
-}
 
 function random() {
   return Math.random();
 }
 
+let setup = false;
 function Town() {
   const start: {
     x: number;
@@ -141,12 +33,12 @@ function Town() {
     ry: number;
     rz: number;
   } = {
-    x: 2470,
-    y: 359,
-    z: 1518,
-    rx: -0.6,
-    ry: 1,
-    rz: 0.5,
+    x: 1222.7320983168847,
+    y: 477.1608768614296,
+    z: -191.63842351645644,
+    rx: -1.8683406994794078,
+    ry: 1.1910269307561,
+    rz: 1.9184006675064047,
   };
 
   const position: {
@@ -221,6 +113,7 @@ function Town() {
     .start();
 
   const camera = useRef<any>();
+  const group = useRef<any>();
   const spotlight = useRef<any>();
   const spotlight2 = useRef<any>();
   const buildings = 10;
@@ -261,20 +154,28 @@ function Town() {
   useFrame(() => {
     // TODO remove from code
     if ((window as any).PREVIEW) return;
+    if (!setup) {
+      console.log(">>>>><");
 
-    TWEEN.update();
-    camera.current.position.x = position.x;
-    camera.current.position.y = position.y;
-    camera.current.position.z = position.z;
-    camera.current.rotation.x = position.rx;
-    camera.current.rotation.y = position.ry;
-    camera.current.rotation.z = position.rz;
+      // TWEEN.update();
+      camera.current.position.x = start.x;
+      camera.current.position.y = start.y;
+      camera.current.position.z = start.z;
+
+      setup = true;
+    }
+    camera.current.rotation.x = start.rx;
+    camera.current.rotation.y = start.ry;
+    camera.current.rotation.z = start.rz;
+
+    group.current.rotation.y += 0.002;
+    // camera.current.rotation.x += 0.1;
   });
 
-  useFrame(() => {
-    spotlight.current.angle += 0.001;
-    spotlight2.current.angle -= 0.001;
-  });
+  // useFrame(() => {
+  //   spotlight.current.angle += 0.001;
+  //   spotlight2.current.angle -= 0.001;
+  // });
 
   return (
     <>
@@ -282,8 +183,8 @@ function Town() {
         ref={camera}
         args={[400, 10, 10, 10000]}
         makeDefault
-        rotation={[-0.23, 1, 0.23]}
-        position={[2470, 559, 1518]}
+        rotation={[start.rx, start.ry, start.rz]}
+        position={[start.x, start.y, start.z]}
       />
 
       <SpotLight
@@ -303,33 +204,40 @@ function Town() {
         attenuation={200}
         distance={3000}
       ></SpotLight>
-
-      {/* <OrbitControls
-        onChange={console.log}
+      {/* 
+      <OrbitControls
+        onEnd={console.log}
         makeDefault
         enableRotate
-        enableZoom
+        enableZoom={false}
       ></OrbitControls> */}
-      <Plane position={[0, 0, 0]} />
-      <group>
-        {map.map((b: any, index: any) => {
-          return <Building key={index} {...b} />;
-        })}
-        {roads.map((road) => {
-          return <Car trip={road as any} />;
-        })}
-        {roads.map((road) => {
-          return <Car trip={road as any} />;
-        })}
-        {roads.map((road) => {
-          return <Car trip={road as any} />;
-        })}
-        {roads.map((road) => {
-          return <Car trip={road as any} />;
-        })}
-        {roads.map((road) => {
-          return <Car trip={road as any} />;
-        })}
+
+      <group ref={group}>
+        <Circle
+          position={[0, 0, 0]}
+          rotation={[Math.PI / 2, Math.PI, Math.PI / 2]}
+          args={[300, 100]}
+        >
+          <meshPhongMaterial
+            shininess={4}
+            color={"rgb(234, 231, 231)"}
+            attach="material"
+          />
+        </Circle>
+        <Building position={[-80, 90]} size={[100, 240, 100]} />;
+        <Building position={[70, 130]} size={[100, 200, 100]} />;
+        <Building position={[70, -110]} size={[100, 300, 100]} />;
+        <Building position={[-80, -140]} size={[100, 250, 100]} />;
+        <Building position={[-80, -250]} size={[100, 200, 100]} />;
+        <Car
+          velocity={6}
+          trip={[
+            [100, 380],
+            [100, 30],
+            [-80, 30],
+            [-80, 380],
+          ]}
+        ></Car>
       </group>
     </>
   );
@@ -339,7 +247,6 @@ export default () => {
   const sunRef = useRef<any>();
   const ref = useRef<HTMLCanvasElement>(null);
   const parent = useRef<HTMLDivElement>(null);
-  const [state, setState] = useState("HEELU");
 
   return (
     <>
@@ -347,6 +254,9 @@ export default () => {
         ref={parent}
         style={{
           opacity: 0,
+          backgroundColor: "green",
+          height: "100%",
+          width: "100%",
         }}
       >
         <Canvas
@@ -360,7 +270,7 @@ export default () => {
           style={{
             backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
             width: "100%",
-            height: window.innerHeight * 1.4,
+            height: "100%",
             display: "inline-block",
           }}
           dpr={window.devicePixelRatio}

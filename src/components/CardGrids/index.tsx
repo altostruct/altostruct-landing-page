@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import { GatsbyImage } from "gatsby-plugin-image";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import ReactVisibilitySensor from "react-visibility-sensor";
@@ -10,6 +11,7 @@ interface CardProps {
   link?: string;
   image?: ReactNode;
   index?: number;
+  className?: string;
   cols?: number;
   rows?: number;
   x?: number;
@@ -55,6 +57,7 @@ function Card(props: CardProps) {
     link,
     y = 0,
     rows = 0,
+    className,
   } = props;
   const ref = useRef<HTMLDivElement>(null);
   const { t } = useTranslation();
@@ -110,7 +113,7 @@ function Card(props: CardProps) {
       onClick={expand}
       style={{ backgroundColor, opacity: visible ? 1 : 0 }}
       ref={visible ? ref : null}
-      className={styles.card}
+      className={classNames(styles.card, className)}
     >
       <div className={styles.content}>
         <div className={styles.innerContent}>

@@ -11,19 +11,6 @@ const Footer = () => {
         </p>
         <p>Org nr: 559244-1561</p>
         <p>Address: Mäster Samuelsgatan 60, 111 21 Stockholm</p>
-        <p>
-          Icons made by{" "}
-          <a
-            href="https://www.flaticon.com/authors/dreamstale"
-            title="Dreamstale"
-          >
-            Dreamstale
-          </a>{" "}
-          from{" "}
-          <a href="https://www.flaticon.com/" title="Flaticon">
-            www.flaticon.com
-          </a>
-        </p>
       </div>
       <div></div>
     </footer>

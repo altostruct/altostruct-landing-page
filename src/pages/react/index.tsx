@@ -11,8 +11,8 @@ function Index() {
     <>
       <Topbar pathName=""></Topbar>
       <BasePage
-        mainCategory={t("WEB")}
-        techonology={t("REACT")}
+        mainCategory={t("web")}
+        techonology={t("react")}
         image={<p>asd</p>}
         inDepthDescription={t(
           "Ända sedan dag ett har vi jobbat med webben. Först och främst inom React och Typescript. " +

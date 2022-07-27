@@ -11,8 +11,8 @@ function Index() {
     <>
       <Topbar pathName=""></Topbar>
       <BasePage
-        mainCategory={t("CLOUD")}
-        techonology={t("AWS")}
+        mainCategory={t("cloud")}
+        techonology={t("aws")}
         image={<p>asd</p>}
         inDepthDescription={t(
           "Letar ni efter Seniora AWS konsulter i Stockholm? Då har ni kommit helt rätt. " +

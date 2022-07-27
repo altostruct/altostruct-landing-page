@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+$bg-color: rgb(4, 1, 26);
+$dot-color: rgb(110, 110, 110);
+
+// Dimensions
+$dot-size: 1px;
+$dot-space: 25px;
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 $small-screen: 720px;
 $mid-screen: 920px;
@@ -99,6 +106,7 @@ label {
 
 img {
   object-fit: contain;
+  height: 100%;
   @media screen and (max-width: 600px) {
     max-height: 20vh;
   }
@@ -168,7 +176,6 @@ h3 {
   max-width: 80rem;
   justify-content: space-between;
   overflow-y: visible;
-  z-index: 2;
 
   @media screen and (max-width: $mid-screen) {
     width: 90%;
@@ -391,5 +398,143 @@ p {
   }
   to {
     opacity: 1;
+  }
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(
+    129.66deg,
+    #294fd5 0%,
+    rgba(21, 66, 226, 0.65) 100%
+  );
+}
+
+.bg-gradient-green {
+  background: linear-gradient(
+    103.5deg,
+    #13713f 0%,
+    rgba(93, 213, 149, 0.75) 93.84%
+  );
+}
+
+.bg-gradient-purple {
+  background: linear-gradient(
+    129.66deg,
+    #d529b9 0%,
+    rgba(91, 6, 112, 0.916) 100%
+  );
+}
+
+.bg-gradient-red {
+  background: linear-gradient(
+    103.5deg,
+    #b72727 0%,
+    rgba(245, 76, 76, 0.75) 93.84%
+  );
+}
+
+.bg-dark-dotted {
+  background: linear-gradient(
+        90deg,
+        $bg-color ($dot-space - $dot-size),
+        transparent 1%
+      )
+      center,
+    linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+    $dot-color;
+  background-size: $dot-space $dot-space;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(
+    133.53deg,
+    rgba(36, 0, 255, 0.989583) 0.01%,
+    rgba(107, 91, 209, 0.51) 110.94%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(
+    103.5deg,
+    #13713f 0%,
+    rgba(93, 213, 149, 0.75) 93.84%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(
+    129.66deg,
+    #d529b9 0%,
+    rgba(91, 6, 112, 0.916) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-red {
+  background: linear-gradient(
+    103.5deg,
+    #b72727 0%,
+    rgba(245, 76, 76, 0.75) 93.84%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.scroll-snap > div {
+  scroll-snap-align: start;
+  overflow: hidden;
+}
+
+.scroll-snap {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.image-slider {
+  position: relative;
+  height: 50em;
+
+  background-color: red;
+  @for $i from 1 through 6 {
+    :nth-child(#{$i}) {
+      --end: #{$i / 6 * 76 - 12}%;
+      --rotation: #{$i / 6 * 300}deg;
+      animation: move 3000ms 1 reverse forwards linear;
+    }
+  }
+
+  img {
+    position: absolute;
+    width: 6em;
+    offset-path: path(
+      "M 0 0 A 75 75 123 1 1 1 0 C -40.3333 0 -87.6667 0 -135 0"
+    );
+    offset-rotate: 0deg;
+    // animation: move 3000ms 1 reverse ease-in-out;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@keyframes move {
+  0% {
+    offset-distance: var(--end);
+  }
+  100% {
+    offset-distance: 100%;
   }
 }

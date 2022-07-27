@@ -67,9 +67,11 @@ const Topbar = (props: any) => {
             {t("AWS")}
           </a>
           <div className="button-spacing">I</div>
-
           <a className="button-spacing" href={languagePrefix + "#contact"}>
             {t("Kontakta oss")}
+          </a>
+          <a className="button-spacing" href={languagePrefix + "blog"}>
+            {t("Kunskapsbas")}
           </a>
           <a className="button-spacing" href={languagePrefix + "cases"}>
             {t("Cases")}
