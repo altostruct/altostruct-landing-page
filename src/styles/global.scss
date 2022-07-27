@@ -510,11 +510,11 @@ p {
 
   background-color: red;
   @for $i from 1 through 6 {
-    :nth-child(#{$i}) {
-      --end: #{$i / 6 * 76 - 12}%;
-      --rotation: #{$i / 6 * 300}deg;
-      animation: move 3000ms 1 reverse forwards linear;
-    }
+    // :nth-child(#{$i}) {
+    //   --end: #{$i / 6 * 76 - 12}%;
+    //   --rotation: #{$i / 6 * 300}deg;
+    //   animation: move 3000ms 1 reverse forwards linear;
+    // }
   }
 
   img {

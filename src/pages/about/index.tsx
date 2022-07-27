@@ -140,7 +140,7 @@ function AboutPage() {
                 <div>
                   <p className="font-extrabold">Placerat i</p>
                   <h1 className="text-gradient-green text-6xl font-extrabold">
-                    STOCKHOLM
+                    STHLM
                   </h1>
                 </div>
               </div>
