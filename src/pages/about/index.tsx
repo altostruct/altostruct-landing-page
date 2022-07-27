@@ -147,9 +147,11 @@ function AboutPage() {
             </div>
           </div>
           <div className="h-screen p-12">
-            <Suspense fallback={<></>}>
-              <SmallCity />
-            </Suspense>
+            {!isSSR && (
+              <Suspense fallback={<></>}>
+                <SmallCity />
+              </Suspense>
+            )}
           </div>
         </div>
         <div className="w-2/3 text-center m-auto mt-20">
