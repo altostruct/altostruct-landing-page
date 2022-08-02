@@ -17,6 +17,7 @@ import CityHead from "@components/CityHead";
 import Content from "@components/Content";
 import classNames from "classnames";
 import SmallCity from "@components/3d/SmallCity";
+import Certification from "@components/Certification";
 
 interface DefaultPageProps {
   title: string;
@@ -135,11 +136,14 @@ function DefaultPage(props: DefaultPageProps) {
   return (
     <div>
       <CityHead {...props} />
+      <div className="absolute right-32 bottom-12">
+        <Certification></Certification>
+      </div>
       <Content>
-        <div className="mb-12 mt-12 items-baseline flex">
+        <div className="mb-6 mt-24 items-center flex">
           <div className="flex-1">
             <p className="text-orange-300 text-xl">Vad kan vi erbjuda dig?</p>
-            <h2 className="font-light text-6xl">{h1}</h2>
+            <h2 className="font-light text-7xl mt-3">{h1}</h2>
             <p className="mt-3">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -148,9 +152,11 @@ function DefaultPage(props: DefaultPageProps) {
             </p>
           </div>
 
-          {/* <div className="h-48 flex-0">
-            <SmallCity></SmallCity>
-          </div> */}
+          <div className="flex-0 ">
+            <div className="w-96 h-64 m-auto">
+              {/* <SmallCity></SmallCity> */}
+            </div>
+          </div>
         </div>
 
         <div className="mb-12 grid grid-cols-5 gap-4">

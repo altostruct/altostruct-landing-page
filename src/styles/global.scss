@@ -402,11 +402,7 @@ p {
 }
 
 .bg-gradient-blue {
-  background: linear-gradient(
-    129.66deg,
-    #294fd5 0%,
-    rgba(21, 66, 226, 0.65) 100%
-  );
+  background: linear-gradient(129.66deg, #294fd5 0%, rgb(87, 121, 244) 100%);
 }
 
 .bg-gradient-green {
@@ -537,4 +533,12 @@ p {
   100% {
     offset-distance: 100%;
   }
+}
+
+#header-shape-gradient {
+  --color-stop: #f12c06;
+  --color-bot: #faed34;
+}
+.fill-gradient-yellow {
+  fill: url(#header-shape-gradient) rgb(116, 104, 104);
 }

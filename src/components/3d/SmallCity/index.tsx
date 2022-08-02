@@ -254,7 +254,6 @@ export default () => {
         ref={parent}
         style={{
           opacity: 0,
-          backgroundColor: "green",
           height: "100%",
           width: "100%",
         }}

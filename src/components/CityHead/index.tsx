@@ -6,6 +6,7 @@ import Slide from "react-reveal/Slide";
 import City from "@components/3d/City";
 import React from "react";
 import useTranslation from "../../hooks/useTranslation";
+import AnimatedLogo from "@components/AnimatedLogo";
 
 interface DefaultPageProps {
   mainCategory: string;
@@ -71,46 +72,48 @@ function CityHead(props: DefaultPageProps) {
         </div>
         <div
           // style={{ width: "80%", left: "10%" }}
-          className="p-20 absolute left-1/2 text-center -translate-x-1/2 top-1/4"
+          className="h-full p-40 flex  absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
-          <h1 className="md:text-8xl text-6xl font-bold">
-            <div className="flex">
-              <span className="text-gray-800 flex gap-2 ">
-                <Fade delay={500}>
-                  <span className="text-gray-800">{mainCategory}</span>
-                  <span> / </span>
-                  <span
-                    className={
-                      "overflow-hidden border-solid text-gradient-blue"
-                    }
-                  >
-                    {/* <Slide delay={700} left> */}
-                    {techonology}
-                    {/* </Slide> */}
-                  </span>
-                </Fade>
-              </span>
-            </div>
-          </h1>
-
-          <Fade delay={800}>
-            <p className="text-black py-2 text-md md:text-xl">
-              {t("Konsultbolaget som älskar cloud och webben")}
-              <br></br>
-            </p>
-          </Fade>
-          <Fade delay={1000}>
-            <div className="flex pt-2">
-              <div className="m-auto flex gap-2">
-                <Button type="secondary" link="#contact" className="p-20 ">
-                  {t("Om oss")}
-                </Button>
-                <Button type="secondary" link="#contact" className="p-20 ">
-                  {t("Kontakta oss")}
-                </Button>
+          <div className="m-auto">
+            <h1 className="md:text-9xl text-6xl font-bold font-sans">
+              <div className="flex">
+                <span className="text-gray-800 flex gap-2 ">
+                  <Fade delay={500}>
+                    <span className="text-gray-800">{mainCategory}</span>
+                    <span>://</span>
+                    <span
+                      className={
+                        "overflow-hidden border-solid text-gradient-green"
+                      }
+                    >
+                      {/* <Slide delay={700} left> */}
+                      {techonology}
+                      {/* </Slide> */}
+                    </span>
+                  </Fade>
+                </span>
               </div>
-            </div>
-          </Fade>
+            </h1>
+
+            <Fade delay={800}>
+              <p className="text-black pt-4 text-md md:text-xl">
+                {t("Konsultbolaget som älskar cloud och webben")}
+                <br></br>
+              </p>
+            </Fade>
+            <Fade delay={1000}>
+              <div className="flex mt-10">
+                <div className="m-auto flex gap-8">
+                  <Button type="secondary" link="#contact" className="p-20 ">
+                    {t("Om oss")}
+                  </Button>
+                  <Button type="secondary" link="#contact" className="p-20 ">
+                    {t("Kontakta oss")}
+                  </Button>
+                </div>
+              </div>
+            </Fade>
+          </div>
         </div>
       </div>
     </>
