@@ -79,7 +79,7 @@ function CityHead(props: DefaultPageProps) {
               <div className="flex">
                 <span className="text-gray-800">
                   <Fade delay={500}>
-                    <span>{t("vi gör ")}</span>
+                    <span>{t("we do ")}</span>
                     <span
                       className={
                         "overflow-hidden border-solid text-gradient-green"
