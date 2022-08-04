@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-blog-index-tsx",
     "path": "/en/blog/",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["3901265030"]}
+    "result": {"pageContext":{"realPath":"en/blog/","lang":"en"}},
+    "staticQueryHashes": []}

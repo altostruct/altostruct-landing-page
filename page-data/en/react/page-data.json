@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-react-index-tsx",
     "path": "/en/react/",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["2438493877","3901265030"]}
+    "result": {"pageContext":{"realPath":"en/react/","lang":"en"}},
+    "staticQueryHashes": ["2438493877"]}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-404-tsx",
     "path": "/404.html",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["3901265030"]}
+    "result": {"pageContext":{"realPath":"/404/","lang":"swe"}},
+    "staticQueryHashes": []}

@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-tv-tsx",
     "path": "/tv/",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["3901265030"]}
+    "result": {"pageContext":{"realPath":"/tv/","lang":"swe"}},
+    "staticQueryHashes": []}

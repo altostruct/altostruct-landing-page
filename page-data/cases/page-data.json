@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-pages-cases-index-tsx",
     "path": "/cases/",
-    "result": {"pageContext":{}},
-    "staticQueryHashes": ["3901265030"]}
+    "result": {"pageContext":{"realPath":"/cases/","lang":"swe"}},
+    "staticQueryHashes": []}
