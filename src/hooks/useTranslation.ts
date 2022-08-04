@@ -1,5 +1,6 @@
 import { stringify } from "postcss";
 import * as react from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 import useLocation from "./useLocation";
 
 const translationConfig = require("../../i18next-parser.config.js");
@@ -16,21 +17,8 @@ export const DEFAULT_LANGUAGE = "swe";
  * @param currentPath the current path as a string
  */
 const useTranslation = () => {
-  const currentPath = useLocation();
-
-  //default fallback
-  let language = DEFAULT_LANGUAGE;
-
-  //get current language from URL
-  for (const lang of LANGUAGES) {
-    if (currentPath.startsWith("/" + lang) || currentPath == lang) {
-      language = lang;
-    }
-    //used for testing on github domain
-    if (currentPath.startsWith("/altostruct-landing-page/" + lang)) {
-      language = lang;
-    }
-  }
+  // const currentPath = useLocation();
+  const language = useLanguage();
 
   /**Returns a translated string with values of any existing variable.*/
   const t = (text: string, variables?: Record<string, any>): string => {
@@ -55,23 +43,23 @@ const useTranslation = () => {
   /**Sets the URL to the correct language.*/
   const setLanguage = (language: string) => {
     //remove the first element, allways starts with a dash
-    let currentPathSplit = currentPath.split("/").slice(1);
+    let currentPathSplit = window.location.pathname.split("/").slice(1);
 
     const isLanguageSet = LANGUAGES.includes(currentPathSplit[0]);
-
     const languagePrefix = language === DEFAULT_LANGUAGE ? null : language;
 
     window.location.hash = "";
+
     if (isLanguageSet) {
       window.location.pathname =
         [languagePrefix, ...currentPathSplit.slice(1)]
-          .filter((subPath) => subPath !== null)
-          .join("/") + "index.html";
+          .filter((subPath) => subPath !== null && subPath != "")
+          .join("/") + "/index.html";
     } else {
       window.location.pathname =
         [languagePrefix, ...currentPathSplit]
-          .filter((subPath) => subPath !== null)
-          .join("/") + "index.html";
+          .filter((subPath) => subPath !== null && subPath != "")
+          .join("/") + "/index.html";
     }
   };
 

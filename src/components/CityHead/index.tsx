@@ -72,22 +72,20 @@ function CityHead(props: DefaultPageProps) {
         </div>
         <div
           // style={{ width: "80%", left: "10%" }}
-          className="h-full p-40 flex  absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
+          className="p-0 flex  absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
-          <div className="m-auto">
+          <div className="m-auto ">
             <h1 className="md:text-9xl text-6xl font-bold font-sans">
               <div className="flex">
-                <span className="text-gray-800 flex gap-2 ">
+                <span className="text-gray-800">
                   <Fade delay={500}>
-                    <span className="text-gray-800">{mainCategory}</span>
-                    <span>://</span>
+                    <span>{t("vi gör ")}</span>
                     <span
                       className={
                         "overflow-hidden border-solid text-gradient-green"
                       }
                     >
-                      {/* <Slide delay={700} left> */}
-                      {techonology}
+                      {techonology}.{/* <Slide delay={700} left> */}
                       {/* </Slide> */}
                     </span>
                   </Fade>
@@ -96,13 +94,14 @@ function CityHead(props: DefaultPageProps) {
             </h1>
 
             <Fade delay={800}>
-              <p className="text-black pt-4 text-md md:text-xl">
+              <p className="text-black pt-6 text-md md:text-xl">
                 {t("Konsultbolaget som älskar cloud och webben")}
                 <br></br>
               </p>
             </Fade>
+
             <Fade delay={1000}>
-              <div className="flex mt-10">
+              <div className="flex mt-12">
                 <div className="m-auto flex gap-8">
                   <Button type="secondary" link="#contact" className="p-20 ">
                     {t("Om oss")}

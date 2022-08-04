@@ -59,23 +59,15 @@ const Topbar = (props: any) => {
         <nav className="hidden md:flex invisible md:visible">
           {/* Simulates css grids, since it is not supported ios */}
 
-          <a className="button-spacing" href={languagePrefix + "react"}>
-            {t("React")}
-          </a>
-
-          <a className="button-spacing" href={languagePrefix + "aws"}>
-            {t("AWS")}
-          </a>
-          <div className="button-spacing">I</div>
-          <a className="button-spacing" href={languagePrefix + "#contact"}>
+          <a className="button-spacing" href={"#contact"}>
             {t("Kontakta oss")}
           </a>
-          <a className="button-spacing" href={languagePrefix + "blog"}>
+          {/* <a className="button-spacing" href={languagePrefix + "blog"}>
             {t("Kunskapsbas")}
-          </a>
-          <a className="button-spacing" href={languagePrefix + "cases"}>
+          </a> */}
+          {/* <a className="button-spacing" href={languagePrefix + "cases"}>
             {t("Cases")}
-          </a>
+          </a> */}
           <a className="button-spacing" href={languagePrefix + "about"}>
             {t("Om oss")}
           </a>
@@ -105,11 +97,6 @@ const Topbar = (props: any) => {
                 {t("AWS")}
               </a>
             </Fade>
-            <Fade delay={100}>
-              <a className="button-spacing" href={languagePrefix + "react"}>
-                {t("REACT")}
-              </a>
-            </Fade>
             <Fade delay={600}>
               <div className="border-b my-3"></div>
             </Fade>
@@ -118,11 +105,11 @@ const Topbar = (props: any) => {
                 {t("Kontakta oss")}
               </a>
             </Fade>
-            <Fade delay={300}>
+            {/* <Fade delay={300}>
               <a className="button-spacing" href={languagePrefix + "cases"}>
                 {t("Cases")}
               </a>
-            </Fade>
+            </Fade> */}
             <Fade delay={400}>
               <a className="button-spacing" href={languagePrefix + "about"}>
                 {t("Om oss")}

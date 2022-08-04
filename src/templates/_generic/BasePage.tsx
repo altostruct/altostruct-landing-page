@@ -22,13 +22,14 @@ import Certification from "@components/Certification";
 interface DefaultPageProps {
   title: string;
   titleDescription: string;
-  inDepthDescription: string;
   image: ReactNode;
   mainCategory: string;
   techonology: string;
 
+  certificate?: boolean;
   //
-  h1?: ReactNode;
+  h1: ReactNode;
+  h2: ReactNode;
   projects?: ProjectProps[];
 }
 
@@ -47,7 +48,7 @@ export function Cite(props: CiteProps) {
   return (
     <div>
       <Fade>
-        <h3>"{cite}"</h3>
+        <h3 className="text-lg md:text-2xl">"{cite}"</h3>
       </Fade>
       <Fade>
         <div className="mt-1">
@@ -98,37 +99,10 @@ function DefaultPage(props: DefaultPageProps) {
   const {
     title,
     mainCategory,
-    h1 = <>Certifierade solution architects</>,
-    projects = [
-      {
-        img: <img src="/images/customers/foodfacts.png"></img>,
-        title: "Foodfacts",
-        description:
-          "Modern och skalbar app redo för framtiden. I sammarbete med ett offshore team ledde Altostruct utvecklingen. Byggd på AWS med React Native",
-      },
-      {
-        img: <img src="/images/customers/saluto.png"></img>,
-        title: "Saluto",
-        description:
-          "En Medtech startup med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte bygga en webbapplikation som läkarna kan använda som supportverktyg vid beslutsfattning.",
-      },
-      {
-        img: <img src=""></img>,
-        title: "Tendium",
-        description:
-          "Modern och skalbar app redo för framtiden. I sammarbete med ett offshore team ledde Altostruct utvecklingen. Byggd på AWS med React Native",
-      },
-      {
-        img: <img src="/images/customers/nrlyze.png"></img>,
-        title: "Nrlyze",
-        description:
-          "Nrlyze har skapat ett system av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som tillåter dem att överse byggnaderna och få sin data presenterad i grafer.",
-      },
-    ],
-    techonology,
-    titleDescription,
-    inDepthDescription,
-    image,
+    h1,
+    h2,
+    projects = [],
+    certificate = true,
   } = props;
   const isSSR = typeof globalThis.window === "undefined";
 
@@ -136,49 +110,42 @@ function DefaultPage(props: DefaultPageProps) {
   return (
     <div>
       <CityHead {...props} />
-      <div className="absolute right-32 bottom-12">
-        <Certification></Certification>
-      </div>
+      {certificate && (
+        <div className="absolute right-32 bottom-12">
+          <Certification></Certification>
+        </div>
+      )}
       <Content>
-        <div className="mb-6 mt-24 items-center flex">
+        <div className="mb-6 mt-24 items-center md:text-left text-center flex">
           <div className="flex-1">
-            <p className="text-orange-300 text-xl">Vad kan vi erbjuda dig?</p>
-            <h2 className="font-light text-7xl mt-3">{h1}</h2>
-            <p className="mt-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.{" "}
+            <p className="text-orange-300 text-xl md:text-2xl ">
+              Vad kan vi erbjuda dig?
             </p>
-          </div>
-
-          <div className="flex-0 ">
-            <div className="w-96 h-64 m-auto">
-              {/* <SmallCity></SmallCity> */}
-            </div>
+            <h2 className="font-bold text-4xl md:text-7xl mt-3">{h1}</h2>
+            <p className="mt-3 text-xl">{h2}</p>
           </div>
         </div>
 
-        <div className="mb-12 grid grid-cols-5 gap-4">
+        <div className="mb-12 grid md:text-left text-center grid-cols-5 gap-4">
           {projects.map((project, index) => {
             const isBig = index % 3;
             return (
               <div
                 className={classNames(
-                  "p-10 flex rounded-md",
+                  "p-10 flex rounded-md col-span-5 ",
                   {
-                    "col-span-2": isBig,
-                    "col-span-3": !isBig,
+                    "md:col-span-2": isBig,
+                    "md:col-span-3": !isBig,
                   },
                   "bg-gradient-" + colors[index % colors.length]
                 )}
               >
-                <div className="m-auto flex gap-3">
+                <div className="m-auto flex-col md:flex-row flex gap-3">
                   <div className="m-auto text-white flex-1">
                     <h3 className="font-bold">{project.title}</h3>
                     <p>{project.description}</p>
                   </div>
-                  <div className={classNames("flex-0 h-56 max-w-sm")}>
+                  <div className={classNames("flex-1 m-auto h-56 max-w-sm")}>
                     {project.img}
                   </div>
                 </div>
@@ -186,45 +153,41 @@ function DefaultPage(props: DefaultPageProps) {
             );
           })}
         </div>
-        <div className="bg-dark-dotted mb-24 rounded-3xl">
-          <div className="text-white p-10 py-32 grid grid-cols-2 gap-12">
+        <div className="bg-dark-dotted mt-24 rounded-3xl">
+          <div className="text-white p-10 py-32 grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="flex">
               <div className="m-auto">
-                <h1 className="text-6xl font-bold mb-4">
-                  Lyssna vad våra{" "}
-                  <i className="text-green-500">grymma kunder </i>
-                  har att säga
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                  {t("Lyssna vad våra ")}
+                  <i className="text-green-500">{t("grymma kunder ")}</i>
+                  {t("har att säga")}
                 </h1>
-                <p className="text-xs mb-4">
-                  {t(
-                    "* Många fler citat ifrån kunder till men det är för mycket att läsa. Vi är allvarliga," +
-                      " 100% av våra tidigare kunder skulle rekomendera oss."
-                  )}
-                </p>
-                <Button>Bli vår nästa kund</Button>
+                <Button>{t("Bli vår nästa kund")}</Button>
               </div>
             </div>
-            <div className="flex">
+            <div className="flex ">
               <div className="m-auto flex gap-12 flex-col">
                 <Cite
-                  cite={
+                  cite={t(
                     "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
-                    " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
-                  }
+                      " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
+                  )}
                   author={t("Peter Vesterberg - CEO Saluto AB")}
                 ></Cite>
                 <Cite
-                  cite={
+                  cite={t(
                     "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån" +
-                    "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
-                  }
+                      "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+                  )}
                   author={t("Erik Standin Pers - Founder Foodfacts")}
                 ></Cite>
               </div>
             </div>
           </div>
         </div>
-        <Form></Form>
+        <div id="contact">
+          <Form></Form>
+        </div>
       </Content>
     </div>
   );

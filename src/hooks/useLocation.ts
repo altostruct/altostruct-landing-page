@@ -5,11 +5,16 @@ const useLocation = () => {
     {
       sitePage {
         path
+        context {
+          realPath
+          lang
+        }
       }
     }
   `);
   const { sitePage } = response;
-  return sitePage.path;
+
+  return sitePage.context?.lang ?? "-";
 };
 
 export default useLocation;

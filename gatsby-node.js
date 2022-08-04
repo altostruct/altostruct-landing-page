@@ -21,12 +21,29 @@ const LANGUGES = ["swe", "en"];
 
 exports.onCreatePage = async ({ actions, page, ...rest }) => {
   //
-  const { createPage } = actions;
+  const { createPage, deletePage } = actions;
+
+  deletePage(page);
+  createPage({
+    component: page.component,
+    path: `${page.path}`,
+    context: {
+      ...page.context,
+      realPath: `${page.path}`,
+      lang: "swe",
+    },
+  });
 
   for (const lang of LANGUGES) {
+    if (lang === "swe") continue;
+
     createPage({
       component: page.component,
       path: `${lang}${page.path}`,
+      context: {
+        realPath: `${lang}${page.path}`,
+        lang: `${lang}`,
+      },
     });
   }
 };
