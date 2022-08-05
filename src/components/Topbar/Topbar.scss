@@ -9,15 +9,17 @@ $small-screen: 720px;
   right: 0;
   padding-left: 15vw;
   padding-right: 15vw;
-  background-color: white;
+  // background-color: rgb(4, 1, 26);
   z-index: 1000;
 
+  * {
+    color: black;
+  }
   .brand {
     font-size: 1.125em;
   }
 
   nav {
-    display: flex;
     align-items: center;
     padding: 1em;
   }
@@ -32,5 +34,33 @@ $small-screen: 720px;
   @media screen and (max-width: $small-screen) {
     padding-left: 2.5vw;
     padding-right: 2.5vw;
+  }
+}
+
+.expandedHambuger {
+  svg {
+    * {
+      transition: all 0.5s;
+    }
+
+    :nth-child(1) {
+      transform: translate(10%, 10%) rotate(45deg);
+    }
+
+    :nth-child(2) {
+      transform: translate(-30%, 50%) rotate(-45deg);
+    }
+
+    :nth-child(3) {
+      opacity: 0;
+    }
+  }
+}
+
+.notExpandedHambuger {
+  svg {
+    * {
+      transition: all 0.5s;
+    }
   }
 }

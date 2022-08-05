@@ -10,6 +10,8 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: eu-west-1
       SOURCE_DIR: "public"
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 
     name: Build and deploy
     runs-on: ubuntu-latest
@@ -26,7 +28,7 @@ jobs:
       - name: Install packages and build the app
         run: |
           # Install node packages
-          npm install
+          npm install --force
           # Build the app
           npm run build
       # Deploy to the S3 server

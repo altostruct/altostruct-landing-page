@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import * as style2 from './CardWithHoverInfo.module.scss';
+import React, { useState } from "react";
+import * as style2 from "./CardWithHoverInfo.module.scss";
 
 interface CardWithHoverInfoProps {
   date: string;
@@ -10,8 +10,8 @@ interface CardWithHoverInfoProps {
 const CardWithHoverInfo = (props: CardWithHoverInfoProps) => {
   const redirect = () => {
     //Opens url in new tab
-    let a = document.createElement('a');
-    a.target = '_blank';
+    let a = document.createElement("a");
+    a.target = "_blank";
     a.href = props.url;
     a.click();
   };
@@ -22,8 +22,8 @@ const CardWithHoverInfo = (props: CardWithHoverInfoProps) => {
         <div className={style2.background}></div>
         <div className={style2.content}>
           <div>
-            <h2 className={style2.date}>{props.date}</h2>
-            <h2>{props.content}</h2>
+            <pre className={style2.date}>{props.date}</pre>
+            <p>{props.content}</p>
           </div>
         </div>
       </div>

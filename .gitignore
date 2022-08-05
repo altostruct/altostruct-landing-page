@@ -1,3 +1,8 @@
 node_modules
 .cache
 public
+static/images/city/
+src/assets/houses.json
+src/assets/roads.json
+.env.production
+.env.development

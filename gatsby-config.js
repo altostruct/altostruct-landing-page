@@ -1,3 +1,9 @@
+const path = require("path");
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   // Used for github pages will be overritten when
   // deploying to production.
@@ -9,9 +15,14 @@ module.exports = {
     author: `Erik Rehn, Joakim Tornert & Rasmus Holmgren`,
   },
   plugins: [
+    "gatsby-transformer-json",
+    "gatsby-transformer-typescript-css-modules",
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-robots-txt",
+    {
+      resolve: "gatsby-plugin-react-svg",
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -33,6 +44,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images-contentful`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-sass",
       options: {
         implementation: require("sass"),
@@ -44,11 +73,17 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./static",
       },
       __key: "images",
     },
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

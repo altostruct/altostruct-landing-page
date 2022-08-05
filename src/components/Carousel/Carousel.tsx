@@ -3,8 +3,11 @@ import * as style from "./Carousel.module.scss";
 import { Transition } from "react-transition-group";
 import CardWithHoverInfo from "@components/CardWithHoverInfo/CardWithHoverInfo";
 import posts from "/linkedInData.json";
+import useTranslation from "../../hooks/useTranslation";
 
-function Carousel(props: { t: (arg0: string) => string }) {
+function Carousel() {
+  const { t, setLanguage, language } = useTranslation();
+
   return (
     <div className={style.wrapper}>
       <div className={style.carousel}>
@@ -15,7 +18,7 @@ function Carousel(props: { t: (arg0: string) => string }) {
                 <CardWithHoverInfo
                   date={post.date}
                   url={post.url}
-                  content={props.t(post.content)}
+                  content={t(post.content)}
                 />
               )
             )}

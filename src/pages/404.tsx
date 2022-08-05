@@ -4,9 +4,10 @@ import Button from "@components/Button/Button";
 import Topbar from "@components/Topbar/Topbar";
 import Icon from "@components/Icon";
 import useTranslation from "../hooks/useTranslation";
+import { withLanguage } from "../contexts/LanguageContext";
 
 const NotFoundPage = (props: any) => {
-  const { t, setLanguage, language } = useTranslation(props.location.pathname);
+  const { t, setLanguage, language } = useTranslation();
   return (
     <main className="page">
       <Topbar pathName={props.location.pathname}></Topbar>
@@ -33,4 +34,4 @@ const NotFoundPage = (props: any) => {
   );
 };
 
-export default NotFoundPage;
+export default withLanguage(NotFoundPage);

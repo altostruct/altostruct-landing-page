@@ -7,16 +7,14 @@ $small-screen: 720px;
   align-items: center;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.6em 1.2em;
-  border-radius: 0.3em;
+  padding: 0.6em 2.2em;
   cursor: pointer;
-  transition: opacity 50ms ease;
+  transition: all 50ms ease;
 
   @media screen and (max-width: $small-screen) {
     width: 100%;
     text-align: center;
     justify-content: center;
-    border-radius: 0.5em;
   }
 }
 
@@ -26,16 +24,16 @@ $small-screen: 720px;
 }
 
 .primary:hover {
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .secondary:hover {
-  opacity: 0.8;
+  transform: scale(1.05);
 }
 
 .secondary {
-  background-color: var(--primary-color-inv);
   color: var(--primary-color);
+  padding: 0;
 }
 
 .shiny {
@@ -65,7 +63,6 @@ $small-screen: 720px;
   z-index: -1;
   transition: opacity 0.25s linear;
   opacity: 0;
-  border-radius: 0.3em;
 }
 
 .shiny:hover::before {

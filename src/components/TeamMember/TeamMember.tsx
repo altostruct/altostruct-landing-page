@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import "./TeamMember.scss";
 import ImageFlip from "@components/ImageFlip/ImageFlip";
-import MailIcon from "../../pages/aboutus/assets/emailIcon.png";
+import MailIcon from "../../pages/about/assets/emailIcon.png";
 
 interface TeamProps {
   member: Member;
