@@ -95,7 +95,7 @@ const Topbar = (props: any) => {
 
       {expanded && (
         <div className="md:hidden bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
-          <div className="m-auto flex-col flex text-5xl">
+          <div className="m-auto flex-col flex text-4xl max-h-96">
             <Fade delay={0}>
               <a className="button-spacing" href={languagePrefix + "about"}>
                 {t("Om oss")}
@@ -114,14 +114,8 @@ const Topbar = (props: any) => {
                 {t("Kontakta oss")}
               </a>
             </Fade>
-            {/* <Fade delay={300}>
-              <a className="button-spacing" href={languagePrefix + "cases"}>
-                {t("Cases")}
-              </a>
-            </Fade> */}
-
             <Fade delay={800}>
-              <div className="m-10">
+              <div className="mx-10 h-36 md:m-10">
                 <LanguageSelector expanded></LanguageSelector>
               </div>
             </Fade>

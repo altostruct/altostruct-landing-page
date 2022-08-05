@@ -72,14 +72,14 @@ function CityHead(props: DefaultPageProps) {
         </div>
         <div
           // style={{ width: "80%", left: "10%" }}
-          className="p-0 flex  absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
+          className="p-0 flex absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
           <div className="m-auto ">
             <h1 className="md:text-9xl text-7xl font-bold font-sans">
               <div className="flex">
                 <span className="text-gray-800">
                   <Fade delay={500}>
-                    <span>{t("we do ")}</span>
+                    <span className="whitespace-nowrap">{t("we do ")}</span>
                     <span
                       className={
                         "overflow-hidden border-solid text-gradient-green"

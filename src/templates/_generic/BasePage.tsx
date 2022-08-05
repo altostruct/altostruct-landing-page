@@ -185,7 +185,7 @@ function DefaultPage(props: DefaultPageProps) {
             </div>
           </div>
         </div>
-        <div id="contact">
+        <div className="mt-20" id="contact">
           <Form></Form>
         </div>
       </Content>

@@ -51,7 +51,7 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
 
   if (expanded)
     return (
-      <div className="flex justify-between gap-4">
+      <div className="flex  h-48 justify-between gap-4">
         {Object.keys(allLanguages).map((selectableLanguage) => (
           <div className="w-12">
             <img

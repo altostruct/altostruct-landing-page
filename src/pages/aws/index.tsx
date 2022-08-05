@@ -51,7 +51,7 @@ function Index() {
             ),
           },
           {
-            img: <img src=""></img>,
+            img: null,
             title: "Tendium",
             description: t(
               "Hemsida som tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct hjälpte lägga grunden till infrastruktur till deras microservice arkitektur."
