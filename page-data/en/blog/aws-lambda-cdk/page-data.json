@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-tsx",
+    "path": "/en/blog/aws-lambda-cdk",
+    "result": {"data":{"post":{"edges":[{"node":{"id":"bdcae47b-459b-5f05-9e9e-6492950b22be","author":"Erik Rehn","title":"Using AWS lambda with CDK(API Gateway, Lambda)","slug":"aws-lambda-cdk","description":"Sick and tired of rewriting the same code over and over","createDate":null,"body":null,"image":null}}]},"posts":{"edges":[{"node":{"slug":"aws-lambda-cdk","title":"Using AWS lambda with CDK(API Gateway, Lambda)","description":"Sick and tired of rewriting the same code over and over","createDate":null,"author":"Erik Rehn"}},{"node":{"slug":"testnew","title":null,"description":null,"createDate":"2022/08/11","author":"William"}},{"node":{"slug":"gdpr-cloud","title":null,"description":null,"createDate":"2022/08/02","author":"Axel Hedengren"}}]}},"pageContext":{"slug":"aws-lambda-cdk","postLang":"en-US","lang":"en"}},
+    "staticQueryHashes": ["63159454"]}
