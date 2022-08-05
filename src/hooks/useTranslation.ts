@@ -51,15 +51,13 @@ const useTranslation = () => {
     window.location.hash = "";
 
     if (isLanguageSet) {
-      window.location.pathname =
-        [languagePrefix, ...currentPathSplit.slice(1)]
-          .filter((subPath) => subPath !== null && subPath != "")
-          .join("/") + "/index.html";
+      window.location.pathname = [languagePrefix, ...currentPathSplit.slice(1)]
+        .filter((subPath) => subPath !== null && subPath != "")
+        .join("/");
     } else {
-      window.location.pathname =
-        [languagePrefix, ...currentPathSplit]
-          .filter((subPath) => subPath !== null && subPath != "")
-          .join("/") + "/index.html";
+      window.location.pathname = [languagePrefix, ...currentPathSplit]
+        .filter((subPath) => subPath !== null && subPath != "")
+        .join("/");
     }
   };
 
