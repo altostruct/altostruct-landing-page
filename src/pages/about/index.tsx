@@ -15,10 +15,8 @@ import { Cite } from "../../templates/_generic/BasePage";
 import Button from "@components/Button/Button";
 import { withLanguage } from "../../contexts/LanguageContext";
 
-const Cube = React.lazy(() => import("@components/3d/City"));
-
 function AboutPage() {
-  const { t, setLanguage, language } = useTranslation();
+  const { t } = useTranslation();
   const isSSR = typeof globalThis.window === "undefined";
 
   const teamMembers: Member[] = [
@@ -127,8 +125,8 @@ function AboutPage() {
               <p className="mt-4">
                 {t(
                   'Vi har två enkla motton. Brinn för dina projekt och "amaze the ' +
-                    'client". Ända sedan dag ett har vi trott att bästa vägen framåt' +
-                    "är att utföra våra projekt på ett så innovativt och effektivt" +
+                    'client". Ända sedan dag ett har vi trott att bästa vägen framåt ' +
+                    "är att utföra våra projekt på ett så innovativt och effektivt " +
                     "sätt som möjligt så att våra kunder får mer ut av våra tjänster" +
                     "än förväntat. Vi vill, oavsett projekttyp, att våra kunder ska" +
                     "vara ”amazed” när de ser slutresultatet."
@@ -136,13 +134,13 @@ function AboutPage() {
               </p>
               <div className="grid grid-cols-2 mt-4">
                 <div>
-                  <p className="font-extrabold">Grundat</p>
+                  <p className="font-extrabold">{t("Grundat")}</p>
                   <h1 className="text-gradient-green text-6xl font-extrabold">
                     2020
                   </h1>
                 </div>
                 <div>
-                  <p className="font-extrabold">Placerat i</p>
+                  <p className="font-extrabold">{t("Placerat i")}</p>
                   <h1 className="text-gradient-green text-6xl font-extrabold">
                     STHLM
                   </h1>
@@ -160,17 +158,19 @@ function AboutPage() {
         </div>
         <div className="w-2/3 text-center m-auto mt-48 md:mt-20">
           <h1 className="text-6xl">
-            Varför{" "}
-            <span className="text-gradient-blue font-bold">välja oss?</span>
+            {t("Varför ")}
+            <span className="text-gradient-blue font-bold">
+              {t("välja oss?")}
+            </span>
           </h1>
           <p className="mt-6">
             {t(
-              "En person som älskar det den gör kommer alltid utföra sina uppgifter" +
-                "bättre och mer effektivt än någon som inte gör det, och för oss är" +
-                "det av yttersta vikt att våra utvecklare är entusiastiska och hela" +
-                "tiden strävar efter att utvecklas. För att säkerställa detta strävar" +
+              "En person som älskar det den gör kommer alltid utföra sina uppgifter " +
+                "bättre och mer effektivt än någon som inte gör det, och för oss är " +
+                "det av yttersta vikt att våra utvecklare är entusiastiska och hela " +
+                "tiden strävar efter att utvecklas. För att säkerställa detta strävar " +
                 "vi alltid efter att para ihop rätt person med rätt projekt. Detta " +
-                "leder till att våra kunder får utvecklare som verkligen brinner för" +
+                "leder till att våra kunder får utvecklare som verkligen brinner för " +
                 "sina projekt."
             )}
           </p>
@@ -184,14 +184,16 @@ function AboutPage() {
         <div className="w-4/5 text-center md:text-left m-auto mt-40 grid grid-cols-1 md:grid-cols-2">
           <div>
             <h1 className="text-6xl">
-              Våran <br></br>
-              <span className="text-gradient-green font-bold">techstack</span>
+              {t("Våran")} <br></br>
+              <span className="text-gradient-green font-bold">
+                {t("techstack")}
+              </span>
             </h1>
             <p className="mt-4 mb-4">
               {t(
-                "Modern och skalbar app redo för framtiden. I sammarbete med ett" +
-                  "offshore team ledde Altostruct utvecklingen. Byggd på AWS med" +
-                  "React Native"
+                "På Altostruct arbetar vi med många olika cloud tjänster " +
+                  "allt ifrån serverless till datamigrering. Här ser ni några exempel " +
+                  "på olika teknologier vi tidigare har arbetat med."
               )}
             </p>
           </div>
@@ -250,7 +252,7 @@ function AboutPage() {
                 <Cite
                   cite={t(
                     "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
-                      " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
+                      " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlevnad."
                   )}
                   author={t("Peter Vesterberg - CEO Saluto AB")}
                 ></Cite>

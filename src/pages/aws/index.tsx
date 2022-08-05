@@ -23,7 +23,7 @@ function Index() {
         h1={t("Certifierade solution architects")}
         h2={t(
           "Vi erbjuder utvecklare specialiserade i AWS. Vårt team av AWS konsulter är certifierade och placerade i Stockholm. " +
-            "Detta ger er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjorde på cloud"
+            "Detta ger er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjort på cloud"
         )}
         projects={[
           {
@@ -54,7 +54,7 @@ function Index() {
             img: <img src=""></img>,
             title: "Tendium",
             description: t(
-              "Hemsida som tillåter kunder att enkelt följa hitta och ansöka till offentliga upphandlingar. Altostruct hjälpte lägga grunden till infrastruktur till deras microservice arkitektur."
+              "Hemsida som tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct hjälpte lägga grunden till infrastruktur till deras microservice arkitektur."
             ),
           },
           {

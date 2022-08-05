@@ -119,7 +119,7 @@ function DefaultPage(props: DefaultPageProps) {
         <div className="mb-6 mt-24 items-center md:text-left text-center flex">
           <div className="flex-1">
             <p className="text-orange-300 text-xl md:text-2xl ">
-              Vad kan vi erbjuda dig?
+              {t("Vad kan vi erbjuda dig?")}
             </p>
             <h2 className="font-bold text-4xl md:text-7xl mt-3">{h1}</h2>
             <p className="mt-3 text-xl">{h2}</p>
@@ -170,7 +170,7 @@ function DefaultPage(props: DefaultPageProps) {
                 <Cite
                   cite={t(
                     "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en" +
-                      " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlydnad."
+                      " svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlevnad."
                   )}
                   author={t("Peter Vesterberg - CEO Saluto AB")}
                 ></Cite>
