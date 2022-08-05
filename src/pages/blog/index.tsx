@@ -80,11 +80,13 @@ function Blog() {
             </p>
             <div className="mt-4 text-gray-500 text-xs md:text-sm flex gap-4">
               <p>{props.createDate}</p>
-              <p>
-                {t("Lästid {{time}} minut", {
-                  time: getReadTime(props.body.raw),
-                })}
-              </p>
+              {props.body && (
+                <p>
+                  {t("Lästid {{time}} minut", {
+                    time: getReadTime(props.body.raw),
+                  })}
+                </p>
+              )}
             </div>
           </div>
           <div className="max-h-96 w-1/4 md:w-56">
