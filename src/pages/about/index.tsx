@@ -169,7 +169,7 @@ function AboutPage() {
                 "bättre och mer effektivt än någon som inte gör det, och för oss är" +
                 "det av yttersta vikt att våra utvecklare är entusiastiska och hela" +
                 "tiden strävar efter att utvecklas. För att säkerställa detta strävar" +
-                "vi alltid efter att para ihop rätt person med rätt projekt. Detta" +
+                "vi alltid efter att para ihop rätt person med rätt projekt. Detta " +
                 "leder till att våra kunder får utvecklare som verkligen brinner för" +
                 "sina projekt."
             )}
