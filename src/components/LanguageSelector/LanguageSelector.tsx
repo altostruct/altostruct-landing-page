@@ -5,7 +5,7 @@ import swedishIcon from "./assets/swedishFlag.png";
 import englishIcon from "./assets/usFlag.png";
 
 interface LanguageSelectorProps {
-  pathName: string;
+  expanded?: boolean;
 }
 
 interface Language {
@@ -19,8 +19,9 @@ interface LanguageInterface {
 }
 
 const LanguageSelector = (props: LanguageSelectorProps) => {
-  const { t, setLanguage, language } = useTranslation();
+  const { setLanguage, language } = useTranslation();
   let currentLanguage = language;
+  const { expanded } = props;
 
   function clicked(selectedLanguage: string) {
     setLanguage(selectedLanguage);
@@ -41,32 +42,54 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
 
   function withoutCurrentLang() {
     let selectableLanguages: { [key: string]: Language } = {};
-    Object.assign(selectableLanguages, allLanguages);
+    Object.assign(selectableLanguages, { ...allLanguages });
     delete selectableLanguages[currentLanguage];
     return selectableLanguages;
   }
 
   let selectableLanguages: LanguageInterface = withoutCurrentLang();
 
-  return (
-    <div className="dropdown">
-      <img
-        className="front-icon"
-        alt="Selected language"
-        src={allLanguages[currentLanguage].image}
-      ></img>
-      <div className="dropdown-content">
-        {Object.keys(selectableLanguages).map((selectableLanguage) => (
-          <img
-            className="language-icon"
-            src={selectableLanguages[selectableLanguage].image}
-            alt="Language icon"
-            onClick={() => clicked(selectableLanguage)}
-            key={selectableLanguages[selectableLanguage].id}
-          ></img>
+  if (expanded)
+    return (
+      <div className="flex justify-between gap-4">
+        {Object.keys(allLanguages).map((selectableLanguage) => (
+          <div className="w-12">
+            <img
+              src={allLanguages[selectableLanguage].image}
+              alt="Language icon"
+              onClick={() => clicked(selectableLanguage)}
+              key={allLanguages[selectableLanguage].id}
+            />
+          </div>
         ))}
       </div>
-    </div>
+    );
+
+  return (
+    <>
+      <div className="dropdown">
+        {!expanded && (
+          <>
+            <img
+              className="front-icon"
+              alt="Selected language"
+              src={allLanguages[currentLanguage].image}
+            ></img>
+            <div className="dropdown-content">
+              {Object.keys(selectableLanguages).map((selectableLanguage) => (
+                <img
+                  className="language-icon"
+                  src={selectableLanguages[selectableLanguage].image}
+                  alt="Language icon"
+                  onClick={() => clicked(selectableLanguage)}
+                  key={selectableLanguages[selectableLanguage].id}
+                ></img>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

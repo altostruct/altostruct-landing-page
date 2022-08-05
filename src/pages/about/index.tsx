@@ -126,7 +126,7 @@ function AboutPage() {
               <h1 className="text-6xl font-normal">Amaze the client</h1>
               <p className="mt-4">
                 {t(
-                  'Vi har två enkla motton. Brinn för dina projekt och "amaze the' +
+                  'Vi har två enkla motton. Brinn för dina projekt och "amaze the ' +
                     'client". Ända sedan dag ett har vi trott att bästa vägen framåt' +
                     "är att utföra våra projekt på ett så innovativt och effektivt" +
                     "sätt som möjligt så att våra kunder får mer ut av våra tjänster" +

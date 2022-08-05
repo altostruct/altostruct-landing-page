@@ -72,6 +72,10 @@ const Topbar = (props: any) => {
             {t("Om oss")}
           </a>
 
+          <a className="button-spacing" href={languagePrefix + "blog"}>
+            {t("Kunskapsbas")}
+          </a>
+
           <LanguageSelector pathName={props.pathName}></LanguageSelector>
         </nav>
 
@@ -93,14 +97,19 @@ const Topbar = (props: any) => {
         <div className="md:hidden bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
           <div className="m-auto flex-col flex text-5xl">
             <Fade delay={0}>
-              <a className="button-spacing" href={languagePrefix + "aws"}>
-                {t("AWS")}
+              <a className="button-spacing" href={languagePrefix + "about"}>
+                {t("Om oss")}
               </a>
             </Fade>
-            <Fade delay={600}>
+            <Fade delay={200}>
+              <a className="button-spacing" href={languagePrefix + "blog"}>
+                {t("Kunskapsbas")}
+              </a>
+            </Fade>
+            <Fade delay={400}>
               <div className="border-b my-3"></div>
             </Fade>
-            <Fade delay={200}>
+            <Fade delay={600}>
               <a className="button-spacing" href={languagePrefix + "#contact"}>
                 {t("Kontakta oss")}
               </a>
@@ -110,10 +119,16 @@ const Topbar = (props: any) => {
                 {t("Cases")}
               </a>
             </Fade> */}
-            <Fade delay={400}>
+            <Fade delay={800}>
               <a className="button-spacing" href={languagePrefix + "about"}>
                 {t("Om oss")}
               </a>
+            </Fade>
+
+            <Fade delay={1000}>
+              <div className="m-10">
+                <LanguageSelector expanded></LanguageSelector>
+              </div>
             </Fade>
           </div>
         </div>

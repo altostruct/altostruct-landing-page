@@ -3,7 +3,6 @@ const getCanvasBuffer = require("./scripts/get-canvas-buffer");
 const buildHouses = require("./scripts/build-houses");
 const buildRoads = require("./scripts/build-roads");
 const fs = require("fs");
-const sharp = require("sharp");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
@@ -49,7 +48,7 @@ exports.onCreatePage = async ({ actions, page, ...rest }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
-  console.log("Building extra stuff...");
+  const { createPage } = actions;
 
   fs.mkdirSync("static/images/city", { recursive: true });
 
@@ -62,4 +61,43 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const roads = await buildRoads("assets/roads.png");
   fs.writeFileSync("./src/assets/roads.json", JSON.stringify(roads));
+
+  const { data } = await graphql(`
+    query {
+      allContentfulPost(
+        filter: { node_locale: { eq: "en-US" } }
+        sort: { fields: createDate, order: DESC }
+      ) {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `);
+
+  data.allContentfulPost.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve("src/templates/blog.tsx"),
+      path: "en/blog/" + edge.node.slug,
+      context: {
+        slug: edge.node.slug,
+        postLang: "en-US",
+        lang: "en",
+      },
+    });
+  });
+
+  data.allContentfulPost.edges.forEach((edge) => {
+    createPage({
+      component: path.resolve("src/templates/blog.tsx"),
+      path: "blog/" + edge.node.slug,
+      context: {
+        slug: edge.node.slug,
+        postLang: "sv",
+        lang: "swe",
+      },
+    });
+  });
 };

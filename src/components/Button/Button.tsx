@@ -38,7 +38,7 @@ const Button = (props: ButtonProps) => {
       type={formAction}
       className={classNames(className, style.button, style[type])}
     >
-      {children}
+      {children} {">"}
     </button>
   );
 };

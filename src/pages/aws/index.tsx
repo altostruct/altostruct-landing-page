@@ -23,18 +23,28 @@ function Index() {
         h1={t("Certifierade solution architects")}
         h2={t(
           "Vi erbjuder seniora utvecklare specialiserade i AWS. Vårt team av AWS konsulter är certifierade och placerade i Stockholm. " +
-            "Detta ger er möjligheten att snabbt utveckla mot cloud på era vilkor."
+            "Detta ger er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjorde på cloud"
         )}
         projects={[
           {
-            img: <img src="/images/customers/foodfacts.png"></img>,
+            img: (
+              <img
+                className="max-h-56"
+                src="/images/customers/foodfacts.png"
+              ></img>
+            ),
             title: "Foodfacts",
             description: t(
               "Modern och skalbar applikation redo för framtiden. Altostruct ledde utvecklingen i samarbete med ett offshoreteam. Applikationen är byggd i AWS med React Native."
             ),
           },
           {
-            img: <img src="/images/customers/saluto.png"></img>,
+            img: (
+              <img
+                className="max-h-56"
+                src="/images/customers/saluto.png"
+              ></img>
+            ),
             title: "Saluto",
             description: t(
               "En Medtech startup med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
@@ -48,7 +58,12 @@ function Index() {
             ),
           },
           {
-            img: <img src="/images/customers/nrlyze.png"></img>,
+            img: (
+              <img
+                className="max-h-56"
+                src="/images/customers/nrlyze.png"
+              ></img>
+            ),
             title: "Nrlyze",
             description: t(
               "Nrlyze har skapat ett system av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som tillåter de överse byggnaderna och få sin data presenterad i grafer."
