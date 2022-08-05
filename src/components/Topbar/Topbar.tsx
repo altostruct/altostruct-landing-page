@@ -68,17 +68,11 @@ const Topbar = (props: any) => {
           {/* <a className="button-spacing" href={languagePrefix + "cases"}>
             {t("Cases")}
           </a> */}
-          <a
-            className="button-spacing"
-            href={languagePrefix + "about/index.html"}
-          >
+          <a className="button-spacing" href={languagePrefix + "about"}>
             {t("Om oss")}
           </a>
 
-          <a
-            className="button-spacing"
-            href={languagePrefix + "blog/index.html"}
-          >
+          <a className="button-spacing" href={languagePrefix + "blog"}>
             {t("Kunskapsbas")}
           </a>
 
@@ -103,10 +97,7 @@ const Topbar = (props: any) => {
         <div className="md:hidden bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
           <div className="m-auto flex-col flex text-5xl">
             <Fade delay={0}>
-              <a
-                className="button-spacing"
-                href={languagePrefix + "about/index.html"}
-              >
+              <a className="button-spacing" href={languagePrefix + "about"}>
                 {t("Om oss")}
               </a>
             </Fade>
