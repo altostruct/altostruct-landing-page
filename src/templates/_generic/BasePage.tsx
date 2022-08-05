@@ -134,8 +134,8 @@ function DefaultPage(props: DefaultPageProps) {
                 className={classNames(
                   "p-10 flex rounded-md col-span-5 ",
                   {
-                    "md:col-span-2": isBig,
-                    "md:col-span-3": !isBig,
+                    "lg:col-span-2": isBig,
+                    "lg:col-span-3": !isBig,
                   },
                   "bg-gradient-" + colors[index % colors.length]
                 )}

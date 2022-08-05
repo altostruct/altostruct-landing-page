@@ -42,6 +42,7 @@ function Index() {
           {
             img: (
               <img
+                alt="Customer Foodfacts"
                 className="max-h-56"
                 src="/images/customers/foodfacts.png"
               ></img>
@@ -54,6 +55,7 @@ function Index() {
           {
             img: (
               <img
+                alt="Customer Saluto"
                 className="max-h-56"
                 src="/images/customers/saluto.png"
               ></img>
@@ -73,6 +75,7 @@ function Index() {
           {
             img: (
               <img
+                alt="Customer Nrlyze"
                 className="max-h-56"
                 src="/images/customers/nrlyze.png"
               ></img>
