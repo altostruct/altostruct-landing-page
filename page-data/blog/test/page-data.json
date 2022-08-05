@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-tsx",
+    "path": "/blog/test",
+    "result": {"data":{"post":{"edges":[{"node":{"id":"474657d5-937f-556a-ba3b-7a3d75a010b4","author":"William","title":null,"slug":"test","description":null,"createDate":"2022/08/11","body":null,"image":null}}]},"posts":{"edges":[{"node":{"slug":"test","title":null,"description":null,"createDate":"2022/08/11","author":"William"}},{"node":{"slug":"gdpr-cloud","title":null,"description":null,"createDate":"2022/08/02","author":"Axel Hedengren"}}]}},"pageContext":{"slug":"test","postLang":"sv","lang":"swe"}},
+    "staticQueryHashes": ["63159454"]}
