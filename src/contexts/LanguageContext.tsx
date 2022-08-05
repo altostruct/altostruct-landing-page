@@ -3,7 +3,6 @@ import React, { ReactNode, useContext } from "react";
 // TODO change to null
 const LanguageContext = React.createContext("swe");
 const LanguageProvider = (props: any) => {
-  console.log("Context: ", props);
   return (
     <LanguageContext.Provider value={props.pageContext.lang ?? "---"}>
       {props.children}

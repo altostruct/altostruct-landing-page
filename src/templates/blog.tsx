@@ -12,6 +12,7 @@ import Topbar from "@components/Topbar/Topbar";
 import Content from "@components/Content";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useLanguage, withLanguage } from "../contexts/LanguageContext";
+import SEO from "@components/SEO/SEO";
 
 export const query = graphql`
   query ($slug: String!, $postLang: String!) {
@@ -196,6 +197,8 @@ const BlogComponent = ({ data }: any) => {
 
   return (
     <>
+      <SEO title={post.title} description={post.description} lang={language} />
+
       <Topbar></Topbar>
       <div className="mt-24">
         <Content>
@@ -217,8 +220,9 @@ const BlogComponent = ({ data }: any) => {
                   <GatsbyImage alt="" image={post.image.gatsbyImageData} />
                 )}
               </div>
-              {/* <pre>{JSON.stringify(JSON.parse(post.body.raw), null, 4)}</pre> */}
-              {documentToReactComponents(JSON.parse(post.body.raw), options)}
+              {post.body?.raw &&
+                documentToReactComponents(JSON.parse(post.body.raw), options)}
+              {!post.body?.raw && <p>No content</p>}
             </div>
           </div>
         </Content>

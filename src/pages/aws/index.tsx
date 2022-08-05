@@ -1,6 +1,8 @@
 import Footer from "@components/Footer/Footer";
+import SEO from "@components/SEO/SEO";
 import Topbar from "@components/Topbar/Topbar";
 import React from "react";
+import { Helmet } from "react-helmet";
 import LanguageProvider, {
   useLanguage,
   withLanguage,
@@ -15,6 +17,17 @@ function Index() {
 
   return (
     <>
+      <SEO
+        title="Startup consulting for cloud and web"
+        description="Stockholm based cloud and web consulting for startups"
+        lang="en"
+      />
+      <SEO
+        title="Startup consulting for cloud and web"
+        description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
+        lang="swe"
+      />
+
       <Topbar pathName=""></Topbar>
       <BasePage
         mainCategory={t("cloud")}
