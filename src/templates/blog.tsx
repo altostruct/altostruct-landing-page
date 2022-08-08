@@ -13,6 +13,7 @@ import Content from "@components/Content";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { useLanguage, withLanguage } from "../contexts/LanguageContext";
 import SEO from "@components/SEO/SEO";
+import F0F from "../pages/404";
 
 export const query = graphql`
   query ($slug: String!, $postLang: String!) {
@@ -198,6 +199,8 @@ const BlogComponent = ({ data }: any) => {
       </div>
     );
   };
+
+  if (!post) return <F0F></F0F>;
 
   return (
     <>
