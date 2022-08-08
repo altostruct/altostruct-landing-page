@@ -200,7 +200,7 @@ const BlogComponent = ({ data }: any) => {
     );
   };
 
-  if (!post) return <F0F></F0F>;
+  if (!post) return <p>Not able to find content</p>;
 
   return (
     <>
