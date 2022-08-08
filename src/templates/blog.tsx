@@ -75,7 +75,7 @@ const BlogComponent = ({ data }: any) => {
   //   .map((v: any) => v.node)
   //   .filter((v: any) => v.slug !== file.slug);
 
-  const post = data.post.edges[0].node;
+  const post = data.post.edges[0]?.node;
 
   const options: Options = {
     renderNode: {
