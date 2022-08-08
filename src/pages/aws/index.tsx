@@ -18,13 +18,13 @@ function Index() {
   return (
     <>
       <SEO
-        title="Startup consulting for cloud and web"
-        description="Stockholm based cloud and web consulting for startups"
+        title={"Altostruct - AWS consultants"}
+        description="Senior AWS consultants located in Sweden"
         lang="en"
       />
       <SEO
-        title="Startup consulting for cloud and web"
-        description="Webbutvecklare i Stockholm med skräddarsydda lösningar för startups."
+        title="Altostruct - AWS konsulter"
+        description="Seniora AWS konsulter i Sverige"
         lang="swe"
       />
 
