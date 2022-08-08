@@ -10,8 +10,8 @@ module.exports = {
   pathPrefix: `/altostruct-landing-page`,
   siteMetadata: {
     siteUrl: `https://www.altostruct.com`,
-    title: `Altostruct - Startup consulting`,
-    description: `Cloud and web consulting for startups and innovative companies`,
+    title: `Altostruct - AWS consulting`,
+    description: `AWS consultants located in Sweden`,
     author: `Erik Rehn, Joakim Tornert & Rasmus Holmgren`,
   },
   plugins: [
