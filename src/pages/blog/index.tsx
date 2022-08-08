@@ -12,7 +12,7 @@ const usePosts = () => {
   const data = useStaticQuery(graphql`
     query {
       en: allContentfulPost(
-        filter: { node_locale: { eq: "en-US" } }
+        filter: { node_locale: { eq: "en-US" }, isPublished: { eq: true } }
         sort: { fields: createDate, order: DESC }
       ) {
         edges {
@@ -33,7 +33,7 @@ const usePosts = () => {
       }
 
       swe: allContentfulPost(
-        filter: { node_locale: { eq: "sv" } }
+        filter: { node_locale: { eq: "sv" }, isPublished: { eq: true } }
         sort: { fields: createDate, order: DESC }
       ) {
         edges {
@@ -99,9 +99,7 @@ function Blog() {
     );
   }
 
-  const posts = edges
-    .map((node: any) => node.node)
-    .filter((node: any) => !!node.title);
+  const posts = edges.map((node: any) => node.node);
 
   return (
     <div>

@@ -17,7 +17,11 @@ import SEO from "@components/SEO/SEO";
 export const query = graphql`
   query ($slug: String!, $postLang: String!) {
     post: allContentfulPost(
-      filter: { slug: { eq: $slug }, node_locale: { eq: $postLang } }
+      filter: {
+        slug: { eq: $slug }
+        node_locale: { eq: $postLang }
+        isPublished: { eq: true }
+      }
     ) {
       edges {
         node {
@@ -43,7 +47,7 @@ export const query = graphql`
     }
 
     posts: allContentfulPost(
-      filter: { node_locale: { eq: "en-US" } }
+      filter: { node_locale: { eq: "en-US" }, isPublished: { eq: true } }
       sort: { fields: createDate, order: DESC }
     ) {
       edges {
