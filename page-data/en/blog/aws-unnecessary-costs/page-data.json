@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-tsx",
+    "path": "/en/blog/aws-unnecessary-costs",
+    "result": {"data":{"post":{"edges":[]},"posts":{"edges":[]}},"pageContext":{"slug":"aws-unnecessary-costs","postLang":"en-US","lang":"en"}},
+    "staticQueryHashes": ["63159454"]}
