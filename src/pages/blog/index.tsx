@@ -70,7 +70,7 @@ function Blog() {
     if (!props.title) return null;
 
     return (
-      <a href={"/blog/" + props.slug}>
+      <a className="p-2" href={"/blog/" + props.slug}>
         <div className="flex items-center gap-2 md:gap-12">
           <div className="h-fit flex-1">
             <p className="font-medium">{props.author}</p>
@@ -105,9 +105,9 @@ function Blog() {
     <div>
       <Topbar></Topbar>
 
-      <div className="mt-24 flex">
+      <div className="mt-24 flex  gap-10">
         <Content>
-          <div className="m-auto">
+          <div className="m-auto ">
             {posts.map((post: any) => {
               return <Post {...post} />;
             })}
