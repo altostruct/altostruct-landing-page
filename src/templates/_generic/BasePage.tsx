@@ -122,7 +122,7 @@ function DefaultPage(props: DefaultPageProps) {
               {t("Vad kan vi erbjuda dig?")}
             </p>
             <h2 className="font-bold text-4xl md:text-7xl mt-3">{h1}</h2>
-            <p className="mt-3 text-xl">{h2}</p>
+            <p className="mt-3 text-lg">{h2}</p>
           </div>
         </div>
 
