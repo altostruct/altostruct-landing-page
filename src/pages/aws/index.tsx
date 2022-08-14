@@ -35,8 +35,8 @@ function Index() {
         image={<p>asd</p>}
         h1={t("Certifierade solution architects")}
         h2={t(
-          "Vi erbjuder utvecklare specialiserade i AWS. Vårt team av AWS konsulter är certifierade och placerade i Stockholm. " +
-            "Detta ger er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjort på cloud"
+          'Altostruct är en konsultbolag specialiserat inom AWS placerat i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
+            "Vi arbetar agilt och testdrivet för att ge er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjort på cloud"
         )}
         projects={[
           {
