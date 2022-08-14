@@ -18,12 +18,12 @@ function Index() {
   return (
     <>
       <SEO
-        title={"Altostruct - AWS consultants"}
+        title={"AWS consultants in Stockholm"}
         description="Senior AWS consultants located in Sweden"
         lang="en"
       />
       <SEO
-        title="Altostruct - AWS konsulter"
+        title="AWS konsulter i Stockholm"
         description="Seniora AWS konsulter i Sverige"
         lang="swe"
       />
@@ -36,7 +36,7 @@ function Index() {
         h1={t("Certifierade solution architects")}
         h2={t(
           'Altostruct är en konsultbolag specialiserat inom AWS placerat i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
-            "Vi arbetar agilt och testdrivet för att ge er möjligheten att snabbt utveckla mot cloud på era vilkor. Nedan kan du se några projekt gjort på cloud"
+            "Nedan kan du se några projekt gjort på cloud"
         )}
         projects={[
           {

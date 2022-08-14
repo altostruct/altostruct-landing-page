@@ -75,17 +75,19 @@ function CityHead(props: DefaultPageProps) {
           className="p-0 flex absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
           <div className="m-auto ">
-            <h1 className="md:text-9xl text-7xl font-bold font-sans">
+            <h1 className="md:text-8xl text-4xl font-bold font-sans">
               <div className="flex">
                 <span className="text-gray-800">
                   <Fade delay={500}>
-                    <span className="whitespace-nowrap">{t("we do ")}</span>
+                    <span className="whitespace-nowrap">
+                      {t("Think inside the ")}
+                    </span>
                     <span
                       className={
                         "overflow-hidden border-solid text-gradient-green"
                       }
                     >
-                      {techonology}.{/* <Slide delay={700} left> */}
+                      {t("cloud")}
                       {/* </Slide> */}
                     </span>
                   </Fade>
