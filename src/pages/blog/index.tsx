@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import useTranslation from "../../hooks/useTranslation";
 import { useLanguage, withLanguage } from "../../contexts/LanguageContext";
+import Footer from "@components/Footer/Footer";
 
 const usePosts = () => {
   const language = useLanguage();
@@ -105,7 +106,7 @@ function Blog() {
     <div>
       <Topbar></Topbar>
 
-      <div className="mt-24 flex  gap-10">
+      <div className=" mt-24 flex gap-10">
         <Content>
           <div className="m-auto ">
             {posts.map((post: any) => {
@@ -115,6 +116,7 @@ function Blog() {
           <p>{posts.length === 0 && t("Inga inlägg...")}</p>
         </Content>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
