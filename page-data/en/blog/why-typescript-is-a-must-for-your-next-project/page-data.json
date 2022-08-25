@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-tsx",
+    "path": "/en/blog/why-typescript-is-a-must-for-your-next-project",
+    "result": {"data":{"post":{"edges":[]},"posts":{"edges":[]}},"pageContext":{"slug":"why-typescript-is-a-must-for-your-next-project","postLang":"en-US","lang":"en"}},
+    "staticQueryHashes": ["63159454"]}
