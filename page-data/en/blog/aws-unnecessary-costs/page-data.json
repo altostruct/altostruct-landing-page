@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-blog-tsx",
     "path": "/en/blog/aws-unnecessary-costs",
-    "result": {"data":{"post":{"edges":[]},"posts":{"edges":[]}},"pageContext":{"slug":"aws-unnecessary-costs","postLang":"en-US","lang":"en"}},
+    "result": {"data":{"post":{"edges":[]},"posts":{"edges":[{"node":{"slug":"safety-aws","title":"Security - AWS","description":"Security - AWS","createDate":"2022/10/04","author":"Axel Hedengren & Gustav Rubbestad"}}]}},"pageContext":{"slug":"aws-unnecessary-costs","postLang":"en-US","lang":"en"}},
     "staticQueryHashes": ["63159454"]}
