@@ -59,7 +59,7 @@ const usePosts = () => {
   return data[language].edges;
 };
 function Blog() {
-  const { t } = useTranslation();
+  const { t, languagePrefix } = useTranslation();
   const languageMap = {};
   const edges = usePosts();
 
@@ -71,7 +71,7 @@ function Blog() {
     if (!props.title) return null;
 
     return (
-      <a className="p-2" href={"/blog/" + props.slug}>
+      <a className="p-2" href={languagePrefix + "blog/" + props.slug}>
         <div className="flex items-center gap-2 md:gap-12">
           <div className="h-fit flex-1">
             <p className="font-medium">{props.author}</p>
