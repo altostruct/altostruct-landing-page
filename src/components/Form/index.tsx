@@ -38,6 +38,7 @@ function Form() {
       // if (!input.message) errors.push("Provide a message!");
 
       if (errors.length === 0) return null;
+
       return errors;
     };
 
@@ -64,12 +65,8 @@ function Form() {
         form.current,
         "user_k0ZJNxep5Jd9wlP37YY93"
       );
-
-      alert(
-        t(
-          "Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈",
-          { email: values.email }
-        )
+      window.location.replace(
+        "/events/reached-out?email=" + encodeURI(values.email!)
       );
     } catch (error) {
       console.error(error);
