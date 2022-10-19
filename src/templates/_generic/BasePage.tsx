@@ -176,7 +176,7 @@ function DefaultPage(props: DefaultPageProps) {
                 ></Cite>
                 <Cite
                   cite={t(
-                    "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån" +
+                    "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån " +
                       "infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
                   )}
                   author={t("Erik Standin Pers - Founder Foodfacts")}

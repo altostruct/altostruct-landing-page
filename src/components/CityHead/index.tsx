@@ -8,15 +8,11 @@ import React from "react";
 import useTranslation from "../../hooks/useTranslation";
 import AnimatedLogo from "@components/AnimatedLogo";
 
-interface DefaultPageProps {
-  mainCategory: string;
-  techonology: string;
-}
+interface DefaultPageProps {}
 
 function CityHead(props: DefaultPageProps) {
-  const { mainCategory, techonology } = props;
   const isSSR = typeof globalThis.window === "undefined";
-  const { t, languagePrefix } = useTranslation();
+  const { t } = useTranslation();
 
   function Card(props: { color: string; title: string; description: string }) {
     const { title, description, color } = props;
