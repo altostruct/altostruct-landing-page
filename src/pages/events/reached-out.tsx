@@ -6,6 +6,12 @@ import useTranslation from "../../hooks/useTranslation";
 
 function ReachedOut() {
   const { t } = useTranslation();
+
+  const [email, setEmail] = useState<string>();
+  useEffect(() => {
+    if (!email) setEmail(new URLSearchParams(location.search).get("email")!);
+  }, [email]);
+
   const url = new URLSearchParams(location.search);
 
   return (
@@ -16,7 +22,7 @@ function ReachedOut() {
           <h1 className="text-4xl">
             {t(
               "Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈",
-              { email: url.get("email") }
+              { email }
             )}
           </h1>
           <div className="flex justify-center mt-10 w-full">
