@@ -10,7 +10,7 @@ const Footer = () => {
           Kontakt: <a href="mailto:info@altostruct.se">info@altostruct.se</a>
         </p>
         <p>Org nr: 559244-1561</p>
-        <p>Address: Mäster Samuelsgatan 60, 111 21 Stockholm</p>
+        <p>Address: Stockholmsvägen 18, 181 50 Lidingö</p>
       </div>
       <div></div>
     </footer>

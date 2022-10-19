@@ -75,12 +75,13 @@ function CityHead(props: DefaultPageProps) {
           className="p-0 flex absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
           <div className="m-auto">
-            <h1 className="md:text-8xl text-4xl font-bold font-sans">
+            <h1 className="sm:text-6xl md:text-8xl text-6xl font-bold font-sans">
               <span className="text-gray-800">
                 <Fade delay={500}>
                   <span className="whitespace-nowrap">
                     {t("Think inside the ")}
                   </span>
+                  <br></br>
                   <span className={"border-solid text-gradient-green"}>
                     {t("cloud")}
                   </span>
@@ -90,7 +91,7 @@ function CityHead(props: DefaultPageProps) {
 
             <Fade delay={800}>
               <p className="text-black pt-6 text-md md:text-xl">
-                {t("Konsultbolaget som älskar cloud och webben")}
+                {t("Konsultbolaget som brinner för AWS och cloud")}
                 <br></br>
               </p>
             </Fade>

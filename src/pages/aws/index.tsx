@@ -33,7 +33,7 @@ function Index() {
         mainCategory={t("cloud")}
         techonology={t("aws")}
         image={<p>asd</p>}
-        h1={t("Certifierade solution architects")}
+        h1={t("Certifierade AWS specialister")}
         h2={t(
           'Altostruct är en konsultbolag specialiserat inom AWS placerat i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
             "Nedan kan du se några projekt gjort på cloud"
