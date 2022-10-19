@@ -12,8 +12,6 @@ function ReachedOut() {
     if (!email) setEmail(new URLSearchParams(location.search).get("email")!);
   }, [email]);
 
-  const url = new URLSearchParams(location.search);
-
   return (
     <div>
       <Topbar></Topbar>
