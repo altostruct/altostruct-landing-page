@@ -75,7 +75,7 @@ function CityHead(props: DefaultPageProps) {
           className="p-0 flex absolute left-1/2 text-center -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
           <div className="m-auto">
-            <h1 className="sm:text-6xl md:text-8xl text-6xl font-bold font-sans">
+            <h1 className="sm:text-5xl md:text-8xl text-5xl font-bold font-sans">
               <span className="text-gray-800">
                 <Fade delay={500}>
                   <span className="whitespace-nowrap">
