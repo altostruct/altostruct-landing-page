@@ -124,6 +124,7 @@ function Page() {
               );
             })}
           </div>
+
           <div className="bg-dark-dotted mt-24 rounded-3xl">
             <div className="text-white p-10 py-32 grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="flex">
