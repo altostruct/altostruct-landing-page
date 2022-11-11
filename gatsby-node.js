@@ -62,32 +62,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const roads = await buildRoads("assets/roads.png");
   fs.writeFileSync("./src/assets/roads.json", JSON.stringify(roads));
 
-  const { data: widgetsResponse } = await graphql(`
-    {
-      widgets: allContentfulWidget {
-        edges {
-          node {
-            contentful_id
-            code {
-              code
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  for (const widget of widgetsResponse.widgets.edges) {
-    if (!fs.existsSync("./src/assets/contentful/")) {
-      fs.mkdirSync("./src/assets/contentful/", { recursive: true });
-    }
-
-    fs.writeFileSync(
-      "./src/assets/contentful/" + widget.node.contentful_id + ".tsx",
-      widget.node.code.code
-    );
-  }
-
   const { data } = await graphql(`
     query {
       allContentfulPost(
