@@ -6,7 +6,6 @@ import Form from "@components/Form";
 import SEO from "@components/SEO/SEO";
 import Topbar from "@components/Topbar/Topbar";
 import classNames from "classnames";
-import React from "react";
 import { withLanguage } from "../contexts/LanguageContext";
 import { Cite } from "../templates/_generic/BasePage";
 import useTranslation from "../hooks/useTranslation";

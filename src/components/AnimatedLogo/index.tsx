@@ -5,9 +5,19 @@ interface AnimatedLogo {
   repeat?: boolean;
 }
 
+const p = () => {
+  const div = document.createElement("div");
+  div.style.backgroundColor = "white";
+  div.style.transition = "all 1s";
+  div.style.backgroundColor = "red";
+};
+
 function AnimatedLogo(props: AnimatedLogo) {
   const { scale = 1, repeat } = props;
   const ref = React.useRef<SVGSVGElement>();
+
+  let i: any;
+  const a = () => void (i = 10);
 
   function restartAnimation(reverse?: boolean) {
     const current = ref.current;

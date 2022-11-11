@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+  padding: 4em 0;
+  background: rgba(255, 255, 255);
+  position: relative;
+
+  * {
+    margin: 0;
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.7em;
+  }
+
+  padding-left: 10%;
+  padding-right: 10%;
+
+  div:nth-child(1) {
+    text-align: left;
+  }
+
+  div:nth-child(2) {
+    text-align: right;
+  }
+}

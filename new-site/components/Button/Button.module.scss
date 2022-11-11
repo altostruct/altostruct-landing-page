@@ -1,0 +1,70 @@
+$small-screen: 720px;
+
+.button {
+  border: none;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.6em 2.2em;
+  cursor: pointer;
+  transition: all 50ms ease;
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+.primary {
+  background: var(--primary-color);
+  color: var(--primary-color-inv);
+}
+
+.primary:hover {
+  transform: scale(1.05);
+}
+
+.secondary:hover {
+  transform: scale(1.05);
+}
+
+.secondary {
+  color: var(--primary-color);
+  padding: 0;
+}
+
+.shiny {
+  position: relative;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    var(--theme-ui-colors-magenta-50, #bc027f) 0%,
+    var(--theme-ui-colors-purple-50, #8a4baf) 100%
+  );
+
+  z-index: 1;
+}
+
+.shiny::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    -90deg,
+    var(--theme-ui-colors-magenta-50, #bc027f) 0%,
+    var(--theme-ui-colors-purple-50, #8a4baf) 100%
+  );
+  z-index: -1;
+  transition: opacity 0.25s linear;
+  opacity: 0;
+}
+
+.shiny:hover::before {
+  opacity: 1;
+}

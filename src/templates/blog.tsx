@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense, useEffect, useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
@@ -35,8 +35,24 @@ export const query = graphql`
           body {
             raw
             references {
-              contentful_id
-              gatsbyImageData(width: 900)
+              ... on ContentfulAsset {
+                __typename
+                contentful_id
+                gatsbyImageData(width: 900)
+              }
+              ... on ContentfulWidget {
+                __typename
+                contentful_id
+                code {
+                  internal {
+                    content
+                    description
+                    ignoreType
+                    mediaType
+                  }
+                  id
+                }
+              }
             }
           }
 
@@ -63,6 +79,16 @@ export const query = graphql`
     }
   }
 `;
+
+function NestedImport(props: { path: string }) {
+  import(`${props.path}`).then((v) => {
+    console.log("IMPORT!!");
+    console.log(v);
+    return v.default;
+  });
+
+  return <Suspense fallback={<p>asd</p>}></Suspense>;
+}
 
 const BlogComponent = ({ data }: any) => {
   const language = useLanguage();
@@ -96,17 +122,26 @@ const BlogComponent = ({ data }: any) => {
         );
       },
 
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
+        console.log(node);
         const assetId = node.data.target.sys.id;
         const ref = post.body.references.find(
           (ref: any) => ref.contentful_id === assetId
         );
 
-        // const image = post.references.find(v=>v.contentful_id === node.data)
-        // return   <GatsbyImage alt="" image={post.image.gatsbyImageData} />
-        return (
-          <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
-        );
+        return <NestedImport path={`../assets/contentful/${assetId}.tsx`} />;
+      },
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        if (node.data.__typename == "") {
+          const assetId = node.data.target.sys.id;
+          const ref = post.body.references.find(
+            (ref: any) => ref.contentful_id === assetId
+          );
+
+          return (
+            <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
+          );
+        }
 
         try {
           const alt = node.data.target.fields.title[languageMap[language]];
