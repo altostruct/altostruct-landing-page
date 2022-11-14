@@ -10,9 +10,10 @@ import classNames from "classnames";
 import Link from "next/link";
 import Brand from "components/Brand/Brand";
 import LanguageSelector from "./LanguageSelector/LanguageSelector";
-import useTranslation from "contexts/useTranslation";
+import useTranslation from "hooks/useTranslation";
 
-const Topbar = () => {
+const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
+  const { transparent = false, fixed = true } = props;
   const { t } = useTranslation();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -50,7 +51,11 @@ const Topbar = () => {
       <header
         className={classNames(styles.topbar, {
           "bg-white": true,
-          border: !isAtTop,
+          "bg-transparent": transparent,
+          border: transparent || !isAtTop,
+          "border-black": transparent,
+          fixed: fixed,
+          absolute: !fixed,
         })}
       >
         <nav>

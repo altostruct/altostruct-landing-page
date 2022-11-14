@@ -1,0 +1,123 @@
+{
+  "metadata": { "tags": [] },
+  "sys": {
+    "space": {
+      "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+    },
+    "id": "XVSSX2mC3OOchkiDtdlXw",
+    "type": "Entry",
+    "createdAt": "2022-11-08T14:49:22.392Z",
+    "updatedAt": "2022-11-08T14:50:45.375Z",
+    "environment": {
+      "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+    },
+    "revision": 4,
+    "contentType": {
+      "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "slug": "aws-pricing-cost-and-pricing",
+    "title": "Are you paying too much for your AWS services?",
+    "description": "Have you ever felt that you cloud costs do not match you expectations? Like you are paying way more than what you initially exepected?",
+    "image": {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+        },
+        "id": "3ecolmuYY9DoI3QK5f6SFz",
+        "type": "Asset",
+        "createdAt": "2022-11-08T10:22:55.480Z",
+        "updatedAt": "2022-11-08T10:22:55.480Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 1,
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "AWS Cost",
+        "description": "",
+        "file": {
+          "url": "//images.ctfassets.net/h0pyj460a6t3/3ecolmuYY9DoI3QK5f6SFz/8b90c777251c12841e09fa426f6099b1/AdobeStock_166556126.jpeg",
+          "details": {
+            "size": 908618,
+            "image": { "width": 4743, "height": 3162 }
+          },
+          "fileName": "AdobeStock_166556126.jpeg",
+          "contentType": "image/jpeg"
+        }
+      }
+    },
+    "body": {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Have you ever felt that your cloud costs do not match your expectations? Like you are paying way more than what you initially expected?",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {
+            "target": {
+              "metadata": { "tags": [] },
+              "sys": {
+                "space": {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Space",
+                    "id": "h0pyj460a6t3"
+                  }
+                },
+                "id": "1ahxR6s5OunkPD8HnPKxK1",
+                "type": "Entry",
+                "createdAt": "2022-11-08T10:34:40.807Z",
+                "updatedAt": "2022-11-08T14:49:09.557Z",
+                "environment": {
+                  "sys": {
+                    "id": "master",
+                    "type": "Link",
+                    "linkType": "Environment"
+                  }
+                },
+                "revision": 3,
+                "contentType": {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "ContentType",
+                    "id": "widget"
+                  }
+                },
+                "locale": "en-US"
+              },
+              "fields": {
+                "name": "aws-calculator",
+                "code": "import \"react\";\nimport { useState } from \"react\";\nimport \"./styles.css\";\nimport {\n  Chart as ChartJS,\n  CategoryScale,\n  LinearScale,\n  BarElement,\n  Title,\n  Tooltip,\n  Legend,\n  ChartData\n} from \"chart.js\";\nimport { Bar } from \"react-chartjs-2\";\n\nChartJS.register(\n  CategoryScale,\n  LinearScale,\n  BarElement,\n  Title,\n  Tooltip,\n  Legend\n);\n\nexport const options = {\n  responsive: true,\n  plugins: {\n    legend: {\n      position: \"top\" as const\n    },\n    title: {\n      display: true,\n      text: \"Chart.js Bar Chart\"\n    }\n  }\n};\n\nconst REQUEST_DURATION = 0.5;\nconst REQUEST_PER_MINUTE = 10;\nconst CPU_PER_USER = 0.05; // vCPU\nconst INSTANCE_SIZE = 4; // GB\nconst EC2_PRICE_PER_MONTH = 20;\nconst FARGATE_PRICE_PER_MONTH = 45;\n\nfunction calculateLambdaCosts(users: number, minutes: number) {\n  const costPerSecond = 0.0000666668;\n  return Math.floor(\n    users * minutes * REQUEST_PER_MINUTE * REQUEST_DURATION * costPerSecond\n  );\n}\n\nfunction calculateEc2(users: number, minutes: number, maxUser: number) {\n  const overlappingMinutes = Math.max(\n    maxUser * REQUEST_DURATION,\n    (minutes * users * REQUEST_DURATION) / (24 * 60)\n  );\n  const requiredCPU = overlappingMinutes * CPU_PER_USER;\n  return Math.ceil(requiredCPU / INSTANCE_SIZE) * EC2_PRICE_PER_MONTH;\n}\n\nfunction calculateFargate(users: number, minutes: number) {\n  const overlappingMinutes = Math.max(\n    (minutes * users * REQUEST_DURATION) / (24 * 60)\n  );\n  const requiredCPU = overlappingMinutes * CPU_PER_USER;\n  return Math.ceil(requiredCPU / INSTANCE_SIZE) * FARGATE_PRICE_PER_MONTH;\n}\n\nfunction formatMinutes(minutes: number): string {\n  const h = Math.floor(minutes / 60);\n  const m = minutes % 60;\n\n  const minuteFormat = (m: number) => {\n    if (m == 0) return undefined;\n    if (m == 1) return \"1 minute\";\n    if (m > 1) return `${m} minutes`;\n  };\n\n  const hourFormat = (h: number) => {\n    if (h == 0) return undefined;\n    if (h == 1) return \"1 hour\";\n    if (h > 1) return `${h} hour`;\n  };\n\n  return [hourFormat(h), minuteFormat(m)].filter(Boolean).join(\" and \");\n}\n\nexport default function () {\n  const [users, setUsers] = useState<number>(400);\n  const [duration, setDuration] = useState<number>(100);\n  const [maxUsers, setMaxUsers] = useState<number>(0);\n  const minMaxUsers = 10;\n\n  const ec2Cost = calculateEc2(users, duration, (maxUsers / 100) * users);\n  const lambdaCost = calculateLambdaCosts(users, duration);\n  const fargateCost = calculateFargate(users, duration);\n\n  const labels = [\n    `EC2(${ec2Cost}$)`,\n    `Lambda(${lambdaCost}$)`,\n    `Fargate(${fargateCost}$)`\n  ];\n\n  const data: ChartData<\"bar\", number[], string> = {\n    labels,\n\n    datasets: [\n      {\n        label: \"Cost(USD)\",\n        data: [\n          calculateEc2(users, duration, (maxUsers / 100) * users),\n          calculateLambdaCosts(users, duration),\n          calculateFargate(users, duration)\n        ],\n        backgroundColor: \"rgba(255, 99, 132, 0.5)\"\n      }\n    ]\n  };\n\n  return (\n    <>\n      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js\"></script>\n\n      <div style={{ width: \"100%\", display: \"flex\", justifyContent: \"center\" }}>\n        <Bar\n          style={{\n            height: \"500px\",\n            width: \"100%\"\n          }}\n          options={options}\n          data={data}\n        />\n      </div>\n      <form style={{ display: \"flex\", justifyContent: \"space-between\" }}>\n        <div\n          style={{\n            display: \"flex\",\n            flexDirection: \"column\",\n            justifyContent: \"center\"\n          }}\n        >\n          <p>Daily active users</p>\n          <input\n            value={users}\n            onChange={(ev) => setUsers(ev.target.value as any)}\n            min={25}\n            step={25}\n            max={5000}\n            name=\"users\"\n            type=\"range\"\n          />\n          <br />\n          {users}\n        </div>\n        <div\n          style={{\n            display: \"flex\",\n            flexDirection: \"column\",\n            justifyItems: \"center\"\n          }}\n        >\n          <p>Average user session</p>\n          <input\n            value={duration}\n            onChange={(ev) => setDuration(ev.target.value as any)}\n            step={10}\n            min={0}\n            max={12 * 60}\n            name=\"time\"\n            type=\"range\"\n          />\n          <br />\n          {formatMinutes(duration)}\n        </div>\n        <div\n          style={{\n            display: \"flex\",\n            flexDirection: \"column\",\n            justifyItems: \"center\"\n          }}\n        >\n          <p>% of users at one time</p>\n          <input\n            value={maxUsers}\n            onChange={(ev) => setMaxUsers(ev.target.value as any)}\n            step={10}\n            min={0}\n            max={100}\n            name=\"time\"\n            type=\"range\"\n          />\n          <br />\n          {maxUsers || minMaxUsers}\n        </div>\n      </form>\n    </>\n  );\n}\n"
+              }
+            }
+          },
+          "content": [],
+          "nodeType": "embedded-entry-block"
+        },
+        {
+          "data": {},
+          "content": [
+            { "data": {}, "marks": [], "value": "", "nodeType": "text" }
+          ],
+          "nodeType": "paragraph"
+        }
+      ],
+      "nodeType": "document"
+    },
+    "isPublished": true
+  }
+}

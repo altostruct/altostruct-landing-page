@@ -4,50 +4,52 @@
     "space": {
       "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
     },
-    "id": "XVSSX2mC3OOchkiDtdlXw",
+    "id": "5l4Sxt1ixELm93OO2FsnyY",
     "type": "Entry",
-    "createdAt": "2022-11-08T14:49:22.392Z",
-    "updatedAt": "2022-11-08T14:50:45.375Z",
+    "createdAt": "2022-08-10T11:37:34.500Z",
+    "updatedAt": "2022-08-10T17:00:20.893Z",
     "environment": {
       "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
     },
-    "revision": 4,
+    "revision": 9,
     "contentType": {
       "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
     },
-    "locale": "sv"
+    "locale": "en-US"
   },
   "fields": {
-    "slug": "aws-pricing-cost-and-pricing",
+    "slug": "aws-unnecessary-costs",
     "image": {
       "metadata": { "tags": [] },
       "sys": {
         "space": {
           "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
         },
-        "id": "3ecolmuYY9DoI3QK5f6SFz",
+        "id": "5qFhPhBYfqFX8UPvdxjBjZ",
         "type": "Asset",
-        "createdAt": "2022-11-08T10:22:55.480Z",
-        "updatedAt": "2022-11-08T10:22:55.480Z",
+        "createdAt": "2022-08-10T12:56:20.954Z",
+        "updatedAt": "2022-08-10T12:56:20.954Z",
         "environment": {
           "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
         },
         "revision": 1,
-        "locale": "sv"
+        "locale": "en-US"
       },
       "fields": {
-        "title": "AWS Kostnad",
+        "title": "AdobeStock 79570227 Preview",
+        "description": "Unnecessary costs. ",
         "file": {
-          "url": "//images.ctfassets.net/h0pyj460a6t3/3ecolmuYY9DoI3QK5f6SFz/0c79ce4c57e2504a03034d37e2b12f22/AdobeStock_166556126.jpeg",
+          "url": "//images.ctfassets.net/h0pyj460a6t3/5qFhPhBYfqFX8UPvdxjBjZ/fa85ab4f3706e8fc776ddbf2fd67d593/AdobeStock_79570227_Preview.jpeg",
           "details": {
-            "size": 908618,
-            "image": { "width": 4743, "height": 3162 }
+            "size": 379225,
+            "image": { "width": 1000, "height": 667 }
           },
-          "fileName": "AdobeStock_166556126.jpeg",
+          "fileName": "AdobeStock_79570227_Preview.jpeg",
           "contentType": "image/jpeg"
         }
       }
     },
-    "isPublished": false
+    "author": "Axel Hedengren",
+    "createDate": "2022-08-10T13:00+02:00"
   }
 }

@@ -5,27 +5,32 @@
   "scripts": {
     "_prebuild": "node scripts/prebuild.mjs",
     "dev": "next dev",
-    "build": "next build",
+    "build": "rm -rf out && next build && next export && mv out/sv/blog out/blog",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "@fontsource/poppins": "^4.5.10",
     "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.8",
+    "chart.js": "^3.9.1",
     "emailjs-com": "^3.2.0",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.2",
     "next": "13.0.2",
     "react": "18.2.0",
+    "react-chartjs-2": "^4.3.1",
     "react-dom": "18.2.0",
     "react-reveal": "^1.2.2",
+    "react-tagcloud": "^2.3.1",
     "typescript": "4.8.4"
   },
   "devDependencies": {
+    "@types/react-tagcloud": "^1.1.7",
     "autoprefixer": "^10.4.13",
     "contentful": "^9.2.10",
     "dotenv": "^16.0.3",

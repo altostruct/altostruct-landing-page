@@ -1,1 +1,252 @@
-{"metadata":{"tags":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"h0pyj460a6t3"}},"id":"PC89riclaOHp9QF8fiwjN","type":"Entry","createdAt":"2022-08-04T17:05:49.621Z","updatedAt":"2022-10-10T16:02:53.902Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"revision":32,"contentType":{"sys":{"type":"Link","linkType":"ContentType","id":"kunskapsbas"}},"locale":"en-US"},"fields":{"slug":"gdpr-cloud","title":"Cloud and sensitive data - What to consider","description":"Cloud and sensitive data - What to consider","image":{"metadata":{"tags":[]},"sys":{"space":{"sys":{"type":"Link","linkType":"Space","id":"h0pyj460a6t3"}},"id":"1axe0YDptymVVXRddZIQTM","type":"Asset","createdAt":"2022-08-04T18:55:56.115Z","updatedAt":"2022-08-04T19:35:59.064Z","environment":{"sys":{"id":"master","type":"Link","linkType":"Environment"}},"revision":3,"locale":"en-US"},"fields":{"title":"GDPR-CLOUD","description":"Image of EU under locked","file":{"url":"//images.ctfassets.net/h0pyj460a6t3/1axe0YDptymVVXRddZIQTM/a32475e63eee7025bd9e938100dcd4d6/AdobeStock_181379251.jpeg","details":{"size":6589531,"image":{"width":6000,"height":3907}},"fileName":"AdobeStock_181379251.jpeg","contentType":"image/jpeg"}}},"body":{"nodeType":"document","data":{},"content":[{"nodeType":"heading-1","data":{},"content":[{"nodeType":"text","value":"Cloud and sensitive data - What to consider","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"More and more companies have started to use Cloud to store their data. This is a considerable advantage for many companies, but it also means that they have to choose and decide between many storage solutions. Different companies are in need of different solutions depending on what kind of data they will be storing.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"The discussion surrounding how sensitive data should be handled is ongoing, and regulatory frameworks from suppliers and governments, such as GDPR, play a huge part in it. For companies, it is crucial to make sure that the information that is stored in the Cloud is secure and available at all times. How and where you store the data can affect this quite a bit, so it is important that you are aware of what the different solutions for your company are available. To get you started, this article will bring up some pros and cons of different cloud storage solutions.","marks":[],"data":{}}]},{"nodeType":"heading-2","data":{},"content":[{"nodeType":"text","value":"Cloud act and GDPR","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Frameworks regarding how cloud suppliers should handle data is a constant ongoing discussion. New decisions are made regularly, which makes it difficult to stay updated. One of the larger discussions regards the Cloud act and the EU:s GDPR. The Cloud act is an American law that was passed in 2018 that is supposed to make it easier for the US government to request data from American companies, no matter where in the world the data is stored. The law helps to make the transfer of data easier for the government by working around the MLAT agreement which previously existed. The law also implies that countries outside of the US get the opportunity to request data from American companies. ","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"The EU:s version of this is GDPR. GDPR plays a major role in this since GDPR drastically limits the transfer of data that is physically stored within EU:s borders. GDPR demands that an international agreement is in place in order to transfer data in the way that the Cloud act aspires to. Such an agreement does not exist at the present time, which means that, currently, GDPR and the Cloud act are not entirely in sync regarding the transfer of data.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"This situation between the EU and the US is an indicator that the question of how data should be handled in the Cloud, and what rules and laws are in place in different countries, is something to consider carefully when selecting a cloud supplier. ","marks":[],"data":{}}]},{"nodeType":"heading-2","data":{},"content":[{"nodeType":"text","value":"Swedish Cloud Suppliers and \"multi-cloud\" storage","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"When it comes to datamanagement, Swedish Cloud suppliers have a clear advantage to the international \"cloudgiants\". The advantage is that Swedish suppliers do not have to deal with the Cloud act because they are protected by the Swedish constitution. If your company stores a lot of sensitive data, this could play a big part in your selection of cloud supplier. It should be noted though that the Swedish suppliers cannot match the larger international supplier when it comes to size and the amount of services offered, which also is an important factor to consider when choosing a Cloud supplier.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Another aspect to consider is a so called \"multi-cloud\" storaging solution. As the name implies, this is means that you store your data using more than one Cloud supplier. One reason for this could be that different suppliers specialize i different areas of data, which fits certain companies better. However, one question that arises with the \"multi-cloud\" solution is the security aspect of it. When the data is stored at different places it can be harder to keep track of it as well as what frameworks need to considered.","marks":[],"data":{}}]},{"nodeType":"heading-2","data":{},"content":[{"nodeType":"text","value":"What to consider as a customer","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"Something that quickly becomes apparent is that the solution which will fit your company","marks":[],"data":{}},{"nodeType":"text","value":"'s needs best will depend on many various factors. In other words, no one solution will fit every one. We believe that the best thing to do, as a customer, is to be aware and updated on where your data is stored and what kind of access you have to it. To analyze and discuss what solution is best for your company's specific needs can save both time and money. At Altostruct, we have a great deal of experience of working with Cloud, therefore, we are highly invested in these kinds of issues, since they affect us on a daily basis. We are determined to offer our clients solutions that are specifically adjusted to their needs and wishes.","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]},{"nodeType":"paragraph","data":{},"content":[{"nodeType":"text","value":"","marks":[],"data":{}}]}]},"author":"Axel Hedengren","createDate":"2022-08-03T00:00+02:00","isPublished":false}}
+{
+  "metadata": { "tags": [] },
+  "sys": {
+    "space": {
+      "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+    },
+    "id": "PC89riclaOHp9QF8fiwjN",
+    "type": "Entry",
+    "createdAt": "2022-08-04T17:05:49.621Z",
+    "updatedAt": "2022-10-10T16:02:53.902Z",
+    "environment": {
+      "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+    },
+    "revision": 32,
+    "contentType": {
+      "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
+    },
+    "locale": "sv"
+  },
+  "fields": {
+    "slug": "gdpr-cloud",
+    "title": "Molnet och känslig data - Vad bör man tänka på?",
+    "description": "Molnet och känslig data - Vad bör man tänka på?",
+    "image": {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+        },
+        "id": "1axe0YDptymVVXRddZIQTM",
+        "type": "Asset",
+        "createdAt": "2022-08-04T18:55:56.115Z",
+        "updatedAt": "2022-08-04T19:35:59.064Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 3,
+        "locale": "sv"
+      },
+      "fields": {
+        "title": "GDPR-CLOUD",
+        "description": "GDPR-CLOUD",
+        "file": {
+          "url": "//images.ctfassets.net/h0pyj460a6t3/1axe0YDptymVVXRddZIQTM/39540edc0cb9f1c163ce383be0266f1b/AdobeStock_181379251.jpeg",
+          "details": {
+            "size": 6589531,
+            "image": { "width": 6000, "height": 3907 }
+          },
+          "fileName": "AdobeStock_181379251.jpeg",
+          "contentType": "image/jpeg"
+        }
+      }
+    },
+    "body": {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Molnet och känslig data - Vad bör man tänka på?",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "heading-1"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Fler och fler företag rör sig mot att lagra sin data i molnet. Detta är självklart en stor möjlighet och fördel för många företag, men det innebär också att de behöver ta ställning till olika typer av lösningar gällande molnlagring. Olika företag är i behov av olika former av molnlagring beroende på vilken typ av företag det gäller och vilken typ av data som kommer att lagras.",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Diskussionen om hur känslig data bör hanteras är konstant pågående och regleringar från leverantörer och myndigheter som till exempel GDPR kan påverka detta en hel del. Som företag är det av yttersta vikt att kunna säkerställa att den information som lagras i molnet är säker och lättillgänglig. Faktorer som hur och var man lagrar sin data kan nämligen spela stor roll. Vi ska i detta inlägg ta upp för- och nackdelar med olika lösningar för att du som kund ska kunna börja tänka kring vilken lösning som skulle passa bäst för just ditt företag.",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Cloud act och GDPR",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "heading-2"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Regleringar gällande hur molnleverantörer bör hantera data som lagras i molnet är en konstant pågående diskussion. Beslut tas kontinuerligt och det kan vara svårt att navigera sig genom detta. En av de större diskussionerna som pågår gäller  Cloud act och EU:s GDPR. Cloud act är en amerikansk lag som gick igenom 2018 som ska underlätta för amerikanska myndigheter att begära ut data från amerikanska bolag, oavsett vilken fysisk plats i världen denna data är lagrad. Lagen underlättar överföringen av information för amerikanska myndigheter genom att kringgå MLAT-avtalet som tidigare existerat. Lagen innebär också att andra länder utöver USA kan få möjligheten att begära ut data från amerikanska bolag.",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {
+            "target": {
+              "metadata": { "tags": [] },
+              "sys": {
+                "space": {
+                  "sys": {
+                    "type": "Link",
+                    "linkType": "Space",
+                    "id": "h0pyj460a6t3"
+                  }
+                },
+                "id": "6YqeOjKdplcuLh37ylQz4K",
+                "type": "Asset",
+                "createdAt": "2022-08-04T20:49:37.007Z",
+                "updatedAt": "2022-08-04T20:49:37.007Z",
+                "environment": {
+                  "sys": {
+                    "id": "master",
+                    "type": "Link",
+                    "linkType": "Environment"
+                  }
+                },
+                "revision": 1,
+                "locale": "sv"
+              },
+              "fields": {
+                "title": "EU",
+                "description": "EU",
+                "file": {
+                  "url": "//images.ctfassets.net/h0pyj460a6t3/6YqeOjKdplcuLh37ylQz4K/1d010f7edb008b110cafd65c13a34be0/AdobeStock_504380754.jpeg",
+                  "details": {
+                    "size": 15899625,
+                    "image": { "width": 7360, "height": 4912 }
+                  },
+                  "fileName": "AdobeStock_504380754.jpeg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            }
+          },
+          "content": [],
+          "nodeType": "embedded-asset-block"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "EU:s motsvarighet till detta är GDPR. GDPR spelar en stor roll i detta eftersom GDPR kraftigt begränsar utlämnandet av data som fysiskt lagras innanför EU:s gränser. GDPR kräver att ett internationellt avtal finns på plats för att möjliggöra den typ av utlämnande av data som Cloud act aspirerar på. Något sådant avtal har inte än lyckats falla på plats vilket innebär att i dagsläget är GDPR och Cloud act fortfarande inte helt i samspel gällande utlämnande av data. ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Denna situation mellan EU och USA är en indikator på att frågan om hur information bör hanteras i molnet och vilka regler och lagar som gäller i olika länder är något som bör has i åtanke vid val av molnleverantör. ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Svenska molnleverantörer och \"multi-cloud\" lagring ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "heading-2"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "När det kommer till hanteringen av data har svenska molnleverantörer en klar fördel gentemot de internationella ”molnjättarna”. Svenska leverantörer omfattas nämligen inte av Cloud act utan skyddas i stället av svensk grundlag. Hanterar ditt företag mycket känslig information kan en sådan faktor spela stor roll vid val av leverantör. Det ska tilläggas dock att svenska molnleverantörer inte kan mäta sig med de större leverantörerna när det gäller storlek och mängden tjänster som erbjuds, vilket också kan vara nödvändigt att tänka på vid valet av leverantör.   ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "En annan aspekt att tänka på gällande molnlagring är en så kallad ”multi-cloud” lagring. Som namnet antyder innebär detta att man lagrar sin data hos flera olika molnleverantörer. En anledning för detta kan vara att olika leverantörer passar bättre för olika typer av data, och därmed kan underlätta saker för ett företag. Något som dock ofta dyker upp som tvivel gällande ”multi-cloud” är säkerhetsaspekten. Att ha företagets data lagrad på flera olika ställen kan göra det svårare att hålla koll på vad som gäller när det kommer till hanteringen av data hos de olika leverantörerna. ",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Hur bör man tänka som kund?",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "heading-2"
+        },
+        {
+          "data": {},
+          "content": [
+            {
+              "data": {},
+              "marks": [],
+              "value": "Något som förmodligen snabbt blir tydligt är att vilken lösning som kommer passa ett företag bäst beror på flera olika faktorer. Med andra ord kommer ingen enskild lösning passa alla. Vi tycker att det bästa man kan göra som kund är att vara medveten och insatt i var ens företagets data är lagrad och vilken tillgång man har till den. Att tänka över vilken lösning som kan tänkas vara bäst för ditt företags specifika behov kan spara både tid och pengar. Vi på Altostruct har lång erfarenhet av att arbeta med molnet och är därför oerhört engagerade i dessa frågor eftersom de påverkar stora delar av vårt arbete. Vi jobbar hårt för att de lösningar vi erbjuder våra kunder är specifikt anpassade efter deras behov och önskemål. \n",
+              "nodeType": "text"
+            }
+          ],
+          "nodeType": "paragraph"
+        }
+      ],
+      "nodeType": "document"
+    },
+    "author": "Axel Hedengren",
+    "createDate": "2022-08-03T00:00+02:00",
+    "isPublished": true
+  }
+}

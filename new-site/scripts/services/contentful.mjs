@@ -8,15 +8,21 @@ async function execute() {
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
-  // Fetches posts
-  const posts = await client.getEntries({
+  const enPosts = await client.getEntries({
     content_type: "kunskapsbas",
     limit: 999,
+    locale: "en-US",
   });
 
-  for (const item of posts.items) {
-    addData("contentful/posts/" + item.sys.id + ".json", JSON.stringify(item));
-  }
+  const swePosts = await client.getEntries({
+    content_type: "kunskapsbas",
+    limit: 999,
+    locale: "sv",
+  });
+
+  const allPosts = [...enPosts.items, ...swePosts.items];
+
+  addData("contentful/posts/all.json", JSON.stringify(allPosts));
 
   // Fetches posts
   const images = await client.getAssets({
@@ -31,6 +37,9 @@ async function execute() {
     addData("contentful/assets/" + item.sys.id + ".json", JSON.stringify(item));
     addData("contentful/assets/by/id/" + item.sys.id, buffer);
     addData("contentful/assets/by/name/" + item.fields.file.fileName, buffer);
+    addData("contentful/images/" + item.sys.id, buffer, {
+      folder: "public",
+    });
   }
 
   const reactWidgets = await client.getEntries({
@@ -39,7 +48,6 @@ async function execute() {
   });
 
   for (const item of reactWidgets.items) {
-    console.log(item);
     addData(
       "contentful/react-widgets/" + item.sys.id + ".tsx",
       item.fields.code

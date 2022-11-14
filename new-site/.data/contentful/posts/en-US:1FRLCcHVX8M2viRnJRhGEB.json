@@ -1,0 +1,76 @@
+{
+  "metadata": { "tags": [] },
+  "sys": {
+    "space": {
+      "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+    },
+    "id": "1FRLCcHVX8M2viRnJRhGEB",
+    "type": "Entry",
+    "createdAt": "2022-08-25T09:34:58.047Z",
+    "updatedAt": "2022-08-25T10:16:40.105Z",
+    "environment": {
+      "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+    },
+    "revision": 5,
+    "contentType": {
+      "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "slug": "why-typescript-is-a-must-for-your-next-project",
+    "image": {
+      "metadata": { "tags": [] },
+      "sys": {
+        "space": {
+          "sys": { "type": "Link", "linkType": "Space", "id": "h0pyj460a6t3" }
+        },
+        "id": "1kZQafb5e7Y0ZIant7i62c",
+        "type": "Asset",
+        "createdAt": "2022-08-25T10:15:33.412Z",
+        "updatedAt": "2022-08-25T10:15:33.412Z",
+        "environment": {
+          "sys": { "id": "master", "type": "Link", "linkType": "Environment" }
+        },
+        "revision": 1,
+        "locale": "en-US"
+      },
+      "fields": {
+        "title": "AdobeStock 247683881",
+        "description": "",
+        "file": {
+          "url": "//images.ctfassets.net/h0pyj460a6t3/1kZQafb5e7Y0ZIant7i62c/0bdffbdba4fd50562acb7b9f9f47285f/AdobeStock_247683881.jpeg",
+          "details": {
+            "size": 562717,
+            "image": { "width": 5477, "height": 2739 }
+          },
+          "fileName": "AdobeStock_247683881.jpeg",
+          "contentType": "image/jpeg"
+        }
+      }
+    },
+    "body": {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "content": [
+            { "data": {}, "marks": [], "value": "", "nodeType": "text" }
+          ],
+          "nodeType": "paragraph"
+        },
+        {
+          "data": {},
+          "content": [
+            { "data": {}, "marks": [], "value": "", "nodeType": "text" }
+          ],
+          "nodeType": "paragraph"
+        }
+      ],
+      "nodeType": "document"
+    },
+    "author": "Axel Hedengren",
+    "createDate": "2022-08-25T00:00+02:00",
+    "isPublished": false
+  }
+}

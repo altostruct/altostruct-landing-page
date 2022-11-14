@@ -7,7 +7,7 @@ import Content from "components/Content";
 import Footer from "components/Footer/Footer";
 import Form from "components/Form";
 import Topbar from "components/Topbar/Topbar";
-import useTranslation from "contexts/useTranslation";
+import useTranslation from "hooks/useTranslation";
 
 export default function Home() {
   const { t } = useTranslation();

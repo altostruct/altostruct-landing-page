@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 import styles from "./Form.module.scss";
 import Button from "components/Button/Button";
 import classNames from "classnames";
-import useTranslation from "contexts/useTranslation";
+import useTranslation from "hooks/useTranslation";
 interface FormInput {
   fullName?: string;
   email?: string;

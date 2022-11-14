@@ -14,6 +14,11 @@ $dot-space: 25px;
 $small-screen: 720px;
 $mid-screen: 920px;
 
+h1 {
+  letter-spacing: -0.5px;
+  line-height: 95%;
+}
+
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
@@ -539,4 +544,23 @@ p {
 }
 .fill-gradient-yellow {
   fill: url(#header-shape-gradient) rgb(116, 104, 104);
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+.animate-delay-10000 {
+  animation-delay: 600ms;
 }

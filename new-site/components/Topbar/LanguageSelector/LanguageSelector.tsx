@@ -5,7 +5,7 @@ import englishIcon from "./assets/usFlag.png";
 import { useRouter } from "next/router";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import useTranslation from "contexts/useTranslation";
+import useTranslation from "hooks/useTranslation";
 
 interface LanguageSelectorProps {
   expanded?: boolean;

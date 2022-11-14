@@ -37,7 +37,12 @@ const Button = (props: ButtonProps) => {
   return LinkWrapper(
     <button
       type={formAction}
-      className={classNames(className, style.button, style[type])}
+      className={classNames(
+        className,
+        style.button,
+        style[type],
+        "rounded-3xl"
+      )}
     >
       {children} {">"}
     </button>

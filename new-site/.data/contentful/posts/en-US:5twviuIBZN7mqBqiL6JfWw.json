@@ -15,10 +15,23 @@
     "contentType": {
       "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
     },
-    "locale": "sv"
+    "locale": "en-US"
   },
   "fields": {
     "slug": "testnew",
+    "body": {
+      "data": {},
+      "content": [
+        {
+          "data": {},
+          "content": [
+            { "data": {}, "marks": [], "value": "testbody", "nodeType": "text" }
+          ],
+          "nodeType": "paragraph"
+        }
+      ],
+      "nodeType": "document"
+    },
     "author": "William",
     "createDate": "2022-08-12T00:00+02:00"
   }

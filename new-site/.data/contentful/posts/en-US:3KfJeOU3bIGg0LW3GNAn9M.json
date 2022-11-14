@@ -15,7 +15,11 @@
     "contentType": {
       "sys": { "type": "Link", "linkType": "ContentType", "id": "kunskapsbas" }
     },
-    "locale": "sv"
+    "locale": "en-US"
   },
-  "fields": { "slug": "aws-lambda-cdk", "author": "Erik Rehn" }
+  "fields": {
+    "slug": "aws-lambda-cdk",
+    "description": "Sick and tired of rewriting the same code over and over",
+    "author": "Erik Rehn"
+  }
 }

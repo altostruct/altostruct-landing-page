@@ -1,16 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import TWEEN, { Tween } from "@tweenjs/tween.js";
-import {
-  Plane,
-  PerspectiveCamera,
-  Line,
-  Box,
-  SpotLight,
-} from "@react-three/drei";
+import { Plane, PerspectiveCamera, SpotLight } from "@react-three/drei";
 import map from "../../../assets/houses.json";
 import roads from "../../../assets/roads.json";
-import CSSTransitionGroup from "react-transition-group"; // ES6
 import { Building, BuildingProps, Car } from "../utils";
 
 const dark = false;
@@ -244,7 +237,7 @@ export default function City() {
             parent.current.className = "fadeIn";
           }}
           style={{
-            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+            // backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
             width: "100%",
             height: window.innerHeight * 1.4,
             display: "inline-block",

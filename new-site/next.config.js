@@ -5,13 +5,31 @@ const nextConfig = {
 
   images: { unoptimized: true },
 
+  async exportPathMap(map) {
+    const newMap = {};
+
+    for (const key in map) {
+      if (key.startsWith(`/${this.i18n.defaultLocale}`)) {
+        let newKey = key.replace(`/${this.i18n.defaultLocale}`, "");
+        if (newKey === "") newKey = "/";
+        newMap[newKey] = map[key];
+      } else {
+        newMap[key] = map[key];
+      }
+    }
+
+    return {
+      ...newMap,
+    };
+  },
+
   i18n: {
     // These are all the locales you want to support in
     // your application
-    locales: ["en-US", "fr", "nl-NL"],
+    locales: ["en-US", "sv"],
     // This is the default locale you want to be used when visiting
     // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: "en-US",
+    defaultLocale: "sv",
 
     domains: [
       {

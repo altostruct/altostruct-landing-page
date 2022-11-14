@@ -1,13 +1,14 @@
 import * as fs from "fs";
 
-function addData(key, data) {
+function addData(key, data, config = {}) {
   if (!fs.existsSync(".data")) {
     fs.mkdirSync(".data");
   }
 
   const pathKey = key.split("/").slice(0, -1);
 
-  let path = ".data";
+  let oP = config.folder || ".data";
+  let path = oP;
 
   for (const p of pathKey) {
     path += "/" + p;
@@ -16,7 +17,7 @@ function addData(key, data) {
     }
   }
 
-  fs.writeFileSync(".data/" + key, data);
+  fs.writeFileSync(oP + "/" + key, data);
 }
 
 export default addData;

@@ -1,6 +1,4 @@
-import "react";
 import { useState } from "react";
-import "./styles.css";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,7 +7,7 @@ import {
   Title,
   Tooltip,
   Legend,
-  ChartData,
+  ChartData
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
@@ -26,13 +24,12 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: "top" as const,
+      position: "top" as const
     },
     title: {
-      display: true,
-      text: "Chart.js Bar Chart",
-    },
-  },
+      display: true
+    }
+  }
 };
 
 const REQUEST_DURATION = 0.5;
@@ -96,9 +93,9 @@ export default function () {
   const fargateCost = calculateFargate(users, duration);
 
   const labels = [
-    `EC2(${ec2Cost}$)`,
-    `Lambda(${lambdaCost}$)`,
-    `Fargate(${fargateCost}$)`,
+    `EC2 (${ec2Cost}$)`,
+    `Lambda (${lambdaCost}$)`,
+    `Fargate (${fargateCost}$)`
   ];
 
   const data: ChartData<"bar", number[], string> = {
@@ -106,26 +103,34 @@ export default function () {
 
     datasets: [
       {
-        label: "Cost(USD)",
+        label: "Cost per month (USD)",
         data: [
           calculateEc2(users, duration, (maxUsers / 100) * users),
           calculateLambdaCosts(users, duration),
-          calculateFargate(users, duration),
+          calculateFargate(users, duration)
         ],
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-    ],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.5)",
+          "rgba(255, 99, 2, 0.5)",
+          "rgba(0, 20, 202, 0.5)"
+        ]
+      }
+    ]
   };
 
   return (
     <>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-
-      <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
         <Bar
           style={{
             height: "500px",
-            width: "100%",
+            width: "100%"
           }}
           options={options}
           data={data}
@@ -136,10 +141,13 @@ export default function () {
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "center"
           }}
         >
-          <p>Daily active users</p>
+          <p style={{ fontSize: "8px" }}>
+            Daily active users <br></br>
+            <span style={{ fontSize: "16px" }}>{users}</span>
+          </p>
           <input
             value={users}
             onChange={(ev) => setUsers(ev.target.value as any)}
@@ -148,38 +156,41 @@ export default function () {
             max={5000}
             name="users"
             type="range"
-          />
-          <br />
-          {users}
+          />{" "}
         </div>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyItems: "center",
+            justifyItems: "center"
           }}
         >
-          <p>Average user session</p>
+          <p style={{ fontSize: "8px" }}>
+            Average user session
+            <br></br>
+            <span style={{ fontSize: "16px" }}>{formatMinutes(duration)}</span>
+          </p>
           <input
             value={duration}
             onChange={(ev) => setDuration(ev.target.value as any)}
             step={10}
-            min={0}
+            min={5}
             max={12 * 60}
             name="time"
             type="range"
           />
-          <br />
-          {formatMinutes(duration)}
         </div>
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyItems: "center",
+            justifyItems: "center"
           }}
         >
-          <p>% of users at one time</p>
+          <p style={{ fontSize: "8px" }}>
+            % of users at one time <br />
+            <span style={{ fontSize: "16px" }}> {maxUsers || minMaxUsers}</span>
+          </p>
           <input
             value={maxUsers}
             onChange={(ev) => setMaxUsers(ev.target.value as any)}
@@ -189,8 +200,6 @@ export default function () {
             name="time"
             type="range"
           />
-          <br />
-          {maxUsers || minMaxUsers}
         </div>
       </form>
     </>
