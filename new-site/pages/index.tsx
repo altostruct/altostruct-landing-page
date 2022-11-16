@@ -24,7 +24,7 @@ export default function Home() {
       ),
       title: "Foodfacts",
       description: t(
-        "Modern och skalbar applikation redo för framtiden. Altostruct ledde utvecklingen i samarbete med ett offshoreteam. Applikationen är byggd i AWS med React Native."
+        "Foodfacts hjälper dig göra medvetna val gällande mat och hälsa.  Altostruct ledde utvecklingen av en mobilapplikation i samarbete med ett offshoreteam. Applikationen är byggd på AWS med React Native."
       ),
     },
     {
@@ -37,14 +37,14 @@ export default function Home() {
       ),
       title: "Saluto",
       description: t(
-        "En Medtech startup med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
+        "En Medtech startup med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte till att bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
       ),
     },
     {
       img: null,
       title: "Tendium",
       description: t(
-        "Hemsida som tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct hjälpte lägga grunden till infrastruktur till deras microservice arkitektur."
+        "Hemsida som tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct la grunden för infrastrukturen till deras microservice arkitektur."
       ),
     },
     {
@@ -57,7 +57,7 @@ export default function Home() {
       ),
       title: "Nrlyze",
       description: t(
-        "Nrlyze har skapat ett system av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som tillåter de överse byggnaderna och få sin data presenterad i grafer."
+        "Nrlyze har skapat ett system av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som presenterar datan i grafer för att ge dem en överblick över värmesystemet."
       ),
     },
   ];
@@ -79,8 +79,8 @@ export default function Home() {
               </h2>
               <p className="mt-3 text-lg">
                 {t(
-                  'Altostruct är en konsultbolag specialiserat inom AWS placerat i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
-                    "Nedan kan du se några projekt gjort på cloud"
+                  'Altostruct är ett konsultbolag specialiserat inom AWS baserade i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
+                    "Nedan kan du se några projekt gjort i cloud."
                 )}
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function Home() {
               <div className="flex">
                 <div className="m-auto">
                   <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                    {t("Lyssna vad våra ")}
+                    {t("Se vad våra ")}
                     <i className="text-green-500">{t("grymma kunder ")}</i>
                     {t("har att säga")}
                   </h1>

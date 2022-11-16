@@ -44,7 +44,7 @@ function Town() {
 14.213519977306106
 893.780031752189
    */
-  const animation = new TWEEN.Tween(position)
+  new TWEEN.Tween(position)
     .to(
       {
         ...start,
@@ -52,7 +52,7 @@ function Town() {
         y: 394,
         z: 1074,
       },
-      50000
+      100000
     )
     // .easing(TWEEN.Easing.Exponential.In)
     .chain(
@@ -159,6 +159,7 @@ function Town() {
 
   return (
     <>
+      {/*@ts-ignore */}
       <PerspectiveCamera
         ref={camera}
         args={[400, 10, 10, 10000]}
@@ -191,6 +192,7 @@ function Town() {
         enableRotate
         enableZoom
       ></OrbitControls> */}
+      {/*@ts-ignore */}
       <Plane position={[0, 0, 0]} />
       <group>
         {map.map((b: any, index: any) => {

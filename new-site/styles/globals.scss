@@ -9,7 +9,7 @@ $dot-color: rgb(110, 110, 110);
 $dot-size: 1px;
 $dot-space: 25px;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap");
 
 $small-screen: 720px;
 $mid-screen: 920px;
@@ -22,7 +22,7 @@ h1 {
 :root {
   --bg-color: #ffffff;
   --text-color: #222222;
-  --primary-color: #2b50aa;
+  --primary-color: #0a0a0a;
   --primary-color-0-5: #ff650263;
   --primary-color-inv: white;
   --bg-dark: rgb(4, 1, 26);
@@ -40,6 +40,7 @@ body {
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   overflow-x: hidden;
+  font-weight: 300;
 }
 main {
   display: flex;

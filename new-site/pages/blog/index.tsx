@@ -137,9 +137,9 @@ function ABC(props: { posts: ContentfulPost[] }) {
               <p>{t("")}</p>
             </div>
             <div className="hidden md:flex w-1/2 font-mono leading-tight justify-center gap-12 font-extralight">
-              <div className="rounded-full w-16 h-16 animate-delay-0 animate-pulse bg-gray-800"></div>
-              <div className="rounded-full w-16 h-16 animate-delay-300 animate-pulse bg-gray-800"></div>
-              <div className="rounded-full w-16 h-16 animate-delay-500 animate-pulse bg-gray-800"></div>
+              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
+              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
+              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
             </div>
           </div>
         </Content>

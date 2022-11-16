@@ -167,6 +167,7 @@ function Town() {
 
   return (
     <>
+      {/*@ts-ignore */}
       <PerspectiveCamera
         ref={camera}
         args={[400, 10, 10, 10000]}
@@ -175,6 +176,7 @@ function Town() {
         position={[start.x, start.y, start.z]}
       />
 
+      {/*@ts-ignore */}
       <SpotLight
         ref={spotlight}
         position={[1000.808030841272, 300, 600.438980817084]}
@@ -183,7 +185,7 @@ function Town() {
         attenuation={200}
         distance={3000}
       ></SpotLight>
-
+      {/*@ts-ignore */}
       <SpotLight
         ref={spotlight2}
         position={[2000.808030841272, 300, 300.438980817084]}
@@ -201,6 +203,7 @@ function Town() {
       ></OrbitControls> */}
 
       <group ref={group}>
+        {/*@ts-ignore */}
         <Circle
           position={[0, 0, 0]}
           rotation={[Math.PI / 2, Math.PI, Math.PI / 2]}

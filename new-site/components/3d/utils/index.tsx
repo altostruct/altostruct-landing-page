@@ -52,6 +52,7 @@ export function Car(props: CarProps) {
   return (
     <group position={[startX, 5, startZ]}>
       <Line
+        // @ts-ignore
         color={colors[Math.floor(Math.random() * colors.length)]}
         gapSize={length - carLength}
         dashed
@@ -96,7 +97,12 @@ export function Building(props: BuildingProps) {
       }}
       position={[x + w / 2, h / 2, z + l / 2]}
     >
-      <Box args={[...size]} castShadow>
+      <Box
+        args={[...size]}
+        castShadow
+        attachArray={undefined}
+        attachObject={undefined}
+      >
         <meshPhongMaterial
           shininess={4}
           color={!hover ? (dark ? "rgb(8, 0, 34)" : color) : "rgb(246, 93, 54)"}
@@ -104,7 +110,7 @@ export function Building(props: BuildingProps) {
         />
       </Box>
 
-      <Box args={[...size]}>
+      <Box args={[...size]} attachArray={undefined} attachObject={undefined}>
         <meshLambertMaterial
           side={THREE.DoubleSide}
           wireframe
