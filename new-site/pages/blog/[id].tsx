@@ -18,6 +18,7 @@ import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import { ContentfulCodeWidget } from "@components/Contentful";
 import NoSSR from "@components/NoSSR";
+import SEO from "@components/SEO";
 
 interface BlogPageProps {
   post: ContentfulPost;
@@ -146,8 +147,16 @@ function BlogPage(props: BlogPageProps) {
     },
   };
 
+  if (!props?.post?.fields) {
+    return <></>;
+  }
+
   return (
     <>
+      <SEO
+        title={props.post.fields.title}
+        description={props.post.fields.description}
+      />
       <Topbar></Topbar>
 
       <Content>

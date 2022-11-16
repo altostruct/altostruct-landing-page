@@ -20,6 +20,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { ContentfulPost, getContentfulPosts } from "utils/contentful";
 import formatDate from "utils/formatDate";
+import SEO from "@components/SEO";
 
 function ABC(props: { posts: ContentfulPost[] }) {
   const { locale } = useRouter();
@@ -126,11 +127,17 @@ function ABC(props: { posts: ContentfulPost[] }) {
 
   return (
     <div>
+      <SEO
+        title={t("Altostruct - Kunskapsbas")}
+        description={t(
+          "Våran kunskapsbas. Här finns information om AWS, webben och mycket mer"
+        )}
+      ></SEO>
       <Topbar fixed={false} transparent></Topbar>
       <div className="bg-yellow-500 w-full py-36 border border-black bg-gradient-to-tr from-red-400">
         <Content>
           <div className="flex items-center">
-            <div className="w-1/2">
+            <div className="md:w-1/2">
               <h1 className="">
                 <b>{t("Technology is best when it brings people together.")}</b>
               </h1>

@@ -34,7 +34,7 @@ function CityHead() {
                 <span className="text-gray-800">
                   <Fade delay={500}>
                     <span className="whitespace-nowrap">
-                      {t("Think inside the ")}
+                      {t("think inside ")}
                     </span>
                     <br></br>
                     <span>{t("the ")}</span>

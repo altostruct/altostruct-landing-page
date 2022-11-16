@@ -9,6 +9,7 @@ import useTranslation from "hooks/useTranslation";
 
 interface LanguageSelectorProps {
   expanded?: boolean;
+  onSelect?: () => void;
 }
 
 interface Language {
@@ -24,7 +25,7 @@ interface LanguageInterface {
 const LanguageSelector = (props: LanguageSelectorProps) => {
   const { locale, locales } = useTranslation();
   const language = locale!;
-  const { expanded } = props;
+  const { expanded, onSelect } = props;
 
   const iconMap: Record<string, StaticImageData> = {
     sv: swedishIcon,
@@ -36,8 +37,13 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
   if (expanded)
     return (
       <div className="flex h-48 justify-between gap-4">
-        {selectableLanguages.map((selectableLanguage, index) => (
-          <Link key={index} href="/" locale={selectableLanguage}>
+        {locales!.map((selectableLanguage, index) => (
+          <Link
+            onClick={onSelect}
+            key={index}
+            href="/"
+            locale={selectableLanguage}
+          >
             <div className="w-12">
               <Image src={iconMap[selectableLanguage]} alt="Language icon" />
             </div>
@@ -48,7 +54,7 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
 
   return (
     <>
-      <div className={styles["dropdown"]}>
+      <div className={styles.dropdown}>
         {!expanded && (
           <>
             <Image

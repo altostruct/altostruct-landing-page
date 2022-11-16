@@ -1,5 +1,9 @@
 {
+  "Altostruct - Kunskapsbas": "Altostruct - Knowledge base",
+  "Altostruct - Om oss": "Altostruct - About us",
+  "Altostruct är ett AWS konsultbolag i Stockholm.": "Altostruct is a AWS consulting company in Stockholm.",
   "Altostruct är ett konsultbolag specialiserat inom AWS baserade i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån \"cloud migrations\", AI, serverless och APIer. Nedan kan du se några projekt gjort i cloud.": "Altostruct is a consulting company specialized in AWS based in Stockholm. Our AWS consultants are certified and have worked with everthing from cloud migrations, AI, serverless and APIs.  Below, you are able to see some projects that we have implemented on AWS",
+  "Altostruct landing page": "Altostruct landing page",
   "Bli vår nästa kund": "Become our next customer",
   "Bygg din plattform med senaste cloudteknologin": "Build your platform with the latest cloud technology",
   "Bygga nytt frontend med ReactJS": "Build a new fronted using ReactJS",
@@ -20,7 +24,7 @@
   "Konsultbolaget som brinner för AWS och cloud": "The consulting company that loves AWS and cloud",
   "Kontakta oss": "Contact us",
   "Kunskapsbas": "Knowledge base",
-  "Lästid {{time}} minuter": "",
+  "Lästid {{time}} minuter": "Read time {{time}} minute",
   "Med hjälp av Altostruct har vi kunnat utveckla vår lösning baserat på en svensk molnleverantör med hög grad av säkerhet, tillförlitlighet och regelefterlevnad.": "With the help of Altostruct we have been able to develop our platform using a Swedish cloud-provider with high security, avaliblity och compliance.",
   "Meddelande": "Message",
   "Mejladress": "E-mailaddress",
@@ -34,11 +38,12 @@
   "Technology is best when it brings people together.": "Technology is best when it brings people together.",
   "techstack": "techstack",
   "Telefonnummer": "Phone number",
-  "the ": "",
-  "Think inside the ": "Think inside the ",
+  "the ": "the ",
+  "think inside ": "think inside ",
   "Vad kan vi erbjuda dig?": "What can we offer you?",
   "välja oss?": "choose us?",
   "Våran": "Our",
+  "Våran kunskapsbas. Här finns information om AWS, webben och mycket mer": "",
   "Varför ": "Why ",
   "Vi har samarbetat med Altostruct i två år. De har hjälp oss med allting ifrån infrastruktur till apputveckling för att bygga en skalbar och modern lösning.": "We have collaborated with Altostruct for two years. They have helped us with everthing from building scalable infrastructure to apps."
 }

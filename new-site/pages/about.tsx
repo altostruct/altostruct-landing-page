@@ -2,20 +2,23 @@ import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
 import Topbar from "@components/Topbar/Topbar";
 import React, { Suspense } from "react";
-import SmallCity from "@components/3d/SmallCity";
 import Content from "@components/Content";
 import CardStack from "@components/CardStack";
 import Button from "@components/Button/Button";
 import Cite from "@components/Cite";
 import useTranslation from "hooks/useTranslation";
 import NoSSR from "@components/NoSSR";
-import Image from "next/image";
+import SEO from "@components/SEO";
 
 function AboutPage() {
   const { t } = useTranslation();
 
   return (
     <>
+      <SEO
+        title={t("Altostruct - Om oss")}
+        description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
+      ></SEO>
       <Topbar></Topbar>
       <Content>
         <div className="w-2/3  text-center m-auto mt-48 md:mt-48">

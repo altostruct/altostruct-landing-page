@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import SEO from "@components/SEO";
 import classNames from "classnames";
 import Button from "components/Button/Button";
 import Cite from "components/Cite";
@@ -8,6 +9,7 @@ import Footer from "components/Footer/Footer";
 import Form from "components/Form";
 import Topbar from "components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
+import Head from "next/head";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -64,6 +66,10 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title={t("Altostruct landing page")}
+        description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
+      ></SEO>
       <Topbar></Topbar>
       <div>
         <CityHead />

@@ -64,9 +64,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           </Link>
         </nav>
         <nav className="hidden md:flex invisible md:visible">
-          <a className={styles["button-spacing"]} href={"#contact"}>
+          <Link className={styles["button-spacing"]} href={"/#contact"}>
             {t("Kontakta oss")}
-          </a>
+          </Link>
           <Link className={styles["button-spacing"]} href={"/about"}>
             {t("Om oss")}
           </Link>
@@ -107,12 +107,15 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
               <div className="border-b my-3"></div>
             </Fade>
             <Fade delay={600}>
-              <Link href={"#contact"}>{t("Kontakta oss")}</Link>
+              <Link href={"/#contact"}>{t("Kontakta oss")}</Link>
             </Fade>
 
             <Fade delay={800}>
               <div className="mx-10 h-36 md:m-10">
-                <LanguageSelector expanded></LanguageSelector>
+                <LanguageSelector
+                  onSelect={() => setExpanded(false)}
+                  expanded
+                ></LanguageSelector>
               </div>
             </Fade>
           </div>
