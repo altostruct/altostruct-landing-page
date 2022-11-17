@@ -21,6 +21,7 @@ import { useRouter } from "next/router";
 import { ContentfulPost, getContentfulPosts } from "utils/contentful";
 import formatDate from "utils/formatDate";
 import SEO from "@components/SEO";
+import { ContentfulImage } from "@components/Contentful";
 
 function ABC(props: { posts: ContentfulPost[] }) {
   const { locale } = useRouter();
@@ -71,9 +72,9 @@ function ABC(props: { posts: ContentfulPost[] }) {
           </div>
           <div className="m-auto w-1/5 md:w-56">
             {props.fields.image && (
-              <Image
+              <ContentfulImage
                 alt=""
-                src={"/contentful/images/" + props.fields.image.sys.id}
+                image={props.fields.image}
                 height={400}
                 width={400}
                 className="h-32 w-32 md:w-36 md:h-36"

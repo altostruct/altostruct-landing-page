@@ -34,10 +34,13 @@ async function execute() {
       v.buffer()
     );
 
+    const ext = item.fields.file.contentType.split("/")[1];
+
     addData("contentful/assets/" + item.sys.id + ".json", JSON.stringify(item));
     addData("contentful/assets/by/id/" + item.sys.id, buffer);
     addData("contentful/assets/by/name/" + item.fields.file.fileName, buffer);
-    addData("contentful/images/" + item.sys.id, buffer, {
+
+    addData("contentful/images/" + item.sys.id + "." + ext, buffer, {
       folder: "public",
     });
   }

@@ -16,7 +16,7 @@ import Image from "next/image";
 import formatDate from "utils/formatDate";
 import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
-import { ContentfulCodeWidget } from "@components/Contentful";
+import { ContentfulCodeWidget, ContentfulImage } from "@components/Contentful";
 import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
 
@@ -32,18 +32,7 @@ function BlogPage(props: BlogPageProps) {
       },
 
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return (
-          <Image
-            alt=""
-            src={"/contentful/images/" + node.data.target.sys.id}
-            height={node.data.target.fields.file.details.image.height}
-            width={node.data.target.fields.file.details.image.width}
-            className="mb-6 w-full bg-green-200"
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        );
+        return <ContentfulImage alt="" image={node.data.target} />;
 
         return <p>asd</p>;
         // if (node.data.__typename == "") {
@@ -172,13 +161,9 @@ function BlogPage(props: BlogPageProps) {
           </h2>
           <div className="mb-10 flex w-full ">
             {props.post.fields.image && (
-              <Image
+              <ContentfulImage
                 alt=""
-                height={
-                  props.post.fields.image.fields.file.details.image.height
-                }
-                width={props.post.fields.image.fields.file.details.image.width}
-                src={"/contentful/images/" + props.post.fields.image.sys.id}
+                image={props.post.fields.image}
                 className="w-full"
                 style={{
                   objectFit: "cover",

@@ -1,8 +1,10 @@
-on:
-  workflow_dispatch:
-  release:
-    types:
-      - created
+# on:
+#   workflow_dispatch:
+#   release:
+#     types:
+#       - created
+
+on: [push]
 jobs:
   deploy:
     env:
