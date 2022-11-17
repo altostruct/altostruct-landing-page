@@ -9,6 +9,7 @@ import Cite from "@components/Cite";
 import useTranslation from "hooks/useTranslation";
 import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
+import Image from "next/image";
 
 function AboutPage() {
   const { t } = useTranslation();
@@ -21,7 +22,7 @@ function AboutPage() {
       ></SEO>
       <Topbar></Topbar>
       <Content>
-        <div className="w-2/3  text-center m-auto mt-48 md:mt-48">
+        <div className="md:w-2/3  text-center m-auto mt-32 md:mt-48">
           <h1 className="text-6xl">
             {t("Varför ")}
             <span className="text-gradient-blue font-bold">
@@ -39,14 +40,32 @@ function AboutPage() {
                 "sina projekt."
             )}
           </p>
-          <div className="grid grid-cols-3 gap-4 mt-10 w-2/3 m-auto">
-            <img src="/images/technologies/aws.png" />
-            <img src="/images/technologies/gcp.png" />
-            <img src="/images/technologies/javascript.png" />
-          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-2 md:gap-16 md:p-12 m-10 md:m-auto md:w-2/3 h-fit">
+          <Image
+            alt="AWS"
+            height={100}
+            width={100}
+            className="w-full"
+            src="/images/technologies/aws.png"
+          />
+          <Image
+            alt="GCP"
+            className="w-full"
+            height={100}
+            width={100}
+            src="/images/technologies/gcp.png"
+          />
+          <Image
+            alt="Javascript Image"
+            height={100}
+            width={100}
+            className="w-full"
+            src="/images/technologies/javascript.png"
+          />
         </div>
 
-        <div className="w-4/5 text-center md:text-left m-auto mt-40 grid grid-cols-1 md:grid-cols-2">
+        <div className="w-4/5 text-center md:text-left m-auto md:mt-40 grid grid-cols-1 md:grid-cols-2">
           <div>
             <h1 className="text-6xl">
               {t("Våran")} <br></br>

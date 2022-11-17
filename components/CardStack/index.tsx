@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { useState } from "react";
-import { useSprings, animated, interpolate } from "react-spring";
-import { useGesture } from "react-use-gesture";
-
+import { useSprings, animated, to as springTo } from "react-spring";
+import { useDrag, useMove } from "@use-gesture/react";
+import Swipe from "./swipe.png";
 import style from "./style.module.scss";
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css
@@ -35,10 +36,16 @@ function CardStack(p: IProps) {
     from: from(i),
   }));
 
-  const bind = useGesture(
-    // @ts-ignore
-    ({ args: [index], down, delta: [xDelta], direction: [xDir], velocity }) => {
-      const trigger = velocity > 0.2; // If you flick hard enough it should trigger the card to fly out
+  const bind = useDrag(
+    ({
+      args: [index],
+      down,
+      movement: [xDelta],
+      direction: [xDir],
+      velocity: [xVel, yVel],
+    }) => {
+      const velocity = Math.sqrt(xVel ** 2 + yVel ** 2);
+      const trigger = velocity > 0.1; // If you flick hard enough it should trigger the card to fly out
       const dir = xDir < 0 ? -1 : 1; // Direction should either point left or right
       if (!down && trigger) gone.add(index); // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
       set((i) => {
@@ -63,6 +70,8 @@ function CardStack(p: IProps) {
     }
   );
 
+  console.log(bind);
+
   return (
     <>
       <div
@@ -75,52 +84,54 @@ function CardStack(p: IProps) {
         }}
         className={className}
       >
-        {/* {showGesture && (
+        {showGesture && (
           <Image alt="swipehand" className={style.swipe} src={Swipe} />
-        )} */}
+        )}
         {/* @ts-ignore */}
-        {props.map(({ x, y, rot, scale }, i) => (
-          <animated.div
-            key={i}
-            style={{
-              // TODO fix deprecated function
-              transform: interpolate(
-                [x, y],
-                (x, y) => `translate3d(${x}px,${y}px,0)`
-              ),
-            }}
-          >
+        {props.map(({ x, y, rot, scale }, i) => {
+          return (
             <animated.div
-              {...bind(i)}
-              onDrag={() => {
-                console.log("abc");
-              }}
+              key={i}
               style={{
-                transform: interpolate([rot, scale], trans),
-                cursor: "grab",
+                transform: springTo(
+                  [x, y],
+                  (x, y) => `translate3d(${x}px,${y}px,0)`
+                ),
               }}
-              className="flex"
             >
-              <div className={style.content}>
-                <div className="flex">
-                  {/* <img
-                    className="unselectable m-auto"
-                    src={cards[i].image}
-                    alt={cards[i].title}
-                    style={{
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  ></img> */}
-                </div>
+              <animated.div
+                {...bind(i)}
+                onDrag={() => {
+                  console.log("abc");
+                }}
+                style={{
+                  transform: springTo([rot, scale], trans),
+                  cursor: "grab",
+                }}
+                className="flex"
+              >
+                <div className={style.content}>
+                  <div className="flex">
+                    {/*eslint-disable-next-line @next/next/no-img-element*/}
+                    <img
+                      className="unselectable m-auto"
+                      src={cards[i].image}
+                      alt={cards[i].title}
+                      style={{
+                        height: "100%",
+                        objectFit: "contain",
+                      }}
+                    ></img>
+                  </div>
 
-                <p className="pb-1 unselectable font-mono">
-                  {cards[i].description}
-                </p>
-              </div>
+                  <p className="pb-1 unselectable font-mono">
+                    {cards[i].description}
+                  </p>
+                </div>
+              </animated.div>
             </animated.div>
-          </animated.div>
-        ))}
+          );
+        })}
       </div>
     </>
   );

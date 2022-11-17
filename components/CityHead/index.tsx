@@ -54,7 +54,7 @@ function CityHead() {
 
               <Fade delay={1000}>
                 <div className="flex mt-12">
-                  <div className=" flex gap-8">
+                  <div className=" flex gap-6">
                     <Button type="primary" link="#contact" className="p-20 ">
                       {t("Kontakta oss")}
                     </Button>
