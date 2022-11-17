@@ -67,7 +67,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title={t("Altostruct landing page")}
+        title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
