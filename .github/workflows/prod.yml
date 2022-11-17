@@ -37,6 +37,8 @@ jobs:
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read --delete
+        env:
+          SOURCE_DIR: "out"
       - name: Invalidate cdn
         run: |
           # Declear bucket name
