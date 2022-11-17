@@ -1,0 +1,13 @@
+diff --git a/node_modules/next/dist/export/index.js b/node_modules/next/dist/export/index.js
+index ec8b383..0fe29cb 100644
+--- a/node_modules/next/dist/export/index.js
++++ b/node_modules/next/dist/export/index.js
+@@ -143,7 +143,7 @@ async function exportApp(dir, options, span, configuration) {
+             };
+         }
+         const { i18n , images: { loader ="default" , unoptimized  } ,  } = nextConfig;
+-        if (i18n && !options.buildExport) {
++        if (i18n && !options.buildExport && !i18n.defaultLocale) {
+             throw new Error(`i18n support is not compatible with next export. See here for more info on deploying: https://nextjs.org/docs/deployment`);
+         }
+         if (!options.buildExport) {
