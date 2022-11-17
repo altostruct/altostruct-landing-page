@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 import classNames from "classnames";
+import Link from "next/link";
 import * as React from "react";
 import style from "./Button.module.scss";
 
@@ -25,9 +26,9 @@ const Button = (props: ButtonProps) => {
   const LinkWrapper = (cmp: JSX.Element) => {
     if (link) {
       return (
-        <a target={openNewTab ? "_blank" : undefined} href={link}>
+        <Link target={openNewTab ? "_blank" : undefined} href={link}>
           {cmp}
-        </a>
+        </Link>
       );
     } else {
       return cmp;
