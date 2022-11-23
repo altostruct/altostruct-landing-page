@@ -153,7 +153,10 @@ function BlogPage(props: BlogPageProps) {
           <div className="flex gap-4 text-sm">
             <p className="">{props.post.fields.author}</p>
             <p>I</p>
-            <p className="">{formatDate(props.post.fields.createDate)}</p>
+            <p className="">
+              {props.post.fields.createDate &&
+                formatDate(props.post.fields.createDate)}
+            </p>
           </div>
           <h1 className="text-6xl font-bold">{props.post.fields.title}</h1>
           <h2 className="mt-3 mb-3 text-2xl font-normal text-gray-400">
