@@ -116,7 +116,9 @@ function BlogPage(props: BlogPageProps) {
       },
       [BLOCKS.HEADING_3]: (node, children) => {
         return (
-          <h3 className="font-bold mb-2 mt-4 text-gray-800">{children}</h3>
+          <h3 className="font-bold text-xl mb-2 mt-4 text-gray-800">
+            {children}
+          </h3>
         );
       },
 

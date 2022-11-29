@@ -10,7 +10,7 @@
     "lint": "next lint",
     "translate": "i18next './{pages,components}/**/*.{ts,tsx}'",
     "postinstall": "patch-package",
-    "postbuild": "npm run sitemap && node scripts/postbuild.mjs",
+    "postbuild": "node scripts/postbuild.mjs && npm run sitemap",
     "sitemap": "sscli -b https://altostruct.com -r out -p '**,0.7' -c '**,weekly'"
   },
   "dependencies": {
