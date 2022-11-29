@@ -28,11 +28,14 @@ function BlogPage(props: BlogPageProps) {
   const options: Options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <p className="mb-6 text-md">{children}</p>;
+        return <p className="mb-8 text-lg leading-8	">{children}</p>;
       },
 
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        return <ContentfulImage alt="" image={node.data.target} />;
+        console.log(node);
+        return (
+          <ContentfulImage alt="" className="my-16" image={node.data.target} />
+        );
 
         return <p>asd</p>;
         // if (node.data.__typename == "") {
@@ -63,8 +66,6 @@ function BlogPage(props: BlogPageProps) {
         // }
       },
       [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        console.log(node);
-
         return (
           <NoSSR>
             <ContentfulCodeWidget id={node.data.target.sys.id} />
@@ -100,13 +101,22 @@ function BlogPage(props: BlogPageProps) {
 
       [BLOCKS.HEADING_1]: (node, children) => {
         return (
-          <h1 className="font-bold mb-6 text-4xl text-gray-800">{children}</h1>
+          <h1 className="font-bold mb-2 mt-8 text-4xl text-gray-900">
+            {children}
+          </h1>
         );
       },
 
       [BLOCKS.HEADING_2]: (node, children) => {
         return (
-          <h2 className="font-bold mb-6 text-3xl text-gray-900">{children}</h2>
+          <h2 className="font-bold mb-2 text-2xl mt-8 text-gray-800">
+            {children}
+          </h2>
+        );
+      },
+      [BLOCKS.HEADING_3]: (node, children) => {
+        return (
+          <h3 className="font-bold mb-2 mt-4 text-gray-800">{children}</h3>
         );
       },
 
@@ -159,7 +169,7 @@ function BlogPage(props: BlogPageProps) {
             </p>
           </div>
           <h1 className="text-6xl font-bold">{props.post.fields.title}</h1>
-          <h2 className="mt-3 mb-3 text-2xl font-normal text-gray-400">
+          <h2 className="mt-3 mb-3 text-xl font-normal text-gray-700">
             {props.post.fields.description}
           </h2>
           <div className="mb-10 flex w-full ">
