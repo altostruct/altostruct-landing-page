@@ -6,6 +6,7 @@ import styles from "./Form.module.scss";
 import Button from "components/Button/Button";
 import classNames from "classnames";
 import useTranslation from "hooks/useTranslation";
+import { useRouter } from "next/router";
 interface FormInput {
   fullName?: string;
   email?: string;
@@ -17,6 +18,7 @@ interface FormInput {
 
 function Form() {
   const { t } = useTranslation();
+  const router = useRouter();
 
   const form = useRef<HTMLFormElement | null>(null);
 
@@ -68,9 +70,9 @@ function Form() {
         form.current,
         "user_k0ZJNxep5Jd9wlP37YY93"
       );
-      window.location.replace(
-        "/events/reached-out?email=" + encodeURI(values.email!)
-      );
+      router.push("/events/reached-out", {
+        query: "email=" + encodeURI(values.email!),
+      });
     } catch (error) {
       console.error(error);
     }

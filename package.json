@@ -14,6 +14,7 @@
     "sitemap": "sscli -b https://altostruct.com -r out -p '**,0.7' -c '**,weekly'"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.3",
     "@contentful/rich-text-react-renderer": "^15.12.1",
     "@fontsource/poppins": "^4.5.10",
     "@react-three/drei": "^8.18.10",
