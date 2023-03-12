@@ -3,13 +3,13 @@ import SEO from "@components/SEO";
 import classNames from "classnames";
 import Button from "components/Button/Button";
 import Cite from "components/Cite";
-import CityHead from "components/CityHead";
 import Content from "components/Content";
 import Footer from "components/Footer/Footer";
 import Form from "components/Form";
 import Topbar from "components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
-import Head from "next/head";
+import WordCircled from "components/Word-Circled/Word";
+import WordSquare from "components/Word-Square/Word"
 
 export default function Home() {
   const { t } = useTranslation();
@@ -71,28 +71,62 @@ export default function Home() {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
-      <div>
-        <CityHead />
-
+      <div className="bg-[#161616]">
         <Content>
-          <div className="mb-6 mt-24 items-center md:text-left text-center flex">
-            <div className="flex-1">
-              <p className="text-orange-300 text-xl md:text-2xl ">
-                {t("Vad kan vi erbjuda dig?")}
-              </p>
-              <h2 className="font-bold text-4xl md:text-7xl mt-3">
-                {t("Certifierade AWS specialister")}
-              </h2>
-              <p className="mt-3 text-lg">
-                {t(
-                  'Altostruct är ett konsultbolag specialiserat inom AWS baserade i Stockholm. Vårt team av AWS konsulter är certifierade och har arbetat med allting ifrån "cloud migrations", AI, serverless och APIer. ' +
-                    "Nedan kan du se några projekt gjort i cloud."
-                )}
-              </p>
+          <div className="mb-6 items-center md:text-left text-center text-white">
+            <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">Lorem <WordCircled>{t("Lorem")}</WordCircled> dolor sit amet adipisicing elit lorem <WordSquare>{t("Lorem")}</WordSquare> dolor sit amet <WordSquare>{t("Lorem")}</WordSquare></p>
+            <p className="mt-5 mb-72 text-left">{t("Lorem ipsum dolor sit amet consectetur adipisicing elit/consectetur adipisicing elit.")}</p>
+            <div className="rotate-90 text-white text-xs origin-top-right flex absolute md:bottom-80 bottom-72 right-5">
+              <img src="/images/icons/arrow-icon.svg" width="20" decoding="async" loading="lazy"></img>
+              <p className="pl-2 text-right">Är du vår nästa kollega?</p>
             </div>
           </div>
+          </Content>
 
-          <div className="mb-12 grid md:text-left text-center grid-cols-5 gap-4">
+          <div className="items-center text-white bg-[#292929]">
+              <div className="flex place-content-end">
+                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
+                </div>
+              </div>
+              <div className="flex place-content-end md:pr-28 pr-14">
+                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
+                </div>
+              </div>
+              <div className="flex place-content-end">
+                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
+                </div>
+              </div>
+              <div className="flex place-content-center">
+              <img className="flex place-content-center w-20" src="/images/icons/arrow-icon.svg" decoding="async" loading="lazy"></img>
+              </div>
+              <div className="flex place-content-center text-center">
+                <p className="font-bold">
+                This should be a small text
+                </p>
+              </div>
+              <div className="grid grid-cols-12">
+                <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, magnam libero deserunt, architecto consequuntur sint maiores officia praesentium cum ipsam in dignissimos quod corporis odit, facere numquam repudiandae illum est
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptatum fugiat sint nobis, rem ipsa officiis. Placeat est quas vero nobis. Repudiandae fuga voluptatem nostrum, ipsa laborum quidem ratione accusantium.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe soluta, quo enim magni quidem velit ex repudiandae sed, nam similique ea eaque vel perspiciatis suscipit voluptatibus ducimus rem corporis nobis.
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 mt-36 w-11/12 md:w-11/12 m-auto">
+                <div className="col-start-1 text-xl">Våra startpaket</div>
+                <div className="col-start-1 text-sm">Våra startpaket/Våra Våra Våra Våra Vår aVåra Vår aVå ra </div>
+              </div>
+
+              <div>
+                
+              </div>
+
+
+          </div>
+          
+         
+
+          <Content>
+          <div className="mb-12 mt-96 grid md:text-left text-center grid-cols-5 gap-4">
             {projects.map((project, index) => {
               const isBig = index % 3;
               return (

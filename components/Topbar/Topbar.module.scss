@@ -6,13 +6,13 @@ $small-screen: 720px;
   top: 0;
   left: 0;
   right: 0;
-  padding-left: 15vw;
-  padding-right: 15vw;
+  padding-left: 3vw;
+  padding-right: 5vw;
   // background-color: rgb(4, 1, 26);
   z-index: 1000;
 
   * {
-    color: black;
+    color: white;
   }
   .brand {
     font-size: 1.125em;

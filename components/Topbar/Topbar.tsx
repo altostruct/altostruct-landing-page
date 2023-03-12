@@ -50,17 +50,18 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     <>
       <header
         className={classNames(styles.topbar, {
-          "bg-white": true,
+          
+          "bg-[#161616]": true,
           "bg-transparent": transparent,
           border: transparent || !isAtTop,
-          "border-black": transparent,
+          "border-white": transparent,
           fixed: fixed,
           absolute: !fixed,
         })}
       >
         <nav>
           <Link href={"/"}>
-            <Brand />
+            <Brand/>
           </Link>
         </nav>
         <nav className="hidden md:flex invisible md:visible">
@@ -82,9 +83,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
         >
           <div ref={ref}>
             <svg viewBox="0 0 100 100" width="20" height="20">
-              <rect y="0" width="100" height="20"></rect>
-              <rect y="40" width="100" height="20"></rect>
-              <rect y="80" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="0" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="40" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="80" width="100" height="20"></rect>
             </svg>
           </div>
         </nav>
