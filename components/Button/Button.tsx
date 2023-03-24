@@ -6,6 +6,7 @@ import style from "./Button.module.scss";
 
 interface ButtonProps {
   children?: string;
+  title?: string;
   className?: string;
   type?: "primary" | "secondary" | "shiny";
   formAction?: "submit" | "reset";

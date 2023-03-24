@@ -10,28 +10,26 @@ interface ButtonProps {
   formAction?: "submit" | "reset";
   link?: string;
   openNewTab?: boolean;
+  color?: string;
+  borderCircle?: boolean
 }
 
 const Button = (props: ButtonProps) => {
   const {
-    children,
-    type = "primary",
-    className,
-    formAction,
+    children, color, borderCircle
   } = props;
 
+
   return (
-    <button
-      type={formAction}
+    <div
       className={classNames(
-        className,
-        style.button,
-        style[type],
-        "rounded-4xl"
+        style.circle,
+        color ? style.secondaryColor : style.primaryColor,
+        borderCircle ? style.border : ""
       )}
     >
       {children}
-    </button>
+    </div>
   );
 };
 

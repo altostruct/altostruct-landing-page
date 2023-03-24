@@ -1,16 +1,12 @@
-.button {
+.circle {
   appearance: none;
   background-color: transparent;
-  border: 0.125em solid #c3eec3;
-  border-radius: 0.9375em;
   box-sizing: border-box;
-  color: #c3eec3;
-  cursor: pointer;
   display: inline-block;
-  font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: "Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
   font-size: 20px;
   font-weight: 500;
-  line-height: normall;
+  line-height: normal;
   margin: 0px;
   min-height: 0.75em;
   min-width: 0;
@@ -22,30 +18,29 @@
   user-select: none;
   -webkit-user-select: none;
   transform: translateY(-10px);
+ }
 
+ .primaryColor{
+  --color: #c3eec3;
+  color: var(--color);
+  border: 0.125em solid var(--color);
  }
- 
-.button:disabled {
-  pointer-events: none;
+
+ .secondaryColor{
+  --color: #6024ff;
+  color: var(--color);
+  border: 0.125em solid var(--color);
  }
- 
-.button:hover {
-  color: #c3eec3;
-  background-color: #1A1A1A;
-  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
- }
- 
-.button:active {
-  box-shadow: none;
+
+ .border{
+  border-radius: 0.9375em;
  }
 
  @media screen and (max-width: 900px) {
-  .button {
+  .circle {
     appearance: none;
     background-color: transparent;
-    border: 0.10em solid #c3eec3;
     box-sizing: border-box;
-    color: #c3eec3;
     display: inline-block;
     font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     font-size: 20px;
@@ -55,27 +50,28 @@
     min-height: 0.10em;
     min-width: 0;
     outline: none;
-    padding: 0% 2%;
+    padding: 0.4% 3%;
     text-align: center;
     text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     user-select: none;
     -webkit-user-select: none;
     transform: translateY(-5px);
+   }
+
+   .primaryColor{
+    --color: #c3eec3;
+    color: var(--color);
+    border: 0.125em solid var(--color);
+   }
   
+   .secondaryColor{
+    --color: #6024ff;
+    color: var(--color);
+    border: 0.125em solid var(--color);
    }
-   
-  .button:disabled {
-    pointer-events: none;
-   }
-   
-  .button:hover {
-    color: #c3eec3;
-    background-color: #1A1A1A;
-    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
-   }
-   
-  .button:active {
-    box-shadow: none;
+
+   .border{
+    border-radius: 0.9375em;
    }
   }
