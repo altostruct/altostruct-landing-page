@@ -1,5 +1,4 @@
 import { GetStaticPaths } from "next";
-import * as fs from "fs";
 import {
   ContentfulPost,
   getContentfulPosts,
@@ -12,7 +11,6 @@ import {
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import Content from "@components/Content";
-import Image from "next/image";
 import formatDate from "utils/formatDate";
 import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
@@ -101,7 +99,7 @@ function BlogPage(props: BlogPageProps) {
 
       [BLOCKS.HEADING_1]: (node, children) => {
         return (
-          <h1 className="font-bold mb-2 mt-8 text-4xl text-gray-900">
+          <h1 className="font-bold mb-2 mt-8 text-4xl text-white">
             {children}
           </h1>
         );
@@ -109,14 +107,14 @@ function BlogPage(props: BlogPageProps) {
 
       [BLOCKS.HEADING_2]: (node, children) => {
         return (
-          <h2 className="font-bold mb-2 text-2xl mt-8 text-gray-800">
+          <h2 className="font-bold mb-2 text-2xl mt-8 text-white">
             {children}
           </h2>
         );
       },
       [BLOCKS.HEADING_3]: (node, children) => {
         return (
-          <h3 className="font-bold text-xl mb-2 mt-4 text-gray-800">
+          <h3 className="font-bold text-xl mb-2 mt-4 text-white">
             {children}
           </h3>
         );
@@ -153,7 +151,7 @@ function BlogPage(props: BlogPageProps) {
   }
 
   return (
-    <>
+    <div className="bg-[#161616]">
       <SEO
         title={props.post.fields.title}
         description={props.post.fields.description}
@@ -161,17 +159,17 @@ function BlogPage(props: BlogPageProps) {
       <Topbar></Topbar>
 
       <Content>
-        <div className="md:w-3/5 m-auto mt-32">
+        <div className="md:w-3/5 m-auto pt-32 text-[#eee]">
           <div className="flex gap-4 text-sm">
             <p className="">{props.post.fields.author}</p>
             <p>I</p>
-            <p className="">
+            <p>
               {props.post.fields.createDate &&
                 formatDate(props.post.fields.createDate)}
             </p>
           </div>
           <h1 className="text-6xl font-bold">{props.post.fields.title}</h1>
-          <h2 className="mt-3 mb-3 text-xl font-normal text-gray-700">
+          <h2 className="mt-3 mb-3 text-xl font-normal">
             {props.post.fields.description}
           </h2>
           <div className="mb-10 flex w-full ">
@@ -190,7 +188,7 @@ function BlogPage(props: BlogPageProps) {
         </div>
       </Content>
       <Footer></Footer>
-    </>
+    </div>
   );
 }
 

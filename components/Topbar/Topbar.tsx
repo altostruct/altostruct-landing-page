@@ -53,8 +53,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           
           "bg-[#161616]": true,
           "bg-transparent": transparent,
-          border: transparent || !isAtTop,
-          "border-white": transparent,
+          "border-black": transparent,
           fixed: fixed,
           absolute: !fixed,
         })}
@@ -74,7 +73,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           <Link className={styles["button-spacing"]} href={"/about"}>
             {t("Om oss")}
           </Link>
-          <Link className={styles["button-spacing"]} href={"/articles"}>
+          <Link className={styles["button-spacing"]} href={"/blog"}>
             {t("Artiklar")}
           </Link>
           <LanguageSelector></LanguageSelector>
@@ -99,7 +98,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           <div className="m-auto flex-col flex text-4xl max-h-96">
             
           <Fade delay={0}>
-              <Link className="button-spacing text-white" href="/">
+              <Link className="button-spacing text-white" href={"/"}>
                 {t("Startsida")}
               </Link>
             </Fade>
@@ -114,7 +113,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
               </Link>
             </Fade>
             <Fade delay={300}>
-              <Link className="button-spacing text-white" href="/articles">
+              <Link className="button-spacing text-white" href="/blog">
                 {t("Kunskapsbas")}
               </Link>
             </Fade>

@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <>
+    <div className="bg-[#161616]">
       <div className="flex place-content-end bg-[#292929]">
         <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
         </div>
@@ -18,14 +18,16 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerContent}>
-        <h1 className="text-[#707070] pb-4">Senaste nyheter</h1>
-          <a href="">
-            <h1 className="text-[#f5f5f5] pb-4">Kontakta oss</h1>
+        <h1 className="text-[#707070] mb-4">Senaste nyheter</h1>
+          <a href="mailto:info@altostruct.se">
+            <h1 className="text-[#f5f5f5] mb-4">Kontakta oss</h1>
           </a>
+          <a href="mailto:info@altostruct.se">
           <div className="flex text-white">
-            <img className="w-14 mr-4" src="/images/icons/arrow-icon.svg"></img>
+            <img className="md:w-14 w-9 mr-4" src="/images/icons/arrow-icon.svg"></img>
           <h1>Jobba med oss</h1>
         </div>
+        </a>
       </div>
 
     <footer className={styles.footer}>
@@ -40,7 +42,7 @@ const Footer = () => {
       </div>
       </div>
     </footer>
-    </>
+    </div>
   );
 };
 

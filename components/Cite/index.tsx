@@ -11,10 +11,10 @@ function Cite(props: CiteProps) {
        <div className="">
             <img className="md:w-20 w-10 ml-1" src={citeIcon} alt="" />
         </div>
-        <h3 className="mt-10">
+        <h2 className="mt-10">
             {cite}
-        </h3>
-        <h3 className="text-lg md:text-2xl">{`"${author}"`}</h3>
+        </h2>
+        <p className="text-lg mt-4">{`/${author}`}</p>
     </div>
   );
 }

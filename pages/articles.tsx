@@ -11,7 +11,7 @@ import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
 import Image from "next/image";
 import WordCircled from "components/Word-Circled/Word";
-import Package from "components/AWS-Packages/Packege"
+import Package from "@components/Package/Packege"
 
 function Articles() {
   const { t } = useTranslation();
