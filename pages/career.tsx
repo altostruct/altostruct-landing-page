@@ -8,6 +8,8 @@ import WordCircled from "components/Word-Circled/Word";
 import Package from "@components/Package/Packege"
 import { useRef } from "react";
 import React, { useState } from 'react'
+import Link from "next/link";
+
 
 function Carrer() {
   const { t } = useTranslation();
@@ -71,17 +73,22 @@ function Carrer() {
                 }}
               >
                 <div ref={refPackage1}>
+                <Link href="/jobopportunity">
                 <Package
                   title="Software Developer"
                   iconPath="/images/icons/Icon-51.svg"
                   ></Package>
+                  </Link>
                 </div>
                 <div ref={refPackage2}>
-                <Package
+                <Link href="/jobopportunity">
+                  <Package
                   title="Senior Software Developer"
                   iconPath="/images/icons/Icon-54.svg"
                   ></Package>
+                  </Link>
                 </div>
+               
               </div>
 
               <div className="flex md:hidden justify-center">
