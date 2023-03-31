@@ -64,7 +64,7 @@ function About() {
                 <div className="pt-20 text-white font-sans">
                   <h2>{t("Vår vision")}</h2>
                 </div>
-                  <div className="relative">
+                  <div className="relative pb-20">
                     <h1 className="relative z-10">{t("Vår vision är att göra det möjligt för alla företag att bygga och hosta branschledande applikationer och platformer i molnet, och på så sätt demokratisera tillgången till den mest kraftfulla teknologin och resurserna.")}</h1>
                     <div className="absolute top-32 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 bg-[#6024ff]"></div>
                     <div className="absolute top-2 left-20 w-20 h-20 md:w-40 md:h-40 bg-[#6024ff]"></div>

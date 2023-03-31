@@ -188,14 +188,14 @@ export default function Home() {
                     <h3>{t("Rekommendationer")}</h3>
                     <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
                   </div>
-                  <div ref={refCite1} className="snap-center">
+                  <div ref={refCite1} className="snap-start">
                     <Cite
                     author="Peter Vesterberg, CEO Saluto AB"
                     cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
                     citeIcon="/images/icons/citat-icon-67.svg"
                     ></Cite>
                   </div>
-                  <div ref={refCite2} className="snap-center">
+                  <div ref={refCite2} className=" snap-start">
                     <Cite
                     author="Erik Strandin Pers, Founder Foodfacts"
                     cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}

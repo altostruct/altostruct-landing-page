@@ -28,7 +28,7 @@ const Package = (props: ButtonProps) => {
           <h4 className={classNames(style.headerContent)}>
             {props.description}
           </h4>
-          <div className="flex place-content-center">
+          <div className="hidden md:flex place-content-center">
             <a ref={props.link} className="text-white flex absolute bottom-10">
               Read more
               <img className="w-6 ml-1" src="/images/icons/arrow-icon.svg"></img>
