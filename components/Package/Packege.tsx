@@ -4,10 +4,11 @@ import * as React from "react";
 import style from "./Packege.module.scss";
 
 interface ButtonProps {
-  children?: string;
+  description?: string;
   title?: string
   className?: string;
   iconPath?: string;
+  link?: string;
 }
 
 const Package = (props: ButtonProps) => {
@@ -25,10 +26,10 @@ const Package = (props: ButtonProps) => {
           </div>
           <h2 className="flex text-center place-content-center">{props.title}</h2>
           <h4 className={classNames(style.headerContent)}>
-            {props.children}
+            {props.description}
           </h4>
           <div className="flex place-content-center">
-            <a className="text-white flex absolute bottom-10">
+            <a ref={props.link} className="text-white flex absolute bottom-10">
               Read more
               <img className="w-6 ml-1" src="/images/icons/arrow-icon.svg"></img>
             </a>

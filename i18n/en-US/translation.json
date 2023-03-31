@@ -65,7 +65,7 @@
   "Jobba med banbrytande" : "Work with cutting-edge",
   "teknologi" : "technology",
   "with some of the top people in" : "med de främsta inom",
-  "och molnet" : "and the cloud",
+  "och molnet" : "AWS and the cloud",
   "Lediga tjänster" : "Available positions",
   "Just nu söker vi dig som är" : "Join the team as a",
   "Varför jobba hos Altostruct?" : "Why work at Altostruct?",
@@ -88,5 +88,9 @@
   "till oss så berättar vi mer!" : "and we would love to tell you more!",
   " tillsammans med de främsta inom " : "toghether with the best in ",
   "Senaste nyheter" : "Latest news",
-  "Jobba med oss" : "Work with us"
+  "Jobba med oss" : "Work with us",
+  "Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter. Vare sig det gäller en applikation som ni precis har tagit fram eller om ni har ett eget datacenter sedan långt tillbaka. Vidare så hjälper vi er också ifall ni redan har en molnleverantör men är intresserade av att byta till AWS." : "We help you migrate a new or already-in-place system to AWS to cut the costs of having an in-house data center. Whether it regards an application you have just launched or if you have a long-standing data center, we help you migrate everything to AWS. Also, if you already have a cloud provider and are interested in switching to AWS, we’ll help you with this as well.",
+  "Hör av dig så hjälper vi dig!" : "Get in touch and we will help you further!",
+  "Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha. Vi använder oss av Virtual Private Cloud för att se till att kontrollera och begränsa externa anslutningar till er applikation. Målet här är att all er data ska säkras upp genom att installera virtuella “grindvakter“" : "We make sure to secure your entire AWS environment so that it fulfills all security, integrity and availability demands your organization might have. We use a Virtual Private Cloud to be able to control and limit external access to your application. In other words, we secure all of your data by installing virtual “gatekeepers”.",
+  "Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen. Vi utför även en mer grundlig analys och presenterar ett lösningsförslag som innebär större design-förändringar som bidrar till ännu lägre kostnader och ökad prestanda." : "We analyze your entire AWS environment by looking at and evaluating costs and agreements that can be optimized regarding costs without changing any of the underlying infrastructure. We also execute a more thorough analysis and present a proposal that generates larger design changes which will contribute to even lower costs and increased performance."
 }

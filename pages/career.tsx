@@ -26,7 +26,7 @@ function Carrer() {
     <div className="bg-[#161616] md:pb-20 pb-10">
       <Content>
         <div className="mb-6 items-center md:text-left text-center text-white md:w-3/4">
-          <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">{t("Jobba med banbrytande")} <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled> {t("tillsammans med de främsta inom ")} <WordCircled>AWS {t("och molnet")}</WordCircled></p>
+          <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">{t("Jobba med banbrytande")} <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled> {t("tillsammans med de främsta inom ")} <WordCircled>{t("AWS och molnet")}</WordCircled></p>
           <p className="mt-5 mb-72 text-left"></p>
           <div className="rotate-90 text-white text-xs origin-top-right flex absolute md:bottom-80 bottom-72 right-5">
           <img src="/images/icons/arrow-icon.svg" width="20" decoding="async" loading="lazy"></img>

@@ -9,6 +9,8 @@ import WordCircled from "components/Word-Circled/Word";
 import Package from "@components/Package/Packege"
 import { useRef } from "react";
 import React, { useState } from 'react'
+import Link from "next/link";
+
 
 
 export default function Home() {
@@ -34,7 +36,7 @@ export default function Home() {
       <div className="bg-[#161616]">
         <Content>
           <div className="mb-6 items-center md:text-left text-center text-white md:w-3/4">
-            <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">{t("It's always")}  <WordCircled borderCircle={true} color="">{t("Sunny")}</WordCircled> {t("in the")} <WordCircled>{t("Cloud")}</WordCircled></p>
+            <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">It's always <WordCircled borderCircle={true} color=""> Sunny </WordCircled> in the <WordCircled>Cloud</WordCircled></p>
             <p className="mt-5 mb-72 text-left">{t("Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!")}</p>
             <div className="rotate-90 text-white text-xs origin-top-right flex absolute md:bottom-80 bottom-72 right-5">
               <img src="/images/icons/arrow-icon.svg" width="20" decoding="async" loading="lazy"></img>
@@ -89,25 +91,31 @@ export default function Home() {
                   }}
                   >
                   <div ref={refPackage1} className="snap-center">
+                    <Link href="/cloudshift">
                     <Package
-                    title={t("Migration")}
-                    children={t("Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter")}
+                    title="Cloudshift"
+                    description={t("Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter")}
                     iconPath="/images/icons/Icon-49.svg"
                     ></Package>
+                    </Link>
                   </div>
                   <div ref={refPackage2} className="snap-center">
+                  <Link href="/nebula">
                   <Package
-                    title={t("Kostnadsoptimering")}
-                    children={t("Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen")}
+                    title="Nebula"
+                    description={t("Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen")}
                     iconPath="/images/icons/Icon-50.svg"
                     ></Package>
+                    </Link>
                   </div>
                   <div ref={refPackage3} className="snap-center">
+                  <Link href="/atmosphere">
                   <Package
-                    title={t("Säkerhet")}
-                    children={t("Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha")}
+                    title="Atmosphere"
+                    description={t("Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha")}
                     iconPath="/images/icons/Icon-58.svg"
                     ></Package>
+                    </Link>
                   </div>
                 </div>
                 
@@ -182,7 +190,7 @@ export default function Home() {
                   </div>
                   <div ref={refCite1} className="snap-center">
                     <Cite
-                    author={t("Peter Vesterberg, CEO Saluto AB")}
+                    author="Peter Vesterberg, CEO Saluto AB"
                     cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
                     citeIcon="/images/icons/citat-icon-67.svg"
                     ></Cite>
