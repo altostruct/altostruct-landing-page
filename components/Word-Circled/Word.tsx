@@ -2,6 +2,8 @@
 import classNames from "classnames";
 import * as React from "react";
 import style from "./Word.module.scss";
+import useTranslation from "hooks/useTranslation";
+
 
 interface ButtonProps {
   children?: string;
@@ -18,6 +20,8 @@ const Button = (props: ButtonProps) => {
   const {
     children, color, borderCircle
   } = props;
+  const { t } = useTranslation();
+
 
 
   return (

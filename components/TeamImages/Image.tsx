@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
 import * as React from "react";
 import classNames from "classnames";
+import { url } from "inspector";
+import { Center } from "@react-three/drei";
 
 
 interface ImageProps {
@@ -13,10 +15,9 @@ interface ImageProps {
 const Image = (props: ImageProps) => {
  return (     
       <div> 
-          <div className="flex text-white">
-            <img className={classNames(
-              props.width ? "w-[205px]" : "w-[400px]"
-              )} src={props.imagePath} alt="" />
+          <div className={
+              classNames( props.width ? "w-[150px]" : "w-[300px]")}>
+                <img src={props.imagePath}/>
           </div>
           <h4 className="text-white text-center">{props.children}</h4>
       </div>

@@ -21,15 +21,15 @@ const Package = (props: ButtonProps) => {
      
       <div> 
           <div className="flex place-content-center mt-10 mb-5">
-            <img className="w-10 lg:w-10 ml-1" src={props.iconPath} alt="" />
+            <img className="w-10 lg:w-16 ml-1" src={props.iconPath} alt="" />
           </div>
-          <h4 className="flex place-content-center">{props.title}</h4>
-          <h3 className={classNames(style.headerContent)}>
+          <h2 className="flex text-center place-content-center">{props.title}</h2>
+          <h4 className={classNames(style.headerContent)}>
             {props.children}
-          </h3>
+          </h4>
           <div className="flex place-content-center">
             <a className="text-white flex absolute bottom-10">
-              läs mer
+              Read more
               <img className="w-6 ml-1" src="/images/icons/arrow-icon.svg"></img>
             </a>
           </div>

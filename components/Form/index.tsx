@@ -126,7 +126,7 @@ function Form() {
             >
               {t("Jag gillar att prata i telefon, ring mig!")}
             </label>
-            <input style={{backgroundColor: "#6024ff"}} type="checkbox" id="callMe" name="call_me" />
+            <input style={{backgroundColor: "#eee"}} type="checkbox" id="callMe" name="call_me" />
           </div>
           <div
             style={{

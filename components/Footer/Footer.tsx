@@ -1,7 +1,12 @@
 import * as React from "react";
 import styles from "./Footer.module.scss";
+import useTranslation from "hooks/useTranslation";
+
 
 const Footer = () => {
+  const { t } = useTranslation();
+
+
   return (
     <div className="bg-[#161616]">
       <div className="flex place-content-end bg-[#292929]">
@@ -18,14 +23,14 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerContent}>
-        <h1 className="text-[#707070] mb-4">Senaste nyheter</h1>
+        <h1 className="text-[#707070] mb-4">{t("Senaste nyheter")}</h1>
           <a href="mailto:info@altostruct.se">
-            <h1 className="text-[#f5f5f5] mb-4">Kontakta oss</h1>
+            <h1 className="text-[#f5f5f5] mb-4">{t("Kontakta oss")}</h1>
           </a>
-          <a href="mailto:info@altostruct.se">
+          <a href="/career">
           <div className="flex text-white">
             <img className="md:w-14 w-9 mr-4" src="/images/icons/arrow-icon.svg"></img>
-          <h1>Jobba med oss</h1>
+          <h1>{t("Jobba med oss")}</h1>
         </div>
         </a>
       </div>

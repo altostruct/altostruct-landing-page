@@ -34,12 +34,12 @@ export default function Home() {
       <div className="bg-[#161616]">
         <Content>
           <div className="mb-6 items-center md:text-left text-center text-white md:w-3/4">
-            <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">Lorem <WordCircled borderCircle={true} color="dsa">Lorem</WordCircled> dolor sit amet adipisicing elit lorem dolor sit amet <WordCircled>Lorem</WordCircled></p>
-            <p className="mt-5 mb-72 text-left">Lorem ipsum dolor sit amet consectetur adipisicing elit/consectetur adipisicing elit.</p>
+            <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">{t("It's always")}  <WordCircled borderCircle={true} color="">{t("Sunny")}</WordCircled> {t("in the")} <WordCircled>{t("Cloud")}</WordCircled></p>
+            <p className="mt-5 mb-72 text-left">{t("Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!")}</p>
             <div className="rotate-90 text-white text-xs origin-top-right flex absolute md:bottom-80 bottom-72 right-5">
               <img src="/images/icons/arrow-icon.svg" width="20" decoding="async" loading="lazy"></img>
               <a href={"/career"}> 
-              <p className="pl-2 text-right text-white">Är du vår nästa kollega?</p>
+              <p className="pl-2 text-right text-white">{t("Är du vår nästa kollega?")}</p>
               </a>
             </div>
           </div>
@@ -61,22 +61,16 @@ export default function Home() {
               <div className="flex place-content-center">
               <img className="flex place-content-center w-20 mb-5" src="/images/icons/Icon-51.svg"></img>
               </div>
-              <div className="flex place-content-center text-center">
-                <p className="font-bold">
-                This should be a small text
-                </p>
-              </div>
               <div className="grid grid-cols-12">
                 <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center"> 
                 <h2>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, magnam libero deserunt, architecto consequuntur sint maiores officia praesentium cum ipsam in dignissimos quod corporis odit, facere numquam repudiandae illum est
-                </h2>
+                {t("Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet.")} </h2>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 mt-36 w-11/12 md:w-11/12 m-auto pb-10">
-                <div className="col-start-1 text-xl">våra startpaket</div>
-                <div className="col-start-1 text-sm">Våra startpaket/Våra Våra Våra Våra Vår aVåra Vår aVå ra</div>
+                <div className="col-start-1 text-2xl mb-2">{t("Våra startpaket")}</div>
+                <div className="col-start-1 text-md mb-10"> {t("Vi har brutit ner hela molnresan i tre paketerade tjänster för att göra det enklare för som kund att förbättra era nuvarande system")}</div>
 
                 <div className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 place-items-center snap-x snap-proximity" onScroll={(e) => 
                   {
@@ -96,22 +90,22 @@ export default function Home() {
                   >
                   <div ref={refPackage1} className="snap-center">
                     <Package
-                    title="AWS Package 1"
-                    children="This is a description "
+                    title={t("Migration")}
+                    children={t("Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter")}
                     iconPath="/images/icons/Icon-49.svg"
                     ></Package>
                   </div>
                   <div ref={refPackage2} className="snap-center">
                   <Package
-                    title="AWS Package 2"
-                    children="This is a description"
+                    title={t("Kostnadsoptimering")}
+                    children={t("Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen")}
                     iconPath="/images/icons/Icon-50.svg"
                     ></Package>
                   </div>
                   <div ref={refPackage3} className="snap-center">
                   <Package
-                    title="AWS Package 3"
-                    children="This is a description"
+                    title={t("Säkerhet")}
+                    children={t("Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha")}
                     iconPath="/images/icons/Icon-58.svg"
                     ></Package>
                   </div>
@@ -164,8 +158,8 @@ export default function Home() {
           <Content>
             <div className="mt-36 pb-20">
                 <div className="md:hidden relative text-white mb-10">
-                    <h3>Rekommendationer</h3>
-                    <p>Lyssna inte på oss lyssna på våra klienter</p>
+                    <h3>{t("Rekommendationer")}</h3>
+                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
                   </div>
                 <div className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 place-items-center text-white snap-x snap-proximity"
                 onScroll={(e) => 
@@ -182,22 +176,22 @@ export default function Home() {
                     }
                   }}
                 >
-                  <div className="hidden md:block relative right-20 bottom-20">
-                    <h3>Rekommendationer</h3>
-                    <p>DSAJDKJLSAKLJDASJLJKDASLJKDSA</p>
+                  <div className="hidden md:block relative bottom-20">
+                    <h3>{t("Rekommendationer")}</h3>
+                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
                   </div>
                   <div ref={refCite1} className="snap-center">
                     <Cite
-                    author="AWS Package 1"
-                    cite="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, magnam libero deserunt"
-                    citeIcon="/images/icons/Icon-34.png"
+                    author={t("Peter Vesterberg, CEO Saluto AB")}
+                    cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
                     ></Cite>
                   </div>
                   <div ref={refCite2} className="snap-center">
                     <Cite
-                    author="AWS Package 1"
-                    cite="Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, magnam libero deserunt"
-                    citeIcon="/images/icons/Icon-40.png"
+                    author="Erik Strandin Pers, Founder Foodfacts"
+                    cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
                     ></Cite>
                   </div>
                 </div>
@@ -242,11 +236,11 @@ export default function Home() {
             <img className="w-1/4" src="/images/MISC/Altostruct_office-23.jpg" alt="" />
             </div>
             <div className="grid grid-cols-1 mt-5 place-items-end text-[#c3eec3]">
-                <a className="flex text-white" href="">
+                <a className="flex text-[#c3eec3]" href="/about">
                 <p>
-                Människorna bakom Altostruct
+                {t("Människorna bakom Altostruct")}
                 </p>
-                <img className="w-6 ml-2" src="/images/icons/arrow-icon.svg"></img>
+                <img className="w-6 ml-2 pt-[1%]" src="/images/icons/Icon-59.svg"></img>
                 </a>
             </div>
           </div>
@@ -266,10 +260,12 @@ export default function Home() {
           </div>
           <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
               <div className="flex text-2xl mr-5">
+               <a className="flex text-[#c3eec3]" href="/about">
                 <p>
-                Människorna bakom Altostruct
+                {t("Människorna bakom Altostruct")}
                 </p>
-                <img className="w-10 ml-2" src="/images/icons/arrow-icon.svg"></img>
+                <img className="w-10 ml-2" src="/images/icons/Icon-59.svg"></img>
+                </a>
               </div>
           </div>
 
