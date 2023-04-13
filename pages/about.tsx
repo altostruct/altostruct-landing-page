@@ -6,9 +6,12 @@ import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
 import TeamImage from "components/TeamImages/Image"
+import TransitionSquares from "@components/TransistionSquares";
+import tailwindConfig from "tailwind.config";
 
 function About() {
   const { t } = useTranslation();
+  const lightBg = tailwindConfig.theme.light
 
   return (
     <>
@@ -33,19 +36,8 @@ function About() {
         </Content>
             
 
-            <div className="bg-[#292929]">
-              <div className="flex place-content-end">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
-              <div className="flex place-content-end md:pr-28 pr-14">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
-              <div className="flex place-content-end">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
+            <div className={lightBg}>
+            <TransitionSquares></TransitionSquares>
             <Content>
 
               <div className="md:grid md:grid-cols-6 md:gap-4 text-white">
@@ -193,23 +185,23 @@ function About() {
               <p className="text-3xl">{t("Hälsa Altostruct teamet!")}</p>
             </div>
 
-            <div className="hidden md:grid grid-cols-6 pb-40 ml-2 mr-2 font-sans">
-              <div className="ml-2">
+            <div className="hidden md:grid grid-cols-6 pb-40 font-sans">
+              <div className="flex place-content-center">
                 <TeamImage children="Erik & Gustav" imagePath="/images/MISC/Altostruct_office-19.jpg"></TeamImage>
               </div>
-              <div className="ml-2">
+              <div className="flex place-content-center">
                 <TeamImage children={t("Kaffe paus")} imagePath="/images/MISC/Altostruct_office-34.jpg"></TeamImage>
               </div>
-              <div className="ml-2">
+              <div className="flex place-content-center">
                 <TeamImage children="Erik & Simon" imagePath="/images/MISC/Altostruct_office-18.jpg"></TeamImage>
               </div>
-              <div className="ml-2">
+              <div className="flex place-content-center">
                 <TeamImage children="Team meeting / Altostruct" imagePath="/images/MISC/Altostruct_office-39.jpg"></TeamImage>
               </div>
-              <div className="ml-2">
+              <div className="flex place-content-center">
                 <TeamImage children="Joakim & Per" imagePath="/images/MISC/Altostruct_office-38.jpg"></TeamImage>
               </div>
-              <div className="ml-2">
+              <div className="flex place-content-center">
                 <TeamImage children={t("Kontorets Maskot")} imagePath="/images/MISC/Altostruct_office-37.jpg"></TeamImage>
               </div>
             </div>

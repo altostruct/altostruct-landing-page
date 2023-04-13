@@ -5,7 +5,7 @@ import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
-import Package from "@components/Package/Packege"
+import Package from "@components/Packege/Packege"
 import { useRef } from "react";
 import React, { useState } from 'react'
 

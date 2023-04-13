@@ -6,10 +6,12 @@ import Footer from "components/Footer/Footer";
 import Topbar from "components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
 import WordCircled from "components/Word-Circled/Word";
-import Package from "@components/Package/Packege"
+import Package from "@components/Packege/Packege"
 import { useRef } from "react";
 import React, { useState } from 'react'
 import Link from "next/link";
+import twconfig from 'tailwind.config'
+import TransitionSquares from "@components/TransistionSquares";
 
 
 
@@ -23,7 +25,8 @@ export default function Home() {
   const refPackage3 = useRef<HTMLDivElement>(null);
   const refCite1 = useRef<HTMLDivElement>(null);
   const refCite2 = useRef<HTMLDivElement>(null);
-
+  const bgDark = twconfig.theme.dark
+  const bgLight = twconfig.theme.light
 
 
   return (
@@ -33,7 +36,7 @@ export default function Home() {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
-      <div className="bg-[#161616]">
+      <div className={bgDark}>
         <Content>
           <div className="mb-6 items-center md:text-left text-center text-white md:w-3/4">
             <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">It's always <WordCircled borderCircle={true} color=""> Sunny </WordCircled> in the <WordCircled>Cloud</WordCircled></p>
@@ -47,23 +50,13 @@ export default function Home() {
           </div>
           </Content>
 
-          <div className="items-center text-white bg-[#292929]">
-              <div className="flex place-content-end">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
-              <div className="flex place-content-end md:pr-28 pr-14">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
-              <div className="flex place-content-end">
-                <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-                </div>
-              </div>
+          <div className={bgLight}>
+              <TransitionSquares></TransitionSquares>
+
               <div className="flex place-content-center">
               <img className="flex place-content-center w-20 mb-5" src="/images/icons/Icon-51.svg"></img>
               </div>
-              <div className="grid grid-cols-12">
+              <div className="grid grid-cols-12 text-white">
                 <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center"> 
                 <h2>
                 {t("Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet.")} </h2>
@@ -195,7 +188,7 @@ export default function Home() {
                     citeIcon="/images/icons/citat-icon-67.svg"
                     ></Cite>
                   </div>
-                  <div ref={refCite2} className=" snap-start">
+                  <div ref={refCite2} className="snap-start">
                     <Cite
                     author="Erik Strandin Pers, Founder Foodfacts"
                     cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}

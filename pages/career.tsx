@@ -5,10 +5,12 @@ import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
-import Package from "@components/Package/Packege"
+import Package from "@components/Packege/Packege"
 import { useRef } from "react";
 import React, { useState } from 'react'
 import Link from "next/link";
+import TransitionSquares from "@components/TransistionSquares";
+import tailwindConfig from "tailwind.config";
 
 
 function Carrer() {
@@ -16,7 +18,7 @@ function Carrer() {
   const refPackage1 = useRef<HTMLDivElement>(null);
   const refPackage2 = useRef<HTMLDivElement>(null);
   const [visiblePackage, setVisiblePackage] = useState(0);
-
+  const lightBg = tailwindConfig.theme.light
   
   return (
     <>
@@ -39,20 +41,10 @@ function Carrer() {
         </div>
         </Content>
 
-        <div className="items-center text-white bg-[#292929]">
-            <div className="flex place-content-end">
-              <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-              </div>
-            </div>
-            <div className="flex place-content-end md:pr-28 pr-14">
-              <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-              </div>
-            </div>
-            <div className="flex place-content-end">
-              <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]">
-              </div>
-            </div>
-            <div className="place-content-center text-center">
+        <div className={lightBg}>
+            <TransitionSquares></TransitionSquares>
+
+            <div className="place-content-center text-white text-center">
               <h2 className="font-bold">
                 {t("Lediga tjänster")}
               </h2>
