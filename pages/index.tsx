@@ -63,7 +63,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 mt-36 w-11/12 md:w-11/12 m-auto pb-10">
+              <div className="grid grid-cols-1 mt-36 w-11/12 md:w-11/12 m-auto text-white pb-10">
                 <div className="col-start-1 text-2xl mb-2">{t("Våra startpaket")}</div>
                 <div className="col-start-1 text-md mb-10"> {t("Vi har brutit ner hela molnresan i tre paketerade tjänster för att göra det enklare för som kund att förbättra era nuvarande system")}</div>
 
@@ -196,6 +196,7 @@ export default function Home() {
                     ></Cite>
                   </div>
                 </div>
+                
                 <div className="flex md:hidden justify-center">
                     <div onClick={() => 
                     {
@@ -245,8 +246,12 @@ export default function Home() {
                 </a>
             </div>
           </div>
-
-          <div className="hidden md:flex mt-96 overflow-x-auto">
+          
+          <div className="hidden md:flex mt-96 text-white place-content-end">
+            <p className="text-xs">psst, scroll to the right</p>
+            <img className="w-4 pt-[0.1%] ml-2" src="/images/icons/Icon-42.svg"></img>
+            </div>
+          <div className="hidden md:flex overflow-x-auto">
             <img className="h-[300px] mr-4" src="/images/MISC/Altostruct_office-3.jpg" alt="" />
             <img className="h-[150px]" src="/images/MISC/Altostruct_office-15.jpg" alt="" />
             <img className="h-[150px] mr-4 mt-[150px]" src="/images/MISC/Altostruct_office-18.jpg" alt="" />
