@@ -9,13 +9,9 @@
 // }
 
 import Content from "@components/Content";
-import { TagCloud } from "react-tagcloud";
-
 import Footer from "@components/Footer/Footer";
 import Topbar from "@components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { ContentfulPost, getContentfulPosts } from "utils/contentful";
@@ -50,19 +46,17 @@ function ABC(props: { posts: ContentfulPost[] }) {
 
     return (
       <Link href={"blog/" + props.fields.slug}>
-        <div className="flex items-center gap-2 md:gap-12">
+        <div className="hidden md:flex items-center gap-2 md:gap-12 text-white">
           <div className="h-fit flex-1">
             <p className="font-light">{props.fields.author}</p>
-
             <h1 className="text-lg font-sans md:text-3xl font-medium">
               {props.fields.title}
             </h1>
-            <p className="mt-2 text-gray-500 hidden md:block">
+            <p className="mt-2 w-3/5 text-white hidden md:block">
               {props.fields.description}
             </p>
-            <div className="mt-4  text-gray-500 text-xs md:text-sm flex gap-4">
+            <div className="mt-4 text-white text-xs md:text-sm flex gap-4">
               <p>{formatDate(props.fields.createDate ?? new Date())}</p>
-
               <p>
                 {t("Lästid {{time}} minuter", {
                   time: getReadTime(JSON.stringify(props)),
@@ -70,7 +64,7 @@ function ABC(props: { posts: ContentfulPost[] }) {
               </p>
             </div>
           </div>
-          <div className="m-auto w-1/5 md:w-56">
+          <div className="m-auto w-1/5 md:w-56 justify-items-end">
             {props.fields.image && (
               <ContentfulImage
                 alt=""
@@ -84,6 +78,36 @@ function ABC(props: { posts: ContentfulPost[] }) {
               />
             )}
           </div>
+        </div>
+
+        <div className="md:hidden items-center text-white">
+            <p className="font-light">{props.fields.author}</p>
+            <h1 className="text-lg font-sans md:text-3xl font-medium">
+              {props.fields.title}
+            </h1>
+            <div className="flex m-auto justify-center mt-5">
+            {props.fields.image && (
+              <ContentfulImage
+                alt=""
+                image={props.fields.image}
+                height={400}
+                width={400}
+                className="h-40 w-40"
+                style={{
+                  objectFit: "cover",
+                }}
+              />
+            )}
+          </div>
+            <div className="mt-4 text-white text-xs md:text-sm flex gap-4">
+              <p>{formatDate(props.fields.createDate ?? new Date())}</p>
+              <p>
+                {t("Lästid {{time}} minuter", {
+                  time: getReadTime(JSON.stringify(props)),
+                })}
+              </p>
+          </div>
+    
         </div>
       </Link>
     );
@@ -127,7 +151,7 @@ function ABC(props: { posts: ContentfulPost[] }) {
   });
 
   return (
-    <div>
+    <div className="bg-[#161616]">
       <SEO
         title={t("Altostruct - Kunskapsbas")}
         description={t(
@@ -135,25 +159,24 @@ function ABC(props: { posts: ContentfulPost[] }) {
         )}
       ></SEO>
       <Topbar fixed={false} transparent></Topbar>
-      <div className="bg-yellow-500 w-full py-36 border border-black bg-gradient-to-tr from-red-400">
+      <div className="bg-[#161616] w-full py-36 border-black bg-gradient-to-tr from-green-700">
         <Content>
-          <div className="flex items-center">
+          <div className="flex items-center text-[#eeeeee]">
             <div className="md:w-1/2">
               <h1 className="">
                 <b>{t("Technology is best when it brings people together.")}</b>
               </h1>
-              <p>{t("")}</p>
             </div>
             <div className="hidden md:flex w-1/2 font-mono leading-tight justify-center gap-12 font-extralight">
-              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
-              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
-              <div className="rounded-full w-16 h-16 bg-gray-800"></div>
+              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
+              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
+              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
             </div>
           </div>
         </Content>
       </div>
       <Content>
-        <div className="mt-12 gap-12 flex-col md:w-3/4 flex">
+        <div className="mt-12 gap-12 flex-col pb-10 flex">
           {posts.map((post) => {
             return <Post key={post.fields.slug} {...post} />;
           })}

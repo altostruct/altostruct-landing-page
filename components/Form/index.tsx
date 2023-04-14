@@ -79,7 +79,7 @@ function Form() {
   };
 
   return (
-    <section>
+    <section className="text-white">
       <h2 style={{ marginBottom: "1em" }}>{t("Kontakta oss")}</h2>
 
       <form
@@ -89,11 +89,10 @@ function Form() {
         style={{
           display: "flex",
           width: "100%",
-
           gap: "4em",
         }}
       >
-        <div style={{ flexGrow: 1 }}>
+        <div style={{flexGrow: 1}}>
           <label htmlFor="fullName">{t("För- och efternamn")}</label>
           <input type="text" id="fullName" name="from_name" />
           <label htmlFor="companyName">{t("Företag")}</label>
@@ -104,7 +103,7 @@ function Form() {
           <input type="number" id="phone" name="phone" />
           <br />
         </div>
-        <div style={{ flexGrow: 1 }}>
+        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300	"}}>
           <label htmlFor="message">{t("Meddelande")}</label>
           <textarea id="message" name="message" rows={10}></textarea>
           <div
@@ -127,13 +126,13 @@ function Form() {
             >
               {t("Jag gillar att prata i telefon, ring mig!")}
             </label>
-            <input type="checkbox" id="callMe" name="call_me" />
+            <input style={{backgroundColor: "#eee"}} type="checkbox" id="callMe" name="call_me" />
           </div>
           <div
             style={{
               display: "flex",
               justifyContent: "end",
-              alignItems: "center",
+              alignItems: "center",              
             }}
           >
             <Button type="primary" formAction="submit">

@@ -1,23 +1,21 @@
-//@ts-ignore
-import Fade from "react-reveal/Fade";
-
 interface CiteProps {
   cite: string;
   author: string;
+  citeIcon?: string;
 }
 
 function Cite(props: CiteProps) {
-  const { author, cite } = props;
+  const {author, cite, citeIcon} = props;
   return (
-    <div>
-      <Fade>
-        <h3 className="text-lg md:text-2xl">{`"${cite}"`}</h3>
-      </Fade>
-      <Fade>
-        <div className="mt-1">
-          <cite>{author}</cite>
+    <div className="w-screen md:w-auto">
+       <div className="flex">
+            <img className="md:w-10 w-10 ml-1" src={citeIcon}/>
+            <img className="md:w-10 w-10 ml-1" src={citeIcon}/>
         </div>
-      </Fade>
+        <h2 className="mt-10">
+            {cite}
+        </h2>
+        <p className="text-lg mt-4">{`/${author}`}</p>
     </div>
   );
 }

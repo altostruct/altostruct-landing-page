@@ -50,9 +50,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     <>
       <header
         className={classNames(styles.topbar, {
-          "bg-white": true,
+          
+          "bg-[#161616]": true,
           "bg-transparent": transparent,
-          border: transparent || !isAtTop,
           "border-black": transparent,
           fixed: fixed,
           absolute: !fixed,
@@ -60,18 +60,21 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       >
         <nav>
           <Link href={"/"}>
-            <Brand />
+            <Brand/>
           </Link>
         </nav>
         <nav className="hidden md:flex invisible md:visible">
-          <Link className={styles["button-spacing"]} href={"/#contact"}>
-            {t("Kontakta oss")}
+          <Link className={styles["button-spacing"]} href={"/"}>
+            {t("Startsida")}
+          </Link>
+          <Link className={styles["button-spacing"]} href={"/career"}>
+            {t("Karriär")}
           </Link>
           <Link className={styles["button-spacing"]} href={"/about"}>
             {t("Om oss")}
           </Link>
           <Link className={styles["button-spacing"]} href={"/blog"}>
-            {t("Kunskapsbas")}
+            {t("Artiklar")}
           </Link>
           <LanguageSelector></LanguageSelector>
         </nav>
@@ -82,35 +85,46 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
         >
           <div ref={ref}>
             <svg viewBox="0 0 100 100" width="20" height="20">
-              <rect y="0" width="100" height="20"></rect>
-              <rect y="40" width="100" height="20"></rect>
-              <rect y="80" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="0" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="40" width="100" height="20"></rect>
+              <rect className="stroke-1	fill-white" y="80" width="100" height="20"></rect>
             </svg>
           </div>
         </nav>
       </header>
 
       {expanded && (
-        <div className="md:hidden bg-white z-20 h-screen w-screen right-0 top-0 fixed flex">
+        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex">
           <div className="m-auto flex-col flex text-4xl max-h-96">
-            <Fade delay={0}>
-              <Link className="button-spacing" href="/about">
-                {t("Om oss")}
+            
+          <Fade delay={0}>
+              <Link className="button-spacing text-white" href={"/"}>
+                {t("Startsida")}
+              </Link>
+            </Fade>
+            <Fade delay={100}>
+              <Link className="button-spacing text-white" href="/career">
+                {t("Karriär")}
               </Link>
             </Fade>
             <Fade delay={200}>
-              <Link className="button-spacing" href="/blog">
+              <Link className="button-spacing text-white" href="/about">
+                {t("Om oss")}
+              </Link>
+            </Fade>
+            <Fade delay={300}>
+              <Link className="button-spacing text-white" href="/blog">
                 {t("Kunskapsbas")}
               </Link>
             </Fade>
             <Fade delay={400}>
-              <div className="border-b my-3"></div>
+              <div className="border-b my-3 text-white"></div>
             </Fade>
-            <Fade delay={600}>
-              <Link href={"/#contact"}>{t("Kontakta oss")}</Link>
+            <Fade delay={500}>
+              <Link className="text-white" href={"/#contact"}>{t("Kontakta oss")}</Link>
             </Fade>
 
-            <Fade delay={800}>
+            <Fade delay={600}>
               <div className="mx-10 h-36 md:m-10">
                 <LanguageSelector
                   onSelect={() => setExpanded(false)}
