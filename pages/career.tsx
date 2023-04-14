@@ -122,7 +122,7 @@ function Carrer() {
 
             <div className="md:grid md:grid-cols-2 grid-cols-1 pb-40 place-items-center text-white"> 
               <div className="relative">
-                <h2 className="relative pt-5 z-10">{t("Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda.")}</h2>
+                <p className="relative pt-5 z-10 md:text-2xl text-xl "> {t("Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda.")}</p>
                 <div className="absolute top-10 left-96 md:w-40 md:h-40 rotate-45 bg-[#6024ff]"></div>
                 <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 bg-[#6024ff]"></div>
              </div>
