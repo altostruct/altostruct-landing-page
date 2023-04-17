@@ -1,0 +1,1 @@
+* Use links, instead of HREFs
