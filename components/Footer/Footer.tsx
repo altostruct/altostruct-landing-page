@@ -8,12 +8,11 @@ import TransitionSquares from "@components/TransistionSquares";
 const Footer = () => {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light
-  const darkBg = tailwindConfig.theme.dark
 
   return (
     <div className={lightBg}>
     <TransitionSquares></TransitionSquares>
-    
+
     <div className={styles.footerContent}>
       <h1 className="text-[#707070] mb-4">{t("Senaste nyheter")}</h1>
         <a href="mailto:info@altostruct.se">

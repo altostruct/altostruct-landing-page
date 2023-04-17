@@ -261,6 +261,81 @@ export default function Home() {
                 ></Cite>
               </div>
             </div>
+          
+          <Content>
+            <div className="hidden md:grid grid-cols-3 mt-36 text-white">
+                <div className="pt-[20%] w-4/5">
+                    <h3>{t("Rekommendationer")}</h3>
+                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
+                  </div>
+                  <div>
+                    <Cite
+                    author="Peter Vesterberg, CEO Saluto AB"
+                    cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
+                    ></Cite>
+                  </div>
+                  <div>
+                    <Cite
+                    author="Erik Strandin Pers, Founder Foodfacts"
+                    cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
+                    ></Cite>
+                  </div>
+
+            </div>
+
+
+            <div className="md:hidden mt-36 pb-20">
+                <div className="relative text-white mb-10">
+                    <h3>{t("Rekommendationer")}</h3>
+                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
+                </div>
+                <div className="md:hidden flex overflow-x-auto text-white snap-x snap-proximity w-screen"
+                onScroll={(e) => 
+                  {
+                    const citescroll = refCite2.current?.getBoundingClientRect().x
+                    console.log(citescroll)
+                    if(citescroll != undefined ){
+                      if(citescroll < 300){
+                        setVisibleCitation(1);
+                      }
+                      if(citescroll > 300 && citescroll < 600){
+                        setVisibleCitation(0);
+                      }
+                    }
+                  }}
+                >
+                  <div className="hidden md:block ">
+                    <h3>{t("Rekommendationer")}</h3>
+                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
+                  </div>
+                  <div ref={refCite1} className="snap-start mr-5 w-full">
+                    <Cite
+                    author="Peter Vesterberg, CEO Saluto AB"
+                    cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
+                    ></Cite>
+                  </div>
+                  <div ref={refCite2} className="snap-start mr-5">
+                    <Cite
+                    author="Erik Strandin Pers, Founder Foodfacts"
+                    cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}
+                    citeIcon="/images/icons/citat-icon-67.svg"
+                    ></Cite>
+                  </div>
+                </div>
+                
+                <div className="flex md:hidden justify-center">
+                    <div onClick={() => 
+                    {
+                      refCite1.current?.scrollIntoView({block: "nearest", behavior:"smooth"})
+                      setVisibleCitation(0);
+                    }} 
+                      className="flex-none pr-2 snap-center">
+                      <div className={`h-3 w-3 ${visibleCitation === 0 ? "bg-green-300" : "bg-white"}`}>
+                      </div>
+                    </div>
 
             <div className="flex md:hidden justify-center">
               <div
