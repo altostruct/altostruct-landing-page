@@ -218,7 +218,7 @@ export default function Home() {
         </div>
 
 
-          <Content>
+        <Content>
             <div className="hidden md:grid grid-cols-3 mt-36 text-white">
                 <div className="pt-[20%] w-4/5">
                     <h3>{t("Rekommendationer")}</h3>
@@ -282,16 +282,7 @@ export default function Home() {
                 </div>
                 
                 <div className="flex md:hidden justify-center">
-                    <div onClick={() => 
-                    {
-                      refCite1.current?.scrollIntoView({block: "nearest", behavior:"smooth"})
-                      setVisibleCitation(0);
-                    }} 
-                      className="flex-none pr-2 snap-center">
-                      <div className={`h-3 w-3 ${visibleCitation === 0 ? "bg-green-300" : "bg-white"}`}>
-                      </div>
-                    </div>
-
+                   
             <div className="flex md:hidden justify-center">
               <div
                 onClick={() => {
