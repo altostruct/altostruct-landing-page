@@ -18,14 +18,7 @@ import Projects from "@components/Projects";
 
 export default function Home() {
   const { t } = useTranslation();
-  const [visiblePackage, setVisiblePackage] = useState(0);
-  const [visibleCitation, setVisibleCitation] = useState(0);
 
-  const refPackage1 = useRef<HTMLDivElement>(null);
-  const refPackage2 = useRef<HTMLDivElement>(null);
-  const refPackage3 = useRef<HTMLDivElement>(null);
-  const refCite1 = useRef<HTMLDivElement>(null);
-  const refCite2 = useRef<HTMLDivElement>(null);
   const bgDark = twconfig.theme.dark;
   const bgLight = twconfig.theme.light;
 
@@ -44,14 +37,14 @@ export default function Home() {
               "Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!"
             )}
             title={
-              <p className="text-3xl md:text-6xl text-left md:w-3/4">
+              <>
                 {"It's always "}
                 <WordCircled borderCircle={true} color="">
                   {" "}
                   Sunny{" "}
                 </WordCircled>{" "}
                 when you are in the <WordCircled>Cloud</WordCircled>
-              </p>
+              </>
             }
           ></PageStart>
           {/* <div className="mb-6 items-center md:text-left text-center text-white md:w-3/4">
@@ -108,7 +101,6 @@ export default function Home() {
           </div>
         </div>
         <Projects></Projects>
-
         <Content>
           <div className="grid grid-cols-3 mt-36 text-white">
             <div className="w-4/5">

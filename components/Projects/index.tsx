@@ -12,11 +12,9 @@ function Projects(props: any) {
           <div key={index}>
             <ContentfulImage
               alt="asd"
+              width={420}
+              height={200}
               image={v.fields.image}
-              className="w-full"
-              style={{
-                objectFit: "cover",
-              }}
             />
           </div>
         );

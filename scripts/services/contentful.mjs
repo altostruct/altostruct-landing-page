@@ -33,7 +33,7 @@ async function loadAssets(contentType, path) {
 
   for (const item of images.items) {
     const buffer = await fetch("http:" + item.fields.file.url).then((v) =>
-      v.text()
+      v.buffer()
     );
 
     const ext = item.fields.file.contentType.split("/")[1];

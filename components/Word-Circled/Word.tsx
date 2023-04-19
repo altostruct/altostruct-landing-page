@@ -17,10 +17,9 @@ interface ButtonProps {
 
 const Button = (props: ButtonProps) => {
   const { children, color, borderCircle } = props;
-  const { t } = useTranslation();
 
   return (
-    <div
+    <span
       className={classNames(
         style.circle,
         color ? style.secondaryColor : style.primaryColor,
@@ -28,7 +27,7 @@ const Button = (props: ButtonProps) => {
       )}
     >
       {children}
-    </div>
+    </span>
   );
 };
 
