@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "KHTeka";
+  src: url(./assets/fonts/KH-Teka/WOFF/KHTeka-Regular.woff);
+}
+
 $bg-color: rgb(4, 1, 26);
 $dot-color: rgb(110, 110, 110);
 
@@ -34,13 +39,13 @@ body {
   background: var(--bg-color);
   color: var(--text-color);
   margin: 0;
-  font-family: "Poppins", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+  font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-weight: 300;
+  color: white;
 }
 main {
   display: flex;
@@ -143,10 +148,6 @@ h1 {
 }
 
 h2 {
-  font-family: Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
-    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
-
   font-size: 36px;
   font-weight: 800;
   margin: 0;

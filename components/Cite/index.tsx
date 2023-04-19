@@ -5,17 +5,15 @@ interface CiteProps {
 }
 
 function Cite(props: CiteProps) {
-  const {author, cite, citeIcon} = props;
+  const { author, cite, citeIcon } = props;
   return (
     <div className="w-[95vw] md:w-auto">
-       <div className="flex">
-            <img className="w-10 ml-1" src={citeIcon}/>
-            <img className="w-10 ml-1" src={citeIcon}/>
-        </div>
-        <h2 className="mt-10">
-            {cite}
-        </h2>
-        <p className="text-lg mt-4">{`/${author}`}</p>
+      <div className="flex">
+        <img className="w-10 ml-1" src={citeIcon} />
+        <img className="w-10 ml-1" src={citeIcon} />
+      </div>
+      <p className="mt-10 text-3xl">{cite}</p>
+      <p className="text-lg mt-4 text-gray-200 ">{`Peter Vesterberg / CEO Saluto AB`}</p>
     </div>
   );
 }

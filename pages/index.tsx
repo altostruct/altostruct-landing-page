@@ -13,6 +13,7 @@ import Link from "next/link";
 import twconfig from "tailwind.config";
 import TransitionSquares from "@components/TransistionSquares";
 import PageStart from "@components/PageStart";
+import StaticSidebar from "@components/StaticSidebar";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <>
+      <StaticSidebar></StaticSidebar>
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
@@ -73,251 +75,62 @@ export default function Home() {
           </div> */}
         </Content>
 
-        <div className={bgLight}>
+        <div className={bgDark}>
           <TransitionSquares></TransitionSquares>
-
-          <div className="flex place-content-center">
+          {/* <div className="flex justify-items-center pt-32">
             <img
-              className="flex place-content-center w-20 mb-5"
+              className="m-auto place-content-center w-48 mb-3"
               src="/images/icons/Icon-51.svg"
             ></img>
-          </div>
-          <div className="grid grid-cols-12 text-white">
-            <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center">
-              <h2>
-                {t(
-                  "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
-                )}{" "}
+          </div> */}
+
+          <div className="grid grid-cols-12 pt-32 pb-32 text-white">
+            <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center">
+              <h2 className="text-lg uppercase text-gray-300 mb-2">
+                {t("Vad är Altostruct?")}
               </h2>
+              <p className="text-3xl">
+                {t(
+                  "Altostruct är ett konsultbolag specialiserade" +
+                    " inom AWS. Vårt team av "
+                )}{" "}
+                <i>
+                  <u>AWS konsulter är certifierade</u>
+                </i>
+                {t(
+                  " via AWS och erbjuder ett stort utbud av tjänster som" +
+                    " exempelvis molnmigrationer, AI, serverless och APIer." +
+                    " Altostruct grundades 2020 och hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
+                )}
+              </p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 mt-36 w-11/12 md:w-11/12 m-auto text-white pb-10">
-            <div className="col-start-1 text-2xl mb-2">
-              {t("Våra startpaket")}
-            </div>
-            <div className="col-start-1 text-md mb-10">
-              {" "}
-              {t(
-                "Vi har brutit ner hela molnresan i tre paketerade tjänster för att göra det enklare för som kund att förbättra era nuvarande system"
-              )}
-            </div>
-
-            <div
-              className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 place-items-center snap-x snap-proximity"
-              onScroll={(e) => {
-                const test = refPackage3.current?.getBoundingClientRect().x;
-                if (test != undefined) {
-                  if (test < 300) {
-                    setVisiblePackage(2);
-                  }
-                  if (test > 300 && test < 600) {
-                    setVisiblePackage(1);
-                  }
-                  if (test > 600 && test < 900) {
-                    setVisiblePackage(0);
-                  }
-                }
-              }}
-            >
-              <div ref={refPackage1} className="snap-center">
-                <Link href="/cloudshift">
-                  <Package
-                    title="Cloudshift"
-                    description={t(
-                      "Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter"
-                    )}
-                    iconPath="/images/icons/Icon-49.svg"
-                  ></Package>
-                </Link>
-              </div>
-              <div ref={refPackage2} className="snap-center">
-                <Link href="/nebula">
-                  <Package
-                    title="Nebula"
-                    description={t(
-                      "Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen"
-                    )}
-                    iconPath="/images/icons/Icon-50.svg"
-                  ></Package>
-                </Link>
-              </div>
-              <div ref={refPackage3} className="snap-center">
-                <Link href="/atmosphere">
-                  <Package
-                    title="Atmosphere"
-                    description={t(
-                      "Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha"
-                    )}
-                    iconPath="/images/icons/Icon-58.svg"
-                  ></Package>
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex md:hidden justify-center">
-              <div
-                onClick={() => {
-                  refPackage1.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(0);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 0 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-
-              <div
-                onClick={() => {
-                  refPackage2.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(1);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 1 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-
-              <div
-                onClick={() => {
-                  refPackage3.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(2);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 2 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex place-content-start md:pl-28 pl-14 md:pt-28 pt-16">
-            <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
-          </div>
-          <div className="flex place-content-start">
-            <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
           </div>
         </div>
 
-
         <Content>
-            <div className="hidden md:grid grid-cols-3 mt-36 text-white">
-                <div className="pt-[20%] w-4/5">
-                    <h3>{t("Rekommendationer")}</h3>
-                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
-                  </div>
-                  <div>
-                    <Cite
-                    author="Peter Vesterberg, CEO Saluto AB"
-                    cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
-                    citeIcon="/images/icons/citat-icon-67.svg"
-                    ></Cite>
-                  </div>
-                  <div>
-                    <Cite
-                    author="Erik Strandin Pers, Founder Foodfacts"
-                    cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}
-                    citeIcon="/images/icons/citat-icon-67.svg"
-                    ></Cite>
-                  </div>
+          <div className="grid grid-cols-3 mt-36 text-white">
+            <div className="w-4/5">
+              <h3 className="uppercase">{t("Rekommendationer")}</h3>
+              <p>{t("Om oss / rekomendationer")}</p>
             </div>
 
-
-            <div className="md:hidden mt-36 pb-20">
-                <div className="relative text-white mb-10">
-                    <h3>{t("Rekommendationer")}</h3>
-                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
-                </div>
-                <div className="md:hidden flex overflow-x-auto text-white snap-x snap-proximity w-screen"
-                onScroll={(e) => 
-                  {
-                    const citescroll = refCite2.current?.getBoundingClientRect().x
-                    console.log(citescroll)
-                    if(citescroll != undefined ){
-                      if(citescroll < 300){
-                        setVisibleCitation(1);
-                      }
-                      if(citescroll > 300 && citescroll < 600){
-                        setVisibleCitation(0);
-                      }
-                    }
-                  }}
-                >
-                  <div className="hidden md:block ">
-                    <h3>{t("Rekommendationer")}</h3>
-                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
-                  </div>
-                  <div ref={refCite1} className="snap-start mr-5 w-full">
-                    <Cite
-                    author="Peter Vesterberg, CEO Saluto AB"
-                    cite={t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.")}
-                    citeIcon="/images/icons/citat-icon-67.svg"
-                    ></Cite>
-                  </div>
-                  <div ref={refCite2} className="snap-start mr-5">
-                    <Cite
-                    author="Erik Strandin Pers, Founder Foodfacts"
-                    cite={t("Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.")}
-                    citeIcon="/images/icons/citat-icon-67.svg"
-                    ></Cite>
-                  </div>
-                </div>
-                
-                <div className="flex md:hidden justify-center">
-                   
-            <div className="flex md:hidden justify-center">
-              <div
-                onClick={() => {
-                  refCite1.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisibleCitation(0);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visibleCitation === 0 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-
-              <div
-                onClick={() => {
-                  refCite2.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisibleCitation(1);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visibleCitation === 1 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-                </div>
-              </div>
+            <div>
+              <Cite
+                author="Peter Vesterberg, CEO Saluto AB"
+                cite={t(
+                  "Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad."
+                )}
+                citeIcon="/images/icons/citat-icon-67.svg"
+              ></Cite>
+            </div>
+            <div>
+              <Cite
+                author="Erik Strandin Pers, Founder Foodfacts"
+                cite={t(
+                  "Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+                )}
+                citeIcon="/images/icons/citat-icon-67.svg"
+              ></Cite>
             </div>
           </div>
         </Content>

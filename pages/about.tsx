@@ -10,6 +10,8 @@ import TransitionSquares from "@components/TransistionSquares";
 import tailwindConfig from "tailwind.config";
 import Link from "next/link";
 import PageStart from "@components/PageStart";
+import BigList from "@components/BigList";
+import StaticSidebar from "@components/StaticSidebar";
 
 function About() {
   const { t } = useTranslation();
@@ -17,6 +19,7 @@ function About() {
 
   return (
     <>
+      <StaticSidebar></StaticSidebar>
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
@@ -78,95 +81,49 @@ function About() {
         </div>
 
         <Content>
-          <div className="hidden md:block">
-            <div className="text-white pt-40 pb-20">
-              <h2>{t("Varför välja oss?")}</h2>
-            </div>
-
-            <div className="md:grid md:grid-cols-12 text-white items-center mb-20">
-              <div className="md:col-span-1">
-                <img className="w-20" src="/images/icons/Icon-48.svg" alt="" />
-              </div>
-              <div className="flex col-span-11 items-center ml-6 border-b-[1px]">
-                <h1>Wolfpacks</h1>
-                <p className="w-1/2 ml-auto font-sans">
-                  {t(
-                    "Vi säkerställer kvalitet och leverans i tid genom att arbeta agilt i små team vars huvudsakliga fokus är er och er produkt."
-                  )}
-                </p>
-              </div>
-            </div>
-
-            <div className="md:grid md:grid-cols-12 text-white items-center mb-20">
-              <div className="md:col-span-1">
-                <img className="w-20" src="/images/icons/Icon-54.svg" alt="" />
-              </div>
-              <div className="md:flex col-span-11 items-center ml-6 border-b-[1px]">
-                <h1>{t("Direkt kontakt")}</h1>
-                <p className="w-1/2 ml-auto font-sans">
-                  {t(
-                    "Vi tror på enkel och effektiv kommunikation. Det är A och O i utveckling. Vi minskar därför mellanhänder och erbjuder direkt kontakt mellan kund och utvecklare."
-                  )}
-                </p>
-              </div>
-            </div>
-
-            <div className="md:grid md:grid-cols-12 text-white items-center mb-20">
-              <div className="md:col-span-1">
-                <img className="w-20" src="/images/icons/Icon-55.svg" alt="" />
-              </div>
-              <div className="flex col-span-11 items-center ml-6 border-b-[1px]">
-                <h1>{t("Nära och långsiktiga samarbeten")}</h1>
-                <p className="w-1/2 ml-auto font-sans">
-                  {t(
-                    "Vi arbetar nära kund och är lojala partners. Genom nära samarbeten får vi en djup förståelse för era utmaningar vilket ger oss möjligheten att skapa bättre och mer anpassade lösningar. Efter lösningen är byggd erbjuder vi också kontinuerligt underhåll."
-                  )}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="md:hidden text-white">
-            <div className="text-white pt-40 pb-20">
-              <h2>{t("Varför välja oss?")}</h2>
-            </div>
-
-            <div className="mb-10">
-              <div className="flex border-b-[1px]">
-                <img className="w-10" src="/images/icons/Icon-48.svg" alt="" />
-                <h2 className="ml-2">Wolfpacks</h2>
-              </div>
-              <p className="mt-5">
-                {t(
+          <BigList
+            items={[
+              {
+                title: "Wolfpacks",
+                description: t(
                   "Vi säkerställer kvalitet och leverans i tid genom att arbeta agilt i små team vars huvudsakliga fokus är er och er produkt."
-                )}
-              </p>
-            </div>
-
-            <div className="mb-10">
-              <div className="flex border-b-[1px]">
-                <img className="w-10" src="/images/icons/Icon-54.svg" alt="" />
-                <h2 className="ml-2">{t("Direkt kontakt")}</h2>
-              </div>
-              <p className="mt-5">
-                {t(
+                ),
+                image: (
+                  <img
+                    className="w-full"
+                    src="/images/icons/Icon-48.svg"
+                    alt=""
+                  />
+                ),
+              },
+              {
+                title: "Direkt kontakt",
+                description: t(
                   "Vi tror på enkel och effektiv kommunikation. Det är A och O i utveckling. Vi minskar därför mellanhänder och erbjuder direkt kontakt mellan kund och utvecklare."
-                )}
-              </p>
-            </div>
-
-            <div className="mb-10">
-              <div className="flex border-b-[1px]">
-                <img className="w-10" src="/images/icons/Icon-55.svg" alt="" />
-                <h2 className="ml-2">{t("Nära och långsiktiga samarbeten")}</h2>
-              </div>
-              <p className="mt-5 font-sans">
-                {t(
+                ),
+                image: (
+                  <img
+                    className="w-full"
+                    src="/images/icons/Icon-54.svg"
+                    alt=""
+                  />
+                ),
+              },
+              {
+                title: "Nära och långsiktiga samarbeten",
+                description: t(
                   "Vi arbetar nära kund och är lojala partners. Genom nära samarbeten får vi en djup förståelse för era utmaningar vilket ger oss möjligheten att skapa bättre och mer anpassade lösningar. Efter lösningen är byggd erbjuder vi också kontinuerligt underhåll."
-                )}
-              </p>
-            </div>
-          </div>
+                ),
+                image: (
+                  <img
+                    className="w-full"
+                    src="/images/icons/Icon-55.svg"
+                    alt=""
+                  />
+                ),
+              },
+            ]}
+          ></BigList>
         </Content>
 
         <div className="bg-[#292929]">
