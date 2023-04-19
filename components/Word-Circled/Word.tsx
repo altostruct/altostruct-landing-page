@@ -4,25 +4,20 @@ import * as React from "react";
 import style from "./Word.module.scss";
 import useTranslation from "hooks/useTranslation";
 
-
 interface ButtonProps {
-  children?: string;
+  children?: React.ReactNode;
   className?: string;
   type?: "primary" | "secondary" | "shiny";
   formAction?: "submit" | "reset";
   link?: string;
   openNewTab?: boolean;
   color?: string;
-  borderCircle?: boolean
+  borderCircle?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const {
-    children, color, borderCircle
-  } = props;
+  const { children, color, borderCircle } = props;
   const { t } = useTranslation();
-
-
 
   return (
     <div

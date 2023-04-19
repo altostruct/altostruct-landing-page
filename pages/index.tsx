@@ -14,6 +14,7 @@ import twconfig from "tailwind.config";
 import TransitionSquares from "@components/TransistionSquares";
 import PageStart from "@components/PageStart";
 import StaticSidebar from "@components/StaticSidebar";
+import Projects from "@components/Projects";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -44,7 +45,7 @@ export default function Home() {
             )}
             title={
               <p className="text-3xl md:text-6xl text-left md:w-3/4">
-                It's always{" "}
+                {"It's always "}
                 <WordCircled borderCircle={true} color="">
                   {" "}
                   Sunny{" "}
@@ -106,6 +107,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Projects></Projects>
 
         <Content>
           <div className="grid grid-cols-3 mt-36 text-white">
@@ -185,13 +187,13 @@ export default function Home() {
             />
           </div>
           <div className="grid grid-cols-1 mt-5 place-items-end text-[#c3eec3]">
-            <a className="flex text-[#c3eec3]" href="/about">
+            <Link className="flex text-[#c3eec3]" href="/about">
               <p>{t("Människorna bakom Altostruct")}</p>
               <img
                 className="w-6 ml-2 pt-[1%]"
                 src="/images/icons/Icon-59.svg"
               ></img>
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -256,10 +258,10 @@ export default function Home() {
         </div>
         <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
           <div className="flex text-2xl mr-5">
-            <a className="flex text-[#c3eec3]" href="/about">
+            <Link className="flex text-[#c3eec3]" href="/about">
               <p>{t("Människorna bakom Altostruct")}</p>
               <img className="w-10 ml-2" src="/images/icons/Icon-59.svg"></img>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

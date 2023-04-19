@@ -1,5 +1,6 @@
 import * as fs from "fs";
 import posts from ".data/contentful/posts/all.json";
+import projects from ".data/contentful/projects/all.json";
 import Image from "next/image";
 
 export interface ContentfulSys {
