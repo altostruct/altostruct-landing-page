@@ -13,7 +13,7 @@ const Footer = () => {
     <div className={lightBg}>
     <TransitionSquares></TransitionSquares>
 
-    <div className={styles.footerContent}>
+    <div className="bg-[#292929] md:pt-[20%] md:px-[10%] md:pb-[2%] pt-[50%] pl-10 pb-4">
       <h1 className="text-[#707070] mb-4">{t("Senaste nyheter")}</h1>
         <a href="mailto:info@altostruct.se">
           <h1 className="text-[#f5f5f5] mb-4">{t("Kontakta oss")}</h1>
@@ -26,8 +26,8 @@ const Footer = () => {
       </a>
     </div>
 
-    <footer className={styles.footer}>
-      <div>
+    <div className={styles.footer}>
+      <div className="pb-10">
         <div className="text-white">
         <p>Copyright &copy; 2021 Altostruct AB</p>
         <p>
@@ -37,7 +37,7 @@ const Footer = () => {
         <p>Address: Stockholmsvägen 18, 181 50 Lidingö</p>
       </div>
       </div>
-    </footer>
+    </div>
     </div>
   );
 };

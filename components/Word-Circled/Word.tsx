@@ -28,7 +28,7 @@ const Button = (props: ButtonProps) => {
     <div
       className={classNames(
         style.circle,
-        color ? style.secondaryColor : style.primaryColor,
+        props.type == "primary" ? style.secondaryColor : style.primaryColor,
         borderCircle ? style.border : ""
       )}
     >

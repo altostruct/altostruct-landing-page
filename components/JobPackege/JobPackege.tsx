@@ -11,7 +11,7 @@ interface ButtonProps {
   link?: string;
 }
 
-const Package = (props: ButtonProps) => {
+const JobPackage = (props: ButtonProps) => {
  return (
   <div className={classNames(
     style.topCorners //this is the css for the top corners
@@ -21,13 +21,10 @@ const Package = (props: ButtonProps) => {
     )}>
      
       <div> 
-          <div className="flex place-content-center mt-10 mb-5">
-            <img className="w-10 lg:w-16 ml-1" src={props.iconPath} alt="" />
+          <div className="flex place-content-center mt-14 md:mt-24 mb-5">
+            <img className="w-16 ml-1" src={props.iconPath} alt="" />
           </div>
           <p className="flex text-center place-content-center text-4xl">{props.title}</p>
-          <h4 className={classNames(style.headerContent)}>
-            {props.description}
-          </h4>
           <div className="hidden md:flex place-content-center">
             <a ref={props.link} className="text-white flex absolute bottom-10">
               Read more
@@ -40,4 +37,4 @@ const Package = (props: ButtonProps) => {
   );
 };
 
-export default Package;
+export default JobPackage;

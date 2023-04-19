@@ -1,16 +1,18 @@
 .footerContent {
   background: #292929;
+  padding-top: 20%;
   padding-left: 10%;
   padding-right: 10%;
+  padding-bottom: 2%;
 }
 
 .footer {
   display: flex;
   justify-content: space-between;
   place-items: center;
-  padding: 2em 0;
   background: #292929;
   position: relative;
+  padding-top: 2%;
 
   p {
     font-size: 0.7em;

@@ -8,10 +8,9 @@ import WordCircled from "components/Word-Circled/Word";
 import TeamImage from "components/TeamImages/Image";
 import TransitionSquares from "@components/TransistionSquares";
 import tailwindConfig from "tailwind.config";
-import Link from "next/link";
 import PageStart from "@components/PageStart";
 import BigList from "@components/BigList";
-import StaticSidebar from "@components/StaticSidebar";
+import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
 
 function About() {
   const { t } = useTranslation();
@@ -45,42 +44,44 @@ function About() {
           <Content>
             <div className="md:grid md:grid-cols-6 md:gap-4 text-white">
               <div className="col-start-1 col-end-5">
-                <div className="pt-20 text-white font-sans">
-                  <h2 className="pb-4">{t("Om Altostruct")}</h2>
+                <div className="md:pt-72 pt-52 md:text-4xl text-3xl text-white font-sans">
+                  <p className="pb-4">{t("Om Altostruct")}</p>
                 </div>
                 <div className="relative">
-                  <h1 className="relative z-10">
+                  <p className="relative z-10 md:text-4xl text-2xl">
                     {t(
                       "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
                     )}
-                  </h1>
-                  <div className="absolute top-20 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 bg-[#6024ff]"></div>
-                  <div className="absolute top-2 left-10 rotate-12 w-20 h-20 md:w-40 md:h-40 bg-[#6024ff]"></div>
+                  </p>
+                  <div className="absolute top-20 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-60 bg-[#6024ff]"></div>
+                  <div className="absolute top-2 left-10 rotate-12 w-20 h-20 md:w-40 md:h-40 opacity-60 bg-[#6024ff]"></div>
                 </div>
               </div>
 
               <div className="col-start-3 col-end-7 justify-items-end">
-                <div className="pt-20 text-white font-sans">
-                  <h2>{t("Vår vision")}</h2>
+                <div className="pt-20 md:text-4xl text-3xl text-white font-sans">
+                  <p>{t("Vår vision")}</p>
                 </div>
                 <div className="relative pb-20">
-                  <h1 className="relative z-10">
+                  <p className="relative md:text-4xl text-2xl z-10">
                     {t(
                       "Vår vision är att göra det möjligt för alla företag att bygga och hosta branschledande applikationer och platformer i molnet, och på så sätt demokratisera tillgången till den mest kraftfulla teknologin och resurserna."
                     )}
-                  </h1>
-                  <div className="absolute top-32 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 bg-[#6024ff]"></div>
-                  <div className="absolute top-2 left-20 w-20 h-20 md:w-40 md:h-40 bg-[#6024ff]"></div>
+                  </p>
+                  <div className="absolute top-32 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-60 bg-[#6024ff]"></div>
+                  <div className="absolute top-2 left-20 w-20 h-20 md:w-40 opacity-60 md:h-40 bg-[#6024ff]"></div>
                 </div>
               </div>
             </div>
           </Content>
-          <div className="flex place-content-start">
+
+          <div className="flex place-content-start md:pt-40">
             <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
           </div>
         </div>
 
         <Content>
+          <div className="md:pt-52 md:pb-72 pt-20 pb-52">
           <BigList
             items={[
               {
@@ -124,6 +125,7 @@ function About() {
               },
             ]}
           ></BigList>
+          </div>
         </Content>
 
         <div className="bg-[#292929]">

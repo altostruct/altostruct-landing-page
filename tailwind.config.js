@@ -8,5 +8,9 @@ module.exports = {
     'dark': "bg-[#161616]",
     'light': "bg-[#292929]",
   },
+  fonts: {
+    "kthfont": "font-family: KHTeka"
+
+  },
   plugins: [],
 };

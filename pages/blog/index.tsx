@@ -46,7 +46,7 @@ function ABC(props: { posts: ContentfulPost[] }) {
 
     return (
       <Link href={"blog/" + props.fields.slug}>
-        <div className="hidden md:flex items-center gap-2 md:gap-12 text-white">
+        <div className="hidden md:flex items-center gap-2 md:gap-12 text-white py-5">
           <div className="h-fit flex-1">
             <p className="font-light">{props.fields.author}</p>
             <h1 className="text-lg font-sans md:text-3xl font-medium">
@@ -176,7 +176,7 @@ function ABC(props: { posts: ContentfulPost[] }) {
         </Content>
       </div>
       <Content>
-        <div className="mt-12 gap-12 flex-col pb-10 flex">
+        <div className="mt-20 gap-12 flex-col pb-10 flex">
           {posts.map((post) => {
             return <Post key={post.fields.slug} {...post} />;
           })}

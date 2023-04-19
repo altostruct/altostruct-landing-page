@@ -5,7 +5,7 @@ import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
-import Package from "@components/Packege/Packege";
+import Package from "@components/JobPackege/JobPackege";
 import { useRef } from "react";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -27,7 +27,7 @@ function Carrer() {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
-      <div className="bg-[#161616] md:pb-20 pb-10">
+      <div className="bg-[#161616] md:pb-52 pb-20">
         <Content>
           <PageStart
             title={
@@ -44,14 +44,11 @@ function Carrer() {
         <div className={lightBg}>
           <TransitionSquares></TransitionSquares>
 
-          <div className="place-content-center text-white text-center">
-            <h2 className="font-bold">{t("Lediga tjänster")}</h2>
-            <div className="col-start-1 text-xl">
-              {t("Just nu söker vi dig som är")}
-            </div>
+          <div className="place-content-center text-white text-center pt-72">
+            <p className="text-4xl">{t("Lediga tjänster hos Altostruct")}</p>
           </div>
           <div
-            className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-36 w-11/12 m-auto"
+            className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10"
             onScroll={(e) => {
               const test = refPackage2.current?.getBoundingClientRect().x;
               if (test != undefined) {
@@ -118,7 +115,7 @@ function Carrer() {
             </div>
           </div>
 
-          <div className="flex place-content-start md:pl-28 pl-14 md:pt-28 pt-16">
+          <div className="flex place-content-start md:pl-28 pl-14 md:pt-28 pt-36">
             <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
           </div>
           <div className="flex place-content-start">
@@ -127,13 +124,13 @@ function Carrer() {
         </div>
 
         <Content>
-          <div className="bg-[#161616] md:pt-72 pt-20 text-white">
+          <div className="bg-[#161616] md:pt-52 pt-20 text-white">
             <h1>{t("Varför jobba hos Altostruct?")}</h1>
           </div>
 
-          <div className="md:grid md:grid-cols-2 grid-cols-1 pb-40 place-items-center text-white">
+          <div className="md:grid md:grid-cols-2 grid-cols-1 md:pb-40 pb-40 place-items-center text-white">
             <div className="relative">
-              <p className="relative pt-5 z-10 md:text-2xl text-xl ">
+              <p className="relative pt-5 z-10 md:text-2xl text-xl pr-5">
                 {" "}
                 {t(
                   "Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda."
@@ -143,9 +140,10 @@ function Carrer() {
               <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 bg-[#6024ff]"></div>
             </div>
 
-            <div className="mt-20">
+            <div className="pl-2">  
+              <div className="mt-5">
               <div className="flex">
-                <p className="mb-2 mr-auto">Kund Nöjdhet</p>
+                <p className="mb-2 mr-auto">{t("Kund Nöjdhet")}</p>
                 <p className="place-content-end">Erik Rehn </p>
               </div>
               <hr />
@@ -154,21 +152,24 @@ function Carrer() {
                   "Vi tar hand om dig internt så du kan ta hand om våra kunder på bästa sätt"
                 )}
               </p>
-
-              <div
-                id="kontakt"
-                className="flex text-2xl mr-5 justify-end md:mt-72 mt-12"
-              >
-                <p>{t("Kontakta oss")}</p>
-                <a href="#kontakt">
-                  <img
-                    className="w-10 ml-2 rotate-90"
-                    src="/images/icons/arrow-icon.svg"
-                  ></img>
-                </a>
               </div>
+
+              <div className="mt-20">
+              <div className="flex">
+                <p className="mb-2 mr-auto">{t("Balans")}</p>
+                <p className="place-content-end">Mustafa Ali</p>
+              </div>
+              <hr />
+              <p className="mt-2">
+                {t(
+                  "Det är viktigt för oss att man kan skapa en balans mellan jobb och fritid för att leverera de bästa resultaten"
+                )}
+              </p>
+              </div>
+              
             </div>
           </div>
+
           <Form></Form>
         </Content>
       </div>
