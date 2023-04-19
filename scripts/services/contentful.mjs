@@ -2,27 +2,29 @@ import contentful from "contentful";
 import addData from "../utils/addData.mjs";
 import fetch from "node-fetch";
 
-async function execute() {
+async function loadAssets(contentType, path) {
+  console.log("Fetching " + contentType + " from contentful");
+
   const client = contentful.createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
   });
 
   const enPosts = await client.getEntries({
-    content_type: "kunskapsbas",
+    content_type: contentType,
     limit: 999,
     locale: "en-US",
   });
 
   const swePosts = await client.getEntries({
-    content_type: "kunskapsbas",
+    content_type: contentType,
     limit: 999,
     locale: "sv",
   });
 
   const allPosts = [...enPosts.items, ...swePosts.items];
 
-  addData("contentful/posts/all.json", JSON.stringify(allPosts));
+  addData(`contentful/${path}/all.json`, JSON.stringify(allPosts));
 
   // Fetches posts
   const images = await client.getAssets({
@@ -44,18 +46,11 @@ async function execute() {
       folder: "public",
     });
   }
+}
 
-  const reactWidgets = await client.getEntries({
-    limit: 999,
-    content_type: "widget",
-  });
-
-  for (const item of reactWidgets.items) {
-    addData(
-      "contentful/react-widgets/" + item.sys.id + ".tsx",
-      item.fields.code
-    );
-  }
+async function execute() {
+  await loadAssets("kunskapsbas", "posts");
+  await loadAssets("project", "projects");
 }
 
 export default execute;

@@ -4,28 +4,22 @@ import * as React from "react";
 import style from "./Word.module.scss";
 import useTranslation from "hooks/useTranslation";
 
-
 interface ButtonProps {
-  children?: string;
+  children?: React.ReactNode;
   className?: string;
   type?: "primary" | "secondary" | "shiny";
   formAction?: "submit" | "reset";
   link?: string;
   openNewTab?: boolean;
   color?: string;
-  borderCircle?: boolean
+  borderCircle?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const {
-    children, color, borderCircle
-  } = props;
-  const { t } = useTranslation();
-
-
+  const { children, color, borderCircle } = props;
 
   return (
-    <div
+    <span
       className={classNames(
         style.circle,
         props.type == "primary" ? style.secondaryColor : style.primaryColor,
@@ -33,7 +27,7 @@ const Button = (props: ButtonProps) => {
       )}
     >
       {children}
-    </div>
+    </span>
   );
 };
 

@@ -3,28 +3,31 @@ import styles from "./Footer.module.scss";
 import useTranslation from "hooks/useTranslation";
 import tailwindConfig from "tailwind.config";
 import TransitionSquares from "@components/TransistionSquares";
-
+import Link from "next/link";
 
 const Footer = () => {
   const { t } = useTranslation();
-  const lightBg = tailwindConfig.theme.light
+  const lightBg = tailwindConfig.theme.light;
 
   return (
     <div className={lightBg}>
-    <TransitionSquares></TransitionSquares>
+      <TransitionSquares></TransitionSquares>
 
     <div className="bg-[#292929] md:pt-[20%] md:px-[10%] md:pb-[2%] pt-[50%] pl-10 pb-4">
       <h1 className="text-[#707070] mb-4">{t("Senaste nyheter")}</h1>
         <a href="mailto:info@altostruct.se">
           <h1 className="text-[#f5f5f5] mb-4">{t("Kontakta oss")}</h1>
         </a>
-        <a href="/career">
-        <div className="flex text-white">
-          <img className="md:w-14 w-9 mr-4" src="/images/icons/arrow-icon.svg"></img>
-        <h1>{t("Jobba med oss")}</h1>
+        <Link href="/career">
+          <div className="flex text-white">
+            <img
+              className="md:w-14 w-9 mr-4"
+              src="/images/icons/arrow-icon.svg"
+            ></img>
+            <h1>{t("Jobba med oss")}</h1>
+          </div>
+        </Link>
       </div>
-      </a>
-    </div>
 
     <div className={styles.footer}>
       <div className="pb-10">

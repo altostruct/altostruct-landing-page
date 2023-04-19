@@ -1,4 +1,4 @@
-import { PropsWithChildren, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface PageStartProps {
   title: ReactNode;
