@@ -234,7 +234,7 @@ export default function Home() {
                                 }
                             }}
                         >
-                            <div className="hidden md:block relative pb-[5%]">
+                            <div className="hidden md:block relative">
                                 <div className="flex opacity-0">
                                     <img
                                         className="w-10 ml-1"
@@ -245,10 +245,10 @@ export default function Home() {
                                         src={"/images/icons/citat-icon-67.svg"}
                                     />
                                 </div>
-                                <h3 className="mt-10">
+                                <p className="mt-10 text-3xl">
                                     {t("Rekommendationer")}
-                                </h3>
-                                <p>
+                                </p>
+                                <p className="text-lg">
                                     {t(
                                         "Läs vad några av våra grymma kunder har att säga!"
                                     )}
