@@ -23,7 +23,7 @@ function Carrer() {
   return (
     <>
       <SEO
-        title={t("Altostruct | Cloud Consulting")}
+        title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
@@ -138,12 +138,12 @@ function Carrer() {
                   "Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda."
                 )}
               </p>
-              <div className="absolute top-10 left-96 md:w-40 md:h-40 rotate-45 bg-[#6024ff]"></div>
-              <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 bg-[#6024ff]"></div>
+              <div className="absolute top-10 left-96 md:w-40 md:h-40 rotate-45 opacity-80 bg-[#6024ff]"></div>
+              <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 opacity-80 bg-[#6024ff]"></div>
             </div>
 
             <div className="pl-2">  
-              <div className="mt-5">
+              <div className="md:mt-5 mt-20">
               <div className="flex">
                 <p className="mb-2 mr-auto">{t("Kund Nöjdhet")}</p>
                 <p className="place-content-end">Erik Rehn </p>
@@ -156,7 +156,7 @@ function Carrer() {
               </p>
               </div>
 
-              <div className="mt-20">
+              <div className="md:mt-20 mt-5">
               <div className="flex">
                 <p className="mb-2 mr-auto">{t("Balans")}</p>
                 <p className="place-content-end">Mustafa Ali</p>

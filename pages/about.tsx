@@ -32,7 +32,7 @@ function About() {
               <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
                 {t("Jobba med banbrytande")}{" "}
                 <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
-                {t(" tillsammans med de främsta inom AWS")}{" "}
+                {t("tillsammans med de främsta inom AWS")}{" "}
                 <WordCircled>{t("och molnet")}</WordCircled>
               </span>
             }
@@ -118,7 +118,7 @@ function About() {
                 image: (
                   <img
                     className="w-full"
-                    src="/images/icons/Icon-55.svg"
+                    src="/images/icons/Icon-53.svg"
                     alt=""
                   />
                 ),
@@ -234,7 +234,7 @@ function About() {
         
         <Content>
           <div className="text-white pt-40 md:w-4/5 mb-10" style={{fontFamily: "KHTeka-Light"}}>
-            <p className="md:text-6xl">
+            <p className="md:text-6xl text-3xl">
               {t("Vill du veta mer om Altostruct?")}{" "}
               <WordCircled borderCircle={true} color="blue">
                 {t("hör av dig")}
