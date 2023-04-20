@@ -94,7 +94,7 @@ function About() {
                 </div>
 
                 <Content>
-                    <div className="md:pt-52 md:pb-72 pt-10 pb-10">
+                    <div className="md:pt-52 md:pb-52 pt-10 pb-10">
                         <BigList
                             items={[
                                 {
@@ -180,46 +180,46 @@ function About() {
                     </div>
 
                     <div
-                        className="pt-10 md:pt-40 flex md:place-content-end place-content-center text-white md:mr-10 md:pb-10 pb-32"
+                        className="pt-10 md:pt-10 flex place-content-center text-white md:mr-10 md:pb-10 pb-32"
                         style={{ fontFamily: "KHTeka-Light" }}
                     >
-                        <p className="md:text-3xl text-2xl">
+                        <p className="md:text-4xl text-3xl mx-4 text-center">
                             {t("Hälsa Altostruct teamet!")}
                         </p>
                     </div>
 
-                    <div className="hidden md:grid grid-cols-6 pb-40 font-sans">
-                        <div className="flex place-content-center">
+                    <div className="hidden md:grid grid-cols-3 pb-40 gap-10 max-w-7xl m-auto px-4">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title="Erik & Gustav"
                                 imagePath="/images/MISC/Altostruct_office-19.jpg"
                             ></TeamImage>
                         </div>
-                        <div className="flex place-content-center">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title={t("Kaffe paus")}
                                 imagePath="/images/MISC/Altostruct_office-34.jpg"
                             ></TeamImage>
                         </div>
-                        <div className="flex place-content-center">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title="Erik & Simon"
                                 imagePath="/images/MISC/Altostruct_office-18.jpg"
                             ></TeamImage>
                         </div>
-                        <div className="flex place-content-center">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title="Team meeting / Altostruct"
                                 imagePath="/images/MISC/Altostruct_office-39.jpg"
                             ></TeamImage>
                         </div>
-                        <div className="flex place-content-center">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title="Joakim & Per"
                                 imagePath="/images/MISC/Altostruct_office-38.jpg"
                             ></TeamImage>
                         </div>
-                        <div className="flex place-content-center">
+                        <div className="flex flex-col place-content-center">
                             <TeamImage
                                 title={t("Kontorets Maskot")}
                                 imagePath="/images/MISC/Altostruct_office-37.jpg"

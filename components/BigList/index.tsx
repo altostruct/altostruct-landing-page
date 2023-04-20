@@ -41,7 +41,8 @@ function BigList(props: BigListProps) {
                             </div>
                             <p className="md:hidden">{description}</p>
                         </ul> */}
-                        <li className={styles["big-list-item"]}>
+
+                        <li className={`${styles["big-list-item"]} text-2xl`}>
                             <img src={image} alt="" className={styles.icon} />
                             <span className={`${styles.title} text-3xl`}>
                                 {title}
@@ -55,6 +56,9 @@ function BigList(props: BigListProps) {
                                 {description}
                             </span>
                         </li>
+                        <hr
+                            className={`${styles.divider} border-gray-500`}
+                        ></hr>
                     </>
                 );
             })}
