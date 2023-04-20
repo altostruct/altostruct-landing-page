@@ -15,7 +15,7 @@ function BigList(props: BigListProps) {
         return (
           <ul
             key={index}
-            className="md:flex md:grid-cols-12 text-white items-center p-5 border-gray-500 border-b-[1px] mb-20"
+            className="md:flex md:grid-cols-12 text-white items-center p-5 border-gray-500 border-b-[1px] mb-10"
           >
             <div className="md:flex hidden md:w-32 md:h-32 w-20 flex-0">
               <div className="m-auto p-6">{image}</div>
@@ -28,7 +28,7 @@ function BigList(props: BigListProps) {
               </div>
             </div>
 
-            <div className="md:hidden flex pb-5">
+            <div className="md:hidden flex pb-2">
               <div className="w-10 h-10">{image}</div>
               <p className="pl-5 text-md text-3xl pb-5">{title}</p>
             </div>

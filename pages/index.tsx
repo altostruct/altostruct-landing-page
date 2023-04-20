@@ -28,8 +28,7 @@ export default function Home() {
   const refCite2 = useRef<HTMLDivElement>(null);
   const bgDark = twconfig.theme.dark;
   const bgLight = twconfig.theme.light;
-  const font = twconfig.fonts.kthfont
-
+  
 
   return (
     <>
@@ -45,13 +44,13 @@ export default function Home() {
               "Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!"
             )}
             title={
-              <p className="text-3xl md:text-6xl text-left md:w-3/4">
+              <span className="text-3xl md:text-6xl text-left md:w-3/4">
                 It's always{" "}
                 <WordCircled borderCircle={true} >
                   Sunny
                 </WordCircled>{" "}
                 when you are in the <WordCircled>Cloud</WordCircled>
-              </p>
+              </span>
             }
           ></PageStart>
         </Content>
@@ -67,7 +66,7 @@ export default function Home() {
               <h1 className="text-2xl uppercase text-gray-300 mb-2">
                 {t("Vad är Altostruct?")}
               </h1>
-              <p className="md:text-3xl">
+              <p className="md:text-3xl" style={{fontFamily: "KHTeka-Light"}}>
                 {t(
                   "Altostruct är ett konsultbolag specialiserade" +
                     " inom AWS. Vårt team av "
@@ -201,8 +200,7 @@ export default function Home() {
             </div>
           </div>*/}
 
-
-        </div> 
+        </div>
 
         <div className="absolute left-full -translate-x-full opacity-100">
           <div className="flex place-content-end bg-[#292929]">
@@ -214,7 +212,7 @@ export default function Home() {
             <div className="md:mt-52 mt-32 mb-40">
                 <div className="md:hidden relative text-white mb-10">
                     <h3>{t("Rekommendationer")}</h3>
-                    <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
+                    <p style={{fontFamily: "KHTeka-Light"}}>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
                   </div>
                 <div className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 place-items-center text-white snap-x snap-proximity"
                 onScroll={(e) => 
@@ -230,7 +228,7 @@ export default function Home() {
                     }
                   }}
                 >
-                  <div className="hidden md:block relative bottom-20">
+                  <div className="hidden md:block relative pb-[5%]">
                     <h3>{t("Rekommendationer")}</h3>
                     <p>{t("Läs vad några av våra grymma kunder har att säga!")}</p>
                   </div>
@@ -271,6 +269,7 @@ export default function Home() {
                 </div>
               </div>
           </Content>
+          
 
         <div className="md:hidden flex-wrap pb-20">
           <div className="flex w-screen place-content-between">

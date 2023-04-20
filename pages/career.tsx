@@ -31,12 +31,12 @@ function Carrer() {
         <Content>
           <PageStart
             title={
-              <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
+              <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
                 {t("Jobba med banbrytande")}{" "}
                 <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
                 {t("tillsammans med de främsta inom ")}{" "}
                 <WordCircled>{t("AWS och molnet")}</WordCircled>
-              </p>
+              </span>
             }
           ></PageStart>
         </Content>
@@ -61,22 +61,24 @@ function Carrer() {
               }
             }}
           >
-            <div ref={refPackage1}>
-              <Link href="/jobopportunity">
-                <Package
-                  title="Software Developer"
-                  iconPath="/images/icons/Icon-51.svg"
-                ></Package>
-              </Link>
-            </div>
-            <div ref={refPackage2}>
-              <Link href="/jobopportunity">
+             <Link href="/jobopportunity">
+              <span ref={refPackage1}>
+                  <Package
+                    title="Software Developer"
+                    iconPath="/images/icons/Icon-51.svg"
+                  ></Package>
+              </span>
+            </Link>
+            
+            <Link href="/jobopportunity">
+              <span ref={refPackage2}>
                 <Package
                   title="Senior Software Developer"
                   iconPath="/images/icons/Icon-54.svg"
                 ></Package>
-              </Link>
-            </div>
+              </span>
+            </Link>
+
           </div>
 
           <div className="flex md:hidden justify-center">

@@ -22,14 +22,14 @@ const JobPackage = (props: ButtonProps) => {
      
       <div> 
           <div className="flex place-content-center mt-14 md:mt-24 mb-5">
-            <img className="w-16 ml-1" src={props.iconPath} alt="" />
+            <img className="w-16 ml-1" src={props.iconPath} alt=""></img>
           </div>
           <p className="flex text-center place-content-center text-4xl">{props.title}</p>
-          <div className="hidden md:flex place-content-center">
-            <a ref={props.link} className="text-white flex absolute bottom-10">
-              Read more
+          <div className="flex place-content-center">
+            <div className="flex absolute bottom-10"> {/* THE PROBLEM IS HERE */}
+              <div>Read more</div>
               <img className="w-6 ml-1" src="/images/icons/arrow-icon.svg"></img>
-            </a>
+            </div>
           </div>
         </div>
       </div>

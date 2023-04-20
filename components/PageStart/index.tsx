@@ -8,7 +8,7 @@ interface PageStartProps {
 function PageStart(props: PageStartProps) {
   const { title, description } = props;
   return (
-    <div className="h-screen flex md:pb-32 pb-96">
+    <div className="flex md:pb-32 pb-96" style={{"height": "100svh"}}>
       <div className="mt-auto text-white ">
         <p className="mb-3 text-4xl md:text-6xl md:w-3/4">{title}</p>
         <p className="text-xl">{description}</p>

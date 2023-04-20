@@ -4,7 +4,12 @@
 
 @font-face {
   font-family: "KHTeka";
-  src: url(./assets/fonts/KH-Teka/WOFF/KHTeka-Regular.woff);
+  src: url(../public/fonts/KH-Teka/WOFF/KHTeka-Regular.woff);
+}
+
+@font-face {
+  font-family: "KHTeka-Light";
+  src: url(../public/fonts/KH-Teka-Light/OTF/KHTeka-Light.otf);
 }
 
 $bg-color: rgb(4, 1, 26);

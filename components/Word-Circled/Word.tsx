@@ -16,7 +16,7 @@ interface ButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, color, borderCircle } = props;
+  const { children, borderCircle } = props;
 
   return (
     <span

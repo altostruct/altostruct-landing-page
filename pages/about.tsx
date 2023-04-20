@@ -29,12 +29,12 @@ function About() {
         <Content>
           <PageStart
             title={
-              <p className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
+              <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
                 {t("Jobba med banbrytande")}{" "}
                 <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
                 {t(" tillsammans med de främsta inom AWS")}{" "}
                 <WordCircled>{t("och molnet")}</WordCircled>
-              </p>
+              </span>
             }
           ></PageStart>
         </Content>
@@ -45,10 +45,10 @@ function About() {
             <div className="md:grid md:grid-cols-6 md:gap-4 text-white">
               <div className="col-start-1 col-end-5">
                 <div className="md:pt-72 pt-52 md:text-4xl text-3xl text-white font-sans">
-                  <p className="pb-4">{t("Om Altostruct")}</p>
+                  <p>{t("Om Altostruct")}</p>
                 </div>
                 <div className="relative">
-                  <p className="relative z-10 md:text-4xl text-2xl">
+                  <p className="relative z-10 md:text-4xl text-2xl" style={{fontFamily: "KHTeka-Light"}}>
                     {t(
                       "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
                     )}
@@ -63,7 +63,7 @@ function About() {
                   <p>{t("Vår vision")}</p>
                 </div>
                 <div className="relative pb-20">
-                  <p className="relative md:text-4xl text-2xl z-10">
+                  <p className="relative md:text-4xl text-2xl z-10" style={{fontFamily: "KHTeka-Light"}}>
                     {t(
                       "Vår vision är att göra det möjligt för alla företag att bygga och hosta branschledande applikationer och platformer i molnet, och på så sätt demokratisera tillgången till den mest kraftfulla teknologin och resurserna."
                     )}
@@ -81,7 +81,7 @@ function About() {
         </div>
 
         <Content>
-          <div className="md:pt-52 md:pb-72 pt-20 pb-52">
+          <div className="md:pt-52 md:pb-72 pt-10 pb-10">
           <BigList
             items={[
               {
@@ -132,11 +132,8 @@ function About() {
           <div className="flex">
             <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
           </div>
-          <div className="flex md:pl-28 pl-14">
-            <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
-          </div>
 
-          <div className="md:hidden flex-wrap pt-10">
+          <div className="md:hidden flex-wrap pt-32">
             <div className="flex w-screen place-content-between">
               <img
                 className="w-1/4"
@@ -187,8 +184,8 @@ function About() {
             </div>
           </div>
 
-          <div className="pt-10 md:pt-40 flex place-content-end text-white pb-10 mr-10 font-sans">
-            <p className="text-3xl">{t("Hälsa Altostruct teamet!")}</p>
+          <div className="pt-10 md:pt-40 flex md:place-content-end place-content-center text-white md:mr-10 md:pb-10 pb-32" style={{fontFamily: "KHTeka-Light"}}>
+            <p className="md:text-3xl text-2xl">{t("Hälsa Altostruct teamet!")}</p>
           </div>
 
           <div className="hidden md:grid grid-cols-6 pb-40 font-sans">
@@ -234,18 +231,16 @@ function About() {
         <div className="flex place-content-end">
           <div className="md:w-28 md:h-28 h-14 w-14 bg-[#292929]"></div>
         </div>
-        <div className="flex place-content-end md:pr-28 pr-14">
-          <div className="md:w-28 md:h-28 h-14 w-14 bg-[#292929]"></div>
-        </div>
+        
         <Content>
-          <div className="text-white pt-10 md:w-2/4 mb-10">
-            <h1>
+          <div className="text-white pt-40 md:w-4/5 mb-10" style={{fontFamily: "KHTeka-Light"}}>
+            <p className="md:text-6xl">
               {t("Vill du veta mer om Altostruct?")}{" "}
               <WordCircled borderCircle={true} color="blue">
                 {t("hör av dig")}
               </WordCircled>{" "}
               {t("till oss så berättar vi mer!")}
-            </h1>
+            </p>
           </div>
           <Form></Form>
         </Content>
