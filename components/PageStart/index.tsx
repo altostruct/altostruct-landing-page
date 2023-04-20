@@ -1,21 +1,23 @@
 import { ReactNode } from "react";
 
 interface PageStartProps {
-  title: ReactNode;
-  description?: ReactNode;
+    title: ReactNode;
+    description?: ReactNode;
 }
 
 function PageStart(props: PageStartProps) {
-  const { title, description } = props;
-  return (
-    <div className="flex md:pb-32 pb-96" style={{"height": "100svh"}}>
-      <div className="mt-auto text-white ">
-        <p className="mb-3 text-4xl md:text-6xl md:w-3/4">{title}</p>
-        <p className="text-xl">{description}</p>
-        {/* <p className="mt-5 mb-72 text-left"></p> */}
-      </div>
-    </div>
-  );
+    const { title, description } = props;
+    return (
+        <div className="flex md:pb-32 pb-64" style={{ height: "100svh" }}>
+            <div className="mt-auto text-white ">
+                <p className="mb-3 text-4xl md:text-6xl md:w-3/4 leading-tight md:leading-tight">
+                    {title}
+                </p>
+                <p className="text-xl">{description}</p>
+                {/* <p className="mt-5 mb-72 text-left"></p> */}
+            </div>
+        </div>
+    );
 }
 
 export default PageStart;

@@ -1,0 +1,45 @@
+$icon-width-mobile: 5ch;
+$icon-width-desktop: 6ch;
+
+.big-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-block: 2rem 4rem;
+}
+
+.big-list-item {
+    display: grid;
+    grid-template-areas:
+        "a b"
+        "d d";
+    grid-template-columns: $icon-width-mobile 1fr;
+    grid-template-rows: repeat(auto-fit, minmax($icon-width-mobile, 1fr));
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon {
+    grid-area: a;
+    max-width: 100%;
+}
+
+.title {
+    grid-area: b;
+    padding-left: 1.5rem;
+}
+
+.index {
+    grid-area: c;
+}
+
+.description {
+    grid-area: d;
+}
+
+@media screen and (min-width: 768px) {
+    .big-list-item {
+        grid-template-areas: "a b c d";
+        grid-template-columns: $icon-width-desktop 1fr 3ch 1fr;
+    }
+}
