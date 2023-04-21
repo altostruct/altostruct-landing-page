@@ -168,6 +168,19 @@ function Carrer() {
                 )}
               </p>
               </div>
+
+              <div className="md:mt-20 mt-5">
+              <div className="flex">
+                <p className="mb-2 mr-auto">{t("Samhörighet")}</p>
+                <p className="place-content-end">Joakim Tornert</p>
+              </div>
+              <hr />
+              <p className="mt-2">
+                {t(
+                  "Hos oss har du möjlighet att föra fram egna idéer och hjälpa andra medarbetare utvecklas i deras kompetens"
+                )}
+              </p>
+              </div>
               
             </div>
           </div>
