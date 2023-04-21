@@ -145,7 +145,7 @@ function Carrer() {
             <div className="pl-2">  
               <div className="md:mt-5 mt-20">
               <div className="flex">
-                <p className="mb-2 mr-auto">{t("Kund Nöjdhet")}</p>
+                <p className="mb-2 mr-auto">{t("Onboarding")}</p>
                 <p className="place-content-end">Erik Rehn </p>
               </div>
               <hr />
