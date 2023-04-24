@@ -1,46 +1,54 @@
 .circle {
-    appearance: none;
-    background-color: transparent;
-    box-sizing: border-box;
-    display: inline-block;
-    font-family: inherit;
-    font-size: 0.55em;
-    font-weight: 500;
-    line-height: 1;
-    min-height: 0.75em;
-    min-width: 0;
-    outline: none;
-    padding-top: 0.33em;
-    text-transform: uppercase;
-    padding-bottom: 0.2em;
-    padding-inline: 0.9em;
-    vertical-align: sub;
-    text-align: center;
-    text-decoration: none;
-    transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    transform: translateY(-10px);
+  // appearance: none;
+  // background-color: transparent;
+  // box-sizing: border-box;
+  // display: inline-block;
+  // font-family: inherit;
+  // font-size: 0.55em;
+  // font-weight: 500;
+  // line-height: 1;
+  // min-height: 0.75em;
+  // min-width: 0;
+  // outline: none;
+  // padding-top: 0.2em;
+  // text-transform: uppercase;
+  // padding-bottom: 0.2em;
+  // padding-inline: 0.9em;
+  // vertical-align: sub;
+  // text-align: center;
+  // text-decoration: none;
+  // transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  // user-select: none;
+  // -webkit-user-select: none;
+  // transform: translateY(-20%);
+  display: inline-block;
+  appearance: none;
+  font-size: calc(100% - 0.4em);
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  transform: translateY(-0.2em);
 }
 
 .primaryColor {
-    --color: #c3eec3;
-    color: var(--color);
-    border: 0.125em solid var(--color);
+  --color: #c3eec3;
+  color: var(--color);
+  border: 0.05em solid var(--color);
 }
 
 .secondaryColor {
-    --color: #6024ff;
-    color: var(--color);
-    border: 0.125em solid var(--color);
+  --color: #6024ff;
+  color: var(--color);
+  border: 0.05em solid var(--color);
 }
 
 .border {
-    border-radius: 0.9375em;
+  border-radius: 0.9375em;
 }
 
 @media screen and (min-width: 768px) {
-    .circle {
-        vertical-align: bottom;
-    }
+  .circle {
+    vertical-align: bottom;
+  }
 }

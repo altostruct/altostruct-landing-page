@@ -5,12 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    'dark': "bg-[#161616]",
-    'light': "bg-[#292929]",
+    dark: "bg-[#161616]",
+    light: "bg-[#292929]",
   },
   fonts: {
-    "kthfont": "font-family: KHTeka"
-
+    kthfont: "font-family: KHTeka",
   },
   plugins: [],
 };
