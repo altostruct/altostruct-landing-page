@@ -32,9 +32,9 @@ function About() {
                 <PageStart
             title={
               <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
-                {t("Jobba med banbrytande")}{" "}
-                <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
-                {t("tillsammans med de främsta inom ")}{" "}
+                {t("Jobba med banbrytande teknologi")}{" "}
+                <WordCircled borderCircle={true}>{t("tillsammans")}</WordCircled>{" "}
+                {t(" med de främsta inom ")}{" "}
                 <WordCircled>{t("AWS och molnet")}</WordCircled>
               </span>
             }
