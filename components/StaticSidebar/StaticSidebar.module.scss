@@ -19,7 +19,7 @@
 
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 376px) {
   body {
     .rotate {
       -webkit-transform: rotate(90deg);
@@ -34,7 +34,7 @@
       transform-origin: left top;
     
       position: absolute;
-      top: 60%;
+      top: 65%;
       left: 100%;
       white-space: nowrap;
       padding-top: 10px;    

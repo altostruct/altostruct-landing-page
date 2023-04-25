@@ -45,7 +45,7 @@ export default function Home() {
                         )}
                         title={
                             <span className="text-3xl md:text-6xl text-left md:w-3/4">
-                                It's always{" "}
+                                It&apos;s always{" "}
                                 <WordCircled borderCircle={true}>
                                     Sunny
                                 </WordCircled>{" "}
@@ -256,7 +256,7 @@ export default function Home() {
                             </div>
                             <div ref={refCite1} className="snap-start mr-4">
                                 <Cite
-                                    author="Peter Vesterberg, CEO Saluto AB"
+                                    author="Peter Vesterberg / CEO Saluto AB"
                                     cite={t(
                                         "Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad."
                                     )}
@@ -265,9 +265,10 @@ export default function Home() {
                             </div>
                             <div ref={refCite2} className="snap-start">
                                 <Cite
-                                    author="Erik Strandin Pers, Founder Foodfacts"
+                                    author="Erik Standin Pers / Founder Foodfacts
+                                    "
                                     cite={t(
-                                        "Vi har samarbetat med Altostruct i tre år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+                                        "Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
                                     )}
                                     citeIcon="/images/icons/citat-icon-67.svg"
                                 ></Cite>
@@ -365,13 +366,13 @@ export default function Home() {
                         />
                     </div>
                     <div className="grid grid-cols-1 mt-5 place-items-end text-[#c3eec3]">
-                        <a className="flex text-[#c3eec3]" href="/about">
+                        <Link className="flex text-[#c3eec3]" href={"/about"}>
                             <p>{t("Människorna bakom Altostruct")}</p>
                             <img
                                 className="w-6 ml-2 pt-[1%]"
                                 src="/images/icons/Icon-59.svg"
                             ></img>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -429,13 +430,13 @@ export default function Home() {
                 </div>
                 <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
                     <div className="flex text-2xl mr-5">
-                        <a className="flex text-[#c3eec3]" href="/about">
+                        <Link className="flex text-[#c3eec3]" href={"/about"}>
                             <p>{t("Människorna bakom Altostruct")}</p>
                             <img
                                 className="w-10 ml-2"
                                 src="/images/icons/Icon-59.svg"
                             ></img>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

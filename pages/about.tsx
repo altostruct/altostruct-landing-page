@@ -29,21 +29,16 @@ function About() {
 
             <div className="bg-[#161616] md:pb-20 pb-10">
                 <Content>
-                    <PageStart
-                        title={
-                            <span className="text-3xl md:text-6xl text-left md:w-3/4">
-                                {t("Jobba med banbrytande")}{" "}
-                                <WordCircled
-                                    borderCircle={true}
-                                    className="md:align-middle"
-                                >
-                                    {t("teknologi")}
-                                </WordCircled>{" "}
-                                {t("tillsammans med de främsta inom AWS")}{" "}
-                                <WordCircled>{t("och molnet")}</WordCircled>
-                            </span>
-                        }
-                    ></PageStart>
+                <PageStart
+            title={
+              <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
+                {t("Jobba med banbrytande")}{" "}
+                <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
+                {t("tillsammans med de främsta inom ")}{" "}
+                <WordCircled>{t("AWS och molnet")}</WordCircled>
+              </span>
+            }
+          ></PageStart>
                 </Content>
 
                 <div className={lightBg}>
@@ -105,14 +100,14 @@ function About() {
                                     image: "/images/icons/Icon-58.svg",
                                 },
                                 {
-                                    title: "Direkt kontakt",
+                                    title: t("Direkt kontakt"),
                                     description: t(
                                         "Vi tror på enkel och effektiv kommunikation. Det är A och O i utveckling. Vi minskar därför mellanhänder och erbjuder direkt kontakt mellan kund och utvecklare."
                                     ),
                                     image: "/images/icons/Icon-52.svg",
                                 },
                                 {
-                                    title: "Nära och långsiktiga samarbeten",
+                                    title: t("Nära och långsiktiga samarbeten"),
                                     description: t(
                                         "Vi arbetar nära kund och är lojala partners. Genom nära samarbeten får vi en djup förståelse för era utmaningar vilket ger oss möjligheten att skapa bättre och mer anpassade lösningar. Efter lösningen är byggd erbjuder vi också kontinuerligt underhåll."
                                     ),
@@ -203,13 +198,13 @@ function About() {
                         </div>
                         <div className="flex flex-col place-content-center">
                             <TeamImage
-                                title="Erik & Simon"
+                                title="Erik & William"
                                 imagePath="/images/MISC/Altostruct_office-18.jpg"
                             ></TeamImage>
                         </div>
                         <div className="flex flex-col place-content-center">
                             <TeamImage
-                                title="Team meeting / Altostruct"
+                                title={t("Team-möte")}
                                 imagePath="/images/MISC/Altostruct_office-39.jpg"
                             ></TeamImage>
                         </div>
