@@ -74,7 +74,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: white;
+    color: #fff;
     padding: 0;
     box-sizing: content-box;
     border: 2px solid transparent;
@@ -91,29 +91,29 @@
   .topCorners::before {
     top: -2px;
     left: -2px;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    border-top: 2px solid #c3eec3;
+    border-left: 2px solid #c3eec3;
     transition: 1s all;
   }
   .topCorners::after {
     top: -2px;
     right: -2px;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
+    border-top: 2px solid #c3eec3;
+    border-right: 2px solid #c3eec3;
     transition: 1s all;
   }
   .bottomCorners::before {
     bottom: -2px;
     left: -2px;
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;
+    border-bottom: 2px solid #c3eec3;
+    border-left: 2px solid #c3eec3;
     transition: 1s all;
   }
   .bottomCorners::after {
     bottom: -2px;
     right: -2px;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
+    border-bottom: 2px solid #c3eec3;
+    border-right: 2px solid #c3eec3;
     transition: 1s all;
   }
   
@@ -143,7 +143,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: white;
+    color: #fff;
     padding: 0;
     box-sizing: content-box;
     border: 2px solid transparent;
@@ -159,29 +159,29 @@
   .topCorners::before {
     top: -2px;
     left: -2px;
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+    border-top: 2px solid #c3eec3;
+    border-left: 2px solid #c3eec3;
     transition: 1s all;
   }
   .topCorners::after {
     top: -2px;
     right: -2px;
-    border-top: 2px solid white;
-    border-right: 2px solid white;
+    border-top: 2px solid #c3eec3;
+    border-right: 2px solid #c3eec3;
     transition: 1s all;
   }
   .bottomCorners::before {
     bottom: -2px;
     left: -2px;
-    border-bottom: 2px solid white;
-    border-left: 2px solid white;
+    border-bottom: 2px solid #c3eec3;
+    border-left: 2px solid #c3eec3;
     transition: 1s all;
   }
   .bottomCorners::after {
     bottom: -2px;
     right: -2px;
-    border-bottom: 2px solid white;
-    border-right: 2px solid white;
+    border-bottom: 2px solid #c3eec3;
+    border-right: 2px solid #c3eec3;
     transition: 1s all;
   }
   

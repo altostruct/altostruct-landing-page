@@ -60,26 +60,23 @@ export default function Home() {
                 <div className={bgLight}>
                     <TransitionSquares></TransitionSquares>
 
-                    <div className="grid grid-cols-12 pb-72 md:pt-96 pt-60 text-white">
+                    <div className="grid grid-cols-12 md:pb-72 pb-40  md:pt-96 pt-60 text-white">
                         <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center">
-                            <h1 className="text-2xl uppercase text-gray-300 mb-2">
+                            <h1 className="text-3xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
                                 {t("Vad är Altostruct?")}
                             </h1>
                             <p
-                                className="md:text-3xl"
+                                className="md:text-3xl text-2xl"
                                 style={{ fontFamily: "KHTeka-Light" }}
                             >
                                 {t(
-                                    "Altostruct är ett konsultbolag specialiserade" +
-                                        " inom AWS. Vårt team av "
-                                )}{" "}
+                                    "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av "
+                                )}
                                 <i>
-                                    <u>AWS konsulter är certifierade</u>
+                                    <u>{t("AWS konsulter är certifierade")}</u>
                                 </i>
                                 {t(
-                                    " via AWS och erbjuder ett stort utbud av tjänster som" +
-                                        " exempelvis molnmigrationer, AI, serverless och APIer." +
-                                        " Altostruct grundades 2020 och hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
+                                    " via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
                                 )}
                             </p>
                         </div>
@@ -213,7 +210,7 @@ export default function Home() {
                     <div className="md:mt-52 mt-32 mb-40">
                         <div className="md:hidden relative text-white mb-10">
                             <h3>{t("Rekommendationer")}</h3>
-                            <p style={{ fontFamily: "KHTeka-Light" }}>
+                            <p style={{fontFamily: "KHTeka-Light", marginTop: "4px"}}>
                                 {t(
                                     "Läs vad några av våra grymma kunder har att säga!"
                                 )}
@@ -245,7 +242,7 @@ export default function Home() {
                                         src={"/images/icons/citat-icon-67.svg"}
                                     />
                                 </div>
-                                <p className="mt-10 text-3xl">
+                                <p className="mt-10 mb-2 text-3xl">
                                     {t("Rekommendationer")}
                                 </p>
                                 <p className="text-lg">
@@ -274,7 +271,7 @@ export default function Home() {
                                 ></Cite>
                             </div>
                         </div>
-                        <div className="flex md:hidden justify-center">
+                        <div className="flex md:hidden justify-center pt-5">
                             <div
                                 onClick={() => {
                                     refCite1.current?.scrollIntoView({
@@ -319,52 +316,57 @@ export default function Home() {
                 <div className="md:hidden flex-wrap pb-20">
                     <div className="flex w-screen place-content-between">
                         <img
-                            className="w-1/4"
+                            className="w-5/12"
                             src="/images/MISC/Altostruct_office-3.jpg"
                             alt=""
                         />
                         <img
-                            className="w-1/4 mr-[25%]"
+                            className="w-5/12"
                             src="/images/MISC/Altostruct_office-15.jpg"
                             alt=""
                         />
                     </div>
-                    <div className="flex w-screen">
+                    <div className="flex w-screen mt-6">
                         <img
-                            className="w-1/4 mr-auto ml-auto"
+                            className="w-6/12 mr-auto ml-auto"
                             src="/images/MISC/Altostruct_office-18.jpg"
                             alt=""
                         />
-                        <img
-                            className="w-1/4"
-                            src="/images/MISC/Altostruct_office-39.jpg"
-                            alt=""
-                        />
+                        
                     </div>
-                    <div className="flex w-screen place-content-between">
+                    <div className="flex w-screen place-content-between mt-6">
                         <img
-                            className="w-1/4"
+                            className="w-5/12"
                             src="/images/MISC/Altostruct_office-12.jpg"
                             alt=""
                         />
                         <img
-                            className="w-1/4 mr-[25%]"
+                            className="w-5/12"
                             src="/images/MISC/Altostruct_office-38.jpg"
                             alt=""
                         />
                     </div>
-                    <div className="flex w-screen">
+                    <div className="flex w-screen mt-6">
                         <img
-                            className="w-1/4 mr-auto ml-auto"
+                            className="w-6/12 ml-auto mr-auto"
                             src="/images/MISC/Altostruct_office-29.jpg"
                             alt=""
                         />
+                       
+                    </div>
+                    <div className="flex w-screen place-content-between mt-6">
                         <img
-                            className="w-1/4"
-                            src="/images/MISC/Altostruct_office-23.jpg"
+                            className="w-5/12"
+                            src="/images/MISC/Altostruct_office-5.jpg"
+                            alt=""
+                        />
+                        <img
+                            className="w-5/12"
+                            src="/images/MISC/Altostruct_office-39.jpg"
                             alt=""
                         />
                     </div>
+
                     <div className="grid grid-cols-1 mt-5 place-items-end text-[#c3eec3]">
                         <Link className="flex text-[#c3eec3]" href={"/about"}>
                             <p>{t("Människorna bakom Altostruct")}</p>

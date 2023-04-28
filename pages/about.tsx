@@ -34,7 +34,7 @@ function About() {
               <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
                 {t("Jobba med banbrytande teknologi")}{" "}
                 <WordCircled borderCircle={true}>{t("tillsammans")}</WordCircled>{" "}
-                {t(" med de främsta inom ")}{" "}
+                {t("tillsammans med de främsta inom ")}{" "}
                 <WordCircled>{t("AWS och molnet")}</WordCircled>
               </span>
             }
@@ -123,51 +123,53 @@ function About() {
                         <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
                     </div>
 
-                    <div className="md:hidden flex-wrap pt-32">
+                    <div className="md:hidden flex-wrap pt-20">
                         <div className="flex w-screen place-content-between">
                             <img
-                                className="w-1/4"
+                                className="w-5/12"
                                 src="/images/MISC/Altostruct_office-19.jpg"
                                 alt=""
                             />
                             <img
-                                className="w-1/4 mr-[25%]"
+                                className="w-5/12"
                                 src="/images/MISC/Altostruct_office-34.jpg"
                                 alt=""
                             />
                         </div>
-                        <div className="flex w-screen">
+                        <div className="flex w-screen mt-4">
                             <img
-                                className="w-1/4 mr-auto ml-auto"
+                                className="w-5/12 ml-auto mr-auto"
                                 src="/images/MISC/Altostruct_office-18.jpg"
                                 alt=""
                             />
-                            <img
-                                className="w-1/4"
-                                src="/images/MISC/Altostruct_office-39.jpg"
-                                alt=""
-                            />
                         </div>
-                        <div className="flex w-screen place-content-between">
+                        <div className="flex w-screen place-content-between mt-4">
                             <img
-                                className="w-1/4"
+                                className="w-5/12"
                                 src="/images/MISC/Altostruct_office-38.jpg"
                                 alt=""
                             />
                             <img
-                                className="w-1/4 mr-[25%]"
+                                className="w-5/12"
                                 src="/images/MISC/Altostruct_office-37.jpg"
                                 alt=""
                             />
                         </div>
-                        <div className="flex w-screen">
+                        <div className="flex w-screen mt-4">
                             <img
-                                className="w-1/4 mr-auto ml-auto"
-                                src="/images/MISC/Altostruct_office-33.jpg"
+                                className="w-5/12 mr-auto ml-auto"
+                                src="/images/MISC/Altostruct_office-15.jpg"
+                                alt=""
+                            />
+                        </div>
+                        <div className="flex w-screen place-content-between mt-4">
+                            <img
+                                className="w-5/12"
+                                src="/images/MISC/Altostruct_office-39.jpg"
                                 alt=""
                             />
                             <img
-                                className="w-1/4"
+                                className="w-5/12"
                                 src="/images/MISC/Altostruct_office-16.jpg"
                                 alt=""
                             />
