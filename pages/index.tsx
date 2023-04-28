@@ -62,11 +62,11 @@ export default function Home() {
 
                     <div className="grid grid-cols-12 md:pb-72 pb-40  md:pt-96 pt-60 text-white">
                         <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center">
-                            <h1 className="text-3xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
+                            <h1 className="text-2xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
                                 {t("Vad är Altostruct?")}
                             </h1>
                             <p
-                                className="md:text-3xl text-2xl"
+                                className="md:text-3xl text-xl"
                                 style={{ fontFamily: "KHTeka-Light" }}
                             >
                                 {t(
@@ -367,9 +367,9 @@ export default function Home() {
                         />
                     </div>
 
-                    <div className="grid grid-cols-1 mt-5 place-items-end text-[#c3eec3]">
+                    <div className="grid grid-cols-1 mt-8 place-items-end text-[#c3eec3]">
                         <Link className="flex text-[#c3eec3]" href={"/about"}>
-                            <p>{t("Människorna bakom Altostruct")}</p>
+                            <p className="text-xl">{t("Människorna bakom Altostruct")}</p>
                             <img
                                 className="w-6 ml-2 pt-[1%]"
                                 src="/images/icons/Icon-59.svg"

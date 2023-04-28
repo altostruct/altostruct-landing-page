@@ -231,7 +231,7 @@ function About() {
 
                 <Content>
                     <div
-                        className="text-white pt-40 md:w-4/5 mb-10"
+                        className="text-white md:pt-20 pt-10 md:w-4/5 mb-10"
                         style={{ fontFamily: "KHTeka-Light" }}
                     >
                         <p
