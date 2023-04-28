@@ -44,7 +44,7 @@ export default function Home() {
                             "Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!"
                         )}
                         title={
-                            <span className="text-3xl md:text-6xl text-left md:w-3/4">
+                            <span className="text-4xl md:text-6xl text-left md:w-3/4">
                                 It&apos;s always{" "}
                                 <WordCircled borderCircle={true}>
                                     Sunny

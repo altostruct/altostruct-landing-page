@@ -13,7 +13,7 @@ function Cite(props: CiteProps) {
         <img className="w-10 ml-1" src={citeIcon} />
       </div>
       <p className="mt-10 text-2xl">{cite}</p>
-      <p className="text-lg mt-4 text-gray-200 ">{author}</p>
+      <p className="text-lg mt-4 mb-2 text-gray-200 ">{author}</p>
     </div>
   );
 }
