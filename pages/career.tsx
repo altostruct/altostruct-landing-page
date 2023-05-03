@@ -45,7 +45,7 @@ function Carrer() {
           <TransitionSquares></TransitionSquares>
 
           <div className="place-content-center text-white text-center pt-72">
-            <p className="text-4xl">{t("Lediga tjänster hos Altostruct")}</p>
+            <p className="md:text-4xl text-2xl">{t("Lediga tjänster hos Altostruct")}</p>
           </div>
           <div
             className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10"

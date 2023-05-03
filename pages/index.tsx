@@ -61,7 +61,7 @@ export default function Home() {
                     <TransitionSquares></TransitionSquares>
 
                     <div className="grid grid-cols-12 md:pb-72 pb-40  md:pt-96 pt-60 text-white">
-                        <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center">
+                        <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center" style={{"textAlign": "justify", "textAlignLast": "center"}}>
                             <h1 className="text-2xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
                                 {t("Vad är Altostruct?")}
                             </h1>

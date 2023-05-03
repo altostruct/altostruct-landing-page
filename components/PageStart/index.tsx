@@ -17,7 +17,7 @@ function PageStart(props: PageStartProps) {
             <p className="mb-3 text-4xl md:text-7xl md:w-3/4 leading-tight md:leading-tight">
                 {title}
             </p>
-            <p className="font-light text-xl">{description}</p>
+            <p className="text-xl" style={{ fontFamily: "KHTeka-Light" }}>{description}</p>
         </div>
     </div>
 );
