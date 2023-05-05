@@ -2,22 +2,6 @@ import dynamic from "next/dynamic";
 import Image, { ImageProps } from "next/image";
 import { Suspense } from "react";
 
-export function ContentfulCodeWidget(props: { id: string }) {
-  const Dynamic = dynamic(
-    () =>
-      import(`../../.data/contentful/react-widgets/${props.id}`).then((v) => {
-        console.log(v);
-        return v.default;
-      }),
-    { ssr: false }
-  );
-
-  return (
-    <Suspense>
-      <Dynamic></Dynamic>
-    </Suspense>
-  );
-}
 
 export function ContentfulImage(
   props: { image: any } & Omit<ImageProps, "src" | "height" | "width"> &
