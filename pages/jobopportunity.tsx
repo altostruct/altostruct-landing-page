@@ -27,15 +27,15 @@ function Carrer() {
       </div>
       <div className="grid grid-cols-12 md:pb-60 text-white">
               <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center"> 
-                <h3>{t("Vi är fortfarande ett företag i utvecklingsfasen och vill gärna inte komplicera saker och ting för varken dig eller oss!")}</h3>
-                <h3>{t("Bifoga gärna ditt CV och personliga brev samt vilken position du söker så hör vi av oss")}</h3>
+                <h3>{t("Bifoga gärna ditt CV och personliga brev samt vilken position du söker så hör vi av oss!")}</h3>
               </div>
       </div>
 
       <div className="grid grid-cols-12 md:pb-52 pb-24 text-white">
           <div className="md:col-start-4 md:col-span-6 col-start-2 col-span-10 mt-4 text-center"> 
             <h2>
-              <a className="text-[#c3eec3]" href="mailto:info@altostruct.se">{t("Klicka mig för att skicka ett mail eller skicka det till: info@altostruct.se")}</a>
+              <p>{t("Klicka mig för att skicka ett mail eller skicka det till:")}</p>
+              <a className="text-[#c3eec3]" href="mailto:info@altostruct.se">info@altostruct.se</a>
            </h2>
           </div>
       </div>

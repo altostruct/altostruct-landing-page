@@ -32,10 +32,11 @@ function About() {
                 <PageStart
             title={
               <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
-                {t("Jobba med banbrytande teknologi")}{" "}
-                <WordCircled borderCircle={true}>{t("tillsammans")}</WordCircled>{" "}
-                {t("tillsammans med de främsta inom ")}{" "}
-                <WordCircled>{t("AWS och molnet")}</WordCircled>
+                {t("Bygg branschledande web ")}{" "}
+                <WordCircled borderCircle={true}>{t("applikationer")}</WordCircled>{" "}
+                {t("och platformer i ")}{" "}
+                <WordCircled>{t("molnet")}</WordCircled>
+                {t(" med oss")}
               </span>
             }
           ></PageStart>
@@ -58,8 +59,8 @@ function About() {
                                             "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har sedan start haft en stark tillväxt och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
                                         )}
                                     </p>
-                                    <div className="absolute top-20 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-60 bg-[#6024ff]"></div>
-                                    <div className="absolute top-2 left-10 rotate-12 w-20 h-20 md:w-40 md:h-40 opacity-60 bg-[#6024ff]"></div>
+                                    <div className="absolute top-20 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-40 bg-[#6024ff]"></div>
+                                    <div className="absolute top-2 left-10 rotate-12 w-20 h-20 md:w-40 md:h-40 opacity-40 bg-[#6024ff]"></div>
                                 </div>
                             </div>
 
@@ -76,8 +77,8 @@ function About() {
                                             "Vår vision är att göra det möjligt för alla företag att bygga och hosta branschledande applikationer och platformer i molnet, och på så sätt demokratisera tillgången till den mest kraftfulla teknologin och resurserna."
                                         )}
                                     </p>
-                                    <div className="absolute top-32 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-60 bg-[#6024ff]"></div>
-                                    <div className="absolute top-2 left-20 w-20 h-20 md:w-40 opacity-60 md:h-40 bg-[#6024ff]"></div>
+                                    <div className="absolute top-10 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-40 bg-[#6024ff]"></div>
+                                    <div className="absolute top-2 left-20 w-20 h-20 md:w-40 opacity-40 md:h-40 bg-[#6024ff]"></div>
                                 </div>
                             </div>
                         </div>
@@ -181,7 +182,7 @@ function About() {
                         style={{ fontFamily: "KHTeka-Light" }}
                     >
                         <p className="md:text-4xl text-3xl mx-4 text-center">
-                            {t("Hälsa Altostruct teamet!")}
+                            {t("Hälsa på Altostruct teamet!")}
                         </p>
                     </div>
 
@@ -194,7 +195,7 @@ function About() {
                         </div>
                         <div className="flex flex-col place-content-center">
                             <TeamImage
-                                title={t("Kaffe paus")}
+                                title={t("Kaffepaus")}
                                 imagePath="/images/MISC/Altostruct_office-34.jpg"
                             ></TeamImage>
                         </div>
@@ -206,7 +207,7 @@ function About() {
                         </div>
                         <div className="flex flex-col place-content-center">
                             <TeamImage
-                                title={t("Team-möte")}
+                                title={t("Team möte")}
                                 imagePath="/images/MISC/Altostruct_office-39.jpg"
                             ></TeamImage>
                         </div>
@@ -245,7 +246,10 @@ function About() {
                             {t("till oss så berättar vi mer!")}
                         </p>
                     </div>
+                    <div id="#contact">
                     <Form></Form>
+                    </div>
+
                 </Content>
             </div>
             <Footer />

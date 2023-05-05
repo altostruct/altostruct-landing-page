@@ -31,7 +31,7 @@ function Carrer() {
         <Content>
           <PageStart
             title={
-              <span className="pt-20 md:pt-48 mt-9 text-4xl md:text-6xl text-left md:w-3/4">
+              <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
                 {t("Jobba med banbrytande")}{" "}
                 <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
                 {t("tillsammans med de främsta inom ")}{" "}
@@ -135,24 +135,24 @@ function Carrer() {
               <p className="relative pt-5 z-10 md:text-2xl text-xl pr-5">
                 {" "}
                 {t(
-                  "Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda."
+                  "Någon som älskar det de gör kommer alltid utföra sitt jobb bättre än någon som inte gör det. På grund av detta lägger vi stor vikt vid att para ihop rätt person med rätt projekt. Hos oss får du mycket individuellt ansvar och självständighet men också mycket stöd för att säkerställa att du utvecklas, både som utvecklare och person. Vi erbjuder kontinuerlig utbildning och kompetensutveckling. Vi strävar efter att hela tiden utmana traditionella arbetssätt för att på bästa sätt främja vår vision och se till att våra kunder får ta del av allt molnet har att erbjuda."
                 )}
               </p>
-              <div className="absolute top-10 left-96 md:w-40 md:h-40 rotate-45 opacity-80 bg-[#6024ff]"></div>
-              <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 opacity-80 bg-[#6024ff]"></div>
+              <div className="absolute top-10 left-96 md:w-40 md:h-40 rotate-45 opacity-40 bg-[#6024ff]"></div>
+              <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 opacity-40 bg-[#6024ff]"></div>
             </div>
 
             <div className="pl-2">  
               <div className="md:mt-5 mt-20">
               <div className="flex">
-                <p className="mb-2 mr-auto">{t("Onboarding")}</p>
+                <p className="mb-2 mr-auto">Onboarding</p>
                 <p className="place-content-end">Erik Rehn </p>
               </div>
               <hr />
               <p className="mt-2">
                 {t(
                   "Vi tar hand om dig internt så du kan ta hand om våra kunder på bästa sätt"
-                )}
+                )}.
               </p>
               </div>
 
@@ -165,7 +165,7 @@ function Carrer() {
               <p className="mt-2">
                 {t(
                   "Det är viktigt för oss att man kan skapa en balans mellan jobb och fritid för att leverera de bästa resultaten"
-                )}
+                )}.
               </p>
               </div>
 
@@ -178,7 +178,7 @@ function Carrer() {
               <p className="mt-2">
                 {t(
                   "Hos oss har du möjlighet att föra fram egna idéer och hjälpa andra medarbetare utvecklas i deras kompetens"
-                )}
+                )}.
               </p>
               </div>
               

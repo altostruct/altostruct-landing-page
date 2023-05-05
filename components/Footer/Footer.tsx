@@ -14,7 +14,9 @@ const Footer = () => {
       <TransitionSquares></TransitionSquares>
 
     <div className="bg-[#292929] md:pt-[20%] md:px-[10%] md:pb-[2%] pt-[50%] pl-10 pb-4">
+      <Link href={"/blog"}>
       <h1 className="text-[#707070] mb-4">{t("Senaste nyheter")}</h1>
+      </Link>
         <a href="mailto:info@altostruct.se">
           <h1 className="text-[#f5f5f5] mb-4">{t("Kontakta oss")}</h1>
         </a>

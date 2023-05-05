@@ -14,6 +14,7 @@ import twconfig from "tailwind.config";
 import TransitionSquares from "@components/TransistionSquares";
 import PageStart from "@components/PageStart";
 import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
+import Form from "@components/Form";
 
 export default function Home() {
     const { t } = useTranslation();
@@ -41,7 +42,7 @@ export default function Home() {
                 <Content>
                     <PageStart
                         description={t(
-                            "Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder!"
+                            "Konsultbolaget med expertis inom AWS och molnet som hjälper er ta ert företag till nya höjder."
                         )}
                         title={
                             <span className="text-4xl md:text-6xl text-left md:w-3/4">
@@ -61,7 +62,7 @@ export default function Home() {
                     <TransitionSquares></TransitionSquares>
 
                     <div className="grid grid-cols-12 md:pb-72 pb-40  md:pt-96 pt-60 text-white">
-                        <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center" style={{"textAlign": "justify", "textAlignLast": "center"}}>
+                        <div className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center" style={{"textAlignLast": "center"}}>
                             <h1 className="text-2xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
                                 {t("Vad är Altostruct?")}
                             </h1>
@@ -73,14 +74,18 @@ export default function Home() {
                                     "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av "
                                 )}
                                 <i>
-                                    <u>{t("AWS konsulter är certifierade")}</u>
+                                    <u>{t("konsulter är certifierade")}</u>
                                 </i>
                                 {t(
-                                    " via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
+                                    " via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. Altostruct grundades 2020 och har hjälpt ett stort antal företag företag nå sin fulla potential med hjälp av molnet."
                                 )}
                             </p>
                         </div>
                     </div>
+
+
+
+        {/*THIS IS THE SECTION FOR THE THREE DIFFERENT PACKAGES THAT SHOULD BE IMPLEMENTED AFTER THEY ARE COMPLETED*/}
 
                     {/* <div className="grid grid-cols-1 md:pt-20 pt-10 pb-60 w-11/12 md:w-11/12 m-auto text-white">
             <div className="col-start-1 text-2xl mb-2 uppercase">
@@ -199,6 +204,13 @@ export default function Home() {
             </div>
           </div>*/}
                 </div>
+
+
+
+
+
+
+
 
                 <div className="absolute left-full -translate-x-full opacity-100">
                     <div className="flex place-content-end bg-[#292929]">
@@ -371,7 +383,7 @@ export default function Home() {
                         <Link className="flex text-[#c3eec3]" href={"/about"}>
                             <p className="text-xl">{t("Människorna bakom Altostruct")}</p>
                             <img
-                                className="w-6 ml-2 pt-[1%]"
+                                className="w-6 ml-2 pt-[2.5%] pr-2"
                                 src="/images/icons/Icon-59.svg"
                             ></img>
                         </Link>
@@ -435,12 +447,18 @@ export default function Home() {
                         <Link className="flex text-[#c3eec3]" href={"/about"}>
                             <p>{t("Människorna bakom Altostruct")}</p>
                             <img
-                                className="w-10 ml-2"
+                                className="w-10 ml-5"
                                 src="/images/icons/Icon-59.svg"
                             ></img>
                         </Link>
                     </div>
                 </div>
+                <div id="kontakt">
+                <Content>
+                <Form></Form>
+                </Content>
+                </div>
+                
             </div>
             <Footer />
         </>

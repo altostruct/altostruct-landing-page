@@ -98,22 +98,30 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           <div className="m-auto flex-col flex text-4xl max-h-96">
             
           <Fade delay={0}>
-              <Link className="button-spacing text-white" href={"/"}>
+              <Link className="button-spacing text-white" href={"/"}
+              onClick={() => setExpanded(!expanded)}
+              >
                 {t("Startsida")}
               </Link>
             </Fade>
             <Fade delay={100}>
-              <Link className="button-spacing text-white" href="/career">
+              <Link className="button-spacing text-white" href="/career"
+              onClick={() => setExpanded(!expanded)}
+              >
                 {t("Karriär")}
               </Link>
             </Fade>
             <Fade delay={200}>
-              <Link className="button-spacing text-white" href="/about">
+              <Link className="button-spacing text-white" href="/about"
+              onClick={() => setExpanded(!expanded)}
+              >
                 {t("Om oss")}
               </Link>
             </Fade>
             <Fade delay={300}>
-              <Link className="button-spacing text-white" href="/blog">
+              <Link className="button-spacing text-white" href="/blog"
+              onClick={() => setExpanded(!expanded)}
+              >
                 {t("Kunskapsbas")}
               </Link>
             </Fade>
@@ -121,7 +129,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
               <div className="border-b my-3 text-white"></div>
             </Fade>
             <Fade delay={500}>
-              <Link className="text-white" href={"/#contact"}>{t("Kontakta oss")}</Link>
+              <Link className="text-white" href={"/#kontakt"}
+              onClick={() => setExpanded(!expanded)}
+              >{t("Kontakta oss")}</Link>
             </Fade>
 
             <Fade delay={600}>
