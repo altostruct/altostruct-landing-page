@@ -14,7 +14,7 @@ import Content from "@components/Content";
 import formatDate from "utils/formatDate";
 import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
-import { ContentfulCodeWidget, ContentfulImage } from "@components/Contentful";
+import { ContentfulImage } from "@components/Contentful";
 import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
 
@@ -63,40 +63,7 @@ function BlogPage(props: BlogPageProps) {
         //   return <></>;
         // }
       },
-      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
-        return (
-          <NoSSR>
-            <ContentfulCodeWidget id={node.data.target.sys.id} />
-          </NoSSR>
-        );
-        // if (node.data.__typename == "") {
-        //   const assetId = node.data.target.sys.id;
-        //   // const ref = post.body.references.find(
-        //   //   (ref: any) => ref.contentful_id === assetId
-        //   // );
-
-        //   return (
-        //     <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
-        //   );
-        // }
-
-        // try {
-        //   const alt = node.data.target.fields.title[languageMap[language]];
-        //   const url = node.data.target.fields.file[languageMap[language]].url;
-        //   return (
-        //     <div style={{ width: "100%", display: "flex" }}>
-        //       <img
-        //         style={{ margin: "auto", maxHeight: "800px" }}
-        //         alt={alt}
-        //         src={url}
-        //       />
-        //     </div>
-        //   );
-        // } catch (err) {
-        //   return <></>;
-        // }
-      },
-
+ 
       [BLOCKS.HEADING_1]: (node, children) => {
         return (
           <h1 className="font-bold mb-2 mt-8 text-4xl text-white">
