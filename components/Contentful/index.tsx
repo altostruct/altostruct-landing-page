@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Image, { ImageProps } from "next/image";
 import { Suspense } from "react";
-import Widget from "../../.data/contentful/react-widgets/1ahxR6s5OunkPD8HnPKxK1";
 
 export function ContentfulCodeWidget(props: { id: string }) {
   const Dynamic = dynamic(
