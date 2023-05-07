@@ -80,34 +80,37 @@ function ABC(props: { posts: ContentfulPost[] }) {
           </div>
         </div>
 
-        <div className="md:hidden items-center text-white">
-            <p className="font-light">{props.fields.author}</p>
-            <h1 className="text-lg font-sans md:text-3xl font-medium">
-              {props.fields.title}
-            </h1>
-            <div className="flex m-auto justify-center mt-5">
-            {props.fields.image && (
-              <ContentfulImage
-                alt=""
-                image={props.fields.image}
-                height={400}
-                width={400}
-                className="h-40 w-40"
-                style={{
-                  objectFit: "cover",
-                }}
-              />
-            )}
+        <div className="md:hidden  items-stretch text-white">
+          <div className="flex gap-4">
+            <div className="w-4/5">
+              <p className="font-light">{props.fields.author}</p>
+              <h1 className="text-lg font-sans md:text-3xl font-medium">
+                {props.fields.title}
+              </h1>
+              <div className="mt-4 text-white text-xs md:text-sm flex gap-4">
+                <p>{formatDate(props.fields.createDate ?? new Date())}</p>
+                <p>
+                  {t("Lästid {{time}} minuter", {
+                    time: getReadTime(JSON.stringify(props)),
+                  })}
+                </p>
+              </div>
+            </div>
+            <div className="w-1/5 flex">
+              <div className="flex m-auto justify-center">
+                {props.fields.image && (
+                  <ContentfulImage
+                    alt=""
+                    image={props.fields.image}
+                    style={{
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                )}
+              </div>
+            </div>
           </div>
-            <div className="mt-4 text-white text-xs md:text-sm flex gap-4">
-              <p>{formatDate(props.fields.createDate ?? new Date())}</p>
-              <p>
-                {t("Lästid {{time}} minuter", {
-                  time: getReadTime(JSON.stringify(props)),
-                })}
-              </p>
-          </div>
-    
         </div>
       </Link>
     );

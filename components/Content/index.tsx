@@ -8,7 +8,9 @@ interface ContentProps {
 function Content(props: ContentProps) {
   const { children } = props;
   return (
-    <div className="w-11/12 md:w-11/12 m-auto">{children}</div>
+    <div className="w-11/12 md:w-11/12 m-auto" style={{ maxWidth: "2048px" }}>
+      {children}
+    </div>
   );
 }
 

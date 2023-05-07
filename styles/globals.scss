@@ -9,6 +9,13 @@
   line-height: 1.2 !important;
 }
 
+h1 {
+  font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+    Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
+  line-height: 1.2 !important;
+}
+
 @font-face {
   font-family: "KHTeka";
   src: url(../public/fonts/KH-Teka/WOFF/KHTeka-Regular.woff);
@@ -19,12 +26,12 @@
   src: url(../public/fonts/KH-Teka-Light/OTF/KHTeka-Light.otf);
 }
 
-$bg-color: #0f0f0f;
-$dot-color: rgb(110, 110, 110);
+$bg-color: rgb(22, 22, 22);
+$dot-color: rgb(37, 37, 37);
 
 // Dimensions
-$dot-size: 1px;
-$dot-space: 25px;
+$dot-size: 10px;
+$dot-space: 100px;
 
 $small-screen: 720px;
 $mid-screen: 920px;

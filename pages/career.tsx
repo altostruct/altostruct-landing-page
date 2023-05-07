@@ -31,12 +31,12 @@ function Carrer() {
         <Content>
           <PageStart
             title={
-              <span className="pt-20 md:pt-48 mt-9 text-3xl md:text-6xl text-left md:w-3/4">
+              <>
                 {t("Jobba med banbrytande")}{" "}
                 <WordCircled borderCircle={true}>{t("teknologi")}</WordCircled>{" "}
                 {t("tillsammans med de främsta inom ")}{" "}
                 <WordCircled>{t("AWS och molnet")}</WordCircled>
-              </span>
+              </>
             }
           ></PageStart>
         </Content>
@@ -45,7 +45,9 @@ function Carrer() {
           <TransitionSquares></TransitionSquares>
 
           <div className="place-content-center text-white text-center pt-72">
-            <p className="md:text-4xl text-2xl">{t("Lediga tjänster hos Altostruct")}</p>
+            <p className="md:text-4xl text-2xl">
+              {t("Lediga tjänster hos Altostruct")}
+            </p>
           </div>
           <div
             className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10"
@@ -61,15 +63,15 @@ function Carrer() {
               }
             }}
           >
-             <Link href="/jobopportunity">
+            <Link href="/jobopportunity">
               <span ref={refPackage1}>
-                  <Package
-                    title="Software Developer"
-                    iconPath="/images/icons/Icon-51.svg"
-                  ></Package>
+                <Package
+                  title="Software Developer"
+                  iconPath="/images/icons/Icon-51.svg"
+                ></Package>
               </span>
             </Link>
-            
+
             <Link href="/jobopportunity">
               <span ref={refPackage2}>
                 <Package
@@ -78,7 +80,6 @@ function Carrer() {
                 ></Package>
               </span>
             </Link>
-
           </div>
 
           <div className="flex md:hidden justify-center">
@@ -142,46 +143,48 @@ function Carrer() {
               <div className="absolute top-20 left-10 rotate-12 md:w-40 md:h-40 opacity-40 bg-[#6024ff]"></div>
             </div>
 
-            <div className="pl-2">  
+            <div className="pl-2">
               <div className="md:mt-5 mt-20">
-              <div className="flex">
-                <p className="mb-2 mr-auto">Onboarding</p>
-                <p className="place-content-end">Erik Rehn </p>
-              </div>
-              <hr />
-              <p className="mt-2">
-                {t(
-                  "Vi tar hand om dig internt så du kan ta hand om våra kunder på bästa sätt"
-                )}.
-              </p>
-              </div>
-
-              <div className="md:mt-20 mt-5">
-              <div className="flex">
-                <p className="mb-2 mr-auto">{t("Balans")}</p>
-                <p className="place-content-end">Mustafa Ali</p>
-              </div>
-              <hr />
-              <p className="mt-2">
-                {t(
-                  "Det är viktigt för oss att man kan skapa en balans mellan jobb och fritid för att leverera de bästa resultaten"
-                )}.
-              </p>
+                <div className="flex">
+                  <p className="mb-2 mr-auto">Onboarding</p>
+                  <p className="place-content-end">Erik Rehn </p>
+                </div>
+                <hr />
+                <p className="mt-2">
+                  {t(
+                    "Vi tar hand om dig internt så du kan ta hand om våra kunder på bästa sätt"
+                  )}
+                  .
+                </p>
               </div>
 
               <div className="md:mt-20 mt-5">
-              <div className="flex">
-                <p className="mb-2 mr-auto">{t("Samhörighet")}</p>
-                <p className="place-content-end">Joakim Tornert</p>
+                <div className="flex">
+                  <p className="mb-2 mr-auto">{t("Balans")}</p>
+                  <p className="place-content-end">Mustafa Ali</p>
+                </div>
+                <hr />
+                <p className="mt-2">
+                  {t(
+                    "Det är viktigt för oss att man kan skapa en balans mellan jobb och fritid för att leverera de bästa resultaten"
+                  )}
+                  .
+                </p>
               </div>
-              <hr />
-              <p className="mt-2">
-                {t(
-                  "Hos oss har du möjlighet att föra fram egna idéer och hjälpa andra medarbetare utvecklas i deras kompetens"
-                )}.
-              </p>
+
+              <div className="md:mt-20 mt-5">
+                <div className="flex">
+                  <p className="mb-2 mr-auto">{t("Samhörighet")}</p>
+                  <p className="place-content-end">Joakim Tornert</p>
+                </div>
+                <hr />
+                <p className="mt-2">
+                  {t(
+                    "Hos oss har du möjlighet att föra fram egna idéer och hjälpa andra medarbetare utvecklas i deras kompetens"
+                  )}
+                  .
+                </p>
               </div>
-              
             </div>
           </div>
 
