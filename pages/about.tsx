@@ -1,5 +1,6 @@
 import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
+import * as fs from "fs";
 import Topbar from "@components/Topbar/Topbar";
 import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
@@ -11,8 +12,13 @@ import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
 import BigList from "@components/BigList";
 import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
+import BorderedPanel from "@components/BorderedPanel";
+import CloudRain from "@components/CloudRain";
+import SmallCity from "@components/3d/SmallCity";
+import NoSSR from "@components/NoSSR";
 
-function About() {
+function About(props: { code: string }) {
+  const { code } = props;
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
 
@@ -42,55 +48,59 @@ function About() {
           ></PageStart>
         </Content>
 
-        <div className={lightBg}>
+        <div>
           <TransitionSquares></TransitionSquares>
-          <Content>
-            <div className="md:grid md:grid-cols-6 md:gap-4 text-white">
-              <div className="col-start-1 col-end-5">
-                <div className="md:pt-72 pt-52 md:text-4xl text-3xl text-white font-sans">
-                  <p>{t("Om Altostruct")}</p>
-                </div>
-                <div className="relative">
-                  <p
-                    className="relative z-10 md:text-4xl text-2xl"
-                    style={{ fontFamily: "KHTeka-Light" }}
-                  >
+          <Content className="py-32 flex">
+            <div className="w-full flex flex-col gap-10">
+              <BorderedPanel label="OSS / 01.">
+                <p className="text-4xl">
+                  <span className="text-white">
                     {t(
-                      "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av tjänster som exempelvis molnmigrationer, AI, serverless och APIer. "
+                      "Altostruct är ett konsultbolag specialiserade inom AWS."
                     )}
-                  </p>
-                  <div className="absolute top-20 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-40 bg-[#6024ff]"></div>
-                  <div className="absolute top-2 left-10 rotate-12 w-20 h-20 md:w-40 md:h-40 opacity-40 bg-[#6024ff]"></div>
-                </div>
-              </div>
+                  </span>
+                  <span className="text-gray-400">
+                    {t(
+                      " Vårt team av AWS konsulter är certifierade via " +
+                        " AWS och erbjuder ett stort utbud av tjänster som" +
+                        " exempelvis molnmigrationer, AI, serverless och APIer. "
+                    )}
+                  </span>
+                </p>
+              </BorderedPanel>
 
-              <div className="col-start-3 col-end-7 justify-items-end">
-                <div className="pt-20 md:text-4xl text-3xl text-white font-sans">
-                  <p>{t("Vår vision")}</p>
-                </div>
-                <div className="relative pb-20">
-                  <p
-                    className="relative md:text-4xl text-2xl z-10"
-                    style={{ fontFamily: "KHTeka-Light" }}
-                  >
+              <BorderedPanel label="OSS / 02.">
+                <p className="text-4xl">
+                  <span className="text-white">{t("Vår vision är att ")}</span>
+                  <span className="text-gray-400">
                     {t(
-                      "Vår vision är att göra det möjligt för alla företag att bygga och hosta branschledande applikationer och platformer i molnet, och på så sätt demokratisera tillgången till den mest kraftfulla teknologin och resurserna."
+                      "är att göra det möjligt för alla företag" +
+                        " att bygga och hosta branschledande applikationer" +
+                        " och platformer i molnet."
                     )}
-                  </p>
-                  <div className="absolute top-10 left-3/4 w-20 h-20 md:w-40 md:h-40 rotate-45 opacity-40 bg-[#6024ff]"></div>
-                  <div className="absolute top-2 left-20 w-20 h-20 md:w-40 opacity-40 md:h-40 bg-[#6024ff]"></div>
-                </div>
-              </div>
+                  </span>
+                </p>
+              </BorderedPanel>
+
+              <BorderedPanel label="OSS / 03.">
+                <p className="text-4xl">
+                  <span className="text-white">{t("Vi tror på ")}</span>
+                  <span className="text-gray-400">
+                    {t(
+                      "är att göra det möjligt för alla " +
+                        "företag att bygga och hosta branschledande" +
+                        " applikationer och platformer i molnet."
+                    )}
+                  </span>
+                </p>
+              </BorderedPanel>
             </div>
           </Content>
-
-          <div className="flex place-content-start md:pt-40">
-            <div className="md:w-28 md:h-28 h-14 w-14 bg-[#161616]"></div>
-          </div>
         </div>
 
         <Content>
-          <div className="md:pt-52 md:pb-52 pt-10 pb-10">
+          <div className=" pt-32 pb-10">
+            <h1 className="text-left mb-12">Varför välja oss?</h1>
             <BigList
               items={[
                 {
@@ -251,6 +261,57 @@ function About() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps(context: any) {
+  const code = `
+  import Footer from "@components/Footer/Footer";
+  import Form from "@components/Form";
+  import Topbar from "@components/Topbar/Topbar";
+  import Content from "@components/Content";
+  import useTranslation from "hooks/useTranslation";
+  import SEO from "@components/SEO";
+  import React, { useState } from 'react'
+  
+  function Carrer() {
+    const { t } = useTranslation();
+    return (
+      <>
+      <SEO
+        title={t("Altostruct | Cloud Consulting")}
+        description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
+      ></SEO>
+      <Topbar></Topbar>
+      <div className="bg-[#161616] md:pb-20 pb-10">
+        <div className="grid grid-cols-1 pt-52 text-center text-white">
+          <h1>Atmosphere package</h1>
+        </div>
+        <div className="grid grid-cols-12 md:pb-60 text-white">
+                <div className="md:col-start-4 md:col-span-6>
+                </div>
+        </div>
+  
+        <div className="grid grid-cols-12 md:pb-52 pb-24 text-white">
+            <div className="md:col-start-4 md:col-span-6>
+                  <h2>{t("Hör av dig så hjälper vi dig!")}</h2>
+            </div>
+        </div>
+            <Content>
+             <Form></Form>
+            </Content>
+      </div>
+      <Footer />
+    </>
+    );
+  }
+  
+  export default Carrer;
+  `;
+
+  return {
+    // Passed to the page component as props
+    props: { code },
+  };
 }
 
 export default About;

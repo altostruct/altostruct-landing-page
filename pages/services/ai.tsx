@@ -17,12 +17,13 @@ import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
 import Form from "@components/Form";
 import Projects from "@components/Projects";
 import classNames from "classnames";
-import Images from "@components/Images";
-import Recommendations from "@components/Recommendations";
-import Button from "@components/Button/Button";
 
-export default function Home() {
+export default function Page() {
   const { t } = useTranslation();
+  const [visibleCitation, setVisibleCitation] = useState(0);
+
+  const refCite1 = useRef<HTMLDivElement>(null);
+  const refCite2 = useRef<HTMLDivElement>(null);
   const bgLight = twconfig.theme.light;
 
   const projects = [
@@ -35,9 +36,9 @@ export default function Home() {
           src="/images/customers/nrlyze.png"
         ></img>
       ),
-      title: "Nrlyze har skapat ett AI system ",
+      title: "Nrlyze",
       description: t(
-        "av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som presenterar datan i grafer för att ge dem en överblick över värmesystemet."
+        "Nrlyze har skapat ett system av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som presenterar datan i grafer för att ge dem en överblick över värmesystemet."
       ),
     },
     {
@@ -54,16 +55,11 @@ export default function Home() {
             className="max-h-56"
             src="https://www.saluto.ai/static/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
           ></img>
-          <img
-            alt="Customer Saluto"
-            className="max-h-56"
-            src="https://www.saluto.ai/static/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
-          ></img>
         </div>
       ),
-      title: "Saluto är en medtech startup",
+      title: "Saluto",
       description: t(
-        " med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte till att bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
+        "En Medtech startup med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte till att bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
       ),
     },
     {
@@ -75,9 +71,9 @@ export default function Home() {
           src="https://tendium.ai/wp-content/uploads/2022/04/img-landing-hero-1.jpeg.webp"
         ></img>
       ),
-      title: "Tendium är en webbapplikation ",
+      title: "Tendium",
       description: t(
-        "tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct la grunden för infrastrukturen till deras microservice arkitektur."
+        "Hemsida som tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct la grunden för infrastrukturen till deras microservice arkitektur."
       ),
     },
     {
@@ -89,9 +85,9 @@ export default function Home() {
           src="/images/customers/foodfacts.png"
         ></img>
       ),
-      title: "Foodfacts hjälper dig göra medvetna val gällande mat.",
+      title: "Foodfacts",
       description: t(
-        " Altostruct ledde utvecklingen av en mobilapplikation i samarbete med ett offshoreteam. Applikationen är byggd på AWS med React Native."
+        " hjälper dig göra medvetna val gällande mat och hälsa.  Altostruct ledde utvecklingen av en mobilapplikation i samarbete med ett offshoreteam. Applikationen är byggd på AWS med React Native."
       ),
     },
   ];
@@ -109,16 +105,15 @@ export default function Home() {
             description={
               <>
                 {t(
-                  "Konsultbolaget med expertis inom AWS som hjälper er ta ert företag till nya höjder."
+                  "Vi tar hand om infrastrukturen så " +
+                    t("att ni kan fokusera på vad ni kan bäst. ")
                 )}
               </>
             }
             title={
               <>
-                Bygg snabbare, stabilare och säkrare med{" "}
-                <WordCircled borderCircle={true}>
-                  Amazon Web Services
-                </WordCircled>
+                Focus on what you do best
+                <WordCircled borderCircle={true}>foundation</WordCircled>
               </>
             }
           ></PageStart>
@@ -141,12 +136,16 @@ export default function Home() {
                 style={{ fontFamily: "KHTeka-Light" }}
               >
                 {t(
-                  "Altostruct är ett Stockholm baserat konsultbolag med certifierade AWS experter. Vi hjälper dig bygga skalbara lösningar med det senaste inom cloud."
+                  "Altostruct är ett konsultbolag specialiserade inom AWS. Vårt team av "
+                )}
+                <i>
+                  <u>{t("konsulter är certifierade")}</u>
+                </i>
+                {t(
+                  " via AWS erbjuder hjälper dig att bygga på ett skalbart och säkert sätt. " +
+                    "Vi hjälper dig med allting från molnmigrering till kostnadsoptimering."
                 )}
               </p>
-              <Button link="/contact" className="mt-10">
-                {t("Kontakta oss")}
-              </Button>
             </div>
           </div>
 
@@ -288,7 +287,7 @@ export default function Home() {
                     key={index}
                     href={project.link}
                     className={classNames(
-                      "p-3 border-2 border-[#292929] flex col-span-5 overflow-hidden sm:grid-cols-2  transition-all transition-all",
+                      "p-3 flex col-span-5 overflow-hidden border sm:grid-cols-2  border-gray-700 transition-all transition-all",
                       {
                         "lg:col-span-4": isBig,
                         "lg:col-span-2": !isBig,
@@ -301,17 +300,19 @@ export default function Home() {
                         "md:grid-cols-2": isBig,
                       })}
                     >
-                      <div className="col-span-1 flex flex-col p-12 justify-center">
+                      <div className="col-span-1 flex flex-col p-6 justify-center">
                         <div>
                           <p className="text-2xl">
-                            <span className="text-white">{project.title}</span>
-                            <span className="text-gray-400">
+                            <span className="font-extrabold text-white">
+                              {project.title}
+                            </span>
+                            <span className="text-gray-300">
                               {project.description}
                             </span>
                           </p>
                         </div>
                         <div className="mt-4">
-                          <a className="text-white text-4xl">
+                          <a className="text-white text-5xl">
                             <WordCircled>Read more</WordCircled>
                           </a>
                         </div>
@@ -333,9 +334,217 @@ export default function Home() {
           </div>
         </Content>
 
-        <Recommendations></Recommendations>
+        <Content>
+          <div className="md:mt-52 mt-32 mb-40">
+            <div className="md:hidden relative text-white mb-10">
+              <h3>{t("Rekommendationer")}</h3>
+              <p style={{ fontFamily: "KHTeka-Light", marginTop: "4px" }}>
+                {t("Läs vad några av våra grymma kunder har att säga!")}
+              </p>
+            </div>
+            <div
+              className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 text-white snap-x snap-mandatory"
+              onScroll={(e) => {
+                const citescroll = refCite2.current?.getBoundingClientRect().x;
+                if (citescroll != undefined) {
+                  if (citescroll < 250) {
+                    setVisibleCitation(1);
+                  }
+                  if (citescroll > 250 && citescroll < 600) {
+                    setVisibleCitation(0);
+                  }
+                }
+              }}
+            >
+              <div className="hidden md:block relative">
+                <div className="flex opacity-0">
+                  <img
+                    className="w-10 ml-1"
+                    src={"/images/icons/citat-icon-67.svg"}
+                  />
+                  <img
+                    className="w-10 ml-1"
+                    src={"/images/icons/citat-icon-67.svg"}
+                  />
+                </div>
 
-        <Images></Images>
+                <h3 className="mt-10 mb-2 text-4xl">{t("Rekommendationer")}</h3>
+                <p className="text-lg">
+                  {t("Läs vad några av våra grymma kunder har att säga")}
+                </p>
+              </div>
+              <div ref={refCite1} className="snap-start mr-4">
+                <Cite
+                  author="Peter Vesterberg / CEO Saluto AB"
+                  cite={t(
+                    "Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad."
+                  )}
+                  citeIcon="/images/icons/citat-icon-67.svg"
+                ></Cite>
+              </div>
+              <div ref={refCite2} className="snap-start">
+                <Cite
+                  author="Erik Standin Pers / Founder Foodfacts"
+                  cite={t(
+                    "Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."
+                  )}
+                  citeIcon="/images/icons/citat-icon-67.svg"
+                ></Cite>
+              </div>
+            </div>
+            <div className="flex md:hidden justify-center pt-5">
+              <div
+                onClick={() => {
+                  refCite1.current?.scrollIntoView({
+                    block: "nearest",
+                    behavior: "smooth",
+                  });
+                  setVisibleCitation(0);
+                }}
+                className="flex-none pr-2 snap-center"
+              >
+                <div
+                  className={`h-3 w-3 ${
+                    visibleCitation === 0 ? "bg-green-300" : "bg-white"
+                  }`}
+                ></div>
+              </div>
+
+              <div
+                onClick={() => {
+                  refCite2.current?.scrollIntoView({
+                    block: "nearest",
+                    behavior: "smooth",
+                  });
+                  setVisibleCitation(1);
+                }}
+                className="flex-none pr-2 snap-center"
+              >
+                <div
+                  className={`h-3 w-3 ${
+                    visibleCitation === 1 ? "bg-green-300" : "bg-white"
+                  }`}
+                ></div>
+              </div>
+            </div>
+          </div>
+        </Content>
+
+        <div className="md:hidden flex-wrap pb-20">
+          <div className="flex w-screen place-content-between">
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-3.jpg"
+              alt=""
+            />
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-15.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex w-screen mt-6">
+            <img
+              className="w-6/12 mr-auto ml-auto"
+              src="/images/MISC/Altostruct_office-18.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex w-screen place-content-between mt-6">
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-12.jpg"
+              alt=""
+            />
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-38.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex w-screen mt-6">
+            <img
+              className="w-6/12 ml-auto mr-auto"
+              src="/images/MISC/Altostruct_office-29.jpg"
+              alt=""
+            />
+          </div>
+          <div className="flex w-screen place-content-between mt-6">
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-5.jpg"
+              alt=""
+            />
+            <img
+              className="w-5/12"
+              src="/images/MISC/Altostruct_office-39.jpg"
+              alt=""
+            />
+          </div>
+
+          <div className="grid grid-cols-1 mt-8 place-items-end text-[#c3eec3]">
+            <Link className="flex text-[#c3eec3]" href={"/about"}>
+              <p className="text-xl">{t("Människorna bakom Altostruct")}</p>
+              <img
+                className="w-6 ml-2 pt-[2.5%] pr-2"
+                src="/images/icons/Icon-59.svg"
+              ></img>
+            </Link>
+          </div>
+        </div>
+
+        <div className="hidden mt-72 md:flex overflow-x-hidden">
+          <img
+            className="h-[300px] mr-4"
+            src="/images/MISC/Altostruct_office-3.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px]"
+            src="/images/MISC/Altostruct_office-15.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px] mr-4 mt-[150px]"
+            src="/images/MISC/Altostruct_office-18.jpg"
+            alt=""
+          />
+          <img
+            className="h-[300px] mr-4"
+            src="/images/MISC/Altostruct_office-39.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px] mt-[150px]"
+            src="/images/MISC/Altostruct_office-12.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px] mr-4"
+            src="/images/MISC/Altostruct_office-38.jpg"
+            alt=""
+          />
+          <img
+            className="h-[300px] mr-4"
+            src="/images/MISC/Altostruct_office-29.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px]"
+            src="/images/MISC/Altostruct_office-23.jpg"
+            alt=""
+          />
+          <img
+            className="h-[150px] mr-4 mt-[150px]"
+            src="/images/MISC/Altostruct_office-18.jpg"
+            alt=""
+          />
+          <img
+            className="h-[300px] mr-4"
+            src="/images/MISC/Altostruct_office-30.jpg"
+            alt=""
+          />
+        </div>
 
         <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
           <div className="flex text-2xl mr-5">

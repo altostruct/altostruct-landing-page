@@ -3,13 +3,18 @@ import Topbar from "@components/Topbar/Topbar";
 import React, { useEffect, useRef, useState } from "react";
 
 import useTranslation from "../../hooks/useTranslation";
+import { useRouter } from "next/router";
 
 function ReachedOut() {
   const { t } = useTranslation();
-
+  const { push } = useRouter();
   const [email, setEmail] = useState<string>();
   useEffect(() => {
     if (!email) setEmail(new URLSearchParams(location.search).get("email")!);
+
+    setTimeout(() => {
+      push("/");
+    }, 2000);
   }, [email]);
 
   return (

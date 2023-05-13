@@ -258,7 +258,7 @@ export default function SmallCity() {
             // setState(state + "Done");
           }}
           style={{
-            backgroundColor: dark ? "#010229" : "rgb(255, 255, 255)",
+            backgroundColor: dark ? "#010229" : "#161616",
             width: "100%",
             height: "100%",
             display: "inline-block",

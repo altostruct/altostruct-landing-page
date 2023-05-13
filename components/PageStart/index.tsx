@@ -40,18 +40,19 @@ function PageStart(props: PageStartProps) {
 
   useEffect(() => {
     if (ref.current?.camera) {
-      console.log(ref.current);
       ref.current.controls().enableZoom = false;
     }
   }, [ref]);
 
+  console.log(description);
   return (
     <div className="flex h-screen">
       <div className="my-auto flex-1 h-fit w-2/3">
         <h1 className="mb-3 text-4xl md:text-6xl md:w-3/4 leading-tight md:leading-tight">
           {title}
         </h1>
-        <p className="text-xl" style={{ fontFamily: "KHTeka-Light" }}>
+        <div className=" my-5 scale-x-100 transition-all"></div>
+        <p className="text-xl md:w-1/2" style={{ fontFamily: "KHTeka-Light" }}>
           {description}
         </p>
       </div>

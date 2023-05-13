@@ -1,21 +1,22 @@
 import useTranslation from "hooks/useTranslation";
 import { ReactNode } from "react";
 import styles from "./BigList.module.scss";
+import BorderedPanel from "@components/BorderedPanel";
 
 interface BigListProps {
-    items: { title: string; description: string; image: string }[];
+  items: { title: string; description: string; image: string }[];
 }
 
 function BigList(props: BigListProps) {
-    const { items } = props;
+  const { items } = props;
 
-    return (
-        <ul className={styles["big-list"]}>
-            {items.map((item, index) => {
-                const { title, description, image } = item;
-                return (
-                    <>
-                        {/* <ul
+  return (
+    <ul className={styles["big-list"]}>
+      {items.map((item, index) => {
+        const { title, description, image } = item;
+        return (
+          <>
+            {/* <ul
                             key={index}
                             className="md:flex md:grid-cols-12 text-white items-center p-5 border-gray-500 border-b-[1px] mb-10"
                         >
@@ -42,28 +43,19 @@ function BigList(props: BigListProps) {
                             <p className="md:hidden">{description}</p>
                         </ul> */}
 
-                        <li className={`${styles["big-list-item"]} text-2xl`}>
-                            <img src={image} alt="" className={styles.icon} />
-                            <span className={`${styles.title} text-3xl`}>
-                                {title}
-                            </span>
-                            <span
-                                className={`${styles.index} hidden md:inline`}
-                            >
-                                0{index}.
-                            </span>
-                            <span className={`${styles.description} mt-2`}>
-                                {description}
-                            </span>
-                        </li>
-                        <hr
-                            className={`${styles.divider} border-gray-500`}
-                        ></hr>
-                    </>
-                );
-            })}
-        </ul>
-    );
+            <li className={`${styles["big-list-item"]} text-2xl`}>
+              <img src={image} alt="" className={styles.icon} />
+              <span className={`${styles.title} text-4xl`}>{title}</span>
+              <span className={`${styles.description} mt-2 text-lg`}>
+                {description}
+              </span>
+            </li>
+            <hr className={`${styles.divider} border-gray-500`}></hr>
+          </>
+        );
+      })}
+    </ul>
+  );
 }
 
 export default BigList;
