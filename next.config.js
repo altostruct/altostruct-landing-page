@@ -44,7 +44,7 @@ const nextConfig = {
     // If you do not want to use blurry placeholder images, then you can set
     // nextImageExportOptimizer_generateAndUseBlurImages to false and pass
     // `placeholder="empty"` to all <ExportedImage> components.
-    nextImageExportOptimizer_generateAndUseBlurImages: true,
+    nextImageExportOptimizer_generateAndUseBlurImages: false,
   },
 
   i18n: {
