@@ -7,8 +7,8 @@ const Brand = () => {
       alt=""
       src="/images/logo/Altostruct_Logo_White.png"
       width={100}
-      height={10}
-      loading="lazy"
+      height={5}
+      placeholder="empty"
     ></Image>
   );
 };

@@ -143,6 +143,7 @@ export default function Home() {
                     width={100}
                     height={100}
                     alt=""
+                    placeholder="empty"
                     className="-rotate-12 animate-transitions"
                     src="/images/aws-certified-solutions-architect-associate.webp"
                   />
@@ -151,6 +152,7 @@ export default function Home() {
                   width={100}
                   height={100}
                   alt=""
+                  placeholder="empty"
                   className="transform -translate-y-6 animate-transitions"
                   src="/images/AWS-Certified-Machine-Learning-Specialty_badge.e5d66b56552bbf046f905bacaecef6dad0ae7180 (1).png"
                 />
@@ -159,6 +161,7 @@ export default function Home() {
                     width={100}
                     height={100}
                     alt=""
+                    placeholder="empty"
                     className="rotate-12 animate-transitions"
                     src="/images/AWS-Certified-Data-Analytics-Specialty_badge.c74203ecf6d7c4889d01d8b4ba5c9df6e69c6f43.png"
                   />
@@ -359,7 +362,7 @@ export default function Home() {
                     >
                       <div className="col-span-1 flex flex-col p-12 justify-center">
                         <div>
-                          <p className="text-2xl">
+                          <p className="text-lg md:text-2xl">
                             <span className="text-white">{project.title}</span>
                             <span className="text-gray-400">
                               {project.description}
