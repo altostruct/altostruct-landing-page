@@ -1,7 +1,7 @@
 import NoSSR from "@components/NoSSR";
-import { LegacyRef, ReactNode, useEffect, useRef } from "react";
+import { LegacyRef, ReactNode, Suspense, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
-import { GlobeMethods } from "react-globe.gl";
+import type { GlobeMethods } from "react-globe.gl";
 
 const GlobeNoSSRWrapper = dynamic(
   async () => {
@@ -44,38 +44,39 @@ function PageStart(props: PageStartProps) {
     }
   }, [ref]);
 
-  console.log(description);
   return (
     <div className="flex h-screen">
       <div className="my-auto flex-1 h-fit w-2/3">
         <h1 className="mb-3 text-4xl md:text-6xl md:w-3/4 leading-tight md:leading-tight">
           {title}
         </h1>
-        <div className=" my-5 scale-x-100 transition-all"></div>
-        <p className="text-xl md:w-1/2" style={{ fontFamily: "KHTeka-Light" }}>
+        <div className="my-5 scale-x-100 transition-all"></div>
+        <p className="text-2xl " style={{ fontFamily: "KHTeka-Light" }}>
           {description}
         </p>
       </div>
       <div className="flex-0 flex w-1/3">
         <div className="m-auto">
-          <GlobeNoSSRWrapper
-            globeImageUrl="/images/backgrounds/earth4.jpeg"
-            arcsData={arcsData}
-            arcColor={"color"}
-            arcDashLength={() => Math.random()}
-            arcDashGap={() => Math.random()}
-            arcDashAnimateTime={() => Math.random() * 4000 + 1000}
-            forwardedRef={(ref: GlobeMethods) => {
-              if (ref) {
-                ref.controls().enableZoom = false;
-                ref.controls().autoRotate = true;
-                // ref.pointOfView(OFFICE, 4000);
-              }
-            }}
-            backgroundColor="rgba(0,0,0,0)"
-            width={500}
-            height={500}
-          ></GlobeNoSSRWrapper>
+          <Suspense fallback={null}>
+            <GlobeNoSSRWrapper
+              globeImageUrl="/images/backgrounds/earth4.webp"
+              arcsData={arcsData}
+              arcColor={"color"}
+              arcDashLength={() => Math.random()}
+              arcDashGap={() => Math.random()}
+              arcDashAnimateTime={() => Math.random() * 4000 + 1000}
+              forwardedRef={(ref: GlobeMethods) => {
+                if (ref) {
+                  ref.controls().enableZoom = false;
+                  ref.controls().autoRotate = true;
+                  // ref.pointOfView(OFFICE, 4000);
+                }
+              }}
+              backgroundColor="rgba(0,0,0,0)"
+              width={500}
+              height={500}
+            ></GlobeNoSSRWrapper>
+          </Suspense>
         </div>
       </div>
     </div>

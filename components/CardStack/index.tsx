@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 import { useState } from "react";
 import { useSprings, animated, to as springTo } from "react-spring";
 import { useDrag, useMove } from "@use-gesture/react";

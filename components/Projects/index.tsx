@@ -1,6 +1,6 @@
 import { getPostFromSlug } from "utils/contentful";
 import projects from "../../.data/contentful/projects/all.json";
-import Image from "next/image";
+import Image from "next-image-export-optimizer";
 import { ContentfulImage } from "@components/Contentful";
 
 function Projects(props: any) {

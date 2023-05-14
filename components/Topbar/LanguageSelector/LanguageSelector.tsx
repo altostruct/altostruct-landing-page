@@ -3,7 +3,7 @@ import styles from "./LanguageSelector.module.scss";
 import swedishIcon from "./assets/swedishFlag.png";
 import englishIcon from "./assets/usFlag.png";
 import { useRouter } from "next/router";
-import Image, { StaticImageData } from "next/image";
+import Image from "next-image-export-optimizer";
 import Link from "next/link";
 import useTranslation from "hooks/useTranslation";
 
@@ -27,7 +27,7 @@ const LanguageSelector = (props: LanguageSelectorProps) => {
   const language = locale!;
   const { expanded, onSelect } = props;
 
-  const iconMap: Record<string, StaticImageData> = {
+  const iconMap: Record<string, any> = {
     sv: swedishIcon,
     "en-US": englishIcon,
   };

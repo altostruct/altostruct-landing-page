@@ -20,6 +20,7 @@ import classNames from "classnames";
 import Images from "@components/Images";
 import Recommendations from "@components/Recommendations";
 import Button from "@components/Button/Button";
+import Image from "next-image-export-optimizer";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -29,65 +30,77 @@ export default function Home() {
     {
       link: "https://www.nrlyze.se/",
       img: (
-        <img
+        <Image
+          width={400}
+          height={400}
           alt="Customer Nrlyze"
           className="max-h-56"
           src="/images/customers/nrlyze.png"
-        ></img>
+        ></Image>
       ),
-      title: "Nrlyze har skapat ett AI system ",
+      title: "Nrlyze har utvecklat ett AI-system ",
       description: t(
-        "av trådlösa sensorer som kan optimera parametrar gällande värmesystem i byggnader. Altostruct hjälpte Nrlyze bygga en portal som presenterar datan i grafer för att ge dem en överblick över värmesystemet."
+        " bestående av trådlösa sensorer som optimerar parametrarna för värmesystem i byggnader. Altostruct har samarbetat med Nrlyze genom att bygga en webbportal som presenterar datan i grafer. Detta ger användarna en enkel och tydlig översikt över värmesystemets prestanda och hjälper dem att effektivt övervaka och förbättra systemet."
       ),
     },
     {
       link: "https://www.saluto.ai/",
       img: (
         <div className="flex">
-          <img
+          <Image
+            width={400}
+            height={400}
             alt="Customer Saluto"
             className="max-h-56"
-            src="https://www.saluto.ai/static/first_step_swe-a528fa16687553e6a9f564e91f85e007.png"
-          ></img>
-          <img
+            src="/images/first_step_swe-a528fa16687553e6a9f564e91f85e007.png"
+          ></Image>
+          <Image
+            width={400}
+            height={400}
             alt="Customer Saluto"
             className="max-h-56"
-            src="https://www.saluto.ai/static/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
-          ></img>
-          <img
+            src="/images/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
+          ></Image>
+          <Image
+            width={400}
+            height={400}
             alt="Customer Saluto"
             className="max-h-56"
-            src="https://www.saluto.ai/static/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
-          ></img>
+            src="/images/third_step_swe-99ae287c674a9ba0af11be20dd65ac21.png"
+          ></Image>
         </div>
       ),
-      title: "Saluto är en medtech startup",
+      title: "Saluto är en medtech startup.",
       description: t(
-        " med målet att hjälpa sina kunder nå ett friskare liv. Altostruct hjälpte till att bygga en app som tillåter användarna att både ge och få information om deras nuvarande hälsa."
+        " Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd. Appen ger användarna en enkel och överskådlig översikt över deras hälsostatus genom att samla in data från olika källor, inklusive wearables och andra hälsorelaterade apparater. Genom att arbeta tillsammans med Altostruct kunde Saluto skapa en användarvänlig app som gör det enkelt och bekvämt för användarna att följa sin hälsa."
       ),
     },
     {
       link: "https://tendium.ai/se/",
       img: (
-        <img
+        <Image
+          width={400}
+          height={400}
           alt="Customer Tendium"
           className="max-h-56"
-          src="https://tendium.ai/wp-content/uploads/2022/04/img-landing-hero-1.jpeg.webp"
-        ></img>
+          src="/images/img-landing-hero-1.jpeg.webp"
+        ></Image>
       ),
       title: "Tendium är en webbapplikation ",
       description: t(
-        "tillåter kunder att enkelt följa, hitta och ansöka till offentliga upphandlingar. Altostruct la grunden för infrastrukturen till deras microservice arkitektur."
+        " som ger kunder möjligheten att enkelt följa, hitta och ansöka om offentliga upphandlingar. Altostruct har bidragit till projektet genom att bygga en solid infrastruktur för deras microservice arkitektur. Med Altostructs expertis kunde Tendium bygga en skalbar och robust arkitektur som ger en smidig användarupplevelse och pålitlig prestanda. "
       ),
     },
     {
       link: "https://www.foodfacts.se/",
       img: (
-        <img
+        <Image
+          width={400}
+          height={400}
           alt="Customer Foodfacts"
           className="max-h-56"
           src="/images/customers/foodfacts.png"
-        ></img>
+        ></Image>
       ),
       title: "Foodfacts hjälper dig göra medvetna val gällande mat.",
       description: t(
@@ -105,24 +118,56 @@ export default function Home() {
       <Topbar></Topbar>
       <div className="bg-[#161616] pb-20">
         <Content>
-          <PageStart
-            description={
-              <>
-                {t(
-                  "Konsultbolaget med expertis inom AWS som hjälper er ta ert företag till nya höjder."
-                )}
-              </>
-            }
-            title={
-              <>
-                Bygg snabbare, stabilare och säkrare med{" "}
-                <WordCircled borderCircle={true}>
-                  Amazon Web Services
-                </WordCircled>
-              </>
-            }
-          ></PageStart>
+          <div className="relative">
+            <PageStart
+              description={
+                <>
+                  {t(
+                    "Vi erbjuder molnlösningar som tar ert bolag till nya höjder."
+                  )}
+                </>
+              }
+              title={
+                <>
+                  Bygg snabbare, stabilare och säkrare med{" "}
+                  <WordCircled borderCircle={true}>
+                    Amazon Web Services
+                  </WordCircled>
+                </>
+              }
+            ></PageStart>{" "}
+            <div className="absolute w-full bottom-12  md:right-0 flex">
+              <div className="m-auto md:mr-auto md:ml-0 flex">
+                <div className="translate-x-8">
+                  <Image
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="-rotate-12 animate-transitions"
+                    src="/images/aws-certified-solutions-architect-associate.webp"
+                  />
+                </div>
+                <Image
+                  width={100}
+                  height={100}
+                  alt=""
+                  className="transform -translate-y-6 animate-transitions"
+                  src="/images/AWS-Certified-Machine-Learning-Specialty_badge.e5d66b56552bbf046f905bacaecef6dad0ae7180 (1).png"
+                />
+                <div className="-translate-x-8">
+                  <Image
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="rotate-12 animate-transitions"
+                    src="/images/AWS-Certified-Data-Analytics-Specialty_badge.c74203ecf6d7c4889d01d8b4ba5c9df6e69c6f43.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </Content>
+
         <StaticSidebar></StaticSidebar>
 
         <div className={bgLight}>
@@ -133,15 +178,26 @@ export default function Home() {
               className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
               style={{ textAlignLast: "center" }}
             >
-              <h1 className="text-2xl md:text-4xl uppercase text-gray-300 mb-4 md:mb-4">
-                {t("Vad är Altostruct?")}
-              </h1>
-              <p
-                className="md:text-3xl text-xl"
-                style={{ fontFamily: "KHTeka-Light" }}
-              >
+              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
+                <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
+                  {t("Vad är Altostruct?")}
+                </h1>
+                <Image
+                  width={50}
+                  height={50}
+                  alt=""
+                  src="/icons8-amazon-web-services.svg"
+                ></Image>
+              </div>
+              <p className=" font-light">
                 {t(
-                  "Altostruct är ett Stockholm baserat konsultbolag med certifierade AWS experter. Vi hjälper dig bygga skalbara lösningar med det senaste inom cloud."
+                  "Vi på Altostruct älskar molnet och tror starkt på dess förmåga att förvandla" +
+                    " företag och driva innovation." +
+                    " Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster" +
+                    " och lösningar till våra kunder. Oavsett om det handlar om att flytta" +
+                    " till molnet, optimera befintlig molninfrastruktur eller skapa anpassade" +
+                    " molnbaserade lösningar, är vi engagerade i att hjälpa våra kunder att navigera" +
+                    " genom molnets komplexiteter."
                 )}
               </p>
               <Button link="/contact" className="mt-10">
@@ -278,15 +334,15 @@ export default function Home() {
 
         <Content>
           <div className="mt-48 ">
-            <pre>KUNDER / 01.</pre>
+            <pre>{t("KUNDER / 01.")}</pre>
+            <h1 className="mb-16">{t("Några av våra kunder och projekt ")}</h1>
 
             <div className="mb-12 mt-2 grid md:text-left text-center grid-cols-4 gap-8">
               {projects.map((project, index) => {
                 const isBig = index % 3 == 0;
                 return (
-                  <a
+                  <div
                     key={index}
-                    href={project.link}
                     className={classNames(
                       "p-3 border-2 border-[#292929] flex col-span-5 overflow-hidden sm:grid-cols-2  transition-all transition-all",
                       {
@@ -311,7 +367,10 @@ export default function Home() {
                           </p>
                         </div>
                         <div className="mt-4">
-                          <a className="text-white text-4xl">
+                          <a
+                            href={project.link}
+                            className="text-white text-4xl"
+                          >
                             <WordCircled>Read more</WordCircled>
                           </a>
                         </div>
@@ -326,7 +385,7 @@ export default function Home() {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 );
               })}
             </div>
@@ -334,14 +393,14 @@ export default function Home() {
         </Content>
 
         <Recommendations></Recommendations>
-
+        <div className="mb-32"></div>
         <Images></Images>
 
         <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
           <div className="flex text-2xl mr-5">
             <Link className="flex text-[#c3eec3]" href={"/about"}>
               <p>{t("Människorna bakom Altostruct")}</p>
-              <img className="w-10 ml-5" src="/images/icons/Icon-59.svg"></img>
+              {/* <img className="w-10 ml-5" src="/images/icons/Icon-59.svg"></img> */}
             </Link>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
-import Image, { ImageProps } from "next/image";
+import Image from "next-image-export-optimizer";
 import { Suspense } from "react";
-
+import { ImageProps } from "next/image";
 
 export function ContentfulImage(
   props: { image: any } & Omit<ImageProps, "src" | "height" | "width"> &

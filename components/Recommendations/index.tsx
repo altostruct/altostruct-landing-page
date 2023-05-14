@@ -19,10 +19,6 @@ function Recommendations() {
       author: "Erik Standin Pers / Founder Foodfacts",
       text: "Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.",
     },
-    {
-      author: "Erik Standin Pers / Founder Foodfacts",
-      text: "Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.",
-    },
   ];
 
   return (
