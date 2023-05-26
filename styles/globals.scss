@@ -67,6 +67,10 @@ h1 {
   --bg-dark-secondary: rgb(0, 0, 5);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   background: var(--bg-color);
@@ -76,9 +80,11 @@ body {
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   color: white;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 main {
   display: flex;

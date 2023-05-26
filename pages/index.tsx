@@ -21,6 +21,7 @@ import Images from "@components/Images";
 import Recommendations from "@components/Recommendations";
 import Button from "@components/Button/Button";
 import Image from "next-image-export-optimizer";
+import Script from "next/script";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -111,6 +112,13 @@ export default function Home() {
 
   return (
     <>
+      <Script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js-eu1.hs-scripts.com/26849291.js"
+      />
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}

@@ -96,7 +96,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Artiklar")}
             <Underline></Underline>
           </Link>
-          <LanguageSelector></LanguageSelector>
+          {/* <LanguageSelector></LanguageSelector> */}
         </nav>
 
         <nav
@@ -180,14 +180,14 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
               </Link>
             </Fade>
 
-            <Fade delay={600}>
+            {/* <Fade delay={600}>
               <div className="mx-10 h-36 md:m-10">
                 <LanguageSelector
                   onSelect={() => setExpanded(false)}
                   expanded
                 ></LanguageSelector>
               </div>
-            </Fade>
+            </Fade> */}
           </div>
         </div>
       )}

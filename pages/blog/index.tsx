@@ -102,6 +102,8 @@ function ABC(props: { posts: ContentfulPost[] }) {
                   <ContentfulImage
                     alt=""
                     image={props.fields.image}
+                    width={128}
+                    height={128}
                     style={{
                       height: "100%",
                       objectFit: "cover",
