@@ -21,7 +21,7 @@ import Images from "@components/Images";
 import Recommendations from "@components/Recommendations";
 import Button from "@components/Button/Button";
 import Image from "next-image-export-optimizer";
-import BookMeeting from "./BookMeeting";
+
 
 export default function Home() {
   const { t } = useTranslation();
