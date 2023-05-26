@@ -26,7 +26,7 @@ function Recommendations() {
       <div className="md:mt-52 mt-32">
         <pre>KUNDER / 02.</pre>
         <h1 className="mb-16">{t("Så här tycker våra kunder")}</h1>
-        <div className="overflow-scroll w-full snap-x relative">
+        <div className="overflow-scroll w-full snap-x relative scrollable">
           <div className="absolute bg-gradient-to-t right-0 z-50 h-full w-48"></div>
           <div className="flex gap-12 w-fit">
             {refs.map((ref, index) => {

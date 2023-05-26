@@ -19,6 +19,7 @@ export interface ContentfulPosition {
   fields: {
     position: string;
     applicationDeadline: string;
+    description: string;
     officeLocation: Location;
   };
 }

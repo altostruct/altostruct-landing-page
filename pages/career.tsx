@@ -66,7 +66,8 @@ function Carrer() {
             </p>
           </div>
           <div
-            className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10"
+
+            className="flex md:grid lg:grid-cols-3 md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10 scrollable"
             onScroll={(e) => {
               const centerOffset = window.innerWidth / 2; // Center offset of the viewport
               let mostCenteredIndex = -1; // Initialize with an invalid index
@@ -85,12 +86,14 @@ function Carrer() {
               });
               setVisiblePackage(mostCenteredIndex);
             }}
+             style={{ overflow: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {positions.map((position, index) => (
               <Link href="/jobopportunity">
                 <span ref={refPackages[index]}>
                   <Package
                     title={position.fields.position}
+                    description={position.fields.description}
                     iconPath="/images/icons/Icon-51.svg"
                   ></Package>
                 </span>
