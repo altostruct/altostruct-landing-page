@@ -21,7 +21,6 @@ import Images from "@components/Images";
 import Recommendations from "@components/Recommendations";
 import Button from "@components/Button/Button";
 import Image from "next-image-export-optimizer";
-import BookMeeting from "./BookMeeting";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -336,12 +335,6 @@ export default function Home() {
           </div>
         </div>
 
-          <Content>
-            <BookMeeting>
-              
-            </BookMeeting>
-
-          </Content>
 
         <div className="absolute left-full -translate-x-full opacity-100">
           <div className="flex place-content-end bg-[#292929]">
