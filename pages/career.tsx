@@ -6,7 +6,7 @@ import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
 import Package from "@components/JobPackege/JobPackege";
-import { useRef } from "react";
+import { createRef, useRef } from "react";
 import React, { useState } from "react";
 import Link from "next/link";
 import TransitionSquares from "@components/TransistionSquares";
@@ -26,13 +26,14 @@ function Carrer() {
   //Filter by language
 
   const { locale, locales } = useRouter();
-
+  
   allPositions.forEach(pos => {
     if (pos.sys.locale === locale) {
       positions.push(pos);
-      refPackages.push(useRef<HTMLDivElement>(null));
+      const ref = createRef<HTMLDivElement>();
+      refPackages.push(ref);
     }
-  })
+  });
 
 
 
@@ -89,7 +90,7 @@ function Carrer() {
              style={{ overflow: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {positions.map((position, index) => (
-              <Link href="/jobopportunity">
+              <Link key={position.fields.position} href="/jobopportunity">
                 <span ref={refPackages[index]}>
                   <Package
                     title={position.fields.position}
@@ -104,7 +105,7 @@ function Carrer() {
 
           <div className="flex md:hidden justify-center">
             {refPackages.map((refPackage, index) =>
-              <div style={{cursor: "pointer"}}
+              <div key={index} style={{cursor: "pointer"}}
                 onClick={() => {
                   refPackage["current"]?.scrollIntoView({
                     block: "nearest",
