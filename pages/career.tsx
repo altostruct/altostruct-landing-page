@@ -12,13 +12,29 @@ import Link from "next/link";
 import TransitionSquares from "@components/TransistionSquares";
 import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
+import { ContentfulPosition, getContentfulPositions } from "utils/contentful";
+import { useRouter } from "next/router";
 
 function Carrer() {
   const { t } = useTranslation();
-  const refPackage1 = useRef<HTMLDivElement>(null);
-  const refPackage2 = useRef<HTMLDivElement>(null);
+  const refPackages: (React.RefObject<HTMLDivElement>)[] = [];
   const [visiblePackage, setVisiblePackage] = useState(0);
   const lightBg = tailwindConfig.theme.light;
+  const allPositions = getContentfulPositions();
+  const positions: ContentfulPosition[] = [];
+
+  //Filter by language
+
+  const { locale, locales } = useRouter();
+
+  allPositions.forEach(pos => {
+    if (pos.sys.locale === locale) {
+      positions.push(pos);
+      refPackages.push(useRef<HTMLDivElement>(null));
+    }
+  })
+
+
 
   return (
     <>
@@ -52,70 +68,54 @@ function Carrer() {
           <div
             className="flex md:grid md:grid-cols-2 overflow-x-auto md:gap-4 place-items-center mt-10 w-11/12 m-auto md:mb-10"
             onScroll={(e) => {
-              const test = refPackage2.current?.getBoundingClientRect().x;
-              if (test != undefined) {
-                if (test < 300) {
-                  setVisiblePackage(1);
+              const centerOffset = window.innerWidth / 2; // Center offset of the viewport
+              let mostCenteredIndex = -1; // Initialize with an invalid index
+              let smallestOffset = Infinity; // Initialize with a large value
+
+              refPackages.forEach((refPackage, index) => {
+                const boundingRect = refPackage.current?.getBoundingClientRect();
+                if (boundingRect) {
+                  const itemCenter = boundingRect.x + boundingRect.width / 2;
+                  const offset = Math.abs(itemCenter - centerOffset);
+                  if (offset < smallestOffset) {
+                    smallestOffset = offset;
+                    mostCenteredIndex = index;
+                  }
                 }
-                if (test > 300 && test < 600) {
-                  setVisiblePackage(0);
-                }
-              }
+              });
+              setVisiblePackage(mostCenteredIndex);
             }}
           >
-            <Link href="/jobopportunity">
-              <span ref={refPackage1}>
-                <Package
-                  title="Software Developer"
-                  iconPath="/images/icons/Icon-51.svg"
-                ></Package>
-              </span>
-            </Link>
-
-            <Link href="/jobopportunity">
-              <span ref={refPackage2}>
-                <Package
-                  title="Senior Software Developer"
-                  iconPath="/images/icons/Icon-54.svg"
-                ></Package>
-              </span>
-            </Link>
+            {positions.map((position, index) => (
+              <Link href="/jobopportunity">
+                <span ref={refPackages[index]}>
+                  <Package
+                    title={position.fields.position}
+                    iconPath="/images/icons/Icon-51.svg"
+                  ></Package>
+                </span>
+              </Link>))}
           </div>
 
-          <div className="flex md:hidden justify-center">
-            <div
-              onClick={() => {
-                refPackage1.current?.scrollIntoView({
-                  block: "nearest",
-                  behavior: "smooth",
-                });
-                setVisiblePackage(0);
-              }}
-              className="flex-none pr-2 snap-center"
-            >
-              <div
-                className={`h-3 w-3 ${
-                  visiblePackage === 0 ? "bg-green-300" : "bg-white"
-                }`}
-              ></div>
-            </div>
 
-            <div
-              onClick={() => {
-                refPackage2.current?.scrollIntoView({
-                  block: "nearest",
-                  behavior: "smooth",
-                });
-                setVisiblePackage(1);
-              }}
-              className="flex-none pr-2 snap-center"
-            >
-              <div
-                className={`h-3 w-3 ${
-                  visiblePackage === 1 ? "bg-green-300" : "bg-white"
-                }`}
-              ></div>
-            </div>
+
+          <div className="flex md:hidden justify-center">
+            {refPackages.map((refPackage, index) =>
+              <div style={{cursor: "pointer"}}
+                onClick={() => {
+                  refPackage["current"]?.scrollIntoView({
+                    block: "nearest",
+                    behavior: "smooth",
+                  })
+                }}
+                className="flex-none pr-2 snap-center"
+              >
+                <div
+                  className={`h-3 w-3 ${visiblePackage === index ? "bg-green-300" : "bg-white"
+                    }`}
+                ></div>
+              </div>)}
+
           </div>
 
           <div className="flex place-content-start md:pl-28 pl-14 md:pt-28 pt-36">

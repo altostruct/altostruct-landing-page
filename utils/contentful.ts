@@ -1,11 +1,26 @@
 import * as fs from "fs";
 import posts from ".data/contentful/posts/all.json";
+import positions from ".data/contentful/positions/all.json";
 import projects from ".data/contentful/projects/all.json";
 import Image from "next-image-export-optimizer";
 
 export interface ContentfulSys {
   locale: string;
   id: string;
+}
+
+interface Location {
+  lon: number;
+  lat: number;
+}
+
+export interface ContentfulPosition {
+  sys: ContentfulSys;
+  fields: {
+    position: string;
+    applicationDeadline: string;
+    officeLocation: Location;
+  };
 }
 
 export interface ContentfulPost {
@@ -37,6 +52,10 @@ export interface ContentfulPost {
 
 export const getContentfulPosts = (): ContentfulPost[] => {
   return posts as any;
+};
+
+export const getContentfulPositions = (): ContentfulPosition[] => {
+  return positions as any;
 };
 
 export const getPostFromSlug = (

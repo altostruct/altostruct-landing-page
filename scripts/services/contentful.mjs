@@ -54,6 +54,7 @@ async function loadAssets(contentType, path) {
 async function execute() {
   await loadAssets("kunskapsbas", "posts");
   await loadAssets("project", "projects");
+  await loadAssets("recruitment", "positions");
 }
 
 export default execute;
