@@ -115,7 +115,9 @@ export default function Home() {
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
+        
       ></SEO>
+      
       <Topbar></Topbar>
       <div className="bg-[#161616] pb-20">
         <Content>
@@ -335,13 +337,6 @@ export default function Home() {
             <div className="md:w-28 md:h-28 h-14 w-14 "></div>
           </div>
         </div>
-
-          <Content>
-            <BookMeeting>
-              
-            </BookMeeting>
-
-          </Content>
 
         <div className="absolute left-full -translate-x-full opacity-100">
           <div className="flex place-content-end bg-[#292929]">
