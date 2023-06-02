@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 * {
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
   line-height: 1.2 !important;
+}
+.scrollable {
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
 }
 
 .font-light {
@@ -67,6 +78,10 @@ h1 {
   --bg-dark-secondary: rgb(0, 0, 5);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html,
 body {
   background: var(--bg-color);
@@ -76,9 +91,11 @@ body {
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   color: white;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 main {
   display: flex;

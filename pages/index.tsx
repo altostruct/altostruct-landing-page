@@ -23,7 +23,7 @@ import Button from "@components/Button/Button";
 import Image from "next-image-export-optimizer";
 import Calendar from "@components/Calendar/Calendar";
 import CookieConsent from "react-cookie-consent";
-
+import Script from "next/script";
 
 
 export default function Home() {
@@ -116,6 +116,13 @@ export default function Home() {
 
   return (
     <>
+      <Script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js-eu1.hs-scripts.com/26849291.js"
+      />
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
@@ -344,6 +351,7 @@ export default function Home() {
             <div className="md:w-28 md:h-28 h-14 w-14 "></div>
           </div>
         </div>
+
 
         <div className="absolute left-full -translate-x-full opacity-100">
           <div className="flex place-content-end bg-[#292929]">
