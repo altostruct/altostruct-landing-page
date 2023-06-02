@@ -1,7 +1,14 @@
+.description{
+  padding: 0px 2px;
+  margin-top: 5px;
+  text-align: center;
+  color: #ccc;
+}
+
 .topCorners {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   margin: 20px;
   background: none;
   border: none;
@@ -50,13 +57,13 @@
 }
 
 .topCorners:hover::before, .topCorners:hover::after {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .topCorners:hover .bottomCorners::before, .topCorners:hover .bottomCorners::after {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .headerContent{
@@ -65,11 +72,11 @@
   text-align: center;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
   .topCorners {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin: 20px;
     background: none;
     border: none;

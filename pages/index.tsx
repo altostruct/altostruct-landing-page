@@ -343,6 +343,13 @@ export default function Home() {
           </div>
         </div>
 
+
+        <div className="absolute left-full -translate-x-full opacity-100">
+          <div className="flex place-content-end bg-[#292929]">
+            <div className="md:w-28 md:h-28 h-14 w-14 "></div>
+          </div>
+        </div>
+
         <Content>
           <div className="mt-48 ">
             <pre>{t("KUNDER / 01.")}</pre>
