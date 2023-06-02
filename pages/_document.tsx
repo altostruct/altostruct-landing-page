@@ -1,11 +1,25 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import dotenv from "dotenv";
+import { useEffect } from "react";
+import TagManager from 'react-gtm-module'
 
 export default class MyDocument extends Document {
+
   render() {
+    const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string;
+    /*useEffect(() => {
+      const tagManagerArgs = {
+        gtmId: GTM_ID
+      }
+
+      TagManager.initialize(tagManagerArgs)
+    }, [])*/
+    dotenv.config()
     return (
       <Html>
         <Head>
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
+
+          { /*Global Site Tag (gtag.js) - Google Analytics 
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
@@ -21,11 +35,19 @@ export default class MyDocument extends Document {
                   });
               `,
             }}
+            
           />
+          */}
+
         </Head>
         <body>
           <Main />
           <NextScript />
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-${GTM_ID}" height="0" width="0" style="display: none; visibility: hidden;" />`,
+            }}
+          />
         </body>
       </Html>
     );

@@ -35,13 +35,13 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <>
-                {t("Bygg branschledande web ")}{" "}
+                {t("Bygg branschledande webb ")}{" "}
                 <WordCircled borderCircle={true}>
                   {t("applikationer")}
                 </WordCircled>{" "}
-                {t("och platformer i ")}{" "}
+                {t("och plattformer i ")}{" "}
                 <WordCircled>{t("molnet")}</WordCircled>
-                {t(" med oss")}
+                {t("  med oss")}
               </>
             }
           ></PageStart>
@@ -59,10 +59,7 @@ function About(props: { code: string }) {
                     )}
                   </span>
                   <span className="text-gray-400">
-                    {t(
-                      " Vårt team av AWS konsulter är certifierade via " +
-                        " AWS och erbjuder ett stort utbud av tjänster som" +
-                        " exempelvis molnmigrationer, AI, serverless och APIer. "
+                    {t(" Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av " + "tjänster som exempelvis molnmigrationer, " + "AI, serverless och APIer."
                     )}
                   </span>
                 </p>
@@ -70,25 +67,12 @@ function About(props: { code: string }) {
 
               <BorderedPanel label="OSS / 02.">
                 <p className="text-4xl">
-                  <span className="text-white">{t("Vår vision är att ")}</span>
+                  <span className="text-white">{t("Vår vision är att")}</span>
                   <span className="text-gray-400">
                     {t(
-                      "är att göra det möjligt för alla företag" +
-                        " att bygga och hosta branschledande applikationer" +
-                        " och platformer i molnet."
-                    )}
-                  </span>
-                </p>
-              </BorderedPanel>
-
-              <BorderedPanel label="OSS / 03.">
-                <p className="text-4xl">
-                  <span className="text-white">{t("Vi tror på ")}</span>
-                  <span className="text-gray-400">
-                    {t(
-                      "är att göra det möjligt för alla " +
-                        "företag att bygga och hosta branschledande" +
-                        " applikationer och platformer i molnet."
+                      " göra det möjligt för alla företag" +
+                      " att bygga och hosta branschledande applikationer" +
+                      " och platformer i molnet."
                     )}
                   </span>
                 </p>
@@ -99,7 +83,7 @@ function About(props: { code: string }) {
 
         <Content>
           <div className=" pt-32 pb-10">
-            <h1 className="text-left mb-12">Varför välja oss?</h1>
+            <h1 className="text-left mb-12">{t("Varför välja oss?")}</h1>
             <BigList
               items={[
                 {

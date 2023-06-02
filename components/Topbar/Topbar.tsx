@@ -11,7 +11,6 @@ import Link from "next/link";
 import Brand from "components/Brand/Brand";
 import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
-import Calendar from "@components/Calendar/Calendar";
 
 const Underline = () => {
   return (
@@ -71,7 +70,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             <Brand />
           </Link>
         </nav>
-        <Calendar/>
+       
 
 
         <nav className="hidden md:flex invisible md:visible">
