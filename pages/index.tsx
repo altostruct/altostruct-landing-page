@@ -21,11 +21,15 @@ import Images from "@components/Images";
 import Recommendations from "@components/Recommendations";
 import Button from "@components/Button/Button";
 import Image from "next-image-export-optimizer";
+import Calendar from "@components/Calendar/Calendar";
+import CookieConsent from "react-cookie-consent";
 import Script from "next/script";
+
 
 export default function Home() {
   const { t } = useTranslation();
   const bgLight = twconfig.theme.light;
+
 
   const projects = [
     {
@@ -39,7 +43,7 @@ export default function Home() {
           src="/images/customers/nrlyze.png"
         ></Image>
       ),
-      title: "Nrlyze har utvecklat ett AI-system ",
+      title: t("Nrlyze har utvecklat ett AI-system"),
       description: t(
         " bestående av trådlösa sensorer som optimerar parametrarna för värmesystem i byggnader. Altostruct har samarbetat med Nrlyze genom att bygga en webbportal som presenterar datan i grafer. Detta ger användarna en enkel och tydlig översikt över värmesystemets prestanda och hjälper dem att effektivt övervaka och förbättra systemet."
       ),
@@ -71,7 +75,7 @@ export default function Home() {
           ></Image>
         </div>
       ),
-      title: "Saluto är en medtech startup.",
+      title: t("Saluto är en medtech startup."),
       description: t(
         " Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd. Appen ger användarna en enkel och överskådlig översikt över deras hälsostatus genom att samla in data från olika källor, inklusive wearables och andra hälsorelaterade apparater. Genom att arbeta tillsammans med Altostruct kunde Saluto skapa en användarvänlig app som gör det enkelt och bekvämt för användarna att följa sin hälsa."
       ),
@@ -87,7 +91,7 @@ export default function Home() {
           src="/images/img-landing-hero-1.jpeg.webp"
         ></Image>
       ),
-      title: "Tendium är en webbapplikation ",
+      title: t("Tendium är en webbapplikation"),
       description: t(
         " som ger kunder möjligheten att enkelt följa, hitta och ansöka om offentliga upphandlingar. Altostruct har bidragit till projektet genom att bygga en solid infrastruktur för deras microservice arkitektur. Med Altostructs expertis kunde Tendium bygga en skalbar och robust arkitektur som ger en smidig användarupplevelse och pålitlig prestanda. "
       ),
@@ -103,7 +107,7 @@ export default function Home() {
           src="/images/customers/foodfacts.png"
         ></Image>
       ),
-      title: "Foodfacts hjälper dig göra medvetna val gällande mat.",
+      title: t("Foodfacts hjälper dig göra medvetna val gällande mat."),
       description: t(
         " Altostruct ledde utvecklingen av en mobilapplikation i samarbete med ett offshoreteam. Applikationen är byggd på AWS med React Native."
       ),
@@ -122,7 +126,9 @@ export default function Home() {
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
+
       ></SEO>
+
       <Topbar></Topbar>
       <div className="bg-[#161616] pb-20">
         <Content>
@@ -137,7 +143,7 @@ export default function Home() {
               }
               title={
                 <>
-                  Bygg snabbare, stabilare och säkrare med{" "}
+                  {t("Bygg snabbare, stabilare och säkrare med")}{" "}
                   <WordCircled borderCircle={true}>
                     Amazon Web Services
                   </WordCircled>
@@ -203,14 +209,17 @@ export default function Home() {
               <p className=" font-light">
                 {t(
                   "Vi på Altostruct älskar molnet och tror starkt på dess förmåga att förvandla" +
-                    " företag och driva innovation." +
-                    " Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster" +
-                    " och lösningar till våra kunder. Oavsett om det handlar om att flytta" +
-                    " till molnet, optimera befintlig molninfrastruktur eller skapa anpassade" +
-                    " molnbaserade lösningar, är vi engagerade i att hjälpa våra kunder att navigera" +
-                    " genom molnets komplexiteter."
+                  " företag och driva innovation." +
+                  " Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster" +
+                  " och lösningar till våra kunder. Oavsett om det handlar om att flytta" +
+                  " till molnet, optimera befintlig molninfrastruktur eller skapa anpassade" +
+                  " molnbaserade lösningar, är vi engagerade i att hjälpa våra kunder att navigera" +
+                  " genom molnets komplexiteter."
                 )}
               </p>
+
+              {/*<Calendar/>*/}
+
               <Button link="/contact" className="mt-10">
                 {t("Kontakta oss")}
               </Button>
@@ -349,10 +358,31 @@ export default function Home() {
             <div className="md:w-28 md:h-28 h-14 w-14 "></div>
           </div>
         </div>
+        <Content>
+          <div className="grid grid-cols-12 md:pb-32 pb-40  md:pt-32 pt-60 text-white">
+            <div
+              className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
+              style={{ textAlignLast: "center" }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
+                <h1 className="text-2xl md:text-4xl uppercase text-white-300">
+                  {t("Vill du prata med en expert?")}
+                </h1>
+
+              </div>
+              <p className=" font-light">
+                {t("Behöver du hjälp med att effektivisera och skala upp dina verksamhetsprocesser, hantera stora datamängder eller genomföra andra utmanande uppgifter på Amazon Web Services (AWS)? Vi erbjuder en kostnadsfri timmes rådgivning med en av våra erfarna och kunniga lösningsexperter. Under den här förutsättningslösa timmen kommer vår lösningsexpert att sätta sig in i dina specifika utmaningar och ge dig skräddarsydda råd och rekommendationer.")}
+              </p>
+              <div className="mt-8">
+                <Calendar />
+              </div>
+            </div>
+          </div>
+        </Content>
 
         <Content>
           <div className="mt-48 ">
-            <pre>{t("KUNDER / 01.")}</pre>
+            <pre>{t("KUNDER")} / 01</pre>
             <h1 className="mb-16">{t("Några av våra kunder och projekt ")}</h1>
 
             <div className="mb-12 mt-2 grid md:text-left text-center grid-cols-4 gap-8">
@@ -429,6 +459,8 @@ export default function Home() {
         </div>
       </div>
       <Footer />
+      <CookieConsent buttonText={t("Jag förstår!")}>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen.")}</CookieConsent>
+
     </>
   );
 }
