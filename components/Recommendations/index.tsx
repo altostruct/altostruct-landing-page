@@ -13,20 +13,20 @@ function Recommendations() {
   const refs = [
     {
       author: "Peter Vesterberg / CEO Inference Labs AB",
-      text: "Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad.",
+      text: t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad."),
     },
     {
       author: "Erik Standin Pers / Founder Foodfacts",
-      text: "Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning.",
+      text: t("Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."),
     },
   ];
 
   return (
     <Content>
       <div className="md:mt-52 mt-32">
-        <pre>KUNDER / 02.</pre>
+        <pre>{t("KUNDER")} / 02.</pre>
         <h1 className="mb-16">{t("Så här tycker våra kunder")}</h1>
-        <div className="overflow-scroll w-full snap-x relative">
+        <div className="overflow-scroll w-full snap-x relative scrollable">
           <div className="absolute bg-gradient-to-t right-0 z-50 h-full w-48"></div>
           <div className="flex gap-12 w-fit">
             {refs.map((ref, index) => {

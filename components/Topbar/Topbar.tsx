@@ -54,6 +54,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
+    
       <header
         className={classNames(styles.topbar, {
           "bg-[#161616]": true,
@@ -63,11 +64,15 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           absolute: !fixed,
         })}
       >
-        <nav>
+        
+        <nav style={{float: "right"}}>
           <Link href={"/"}>
             <Brand />
           </Link>
         </nav>
+       
+
+
         <nav className="hidden md:flex invisible md:visible">
           <Link
             className={classNames(styles["button-spacing"], "group")}
