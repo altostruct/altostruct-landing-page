@@ -6,19 +6,19 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head></Head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-RS6NEMYS3W"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        <body>
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=G-RS6NEMYS3W"
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-RS6NEMYS3W');
         `}
-        </Script>
-        <body>
+          </Script>
           <Main />
           <NextScript />
         </body>
