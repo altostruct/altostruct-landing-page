@@ -16,7 +16,7 @@
     "translate": "i18next './{pages,components}/**/*.{ts,tsx}'",
     "postinstall": "patch-package",
     "postbuild": "node scripts/postbuild.mjs && npm run sitemap",
-    "sitemap": "sscli -b https://altostruct.com -r out -p '**,0.7' -c '**,weekly'"
+    "sitemap": "sscli -b https://www.altostruct.com -r out -p '**,0.7' -c '**,weekly'"
   },
   "dependencies": {
     "@builder.io/partytown": "^0.7.3",
