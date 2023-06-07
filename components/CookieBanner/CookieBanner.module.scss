@@ -1,0 +1,36 @@
+.container{
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  left: 0px;
+  display: flex;
+  background-color: rgb(53, 53, 53);
+  padding: 1rem;
+  z-index: 2147483647;
+}
+
+.textContainer{
+  display: flex;
+  align-items: center;
+}
+
+.button{
+ background-color: yellow;
+ color: #111;
+ padding: 0.4rem;
+ margin: 0px 3rem;
+}
+
+.breakLine{
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .container{
+    display: block;
+  }
+  .button{
+    margin: 0.5rem 0;
+  }
+
+}

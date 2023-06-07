@@ -76,6 +76,8 @@ h1 {
   --primary-color-inv: white;
   --bg-dark: rgb(4, 1, 26);
   --bg-dark-secondary: rgb(0, 0, 5);
+  --link-color: #00BFFF;
+  --link-color-visited: #551A8B;
 }
 
 ::-webkit-scrollbar {
@@ -378,7 +380,7 @@ section {
 }
 
 a {
-  color: var(--text-color);
+  color: var(--link-color);
   text-decoration: none;
 }
 

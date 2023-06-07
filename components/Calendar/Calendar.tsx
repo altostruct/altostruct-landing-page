@@ -18,7 +18,7 @@ const Calendar = () => {
     <>
     <div id="empty"></div>
     {rootElement ? <DynamicPopupWidget
-          url="https://calendly.com/william-redgard"
+          url="https://calendly.com/erik-rehn"
           rootElement={rootElement}
           text={t("Boka här >")}
           className={styles.bookMeeting_button}

@@ -24,6 +24,7 @@ import Image from "next-image-export-optimizer";
 import Calendar from "@components/Calendar/Calendar";
 import CookieConsent from "react-cookie-consent";
 import Script from "next/script";
+import CookieBanner from "@components/CookieBanner/CookieBanner";
 
 
 export default function Home() {
@@ -116,6 +117,7 @@ export default function Home() {
 
   return (
     <>
+    <CookieBanner></CookieBanner>
       <Script
         type="text/javascript"
         id="hs-script-loader"
@@ -459,8 +461,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-      <CookieConsent buttonText={t("Jag förstår!")}>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen.")}</CookieConsent>
-
+      
     </>
   );
 }
