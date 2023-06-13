@@ -35,7 +35,7 @@ const Footer = () => {
       <div className={styles.footer}>
         <div className="pb-10">
           <div className="text-white">
-            <p>Copyright &copy; 2021 Altostruct AB</p>
+            <p>Copyright &copy; 2023 Altostruct AB</p>
             <p>
               Kontakt:{" "}
               <a className="text-white" href="mailto:info@altostruct.se">

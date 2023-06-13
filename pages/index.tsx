@@ -139,7 +139,7 @@ export default function Home() {
               description={
                 <>
                   {t(
-                    "Vi erbjuder molnlösningar som tar ert bolag till nya höjder."
+                    "Våra konsulter erbjuder molnlösningar som tar ert bolag till nya höjder."
                   )}
                 </>
               }

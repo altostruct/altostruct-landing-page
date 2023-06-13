@@ -72,7 +72,7 @@ function About(props: { code: string }) {
                     {t(
                       " göra det möjligt för alla företag" +
                       " att bygga och hosta branschledande applikationer" +
-                      " och platformer i molnet."
+                      " och plattformer i molnet."
                     )}
                   </span>
                 </p>
