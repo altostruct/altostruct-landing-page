@@ -16,7 +16,7 @@ const LinkedIn = () => {
 
   return (
     <div className={[styles.container].join(' ')} id={containerId}>
-      <a  href="https://www.linkedin.com/company/altostruct/" target="_blank">
+      <a  href="https://www.linkedin.com/company/altostruct/" rel="noreferrer" target="_blank">
         <img className={[styles.image].join(' ')} src="linkedin.svg" alt="Linkedin" id={imageId} />
       </a>
     </div>
