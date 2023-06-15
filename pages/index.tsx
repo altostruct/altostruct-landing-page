@@ -25,6 +25,7 @@ import Calendar from "@components/Calendar/Calendar";
 import CookieConsent from "react-cookie-consent";
 import Script from "next/script";
 import CookieBanner from "@components/CookieBanner/CookieBanner";
+import LinkedIn from "@components/Linkedin/LinkedIn";
 
 
 export default function Home() {
@@ -117,6 +118,7 @@ export default function Home() {
 
   return (
     <>
+    <LinkedIn></LinkedIn>
     <CookieBanner></CookieBanner>
       <Script
         type="text/javascript"
