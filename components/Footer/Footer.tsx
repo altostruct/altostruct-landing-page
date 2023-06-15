@@ -41,6 +41,10 @@ const Footer = () => {
               <a className="text-white" href="mailto:info@altostruct.se">
                 info@altostruct.se
               </a>
+              <span>
+                {", Emilios nr: "}
+                <a className="text-white" href="tel:0736453929">0736453929</a>
+              </span>
             </p>
             <p>Org nr: 559244-1561</p>
             <p>Address: Stockholmsvägen 18, 181 50 Lidingö</p>
