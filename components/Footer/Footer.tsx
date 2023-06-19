@@ -42,7 +42,7 @@ const Footer = () => {
                 info@altostruct.se
               </a>
               <span>
-                {", Emilios nr: "}
+                {", "}
                 <a className="text-white" href="tel:0736453929">0736453929</a>
               </span>
             </p>

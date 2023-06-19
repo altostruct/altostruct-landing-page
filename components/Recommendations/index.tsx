@@ -16,7 +16,7 @@ function Recommendations() {
       text: t("Med hjälp av Altostruct har vi kunnat utveckla vår lösning med hjälp av en svensk molnleverantör som har en hög grad av säkerhet, tillförlitlighet och regelefterlevnad."),
     },
     {
-      author: "Erik Standin Pers / Founder Foodfacts",
+      author: "Erik Strandin Pers / Founder Foodfacts",
       text: t("Vi har samarbetat med Altostruct i två år. De har hjälpt oss med allting från infrastruktur till apputveckling för att bygga en skalbar och modern lösning."),
     },
   ];
