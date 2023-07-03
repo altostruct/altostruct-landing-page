@@ -369,7 +369,7 @@ export default function Home() {
               style={{ textAlignLast: "center" }}
             >
               <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
-                <h1 className="text-2xl md:text-4xl uppercase text-white-300">
+              <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
                   {t("Vill du prata med en expert?")}
                 </h1>
 
