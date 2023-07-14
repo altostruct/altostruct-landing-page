@@ -18,32 +18,35 @@ const CookieBanner = () => {
     const bool = Cookies.get("acceptedCookies");
     console.log(bool);
 
-    if(bool !== "true"){
+    if (bool !== "true") {
       setShow(true);
     }
-    
+
   }, [])
-  return(
-   <>
-   {show ? 
-      <div className={styles.container}>
-       <div className={styles.textContainer}>
-         <p>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen.")}
-           <span style={{ marginLeft: "0.5rem" }}>
-             <a target="_blank" href="/Privacy_policy.pdf">{t("Läs mer!")}</a>
-           </span>
-         </p>
-       </div>
-       <br className={styles.breakLine}></br>
-       <div className={styles.buttonContainer}>
-         <button className={styles.button} onClick={handleAcceptCookie}>
-           {t("Jag förstår!")}
-         </button>
-       </div>
-     </div>
-   
-   : <></>}
-   </>)
+  return (
+    <>
+      {show ?
+        <div className={styles.background}>
+          <div className={styles.container}>
+            <div className={styles.textContainer}>
+              <p>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen.")}
+              <br></br>
+                <span style={{ marginLeft: "0.5rem" }}>
+                  <a className={styles.link} target="_blank" href="/Privacy_policy.pdf">{t("Läs mer!")}</a>
+                </span>
+              </p>
+            </div>
+            <br className={styles.breakLine}></br>
+            <div className={styles.buttonContainer}>
+              <button className={styles.button} onClick={handleAcceptCookie}>
+                {t("Jag förstår!")}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        : <></>}
+    </>)
 }
 
 export default CookieBanner;

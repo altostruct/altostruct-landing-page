@@ -101,7 +101,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Artiklar")}
             <Underline></Underline>
           </Link>
-          <LanguageSelector></LanguageSelector>
+          {/*<LanguageSelector></LanguageSelector>*/}
         </nav>
 
         <nav

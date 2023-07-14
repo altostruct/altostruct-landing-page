@@ -1,36 +1,49 @@
-.container{
-  position: fixed;
-  bottom: 0px;
+.background{
   width: 100vw;
-  left: 0px;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  position: fixed;
+  z-index: 2147483647;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.container{
+  width: 70vw;
+  max-width: 400px;
+  display: block;
   background-color: rgb(53, 53, 53);
   padding: 1rem;
-  z-index: 2147483647;
+  border-radius: 1rem;
+  text-align: center;
+
 }
 
 .textContainer{
-  display: flex;
   align-items: center;
+  font-size: 1.2rem;
 }
 
 .button{
  background-color: yellow;
  color: #111;
- padding: 0.4rem;
- margin: 0px 3rem;
+ padding: 0.5rem;
+ border-radius: 0.2rem;
+ margin: 0 3rem;
+
 }
 
-.breakLine{
-  display: none;
-}
+
+
 
 @media only screen and (max-width: 900px) {
   .container{
     display: block;
   }
   .button{
-    margin: 0.5rem 0;
+    
   }
 
 }

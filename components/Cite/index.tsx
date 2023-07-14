@@ -15,7 +15,7 @@ function Cite(props: CiteProps) {
         <img alt="cite" className="w-10 ml-1" src={citeIcon} />
       </div>
       <p className="mt-10 text-2xl pb-8">{cite}</p>
-      <p className="text-2xl mt-auto mb-2 text-gray-200 ">
+      <p className="text-2xl mt-auto mb-2 text-gray-200" style={{overflow: "hidden"}}>
         <WordCircled>{author} </WordCircled>
       </p>
     </div>

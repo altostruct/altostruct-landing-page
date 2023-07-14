@@ -154,7 +154,7 @@ export default function Home() {
                 </>
               }
             ></PageStart>{" "}
-            <div className="absolute w-full bottom-12  md:right-0 flex">
+            <div className="absolute w-full bottom-3  md:right-0 flex">
               <div className="m-auto md:mr-auto md:ml-0 flex">
                 <div className="translate-x-8">
                   <Image
