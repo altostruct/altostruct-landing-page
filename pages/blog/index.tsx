@@ -35,7 +35,7 @@ function ABC(props: { posts: ContentfulPost[] }) {
         new Date(a.fields.createDate).getTime()
     );
 
-  console.log(posts);
+
 
   const getReadTime = (data: string) => {
     return Math.ceil(data.split(" ").length / 100);
@@ -164,22 +164,10 @@ function ABC(props: { posts: ContentfulPost[] }) {
         )}
       ></SEO>
       <Topbar fixed={false} transparent></Topbar>
-      <div className="bg-[#161616] w-full py-36 border-black bg-gradient-to-tr from-green-700">
-        <Content>
-          <div className="flex items-center text-[#eeeeee]">
-            <div className="md:w-1/2">
-              <h1 className="">
-                <b>{t("Technology is best when it brings people together.")}</b>
-              </h1>
-            </div>
-            <div className="hidden md:flex w-1/2 font-mono leading-tight justify-center gap-12 font-extralight">
-              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
-              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
-              <div className="rounded-full w-16 h-16 bg-[#eee]"></div>
-            </div>
-          </div>
-        </Content>
-      </div>
+      <Content>
+        <h1>Kunskapsbas</h1>
+      </Content>
+
       <Content>
         <div className="mt-20 gap-12 flex-col pb-10 flex">
           {posts.map((post) => {

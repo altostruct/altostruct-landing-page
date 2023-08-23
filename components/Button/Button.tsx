@@ -43,10 +43,9 @@ const Button = (props: ButtonProps) => {
         className,
         style.button,
         style[type],
-        "rounded-3xl"
       )}
     >
-      {children} {">"}
+      {children}
     </button>
   );
 };

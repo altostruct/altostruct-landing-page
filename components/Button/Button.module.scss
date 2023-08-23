@@ -7,7 +7,7 @@ $small-screen: 720px;
   align-items: center;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.6em 2.2em;
+  padding: 0.8em 1.8em;
   cursor: pointer;
   transition: all 50ms ease;
 
@@ -19,20 +19,22 @@ $small-screen: 720px;
 }
 
 .primary {
-  background: #eee;
-  color: #000;
+  --color: #c3eec3;
+  color: var(--color);
+  border: 0.05em solid var(--color);
 }
 
 .primary:hover {
-  transform: scale(1.05);
 }
 
 .secondary:hover {
-  transform: scale(1.05);
 }
 
 .secondary {
-  color: var(--primary-color);
+  --color: #e8e8e8;
+  color: var(--color);
+
+  background-color: #292929;
 }
 
 .shiny {

@@ -2,14 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+body {
+  background: url("https://t3.ftcdn.net/jpg/02/93/81/64/240_F_293816480_Z6zNlB90uakGvCSGFYnzbteQxe6DwUmM.jpg");
+}
 * {
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
   line-height: 1.2 !important;
 }
+
 .scrollable {
   overflow: scroll;
   scrollbar-width: none;
@@ -53,7 +55,7 @@ h1 {
   font-display: fallback;
 }
 
-$bg-color: rgb(22, 22, 22);
+$bg-color: #161616;
 $dot-color: rgb(37, 37, 37);
 
 // Dimensions
@@ -76,8 +78,8 @@ h1 {
   --primary-color-inv: white;
   --bg-dark: rgb(4, 1, 26);
   --bg-dark-secondary: rgb(0, 0, 5);
-  --link-color: #00BFFF;
-  --link-color-visited: #551A8B;
+  --link-color: #00bfff;
+  --link-color-visited: #551a8b;
 }
 
 ::-webkit-scrollbar {
@@ -87,6 +89,7 @@ h1 {
 html,
 body {
   background: var(--bg-color);
+  background-size: contain, cover;
   color: var(--text-color);
   margin: 0;
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -193,18 +196,6 @@ h1 {
   height: 10vw;
   position: absolute;
   overflow: visible;
-}
-
-h2 {
-  font-size: 36px;
-  margin: 0;
-  @media screen and (max-width: $small-screen) {
-    font-size: 26px;
-  }
-}
-h3 {
-  font-size: 24px;
-  margin: 0;
 }
 
 .primary {

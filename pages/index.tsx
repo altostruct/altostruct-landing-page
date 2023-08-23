@@ -26,7 +26,10 @@ import CookieConsent from "react-cookie-consent";
 import Script from "next/script";
 import CookieBanner from "@components/CookieBanner/CookieBanner";
 import LinkedIn from "@components/Linkedin/LinkedIn";
-
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import BorderedPanel from "@components/BorderedPanel";
+const QUOTES = []
 
 export default function Home() {
   const { t } = useTranslation();
@@ -118,8 +121,7 @@ export default function Home() {
 
   return (
     <>
-    <LinkedIn></LinkedIn>
-    <CookieBanner></CookieBanner>
+      <CookieBanner></CookieBanner>
       <Script
         type="text/javascript"
         id="hs-script-loader"
@@ -130,31 +132,28 @@ export default function Home() {
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
-
-      ></SEO>
-
+      />
       <Topbar></Topbar>
-      <div className="bg-[#161616] pb-20">
+      <div className="pb-48">
         <Content>
           <div className="relative">
             <PageStart
-              description={
-                <>
-                  {t(
-                    "Våra konsulter erbjuder molnlösningar som tar ert bolag till nya höjder."
-                  )}
-                </>
-              }
               title={
                 <>
-                  {t("Bygg snabbare, stabilare och säkrare med")}{" "}
+                  {/* <div className="w-63"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div> */}
+                  {t("Bygg skalbart med våra certifierade")}{" "}
                   <WordCircled borderCircle={true}>
-                    Amazon Web Services
+                    {t("Amazon Web Services")}
                   </WordCircled>
+                  {" "}{t("utveckare")}
                 </>
               }
-            ></PageStart>{" "}
-            <div className="absolute w-full bottom-3  md:right-0 flex">
+              cta={<div className="flex gap-2">
+                <Button link="/contact">{t("Boka konsultation")}</Button>
+                <Button type="secondary" link="/asd">{t("Boka konsultation")}</Button>
+              </div>}
+            />
+            {/* <div className="absolute w-full bottom-3  md:right-0 flex">
               <div className="m-auto md:mr-auto md:ml-0 flex">
                 <div className="translate-x-8">
                   <Image
@@ -185,285 +184,170 @@ export default function Home() {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </Content>
 
-        <StaticSidebar></StaticSidebar>
 
-        <div className={bgLight}>
-          <TransitionSquares></TransitionSquares>
-
-          <div className="grid grid-cols-12 md:pb-32 pb-40  md:pt-32 pt-60 text-white">
-            <div
-              className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
-                <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
-                  {t("Vad är Altostruct?")}
-                </h1>
-                <Image
-                  width={50}
-                  height={50}
-                  alt=""
-                  src="/icons8-amazon-web-services.svg"
-                ></Image>
-              </div>
-              <p className=" font-light">
-                {t(
-                  "Vi på Altostruct älskar molnet och tror starkt på dess förmåga att förvandla" +
-                  " företag och driva innovation." +
-                  " Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster" +
-                  " och lösningar till våra kunder. Oavsett om det handlar om att flytta" +
-                  " till molnet, optimera befintlig molninfrastruktur eller skapa anpassade" +
-                  " molnbaserade lösningar, är vi engagerade i att hjälpa våra kunder att navigera" +
-                  " genom molnets komplexiteter."
-                )}
-              </p>
-
-              {/*<Calendar/>*/}
-
-              <Button link="/contact" className="mt-10">
-                {t("Kontakta oss")}
-              </Button>
-            </div>
-          </div>
-
-          {/*THIS IS THE SECTION FOR THE THREE DIFFERENT PACKAGES THAT SHOULD BE IMPLEMENTED AFTER THEY ARE COMPLETED*/}
-
-          {/* <div className="grid grid-cols-1 md:pt-20 pt-10 pb-60 w-11/12 md:w-11/12 m-auto text-white">
-            <div className="col-start-1 text-2xl mb-2 uppercase">
-              {t("Våra startpaket")}
-            </div>
-            <div className="col-start-1 text-md mb-10">
-              {" "}
-              {t(
-                "Vi har brutit ner hela molnresan i tre paketerade tjänster för att göra det enklare för som kund att förbättra era nuvarande system"
-              )}
-            </div>
-
-            <div
-              className="flex overflow-x-auto md:grid md:grid-cols-3 md:gap-4 place-items-center snap-x snap-proximity"
-              onScroll={(e) => {
-                const test = refPackage3.current?.getBoundingClientRect().x;
-                if (test != undefined) {
-                  if (test < 300) {
-                    setVisiblePackage(2);
-                  }
-                  if (test > 300 && test < 600) {
-                    setVisiblePackage(1);
-                  }
-                  if (test > 600 && test < 900) {
-                    setVisiblePackage(0);
-                  }
-                }
-              }}
-            >
-              <div ref={refPackage1} className="snap-center">
-                <Link href="/cloudshift">
-                  <Package
-                    title="Cloudshift"
-                    description={t(
-                      "Vi hjälper er flytta ett nytt eller befintligt system till AWS så ni slipper de dyra kostnaderna som kommer med att ha ett eget datacenter"
-                    )}
-                    iconPath="/images/icons/Icon-49.svg"
-                  ></Package>
-                </Link>
-              </div>
-              <div ref={refPackage2} className="snap-center">
-                <Link href="/nebula">
-                  <Package
-                    title="Nebula"
-                    description={t(
-                      "Vi analyserar er AWS-miljö ytligt genom att titta på och utvärdera vilka kostnader och avtal som går att kostnadsoptimera direkt utan att förändra den underliggande arkitekturen"
-                    )}
-                    iconPath="/images/icons/Icon-50.svg"
-                  ></Package>
-                </Link>
-              </div>
-              <div ref={refPackage3} className="snap-center">
-                <Link href="/atmosphere">
-                  <Package
-                    title="Atmosphere"
-                    description={t(
-                      "Vi ser till att säkra hela er AWS miljö så att den uppfyller alla de kraven på sekretess, intigritet och tillgänglighet som er organisation och bransch kan tänkas ha"
-                    )}
-                    iconPath="/images/icons/Icon-58.svg"
-                  ></Package>
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex md:hidden justify-center">
-              <div
-                onClick={() => {
-                  refPackage1.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(0);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 0 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-
-              <div
-                onClick={() => {
-                  refPackage2.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(1);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 1 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-
-              <div
-                onClick={() => {
-                  refPackage3.current?.scrollIntoView({
-                    block: "nearest",
-                    behavior: "smooth",
-                  });
-                  setVisiblePackage(2);
-                }}
-                className="flex-none pr-2 snap-center"
-              >
-                <div
-                  className={`h-3 w-3 ${
-                    visiblePackage === 2 ? "bg-green-300" : "bg-white"
-                  }`}
-                ></div>
-              </div>
-            </div>
-          </div>*/}
-        </div>
-
-        <div className="absolute left-full -translate-x-full opacity-100">
-          <div className="flex place-content-end bg-[#292929]">
-            <div className="md:w-28 md:h-28 h-14 w-14 "></div>
-          </div>
-        </div>
-
-
-        <div className="absolute left-full -translate-x-full opacity-100">
-          <div className="flex place-content-end bg-[#292929]">
-            <div className="md:w-28 md:h-28 h-14 w-14 "></div>
-          </div>
-        </div>
-        <Content>
-          <div className="grid grid-cols-12 md:pb-32 pb-40  md:pt-32 pt-60 text-white">
-            <div
-              className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
-              style={{ textAlignLast: "center" }}
-            >
-              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
-              <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
-                  {t("Vill du prata med en expert?")}
-                </h1>
-
-              </div>
-              <p className=" font-light">
-                {t("Behöver du hjälp med att effektivisera och skala upp dina verksamhetsprocesser, hantera stora datamängder eller genomföra andra utmanande uppgifter på Amazon Web Services (AWS)? Vi erbjuder en kostnadsfri timmes rådgivning med en av våra erfarna och kunniga lösningsexperter. Under den här förutsättningslösa timmen kommer vår lösningsexpert att sätta sig in i dina specifika utmaningar och ge dig skräddarsydda råd och rekommendationer.")}
-              </p>
-              <div className="mt-8">
-                <Calendar />
-              </div>
-            </div>
-          </div>
-        </Content>
-
-        <Content>
-          <div className="mt-48 ">
-            <pre>{t("KUNDER")} / 01</pre>
-            <h1 className="mb-16">{t("Några av våra kunder och projekt ")}</h1>
-
-            <div className="mb-12 mt-2 grid md:text-left text-center grid-cols-4 gap-8">
-              {projects.map((project, index) => {
-                const isBig = index % 3 == 0;
-                return (
-                  <div
-                    key={index}
-                    className={classNames(
-                      "p-3 border-2 border-[#292929] flex col-span-5 overflow-hidden sm:grid-cols-2  transition-all transition-all",
-                      {
-                        "lg:col-span-4": isBig,
-                        "lg:col-span-2": !isBig,
-                      }
-                    )}
-                  >
-                    <div
-                      className={classNames("grid grid-cols-1", {
-                        "md:grid-cols-1": !isBig,
-                        "md:grid-cols-2": isBig,
-                      })}
-                    >
-                      <div className="col-span-1 flex flex-col p-12 justify-center">
-                        <div>
-                          <p className="text-lg md:text-2xl">
-                            <span className="text-white">{project.title}</span>
-                            <span className="text-gray-400">
-                              {project.description}
-                            </span>
-                          </p>
-                        </div>
-                        <div className="mt-4">
-                          <a
-                            href={project.link}
-                            className="text-white text-4xl"
-                          >
-                            <WordCircled>Read more</WordCircled>
-                          </a>
-                        </div>
-                      </div>
-                      <div
-                        className={classNames(
-                          "col-span-1 justify-center flex-row flex"
-                        )}
-                      >
-                        <div className="m-auto md:scale-150 md:translate-x-1/4 translate-y-1/4 rounded-md overflow-hidden">
-                          {project.img}
-                        </div>
-                      </div>
+        <Content className="bg-[#1f1f1f]  border-gray-800 p-6 rounded-xl">
+          <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
+            {new Array(2).fill(null).map((_, index) => {
+              return <div key={index} className="text-left ">
+                <div className="flex flex-col gap-6">
+                  <div>
+                    <div className="flex w-fit gap-2">
+                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
+                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
+                  <cite className="text-2xl md:text-4xl not-italic">
+                    They truly showed us how we can use public cloud to reduce time-to-market as we develop our digital portfolio
+                  </cite>
+                  <div className="flex justify-between text-gray-200">
+                    <div>
+                      <p className="font-extrabold">Karl Ingestam</p>
+                      <p>CTO @ Purply</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            })}
+          </Carousel>
+
+
+
+
         </Content>
 
-        <Recommendations></Recommendations>
-        <div className="mb-32"></div>
-        <Images></Images>
-
-        <div className="hidden md:grid grid-cols-1 mt-5 place-items-end pb-40 text-[#c3eec3]">
-          <div className="flex text-2xl mr-5">
-            <Link className="flex text-[#c3eec3]" href={"/about"}>
-              <p>{t("Människorna bakom Altostruct")}</p>
-              {/* <img className="w-10 ml-5" src="/images/icons/Icon-59.svg"></img> */}
-            </Link>
+        <Content className="pt-40">
+          <div className="hidden md:block">
+            <TransitionSquares></TransitionSquares>
           </div>
-        </div>
-        <div id="kontakt">
-          <Content>
-            <Form></Form>
-          </Content>
-        </div>
-      </div>
+
+          <div className="w-full flex-col gap-6 md:flex-row flex ">
+            <div className="md:w-3/5 flex-grow">
+              <h2 className="mb-3 text-5xl">
+                Certifierade AWS konsulter i Stockholm
+                <Image className="w-16 inline-block mx-3" width={100} height={100} alt="" src="/images/icons/light-cloud.svg" />
+              </h2>
+              <p className="text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är vi engagerade i att hjälpa våra kunder att navigera genom molnets komplexiteter.</p>
+              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+            </div>
+            <div className="md:w-2/5 flex-grow-0 relative">
+              <div className="absolute inset-0 flex items-center">
+                <Image alt="" className="w-full h-full object-contain" src="/images/Frame 2 (32).png" width={10} height={10} />
+              </div>
+            </div>
+          </div>
+
+        </Content >
+
+        <Content className="bg-[#1f1f1f] mt-40 border border-gray-800 p-12 rounded-xl">
+          <div>
+            <div>
+              <div className="w-full flex">
+                <div className="w-full">
+                  <div className="relative justify-between">
+                    <p className="font-semibold text-3xl md:text-5xl">Upptäck 30+ framgångsberättelser från våra kunder.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row gap-3 mt-10 divide-gray-800 divide-2">
+                {new Array(3).fill(null).map((_, index) => {
+                  return <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+                    <div className="flex justify-between">
+                      <div className="mb-3">
+                        <p className="text-2xl md:text-4xl mb-2">Saluto</p>
+                        <div className="text-xl flex gap-1">
+                          <WordCircled borderCircle>Hälsa</WordCircled>
+                          <WordCircled borderCircle>GDRP</WordCircled>
+                          <WordCircled borderCircle>GDRP</WordCircled>
+                        </div>
+                      </div>
+                      <div className="flex gap-2">
+                        <div className="w-8"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div>
+                        <div className="w-8"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div>
+                      </div>
+                    </div>
+                    <p className="text-xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
+                    </p>
+                  </div>
+                })}
+              </div>
+            </div>
+          </div >
+        </Content >
+
+
+
+        <Content className="pt-40">
+          <div className="hidden md:block">
+            {/* <TransitionSquares></TransitionSquares> */}
+          </div>
+
+          <div className="w-full flex-col gap-6 md:flex-row flex ">
+            <div className="md:w-3/5 flex-grow">
+              <h2 className="mb-3 text-5xl">
+                Certifierade AWS konsulter i Stockholm
+                <Image className="w-16 inline-block mx-3" width={100} height={100} alt="" src="/images/icons/light-cloud.svg" />
+              </h2>
+              <p className="text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är vi engagerade i att hjälpa våra kunder att navigera genom molnets komplexiteter.</p>
+              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+            </div>
+            <div className="md:w-2/5 flex-grow-0 relative">
+              <div className="absolute inset-0 flex overflow-hidden items-center">
+                <Image alt="" className="w-full h-full object-contain" src="/images/pixels.png" width={10} height={10} />
+              </div>
+            </div>
+          </div>
+        </Content >
+
+        <Content className="pt-40 relative flex gap-6 flex-col" >
+          <BorderedPanel label="OSS / 01.">
+            <p className="md:text-4xl">
+              <span className="text-white">
+                {t(
+                  "Altostruct är ett konsultbolag specialiserade inom AWS."
+                )}
+              </span>
+              <span className="text-gray-400">
+                {t(" Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av " + "tjänster som exempelvis molnmigrationer, " + "AI, serverless och APIer."
+                )}
+              </span>
+            </p>
+          </BorderedPanel>
+          <BorderedPanel label="OSS / 02.">
+            <p className="md:text-4xl">
+              <span className="text-white">{t("Vår vision är att")}</span>
+              <span className="text-gray-400">
+                {t(
+                  " göra det möjligt för alla företag" +
+                  " att bygga och hosta branschledande applikationer" +
+                  " och plattformer i molnet."
+                )}
+              </span>
+            </p>
+          </BorderedPanel>
+          <BorderedPanel label="OSS / 03.">
+            <p className="md:text-4xl">
+              <span className="text-white">{t("Vår vision är att")}</span>
+              <span className="text-gray-400">
+                {t(
+                  " göra det möjligt för alla företag" +
+                  " att bygga och hosta branschledande applikationer" +
+                  " och plattformer i molnet."
+                )}
+              </span>
+            </p>
+          </BorderedPanel>
+        </Content >
+
+        <Content className="mt-40">
+          <Form></Form>
+        </Content>
+      </div >
       <Footer />
-      
+
     </>
   );
 }
