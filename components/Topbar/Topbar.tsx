@@ -3,7 +3,7 @@ import styles from "./Topbar.module.scss";
 
 //@ts-ignore
 import Fade from "react-reveal/Fade";
-
+import Dropdown from "./Dropdown";
 import classNames from "classnames";
 // import LanguageSelector from "./LanguageSelector/LanguageSelector";
 
@@ -17,6 +17,7 @@ const Underline = () => {
     <div className="border-t origin-bottom-left border-white scale-x-0 transition-all group-hover:scale-x-100"></div>
   );
 };
+
 
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const { transparent = false, fixed = true } = props;
@@ -54,7 +55,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
-    
+
       <header
         className={classNames(styles.topbar, {
           "bg-[#161616]": true,
@@ -64,13 +65,13 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
           absolute: !fixed,
         })}
       >
-        
-        <nav style={{float: "right"}}>
+
+        <nav style={{ float: "right" }}>
           <Link href={"/"}>
             <Brand />
           </Link>
         </nav>
-       
+
 
 
         <nav className="hidden md:flex invisible md:visible">
@@ -81,6 +82,26 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Startsida")}
             <Underline></Underline>
           </Link>
+
+
+          <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
+            <Link
+              className={classNames("group")}
+              href={"/services#optimization"}
+            >
+              {t("AWS Optimering")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/services#ai"}
+            >
+              {t("AWS AI Strategi")}
+              <Underline></Underline>
+            </Link>
+          </Dropdown>
+
+
           <Link
             className={classNames(styles["button-spacing"], "group")}
             href={"/career"}
