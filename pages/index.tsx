@@ -214,9 +214,6 @@ export default function Home() {
             })}
           </Carousel>
 
-
-
-
         </Content>
 
         <Content className="pt-40">

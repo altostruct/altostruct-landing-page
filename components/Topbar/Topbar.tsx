@@ -11,6 +11,8 @@ import Link from "next/link";
 import Brand from "components/Brand/Brand";
 import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
+import Dropdown from "./Dropdown";
+
 
 const Underline = () => {
   return (
@@ -18,11 +20,14 @@ const Underline = () => {
   );
 };
 
+
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const { transparent = false, fixed = true } = props;
   const { t } = useTranslation();
 
   const [expanded, setExpanded] = React.useState(false);
+  const [industries, setIndustries] = React.useState(false);
+
   const ref = React.useRef<HTMLDivElement>(null);
 
   const threshold = 100;
@@ -43,6 +48,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     return window.removeEventListener("scroll", onScoll);
   }, []);
 
+  
   React.useEffect(() => {
     if (!ref.current) return;
     if (expanded) {
@@ -73,7 +79,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
 
 
-        <nav className="hidden md:flex invisible md:visible">
+        <nav className="hidden md:flex invisible md:visible ">
           <Link
             className={classNames(styles["button-spacing"], "group")}
             href={"/career"}
@@ -94,6 +100,38 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Artiklar")}
             <Underline></Underline>
           </Link>
+
+          <Dropdown title="Industrier" className={classNames(styles["button-spacing"])}>
+            <Link
+              className={classNames("group")}
+              href={"/livsmedel"}
+            >
+              {t("Livsmedel")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/gaming"}
+            >
+              {t("Gaming")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/finans"}
+            >
+              {t("Finans")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/halsa"}
+            >
+              {t("hälsa")}
+              <Underline></Underline>
+            </Link>
+          </Dropdown>
+
           {/*<LanguageSelector></LanguageSelector>*/}
         </nav>
 
@@ -135,7 +173,10 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 href={"/"}
                 onClick={() => setExpanded(!expanded)}
               >
+                <div className="bg-red-200">
+
                 {t("Startsida")}
+                </div>
               </Link>
             </Fade>
             <Fade delay={100}>

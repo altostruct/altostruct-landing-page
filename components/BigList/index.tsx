@@ -43,7 +43,7 @@ function BigList(props: BigListProps) {
                             <p className="md:hidden">{description}</p>
                         </ul> */}
 
-            <li className={`${styles["big-list-item"]} text-2xl`}>
+            <li className={`${styles["big-list-item"]} text-lg`}>
               <img src={image} alt="" className={styles.icon} />
               <span className={`${styles.title} text-4xl`}>{title}</span>
               <span className={`${styles.description} mt-2 text-lg`}>
