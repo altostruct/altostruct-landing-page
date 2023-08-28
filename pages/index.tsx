@@ -224,9 +224,6 @@ export default function Home() {
             })}
           </Carousel>
 
-
-
-
         </Content>
 
         <Content className="mt-24 md:mt-40 relative">
