@@ -11,6 +11,7 @@ import Link from "next/link";
 import Brand from "components/Brand/Brand";
 import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
+import { getContentfulProducts } from "utils/contentful";
 
 const Underline = () => {
   return (
@@ -54,7 +55,6 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
-
       <header
         className={classNames(styles.topbar, {
           "bg-[#161616]": true,
@@ -81,6 +81,27 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Karriär")}
             <Underline></Underline>
           </Link>
+          <div className={classNames(styles["button-spacing"], "group cursor-default relative")}>
+            {t("Tjänster")}
+            <div className="hidden group-hover:block right-0 pt-2 absolute">
+              <div className=" w-96 bg-gray-800 p-2 rounded-md overflow-hidden">
+                {getContentfulProducts().filter(word => word.sys.locale === "sv").map((product, index) => {
+                  return <div className={"px-2 py-2"} key={index}>
+                    <Link
+                      href={`/services/${product.fields.slug}`}
+                    >
+                      <Fade delay={index * 100 + 50} >
+                        {product.fields.name}
+                      </Fade>
+
+                    </Link>
+                  </div>
+                })}
+
+              </div>
+
+            </div>
+          </div>
           <Link
             className={classNames(styles["button-spacing"], "group")}
             href={"/about"}

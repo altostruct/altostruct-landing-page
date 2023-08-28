@@ -10,6 +10,7 @@ import Package from "@components/Packege/Packege";
 import { useRef } from "react";
 import React, { useState } from "react";
 import Link from "next/link";
+import SVG from "/images/icons/arrow-icon.svg"
 import twconfig from "tailwind.config";
 import TransitionSquares from "@components/TransistionSquares";
 import PageStart from "@components/PageStart";
@@ -149,7 +150,16 @@ export default function Home() {
                 </>
               }
               cta={<div className="flex gap-2">
-                <Button link="/contact">{t("Boka konsultation")}</Button>
+                <Button className="group" icon={
+                  <div className="group-hover:translate-x-1 transition-all">
+                    <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                      <path
+                        fill="#c3eec3"
+                        d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
+                    </svg>
+                  </div>
+                }
+                  link="/contact">{t("Boka konsultation")}</Button>
                 <Button type="secondary" link="/asd">{t("Boka konsultation")}</Button>
               </div>}
             />
@@ -189,10 +199,10 @@ export default function Home() {
         </Content>
 
 
-        <Content className="bg-[#1f1f1f]  border-gray-800 p-6 rounded-xl">
+        <Content className="bg-[#1f1f1f]  border-gray-800 md:p-6 rounded-xl">
           <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
             {new Array(2).fill(null).map((_, index) => {
-              return <div key={index} className="text-left ">
+              return <div key={index} className="text-left text-gray-200">
                 <div className="flex flex-col gap-6">
                   <div>
                     <div className="flex w-fit gap-2">
@@ -219,44 +229,50 @@ export default function Home() {
 
         </Content>
 
-        <Content className="pt-40">
-          <div className="hidden md:block">
+        <Content className="mt-24 md:mt-40 relative">
+          <div className="absolute z-0 right-32 top-8 md:hidden">
             <TransitionSquares></TransitionSquares>
           </div>
 
-          <div className="w-full flex-col gap-6 md:flex-row flex ">
+          <div className="w-full relative text-gray-200 flex-col gap-6 md:flex-row flex ">
             <div className="md:w-3/5 flex-grow">
-              <h2 className="mb-3 text-5xl">
-                Certifierade AWS konsulter i Stockholm
-                <Image className="w-16 inline-block mx-3" width={100} height={100} alt="" src="/images/icons/light-cloud.svg" />
+              <h2 className="mb-3 text-3xl md:text-4xl">
+
+                <span>
+                  Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm
+                </span>
               </h2>
-              <p className="text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är vi engagerade i att hjälpa våra kunder att navigera genom molnets komplexiteter.</p>
-              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              <p className="text-xl md:text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är </p>
+              <div className="w-fit">
+                <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              </div>
             </div>
             <div className="md:w-2/5 flex-grow-0 relative">
               <div className="absolute inset-0 flex items-center">
-                <Image alt="" className="w-full h-full object-contain" src="/images/Frame 2 (32).png" width={10} height={10} />
+                <Image alt="" className="w-full h-full object-contain" src="/images/Frame 2 (32).png" width={1024} height={1024} />
               </div>
             </div>
           </div>
 
+
         </Content >
 
-        <Content className="bg-[#1f1f1f] mt-40 border border-gray-800 p-12 rounded-xl">
+        <Content className="mt-24 md:mt-40 rounded-xl bg-[#1f1f1f] p-8">
+
           <div>
             <div>
               <div className="w-full flex">
                 <div className="w-full">
-                  <div className="relative justify-between">
-                    <p className="font-semibold text-3xl md:text-5xl">Upptäck 30+ framgångsberättelser från våra kunder.</p>
-                  </div>
+                  <h2 className="mb-3 border-b text-xl py-4 border-gray-700">
+                    Upptäck 30+ framgångsberättelser från våra kunder.
+                  </h2>
                 </div>
               </div>
-              <div className="flex flex-col md:flex-row gap-3 mt-10 divide-gray-800 divide-2">
+              <div className="flex flex-col md:flex-row gap-6 md:gap-2 mt-4 divide-gray-800 divide-2">
                 {new Array(3).fill(null).map((_, index) => {
                   return <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
                     <div className="flex justify-between">
-                      <div className="mb-3">
+                      <div className="mb-2">
                         <p className="text-2xl md:text-4xl mb-2">Saluto</p>
                         <div className="text-xl flex gap-1">
                           <WordCircled borderCircle>Hälsa</WordCircled>
@@ -264,12 +280,8 @@ export default function Home() {
                           <WordCircled borderCircle>GDRP</WordCircled>
                         </div>
                       </div>
-                      <div className="flex gap-2">
-                        <div className="w-8"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div>
-                        <div className="w-8"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div>
-                      </div>
                     </div>
-                    <p className="text-xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
+                    <p className="text-lg md:text-2xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
                     </p>
                   </div>
                 })}
@@ -280,34 +292,34 @@ export default function Home() {
 
 
 
-        <Content className="pt-40">
-          <div className="hidden md:block">
-            {/* <TransitionSquares></TransitionSquares> */}
+        <Content className="relative mt-24 md:mt-40">
+          <div className="absolute top-0 z-0 -translate-x-full right-32 md:hidden">
+            <TransitionSquares></TransitionSquares>
           </div>
-
-          <div className="w-full flex-col gap-6 md:flex-row flex ">
+          <div className="w-full relative flex-col-reverse gap-6 md:flex-row flex ">
             <div className="md:w-3/5 flex-grow">
-              <h2 className="mb-3 text-5xl">
-                Certifierade AWS konsulter i Stockholm
-                <Image className="w-16 inline-block mx-3" width={100} height={100} alt="" src="/images/icons/light-cloud.svg" />
+              <h2 className="mb-3 text-3xl md:text-4xl">
+                Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm
               </h2>
-              <p className="text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är vi engagerade i att hjälpa våra kunder att navigera genom molnets komplexiteter.</p>
-              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              <p className="text-xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är</p>
+              <div className="w-fit">
+                <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              </div>
             </div>
-            <div className="md:w-2/5 flex-grow-0 relative">
+            <div className="w-full md:w-2/5 flex-grow-0 relative">
               <div className="absolute inset-0 flex overflow-hidden items-center">
-                <Image alt="" className="w-full h-full object-contain" src="/images/pixels.png" width={10} height={10} />
+                <Image alt="" className="w-full h-full object-contain" src="/images/pixels.png" width={1024} height={1024} />
               </div>
             </div>
           </div>
         </Content >
 
-        <Content className="pt-40 relative flex gap-6 flex-col" >
+        <Content className="text-xl mt-24 md:mt-40 relative flex gap-6 flex-col" >
           <BorderedPanel label="OSS / 01.">
             <p className="md:text-4xl">
               <span className="text-white">
                 {t(
-                  "Altostruct är ett konsultbolag specialiserade inom AWS."
+                  "Altostruct är Test  sd sdf sdf asd asd asd asd asd asd ett konsultbolag specialiserade inom AWS. asd asdAltostruct är ett konsultbolag specialiserade inom AWS. Altostruct är ett konsultbolag specialiserade inom AWS. Altostruct är ett konsultbolag specialiserade inom AWS."
                 )}
               </span>
               <span className="text-gray-400">
@@ -316,30 +328,7 @@ export default function Home() {
               </span>
             </p>
           </BorderedPanel>
-          <BorderedPanel label="OSS / 02.">
-            <p className="md:text-4xl">
-              <span className="text-white">{t("Vår vision är att")}</span>
-              <span className="text-gray-400">
-                {t(
-                  " göra det möjligt för alla företag" +
-                  " att bygga och hosta branschledande applikationer" +
-                  " och plattformer i molnet."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
-          <BorderedPanel label="OSS / 03.">
-            <p className="md:text-4xl">
-              <span className="text-white">{t("Vår vision är att")}</span>
-              <span className="text-gray-400">
-                {t(
-                  " göra det möjligt för alla företag" +
-                  " att bygga och hosta branschledande applikationer" +
-                  " och plattformer i molnet."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
+
         </Content >
 
         <Content className="mt-40">

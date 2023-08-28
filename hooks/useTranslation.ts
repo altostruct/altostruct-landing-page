@@ -21,6 +21,7 @@ const useTranslation = () => {
 
   /**Returns a translated string with values of any existing variable.*/
   const t = (text: string, variables?: Record<string, any>): string => {
+    return text;
     const translations = require("i18n/" + locale + "/translation.json");
 
     if (!translations.hasOwnProperty(text)) {

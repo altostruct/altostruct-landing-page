@@ -4,7 +4,7 @@ import Topbar from "@components/Topbar/Topbar"
 import Script from "next/script"
 
 function Techonologies() {
-    const { t } = useTranslation();
+
 
     return <>
         <CookieBanner></CookieBanner>

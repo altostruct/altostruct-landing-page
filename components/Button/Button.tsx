@@ -12,6 +12,7 @@ interface ButtonProps {
   formAction?: "submit" | "reset";
   link?: string;
   openNewTab?: boolean;
+  icon?: React.ReactNode
 }
 
 const Button = (props: ButtonProps) => {
@@ -22,6 +23,7 @@ const Button = (props: ButtonProps) => {
     link,
     className,
     formAction,
+    icon,
   } = props;
 
   const LinkWrapper = (cmp: JSX.Element) => {
@@ -43,9 +45,11 @@ const Button = (props: ButtonProps) => {
         className,
         style.button,
         style[type],
+        "font-black",
       )}
     >
       {children}
+      {icon && <span className="ml-2">{icon}</span>}
     </button>
   );
 };

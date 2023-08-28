@@ -47,9 +47,9 @@ function PageStart(props: PageStartProps) {
   }, [ref]);
 
   return (
-    <div className="flex gap-16 h-screen max-h-[96em]">
+    <div className="flex gap-16 h-screen max-h-[54em]">
       <div className="my-auto flex-1 h-fit w-2/3">
-        <h1 className="mb-3 text-4xl md:text-6xl leading-tight md:leading-tight">
+        <h1 className="mb-3 text-4xl text-gray-200 md:text-6xl leading-tight md:leading-tight">
           {title}
         </h1>
         <div className="my-5 scale-x-100 transition-all"></div>

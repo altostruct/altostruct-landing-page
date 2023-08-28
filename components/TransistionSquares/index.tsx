@@ -9,7 +9,7 @@ function TransitionSquares(props: PropsWithChildren) {
 
   return (
     <div
-      className={classNames(lightBg, "absolute left-full -translate-x-full")}>
+      className={classNames(lightBg, "absolute left-full")}>
       <div className={`flex place-content-end`}>
         <div className={`md:w-28 md:h-28 h-14 w-14 ${darkBg}`}></div>
       </div>

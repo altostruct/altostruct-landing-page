@@ -2,8 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-9,400;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Silkscreen:wght@400;700&display=swap");
+
+.glow::before {
+  // position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0px 0px #fff, 0 0 10px 10px #c3eec3, 0 0 30px 30px #c3eec3;
+}
+.pixelated {
+  font-family: "Inter", sans-serif !important;
+  font-family: "Silkscreen", cursive !important;
+}
+
 body {
-  background: url("https://t3.ftcdn.net/jpg/02/93/81/64/240_F_293816480_Z6zNlB90uakGvCSGFYnzbteQxe6DwUmM.jpg");
+  background: url("https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp");
 }
 * {
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
