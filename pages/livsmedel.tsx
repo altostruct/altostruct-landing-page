@@ -41,15 +41,15 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Hur")}{" "}
+                {t("Effektivisera ditt företag inom")}{" "}
                 <WordCircled borderCircle={true}>
                   {t("Livsmedel")}
                 </WordCircled>{" "}
-                {t("branchen är kopplad till molnet ")}
+                {t("med molnet")}
               </div>
             }
             mainContent={<img
-              src="/images/food-bowl.png"
+              src="/images/food-tech-neon.png"
               alt=""
             />}
             cta={<div className="flex gap-2">
