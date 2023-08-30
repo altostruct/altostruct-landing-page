@@ -49,7 +49,7 @@ function About(props: { code: string }) {
               </>
             }
             mainContent={<img
-              src="/images/health-watch-neon.png"
+              src="/images/green-clock.png"
               alt=""
             />}            
             cta={<div className="flex gap-2">

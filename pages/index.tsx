@@ -33,6 +33,8 @@ import BorderedPanel from "@components/BorderedPanel";
 import Quotes from "@components/Quotes";
 import TextSection from "@components/TextSection";
 import Card from "@components/Card";
+import BigList from "@components/BigList";
+
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 const QUOTES = []
 
@@ -83,58 +85,89 @@ export default function Home() {
               <Button type="secondary" link="/asd">{t("Boka konsultation")}</Button>
             </div>}
           />
-          {/* <div className="absolute w-full bottom-3  md:right-0 flex">
-              <div className="m-auto md:mr-auto md:ml-0 flex">
-                <div className="translate-x-8">
-                  <Image
-                    width={100}
-                    height={100}
-                    alt=""
-                    placeholder="empty"
-                    className="-rotate-12 animate-transitions"
-                    src="/images/aws-certified-solutions-architect-associate.webp"
-                  />
-                </div>
+        </Content>
+
+        <div>
+          <Content className="my-20">
+            <Quotes data={quotes.map((item: any) => ({
+              quote: item.fields.quote,
+              author: item.fields.author,
+              role: item.fields.authorsRole,
+              company: {
+                name: item.fields.customer.fields.name,
+                url: item.fields.customer.fields.link,
+              }
+            }))}></Quotes>
+          </Content>
+        </div>
+
+        <div className="pt-20">
+          <div className="grid grid-cols-12 md:pb-32 pb-40 text-white">
+            <div
+              className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
+              style={{ textAlignLast: "center" }}
+            >
+              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
+                <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
+                  {t("Vad är Altostruct?")}
+                </h1>
                 <Image
-                  width={100}
-                  height={100}
+                  width={50}
+                  height={50}
                   alt=""
-                  placeholder="empty"
-                  className="transform -translate-y-6 animate-transitions"
-                  src="/images/AWS-Certified-Machine-Learning-Specialty_badge.e5d66b56552bbf046f905bacaecef6dad0ae7180 (1).png"
-                />
-                <div className="-translate-x-8">
-                  <Image
-                    width={100}
-                    height={100}
-                    alt=""
-                    placeholder="empty"
-                    className="rotate-12 animate-transitions"
-                    src="/images/AWS-Certified-Data-Analytics-Specialty_badge.c74203ecf6d7c4889d01d8b4ba5c9df6e69c6f43.png"
-                  />
-                </div>
+                  src="/icons8-amazon-web-services.svg"
+                ></Image>
               </div>
-            </div> */}
+              <div className="font-light pb-5 text-2xl">
+                Altostruct är erfarna molnkonsulter som hjälper företag att dra navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder kostnadsfri rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
+              </div>
+
+              <Button className="group" icon={
+                <div className="group-hover:translate-x-1 transition-all">
+                  <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                    <path
+                      fill="#c3eec3"
+                      d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
+                  </svg>
+                </div>
+              }
+                link="/contact">{t("Kontakta oss")}
+                </Button>
+            </div>
+          </div>
+        </div>
+
+        <Content>
+          <div className="pt-12 pb-10">
+            <BigList
+              items={[
+                {
+                  title: t("Optimering"),
+                  description: t(
+                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan."
+                  ),
+                  image: "/images/productivity-green.png",
+                },
+                {
+                  title: t("Migration"),
+                  description: t(
+                    "AWS minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning."
+                  ),
+                  image: "/images/scale-green.png",
+                },
+                {
+                  title: t("Skräddarsyr"),
+                  description: t(
+                    "Analysera i molnet av stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
+                  ),
+                  image: "/images/analysis-green.png",
+                },
+              ]}
+            ></BigList>
+          </div>
         </Content>
 
-
-        <Content className="mt-20">
-          <Quotes data={quotes.map((item: any) => ({
-            quote: item.fields.quote,
-            author: item.fields.author,
-            role: item.fields.authorsRole,
-            company: {
-              name: item.fields.customer.fields.name,
-              url: item.fields.customer.fields.link,
-            }
-          }))}></Quotes>
-        </Content>
-
-        <Content className="mt-24 md:mt-40 relative">
-          <TextSection title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>
-        </Content >
-
-        <Content className="mt-40">
+        <Content className="md:mt-20 mt-40">
           <Card title={"Case Studies."}>
             <div className="flex flex-col md:h-96 md:flex-row gap-24 md:gap-3 mt-4 divide-gray-800 divide-2">
               {getReferenceCases().slice(0, 3).map((item: any, index: number) => {
@@ -157,28 +190,7 @@ export default function Home() {
           </Card>
         </Content >
 
-
-        <Content className="relative mt-24 md:mt-40">
-          <TextSection image="/images/pixels.png" title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>
-        </Content >
-
-        <Content className="text-xl mt-24 md:mt-40 relative flex gap-6 flex-col" >
-          <BorderedPanel label="OSS / 01.">
-            <p className="md:text-4xl">
-              <span className="text-white">
-                {t(
-                  "Altostruct är Test  sd sdf sdf asd asd asd asd asd asd ett konsultbolag specialiserade inom AWS. asd asdAltostruct är ett konsultbolag specialiserade inom AWS. Altostruct är ett konsultbolag specialiserade inom AWS. Altostruct är ett konsultbolag specialiserade inom AWS."
-                )}
-              </span>
-              <span className="text-gray-400">
-                {t(" Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av " + "tjänster som exempelvis molnmigrationer, " + "AI, serverless och APIer."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
-
-        </Content >
-
+        
         <Content className="mt-40">
           <Form></Form>
         </Content>

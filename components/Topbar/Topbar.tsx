@@ -87,27 +87,32 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Karriär")}
             <Underline></Underline>
           </Link>
-          <div className={classNames(styles["button-spacing"], "group cursor-default relative")}>
-            {t("Tjänster")}
-            <div className="hidden group-hover:block right-0 pt-2 absolute">
-              <div className=" w-96 bg-gray-800 p-2 rounded-md overflow-hidden">
-                {getContentfulProducts().filter(word => word.sys.locale === "sv").map((product, index) => {
-                  return <div className={"px-2 py-2"} key={index}>
-                    <Link
-                      href={`/services/${product.fields.slug}`}
-                    >
-                      <Fade delay={index * 100 + 50} >
-                        {product.fields.name}
-                      </Fade>
+        
+          
+          <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
+            <Link
+              className={classNames("group")}
+              href={"/services/ai"}
+            >
+              {t("Machine learning på Amazon Web Services ")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/services/aws"}
+            >
+              {t("Amazon Web Services Optimering")}
+              <Underline></Underline>
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/services/multi-cloud"}
+            >
+              {t("Multicloud")}
+              <Underline></Underline>
+            </Link>
+          </Dropdown>
 
-                    </Link>
-                  </div>
-                })}
-
-              </div>
-
-            </div>
-          </div>
           <Link
             className={classNames(styles["button-spacing"], "group")}
             href={"/about"}

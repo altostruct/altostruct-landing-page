@@ -21,12 +21,12 @@ $icon-width-desktop: 6ch;
 
 .icon {
   grid-area: a;
-  max-width: 100%;
+  max-width: 200%;
 }
 
 .title {
   grid-area: b;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
 }
 
 .index {
@@ -41,5 +41,23 @@ $icon-width-desktop: 6ch;
   .big-list-item {
     grid-template-areas: "a b c d";
     grid-template-columns: $icon-width-desktop 1fr 3ch 1fr;
+  }
+  .icon {
+  grid-area: a;
+  max-width: 200%;
+
+  }
+
+  .title {
+    grid-area: b;
+    padding-left: 4rem;
+  }
+
+  .index {
+    grid-area: c;
+  }
+
+  .description {
+    grid-area: d;
   }
 }

@@ -50,9 +50,6 @@ function PageStart(props: PageStartProps) {
 
   return (
     <div className="flex gap-16 h-screen max-h-[54em]">
-
-
-
       <div className="md:flex hidden gap-16 h-screen max-h-[96em]">
         <div className="my-auto flex-1 h-fit w-2/3">
           <h1 className="mb-3 text-4xl md:text-6xl leading-tight md:leading-tight">
@@ -90,6 +87,27 @@ function PageStart(props: PageStartProps) {
             }
           </div>
         </div>
+      </div>
+
+{/* MOBILE VERSION */}
+      <div className="md:hidden gap-16 h-screen max-h-[96em] pt-20 text-center">
+        
+        <div className="my-auto flex-1 h-fit">
+          <h1 className="mb-1 text-4xl md:text-6xl leading-tight md:leading-tight">
+            {title}
+          </h1>
+          <div className="my-5 scale-x-100 transition-all"></div>
+          <div className="flex-0 flex">
+            <div className="m-auto">
+              {mainContent}
+            </div>
+          </div>
+          <p className="text-2xl " style={{ fontFamily: "KHTeka-Light" }}>
+            {description}
+          </p>
+          {cta && <div className="pt-4">{cta}</div>}
+        </div>
+       
       </div>
     </div>
   );
