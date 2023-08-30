@@ -33,6 +33,8 @@ import Brand from "@components/Brand/Brand";
 import { getContentfulProducts, getProductFromSlug, getReferenceCasesFromProducts } from "utils/contentful";
 import { GetStaticPaths } from "next";
 import { RichText } from "pages/blog/[id]";
+import TextSection from "@components/TextSection";
+import Card from "@components/Card";
 const QUOTES = []
 
 export default function Home(props: any) {
@@ -81,22 +83,12 @@ export default function Home(props: any) {
           </div>
         </Content>
 
-        <Content className="bg-[#1f1f1f] mt-40 border border-gray-800 p-12 rounded-xl">
-          <div className="w-full flex-col gap-6 md:flex-row flex ">
-            <div className="md:w-3/5 flex-grow">
-              <h2 className="mb-3 text-gray-200 text-5xl">
-                {product.fields.slogan}
-              </h2>
-              <div className="text-2xl text-gray-200">
-                <RichText body={product.fields.sloganDescription}></RichText>
-              </div>
-            </div>
-            <div className="md:w-2/5 flex-grow-0 relative">
-              <div className="absolute inset-0 flex overflow-hidden items-center">
-                <Image alt="" className="w-full h-full object-contain" src="/images/icons/Frame 1 (90).png" width={1024} height={1024} />
-              </div>
-            </div>
-          </div>
+        <Content className="mt-40">
+          <Card title={product.fields.slogan}>
+            <span className="text-2xl">
+              <RichText body={product.fields.sloganDescription}></RichText>
+            </span>
+          </Card>
         </Content >
 
         <Content className="pt-40">
@@ -118,35 +110,26 @@ export default function Home(props: any) {
           </div>
         </Content >
 
-        <Content className="bg-[#1f1f1f] mt-40 border border-gray-800 p-12 rounded-xl">
-          <div>
-            <div>
-              <div className="w-full flex">
-                <div className="w-full">
-                  <div className="relative justify-between">
-                    <p className="font-semibold text-3xl text-gray-200 md:text-5xl">Case Studies.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row gap-3 mt-4 divide-gray-800 divide-2">
-                {referenceCases.slice(0, 3).map((item: any, index: number) => {
-                  return <div className="md:w-1/3 text-gray-300 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
-                    <div className="flex justify-between">
-                      <div className="mb-3">
-                        <p className="text-2xl md:text-3xl mb-2">{item.fields.title}</p>
-                        <div className="text-xl flex gap-1">
-                          <WordCircled borderCircle>Hälsa</WordCircled>
-                          <WordCircled borderCircle>GDRP</WordCircled>
-                          <WordCircled borderCircle>GDRP</WordCircled>
-                        </div>
+        <Content className="mt-40">
+          <Card title={"Case Studies."}>
+            <div className="flex flex-col md:flex-row gap-3 mt-4 divide-gray-800 divide-2">
+              {referenceCases.slice(0, 3).map((item: any, index: number) => {
+                return <div className="md:w-1/3 text-gray-300 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+                  <div className="flex justify-between">
+                    <div className="mb-3">
+                      <p className="text-2xl md:text-3xl mb-2">{item.fields.title}</p>
+                      <div className="text-xl flex gap-1">
+                        <WordCircled borderCircle>Hälsa</WordCircled>
+                        <WordCircled borderCircle>GDRP</WordCircled>
+                        <WordCircled borderCircle>GDRP</WordCircled>
                       </div>
                     </div>
-                    <p className="text-2xl">{item.fields.shortDescription}</p>
                   </div>
-                })}
-              </div>
+                  <p className="text-2xl">{item.fields.shortDescription}</p>
+                </div>
+              })}
             </div>
-          </div >
+          </Card>
         </Content >
 
         <Content className="mt-40">
