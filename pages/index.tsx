@@ -33,6 +33,7 @@ import BorderedPanel from "@components/BorderedPanel";
 import Quotes from "@components/Quotes";
 import TextSection from "@components/TextSection";
 import Card from "@components/Card";
+import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 const QUOTES = []
 
 export default function Home() {
@@ -133,28 +134,29 @@ export default function Home() {
           <TextSection title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>
         </Content >
 
-        <Content className="mt-24">
-          <Card title="Upptäck 30+ framgångsberättelser från våra kunder.">
-            <div className="flex flex-col md:flex-row gap-6 md:gap-2 mt-4 divide-gray-800 divide-2">
-              {new Array(3).fill(null).map((_, index) => {
-                return <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+        <Content className="mt-40">
+          <Card title={"Case Studies."}>
+            <div className="flex flex-col md:h-96 md:flex-row gap-24 md:gap-3 mt-4 divide-gray-800 divide-2">
+              {getReferenceCases().slice(0, 3).map((item: any, index: number) => {
+                return <div className="md:w-1/3  text-gray-300 flex flex-col md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
                   <div className="flex justify-between">
-                    <div className="mb-2">
-                      <p className="text-2xl md:text-4xl mb-2">Saluto</p>
+                    <div className="mb-3">
+                      <p className="text-2xl md:text-3xl mb-3">{item.fields.title}</p>
                       <div className="text-xl flex gap-1">
-                        <WordCircled borderCircle>Hälsa</WordCircled>
-                        <WordCircled borderCircle>GDRP</WordCircled>
-                        <WordCircled borderCircle>GDRP</WordCircled>
+                        {item.fields.tags?.slice(0, 5).map((tag: string, index: number) => {
+                          return <WordCircled key={index} borderCircle>{tag}</WordCircled>
+                        })}
                       </div>
                     </div>
                   </div>
-                  <p className="text-lg md:text-2xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
-                  </p>
+                  <p className="text-xl text-ellipsis overflow-hidden flex-grow">{item.fields.shortDescription} </p>
+                  <Button type="secondary" link={"/cases/" + item.fields.slug} className="mt-4 ml-auto align-bottom">Läs mer</Button>
                 </div>
               })}
             </div>
           </Card>
         </Content >
+
 
         <Content className="relative mt-24 md:mt-40">
           <TextSection image="/images/pixels.png" title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>

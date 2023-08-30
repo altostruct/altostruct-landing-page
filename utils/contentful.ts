@@ -87,7 +87,7 @@ export const getContentfulPositions = (): ContentfulPosition[] => {
   return positions as any;
 };
 
-export const getReferenceCases = (): ContentfulPosition[] => {
+export const getReferenceCases = (): ContentfulPost[] => {
   return referenceCases as any;
 };
 
@@ -113,7 +113,7 @@ export const getProductFromSlug = (
 export const getReferenceCasesFromProducts = (
   productSlug: string,
   locale?: string
-): ContentfulPost => {
+): ContentfulPost[] => {
   return getReferenceCases()
     .filter((item) => item.sys.locale === "sv")
     .filter((item: any) => {
