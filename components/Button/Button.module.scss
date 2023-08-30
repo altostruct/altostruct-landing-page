@@ -35,7 +35,8 @@ $small-screen: 720px;
   --color: #e8e8e8;
   color: var(--color);
 
-  background-color: #292929;
+  // background-color: #292929;
+  border: 0.05em solid var(--color);
 }
 
 .shiny {

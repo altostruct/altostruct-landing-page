@@ -11,7 +11,7 @@ interface QuotesProps {
 }
 function Quotes(props: QuotesProps) {
     const { data } = props
-    return <div className="bg-[#1f1f1f]  border-gray-800 md:p-6 rounded-xl">
+    return <div className="bg-[#1f1f1f]  border-gray-800 md:p-6 p-1 rounded-xl">
         <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
             {data.map((item, index) => {
                 return <div key={index} className="text-left ">
@@ -22,10 +22,10 @@ function Quotes(props: QuotesProps) {
                                 <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
                             </div>
                         </div>
-                        <cite className="text-2xl md:text-4xl not-italic">
+                        <cite className="text-xl md:text-4xl not-italic">
                             {item.quote}
                         </cite>
-                        <div className="flex justify-between text-gray-200">
+                        <div className="flex justify-between text-gray-200 md:pb-0 pb-10">
                             <div>
                                 <p className="font-extrabold">{item.author}</p>
                                 <p>{item.role} @ {" "}
