@@ -22,6 +22,7 @@ import { ContentfulPost, getContentfulPosts } from "utils/contentful";
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Dropdown from 'react-bootstrap/Dropdown';
+import Quotes from "@components/Quotes";
 
 
 function About(props: { code: string }) {
@@ -162,29 +163,7 @@ function About(props: { code: string }) {
         </Content>
 
         <Content className="bg-[#1f1f1f]  border-gray-800 p-6 rounded-xl">
-          <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
-            {new Array(2).fill(null).map((_, index) => {
-              return <div key={index} className="text-left ">
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <div className="flex w-fit gap-2">
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                    </div>
-                  </div>
-                  <cite className="text-2xl md:text-4xl not-italic">
-                    They truly showed us how we can use public cloud to reduce time-to-market as we develop our digital portfolio
-                  </cite>
-                  <div className="flex justify-between text-gray-200">
-                    <div>
-                      <p className="font-extrabold">Karl Ingestam</p>
-                      <p>CTO @ Purply</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            })}
-          </Carousel>
+          <Quotes data={[]}></Quotes>
         </Content>
 
         <Content>

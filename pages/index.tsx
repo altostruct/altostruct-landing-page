@@ -30,95 +30,14 @@ import LinkedIn from "@components/Linkedin/LinkedIn";
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import BorderedPanel from "@components/BorderedPanel";
+import Quotes from "@components/Quotes";
+import TextSection from "@components/TextSection";
+import Card from "@components/Card";
 const QUOTES = []
 
 export default function Home() {
   const { t } = useTranslation();
   const bgLight = twconfig.theme.light;
-
-
-  const projects = [
-    {
-      link: "https://www.nrlyze.se/",
-      img: (
-        <Image
-          width={400}
-          height={400}
-          alt="Customer Nrlyze"
-          className="max-h-56"
-          src="/images/customers/nrlyze.png"
-        ></Image>
-      ),
-      title: t("Nrlyze har utvecklat ett AI-system"),
-      description: t(
-        " bestående av trådlösa sensorer som optimerar parametrarna för värmesystem i byggnader. Altostruct har samarbetat med Nrlyze genom att bygga en webbportal som presenterar datan i grafer. Detta ger användarna en enkel och tydlig översikt över värmesystemets prestanda och hjälper dem att effektivt övervaka och förbättra systemet."
-      ),
-    },
-    {
-      link: "https://www.saluto.ai/",
-      img: (
-        <div className="flex">
-          <Image
-            width={400}
-            height={400}
-            alt="Customer Saluto"
-            className="max-h-56"
-            src="/images/first_step_swe-a528fa16687553e6a9f564e91f85e007.png"
-          ></Image>
-          <Image
-            width={400}
-            height={400}
-            alt="Customer Saluto"
-            className="max-h-56"
-            src="/images/second_step_swe-d932bfc8c9f2053cec9867008120c07c.png"
-          ></Image>
-          <Image
-            width={400}
-            height={400}
-            alt="Customer Saluto"
-            className="max-h-56"
-            src="/images/third_step_swe-99ae287c674a9ba0af11be20dd65ac21.png"
-          ></Image>
-        </div>
-      ),
-      title: t("Saluto är en medtech startup."),
-      description: t(
-        " Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd. Appen ger användarna en enkel och överskådlig översikt över deras hälsostatus genom att samla in data från olika källor, inklusive wearables och andra hälsorelaterade apparater. Genom att arbeta tillsammans med Altostruct kunde Saluto skapa en användarvänlig app som gör det enkelt och bekvämt för användarna att följa sin hälsa."
-      ),
-    },
-    {
-      link: "https://tendium.ai/se/",
-      img: (
-        <Image
-          width={400}
-          height={400}
-          alt="Customer Tendium"
-          className="max-h-56"
-          src="/images/img-landing-hero-1.jpeg.webp"
-        ></Image>
-      ),
-      title: t("Tendium är en webbapplikation"),
-      description: t(
-        " som ger kunder möjligheten att enkelt följa, hitta och ansöka om offentliga upphandlingar. Altostruct har bidragit till projektet genom att bygga en solid infrastruktur för deras microservice arkitektur. Med Altostructs expertis kunde Tendium bygga en skalbar och robust arkitektur som ger en smidig användarupplevelse och pålitlig prestanda. "
-      ),
-    },
-    {
-      link: "https://www.foodfacts.se/",
-      img: (
-        <Image
-          width={400}
-          height={400}
-          alt="Customer Foodfacts"
-          className="max-h-56"
-          src="/images/customers/foodfacts.png"
-        ></Image>
-      ),
-      title: t("Foodfacts hjälper dig göra medvetna val gällande mat."),
-      description: t(
-        " Altostruct ledde utvecklingen av en mobilapplikation i samarbete med ett offshoreteam. Applikationen är byggd på AWS med React Native."
-      ),
-    },
-  ];
 
   return (
     <>
@@ -200,115 +119,38 @@ export default function Home() {
 
 
         <Content className="bg-[#1f1f1f]  border-gray-800 md:p-6 rounded-xl">
-          <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
-            {new Array(2).fill(null).map((_, index) => {
-              return <div key={index} className="text-left text-gray-200">
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <div className="flex w-fit gap-2">
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                    </div>
-                  </div>
-                  <cite className="text-2xl md:text-4xl not-italic">
-                    They truly showed us how we can use public cloud to reduce time-to-market as we develop our digital portfolio
-                  </cite>
-                  <div className="flex justify-between text-gray-200">
-                    <div>
-                      <p className="font-extrabold">Karl Ingestam</p>
-                      <p>CTO @ Purply</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            })}
-          </Carousel>
-
+          <Quotes data={[]}></Quotes>
         </Content>
 
         <Content className="mt-24 md:mt-40 relative">
-          <div className="absolute z-0 right-32 top-8 md:hidden">
-            <TransitionSquares></TransitionSquares>
-          </div>
-
-          <div className="w-full relative text-gray-200 flex-col gap-6 md:flex-row flex ">
-            <div className="md:w-3/5 flex-grow">
-              <h2 className="mb-3 text-3xl md:text-4xl">
-
-                <span>
-                  Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm
-                </span>
-              </h2>
-              <p className="text-xl md:text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är </p>
-              <div className="w-fit">
-                <Button type="primary" className="mt-6">Läs mer om oss</Button>
-              </div>
-            </div>
-            <div className="md:w-2/5 flex-grow-0 relative">
-              <div className="absolute inset-0 flex items-center">
-                <Image alt="" className="w-full h-full object-contain" src="/images/Frame 2 (32).png" width={1024} height={1024} />
-              </div>
-            </div>
-          </div>
-
-
+          <TextSection title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>
         </Content >
 
-        <Content className="mt-24 md:mt-40 rounded-xl bg-[#1f1f1f] p-8">
-
-          <div>
-            <div>
-              <div className="w-full flex">
-                <div className="w-full">
-                  <h2 className="mb-3 border-b text-xl py-4 border-gray-700">
-                    Upptäck 30+ framgångsberättelser från våra kunder.
-                  </h2>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row gap-6 md:gap-2 mt-4 divide-gray-800 divide-2">
-                {new Array(3).fill(null).map((_, index) => {
-                  return <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
-                    <div className="flex justify-between">
-                      <div className="mb-2">
-                        <p className="text-2xl md:text-4xl mb-2">Saluto</p>
-                        <div className="text-xl flex gap-1">
-                          <WordCircled borderCircle>Hälsa</WordCircled>
-                          <WordCircled borderCircle>GDRP</WordCircled>
-                          <WordCircled borderCircle>GDRP</WordCircled>
-                        </div>
+        <Content className="mt-24">
+          <Card title="Upptäck 30+ framgångsberättelser från våra kunder.">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-2 mt-4 divide-gray-800 divide-2">
+              {new Array(3).fill(null).map((_, index) => {
+                return <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+                  <div className="flex justify-between">
+                    <div className="mb-2">
+                      <p className="text-2xl md:text-4xl mb-2">Saluto</p>
+                      <div className="text-xl flex gap-1">
+                        <WordCircled borderCircle>Hälsa</WordCircled>
+                        <WordCircled borderCircle>GDRP</WordCircled>
+                        <WordCircled borderCircle>GDRP</WordCircled>
                       </div>
                     </div>
-                    <p className="text-lg md:text-2xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
-                    </p>
                   </div>
-                })}
-              </div>
+                  <p className="text-lg md:text-2xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
+                  </p>
+                </div>
+              })}
             </div>
-          </div >
+          </Card>
         </Content >
 
-
-
         <Content className="relative mt-24 md:mt-40">
-          <div className="absolute top-0 z-0 -translate-x-full right-32 md:hidden">
-            <TransitionSquares></TransitionSquares>
-          </div>
-          <div className="w-full relative flex-col-reverse gap-6 md:flex-row flex ">
-            <div className="md:w-3/5 flex-grow">
-              <h2 className="mb-3 text-3xl md:text-4xl">
-                Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm
-              </h2>
-              <p className="text-xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är</p>
-              <div className="w-fit">
-                <Button type="primary" className="mt-6">Läs mer om oss</Button>
-              </div>
-            </div>
-            <div className="w-full md:w-2/5 flex-grow-0 relative">
-              <div className="absolute inset-0 flex overflow-hidden items-center">
-                <Image alt="" className="w-full h-full object-contain" src="/images/pixels.png" width={1024} height={1024} />
-              </div>
-            </div>
-          </div>
+          <TextSection image="/images/pixels.png" title="Bygg med senaste teknologin med våra certifierade AWS konsulter i Stockholm" text={"Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är "}></TextSection>
         </Content >
 
         <Content className="text-xl mt-24 md:mt-40 relative flex gap-6 flex-col" >
