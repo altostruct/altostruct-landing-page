@@ -56,6 +56,7 @@ async function execute() {
   await loadAssets("project", "projects");
   await loadAssets("product", "products");
   await loadAssets("referenceCase", "referenceCases");
+  await loadAssets("customerQuote", "customerQuote");
   await loadAssets("recruitment", "positions");
 }
 

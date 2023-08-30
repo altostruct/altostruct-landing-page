@@ -8,8 +8,6 @@ dotenv.config({ path: ".env.local" });
 async function execute() {
   console.log(">>>>>> FETCHING DATA FROM CONTENTFUL <<<<<<");
   await contentful();
-  console.log(">>>>>> BUILDING HOUSES <<<<<<");
-  await buildHouses("./assets/houses.png");
 }
 
 execute();

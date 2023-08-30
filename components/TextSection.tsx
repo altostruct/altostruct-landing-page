@@ -28,7 +28,8 @@ function TextSection(props: TextSectionProps) {
                         {title}
                     </span>
                 </h2>
-                <p className="text-xl md:text-2xl text-gray-200">{text}</p>
+                {typeof text === "string" && <p className="text-xl md:text-2xl text-gray-200">{text}</p>}
+                {typeof text !== "string" && <span className="text-xl md:text-2xl text-gray-200">{text}</span>}
                 {cta && <div className="w-fit">
                     <Button type="primary" className="mt-6">{cta.label}</Button>
                 </div>}
