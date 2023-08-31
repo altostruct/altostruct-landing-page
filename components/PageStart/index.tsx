@@ -53,8 +53,8 @@ function PageStart(props: PageStartProps) {
   return (
     <div className="relative">
       <div className="flex gap-16 md:h-screen max-h-[96em]">
-        <div className="mt-[25vh] -translate-y-10 z-10 relative flex-1 h-fit w-2/3">
-          <h1 className="mb-3 drop-shadow-[0_1.2px_3.2px_rgba(0,0,0,1)] text-4xlmd:text-6xl leading-tight md:leading-tight">
+        <div className="mt-[38vh] md:my-auto -translate-y-10 z-10 relative flex-1 h-fit w-2/3">
+          <h1 className="mb-3 text-4xl md:text-6xl leading-tight md:leading-tight">
             {title}
           </h1>
           <div className="my-5 scale-x-100 transition-all"></div>
@@ -63,35 +63,33 @@ function PageStart(props: PageStartProps) {
           </p>
           {cta && <div className="pt-4">{cta}</div>}
         </div>
-        <div className="top-[70%] opacity-20 left-[0vw] blur-sm scale-150  -translate-y-1/2 md:blur-0 md:translate-y-0 left-1/3 w-full md:top-0 md:m-auto absolute md:relative z-0 md:w-1/3">
+        {mainContent && <div className="absolute opacity-10 md:opacity-100 md:relative md:w-1/3">{mainContent}</div>}
+        {!mainContent && <div className="-top-52 md:top-0 md:left-0 left-36 md:opacity-100 absolute md:relative md:my-auto md:w-1/3">
           <div className="m-auto w-full md:w-full">
-            {mainContent ??
-              <Measure>{({ measureRef, contentRect }) => {
-                return <div ref={measureRef} className="w-full">
-                  {contentRect.entry && <GlobeNoSSRWrapper
-                    globeImageUrl="/images/backgrounds/earth4.webp"
-                    arcsData={arcsData}
-                    arcColor={"color"}
-                    arcDashLength={() => Math.random()}
-                    arcDashGap={() => Math.random()}
-                    arcDashAnimateTime={() => Math.random() * 4000 + 1000}
-                    forwardedRef={(ref: GlobeMethods) => {
-                      if (ref) {
-                        ref.controls().enableZoom = false;
-                        ref.controls().autoRotate = true;
-                        // ref.pointOfView(OFFICE, 4000);
-                      }
-                    }}
-                    backgroundColor="rgba(0,0,0,0)"
-                    width={contentRect.entry.width}
-                    height={contentRect.entry.width}
-                  ></GlobeNoSSRWrapper>}
-                </div>
-              }}</Measure>
-            }
-
+            <Measure>{({ measureRef, contentRect }) => {
+              return <div ref={measureRef} className="w-full">
+                {contentRect.entry && <GlobeNoSSRWrapper
+                  globeImageUrl="/images/backgrounds/earth4.webp"
+                  arcsData={arcsData}
+                  arcColor={"color"}
+                  arcDashLength={() => Math.random()}
+                  arcDashGap={() => Math.random()}
+                  arcDashAnimateTime={() => Math.random() * 4000 + 1000}
+                  forwardedRef={(ref: GlobeMethods) => {
+                    if (ref) {
+                      ref.controls().enableZoom = false;
+                      ref.controls().autoRotate = true;
+                      // ref.pointOfView(OFFICE, 4000);
+                    }
+                  }}
+                  backgroundColor="rgba(0,0,0,0)"
+                  width={contentRect.entry.width}
+                  height={contentRect.entry.width}
+                ></GlobeNoSSRWrapper>}
+              </div>
+            }}</Measure>
           </div>
-        </div>
+        </div>}
       </div>
     </div >
   );
