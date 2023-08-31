@@ -100,46 +100,41 @@ export default function Home() {
             }))}></Quotes>
           </Content>
         </div>
-        
-        <Content>
-        <div className="pt-20">
-          <div className="grid grid-cols-12 md:pb-32 pb-40 text-white">
-            <div
-              className=" text-xl md:col-span-8 col-start-2 col-span-10 mt-4"
-            >
-              <div className="flex gap-2 mb-4 md:mb-4">
-                <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
-                  {t("Vad är Altostruct?")}
-                </h1>
-                <Image
-                  width={50}
-                  height={50}
-                  alt=""
-                  src="/icons8-amazon-web-services.svg"
-                ></Image>
-              </div>
-              <div className="font-light pb-5 text-2xl">
-                Altostruct är erfarna molnkonsulter som hjälper företag att dra navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder kostnadsfri rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
-              </div>
 
-              <Button className="group" icon={
-                <div className="group-hover:translate-x-1 transition-all">
-                  <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path
-                      fill="#c3eec3"
-                      d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
-                  </svg>
-                </div>
-              }
-                link="/contact">{t("Kontakta oss")}
-                </Button>
+        <Content>
+          <div className="pt-20">
+
+            <div className="flex gap-2 mb-4 md:mb-4">
+              <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
+                {t("Vad är Altostruct?")}
+              </h1>
+              <Image
+                width={50}
+                height={50}
+                alt=""
+                src="/icons8-amazon-web-services.svg"
+              ></Image>
             </div>
+            <div className="font-light pb-5 text-2xl">
+              Altostruct är erfarna molnkonsulter som hjälper företag att dra navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder kostnadsfri rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
+            </div>
+
+            <Button className="group" icon={
+              <div className="group-hover:translate-x-1 transition-all">
+                <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+                  <path
+                    fill="#c3eec3"
+                    d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
+                </svg>
+              </div>
+            }
+              link="/contact">{t("Kontakta oss")}
+            </Button>
           </div>
-        </div>
         </Content>
 
         <Content>
-          <div className="pt-5 pb-10">
+          <div className="pt-20 pb-10">
             <BigList
               items={[
                 {
@@ -191,7 +186,7 @@ export default function Home() {
           </Card>
         </Content >
 
-        
+
         <Content className="mt-40">
           <Form></Form>
         </Content>

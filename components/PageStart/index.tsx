@@ -64,7 +64,7 @@ function PageStart(props: PageStartProps) {
           {cta && <div className="pt-4">{cta}</div>}
         </div>
         {mainContent && <div className="absolute opacity-10 md:opacity-100 md:relative md:w-1/3">{mainContent}</div>}
-        {!mainContent && <div className="-top-52 md:top-0 md:left-0 left-36 md:opacity-100 absolute md:relative md:my-auto md:w-1/3">
+        {!mainContent && <div className="top-0 -translate-y-1/2 opacity-50 w-96 h-96 md:top-0 md:left-0 left-full -translate-x-1/2 md:opacity-100 absolute md:relative md:my-auto md:w-1/3 md:translate-y-0 md:translate-x-0">
           <div className="m-auto w-full md:w-full">
             <Measure>{({ measureRef, contentRect }) => {
               return <div ref={measureRef} className="w-full">

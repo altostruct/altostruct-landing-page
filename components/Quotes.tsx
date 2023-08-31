@@ -22,10 +22,10 @@ function Quotes(props: QuotesProps) {
                                 <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
                             </div>
                         </div>
-                        <cite className="text-xl md:text-4xl not-italic">
+                        <cite className="text-md md:text-4xl not-italic">
                             {item.quote}
                         </cite>
-                        <div className="flex justify-between text-gray-200 md:pb-0 pb-10">
+                        <div className="text-sm flex justify-between text-gray-200 md:pb-0 pb-10">
                             <div>
                                 <p className="font-extrabold">{item.author}</p>
                                 <p>{item.role} @ {" "}

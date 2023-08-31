@@ -63,9 +63,8 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     <>
       <header
         className={classNames(styles.topbar, {
-          "bg-[#161616]": true,
-          "bg-transparent": transparent,
-          "border-black": transparent,
+          "bg-[#161616]": !isAtTop,
+          "bg-transparent": isAtTop,
           fixed: fixed,
           absolute: !fixed,
         })}
