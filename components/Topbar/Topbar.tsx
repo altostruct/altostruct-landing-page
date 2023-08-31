@@ -87,8 +87,8 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             {t("Karriär")}
             <Underline></Underline>
           </Link>
-        
-          
+
+
           <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
             <Link
               className={classNames("group")}
@@ -199,7 +199,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 href={"/"}
                 onClick={() => setExpanded(!expanded)}
               >
-                <div className="bg-red-200">
+                <div>
 
                   {t("Startsida")}
                 </div>
