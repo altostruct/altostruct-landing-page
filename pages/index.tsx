@@ -100,14 +100,14 @@ export default function Home() {
             }))}></Quotes>
           </Content>
         </div>
-
+        
+        <Content>
         <div className="pt-20">
           <div className="grid grid-cols-12 md:pb-32 pb-40 text-white">
             <div
-              className="md:col-start-4 text-xl md:col-span-6 col-start-2 col-span-10 mt-4 text-center"
-              style={{ textAlignLast: "center" }}
+              className=" text-xl md:col-span-8 col-start-2 col-span-10 mt-4"
             >
-              <div className="flex items-center justify-center gap-2 mb-4 md:mb-4">
+              <div className="flex gap-2 mb-4 md:mb-4">
                 <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
                   {t("Vad är Altostruct?")}
                 </h1>
@@ -136,9 +136,10 @@ export default function Home() {
             </div>
           </div>
         </div>
+        </Content>
 
         <Content>
-          <div className="pt-12 pb-10">
+          <div className="pt-5 pb-10">
             <BigList
               items={[
                 {

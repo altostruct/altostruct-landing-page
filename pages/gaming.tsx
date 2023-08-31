@@ -22,11 +22,16 @@ import { ContentfulPost, getContentfulPosts } from "utils/contentful";
 import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Dropdown from 'react-bootstrap/Dropdown';
+import Quotes from "@components/Quotes";
+import Card from "@components/Card";
+import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
+  const quotes = require(".data/contentful/customerQuote/all.json")
+
 
   return (
     <>
@@ -40,165 +45,114 @@ function About(props: { code: string }) {
         <Content>
           <PageStart
             title={
-              <>
-                {t("Hur")}{" "}
+              <div>
+                {t("Effektivisera ditt företag inom")}{" "}
                 <WordCircled borderCircle={true}>
                   {t("Livsmedel")}
                 </WordCircled>{" "}
-                {t("branchen är kopplad till molnet ")}
-              </>
+                {t("med molnet")}
+              </div>
             }
             mainContent={<img
-              src="/images/gaming-controller-green.png"
+              src="/images/livsmedel-green.png"
               alt=""
-            />}            
-            cta={<div className="flex gap-2">
+            />}
+            cta={<div className="flex gap-2 md:justify-start justify-center">
               <div className="hidden md:flex"><Button link="/contact">{t("Boka konsultation")}</Button></div>
-              <div className="flex md:hidden"><Button link="/contact">{t("Boka konsultation")}</Button></div>
-              <div className="flex md:hidden"><Button link="/contact">{t("Boka konsultation")}</Button></div>
-
+              <div className="md:hidden"><Button link="/contact">{t("Boka konsultation")}</Button></div>
             </div>}
-            
+
           ></PageStart>
 
         </Content>
 
+        <Content className="mt-20">
+          <Quotes data={quotes.map((item: any) => ({
+            quote: item.fields.quote,
+            author: item.fields.author,
+            role: item.fields.authorsRole,
+            company: {
+              name: item.fields.customer.fields.name,
+              url: item.fields.customer.fields.link,
+            }
+          }))}></Quotes>
+        </Content>
+
         <Content>
-          <div className="pt-20">
-            <p className="text-4xl text-[#c3eec3]">
-              Livsmedel
-            </p>
-            <p className="text-xl md:w-4/5">
-              Livsmedelsbranschen drar nytta av molntjänster genom att optimera verksamhetens agilitet, effektivisera lagerhantering och förbättra kundupplevelsen. Molntjänster möjliggör snabb skalbarhet, vilket är avgörande för att hantera varierande efterfrågan och säsongssvängningar. Data om försäljning, konsumentbeteenden och lagerstatus kan lagras och analyseras effektivt i molnet, vilket informerar smarta beslut.
-            </p>
+          <div className="md:pt-40 pt-20 md:flex justify-center">
+            <p className="md:text-4xl text-3xl">
+              <span className="text-[#c3eec3]"></span>
+
+              Molnspel erbjuder högkvalitativ <span className="text-[#c3eec3]">Spelupplevelse</span> på olika enheter genom <span className="text-[#c3eec3]">Avlägsna Servrar</span>, samtidigt som <span className="text-[#c3eec3]">Flexibel</span> och enkel åtkomst till spelet skapar smidighet. </p>
           </div>
 
-          <div className=" pt-32 pb-10">
-            <p className="text-left mb-12 text-3xl">{t("Fördelarna med livsmedel")}</p>
+          <div className=" pt-12 pb-10">
             <BigList
               items={[
                 {
-                  title: t("Skalbarhet och Flexibilitet"),
+                  title: t("Spelupplevelse"),
                   description: t(
-                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan, vilket ger flexibilitet att hantera variationer i verksamheten."
+                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan."
                   ),
-                  image: "/images/icons/Icon-52.svg",
+                  image: "/images/productivity-green.png",
                 },
                 {
-                  title: t("Effektivitet i Datahantering"),
+                  title: t("Avlägsna Servrar"),
                   description: t(
-                    "Genom att använda molntjänster kan branschen hantera och analysera stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
+                    "AWS minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning."
                   ),
-                  image: "/images/icons/Icon-52.svg",
+                  image: "/images/scale-green.png",
                 },
                 {
-                  title: t("Kostnad"),
+                  title: t("Flexibel"),
                   description: t(
-                    "Cloudtjänster minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning, vilket sparar kostnader över tiden."
+                    "Analysera i molnet av stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
                   ),
-                  image: "/images/icons/Icon-52.svg",
+                  image: "/images/analysis-green.png",
                 },
               ]}
             ></BigList>
           </div>
         </Content>
-        
-        <Content>
-          <div className="md:flex pb-20">
-          <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0 pb-10">
-            <div className="flex justify-between">
-              <div className="mb-3">
-                <p className="text-2xl md:text-4xl mb-2">Saluto</p>
-                <div className="text-xl flex gap-1">
-                  <WordCircled borderCircle>Hälsa</WordCircled>
-                  <WordCircled borderCircle>GDRP</WordCircled>
-                  <WordCircled borderCircle>GDRP</WordCircled>
-                </div>
-              </div>
-              <div className="flex gap-2">
-                <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-                <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-              </div>
-            </div>
-            <p className="text-xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
-            </p>
-          </div>
-            <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0 pb-10">
-              <div className="flex justify-between">
-                <div className="mb-3">
-                  <p className="text-2xl md:text-4xl mb-2">Saluto</p>
-                  <div className="text-xl flex gap-1">
-                    <WordCircled borderCircle>Hälsa</WordCircled>
-                    <WordCircled borderCircle>GDRP</WordCircled>
-                    <WordCircled borderCircle>GDRP</WordCircled>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-                  <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-                </div>
-              </div>
-              <p className="text-xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
-              </p>
-            </div>
-            <div className="md:w-1/3 md:first:pl-0 md:px-6 md:last:pr-0">
-              <div className="flex justify-between">
-                <div className="mb-3">
-                  <p className="text-2xl md:text-4xl mb-2">Saluto</p>
-                  <div className="text-xl flex gap-1">
-                    <WordCircled borderCircle>Hälsa</WordCircled>
-                    <WordCircled borderCircle>GDRP</WordCircled>
-                    <WordCircled borderCircle>GDRP</WordCircled>
-                  </div>
-                </div>
-                <div className="flex gap-2">
-                  <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-                  <div className="w-8"><img width={100} height={100} alt="" src="/images/icons/aws.svg"></img></div>
-                </div>
-              </div>
-              <p className="text-xl">Saluto är en medtech startup. Altostruct samarbetade med Saluto för att bygga en app som ger användarna möjlighet att både ge och få information om deras nuvarande hälsotillstånd.
-              </p>
-            </div>
-          </div>
-        </Content>
-        
-        <Content className="bg-[#1f1f1f]  border-gray-800 p-6 rounded-xl">
-          <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
-            {new Array(2).fill(null).map((_, index) => {
-              return <div key={index} className="text-left ">
-                <div className="flex flex-col gap-6">
-                  <div>
-                    <div className="flex w-fit gap-2">
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                      <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
+
+        <Content className="md:mt-10">
+          <Card title={"Våra framgångar inom branchen"}>
+            <div className="flex flex-col md:h-96 md:flex-row gap-24 md:gap-3 mt-4 divide-gray-800 divide-2">
+              {getReferenceCases().slice(3, 5).map((item: any, index: number) => {
+                return <div className="md:w-1/3  text-gray-300 flex flex-col md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+                  <div className="flex justify-between">
+                    <div className="mb-3">
+                      <p className="text-2xl md:text-3xl mb-3">{item.fields.title}</p>
+                      <div className="text-xl flex gap-1">
+                        {item.fields.tags?.slice(0, 5).map((tag: string, index: number) => {
+                          return <WordCircled key={index} borderCircle>{tag}</WordCircled>
+                        })}
+                      </div>
                     </div>
                   </div>
-                  <cite className="text-2xl md:text-4xl not-italic">
-                    They truly showed us how we can use public cloud to reduce time-to-market as we develop our digital portfolio
-                  </cite>
-                  <div className="flex justify-between text-gray-200">
-                    <div>
-                      <p className="font-extrabold">Karl Ingestam</p>
-                      <p>CTO @ Purply</p>
-                    </div>
-                  </div>
+                  <p className="text-xl text-ellipsis overflow-hidden flex-grow">{item.fields.shortDescription} </p>
+                  <Button type="secondary" link={"/cases/" + item.fields.slug} className="mt-4 ml-auto align-bottom">Läs mer</Button>
                 </div>
-              </div>
-            })}
-          </Carousel>
-        </Content>
+              })}
+            </div>
+          </Card>
+        </Content >
+
+
 
         <Content>
           <div
             className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
             style={{ fontFamily: "KHTeka-Light" }}
           >
-            <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
+            <p className="md:text-4xl text-4xl" style={{ lineHeight: "1.4" }}>
               {t("Vill du veta mer om Altostruct?")}{" "}
-              <WordCircled borderCircle={true} color="blue">
-                {t("hör av dig")}
-              </WordCircled>{" "}
-              {t("till oss så berättar vi mer!")}
+              <br />
+
+              {t("Hör av dig till oss så ")}
+              <WordCircled borderCircle> Berättar </WordCircled>
+              {t(" vi mer!")}
+
             </p>
           </div>
           <div id="#contact">
