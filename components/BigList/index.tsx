@@ -19,7 +19,7 @@ function BigList(props: BigListProps) {
             <li className={`${styles["big-list-item"]} text-lg`}>
               <img src={image} alt="" className={styles.icon} />
               <span className={`${styles.title} text-3xl`}>{title}</span>
-              <span className={`${styles.description} mt-2 text-xl`}>
+              <span className={`${styles.description} text-xl`}>
                 {description}
               </span>
             </li>

@@ -10,16 +10,17 @@ $icon-width-desktop: 6ch;
   grid-template-rows: repeat(auto-fit, minmax($icon-width-mobile, 1fr));
   align-items: center;
   gap: 1rem;
+  padding-bottom: 4rem;
 }
 
 .icon {
   grid-area: a;
-  max-width: 200%;
+  max-width: 210%;
 }
 
 .title {
   grid-area: b;
-  padding-left: 2.5rem;
+  padding-left: 2rem;
 }
 
 .index {

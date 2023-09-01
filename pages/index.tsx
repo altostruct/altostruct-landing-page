@@ -141,23 +141,23 @@ export default function Home() {
                 {
                   title: t("Optimering"),
                   description: t(
-                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan."
+                    "Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna."
                   ),
                   image: "/images/productivity-green.png",
                 },
                 {
                   title: t("Migration"),
                   description: t(
-                    "AWS minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning."
+                    "Vi stöttar dig i att smidigt migrera din nuvarande infrastruktur till AWS för en mer effektiv molnlösning."
                   ),
-                  image: "/images/scale-green.png",
+                  image: "/images/migrate.png",
                 },
                 {
                   title: t("Skräddarsyr"),
                   description: t(
-                    "Analysera i molnet av stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
+                    "Våra molnlösningar är skräddarsydda för att passa din unika infrastruktur och vi hjälper dig optimera dess prestanda."
                   ),
-                  image: "/images/analysis-green.png",
+                  image: "/images/skraddarsy.png",
                 },
               ]}
             ></BigList>
@@ -165,12 +165,23 @@ export default function Home() {
         </Content>
 
         <Content className="md:mt-20 mt-40">
-          <ReferenceCases data={getReferenceCases()}></ReferenceCases>
-
+          <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
         </Content >
 
 
-        <Content className="mt-40">
+        <Content className="md:mt-20 mt-12">
+            <div
+              className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
+              style={{ fontFamily: "KHTeka-Light" }}
+            >
+              <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
+                {t("Vill du veta mer om Altostruct?")}{" "}
+                <WordCircled borderCircle={true} color="blue">
+                  {t("hör av dig")}
+                </WordCircled>{" "}
+                {t("till oss så berättar vi mer!")}
+              </p>
+            </div>
           <Form></Form>
         </Content>
       </div >

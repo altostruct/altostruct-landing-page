@@ -25,7 +25,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import Quotes from "@components/Quotes";
 import Card from "@components/Card";
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
-
+import ReferenceCases from "@components/ReferenceCases";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
@@ -79,8 +79,8 @@ function About(props: { code: string }) {
         </Content>
 
         <Content>
-          <div className="md:pt-40 pt-20 md:flex justify-center text-center">
-            <p className="md:text-4xl text-3xl text-center">
+          <div className="md:pt-40 pt-20 md:flex">
+            <p className="md:text-4xl text-3xl">
               <span className="text-[#c3eec3]"></span>
 
               Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse. <span className="text-[#c3eec3]">Skalbarheten</span> hanterar efterfrågan, <span className="text-[#c3eec3]">dataanalys</span> ger smarta beslut.
@@ -116,28 +116,10 @@ function About(props: { code: string }) {
           </div>
         </Content>
 
-        <Content className="mt-10">
-          <Card title={"Våra framgångar inom branchen"}>
-            <div className="flex flex-col md:h-96 md:flex-row gap-24 md:gap-3 mt-4 divide-gray-800 divide-2">
-              {getReferenceCases().slice(3, 5).map((item: any, index: number) => {
-                return <div className="md:w-1/3  text-gray-300 flex flex-col md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
-                  <div className="flex justify-between">
-                    <div className="mb-3">
-                      <p className="text-2xl md:text-3xl mb-3">{item.fields.title}</p>
-                      <div className="text-xl flex gap-1">
-                        {item.fields.tags?.slice(0, 5).map((tag: string, index: number) => {
-                          return <WordCircled key={index} borderCircle>{tag}</WordCircled>
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-xl text-ellipsis overflow-hidden flex-grow">{item.fields.shortDescription} </p>
-                  <Button type="secondary" link={"/cases/" + item.fields.slug} className="mt-4 ml-auto align-bottom">Läs mer</Button>
-                </div>
-              })}
-            </div>
-          </Card>
+        <Content className="md:mt-20 mt-40">
+          <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
         </Content >
+
 
        
 

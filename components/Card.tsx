@@ -13,7 +13,7 @@ function Card(props: CardProps) {
             <div>
                 {title && <div className="w-full flex">
                     <div className="w-full">
-                        <h2 className="mb-3 border-b text-xl py-4 border-gray-700">
+                        <h2 className="mb-3 border-b text-3xl py-4 border-gray-700 text-gray-400">
                             {title}
                         </h2>
                     </div>

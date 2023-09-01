@@ -79,15 +79,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
 
         <nav className="hidden md:flex invisible md:visible ">
-          <Link
-            className={classNames(styles["button-spacing"], "group")}
-            href={"/career"}
-          >
-            {t("Karriär")}
-            <Underline></Underline>
-          </Link>
-
-
+         
           <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
             <Link
               className={classNames("group")}
@@ -143,19 +135,20 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             </Link>
             <Link
               className={classNames("group")}
-              href={"/finans"}
-            >
-              {t("Finans")}
-              <Underline></Underline>
-            </Link>
-            <Link
-              className={classNames("group")}
               href={"/halsa"}
             >
-              {t("hälsa")}
+              {t("Hälsa")}
               <Underline></Underline>
             </Link>
           </Dropdown>
+          <Link
+            className={classNames("group")}
+            href={"/contact"}
+          >
+            {t("Kontakt")}
+            <Underline></Underline>
+          </Link>
+          
 
           {/*<LanguageSelector></LanguageSelector>*/}
         </nav>
@@ -192,27 +185,32 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       {expanded && (
         <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex">
           <div className="m-auto flex-col flex text-4xl max-h-96">
-            <Fade delay={0}>
-              <Link
-                className="button-spacing text-white"
-                href={"/"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                <div>
-
-                  {t("Startsida")}
-                </div>
-              </Link>
-            </Fade>
             <Fade delay={100}>
-              <Link
-                className="button-spacing text-white"
-                href="/career"
-                onClick={() => setExpanded(!expanded)}
-              >
-                {t("Karriär")}
-              </Link>
+              <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
+                <Link
+                  className={classNames("group")}
+                  href={"/services/ai"}
+                >
+                  {t("Machine learning på Amazon Web Services ")}
+                  <Underline></Underline>
+                </Link>
+                <Link
+                  className={classNames("group")}
+                  href={"/services/aws"}
+                >
+                  {t("Amazon Web Services Optimering")}
+                  <Underline></Underline>
+                </Link>
+                <Link
+                  className={classNames("group")}
+                  href={"/services/multi-cloud"}
+                >
+                  {t("Multicloud")}
+                  <Underline></Underline>
+                </Link>
+              </Dropdown>
             </Fade>
+          
             <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
@@ -228,7 +226,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 href="/blog"
                 onClick={() => setExpanded(!expanded)}
               >
-                {t("Kunskapsbas")}
+                {t("Artiklar")}
               </Link>
             </Fade>
             <Fade delay={400}>
@@ -237,7 +235,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             <Fade delay={500}>
               <Link
                 className="text-white"
-                href={"/#kontakt"}
+                href={"/contact"}
                 onClick={() => setExpanded(!expanded)}
               >
                 {t("Kontakta oss")}
