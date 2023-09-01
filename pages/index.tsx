@@ -83,14 +83,14 @@ export default function Home() {
                 </div>
               }
                 link="/contact">{t("Boka konsultation")}</Button>
-              <Button type="secondary" link="/asd">{t("Boka konsultation")}</Button>
+              <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
             </div>}
           />
         </Content>
 
         <div>
           <Content className="my-20">
-            <Quotes data={quotes.map((item: any) => ({
+            <Quotes counter={4} data={quotes.map((item: any) => ({
               quote: item.fields.quote,
               author: item.fields.author,
               role: item.fields.authorsRole,

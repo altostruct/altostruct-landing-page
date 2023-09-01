@@ -8,12 +8,15 @@ interface QuotesProps {
         role: string;
         company: { name: string; url: string }
     }[]
+    counter: number;
+
 }
 function Quotes(props: QuotesProps) {
     const { data } = props
+    const count = props.counter
     return <div className="bg-[#1f1f1f]  border-gray-800 md:p-6 p-1 rounded-xl">
         <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
-            {data.map((item, index) => {
+            {data.slice(0, count).map((item, index) => {
                 return <div key={index} className="text-left ">
                     <div className="flex flex-col gap-6">
                         <div>
