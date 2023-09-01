@@ -35,6 +35,7 @@ import { GetStaticPaths } from "next";
 import { RichText } from "pages/blog/[id]";
 import TextSection from "@components/TextSection";
 import Card from "@components/Card";
+import ReferenceCases from "@components/ReferenceCases";
 const QUOTES = []
 
 export default function Home(props: any) {
@@ -111,25 +112,7 @@ export default function Home(props: any) {
         </Content >
 
         <Content className="mt-40">
-          <Card title={"Case Studies."}>
-            <div className="flex flex-col md:flex-row gap-3 mt-4 divide-gray-800 divide-2">
-              {referenceCases.slice(0, 3).map((item: any, index: number) => {
-                return <div className="md:w-1/3 text-gray-300 md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
-                  <div className="flex justify-between">
-                    <div className="mb-3">
-                      <p className="text-2xl md:text-3xl mb-2">{item.fields.title}</p>
-                      <div className="text-xl flex gap-1">
-                        <WordCircled borderCircle>Hälsa</WordCircled>
-                        <WordCircled borderCircle>GDRP</WordCircled>
-                        <WordCircled borderCircle>GDRP</WordCircled>
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-2xl">{item.fields.shortDescription}</p>
-                </div>
-              })}
-            </div>
-          </Card>
+          <ReferenceCases data={referenceCases} />
         </Content >
 
         <Content className="mt-40">
