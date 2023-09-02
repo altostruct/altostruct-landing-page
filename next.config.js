@@ -5,23 +5,23 @@ const nextConfig = {
 
   images: { unoptimized: true },
 
-  async exportPathMap(map) {
-    const newMap = {};
+  // async exportPathMap(map) {
+  //   const newMap = {};
 
-    for (const key in map) {
-      if (key.startsWith(`/${this.i18n.defaultLocale}`)) {
-        let newKey = key.replace(`/${this.i18n.defaultLocale}`, "");
-        if (newKey === "") newKey = "/";
-        newMap[newKey] = map[key];
-      } else {
-        newMap[key] = map[key];
-      }
-    }
+  //   for (const key in map) {
+  //     if (key.startsWith(`/${this.i18n.defaultLocale}`)) {
+  //       let newKey = key.replace(`/${this.i18n.defaultLocale}`, "");
+  //       if (newKey === "") newKey = "/";
+  //       newMap[newKey] = map[key];
+  //     } else {
+  //       newMap[key] = map[key];
+  //     }
+  //   }
 
-    return {
-      ...newMap,
-    };
-  },
+  //   return {
+  //     ...newMap,
+  //   };
+  // },
   productionBrowserSourceMaps: true,
   experimental: {
     legacyBrowsers: false,
@@ -30,7 +30,7 @@ const nextConfig = {
 
   images: {
     loader: "custom",
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [10, 16, 32, 48, 64, 96, 128, 256, 384],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   transpilePackages: ["next-image-export-optimizer"],
@@ -47,32 +47,14 @@ const nextConfig = {
     nextImageExportOptimizer_generateAndUseBlurImages: false,
   },
 
-  i18n: {
-    // These are all the locales you want to support in
-    // your application
-    locales: ["sv", "en-US"],
-    // This is the default locale you want to be used when visiting
-    // a non-locale prefixed path e.g. `/hello`
-    defaultLocale: "sv",
-
-    domains: [
-      {
-        domain: "example.com",
-        defaultLocale: "en-US",
-      },
-      {
-        domain: "example.nl",
-        defaultLocale: "nl-NL",
-      },
-      {
-        domain: "example.fr",
-        defaultLocale: "fr",
-        // an optional http field can also be used to test
-        // locale domains locally with http instead of https
-        http: true,
-      },
-    ],
-  },
+  // i18n: {
+  //   // These are all the locales you want to support in
+  //   // your application
+  //   locales: ["sv"],
+  //   // This is the default locale you want to be used when visiting
+  //   // a non-locale prefixed path e.g. `/hello`
+  //   defaultLocale: "sv",
+  // },
 };
 
 module.exports = nextConfig;

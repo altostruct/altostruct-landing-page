@@ -1,7 +1,7 @@
 function formatDate(value: string | Date) {
   if (typeof value === "string")
-    return new Date(value).toDateString().slice(0, 15);
-  else return value.toDateString().slice(0, 15);
+    return new Date(value).toDateString().slice(4, 15);
+  else return value.toDateString().slice(4, 15);
 }
 
 export function formatDateIntOnly(value: string | Date) {

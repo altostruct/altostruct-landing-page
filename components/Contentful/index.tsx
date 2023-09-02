@@ -11,6 +11,8 @@ export function ContentfulImage(
     }>
 ) {
   const { image, height, width, ...rest } = props;
+  if (!image.fields.file) return <></>
+
   const ext = image.fields.file.contentType.split("/")[1];
 
   return (

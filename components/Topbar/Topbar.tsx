@@ -11,18 +11,24 @@ import Link from "next/link";
 import Brand from "components/Brand/Brand";
 import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
+import { getContentfulProducts } from "utils/contentful";
+import Dropdown from "./Dropdown";
 
-const Underline = () => {
+
+export const Underline = () => {
   return (
     <div className="border-t origin-bottom-left border-white scale-x-0 transition-all group-hover:scale-x-100"></div>
   );
 };
+
 
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const { transparent = false, fixed = true } = props;
   const { t } = useTranslation();
 
   const [expanded, setExpanded] = React.useState(false);
+  const [industries, setIndustries] = React.useState(false);
+
   const ref = React.useRef<HTMLDivElement>(null);
 
   const threshold = 100;
@@ -43,6 +49,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     return window.removeEventListener("scroll", onScoll);
   }, []);
 
+
   React.useEffect(() => {
     if (!ref.current) return;
     if (expanded) {
@@ -54,53 +61,79 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
-    
       <header
         className={classNames(styles.topbar, {
-          "bg-[#161616]": true,
-          "bg-transparent": transparent,
-          "border-black": transparent,
+          "bg-[#161616]": !isAtTop,
+          "bg-transparent": isAtTop,
           fixed: fixed,
           absolute: !fixed,
         })}
       >
-        
-        <nav style={{float: "right"}}>
+
+        <nav style={{ float: "right" }}>
           <Link href={"/"}>
             <Brand />
           </Link>
         </nav>
-       
 
 
-        <nav className="hidden md:flex invisible md:visible">
+
+        <nav className="hidden md:flex invisible md:visible ">
+
+          <Dropdown title="Tjänster" className={classNames(styles["button-spacing"], "text-lg")}>
+            <Link
+              className={classNames("group")}
+              href={"/services/ai"}
+            >
+              {t("Machine learning på Amazon Web Services ")}
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/services/aws"}
+            >
+              {t("Amazon Web Services Optimering")}
+            </Link>
+          </Dropdown>
+
+          <Dropdown title="Industrier" className={classNames(styles["button-spacing"], "text-lg")}>
+            <Link
+              className={classNames("group")}
+              href={"/livsmedel"}
+            >
+              {t("Livsmedel")}
+
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/gaming"}
+            >
+              {t("Underhållning")}
+            </Link>
+            <Link
+              className={classNames("group")}
+              href={"/halsa"}
+            >
+              {t("Hälsa")}
+
+            </Link>
+          </Dropdown>
+
+
           <Link
-            className={classNames(styles["button-spacing"], "group")}
-            href={"/"}
-          >
-            {t("Startsida")}
-            <Underline></Underline>
-          </Link>
-          <Link
-            className={classNames(styles["button-spacing"], "group")}
-            href={"/career"}
-          >
-            {t("Karriär")}
-            <Underline></Underline>
-          </Link>
-          <Link
-            className={classNames(styles["button-spacing"], "group")}
-            href={"/about"}
-          >
-            {t("Om oss")} <Underline></Underline>
-          </Link>
-          <Link
-            className={classNames(styles["button-spacing"], "group")}
+            className={classNames(styles["button-spacing"], "group", "text-lg")}
             href={"/blog"}
           >
             {t("Artiklar")}
             <Underline></Underline>
           </Link>
+
+          <Link
+            className={classNames(styles["button-spacing"], "group", "text-lg")}
+            href={"/about"}
+          >
+            {t("Om oss")} <Underline></Underline>
+          </Link>
+
           {/*<LanguageSelector></LanguageSelector>*/}
         </nav>
 
@@ -134,27 +167,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       </header>
 
       {expanded && (
-        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex">
-          <div className="m-auto flex-col flex text-4xl max-h-96">
-            <Fade delay={0}>
-              <Link
-                className="button-spacing text-white"
-                href={"/"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                {t("Startsida")}
-              </Link>
-            </Fade>
+        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex text-lg">
+          <div className="mx-4 my-32 gap-2 flex-col flex text-4xl max-h-96">
             <Fade delay={100}>
-              <Link
-                className="button-spacing text-white"
-                href="/career"
-                onClick={() => setExpanded(!expanded)}
-              >
-                {t("Karriär")}
-              </Link>
-            </Fade>
-            <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
                 href="/about"
@@ -163,22 +178,90 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 {t("Om oss")}
               </Link>
             </Fade>
-            <Fade delay={300}>
+            <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
                 href="/blog"
                 onClick={() => setExpanded(!expanded)}
               >
-                {t("Kunskapsbas")}
+                {t("Artiklar")}
               </Link>
             </Fade>
-            <Fade delay={400}>
+
+            <div className="">
+              <Fade delay={300}>
+                <p className="text-gray-white text-4xl font-bold"> Industrier </p>
+              </Fade>
+
+              <Fade delay={400}>
+                <Link
+                  className="text-white text-3xl pl-4"
+                  href={"/livsmedel"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  - Livsmedel
+                </Link>
+              </Fade>
+              <Fade delay={500}>
+                <Link
+                  className="text-white text-3xl pl-4"
+                  href={"/gaming"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  - Underhållning
+                </Link>
+              </Fade>
+
+              <Fade delay={600}>
+                <Link
+                  className="text-white text-3xl pl-4"
+                  href={"/halsa"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  - Hälsa
+                </Link>
+              </Fade>
+
+            </div>
+
+
+            <div className="">
+              <Fade delay={700}>
+                <p className="text-white text-4xl font-bold"> Tjänster </p>
+              </Fade>
+
+              <Fade delay={800}>
+                <Link
+                  className="text-white text-3xl pl-4"
+                  href={"/services/ai"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  - AWS Machine learning
+                </Link>
+              </Fade>
+
+              <Fade delay={900}>
+                <Link
+                  className="text-white text-3xl pl-4"
+                  href={"/services/aws"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  - AWS Optimering
+                </Link>
+              </Fade>
+
+
+
+            </div>
+
+            <Fade delay={1000}>
               <div className="border-b my-3 text-white"></div>
             </Fade>
-            <Fade delay={500}>
+
+            <Fade delay={1100}>
               <Link
                 className="text-white"
-                href={"/#kontakt"}
+                href={"/contact"}
                 onClick={() => setExpanded(!expanded)}
               >
                 {t("Kontakta oss")}

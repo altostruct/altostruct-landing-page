@@ -1,7 +1,7 @@
 import contentful from "contentful";
 import addData from "../utils/addData.mjs";
 import fetch from "node-fetch";
-import dotenv from "dotenv"
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -54,6 +54,9 @@ async function loadAssets(contentType, path) {
 async function execute() {
   await loadAssets("kunskapsbas", "posts");
   await loadAssets("project", "projects");
+  await loadAssets("product", "products");
+  await loadAssets("referenceCase", "referenceCases");
+  await loadAssets("customerQuote", "customerQuote");
   await loadAssets("recruitment", "positions");
 }
 

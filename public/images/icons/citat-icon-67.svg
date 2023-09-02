@@ -3,9 +3,9 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #c3eec3;
+      fill: #8EF38C;
       }
     </style>
   </defs>
-  <polygon class="cls-1" points="46.14 0 46.14 46.13 14.54 46.13 14.54 31.59 0 31.59 0 0 46.14 0"/>
+  <polygon class="cls-1" points="46.14 0 46.14 46.13 14.54 46.13 14.54 31.59 0 31.59 0 0 46.14 0" />
 </svg>

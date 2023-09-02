@@ -143,7 +143,6 @@ function Town() {
     // TODO remove from code
     if ((window as any).PREVIEW) return;
     if (!setup) {
-      console.log(">>>>><");
 
       // TWEEN.update();
       camera.current.position.x = start.x;

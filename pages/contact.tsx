@@ -32,9 +32,21 @@ export default function Home() {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
-      <div className="bg-[#161616] pt-36 pb-20">
+      
+      <div className="bg-[#161616] md:pt-36 pt-32 pb-20">
         <Content>
-          <h1 className="mb-16">{t("Hör gärna av dig!")}</h1>
+          <div
+            className="text-white mb-10"
+            style={{ fontFamily: "KHTeka-Light" }}
+          >
+            <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
+              {t("Vill du veta mer om Altostruct?")}{" "}
+              <WordCircled borderCircle={true} color="blue">
+                {t("hör av dig")}
+              </WordCircled>{" "}
+              {t("till oss så berättar vi mer!")}
+            </p>
+          </div>
           <Form></Form>
         </Content>
       </div>

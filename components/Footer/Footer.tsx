@@ -13,23 +13,13 @@ const Footer = () => {
     <div className={lightBg}>
       <TransitionSquares></TransitionSquares>
 
-      <div className="bg-[#292929] md:pt-[20%] md:px-[10%] md:pb-[2%] pt-[50%] pl-10 pb-4">
+      <div className="bg-[#292929] md:pt-[5%] md:px-[10%] md:pb-[2%] pt-[50%] pl-10 pb-4">
         <Link href={"/blog"}>
           <h1 className="text-[#f5f5f5] mb-4">{t("Senaste nyheter")}</h1>
         </Link>
         <a href="mailto:info@altostruct.se">
           <h1 className="text-[#f5f5f5] mb-4">{t("Kontakta oss")}</h1>
         </a>
-        <Link href="/career">
-          <div className="flex text-white">
-            <img
-              className="md:w-14 w-9 mr-4"
-              alt="arrow"
-              src="/images/icons/arrow-icon.svg"
-            ></img>
-            <h1>{t("Jobba med oss")}</h1>
-          </div>
-        </Link>
       </div>
 
       <div className={styles.footer}>

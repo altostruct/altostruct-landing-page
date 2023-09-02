@@ -18,98 +18,104 @@ import { ContentfulImage } from "@components/Contentful";
 import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
 
+const options: Options = {
+  renderNode: {
+    [BLOCKS.PARAGRAPH]: (node, children) => {
+      return <p className="mb-8 leading-8">{children}</p>;
+    },
+
+    [BLOCKS.EMBEDDED_ASSET]: (node) => {
+      return (
+        <ContentfulImage alt="" className="my-16" image={node.data.target} />
+      );
+
+      return <p>asd</p>;
+      // if (node.data.__typename == "") {
+      //   const assetId = node.data.target.sys.id;
+      //   // const ref = post.body.references.find(
+      //   //   (ref: any) => ref.contentful_id === assetId
+      //   // );
+
+      //   return (
+      //     <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
+      //   );
+      // }
+
+      // try {
+      //   const alt = node.data.target.fields.title[languageMap[language]];
+      //   const url = node.data.target.fields.file[languageMap[language]].url;
+      //   return (
+      //     <div style={{ width: "100%", display: "flex" }}>
+      //       <img
+      //         style={{ margin: "auto", maxHeight: "800px" }}
+      //         alt={alt}
+      //         src={url}
+      //       />
+      //     </div>
+      //   );
+      // } catch (err) {
+      //   return <></>;
+      // }
+    },
+
+    [BLOCKS.HEADING_1]: (node, children) => {
+      return (
+        <h1 className="font-bold mb-2 mt-8 text-4xl text-white">
+          {children}
+        </h1>
+      );
+    },
+
+    [BLOCKS.HEADING_2]: (node, children) => {
+      return (
+        <h2 className="font-bold mb-2 text-2xl mt-8 text-white">
+          {children}
+        </h2>
+      );
+    },
+    [BLOCKS.HEADING_3]: (node, children) => {
+      return (
+        <h3 className="font-bold text-xl mb-2 mt-4 text-white">{children}</h3>
+      );
+    },
+
+    "asset-hyperlink": (node, children) => {
+      try {
+        const url = node.data.target.fields.file["en-US"].url;
+        return (
+          <Link
+            target="_blank"
+            type="application/octet-stream"
+            download="enunity-pamphlet"
+            href={"https:" + url}
+          >
+            {children}
+          </Link>
+        );
+      } catch (err) {
+        return <></>;
+      }
+    },
+  },
+
+  renderMark: {
+    [MARKS.BOLD]: (text) => {
+      return <b>{text}</b>;
+    },
+  },
+};
+
+
+export function RichText(props: { body: any }) {
+  const { body } = props
+  return documentToReactComponents(body, options) as any
+}
+
 interface BlogPageProps {
   post: ContentfulPost;
 }
 
 function BlogPage(props: BlogPageProps) {
-  const options: Options = {
-    renderNode: {
-      [BLOCKS.PARAGRAPH]: (node, children) => {
-        return <p className="mb-8 text-lg leading-8	">{children}</p>;
-      },
-
-      [BLOCKS.EMBEDDED_ASSET]: (node) => {
-        console.log(node);
-        return (
-          <ContentfulImage alt="" className="my-16" image={node.data.target} />
-        );
-
-        return <p>asd</p>;
-        // if (node.data.__typename == "") {
-        //   const assetId = node.data.target.sys.id;
-        //   // const ref = post.body.references.find(
-        //   //   (ref: any) => ref.contentful_id === assetId
-        //   // );
-
-        //   return (
-        //     <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
-        //   );
-        // }
-
-        // try {
-        //   const alt = node.data.target.fields.title[languageMap[language]];
-        //   const url = node.data.target.fields.file[languageMap[language]].url;
-        //   return (
-        //     <div style={{ width: "100%", display: "flex" }}>
-        //       <img
-        //         style={{ margin: "auto", maxHeight: "800px" }}
-        //         alt={alt}
-        //         src={url}
-        //       />
-        //     </div>
-        //   );
-        // } catch (err) {
-        //   return <></>;
-        // }
-      },
- 
-      [BLOCKS.HEADING_1]: (node, children) => {
-        return (
-          <h1 className="font-bold mb-2 mt-8 text-4xl text-white">
-            {children}
-          </h1>
-        );
-      },
-
-      [BLOCKS.HEADING_2]: (node, children) => {
-        return (
-          <h2 className="font-bold mb-2 text-2xl mt-8 text-white">
-            {children}
-          </h2>
-        );
-      },
-      [BLOCKS.HEADING_3]: (node, children) => {
-        return (
-          <h3 className="font-bold text-xl mb-2 mt-4 text-white">{children}</h3>
-        );
-      },
-
-      "asset-hyperlink": (node, children) => {
-        try {
-          const url = node.data.target.fields.file["en-US"].url;
-          return (
-            <Link
-              target="_blank"
-              type="application/octet-stream"
-              download="enunity-pamphlet"
-              href={"https:" + url}
-            >
-              {children}
-            </Link>
-          );
-        } catch (err) {
-          return <></>;
-        }
-      },
-    },
-
-    renderMark: {
-      [MARKS.BOLD]: (text) => {
-        return <b>{text}</b>;
-      },
-    },
-  };
 
   if (!props?.post?.fields) {
     return <></>;
@@ -149,7 +155,7 @@ function BlogPage(props: BlogPageProps) {
               />
             )}
           </div>
-          {documentToReactComponents(props.post.fields.body, options)}
+          <RichText body={props.post.fields.body}></RichText>
         </div>
       </Content>
       <Footer></Footer>
@@ -160,7 +166,7 @@ function BlogPage(props: BlogPageProps) {
 export async function getStaticProps(context: any) {
   return {
     // Passed to the page component as props
-    props: { post: getPostFromSlug(context.params.id, context.locale) },
+    props: { post: getPostFromSlug(context.params.id, context.locale) ?? null },
   };
 }
 
@@ -172,8 +178,8 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
   );
 
   return {
-    paths: posts.map((post) => {
-      return { locale: post.sys.locale, params: { id: post.fields.slug } };
+    paths: posts.filter(post => post.sys.locale === "sv").map((post) => {
+      return { params: { id: post.fields.slug } };
     }),
 
     fallback: false, // can also be true or 'blocking'

@@ -2,14 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:slnt,wght@-9,400;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Silkscreen:wght@400;700&display=swap");
 
+.glow::before {
+  // position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 0px 0px #fff, 0 0 10px 10px #c3eec3, 0 0 30px 30px #c3eec3;
+}
+.pixelated {
+  font-family: "Inter", sans-serif !important;
+  font-family: "Silkscreen", cursive !important;
+}
 
+body {
+  background: url("https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp");
+}
 * {
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
   line-height: 1.2 !important;
 }
+
 .scrollable {
   overflow: scroll;
   scrollbar-width: none;
@@ -47,13 +65,33 @@ h1 {
   font-display: fallback;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.c-animation-spin {
+  animation: spin 15s linear infinite;
+}
+
+.c-animation-reverse-spin {
+  animation: reverse-spin 15s linear infinite;
+}
+
 @font-face {
   font-family: "KHTeka-Light";
   src: url(../public/fonts/KH-Teka-Light/OTF/KHTeka-Light.otf);
   font-display: fallback;
 }
 
-$bg-color: rgb(22, 22, 22);
+$bg-color: #161616;
 $dot-color: rgb(37, 37, 37);
 
 // Dimensions
@@ -76,8 +114,8 @@ h1 {
   --primary-color-inv: white;
   --bg-dark: rgb(4, 1, 26);
   --bg-dark-secondary: rgb(0, 0, 5);
-  --link-color: #00BFFF;
-  --link-color-visited: #551A8B;
+  --link-color: #00bfff;
+  --link-color-visited: #551a8b;
 }
 
 ::-webkit-scrollbar {
@@ -87,6 +125,7 @@ h1 {
 html,
 body {
   background: var(--bg-color);
+  background-size: contain, cover;
   color: var(--text-color);
   margin: 0;
   font-family: "KHTeka", Futura PT, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -193,18 +232,6 @@ h1 {
   height: 10vw;
   position: absolute;
   overflow: visible;
-}
-
-h2 {
-  font-size: 36px;
-  margin: 0;
-  @media screen and (max-width: $small-screen) {
-    font-size: 26px;
-  }
-}
-h3 {
-  font-size: 24px;
-  margin: 0;
 }
 
 .primary {
