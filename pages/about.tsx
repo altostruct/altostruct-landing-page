@@ -41,7 +41,7 @@ function About(props: { code: string }) {
             }
             // description={"Bygger skalbara lösningar sedan 2020"}
             mainContent={
-              <Image className="scale-100 w-full" src="/images/team.png" height={10} width={10} alt=""></Image>
+              <Image className="scale-100 w-full" src="/images/team.png" height={1024} width={1024} alt=""></Image>
             }
             cta={<div className="flex gap-2">
               <Button className="group" icon={
