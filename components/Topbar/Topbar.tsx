@@ -95,13 +95,6 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
               {t("Amazon Web Services Optimering")}
               <Underline></Underline>
             </Link>
-            <Link
-              className={classNames("group")}
-              href={"/services/multi-cloud"}
-            >
-              {t("Multicloud")}
-              <Underline></Underline>
-            </Link>
           </Dropdown>
 
           <Link
@@ -184,34 +177,8 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
       {expanded && (
         <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex">
-          <div className="m-auto flex-col flex text-4xl max-h-96">
+          <div className="mx-4 my-32 flex-col flex text-4xl max-h-96">
             <Fade delay={100}>
-              <Dropdown title="Tjänster" className={classNames(styles["button-spacing"])}>
-                <Link
-                  className={classNames("group")}
-                  href={"/services/ai"}
-                >
-                  {t("Machine learning på Amazon Web Services ")}
-                  <Underline></Underline>
-                </Link>
-                <Link
-                  className={classNames("group")}
-                  href={"/services/aws"}
-                >
-                  {t("Amazon Web Services Optimering")}
-                  <Underline></Underline>
-                </Link>
-                <Link
-                  className={classNames("group")}
-                  href={"/services/multi-cloud"}
-                >
-                  {t("Multicloud")}
-                  <Underline></Underline>
-                </Link>
-              </Dropdown>
-            </Fade>
-          
-            <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
                 href="/about"
@@ -220,7 +187,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 {t("Om oss")}
               </Link>
             </Fade>
-            <Fade delay={300}>
+            <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
                 href="/blog"
@@ -229,10 +196,79 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
                 {t("Artiklar")}
               </Link>
             </Fade>
-            <Fade delay={400}>
+
+            <div className="">
+              <Fade delay={300}>
+                <p className="text-gray-400 text-4xl pt-3 font-bold"> Industier </p>
+              </Fade>
+
+                <Fade delay={400}>
+                <Link
+                  className="text-gray-200 text-3xl pl-4"
+                  href={"/livsmedel"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                Livsmedel
+                </Link>
+                </Fade>
+                <Fade delay={500}>
+                <Link
+                  className="text-gray-200 text-3xl pl-4"
+                  href={"/gaming"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  Gaming
+                </Link>
+                </Fade>
+
+                <Fade delay={600}>
+
+                <Link
+                  className="text-gray-200 text-3xl pl-4"
+                  href={"/halsa"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  Hälsa
+                </Link>
+                </Fade>
+
+            </div>
+
+
+            <div className="">
+              <Fade delay={700}>
+                <p className="text-gray-400 text-4xl pt-3 font-bold"> Tjänster </p>
+              </Fade>
+
+              <Fade delay={800}>
+                <Link
+                  className="text-gray-200 text-3xl pl-4"
+                  href={"/services/ai"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  AWS Machine learning 
+                </Link>
+              </Fade>
+
+              <Fade delay={900}>
+                <Link
+                  className="text-gray-200 text-3xl pl-4"
+                  href={"/services/aws"}
+                  onClick={() => setExpanded(!expanded)}
+                >
+                  AWS Optimering
+                </Link>
+              </Fade>
+
+            
+
+            </div>
+
+            <Fade delay={1000}>
               <div className="border-b my-3 text-white"></div>
             </Fade>
-            <Fade delay={500}>
+
+            <Fade delay={1100}>
               <Link
                 className="text-white"
                 href={"/contact"}

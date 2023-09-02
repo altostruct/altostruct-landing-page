@@ -22,22 +22,22 @@ const useTranslation = () => {
   /**Returns a translated string with values of any existing variable.*/
   const t = (text: string, variables?: Record<string, any>): string => {
     return text
-    const translations = require("i18n/" + locale + "/translation.json");
+    // const translations = require("i18n/" + locale + "/translation.json");
 
-    if (!translations.hasOwnProperty(text)) {
-      console.warn("No translation for: '" + text + "'");
-    } else {
-      text = translations[text];
-    }
+    // if (!translations.hasOwnProperty(text)) {
+    //   console.warn("No translation for: '" + text + "'");
+    // } else {
+    //   text = translations[text];
+    // }
 
-    if (variables) {
-      // replace each variable with its value
-      for (const variableKey in variables) {
-        let regex = new RegExp(`{{${variableKey}}}`, "g");
-        text = text.replace(regex, variables[variableKey]);
-      }
-    }
-    return text;
+    // if (variables) {
+    //   // replace each variable with its value
+    //   for (const variableKey in variables) {
+    //     let regex = new RegExp(`{{${variableKey}}}`, "g");
+    //     text = text.replace(regex, variables[variableKey]);
+    //   }
+    // }
+    // return text;
   };
 
   /**Sets the URL to the correct language.*/
