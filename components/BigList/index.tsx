@@ -2,6 +2,7 @@ import useTranslation from "hooks/useTranslation";
 import { ReactNode } from "react";
 import styles from "./BigList.module.scss";
 import BorderedPanel from "@components/BorderedPanel";
+import Image from "next-image-export-optimizer";
 
 interface BigListProps {
   items: { title: string; description: string; image: string }[];
@@ -17,7 +18,7 @@ function BigList(props: BigListProps) {
         return (
           <>
             <li className={`${styles["big-list-item"]} text-lg`}>
-              <img src={image} alt="" className={styles.icon} />
+              <Image src={image} alt="Icon" className={styles.icon} />
               <span className={`${styles.title} text-3xl`}>{title}</span>
               <span className={`${styles.description} text-xl`}>
                 {description}

@@ -5,23 +5,23 @@ const nextConfig = {
 
   images: { unoptimized: true },
 
-  async exportPathMap(map) {
-    const newMap = {};
+  // async exportPathMap(map) {
+  //   const newMap = {};
 
-    for (const key in map) {
-      if (key.startsWith(`/${this.i18n.defaultLocale}`)) {
-        let newKey = key.replace(`/${this.i18n.defaultLocale}`, "");
-        if (newKey === "") newKey = "/";
-        newMap[newKey] = map[key];
-      } else {
-        newMap[key] = map[key];
-      }
-    }
+  //   for (const key in map) {
+  //     if (key.startsWith(`/${this.i18n.defaultLocale}`)) {
+  //       let newKey = key.replace(`/${this.i18n.defaultLocale}`, "");
+  //       if (newKey === "") newKey = "/";
+  //       newMap[newKey] = map[key];
+  //     } else {
+  //       newMap[key] = map[key];
+  //     }
+  //   }
 
-    return {
-      ...newMap,
-    };
-  },
+  //   return {
+  //     ...newMap,
+  //   };
+  // },
   productionBrowserSourceMaps: true,
   experimental: {
     legacyBrowsers: false,
@@ -30,7 +30,7 @@ const nextConfig = {
 
   images: {
     loader: "custom",
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [10, 16, 32, 48, 64, 96, 128, 256, 384],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
   },
   transpilePackages: ["next-image-export-optimizer"],

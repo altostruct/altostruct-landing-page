@@ -3,6 +3,8 @@ import * as React from "react";
 import classNames from "classnames";
 import { url } from "inspector";
 import { Center } from "@react-three/drei";
+import NextImage from "next-image-export-optimizer";
+
 
 interface ImageProps {
   title?: string;
@@ -12,7 +14,7 @@ interface ImageProps {
 const Image = (props: ImageProps) => {
   return (
     <>
-      <img src={props.imagePath} className="max-w-full" />
+      {props.imagePath && <NextImage alt="" src={props.imagePath} className="max-w-full" />}
     </>
   );
 };

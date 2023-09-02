@@ -13,10 +13,11 @@ interface ButtonProps {
   openNewTab?: boolean;
   color?: string;
   borderCircle?: boolean;
+  filled?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, borderCircle, className, type = "primary" } = props;
+  const { children, borderCircle, filled, className, type = "primary" } = props;
 
   return (
     <span
@@ -25,6 +26,7 @@ const Button = (props: ButtonProps) => {
         style.circle,
         type === "primary" ? style.primaryColor : style.secondaryColor,
         borderCircle ? style.border : "",
+        filled ? style.filled : "",
         className
       )}
     >

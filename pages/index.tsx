@@ -52,7 +52,7 @@ export default function Home() {
         id="hs-script-loader"
         async
         defer
-        src="//js-eu1.hs-scripts.com/26849291.js"
+        src="https://js-eu1.hs-scripts.com/26849291.js"
       />
       <SEO
         title={t("Altostruct | Cloud Consulting")}
@@ -170,18 +170,18 @@ export default function Home() {
 
 
         <Content className="md:mt-20 mt-12">
-            <div
-              className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
-              style={{ fontFamily: "KHTeka-Light" }}
-            >
-              <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
-                {t("Vill du veta mer om Altostruct?")}{" "}
-                <WordCircled borderCircle={true} color="blue">
-                  {t("hör av dig")}
-                </WordCircled>{" "}
-                {t("till oss så berättar vi mer!")}
-              </p>
-            </div>
+          <div
+            className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
+            style={{ fontFamily: "KHTeka-Light" }}
+          >
+            <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
+              {t("Vill du veta mer om Altostruct?")}{" "}
+              <WordCircled borderCircle={true} color="blue">
+                {t("hör av dig")}
+              </WordCircled>{" "}
+              {t("till oss så berättar vi mer!")}
+            </p>
+          </div>
           <Form></Form>
         </Content>
       </div >

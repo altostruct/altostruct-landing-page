@@ -131,11 +131,6 @@ function BlogPage(props: BlogPageProps) {
         <div className="md:w-3/5 m-auto pt-32 text-[#eee]">
           <div className="flex gap-4 text-sm">
             <p className="">{props.post.fields.customer.fields.name}</p>
-            <p>I</p>
-            <p>
-              {props.post.fields.createDate &&
-                formatDate(props.post.fields.createDate)}
-            </p>
           </div>
           <h1 className="text-6xl font-bold">{props.post.fields.title}</h1>
           <h2 className="mt-3 mb-3 text-xl font-normal">
@@ -184,6 +179,8 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
       post.fields.isPublished ||
       process.env.NEXT_PUBLIC_CONTENTFUL_DEV === "TRUE"
   );
+
+  console.log(posts.map(post => post.fields.title + " " + post.fields.isPublished))
 
   return {
     paths: posts.filter(post => post.sys.locale === "sv").map((post) => {

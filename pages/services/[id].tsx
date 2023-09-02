@@ -52,7 +52,7 @@ export default function Home(props: any) {
         id="hs-script-loader"
         async
         defer
-        src="//js-eu1.hs-scripts.com/26849291.js"
+        src="https://js-eu1.hs-scripts.com/26849291.js"
       />
       <SEO
         title={t("Altostruct | Cloud Consulting")}

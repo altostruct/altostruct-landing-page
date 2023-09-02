@@ -8,7 +8,7 @@ interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
 
 const Dropdown: React.FC<DropdownProps> = ({ title, children, className, ...rest }) => {
     return (
-        <div className={classNames(styles.dropdown, className)} {...rest}>
+        <div className={classNames(styles.dropdown, className, "p-3")} {...rest}>
             <div>{title}</div>
             <div className={styles["dropdown-content"]}>
                 {children}

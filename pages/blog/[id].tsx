@@ -166,7 +166,7 @@ function BlogPage(props: BlogPageProps) {
 export async function getStaticProps(context: any) {
   return {
     // Passed to the page component as props
-    props: { post: getPostFromSlug(context.params.id, context.locale) },
+    props: { post: getPostFromSlug(context.params.id, context.locale) ?? null },
   };
 }
 

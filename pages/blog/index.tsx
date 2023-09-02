@@ -12,6 +12,7 @@ import SEO from "@components/SEO";
 import { ContentfulImage } from "@components/Contentful";
 import { unique } from "next/dist/build/utils";
 import { useState } from "react";
+import classNames from "classnames";
 
 function Blog(props: { posts: ContentfulPost[] }) {
   const { locale } = useRouter();
@@ -172,9 +173,11 @@ function Blog(props: { posts: ContentfulPost[] }) {
                 setFilter([...(filter ?? []), tag])
               }
             }}>
-              <WordCircled className="cursor-pointer" type={filter?.includes(tag) ? "primary" : "secondary"} borderCircle>
-                <h2 className="text-lg p-1">{tag}</h2>
-              </WordCircled>
+              <div className={classNames()}>
+                <WordCircled className="cursor-pointer" borderCircle filled={filter?.includes(tag)}>
+                  <h2 className={classNames("text-lg p-1")}> {tag}</h2>
+                </WordCircled>
+              </div>
             </div>
           })}
         </div>

@@ -26,6 +26,7 @@ import Quotes from "@components/Quotes";
 import Card from "@components/Card";
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 import ReferenceCases from "@components/ReferenceCases";
+import Image from "next-image-export-optimizer";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
@@ -53,7 +54,7 @@ function About(props: { code: string }) {
                 {t("med molnet")}
               </div>
             }
-            mainContent={<img
+            mainContent={<Image
               src="/images/livsmedel-green.png"
               alt=""
             />}
@@ -115,13 +116,13 @@ function About(props: { code: string }) {
             ></BigList>
           </div>
         </Content>
-
+        {/* 
         <Content className="md:mt-20 mt-40">
           <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
-        </Content >
+        </Content > */}
 
 
-       
+
 
         <Content>
           <div
@@ -131,7 +132,7 @@ function About(props: { code: string }) {
             <p className="md:text-4xl text-4xl" style={{ lineHeight: "1.4" }}>
               {t("Vill du veta mer om Altostruct?")}{" "}
               <br />
-              
+
               {t("Hör av dig till oss så ")}
               <WordCircled borderCircle> Berättar </WordCircled>
               {t(" vi mer!")}
