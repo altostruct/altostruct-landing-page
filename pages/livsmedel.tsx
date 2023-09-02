@@ -55,6 +55,8 @@ function About(props: { code: string }) {
               </div>
             }
             mainContent={<Image
+              width={1024}
+              height={1024}
               src="/images/livsmedel-green.png"
               alt=""
             />}

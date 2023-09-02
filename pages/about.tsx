@@ -36,8 +36,12 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <>
-                Vi är certifierade AWS konsulter i Stockholm!
+                Ta ditt företag till nya höjder med cloud.
               </>
+            }
+            // description={"Bygger skalbara lösningar sedan 2020"}
+            mainContent={
+              <Image className="scale-100 w-full" src="/images/team.png" height={10} width={10} alt=""></Image>
             }
             cta={<div className="flex gap-2">
               <Button className="group" icon={
@@ -53,75 +57,6 @@ function About(props: { code: string }) {
               <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
             </div>}
           ></PageStart>
-        </Content>
-
-        <Content className="md:pt-2 pt-40">
-          <div className="w-full flex-col gap-6 md:flex-row flex ">
-            <div className="md:w-3/5 flex-grow">
-                <Image className="md:w-40 w-36 inline-block pb-4" width={100} height={100} alt="" src="/images/pixels.png" />
-              <p className="text-2xl text-gray-200">Genom våra certifierade och erfarna konsulter erbjuder vi högkvalitativa tjänster och lösningar. Oavsett om det handlar om att flytta till molnet eller optimera befintlig molninfrastruktur är vi engagerade i att hjälpa våra kunder att navigera genom molnets komplexiteter.</p>
-            </div>
-          </div>
-        </Content >
-
-
-        <Content className="mt-12 flex-wrap flex">
-          <div className="w-1/2 mt-12 md:mt-48 md:p-6">
-            <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-39.jpg" width={1024} height={1024} />
-          </div>
-          <div className="w-1/2 md:p-6">
-            <Image alt="" className="w-full h-full object-contain" src="/images/icons/Frame 1 (90).png" width={1024} height={1024} />
-          </div>
-          <div className="m-auto w-1/2 md:p-6">
-            <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-34.jpg" width={1024} height={1024} />
-          </div>
-
-        </Content >
-
-
-      
-
-
-
-        <Content className="md:pt-40 pt-20 relative flex gap-6 flex-col" >
-          <h1 className="mt-auto">Varför välja oss?</h1>
-          <BorderedPanel label="OSS / 01.">
-            <p className="md:text-4xl">
-              <span className="text-white">
-                {t(
-                  "Altostruct är ett konsultbolag specialiserade inom AWS."
-                )}
-              </span>
-              <span className="text-gray-400">
-                {t(" Vårt team av AWS konsulter är certifierade via AWS och erbjuder ett stort utbud av " + "tjänster som exempelvis molnmigrationer, " + "AI, serverless och APIer."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
-          <BorderedPanel label="OSS / 02.">
-            <p className="md:text-4xl">
-              <span className="text-white">{t("Vår vision är att")}</span>
-              <span className="text-gray-400">
-                {t(
-                  " göra det möjligt för alla företag" +
-                  " att bygga och hosta branschledande applikationer" +
-                  " och plattformer i molnet."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
-          <BorderedPanel label="OSS / 03.">
-            <p className="md:text-4xl">
-              <span className="text-white">{t("Vår vision är att")}</span>
-              <span className="text-gray-400">
-                {t(
-                  " göra det möjligt för alla företag" +
-                  " att bygga och hosta branschledande applikationer" +
-                  " och plattformer i molnet."
-                )}
-              </span>
-            </p>
-          </BorderedPanel>
         </Content >
 
         <Content className="bg-[#1f1f1f] p-6 md:p-16 mt-20 rounded-xl">
@@ -148,6 +83,24 @@ function About(props: { code: string }) {
             <p className="mt-12">{"- Altostruct Teamet"}</p>
           </div>
         </Content>
+        <Content className="mt-12 flex-wrap flex">
+          <div className="w-1/2 mt-12 md:mt-48 md:p-6">
+            <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-39.jpg" width={1024} height={1024} />
+          </div>
+          <div className="w-1/2 md:p-6">
+            <Image alt="" className="w-full h-full object-contain" src="/images/icons/Frame 1 (90).png" width={1024} height={1024} />
+          </div>
+          <div className="m-auto w-1/2 md:p-6">
+            <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-34.jpg" width={1024} height={1024} />
+          </div>
+
+        </Content >
+
+
+
+
+
+
 
         <Content className="md:mt-10 mt-20">
           <div
@@ -166,7 +119,7 @@ function About(props: { code: string }) {
             <Form></Form>
           </div>
         </Content>
-      </div>
+      </div >
       <Footer />
     </>
   );

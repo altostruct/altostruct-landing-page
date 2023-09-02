@@ -55,7 +55,8 @@ function About(props: { code: string }) {
               </div>
             }
             mainContent={<Image
-
+              height={1024}
+              width={1024}
               src="/images/green-clock.png"
               alt=""
             />}

@@ -65,6 +65,26 @@ h1 {
   font-display: fallback;
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-spin {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.c-animation-spin {
+  animation: spin 15s linear infinite;
+}
+
+.c-animation-reverse-spin {
+  animation: reverse-spin 15s linear infinite;
+}
+
 @font-face {
   font-family: "KHTeka-Light";
   src: url(../public/fonts/KH-Teka-Light/OTF/KHTeka-Light.otf);

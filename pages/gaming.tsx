@@ -49,12 +49,15 @@ function About(props: { code: string }) {
               <div>
                 {t("Effektivisera ditt företag inom")}{" "}
                 <WordCircled borderCircle={true}>
-                  {t("Livsmedel")}
+                  {t("Underhållning & Gaming")}
                 </WordCircled>{" "}
                 {t("med molnet")}
               </div>
             }
             mainContent={<Image
+              width={1024}
+              height={1024}
+              className="w-full"
               src="/images/gaming-controller-green.png"
               alt=""
             />}
