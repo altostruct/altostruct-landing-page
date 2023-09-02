@@ -1,8 +1,7 @@
 on:
-  workflow_dispatch:
-  release:
-    types:
-      - created
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:

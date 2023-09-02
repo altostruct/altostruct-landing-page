@@ -78,7 +78,7 @@ function Blog(props: { posts: ContentfulPost[] }) {
                 })}
               </div>
               <p className="font-extralight text-xs md:text-sm text-gray-200">
-                Skriven av {" "}
+
                 {getAuthorsNames(props.fields.authors)} · {formatDate(props.fields.createDate ?? new Date())}
               </p>
             </div>
