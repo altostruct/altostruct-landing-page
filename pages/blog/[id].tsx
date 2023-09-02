@@ -138,7 +138,7 @@ function BlogPage(props: BlogPageProps) {
                 formatDate(props.post.fields.createDate)}
             </p>
           </div>
-          <h1 className="text-6xl font-bold">{props.post.fields.title}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">{props.post.fields.title}</h1>
           <h2 className="mt-3 mb-3 text-xl font-normal">
             {props.post.fields.description}
           </h2>
