@@ -73,10 +73,10 @@ function About(props: { code: string }) {
               Har ni några frågor eller vill veta mer om oss. Tveka inte på att höra av dig!
               <br></br>
               <br></br>
-              <div className="text-sm" >
-                <Button>Kontakta oss</Button>
-              </div>
             </p>
+            <div className="text-sm" >
+              <Button>Kontakta oss</Button>
+            </div>
           </div>
           <div>
 
