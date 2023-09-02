@@ -116,7 +116,6 @@ interface BlogPageProps {
 }
 
 function BlogPage(props: BlogPageProps) {
-
   if (!props?.post?.fields) {
     return <></>;
   }

@@ -100,9 +100,15 @@ export const getPostFromSlug = (
   slug: string,
   locale: string
 ): ContentfulPost => {
-  return getContentfulPosts().find(
-    (item) => item.fields.slug === slug && item.sys.locale === locale
+  const swePost = getContentfulPosts().find(
+    (item) => item.fields.slug === slug && item.sys.locale === "sv"
   )!;
+
+  const enPost = getContentfulPosts().find(
+    (item) => item.fields.slug === slug && item.sys.locale === "en_US"
+  )!;
+
+  return swePost ?? enPost;
 };
 
 export const getProductFromSlug = (

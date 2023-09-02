@@ -23,7 +23,14 @@ function Blog(props: { posts: ContentfulPost[] }) {
       (post) =>
         post.fields.isPublished ||
         process.env.NEXT_PUBLIC_CONTENTFUL_DEV === "TRUE"
-    )
+    ).sort((a, b) => {
+      if (a.sys.locale === "sv") return -1
+      if (a.sys.locale === "en-US") return 1
+      return 0
+    }).filter((post, index, arr) => {
+      // make unique by the slug
+      return arr.map((post) => post.fields.slug).indexOf(post.fields.slug) == index
+    })
     .sort(
       (a, b) =>
         new Date(b.fields.createDate).getTime() -
@@ -33,6 +40,7 @@ function Blog(props: { posts: ContentfulPost[] }) {
   const tags = posts.map(post => post.fields.tags).flat().filter((item, index, arr) => {
     return arr.indexOf(item) === index
   }).filter(Boolean)
+
 
 
 
