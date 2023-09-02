@@ -8,7 +8,7 @@
   "scripts": {
     "prebuild": "node scripts/prebuild.mjs",
     "dev": "next dev",
-    "build": "rm -rf out && npm run export && mv out/sv/blog out/blog && npm run postbuild",
+    "build": "rm -rf out && npm run export && npm run postbuild",
     "start": "next start",
     "lint": "next lint",
     "serve": "serve out",
