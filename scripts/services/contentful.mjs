@@ -45,7 +45,7 @@ async function loadAssets(contentType, path) {
     addData("contentful/assets/by/id/" + item.sys.id, buffer);
     addData("contentful/assets/by/name/" + item.fields.file.fileName, buffer);
 
-    addData("contentful/images/" + item.sys.id + "." + ext, buffer, {
+    addData("images/contentful/" + item.sys.id + "." + ext, buffer, {
       folder: "public",
     });
   }
