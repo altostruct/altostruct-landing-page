@@ -1,5 +1,5 @@
 import useTranslation from "hooks/useTranslation";
-import { ReactNode } from "react";
+import { Fragment, ReactNode } from "react";
 import styles from "./BigList.module.scss";
 import BorderedPanel from "@components/BorderedPanel";
 import Image from "next-image-export-optimizer";
@@ -16,7 +16,7 @@ function BigList(props: BigListProps) {
       {items.map((item, index) => {
         const { title, description, image } = item;
         return (
-          <>
+          <Fragment key={index}>
             <li className={`${styles["big-list-item"]} text-lg`}>
               <Image width={100} height={100} src={image} alt="Icon" className={styles.icon} />
               <span className={`${styles.title} text-3xl`}>{title}</span>
@@ -25,7 +25,7 @@ function BigList(props: BigListProps) {
               </span>
             </li>
             <hr className={`${styles.divider} border-gray-900`}></hr>
-          </>
+          </Fragment>
         );
       })}
     </ul>
