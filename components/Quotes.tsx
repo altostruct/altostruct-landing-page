@@ -15,7 +15,7 @@ function Quotes(props: QuotesProps) {
     const { data } = props
     const count = props.counter
     return <div className="bg-[#1f1f1f]  border-gray-800 md:p-6 p-1 rounded-xl">
-        <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-6">
+        <Carousel centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay className="p-3 pb-0 md:p-6">
             {data.slice(0, count).map((item, index) => {
                 return <div key={index} className="text-left ">
                     <div className="flex flex-col gap-6">

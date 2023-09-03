@@ -9,7 +9,7 @@ function Card(props: CardProps) {
     const { title, children } = props
 
     return <>
-        <div className="p-8 bg-[#1f1f1f]">
+        <div className="p-4 md:p-8 bg-[#1f1f1f]">
             <div>
                 {title && <div className="w-full flex">
                     <div className="w-full">

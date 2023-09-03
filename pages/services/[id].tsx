@@ -103,7 +103,7 @@ export default function Home(props: any) {
                 <Image className="w-6 inline-block mr-3" width={100} height={100} alt="" src="/images/icons/light-cloud.svg" />
                 {product.fields.whyUseThis}
               </h2>
-              <div className="text-4xl text-gray-200">
+              <div className="text-xl md:text-2xl text-gray-200">
                 <RichText body={product.fields.whyUseThisDescription}></RichText>
               </div>
               <Button type="primary" className="mt-6">Läs mer om oss</Button>
