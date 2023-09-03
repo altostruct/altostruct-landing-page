@@ -12,6 +12,7 @@ interface ButtonProps {
   formAction?: "submit" | "reset";
   link?: string;
   openNewTab?: boolean;
+  onClick?: VoidFunction;
   icon?: React.ReactNode
 }
 
@@ -19,6 +20,7 @@ const Button = (props: ButtonProps) => {
   const {
     children,
     openNewTab,
+    onClick,
     type = "primary",
     link,
     className,
@@ -41,11 +43,12 @@ const Button = (props: ButtonProps) => {
   return LinkWrapper(
     <button
       type={formAction}
+      onClick={onClick}
       className={classNames(
-        className,
         style.button,
         style[type],
         "font-black",
+        className,
       )}
     >
       {children}

@@ -1,7 +1,8 @@
 import useTranslation from "hooks/useTranslation";
-import styles from "./CookieBanner.module.scss"
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
+import Button from "@components/Button/Button";
+
 
 const CookieBanner = () => {
 
@@ -26,21 +27,21 @@ const CookieBanner = () => {
   return (
     <>
       {show ?
-        <div className={styles.background}>
-          <div className={styles.container}>
-            <div className={styles.textContainer}>
-              <p>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen.")}
-              <br></br>
-                <span style={{ marginLeft: "0.5rem" }}>
-                  <a className={styles.link} target="_blank" href="/Privacy_policy.pdf">{t("Läs mer!")}</a>
-                </span>
-              </p>
-            </div>
-            <br className={styles.breakLine}></br>
-            <div className={styles.buttonContainer}>
-              <button className={styles.button} onClick={handleAcceptCookie}>
-                {t("Jag förstår!")}
-              </button>
+        <div className="fixed bottom-[0vh] max-w-[40em] rounded-t-xl bg-[#161616] left-1/2 -translate-x-1/2  w-full p-3 z-50">
+          <div>
+            <div className="flex gap-10 items-center">
+              <div className="flex-1 text-sm ">
+                <p>{t("Denna webbplats använder cookies för att förbättra användarupplevelsen. ")}
+                  <span>
+                    <a target="_blank" href="/Privacy_policy.pdf">{t("Läs mer!")}</a>
+                  </span>
+                </p>
+              </div>
+              <div className="flex-0">
+                <Button className="text-xs h-5" type="secondary" onClick={handleAcceptCookie}>
+                  {t("Jag förstår!")}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
