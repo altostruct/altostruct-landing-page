@@ -65,7 +65,7 @@ function Blog(props: { posts: ContentfulPost[] }) {
 
     return (
       <Link href={"blog/" + props.fields.slug}>
-        <div className="flex items-center gap-8 md:gap-2 md:gap-12 text-gray-200 py-5 p-4 md:p-8">
+        <div className="flex items-center gap-8 md:gap-12 text-gray-200 py-5 p-4 md:p-8">
           <div className="h-fit flex-1">
             {!props.fields.authors && <p className="font-light">{props.fields.author}</p>}
             {props.fields.authors && <div className="flex text-xs items-center gap-3 mb-3">

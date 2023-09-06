@@ -28,34 +28,6 @@ const options: Options = {
       return (
         <ContentfulImage alt="" className="my-16" image={node.data.target} />
       );
-
-      return <p>asd</p>;
-      // if (node.data.__typename == "") {
-      //   const assetId = node.data.target.sys.id;
-      //   // const ref = post.body.references.find(
-      //   //   (ref: any) => ref.contentful_id === assetId
-      //   // );
-
-      //   return (
-      //     <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
-      //   );
-      // }
-
-      // try {
-      //   const alt = node.data.target.fields.title[languageMap[language]];
-      //   const url = node.data.target.fields.file[languageMap[language]].url;
-      //   return (
-      //     <div style={{ width: "100%", display: "flex" }}>
-      //       <img
-      //         style={{ margin: "auto", maxHeight: "800px" }}
-      //         alt={alt}
-      //         src={url}
-      //       />
-      //     </div>
-      //   );
-      // } catch (err) {
-      //   return <></>;
-      // }
     },
 
     [BLOCKS.HEADING_1]: (node, children) => {

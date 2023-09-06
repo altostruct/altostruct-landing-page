@@ -19,11 +19,11 @@ import BigList from "@components/BigList";
 
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 import ReferenceCases from "@components/ReferenceCases";
+import Calendar from "@components/Calendar/Calendar";
 const QUOTES = []
 
 export default function Home() {
   const { t } = useTranslation();
-  const bgLight = twconfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
 
   return (
@@ -51,7 +51,7 @@ export default function Home() {
                 <WordCircled borderCircle={true}>
                   {t("Amazon Web Services")}
                 </WordCircled>
-                {" "}{t("utveckare")}
+                {" "}{t("utvecklare")}
               </>
             }
             cta={<div className="flex gap-2">
@@ -64,12 +64,11 @@ export default function Home() {
                   </svg>
                 </div>
               }
-                link="/contact">{t("Boka konsultation")}</Button>
-              <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
+                link="/calendar">{t("Boka konsultation")}</Button>              <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
             </div>}
           />
         </Content>
-
+        
         <div>
           <Content className="my-20">
             <Quotes counter={4} data={quotes.map((item: any) => ({
