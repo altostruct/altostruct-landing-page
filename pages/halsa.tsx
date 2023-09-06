@@ -13,7 +13,6 @@ import PageStart from "@components/PageStart";
 import BigList from "@components/BigList";
 import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
 import BorderedPanel from "@components/BorderedPanel";
-import CloudRain from "@components/CloudRain";
 import SmallCity from "@components/3d/SmallCity";
 import NoSSR from "@components/NoSSR";
 import Button from "@components/Button/Button";

@@ -13,7 +13,6 @@ import PageStart from "@components/PageStart";
 import BigList from "@components/BigList";
 import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
 import BorderedPanel from "@components/BorderedPanel";
-import CloudRain from "@components/CloudRain";
 import SmallCity from "@components/3d/SmallCity";
 import NoSSR from "@components/NoSSR";
 import Image from "next-image-export-optimizer";
@@ -88,7 +87,7 @@ function About(props: { code: string }) {
             <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-39.jpg" width={1024} height={1024} />
           </div>
           <div className="w-1/2 md:p-6">
-            <Image alt="" className="w-full h-full object-contain" src="/images/icons/Frame 1 (90).png" width={1024} height={1024} />
+            <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Frame 1 (90).png" width={1024} height={1024} />
           </div>
           <div className="m-auto w-1/2 md:p-6">
             <Image alt="" className="w-full h-full object-contain" src="/images/MISC/Altostruct_office-34.jpg" width={1024} height={1024} />
