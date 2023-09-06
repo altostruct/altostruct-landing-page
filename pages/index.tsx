@@ -117,7 +117,7 @@ export default function Home() {
               ></Image>
             </div>
             <div className="font-light pb-5 text-2xl">
-              Altostruct är erfarna molnkonsulter som hjälper företag att dra navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder kostnadsfri rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
+              Altostruct är erfarna molnkonsulter som hjälper företag att navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
             </div>
 
             <Button className="group" icon={
@@ -164,12 +164,12 @@ export default function Home() {
           </div>
         </Content>
 
-        <Content className="md:mt-20 mt-40">
+        <Content className="md:mt-20 mt-20">
           <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
         </Content >
 
 
-        <Content className="md:mt-20 mt-12">
+        <Content className="md:mt-20 mt-20">
           <div
             className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
             style={{ fontFamily: "KHTeka-Light" }}
