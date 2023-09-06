@@ -1,20 +1,12 @@
 import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
-import * as fs from "fs";
 import Topbar from "@components/Topbar/Topbar";
 import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
-import TeamImage from "components/TeamImages/Image";
-import TransitionSquares from "@components/TransistionSquares";
 import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
-import BigList from "@components/BigList";
-import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
-import BorderedPanel from "@components/BorderedPanel";
-import SmallCity from "@components/3d/SmallCity";
-import NoSSR from "@components/NoSSR";
 import Image from "next-image-export-optimizer";
 import Button from "@components/Button/Button";
 

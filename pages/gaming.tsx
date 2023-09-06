@@ -1,30 +1,16 @@
 import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
-import * as fs from "fs";
 import Topbar from "@components/Topbar/Topbar";
 import Content from "@components/Content";
 import useTranslation from "hooks/useTranslation";
 import SEO from "@components/SEO";
 import WordCircled from "components/Word-Circled/Word";
-import TeamImage from "components/TeamImages/Image";
-import TransitionSquares from "@components/TransistionSquares";
 import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
 import BigList from "@components/BigList";
-import StaticSidebar from "@components/StaticSidebar/StaticSidebar";
-import BorderedPanel from "@components/BorderedPanel";
-import SmallCity from "@components/3d/SmallCity";
-import NoSSR from "@components/NoSSR";
 import Button from "@components/Button/Button";
-import Images from "@components/Images";
-import { ContentfulPost, getContentfulPosts } from "utils/contentful";
-import { Carousel } from "react-responsive-carousel"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Dropdown from 'react-bootstrap/Dropdown';
 import Quotes from "@components/Quotes";
-import Card from "@components/Card";
-import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
-import ReferenceCases from "@components/ReferenceCases";
 import Image from "next-image-export-optimizer";
 
 function About(props: { code: string }) {
