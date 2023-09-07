@@ -12,7 +12,6 @@ import Button from "@components/Button/Button";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Quotes from "@components/Quotes";
 import Image from "next-image-export-optimizer";
-import BulletPoints from "@components/RefBulletPoints";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();

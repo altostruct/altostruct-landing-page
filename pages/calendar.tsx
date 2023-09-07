@@ -5,7 +5,7 @@ import Link from "next/link";
 function CalendarPage(){
     return  <>
         <Topbar></Topbar>
-        <div className="px-1">
+        <div className="px-1 md:pt-20 pt-28">
         <Calendar></Calendar>
         </div>
     </>
