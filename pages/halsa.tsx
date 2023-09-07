@@ -32,11 +32,11 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Effektivisera ditt företag inom")}{" "}
+                {t("Det är dags att effektivisera ditt företag inom Hälsa")}{" "}
                 <WordCircled borderCircle={true}>
-                  {t("Livsmedel")}
+                  {t("Hälsa")}
                 </WordCircled>{" "}
-                {t("med molnet")}
+                {t("med AWS")}
               </div>
             }
             mainContent={<Image
@@ -79,18 +79,18 @@ function About(props: { code: string }) {
           <div className="md:pt-40 pt-20 md:flex">
             <p className="md:text-4xl text-3xl">
               <span className="text-[#c3eec3]"></span>
-
-              Molnet <span className="text-[#c3eec3]">Effektiviserar</span> hälsobranschen genom att möjliggöra snabb och säker åtkomst till patientdata, <span className="text-[#c3eec3]">Automatisering</span> av administrativa uppgifter och avancerad  <span className="text-[#c3eec3]">Dataanalys</span> ger smarta beslut.
+              AWS <span className="text-[#c3eec3]">Optimerar</span> hälsobranschen genom att möjliggöra snabb och säker åtkomst till patientdata, <span className="text-[#c3eec3]">Automatiserar</span>
+              administrativa uppgifter och leder till en mer avancerad  <span className="text-[#c3eec3]">Dataanalys</span> som genererar mer välgrundade beslut. Detta sänker kostnader samtidigt som det ökar pålitligheten. 
             </p>
           </div>
 
-          <div className=" pt-12 pb-10">
+          <div className="md:pt-32 pt-12 pb-10">
             <BigList
               items={[
                 {
                   title: t("Effektivisera"),
                   description: t(
-                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan som behövs."
+                    "AWS tillåter hälsoföretag och sjukhus att implementera nya funktioner snabbare samt underlättar datahantering."
                   ),
                   image: "/images/productivity-green.png",
                 },
@@ -104,7 +104,7 @@ function About(props: { code: string }) {
                 {
                   title: t("Analysera"),
                   description: t(
-                    "Molnbaserad dataanalys inom hälsobranschen ger insikter som förbättrar vårdkvaliteten och patientresultaten."
+                    "En mer avancerad dataanalys genererar insikter som förbättrar vårdkvaliteten och därmed patientresultaten."
                   ),
                   image: "/images/analyze2.0.png",
                 },

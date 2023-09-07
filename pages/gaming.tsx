@@ -32,11 +32,11 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Effektivisera ditt företag inom")}{" "}
+                {t("Det är dags att effektivisera ditt företag inom")}{" "}
                 <WordCircled borderCircle={true}>
-                  {t("Underhållning & Gaming")}
+                  {t("Underhållning")}
                 </WordCircled>{" "}
-                {t("med molnet")}
+                {t("med AWS")}
               </div>
             }
             mainContent={<Image
@@ -81,30 +81,30 @@ function About(props: { code: string }) {
             <p className="md:text-4xl text-3xl">
               <span className="text-[#c3eec3]"></span>
 
-              Molnspel erbjuder högkvalitativ <span className="text-[#c3eec3]">Spelupplevelse</span> på olika enheter genom <span className="text-[#c3eec3]">Avlägsna Servrar</span>, samtidigt som <span className="text-[#c3eec3]">Flexibel</span> och enkel åtkomst till spelet skapar smidighet. </p>
+              Skapa högkvalitativa <span className="text-[#c3eec3]">Spelupplevelse</span> på olika enheter med AWS. En upplevelse kännetecknad av <span className="text-[#c3eec3]">enkel åtkomst</span>, och <span className="text-[#c3eec3]">smidighet</span>. </p>
           </div>
 
-          <div className=" pt-12 pb-10">
+          <div className="md:pt-32 pt-12 pb-10">
             <BigList
               items={[
                 {
                   title: t("Spelupplevelse"),
                   description: t(
-                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan."
+                    "Med hjälp av AWS kan du skapa en smidig och problemfri spelupplevelse genom att garantera skalbarhet och pålitlighet."
                   ),
                   image: "/images/productivity-green.png",
                 },
                 {
-                  title: t("Avlägsna Servrar"),
+                  title: t("Dedikerade Servrar"),
                   description: t(
-                    "AWS minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning."
+                    "Låt ditt spel växa i sin egen takt. I stället för att investera i dyr hårdvara och infrastruktur så kan du sänka dina kostnader med AWS genom att enbart betala för den data du faktiskt använder."
                   ),
                   image: "/images/cloudgaming.png",
                 },
                 {
                   title: t("Flexibel"),
                   description: t(
-                    "Analysera i molnet av stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
+                    "Analysera stora mängder data för att dra insikter som förbättrar kundupplevelsen."
                   ),
                   image: "/images/analyze.png",
                 },

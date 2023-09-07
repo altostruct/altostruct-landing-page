@@ -12,11 +12,13 @@ import Button from "@components/Button/Button";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Quotes from "@components/Quotes";
 import Image from "next-image-export-optimizer";
+import BulletPoints from "@components/RefBulletPoints";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
+  const referenceCases = require(".data/contentful/referenceCases/all.json")
 
 
   return (
@@ -32,11 +34,11 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Effektivisera ditt företag inom")}{" "}
+                {t("Det är dags att effektivisera ditt företag inom")}{" "}
                 <WordCircled borderCircle={true}>
                   {t("Livsmedel")}
                 </WordCircled>{" "}
-                {t("med molnet")}
+                {t("med AWS")}
               </div>
             }
             mainContent={<Image
@@ -75,16 +77,22 @@ function About(props: { code: string }) {
           }))}></Quotes>
         </Content>
 
-        <Content>
-          <div className="md:pt-40 pt-20 md:flex">
-            <p className="md:text-4xl text-3xl">
-              <span className="text-[#c3eec3]"></span>
+        {/* <Content className="mt-20">
+          <BulletPoints data={referenceCases.map((item: any) => ({
+              BulletPoints: item.fields
+          }))}></BulletPoints>
+        </Content> */}
 
-              Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse. <span className="text-[#c3eec3]">Skalbarheten</span> hanterar efterfrågan, <span className="text-[#c3eec3]">dataanalys</span> ger smarta beslut.
+        <Content>
+          <div className="md:pt-40 pt-20 pb-20 md:flex">
+            <p className="md:text-3xl text-3xl">
+              Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse. 
+              Låt inte brist på kunskap inom AWS, tidspress eller stora mängder komplex data stå i er väg för att sänka kostnader och öka nöjdhet hos kunder och personal. 
+              Kort sagt, <span className="text-[#c3eec3]">skalbarheten</span> hanterar efterfrågan, <span className="text-[#c3eec3]">dataanalys</span> ger smarta beslut.
             </p>
           </div>
 
-          <div className=" pt-12 pb-10">
+          <div className="md:pt-32 pt-12 pb-10">
             <BigList
               items={[
                 {
@@ -97,14 +105,14 @@ function About(props: { code: string }) {
                 {
                   title: t("Skala"),
                   description: t(
-                    "AWS minskar behovet av dyra infrastrukturinvesteringar och erbjuder istället betalning baserad på faktisk användning."
+                    "AWS låter dig skala upp och ner beroende på mängden traffik. Strunta i dyra investeringar i infrastruktur och hårdvara och betala bara för det du faktiskt använder."
                   ),
                   image: "/images/scale-green.png",
                 },
                 {
                   title: t("Analysera"),
                   description: t(
-                    "Analysera i molnet av stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
+                    "Processa och analysera stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
                   ),
                   image: "/images/analysis-green.png",
                 },
@@ -112,10 +120,10 @@ function About(props: { code: string }) {
             ></BigList>
           </div>
         </Content>
-        {/* 
-        <Content className="md:mt-20 mt-40">
-          <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
-        </Content > */}
+          {/* 
+          <Content className="md:mt-20 mt-40">
+            <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
+          </Content > */}
 
 
 
