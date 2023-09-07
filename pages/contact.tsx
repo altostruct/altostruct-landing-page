@@ -8,8 +8,7 @@ import WordCircled from "components/Word-Circled/Word";
 import React, { useState } from "react";
 import twconfig from "tailwind.config";
 
-import Form from "@components/Form";
-
+import Formshort from "@components/Form-short";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -37,7 +36,7 @@ export default function Home() {
               {t("till oss så berättar vi mer!")}
             </p>
           </div>
-          <Form></Form>
+          <Formshort></Formshort>
         </Content>
       </div>
 

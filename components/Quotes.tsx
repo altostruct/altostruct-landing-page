@@ -21,7 +21,7 @@ function Quotes(props: QuotesProps) {
                 return <div key={index} className="text-left ">
                     <div className="flex flex-col gap-6">
                         <div>
-                            <div className="flex w-fit gap-1">
+                            <div className="flex w-fit">
                                 <img alt="cite" className="md:w-8 md:h-12 w-8 h-10" src={"/images/icons/cite.png"} />
                             </div>
                         </div>
