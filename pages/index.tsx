@@ -64,7 +64,8 @@ export default function Home() {
                   </svg>
                 </div>
               }
-                link="/calendar">{t("Boka konsultation")}</Button>              <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
+                link="/calendar">{t("Boka konsultation")}</Button>
+                <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
             </div>}
           />
         </Content>

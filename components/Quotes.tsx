@@ -21,9 +21,8 @@ function Quotes(props: QuotesProps) {
                 return <div key={index} className="text-left ">
                     <div className="flex flex-col gap-6">
                         <div>
-                            <div className="flex w-fit gap-2">
-                                <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
-                                <img alt="cite" className="w-6 h-6" src={"/images/icons/citat-icon-67.svg"} />
+                            <div className="flex w-fit gap-1">
+                                <img alt="cite" className="md:w-8 md:h-12 w-8 h-10" src={"/images/icons/cite.png"} />
                             </div>
                         </div>
                         <cite className="text-md md:text-4xl not-italic">

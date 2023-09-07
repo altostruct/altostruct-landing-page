@@ -75,13 +75,7 @@ function About(props: { code: string }) {
               url: item.fields.customer.fields.link,
             }
           }))}></Quotes>
-        </Content>
-
-        {/* <Content className="mt-20">
-          <BulletPoints data={referenceCases.map((item: any) => ({
-              BulletPoints: item.fields
-          }))}></BulletPoints>
-        </Content> */}
+        </Content> 
 
         <Content>
           <div className="md:pt-40 pt-20 pb-20 md:flex">
@@ -120,10 +114,6 @@ function About(props: { code: string }) {
             ></BigList>
           </div>
         </Content>
-          {/* 
-          <Content className="md:mt-20 mt-40">
-            <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
-          </Content > */}
 
 
 
