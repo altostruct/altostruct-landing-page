@@ -9,6 +9,7 @@ import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
 import Image from "next-image-export-optimizer";
 import Button from "@components/Button/Button";
+import Calendar from "@components/Calendar/Calendar";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
@@ -35,16 +36,7 @@ function About(props: { code: string }) {
               <Image className="scale-100 w-full" src="/images/team.png" height={1024} width={1024} alt=""></Image>
             }
             cta={<div className="flex gap-2">
-              <Button className="group" icon={
-                <div className="group-hover:translate-x-1 transition-all">
-                  <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path
-                      fill="#c3eec3"
-                      d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
-                  </svg>
-                </div>
-              }
-                link="/contact">{t("Boka konsultation")}</Button>
+              <Calendar></Calendar>
               <Button type="secondary" link="/contact">{t("Kontakta oss")}</Button>
             </div>}
           ></PageStart>

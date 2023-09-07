@@ -5,7 +5,6 @@ import Footer from "components/Footer/Footer";
 import Topbar from "components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
 import WordCircled from "components/Word-Circled/Word";
-
 import React, { useState } from "react";
 import twconfig from "tailwind.config";
 
@@ -24,7 +23,7 @@ export default function Home() {
       ></SEO>
       <Topbar></Topbar>
       
-      <div className="bg-[#161616] md:pt-36 pt-32 pb-20">
+      <div className="bg-[#161616] md:pt-36 pt-32 pb-20 h-screen">
         <Content>
           <div
             className="text-white mb-10"

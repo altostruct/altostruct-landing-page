@@ -1,25 +1,29 @@
-import { Ref, useEffect, useState } from "react";
-import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import styles from "./Calendar.module.css";
-import { InlineWidget } from "react-calendly";
-
-
-const DynamicPopupWidget = dynamic(() => import("react-calendly").then((module) => module.PopupButton), {
-  ssr: false, // Ensure component is not rendered on the server-side
-});
+import useTranslation from "hooks/useTranslation";
+import { PopupModal } from "react-calendly";
 
 const Calendar = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [rootElement, setRootElement] = useState<HTMLElement | null>(null);
+  const { t } = useTranslation();
   useEffect(() => {
-    setRootElement(document.getElementById('empty'));
+    setRootElement(document.getElementById("__next"));
   }, []);
 
   return (
     <>
-    <div id="empty"></div>
-      {rootElement ? <InlineWidget
-          url="https://calendly.com/erik-rehn"
-        /> : <div></div>}
+      <button
+        style={{ display: "block", margin: "0" }}
+        onClick={() => { setIsOpen(true) }}
+        className={styles.bookMeeting_button}
+      >
+        Book a meeting!
+      </button>
+      {rootElement ? <PopupModal
+        url="https://calendly.com/erik-rehn"
+        rootElement={rootElement}
+        onModalClose={() => setIsOpen(false)} open={isOpen} /> : <></>}
     </>
   );
 };
