@@ -1,5 +1,5 @@
 import NoSSR from "@components/NoSSR";
-import { LegacyRef, ReactNode, Suspense, useEffect, useRef } from "react";
+import React, { LegacyRef, ReactNode, Suspense, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 import type { GlobeMethods } from "react-globe.gl";
 import Button from "@components/Button/Button";
@@ -48,11 +48,15 @@ function PageStart(props: PageStartProps) {
       ref.current.controls().enableZoom = false;
     }
   }, [ref]);
+  const threshold = 100;
+
+
 
 
   return (
     <div className="relative">
-      <div className="flex gap-16 md:h-screen max-h-[96em]">
+
+      <div className="flex gap-16 md:h-[90vh] max-h-[96em]">
         <div className="mt-[38vh] md:my-auto -translate-y-10 z-10 relative flex-1 h-fit w-2/3">
           <h1 className="mb-3 text-4xl md:text-6xl leading-tight md:leading-tight">
             {title}
@@ -63,6 +67,7 @@ function PageStart(props: PageStartProps) {
           </p>
           {cta && <div className="pt-4">{cta}</div>}
         </div>
+
         {mainContent && <div className="absolute opacity-10 md:opacity-100 md:relative md:w-1/3">{mainContent}</div>}
         {!mainContent && <div className="top-0 -translate-y-1/2 opacity-50 w-96 h-96 md:top-0 md:left-0 left-full -translate-x-1/2 md:opacity-100 absolute md:relative md:my-auto md:w-1/3 md:translate-y-0 md:translate-x-0">
           <div className="m-auto w-full md:w-full">

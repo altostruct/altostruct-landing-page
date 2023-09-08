@@ -36,7 +36,7 @@ export default function Home(props: any) {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       />
       <Topbar></Topbar>
-      <div className="pb-48">
+      <div>
         <Content>
           <div className="relative">
             <PageStart
@@ -64,7 +64,7 @@ export default function Home(props: any) {
           </div>
         </Content>
 
-        <Content className="mt-40">
+        <Content className="mt-40 md:mt-0">
           <Card title={product.fields.slogan}>
             <span className="text-2xl">
               <RichText body={product.fields.sloganDescription}></RichText>

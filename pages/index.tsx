@@ -32,7 +32,7 @@ export default function Home() {
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       />
       <Topbar></Topbar>
-      <div className="pb-48">
+      <div>
         <Content>
           <PageStart
             title={
@@ -59,9 +59,9 @@ export default function Home() {
             </div>}
           />
         </Content>
-  
+
         <div>
-          <Content className="my-40">
+          <Content className="my-40 md:mt-0">
             <Quotes counter={4} data={quotes.map((item: any) => ({
               quote: item.fields.quote,
               author: item.fields.author,
