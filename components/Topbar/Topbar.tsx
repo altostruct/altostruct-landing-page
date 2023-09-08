@@ -13,13 +13,13 @@ import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
 import { getContentfulProducts } from "utils/contentful";
 import Dropdown from "./Dropdown";
+import ml from 'components/Topbar/icons/ml.svg'
 
-
-export const Underline = () => {
-  return (
-    <div className="border-t origin-bottom-left border-white scale-x-0 transition-all group-hover:scale-x-100"></div>
-  );
-};
+// export const Underline = () => {
+//   return (
+//     <div className="border-t origin-bottom-left border-red-400 scale-x-0 transition-all group-hover:scale-x-100"></div>
+//   );
+// };
 
 
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
@@ -85,20 +85,22 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
 
 
-          <Dropdown title="Tjänster" className={classNames(styles["button-spacing"], "text-lg ")}>
+          <Dropdown icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
+          title="Tjänster" className={classNames(styles["button-spacing"], "text-lg")}>
+          {getContentfulProducts().map(v=>{
+            return <div className="flex">
+            <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+            <Link
+              className={classNames("group")}
+              href={"/services/"+v.fields.slug}
+            >
+              {v.fields.name}
+            </Link>
+            </div>
+          })}
 
-            <Link
-              className={classNames("group")}
-              href={"/services/ai"}
-            >
-              {t("Machine learning på Amazon Web Services ")}
-            </Link>
-            <Link
-              className={classNames("group")}
-              href={"/services/aws"}
-            >
-              {t("Amazon Web Services Optimering")}
-            </Link>
+              
+            
           </Dropdown>
 
           <Dropdown 
@@ -118,42 +120,55 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             //     </svg>
             // </div>
             // } 
-          title="Industrier" className={classNames(styles["button-spacing"], "text-lg pr-4")}>
-            <Link
-              className={classNames("group")}
-              href={"/livsmedel"}
-            >
-              {t("Livsmedel")}
-            </Link>
-            <Link
-              className={classNames("group")}
-              href={"/gaming"}
-            >
-              {t("Underhållning")}
-            </Link>
-            <Link
-              className={classNames("group")}
-              href={"/halsa"}
-            >
-              {t("Hälsa")}
-            </Link>
+            icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
+            title="Industrier" className={classNames(styles["button-spacing"], "text-lg")}>
+            <div className="flex">
+            <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+              <Link
+                className={classNames("group")}
+                href={"/livsmedel"}
+              >
+                {t("Livsmedel")}
+              </Link>
+            </div>
+
+            <div className="flex">
+              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+              <Link
+                className={classNames("group")}
+                href={"/gaming"}
+              >
+                {t("Underhållning")}
+              </Link>
+            </div>
+
+            <div className="flex">
+              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+              <Link
+                className={classNames("group")}
+                href={"/halsa"}
+              >
+                {t("Hälsa")}
+              </Link>
+            </div>
           </Dropdown>
 
 
           <Link
-            className={classNames(styles["button-spacing"], "group", "text-lg pr-2")}
+            className={classNames(styles["button-spacing"], "group", "text-lg")}
             href={"/blog"}
           >
             {t("Artiklar")}
-            <Underline></Underline>
+            {/* <Underline></Underline> */}
           </Link>
 
           <Link
-            className={classNames(styles["button-spacing"], "group", "text-lg pl-2")}
+            className={classNames(styles["button-spacing"], "group", "text-lg")}
             href={"/about"}
           >
-            {t("Om oss")} <Underline></Underline>
-          </Link>
+            {t("Om oss")} 
+            {/* <Underline></Underline>*/}
+          </Link> 
 
           {/*<LanguageSelector></LanguageSelector>*/}
         </nav>

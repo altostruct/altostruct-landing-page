@@ -80,7 +80,12 @@ export const getContentfulPosts = (): ContentfulPost[] => {
 };
 
 export const getContentfulProducts = (): any[] => {
-  return products as any;
+  return (products as any).filter(
+    (post: ContentfulPost) =>
+      post.sys.locale === "sv" &&
+      (post.fields.isPublished ||
+        process.env.NEXT_PUBLIC_CONTENTFUL_DEV === "TRUE")
+  );
 };
 
 export const getContentfulPositions = (): ContentfulPosition[] => {
