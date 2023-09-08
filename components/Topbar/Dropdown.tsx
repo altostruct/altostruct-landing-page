@@ -1,6 +1,5 @@
 import React, { ReactNode, HTMLAttributes } from "react";
 import classNames from "classnames";
-import { Underline } from "./Topbar";
 
 
 interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
