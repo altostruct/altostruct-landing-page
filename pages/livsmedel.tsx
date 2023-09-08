@@ -64,7 +64,7 @@ function About(props: { code: string }) {
 
         </Content>
 
-        <Content className="mt-20">
+        <Content className="mt-40 md:mt-0">
           <Quotes counter={3} data={quotes.map((item: any) => ({
             quote: item.fields.quote,
             author: item.fields.author,
@@ -74,13 +74,13 @@ function About(props: { code: string }) {
               url: item.fields.customer.fields.link,
             }
           }))}></Quotes>
-        </Content> 
+        </Content>
 
         <Content>
           <div className="md:pt-40 pt-20 pb-20 md:flex">
             <p className="md:text-3xl text-3xl">
-              Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse. 
-              Låt inte brist på kunskap inom AWS, tidspress eller stora mängder komplex data stå i er väg för att sänka kostnader och öka nöjdhet hos kunder och personal. 
+              Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse.
+              Låt inte brist på kunskap inom AWS, tidspress eller stora mängder komplex data stå i er väg för att sänka kostnader och öka nöjdhet hos kunder och personal.
               Kort sagt, <span className="text-[#c3eec3]">skalbarheten</span> hanterar efterfrågan, <span className="text-[#c3eec3]">dataanalys</span> ger smarta beslut.
             </p>
           </div>

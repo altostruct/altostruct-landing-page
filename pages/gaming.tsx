@@ -65,7 +65,7 @@ function About(props: { code: string }) {
 
         </Content>
 
-        <Content className="mt-20">
+        <Content className="mt-40 md:mt-0">
           <Quotes counter={3} data={quotes.map((item: any) => ({
             quote: item.fields.quote,
             author: item.fields.author,

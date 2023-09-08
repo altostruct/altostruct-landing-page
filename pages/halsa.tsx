@@ -63,7 +63,7 @@ function About(props: { code: string }) {
 
         </Content>
 
-        <Content className="mt-20">
+        <Content className="mt-40 md:mt-0">
           <Quotes counter={3} data={quotes.map((item: any) => ({
             quote: item.fields.quote,
             author: item.fields.author,
@@ -80,7 +80,7 @@ function About(props: { code: string }) {
             <p className="md:text-4xl text-3xl">
               <span className="text-[#c3eec3]"></span>
               AWS <span className="text-[#c3eec3]">Optimerar</span> hälsobranschen genom att möjliggöra snabb och säker åtkomst till patientdata, <span className="text-[#c3eec3]">Automatiserar </span>
-              administrativa uppgifter och leder till en mer avancerad  <span className="text-[#c3eec3]">Dataanalys</span> som genererar mer välgrundade beslut. Detta sänker kostnader samtidigt som det ökar pålitligheten. 
+              administrativa uppgifter och leder till en mer avancerad  <span className="text-[#c3eec3]">Dataanalys</span> som genererar mer välgrundade beslut. Detta sänker kostnader samtidigt som det ökar pålitligheten.
             </p>
           </div>
 
