@@ -6,7 +6,6 @@ import Topbar from "components/Topbar/Topbar";
 import useTranslation from "hooks/useTranslation";
 import WordCircled from "components/Word-Circled/Word";
 import React, { useState } from "react";
-import twconfig from "tailwind.config";
 import PageStart from "@components/PageStart";
 import Formshort from "@components/Form-short";
 import Button from "@components/Button/Button";
@@ -19,8 +18,7 @@ import BigList from "@components/BigList";
 
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 import ReferenceCases from "@components/ReferenceCases";
-import Calendar from "@components/Calendar/Calendar";
-const QUOTES = []
+
 
 export default function Home() {
   const { t } = useTranslation();
@@ -29,13 +27,6 @@ export default function Home() {
   return (
     <>
       <CookieBanner></CookieBanner>
-      <Script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="https://js-eu1.hs-scripts.com/26849291.js"
-      />
       <SEO
         title={t("Altostruct | Cloud Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
