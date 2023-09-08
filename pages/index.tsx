@@ -68,7 +68,7 @@ export default function Home() {
             </div>}
           />
         </Content>
-        
+  
         <div>
           <Content className="my-40">
             <Quotes counter={4} data={quotes.map((item: any) => ({
