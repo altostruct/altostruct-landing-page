@@ -34,6 +34,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const threshold = 100;
   const [isAtTop, setIsAtTop] = React.useState(true);
 
+  let counter = 700
+  const addcount = 100
+
   React.useEffect(() => {
     const onScoll = () => {
       if (window.scrollY > threshold) setIsAtTop(false);
@@ -99,8 +102,6 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             </div>
           })}
 
-              
-            
           </Dropdown>
 
           <Dropdown 
@@ -203,58 +204,69 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       </header>
 
       {expanded && (
-        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen right-0 top-0 fixed flex text-lg">
-          <div className="mx-4 my-32 gap-2 flex-col flex text-4xl max-h-96">
+        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen overflow-y-auto right-0 top-0 fixed">
+          <div className="ml-4 my-32 flex-col flex text-2xl max-h-96">
+            <div className="pb-4">
             <Fade delay={100}>
               <Link
                 className="button-spacing text-white"
-                href="/about"
+                href="/"
                 onClick={() => setExpanded(!expanded)}
               >
-                {t("Om oss")}
+                <p className="font-light text-3xl">Startsida</p>
               </Link>
             </Fade>
+            </div>
+
+            <div className="pb-4">
             <Fade delay={200}>
               <Link
                 className="button-spacing text-white"
                 href="/blog"
                 onClick={() => setExpanded(!expanded)}
               >
-                {t("Artiklar")}
+                <p className="font-light text-3xl">Artiklar</p>
               </Link>
             </Fade>
+            </div>
 
-            <div className="">
+            <div className="pb-1">
               <Fade delay={300}>
-                <p className="text-gray-white text-4xl font-bold"> Industrier </p>
+                <p className="text-3xl font-light"> Industrier </p>
               </Fade>
+            </div>
 
+            <div className="pb-5">
               <Fade delay={400}>
                 <Link
-                  className="text-white text-3xl pl-4"
+                  className="flex text-white text-xl pb-3 pt-2"
                   href={"/livsmedel"}
                   onClick={() => setExpanded(!expanded)}
                 >
-                  - Livsmedel
+                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                  <p className="w-5/6 text-xl text-start">Livsmedel</p>
                 </Link>
               </Fade>
+              
               <Fade delay={500}>
                 <Link
-                  className="text-white text-3xl pl-4"
+                  className="flex text-white text-xl pb-3"
                   href={"/gaming"}
                   onClick={() => setExpanded(!expanded)}
                 >
-                  - Underhållning
+                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                  <p className="w-5/6 text-xl text-start">Underhållning</p>
                 </Link>
               </Fade>
 
               <Fade delay={600}>
                 <Link
-                  className="text-white text-3xl pl-4"
+                  className="flex text-white text-xl"
                   href={"/halsa"}
                   onClick={() => setExpanded(!expanded)}
                 >
-                  - Hälsa
+                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                  <p className="w-5/6 text-xl text-start">Hälsa</p>
                 </Link>
               </Fade>
 
@@ -263,45 +275,53 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
             <div className="">
               <Fade delay={700}>
-                <p className="text-white text-4xl font-bold"> Tjänster </p>
+                <p className="text-white text-3xl pb-4"> Tjänster </p>
               </Fade>
-
-              <Fade delay={800}>
-                <Link
-                  className="text-white text-3xl pl-4"
-                  href={"/services/ai"}
-                  onClick={() => setExpanded(!expanded)}
-                >
-                  - AWS Machine learning
-                </Link>
-              </Fade>
-
-              <Fade delay={900}>
-                <Link
-                  className="text-white text-3xl pl-4"
-                  href={"/services/aws"}
-                  onClick={() => setExpanded(!expanded)}
-                >
-                  - AWS Optimering
-                </Link>
-              </Fade>
-
-
-
+              
+              {getContentfulProducts().map((v, index) => {
+                return <div className="" key={index}>
+                  <Fade delay={(counter + addcount)}>
+                    <div className="flex pl-3 pb-3">
+                      <svg className="w-2/12 rotate-90 mt-2 pr-1 max-w-3 max-h-3 h-full" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                    <Link
+                      className={classNames("text-xl text-white w-9/12")}
+                      href={"/services/" + v.fields.slug}
+                    >
+                        <p>{v.fields.name}</p>
+                    </Link>
+                    </div>
+                    </Fade>
+                </div>
+              })}
             </div>
+           
+
 
             <Fade delay={1000}>
-              <div className="border-b my-3 text-white"></div>
+              <div className="border-b my-10 text-white"></div>
             </Fade>
 
             <Fade delay={1100}>
               <Link
-                className="text-white"
+                className="text-white text-4xl"
                 href={"/contact"}
                 onClick={() => setExpanded(!expanded)}
               >
                 {t("Kontakta oss")}
               </Link>
+            </Fade>
+
+            <Fade delay={1200}>
+              <div className="pt-2">              
+                <Link
+                className="text-white text-4xl"
+                href={"/about"}
+                onClick={() => setExpanded(!expanded)}
+              >
+                {t("Om oss")}
+              </Link>
+              </div>
+
             </Fade>
 
             {/* <Fade delay={600}>
