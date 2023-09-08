@@ -12,7 +12,7 @@ import Button from "@components/Button/Button";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Quotes from "@components/Quotes";
 import Image from "next-image-export-optimizer";
-import Calendar from "@components/Calendar/Calendar";
+import Formshort from "@components/Form-short";
 
 function About(props: { code: string }) {
   const { t } = useTranslation();
@@ -133,7 +133,7 @@ function About(props: { code: string }) {
             </p>
           </div>
           <div id="#contact">
-            <Form></Form>
+            <Formshort></Formshort>
           </div>
         </Content>
       </div>

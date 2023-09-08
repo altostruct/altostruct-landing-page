@@ -9,8 +9,7 @@ import tailwindConfig from "tailwind.config";
 import PageStart from "@components/PageStart";
 import Image from "next-image-export-optimizer";
 import Button from "@components/Button/Button";
-import Calendar from "@components/Calendar/Calendar";
-
+import Formshort from "@components/Form-short";
 function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
@@ -107,7 +106,7 @@ function About(props: { code: string }) {
             </p>
           </div>
           <div id="#contact">
-            <Form></Form>
+            <Formshort></Formshort>
           </div>
         </Content>
       </div >

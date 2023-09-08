@@ -19,8 +19,7 @@ import { GetStaticPaths } from "next";
 import { RichText } from "pages/blog/[id]";
 import Card from "@components/Card";
 import ReferenceCases from "@components/ReferenceCases";
-import Calendar from "@components/Calendar/Calendar";
-const QUOTES = []
+import Formshort from "@components/Form-short";
 
 export default function Home(props: any) {
   const { product, referenceCases } = props
@@ -99,7 +98,7 @@ export default function Home(props: any) {
         </Content >
 
         <Content className="mt-40">
-          <Form></Form>
+          <Formshort></Formshort>
         </Content>
       </div >
 
