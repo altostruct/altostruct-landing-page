@@ -78,14 +78,14 @@ function Formshort() {
         style={{
           display: "flex",
           width: "100%",
-          gap: "1.5em",
+          gap: "1.4em",
           paddingBottom: "2em"
         }}
       >
-        <div style={{ flexGrow: 1, paddingTop: "0.6rem"}}>
+        <div style={{ flexGrow: 1, paddingTop: "0.2rem"}}>
           <label htmlFor="fullName">{t("För- och efternamn")}</label>
           <input type="text" id="fullName" name="from_name" />
-          <label htmlFor="email">{t("Mejladress")}</label>
+          <label style={{paddingTop: "0.35em"}} htmlFor="email">{t("Mejladress")}</label>
           <input type="email" id="email" name="reply_to" />
           <br />
         </div>
