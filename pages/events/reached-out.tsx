@@ -12,9 +12,6 @@ function ReachedOut() {
   useEffect(() => {
     if (!email) setEmail(new URLSearchParams(location.search).get("email")!);
 
-    setTimeout(() => {
-      push("/");
-    }, 30000);
   }, [email]);
 
   return (
@@ -22,10 +19,8 @@ function ReachedOut() {
       <Topbar></Topbar>
       <div className="w-screen flex h-screen">
         <div className="m-auto w-8/12 text-center">
-          <h1 className="text-4xl">
-            {t(
-              `Tack för ditt meddelande! Vi svarar till din mejladress: ${email}, så snart vi kan. 🎈`,
-            )}
+          <h1 className="text-[2rem]">
+            Tack för ditt meddelande! Vi svarar till din mejladress så snart vi kan. 🎈
           </h1>
           <div className="flex justify-center mt-10 w-full">
             <Button link="/">{t("Gå tillbaka")}</Button>

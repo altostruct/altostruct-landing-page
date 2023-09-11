@@ -31,7 +31,7 @@ export default function Home() {
             <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
               {t("Vill du veta mer om Altostruct?")}{" "}
               <WordCircled borderCircle={true} color="blue">
-                {t("hör av dig")}
+                {t("Hör av dig")}
               </WordCircled>{" "}
               {t("till oss så berättar vi mer!")}
             </p>

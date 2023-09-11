@@ -35,7 +35,7 @@ function About(props: { code: string }) {
               <div>
                 {t("Det är dags att")}{" "}
                 <WordCircled borderCircle={true}>
-                  {t("effektivisera")}
+                  {t("Effektivisera")}
                 </WordCircled>{" "}
                 {t("ditt företag inom hälsa med AWS")}
               </div>
