@@ -14,7 +14,7 @@ function ReachedOut() {
 
     setTimeout(() => {
       push("/");
-    }, 2000);
+    }, 30000);
   }, [email]);
 
   return (
@@ -24,8 +24,7 @@ function ReachedOut() {
         <div className="m-auto w-8/12 text-center">
           <h1 className="text-4xl">
             {t(
-              "Tack för ditt meddelande! Vi svarar till din mejladress ({{email}}) så snart vi kan. 🎈",
-              { email }
+              `Tack för ditt meddelande! Vi svarar till din mejladress: ${email}, så snart vi kan. 🎈`,
             )}
           </h1>
           <div className="flex justify-center mt-10 w-full">

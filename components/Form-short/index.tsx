@@ -78,7 +78,8 @@ function Formshort() {
         style={{
           display: "flex",
           width: "100%",
-          gap: "4em",
+          gap: "1.5em",
+          paddingBottom: "2em"
         }}
       >
         <div style={{ flexGrow: 1, paddingTop: "0.6rem"}}>
@@ -88,7 +89,7 @@ function Formshort() {
           <input type="email" id="email" name="reply_to" />
           <br />
         </div>
-        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300	" }}>
+        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300"}}>
           <label htmlFor="message">{t("Meddelande")}</label>
           <textarea id="message" name="message" rows={6}></textarea>
           <div
