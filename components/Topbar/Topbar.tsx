@@ -9,11 +9,9 @@ import classNames from "classnames";
 
 import Link from "next/link";
 import Brand from "components/Brand/Brand";
-import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import useTranslation from "hooks/useTranslation";
 import { getContentfulProducts } from "utils/contentful";
 import Dropdown from "./Dropdown";
-import ml from 'components/Topbar/icons/ml.svg'
 
 // export const Underline = () => {
 //   return (
