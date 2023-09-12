@@ -22,7 +22,7 @@ function Formshort() {
 
   const form = useRef<HTMLFormElement | null>(null);
   const [isDisabled, setIsDisabled] = useState(false);
-
+  const url = "/events/reached-out"
 
   const validateInput = (input: FormInput) => {
     const errors: string[] = [];
@@ -56,8 +56,6 @@ function Formshort() {
 
     const errors = validateInput(values);
 
-  
-
     if (errors !== null) {
       alert(errors.join("\n"));
       return;
@@ -70,8 +68,9 @@ function Formshort() {
         form.current,
         "user_k0ZJNxep5Jd9wlP37YY93"
       );
-      router.push("/events/reached-out", {
-        query: "email=" + encodeURI(values.email!),
+      router.push({
+        pathname: "/events/reached-out",
+        query: { email: values.email },
       });
     } catch (error) {
       console.error(error);
