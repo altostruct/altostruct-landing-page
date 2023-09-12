@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import emailjs from "emailjs-com";
-
 import styles from "./Form.module.scss";
 import Button from "components/Button/Button";
 import classNames from "classnames";
 import useTranslation from "hooks/useTranslation";
 import { useRouter } from "next/router";
+
 interface FormInput {
   fullName?: string;
   email?: string;
@@ -21,6 +21,23 @@ function Formshort() {
   const router = useRouter();
 
   const form = useRef<HTMLFormElement | null>(null);
+  const [isDisabled, setIsDisabled] = useState(false);
+
+
+  const validateInput = (input: FormInput) => {
+    const errors: string[] = [];
+
+    if (!input.email) errors.push("Provide an email!");
+
+    if (errors.length === 0) {
+      setIsDisabled(true)
+      console.log(isDisabled)
+      return null;
+    }
+
+    return errors;
+  };
+
 
   const sendEmail = async (event: any) => {
     // Pervents a default post request associated with the form
@@ -31,16 +48,6 @@ function Formshort() {
       return false;
     }
 
-    const validateInput = (input: FormInput) => {
-      const errors: string[] = [];
-
-      if (!input.email) errors.push("Provide an email!");
-    
-      if (errors.length === 0) return null;
-
-      return errors;
-    };
-
     const values: FormInput = {
       email: form.current.email.value,
       message: form.current.message.value,
@@ -48,6 +55,8 @@ function Formshort() {
     };
 
     const errors = validateInput(values);
+
+  
 
     if (errors !== null) {
       alert(errors.join("\n"));
@@ -108,7 +117,7 @@ function Formshort() {
               alignItems: "center",
             }}
           >
-            <Button type="primary" formAction="submit">
+            <Button type={isDisabled === true ? "secondary" : "primary" } formAction="submit">
               {t("Skicka")}
             </Button>
           </div>
