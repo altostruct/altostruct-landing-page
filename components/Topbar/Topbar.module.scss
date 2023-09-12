@@ -103,8 +103,8 @@ $small-screen: 720px;
 
   .button-spacing {
     margin-right: 1em;
-    text-decoration: underline solid #c3eec3 1%;    
-    text-underline-offset: 3px;
+    // text-decoration: underline solid #c3eec3 1%;    
+    // text-underline-offset: 3px;
 
     @media screen and (max-width: $small-screen) {
       margin-right: 0.5em;
