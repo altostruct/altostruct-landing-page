@@ -19,7 +19,8 @@ function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
-
+  const industry = require(".data/contentful/industry/all.json")
+  const gaming = industry[2]
 
   return (
     <>
@@ -34,11 +35,12 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Det är dags att effektivisera ditt företag inom")}{" "}
+                {gaming.fields.textTitleStart}
+                {" "}
                 <WordCircled borderCircle={true}>
-                  {t("Underhållning")}
+                  {gaming.fields.titleWordCirled}
                 </WordCircled>{" "}
-                {t("med AWS")}
+                {gaming.fields.textTitleEnd}
               </div>
             }
             mainContent={<Image
@@ -78,35 +80,30 @@ function About(props: { code: string }) {
         </Content>
 
         <Content>
-          <div className="md:pt-40 pt-20 md:flex justify-center">
-            <p className="md:text-4xl text-3xl">
-              <span className="text-[#c3eec3]"></span>
-
-              Skapa högkvalitativa <span className="text-[#c3eec3]">Spelupplevelse</span> på olika enheter med AWS. En upplevelse kännetecknad av <span className="text-[#c3eec3]">enkel åtkomst</span>, och <span className="text-[#c3eec3]">smidighet</span>. </p>
+          <div className="md:pt-40 pt-20 pb-20 md:flex">
+            <p className="md:text-3xl text-3xl">
+              {gaming.fields.beforeFirstKeyword} <span className="text-[#c3eec3]"> {gaming.fields.textFirstKeyword} </span>
+              {gaming.fields.beforeSecondKeyword} <span className="text-[#c3eec3]"> {gaming.fields.textSecondKeyword} </span>
+              {gaming.fields.beforeThirdKeyword} <span className="text-[#c3eec3]"> {gaming.fields.thirdKeyWord} </span>{gaming.fields.afterThirdKeyword}
+            </p>
           </div>
 
           <div className="md:pt-32 pt-12 pb-10">
             <BigList
               items={[
                 {
-                  title: t("Spelupplevelse"),
-                  description: t(
-                    "Med hjälp av AWS kan du skapa en smidig och problemfri spelupplevelse genom att garantera skalbarhet och pålitlighet."
-                  ),
+                  title: `${gaming.fields.keyword1}`,
+                  description: `${gaming.fields.textKeyword1}`,
                   image: "/images/productivity-green.png",
                 },
                 {
-                  title: t("Dedikerade Servrar"),
-                  description: t(
-                    "Låt ditt spel växa i sin egen takt. I stället för att investera i dyr hårdvara och infrastruktur så kan du sänka dina kostnader med AWS genom att enbart betala för den data du faktiskt använder."
-                  ),
+                  title: `${gaming.fields.keyword2}`,
+                  description: `${gaming.fields.textKeyword2}`,
                   image: "/images/cloudgaming.png",
                 },
                 {
-                  title: t("Flexibel"),
-                  description: t(
-                    "Analysera stora mängder data för att dra insikter som förbättrar kundupplevelsen."
-                  ),
+                  title: `${gaming.fields.keyword3}`,
+                  description: `${gaming.fields.textKeyword3}`,
                   image: "/images/analyze.png",
                 },
               ]}

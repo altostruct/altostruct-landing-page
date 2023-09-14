@@ -18,7 +18,8 @@ function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
-
+  const industry = require(".data/contentful/industry/all.json")
+  const health = industry[3]
 
   return (
     <>
@@ -33,11 +34,12 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Det är dags att")}{" "}
+                {health.fields.textTitleStart}
+                {" "}
                 <WordCircled borderCircle={true}>
-                  {t("Effektivisera")}
+                  {health.fields.titleWordCirled}
                 </WordCircled>{" "}
-                {t("ditt företag inom hälsa med AWS")}
+                {health.fields.textTitleEnd}
               </div>
             }
             mainContent={<Image
@@ -76,11 +78,11 @@ function About(props: { code: string }) {
         </Content>
 
         <Content>
-          <div className="md:pt-40 pt-20 md:flex">
-            <p className="md:text-4xl text-3xl">
-              <span className="text-[#c3eec3]"></span>
-              AWS <span className="text-[#c3eec3]">Optimerar</span> hälsobranschen genom att möjliggöra snabb och säker åtkomst till patientdata, <span className="text-[#c3eec3]">Automatiserar </span>
-              administrativa uppgifter och leder till en mer avancerad  <span className="text-[#c3eec3]">Dataanalys</span> som genererar mer välgrundade beslut. Detta sänker kostnader samtidigt som det ökar pålitligheten.
+          <div className="md:pt-40 pt-20 pb-20 md:flex">
+            <p className="md:text-3xl text-3xl">
+              {health.fields.beforeFirstKeyword} <span className="text-[#c3eec3]"> {health.fields.textFirstKeyword} </span>
+              {health.fields.beforeSecondKeyword} <span className="text-[#c3eec3]"> {health.fields.textSecondKeyword} </span>
+              {health.fields.beforeThirdKeyword} <span className="text-[#c3eec3]"> {health.fields.thirdKeyWord} </span>{health.fields.afterThirdKeyword}
             </p>
           </div>
 
@@ -88,24 +90,18 @@ function About(props: { code: string }) {
             <BigList
               items={[
                 {
-                  title: t("Effektivisera"),
-                  description: t(
-                    "AWS tillåter hälsoföretag och sjukhus att implementera nya funktioner snabbare samt underlättar datahantering."
-                  ),
+                  title: `${health.fields.keyword1}`,
+                  description: `${health.fields.textKeyword1}`,
                   image: "/images/productivity-green.png",
                 },
                 {
-                  title: t("Automatisera"),
-                  description: t(
-                    "Automatisering i molnet frigör vårdpersonal från repetitiva uppgifter, vilket möjliggör bättre fokus på patientvård och beslutsfattande."
-                  ),
+                  title: `${health.fields.keyword2}`,
+                  description: `${health.fields.textKeyword2}`,
                   image: "/images/automate.png",
                 },
                 {
-                  title: t("Analysera"),
-                  description: t(
-                    "En mer avancerad dataanalys genererar insikter som förbättrar vårdkvaliteten och därmed patientresultaten."
-                  ),
+                  title: `${health.fields.keyword3}`,
+                  description: `${health.fields.textKeyword3}`,
                   image: "/images/analyze2.0.png",
                 },
               ]}
