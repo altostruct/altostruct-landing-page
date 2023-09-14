@@ -14,7 +14,7 @@ interface FormInput {
   phone?: string;
   message?: string;
   call_me?: string;
-}
+} 
 
 function Formshort() {
   const { t } = useTranslation();
