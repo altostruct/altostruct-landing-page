@@ -88,7 +88,7 @@ function About(props: { code: string }) {
             </p>
           </div>
 
-          <div className="md:pt-32 pt-12 pb-10">
+          <div className="md:pt-32 pt-12 md:pb-10 pb-0">
             <BigList
               items={[
                 {
@@ -119,16 +119,13 @@ function About(props: { code: string }) {
 
         <Content>
           <div
-            className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
+            className="text-white md:pt-20 pt-10 md:w-4/5 mb-10"
             style={{ fontFamily: "KHTeka-Light" }}
           >
-            <p className="md:text-4xl text-4xl" style={{ lineHeight: "1.4" }}>
-              {t("Vill du veta mer om Altostruct?")}{" "}
+            <p className="md:text-3xl text-3xl" style={{ lineHeight: "1.4" }}>
+              Vill du veta mer om hur vi jobbar med underhållning?
               <br />
-
-              {t("Hör av dig till oss så ")}
-              <WordCircled borderCircle> Berättar </WordCircled>
-              {t(" vi mer!")}
+              Hör av dig till oss så berättar vi mer!
 
             </p>
           </div>

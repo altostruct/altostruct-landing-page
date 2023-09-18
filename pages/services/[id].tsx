@@ -92,6 +92,16 @@ export default function Home(props: any) {
         </Content >
 
         <Content className="mt-40">
+          <div
+            className="text-white mb-10"
+            style={{ fontFamily: "KHTeka-Light" }}
+          >
+            <p className="md:text-6xl text-2xl" style={{ lineHeight: "1.4" }}>
+              Vill du veta mer om Altostruct?
+              <br />
+              Hör av dig så berättar vi mer!
+            </p>
+          </div>
           <Formshort></Formshort>
         </Content>
       </div >
