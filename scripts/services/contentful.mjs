@@ -58,6 +58,8 @@ async function execute() {
   await loadAssets("referenceCase", "referenceCases");
   await loadAssets("customerQuote", "customerQuote");
   await loadAssets("recruitment", "positions");
+  await loadAssets("industires", "industry");
+
 }
 
 export default execute;

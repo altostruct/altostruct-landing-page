@@ -18,7 +18,8 @@ function About(props: { code: string }) {
   const { t } = useTranslation();
   const lightBg = tailwindConfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
-  const referenceCases = require(".data/contentful/referenceCases/all.json")
+  const industry = require(".data/contentful/industry/all.json")
+  const livsmedel = industry[0]
 
 
   return (
@@ -34,11 +35,12 @@ function About(props: { code: string }) {
           <PageStart
             title={
               <div>
-                {t("Det är dags att effektivisera ditt företag inom")}{" "}
+                {livsmedel.fields.textTitleStart}
+                {" "}
                 <WordCircled borderCircle={true}>
-                  {t("Livsmedel")}
+                  {livsmedel.fields.titleWordCirled}
                 </WordCircled>{" "}
-                {t("med AWS")}
+                {livsmedel.fields.textTitleEnd}
               </div>
             }
             mainContent={<Image
@@ -77,36 +79,30 @@ function About(props: { code: string }) {
         </Content>
 
         <Content>
-          <div className="md:pt-40 pt-20 pb-20 md:flex">
+          <div className="md:pt-40 pt-24 md:pb-0 pb-10 md:flex">
             <p className="md:text-3xl text-3xl">
-              Molntjänster <span className="text-[#c3eec3]">optimerar</span> agilitet, lagerhantering och kundupplevelse.
-              Låt inte brist på kunskap inom AWS, tidspress eller stora mängder komplex data stå i er väg för att sänka kostnader och öka nöjdhet hos kunder och personal.
-              Kort sagt, <span className="text-[#c3eec3]">skalbarheten</span> hanterar efterfrågan, <span className="text-[#c3eec3]">dataanalys</span> ger smarta beslut.
+              {livsmedel.fields.beforeFirstKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textFirstKeyword} </span> 
+              {livsmedel.fields.beforeSecondKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textSecondKeyword} </span> 
+              {livsmedel.fields.beforeThirdKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.thirdKeyWord} </span>{livsmedel.fields.afterThirdKeyword}
             </p>
           </div>
 
-          <div className="md:pt-32 pt-12 pb-10">
+          <div className="md:pt-32 pt-12 md:pb-10">
             <BigList
               items={[
                 {
-                  title: t("Optimera"),
-                  description: t(
-                    "Cloudtjänster tillåter livsmedelsföretag att enkelt öka eller minska IT-resurser baserat på efterfrågan."
-                  ),
+                  title: `${livsmedel.fields.keyword1}`,
+                  description: `${livsmedel.fields.textKeyword1}`,
                   image: "/images/productivity-green.png",
                 },
                 {
-                  title: t("Skala"),
-                  description: t(
-                    "AWS låter dig skala upp och ner beroende på mängden traffik. Strunta i dyra investeringar i infrastruktur och hårdvara och betala bara för det du faktiskt använder."
-                  ),
+                  title: `${livsmedel.fields.keyword2}`,
+                  description: `${livsmedel.fields.textKeyword2}`,
                   image: "/images/scale-green.png",
                 },
                 {
-                  title: t("Analysera"),
-                  description: t(
-                    "Processa och analysera stora mängder data för att dra insikter som förbättrar försäljning och lagerhantering."
-                  ),
+                  title: `${livsmedel.fields.keyword3}`,
+                  description: `${livsmedel.fields.textKeyword3}`,
                   image: "/images/analysis-green.png",
                 },
               ]}
@@ -114,21 +110,15 @@ function About(props: { code: string }) {
           </div>
         </Content>
 
-
-
-
         <Content>
           <div
-            className="text-white md:pt-20 pt-20 md:w-4/5 mb-10"
+            className="text-white md:pt-20 pt-10 md:w-4/5 mb-10"
             style={{ fontFamily: "KHTeka-Light" }}
           >
-            <p className="md:text-4xl text-4xl" style={{ lineHeight: "1.4" }}>
-              {t("Vill du veta mer om Altostruct?")}{" "}
+            <p className="md:text-3xl text-3xl">
+              Vill du veta mer om hur vi jobbar med livsmedel?
               <br />
-
-              {t("Hör av dig till oss så ")}
-              <WordCircled borderCircle> Berättar </WordCircled>
-              {t(" vi mer!")}
+             Hör av dig till oss så berättar vi mer!
 
             </p>
           </div>

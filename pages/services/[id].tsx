@@ -30,13 +30,7 @@ export default function Home(props: any) {
   return (
     <>
       <CookieBanner></CookieBanner>
-      <Script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="https://js-eu1.hs-scripts.com/26849291.js"
-      />
+     
       <SEO
         title={t("Altostruct | AWS Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
@@ -98,6 +92,16 @@ export default function Home(props: any) {
         </Content >
 
         <Content className="mt-40">
+          <div
+            className="text-white mb-10"
+            style={{ fontFamily: "KHTeka-Light" }}
+          >
+            <p className="md:text-6xl text-2xl" style={{ lineHeight: "1.4" }}>
+              Vill du veta mer om Altostruct?
+              <br />
+              Hör av dig så berättar vi mer!
+            </p>
+          </div>
           <Formshort></Formshort>
         </Content>
       </div >

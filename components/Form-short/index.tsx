@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import emailjs from "emailjs-com";
-
 import styles from "./Form.module.scss";
 import Button from "components/Button/Button";
 import classNames from "classnames";
 import useTranslation from "hooks/useTranslation";
 import { useRouter } from "next/router";
+
 interface FormInput {
   fullName?: string;
   email?: string;
@@ -14,13 +14,30 @@ interface FormInput {
   phone?: string;
   message?: string;
   call_me?: string;
-}
+} 
 
 function Formshort() {
   const { t } = useTranslation();
   const router = useRouter();
 
   const form = useRef<HTMLFormElement | null>(null);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const url = "/events/reached-out"
+
+  const validateInput = (input: FormInput) => {
+    const errors: string[] = [];
+
+    if (!input.email) errors.push("Provide an email!");
+
+    if (errors.length === 0) {
+      setIsDisabled(true)
+      console.log(isDisabled)
+      return null;
+    }
+
+    return errors;
+  };
+
 
   const sendEmail = async (event: any) => {
     // Pervents a default post request associated with the form
@@ -30,16 +47,6 @@ function Formshort() {
       console.error("Something must have gone wrong...");
       return false;
     }
-
-    const validateInput = (input: FormInput) => {
-      const errors: string[] = [];
-
-      if (!input.email) errors.push("Provide an email!");
-    
-      if (errors.length === 0) return null;
-
-      return errors;
-    };
 
     const values: FormInput = {
       email: form.current.email.value,
@@ -61,8 +68,9 @@ function Formshort() {
         form.current,
         "user_k0ZJNxep5Jd9wlP37YY93"
       );
-      router.push("/events/reached-out", {
-        query: "email=" + encodeURI(values.email!),
+      router.push({
+        pathname: "/events/reached-out",
+        query: { email: values.email },
       });
     } catch (error) {
       console.error(error);
@@ -78,17 +86,18 @@ function Formshort() {
         style={{
           display: "flex",
           width: "100%",
-          gap: "4em",
+          gap: "1.4em",
+          paddingBottom: "2em"
         }}
       >
-        <div style={{ flexGrow: 1, paddingTop: "0.6rem"}}>
+        <div style={{ flexGrow: 1, paddingTop: "0.2rem"}}>
           <label htmlFor="fullName">{t("För- och efternamn")}</label>
           <input type="text" id="fullName" name="from_name" />
-          <label htmlFor="email">{t("Mejladress")}</label>
+          <label style={{paddingTop: "0.35em"}} htmlFor="email">{t("Mejladress")}</label>
           <input type="email" id="email" name="reply_to" />
           <br />
         </div>
-        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300	" }}>
+        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300"}}>
           <label htmlFor="message">{t("Meddelande")}</label>
           <textarea id="message" name="message" rows={6}></textarea>
           <div
@@ -107,7 +116,7 @@ function Formshort() {
               alignItems: "center",
             }}
           >
-            <Button type="primary" formAction="submit">
+            <Button type={isDisabled === true ? "secondary" : "primary" } formAction="submit">
               {t("Skicka")}
             </Button>
           </div>

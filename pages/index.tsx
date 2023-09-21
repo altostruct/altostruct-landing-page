@@ -142,11 +142,13 @@ export default function Home() {
 
         <Content className="">
           <div
-            className="text-white pt-20 md:w-4/5 mb-10"
+            className="text-white md:pt-20 pt-32 md:w-4/5 mb-10"
             style={{ fontFamily: "KHTeka-Light" }}
           >
-            <p className="md:text-6xl text-3xl" style={{ lineHeight: "1.4" }}>
+            <p className="md:text-6xl text-2xl" style={{ lineHeight: "1.4" }}>
               Vill du veta mer om Altostruct?
+              <br />
+              Hör av dig så berättar vi mer!
             </p>
           </div>
           <Formshort></Formshort>
