@@ -24,7 +24,7 @@ function About(props: { code: string }) {
   return (
     <>
       <SEO
-        title={t("Altostruct | Cloud Consulting")}
+        title={t("Altostruct | AWS Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>

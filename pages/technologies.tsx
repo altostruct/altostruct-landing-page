@@ -15,7 +15,7 @@ function Techonologies() {
             src="https://js-eu1.hs-scripts.com/26849291.js"
         />
         <SEO
-            title={"Altostruct | Cloud Consulting"}
+            title={"Altostruct | AWS Consulting"}
             description={"Altostruct är ett AWS konsultbolag i Stockholm."}
         />
         <Topbar></Topbar>

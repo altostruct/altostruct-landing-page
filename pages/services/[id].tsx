@@ -38,7 +38,7 @@ export default function Home(props: any) {
         src="https://js-eu1.hs-scripts.com/26849291.js"
       />
       <SEO
-        title={t("Altostruct | Cloud Consulting")}
+        title={t("Altostruct | AWS Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       />
       <Topbar></Topbar>

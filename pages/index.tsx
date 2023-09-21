@@ -28,7 +28,7 @@ export default function Home() {
     <>
       <CookieBanner></CookieBanner>
       <SEO
-        title={t("Altostruct | Cloud Consulting")}
+        title={t("Altostruct | AWS Consulting")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       />
       <Topbar></Topbar>
