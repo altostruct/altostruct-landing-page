@@ -25,7 +25,7 @@ function About(props: { code: string }) {
   return (
     <>
       <SEO
-        title={t("Altostruct | AWS Consulting")}
+        title={t("Altostruct | AWS Services & Support")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
@@ -81,8 +81,8 @@ function About(props: { code: string }) {
         <Content>
           <div className="md:pt-40 pt-24 md:pb-0 pb-10 md:flex">
             <p className="md:text-3xl text-3xl">
-              {livsmedel.fields.beforeFirstKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textFirstKeyword} </span> 
-              {livsmedel.fields.beforeSecondKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textSecondKeyword} </span> 
+              {livsmedel.fields.beforeFirstKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textFirstKeyword} </span>
+              {livsmedel.fields.beforeSecondKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.textSecondKeyword} </span>
               {livsmedel.fields.beforeThirdKeyword} <span className="text-[#c3eec3]"> {livsmedel.fields.thirdKeyWord} </span>{livsmedel.fields.afterThirdKeyword}
             </p>
           </div>
@@ -118,7 +118,7 @@ function About(props: { code: string }) {
             <p className="md:text-3xl text-3xl">
               Vill du veta mer om hur vi jobbar med livsmedel?
               <br />
-             Hör av dig till oss så berättar vi mer!
+              Hör av dig till oss så berättar vi mer!
 
             </p>
           </div>
