@@ -1,18 +1,25 @@
 .form {
   input[type="text"],
   input[type="email"],
-  input[type="number"],  
-
-
+  input[type="number"],
   textarea {
     appearance: textfield;
     font-size: inherit;
     font-family: inherit;
-    border: 1px solid rgba($color: #999999, $alpha: 0.5);
+    outline: none;
+    color: white;
     padding: 0.75em;
-    margin-bottom: 1em;
+
     width: 100%;
-    background-color: #eee;
+    border-radius: 0;
+    border: solid rgb(125, 125, 125) 1px;
+    background-color: #232222;
+  }
+
+  .input-wrapper {
+    display: flex;
+    background-color: #232222;
+    margin-bottom: 1em;
   }
 
   input[type="checkbox"] {

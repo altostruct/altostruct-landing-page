@@ -1,4 +1,5 @@
 import Content from "@components/Content";
+import { ContentfulImage } from "@components/Contentful";
 import Footer from "@components/Footer/Footer";
 import Form from "@components/Form";
 import Formshort from "@components/Form-short";
@@ -14,12 +15,13 @@ function CampaignsPage(props: any) {
 
     const title: string = props.post.fields.title;
     const slug = props.post.fields.slug;
+    const resposible = props.post.fields.resposible;
 
     return (
         <div className="bg-[#161616] h-screen">
             <SEO
                 title={props.post.fields.title}
-                description={props.post.fields.description}
+                description={props.post.fields.shortDescription}
             />
             <Topbar></Topbar>
             <Content>
@@ -30,16 +32,38 @@ function CampaignsPage(props: any) {
                         </h1>
                         <RichText body={props.post.fields.description}></RichText>
                     </div>
+
                     <div className="md:w-1/3 flex-0">
                         <div className="flex w-full md:gap-4 gap-8 flex-col justify-between">
                             <div>
-                                <p className="text-4xl md:text-3xl font-bold">Kontakta oss</p>
-                                <p className="text-xl">Låt oss diskutera hur vi kan hjälpa dig med din molnresa. Vi brukar svara inom dagen.</p>
+                                <p className="text-4xl md:text-3xl font-bold">{props.post.fields.cta}</p>
                             </div>
                             <div className="max-w-full">
                                 <Formshort extraMessage={"CAMPAIGN::" + slug} rows></Formshort>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div className="flex pb-32 justify-between items-center">
+                    <div className="flex my-auto h-auto items-center flex-row gap-2">
+                        {
+                            resposible &&
+                            <div className="w-32 h-32 rounded-full overflow-hidden">
+                                <ContentfulImage alt="" image={resposible.fields.profile}></ContentfulImage>
+                            </div>
+                        }
+                        <div className="text-lg">
+                            <p className="">{resposible.fields.firstName} {resposible.fields.lastName} {resposible.fields.role} </p>
+                            <p>
+                                <a className="text-white underline" href={"mailto:" + resposible.fields.email}>{resposible.fields.email} </a>
+                            </p>
+                            <p>
+                                <a href={"tel:" + resposible.fields.email} className="text-white underline">{resposible.fields.phoneNr} </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="">
+                        <p className="text-4xl"></p>
                     </div>
                 </div>
             </Content>

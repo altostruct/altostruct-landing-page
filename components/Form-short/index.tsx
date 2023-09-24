@@ -98,7 +98,9 @@ function Formshort(props: { extraMessage?: string, rows?: boolean }) {
       >
         <div style={{ flexGrow: 1, paddingTop: "0.2rem" }}>
           <label htmlFor="fullName">{t("För- och efternamn")}</label>
-          <input type="text" id="fullName" name="from_name" />
+          <div className={styles["input-wrapper"]}>
+            <input type="text" id="fullName" name="from_name" />
+          </div>
           <label style={{ paddingTop: "0.35em" }} htmlFor="email">{t("Mejladress")}</label>
           <input type="email" id="email" name="reply_to" />
           <br />
