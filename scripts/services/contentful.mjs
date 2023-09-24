@@ -53,13 +53,13 @@ async function loadAssets(contentType, path) {
 
 async function execute() {
   await loadAssets("kunskapsbas", "posts");
+  await loadAssets("campaign", "campaigns");
   await loadAssets("project", "projects");
   await loadAssets("product", "products");
   await loadAssets("referenceCase", "referenceCases");
   await loadAssets("customerQuote", "customerQuote");
   await loadAssets("recruitment", "positions");
   await loadAssets("industires", "industry");
-
 }
 
 export default execute;
