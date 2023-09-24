@@ -18,7 +18,7 @@ function CampaignsPage(props: any) {
     const resposible = props.post.fields.resposible;
 
     return (
-        <div className="bg-[#161616] h-screen">
+        <div className="bg-[#161616]">
             <SEO
                 title={props.post.fields.title}
                 description={props.post.fields.shortDescription}
