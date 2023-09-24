@@ -25,14 +25,13 @@ function CampaignsPage(props: any) {
             />
             <Topbar></Topbar>
             <Content>
-                <div className="flex flex-col pt-32 md:flex-row md:gap-16 pb-12">
+                <div className="flex flex-col pt-32 md:flex-row gap-16 pb-12">
                     <div className="flex-1 text-[#eee]">
                         <h1 className="text-4xl mb-2 md:text-6xl font-bold">
                             {title.endsWith(".") ? <>{title.slice(0, -1)}<span className="text-green-500">.</span></> : title}
                         </h1>
                         <RichText body={props.post.fields.description}></RichText>
                     </div>
-
                     <div className="md:w-1/3 flex-0">
                         <div className="flex w-full md:gap-4 gap-8 flex-col justify-between">
                             <div>
