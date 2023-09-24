@@ -23,20 +23,20 @@ function CampaignsPage(props: any) {
             />
             <Topbar></Topbar>
             <Content>
-                <div className="flex gap-16 pb-12">
-                    <div className="flex-1 pt-32 text-[#eee]">
+                <div className="flex flex-col pt-32 md:flex-row md:gap-16 pb-12">
+                    <div className="flex-1 text-[#eee]">
                         <h1 className="text-4xl mb-2 md:text-6xl font-bold">
                             {title.endsWith(".") ? <>{title.slice(0, -1)}<span className="text-green-500">.</span></> : title}
                         </h1>
                         <RichText body={props.post.fields.description}></RichText>
                     </div>
-                    <div className="sticky top-32 flex-0">
-                        <div className="flex w-full md:gap-4 gap-8 flex-col md:flex-col  mt-32 justify-between">
-                            <div className="md:w-[25vw]">
-                                <p className="text-4xl mb-4 md:text-3xl font-bold">Kontakta oss</p>
+                    <div className="md:w-1/3 flex-0">
+                        <div className="flex w-full md:gap-4 gap-8 flex-col justify-between">
+                            <div>
+                                <p className="text-4xl md:text-3xl font-bold">Kontakta oss</p>
                                 <p className="text-xl">Låt oss diskutera hur vi kan hjälpa dig med din molnresa. Vi brukar svara inom dagen.</p>
                             </div>
-                            <div className="md:w-[25vw] max-w-full">
+                            <div className="max-w-full">
                                 <Formshort extraMessage={"CAMPAIGN::" + slug} rows></Formshort>
                             </div>
                         </div>
