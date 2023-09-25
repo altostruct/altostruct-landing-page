@@ -82,7 +82,9 @@ export default function Home(props: any) {
               <div className="text-xl md:text-2xl text-gray-200">
                 <RichText body={product.fields.whyUseThisDescription}></RichText>
               </div>
-              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              
+              <Button type="primary" className="mt-6" 
+              link="/about">Läs mer om oss</Button>
             </div>
           </div>
         </Content >
