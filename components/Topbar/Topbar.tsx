@@ -73,6 +73,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
         })}
       >
 
+
         <nav style={{ float: "right" }}>
           <Link href={"/"}>
             <Brand />
@@ -87,22 +88,22 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
 
           <Dropdown icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
-          title="Tjänster" className={classNames(styles["button-spacing"], "text-lg")}>
-          {getContentfulProducts().map((v,index)=>{
-            return <div className="flex" key={index}>
-            <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-            <Link
-              className={classNames("group")}
-              href={"/services/"+v.fields.slug}
-            >
-              {v.fields.name}
-            </Link>
-            </div>
-          })}
+            title="Tjänster" className={classNames(styles["button-spacing"], "text-lg")}>
+            {getContentfulProducts().map((v, index) => {
+              return <div className="flex" key={index}>
+                <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                <Link
+                  className={classNames("group")}
+                  href={"/services/" + v.fields.slug}
+                >
+                  {v.fields.name}
+                </Link>
+              </div>
+            })}
 
           </Dropdown>
 
-          <Dropdown 
+          <Dropdown
             // id={styles["industry-tab"]} icon={
             //   <div id={styles["industry-animations"]}  className="relative">
             //     <svg id={styles["industry-cloud"]} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +123,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
             title="Industrier" className={classNames(styles["button-spacing"], "text-lg")}>
             <div className="flex">
-            <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
               <Link
                 className={classNames("group")}
                 href={"/livsmedel"}
@@ -165,9 +166,9 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             className={classNames(styles["button-spacing"], "group", "text-lg")}
             href={"/about"}
           >
-            {t("Om oss")} 
+            {t("Om oss")}
             {/* <Underline></Underline>*/}
-          </Link> 
+          </Link>
 
           {/*<LanguageSelector></LanguageSelector>*/}
         </nav>
@@ -225,77 +226,77 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             </div>
 
             <div className="pb-1">
-                <p className="text-3xl font-light"> Industrier </p>
+              <p className="text-3xl font-light"> Industrier </p>
             </div>
 
             <div className="pb-5">
-                <Link
-                  className="flex text-white text-xl pb-3 pt-2"
-                  href={"/livsmedel"}
-                  onClick={() => setExpanded(!expanded)}
-                >
-                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                  <p className="w-5/6 text-xl text-start">Livsmedel</p>
-                </Link>
-              
-                <Link
-                  className="flex text-white text-xl pb-3"
-                  href={"/gaming"}
-                  onClick={() => setExpanded(!expanded)}
-                >
-                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                  <p className="w-5/6 text-xl text-start">Underhållning</p>
-                </Link>
+              <Link
+                className="flex text-white text-xl pb-3 pt-2"
+                href={"/livsmedel"}
+                onClick={() => setExpanded(!expanded)}
+              >
+                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                <p className="w-5/6 text-xl text-start">Livsmedel</p>
+              </Link>
 
-                <Link
-                  className="flex text-white text-xl"
-                  href={"/halsa"}
-                  onClick={() => setExpanded(!expanded)}
-                >
-                  <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                  <p className="w-5/6 text-xl text-start">Hälsa</p>
-                </Link>
+              <Link
+                className="flex text-white text-xl pb-3"
+                href={"/gaming"}
+                onClick={() => setExpanded(!expanded)}
+              >
+                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                <p className="w-5/6 text-xl text-start">Underhållning</p>
+              </Link>
+
+              <Link
+                className="flex text-white text-xl"
+                href={"/halsa"}
+                onClick={() => setExpanded(!expanded)}
+              >
+                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                <p className="w-5/6 text-xl text-start">Hälsa</p>
+              </Link>
             </div>
 
 
             <div className="">
-                <p className="text-white text-3xl pb-4"> Tjänster </p>              
+              <p className="text-white text-3xl pb-4"> Tjänster </p>
               {getContentfulProducts().map((v, index) => {
                 return <div className="" key={index}>
-                    <div className="flex pl-3 pb-3">
-                      <svg className="w-2/12 rotate-90 mt-2 pr-1 max-w-3 max-h-3 h-full" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
+                  <div className="flex pl-3 pb-3">
+                    <svg className="w-2/12 rotate-90 mt-2 pr-1 max-w-3 max-h-3 h-full" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
                     <Link
                       className={classNames("text-xl text-white w-9/12")}
                       href={"/services/" + v.fields.slug}
                     >
-                        <p>{v.fields.name}</p>
+                      <p>{v.fields.name}</p>
                     </Link>
-                    </div>
+                  </div>
                 </div>
               })}
             </div>
-           
+
 
 
             <div className="border-b my-10 text-white"></div>
 
-              <Link
-                className="text-white text-4xl"
-                href={"/contact"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                {t("Kontakta oss")}
-              </Link>
+            <Link
+              className="text-white text-4xl"
+              href={"/contact"}
+              onClick={() => setExpanded(!expanded)}
+            >
+              {t("Kontakta oss")}
+            </Link>
 
-              <div className="pt-2">              
-                <Link
+            <div className="pt-2">
+              <Link
                 className="text-white text-4xl"
                 href={"/about"}
                 onClick={() => setExpanded(!expanded)}
               >
                 {t("Om oss")}
               </Link>
-              </div>
+            </div>
 
             {/* <Fade delay={600}>
               <div className="mx-10 h-36 md:m-10">

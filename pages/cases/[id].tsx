@@ -127,20 +127,20 @@ function BlogPage(props: BlogPageProps) {
         description={props.post.fields.description}
       />
       <Topbar></Topbar>
-     
+
       <Content>
         <div className="md:w-3/5 m-auto pt-32 text-[#eee]">
           <div className="md:w-3/5 flex gap-4 text-sm">
             <p className="">{props.post.fields.customer.fields.name}</p>
           </div>
-  
+
           <h1 className="text-4xl md:text-6xl font-bold md:mb-20">{props.post.fields.title}</h1>
           <div className="md:flex ml-2 justify-around">
-          {props.post.fields.bulletPoints.map((v: any) => {
-            return <div key="" className="md:flex-col md:w-1/4 border-l-4 md:h-20 border-gray-200 items-center md:mb-20">
-                      <div className="w-full pl-2 text-xl mt-2 font-bold">{v.fields.title}</div>
-                      {/* <p className="w-full text-lg mt-6 pl-2 font-light"> {v.fields.description}</p> */}
-                    </div>      
+            {props.post.fields.bulletPoints.map((v: any) => {
+              return <div key="" className="md:flex-col md:w-1/4 border-l-4 md:h-20 border-gray-200 items-center md:mb-20">
+                <div className="w-full pl-2 text-xl mt-2 font-bold">{v.fields.title}</div>
+                {/* <p className="w-full text-lg mt-6 pl-2 font-light"> {v.fields.description}</p> */}
+              </div>
             })}
           </div>
           <h2 className="mb-3 text-xl font-normal">
@@ -189,8 +189,6 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
       post.fields.isPublished ||
       process.env.NEXT_PUBLIC_CONTENTFUL_DEV === "TRUE"
   );
-
-  console.log(posts.map(post => post.fields.title + " " + post.fields.isPublished))
 
   return {
     paths: posts.filter(post => post.sys.locale === "sv").map((post) => {

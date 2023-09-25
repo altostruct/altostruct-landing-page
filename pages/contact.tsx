@@ -17,11 +17,11 @@ export default function Home() {
   return (
     <>
       <SEO
-        title={t("Altostruct | Cloud Consulting")}
+        title={t("Altostruct | AWS Services & Support")}
         description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
       ></SEO>
       <Topbar></Topbar>
-      
+
       <div className="bg-[#161616] md:pt-36 pt-32 pb-20 h-screen">
         <Content>
           <div

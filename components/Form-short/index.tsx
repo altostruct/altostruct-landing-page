@@ -14,9 +14,10 @@ interface FormInput {
   phone?: string;
   message?: string;
   call_me?: string;
-} 
+}
 
-function Formshort() {
+function Formshort(props: { extraMessage?: string, rows?: boolean }) {
+  const { extraMessage = "", rows = false } = props
   const { t } = useTranslation();
   const router = useRouter();
 
@@ -46,6 +47,11 @@ function Formshort() {
     if (!form.current) {
       console.error("Something must have gone wrong...");
       return false;
+    }
+
+
+    if (extraMessage && form.current.extra) {
+      form.current.extra.value = extraMessage
     }
 
     const values: FormInput = {
@@ -82,7 +88,7 @@ function Formshort() {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className={classNames(styles["form"], "md:flex-row", "flex-col")}
+        className={classNames(styles["form"], { "md:flex-row": !rows }, "flex-col")}
         style={{
           display: "flex",
           width: "100%",
@@ -90,14 +96,17 @@ function Formshort() {
           paddingBottom: "2em"
         }}
       >
-        <div style={{ flexGrow: 1, paddingTop: "0.2rem"}}>
+        <div style={{ flexGrow: 1, paddingTop: "0.2rem" }}>
           <label htmlFor="fullName">{t("För- och efternamn")}</label>
-          <input type="text" id="fullName" name="from_name" />
-          <label style={{paddingTop: "0.35em"}} htmlFor="email">{t("Mejladress")}</label>
+          <div className={styles["input-wrapper"]}>
+            <input type="text" id="fullName" name="from_name" />
+          </div>
+          <label style={{ paddingTop: "0.35em" }} htmlFor="email">{t("Mejladress")}</label>
           <input type="email" id="email" name="reply_to" />
           <br />
+          <input className="hidden" type="text" id="extra" name="extra" />
         </div>
-        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300"}}>
+        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300" }}>
           <label htmlFor="message">{t("Meddelande")}</label>
           <textarea id="message" name="message" rows={6}></textarea>
           <div
@@ -116,7 +125,7 @@ function Formshort() {
               alignItems: "center",
             }}
           >
-            <Button type={isDisabled === true ? "secondary" : "primary" } formAction="submit">
+            <Button type={isDisabled === true ? "secondary" : "primary"} formAction="submit">
               {t("Skicka")}
             </Button>
           </div>

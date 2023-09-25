@@ -21,12 +21,20 @@ import SEO from "@components/SEO";
 const options: Options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
-      return <p className="mb-8 leading-8">{children}</p>;
+      return <p className="inline text-lg">{children}</p>;
+    },
+
+    [BLOCKS.LIST_ITEM]: (node, children) => {
+      return <li className="">{children}</li>;
+    },
+
+    [BLOCKS.UL_LIST]: (node, children) => {
+      return <ul className="list-disc list-inside">{children}</ul>;
     },
 
     [BLOCKS.EMBEDDED_ASSET]: (node) => {
       return (
-        <ContentfulImage alt="" className="my-16" image={node.data.target} />
+        <ContentfulImage alt="" image={node.data.target} />
       );
     },
 
@@ -40,7 +48,7 @@ const options: Options = {
 
     [BLOCKS.HEADING_2]: (node, children) => {
       return (
-        <h2 className="font-bold mb-2 text-2xl mt-8 text-white">
+        <h2 className="font-bold mb-2 text-3xl mt-8 text-white">
           {children}
         </h2>
       );
@@ -80,7 +88,9 @@ const options: Options = {
 
 export function RichText(props: { body: any }) {
   const { body } = props
-  return documentToReactComponents(body, options) as any
+  return <div className="flex gap-4 flex-col">
+    {documentToReactComponents(body, options)}
+  </div>
 }
 
 interface BlogPageProps {
@@ -91,6 +101,9 @@ function BlogPage(props: BlogPageProps) {
   if (!props?.post?.fields) {
     return <></>;
   }
+
+  const title: string = props.post.fields.title;
+
 
   return (
     <div className="bg-[#161616]">
@@ -110,8 +123,11 @@ function BlogPage(props: BlogPageProps) {
                 formatDate(props.post.fields.createDate)}
             </p>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold">{props.post.fields.title}</h1>
-          <h2 className="mt-3 mb-3 text-xl font-normal">
+          <h1 className="text-4xl md:text-6xl font-bold">
+            {title.endsWith(".") ? <>{title.slice(0, -1)}<span className="text-green-600">.</span></> : title}
+          </h1>
+
+          <h2 className="mt-3 mb-3 text-2xl font-light">
             {props.post.fields.description}
           </h2>
           <div className="mb-10 flex w-full ">
