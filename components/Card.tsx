@@ -1,12 +1,15 @@
 import { ReactNode } from "react";
+import Image from "next-image-export-optimizer";
+
 
 interface CardProps {
     title?: string;
     children?: ReactNode
+    img?: boolean
 }
 
 function Card(props: CardProps) {
-    const { title, children } = props
+    const { title, children, img } = props
 
     return <>
         <div className="p-4 md:p-8 bg-[#1f1f1f]">
@@ -17,6 +20,12 @@ function Card(props: CardProps) {
                             {title}
                         </h2>
                     </div>
+                    {img && <Image
+                        width={50}
+                        height={50}
+                        alt=""
+                        src="/images/awsbadge.png"
+                    ></Image>}
                 </div>}
                 {children}
             </div>

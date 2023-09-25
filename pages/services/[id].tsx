@@ -64,8 +64,8 @@ export default function Home(props: any) {
           </div>
         </Content>
 
-        <Content className="mt-40 md:mt-0">
-          <Card title={product.fields.slogan}>
+        <Content className="mt-40 md:mt-0">         
+          <Card title={product.fields.slogan} img={true}>
             <span className="text-2xl">
               <RichText body={product.fields.sloganDescription}></RichText>
             </span>

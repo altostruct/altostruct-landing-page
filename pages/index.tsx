@@ -55,7 +55,7 @@ export default function Home() {
                   </svg>
                 </div>
               }
-                link="/contact">{t("Kontakta oss")}</Button>
+                link="/contact">Kontakta oss</Button>
             </div>}
           />
         </Content>
@@ -77,14 +77,14 @@ export default function Home() {
         <Content>
           <div className="mb-20">
             <div className="flex gap-2 mb-4 md:mb-6">
-              <h1 className="text-2xl md:text-4xl uppercase text-gray-300">
+              <h1 className="text-2xl md:text-4xl uppercase text-gray-300 pr-2">
                 {t("Vad är Altostruct?")}
               </h1>
               <Image
                 width={50}
                 height={50}
                 alt=""
-                src="/icons8-amazon-web-services.svg"
+                src="/images/awsbadge.png"
               ></Image>
             </div>
             <div className="font-light md:pb-8 pb-5 text-2xl">
