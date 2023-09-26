@@ -80,12 +80,6 @@ export default function Home() {
               <h1 className="text-2xl md:text-4xl uppercase text-gray-300 pr-2">
                 {t("Vad är Altostruct?")}
               </h1>
-              <Image
-                width={50}
-                height={50}
-                alt=""
-                src="/images/awsbadge.png"
-              ></Image>
             </div>
             <div className="font-light md:pb-8 pb-5 text-2xl">
               Altostruct är erfarna molnkonsulter som hjälper företag att navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
