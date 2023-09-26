@@ -19,7 +19,7 @@ function About(props: { code: string }) {
   const lightBg = tailwindConfig.theme.light;
   const quotes = require(".data/contentful/customerQuote/all.json")
   const industry = require(".data/contentful/industry/all.json")
-  const livsmedel = industry[0]
+  const livsmedel = industry[1]
 
 
   return (
