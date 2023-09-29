@@ -20,13 +20,13 @@ const Footer = () => {
           <h1 className="text-[#f5f5f5] mb-4">{t("Senaste nyheter")}</h1>
         </Link>
         <div className="flex">
-            <a href="mailto:info@altostruct.se">
-              <h1 className="text-[#f5f5f5] pr-6">{t("Kontakta oss")}</h1>
-            </a>
+          <a href="mailto:info@altostruct.se">
+            <h1 className="text-[#f5f5f5] pr-6">{t("Kontakta oss")}</h1>
+          </a>
         </div>
       </div>
 
-      <div className="flex border-t border-gray-400 justify-between md:mx-[10%] pt-6 pb-20">
+      <div className="flex border-t border-gray-400 justify-between md:mx-[10%] pt-6 px-12 pb-20">
         <img
           src="/images/awsbadge.png"
           className="md:w-14 w-9"
