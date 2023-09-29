@@ -30,7 +30,9 @@ function CampaignsPage(props: any) {
                         <h1 className="text-4xl mb-2 md:text-6xl font-bold">
                             {title.endsWith(".") ? <>{title.slice(0, -1)}<span className="text-green-500">.</span></> : title}
                         </h1>
-                        <RichText body={props.post.fields.description}></RichText>
+                        <div className="text-lg md:text-2xl">
+                            <RichText body={props.post.fields.description}></RichText>
+                        </div>
                     </div>
                     <div className="md:w-1/3 flex-0">
                         <div className="flex w-full md:gap-4 gap-8 flex-col justify-between">

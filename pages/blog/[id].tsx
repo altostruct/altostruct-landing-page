@@ -21,7 +21,7 @@ import SEO from "@components/SEO";
 const options: Options = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => {
-      return <p className="inline text-lg">{children}</p>;
+      return <p className="inline">{children}</p>;
     },
 
     [BLOCKS.LIST_ITEM]: (node, children) => {
@@ -142,7 +142,9 @@ function BlogPage(props: BlogPageProps) {
               />
             )}
           </div>
-          <RichText body={props.post.fields.body}></RichText>
+          <div className="text-lg">
+            <RichText body={props.post.fields.body}></RichText>
+          </div>
         </div>
       </Content>
       <Footer></Footer>
