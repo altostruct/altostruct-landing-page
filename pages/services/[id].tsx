@@ -64,7 +64,7 @@ export default function Home(props: any) {
           </div>
         </Content>
 
-        <Content className="mt-40 md:mt-0">
+        <Content className="mt-40 md:mt-0">         
           <Card title={product.fields.slogan}>
             <span className="text-2xl">
               <RichText body={product.fields.sloganDescription}></RichText>
@@ -82,7 +82,9 @@ export default function Home(props: any) {
               <div className="text-xl md:text-2xl text-gray-200">
                 <RichText body={product.fields.whyUseThisDescription}></RichText>
               </div>
-              <Button type="primary" className="mt-6">Läs mer om oss</Button>
+              
+              <Button type="primary" className="mt-6" 
+              link="/about">Läs mer om oss</Button>
             </div>
           </div>
         </Content >
