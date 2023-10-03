@@ -71,28 +71,30 @@ function PageStart(props: PageStartProps) {
         {mainContent && <div className="absolute opacity-10 md:opacity-100 md:relative md:w-1/3">{mainContent}</div>}
         {!mainContent && <div className="top-0 -translate-y-1/2 opacity-50 w-96 h-96 md:top-0 md:left-0 left-full -translate-x-1/2 md:opacity-100 absolute md:relative md:my-auto md:w-1/3 md:translate-y-0 md:translate-x-0">
           <div className="m-auto w-full md:w-full">
-            <Measure>{({ measureRef, contentRect }) => {
-              return <div ref={measureRef} className="w-full">
-                {contentRect.entry && <GlobeNoSSRWrapper
-                  globeImageUrl="/images/backgrounds/earth4.webp"
-                  arcsData={arcsData}
-                  arcColor={"color"}
-                  arcDashLength={() => Math.random()}
-                  arcDashGap={() => Math.random()}
-                  arcDashAnimateTime={() => Math.random() * 4000 + 1000}
-                  forwardedRef={(ref: GlobeMethods) => {
-                    if (ref) {
-                      ref.controls().enableZoom = false;
-                      ref.controls().autoRotate = true;
-                      // ref.pointOfView(OFFICE, 4000);
-                    }
-                  }}
-                  backgroundColor="rgba(0,0,0,0)"
-                  width={contentRect.entry.width}
-                  height={contentRect.entry.width}
-                ></GlobeNoSSRWrapper>}
-              </div>
-            }}</Measure>
+            <Suspense fallback={null}>
+              <Measure>{({ measureRef, contentRect }) => {
+                return <div ref={measureRef} className="w-full">
+                  {contentRect.entry && <GlobeNoSSRWrapper
+                    globeImageUrl="/images/backgrounds/earth4.webp"
+                    arcsData={arcsData}
+                    arcColor={"color"}
+                    arcDashLength={() => Math.random()}
+                    arcDashGap={() => Math.random()}
+                    arcDashAnimateTime={() => Math.random() * 4000 + 1000}
+                    forwardedRef={(ref: GlobeMethods) => {
+                      if (ref) {
+                        ref.controls().enableZoom = false;
+                        ref.controls().autoRotate = true;
+                        // ref.pointOfView(OFFICE, 4000);
+                      }
+                    }}
+                    backgroundColor="rgba(0,0,0,0)"
+                    width={contentRect.entry.width}
+                    height={contentRect.entry.width}
+                  ></GlobeNoSSRWrapper>}
+                </div>
+              }}</Measure>
+            </Suspense>
           </div>
         </div>}
       </div>
