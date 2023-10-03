@@ -19,7 +19,7 @@ import BigList from "@components/BigList";
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 import ReferenceCases from "@components/ReferenceCases";
 
-
+ 
 export default function Home() {
   const { t } = useTranslation();
   const quotes = require(".data/contentful/customerQuote/all.json")
