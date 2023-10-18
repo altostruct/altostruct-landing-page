@@ -106,7 +106,7 @@ function Formshort(props: { extraMessage?: string, rows?: boolean }) {
           <br />
           <input className="hidden" type="text" id="extra" name="extra" />
         </div>
-        <div style={{ flexGrow: 1, backgroundColor: "bg-emerald-300" }}>
+        <div style={{ flexGrow: 1, backgroundColor: "" }}>
           <label htmlFor="message">{t("Meddelande")}</label>
           <textarea id="message" name="message" rows={6}></textarea>
           <div

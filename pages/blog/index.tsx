@@ -42,8 +42,6 @@ function Blog(props: { posts: ContentfulPost[] }) {
   }).filter(Boolean)
 
 
-
-
   const getReadTime = (data: string) => {
     return Math.ceil(data.split(" ").length / 100);
   };
@@ -118,43 +116,6 @@ function Blog(props: { posts: ContentfulPost[] }) {
       </Link>
     );
   }
-
-  // const words = posts
-  //   .map((post) =>
-  //     JSON.stringify(post.fields.body ?? {})
-  //       .replace(/"/g, "")
-  //       .replace(/,/g, "")
-  //       .replace(/{/g, "")
-  //       .replace(/}/g, "")
-  //       .replace(/:/g, "")
-  //       .replace(/\)/g, "")
-  //       .replace(/\(/g, "")
-  //       .replace(/\[/g, "")
-  //       .replace(/\]/g, "")
-  //       .replace(/=/g, "")
-  //       .split(" ")
-  //   )
-  //   .flat()
-  //   .filter((word) => word !== "")
-  //   .filter((word) => !/[^A-Za-z]+/.test(word));
-
-  // const getWordCount = (word: string) => {
-  //   return words.filter((w) => w === word).length;
-  // };
-
-  // const orderedWords = Array.from(new Set(words)).sort((wordA, wordB) => {
-  //   return getWordCount(wordB) - getWordCount(wordA);
-  // });
-
-  // const amountOfWords = 80;
-
-  // const data = orderedWords.slice(0, amountOfWords).map((value) => {
-  //   return {
-  //     value,
-  //     count: getWordCount(value),
-  //     color: "black",
-  //   };
-  // });
 
   return (
     <div className="bg-[#161616]">

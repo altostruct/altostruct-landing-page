@@ -6,6 +6,8 @@ import TransitionSquares from "@components/TransistionSquares";
 import Image from "next-image-export-optimizer";
 
 import Link from "next/link";
+import { Container } from "postcss";
+import Content from "@components/Content";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -13,16 +15,22 @@ const Footer = () => {
 
   return (
     <div className={lightBg}>
+
       <TransitionSquares></TransitionSquares>
 
-      <div className="bg-[#292929] md:pt-[5%] md:px-[10%]  pt-[50%] px-10 pb-4">
+      <div className="bg-[#292929] md:pt-[5%] md:px-[10%] pt-[50%] px-10 pb-4">
         <Link href={"/blog"}>
           <h1 className="text-[#f5f5f5] mb-4">{t("Senaste nyheter")}</h1>
         </Link>
         <div className="flex">
           <a href="mailto:info@altostruct.se">
-            <h1 className="text-[#f5f5f5] pr-6">{t("Kontakta oss")}</h1>
+            <h1 className="text-[#f5f5f5] pr-6 mb-4">{t("Kontakta oss")}</h1>
           </a>
+        </div>
+        <div className="flex">
+          <Link href={"/newsletter"}>
+            <h1 className="text-[#f5f5f5] pr-6">Nyhetsbrev</h1>
+          </Link>
         </div>
       </div>
 

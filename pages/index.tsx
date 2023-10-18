@@ -15,6 +15,7 @@ import CookieBanner from "@components/CookieBanner/CookieBanner";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Quotes from "@components/Quotes";
 import BigList from "@components/BigList";
+import Newsletter from "@components/Newsletter";
 
 import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
 import ReferenceCases from "@components/ReferenceCases";
@@ -145,6 +146,9 @@ export default function Home() {
             </p>
           </div>
           <Formshort></Formshort>
+
+            <Newsletter></Newsletter>
+
         </Content>
       </div >
       <Footer />

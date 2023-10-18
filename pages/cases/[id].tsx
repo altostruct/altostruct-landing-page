@@ -1,22 +1,16 @@
 import { GetStaticPaths } from "next";
 import {
-  ContentfulPost,
-  getContentfulPosts,
-  getPostFromSlug,
   getReferenceCases,
 } from "utils/contentful";
 import {
-  documentToReactComponents,
   Options,
 } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import Link from "next/link";
 import Content from "@components/Content";
-import formatDate from "utils/formatDate";
 import Topbar from "@components/Topbar/Topbar";
 import Footer from "@components/Footer/Footer";
 import { ContentfulImage } from "@components/Contentful";
-import NoSSR from "@components/NoSSR";
 import SEO from "@components/SEO";
 import { RichText } from "pages/blog/[id]";
 
@@ -30,34 +24,6 @@ const options: Options = {
       return (
         <ContentfulImage alt="" className="my-16" image={node.data.target} />
       );
-
-      return <p>asd</p>;
-      // if (node.data.__typename == "") {
-      //   const assetId = node.data.target.sys.id;
-      //   // const ref = post.body.references.find(
-      //   //   (ref: any) => ref.contentful_id === assetId
-      //   // );
-
-      //   return (
-      //     <GatsbyImage className="mb-6" alt="" image={ref.gatsbyImageData} />
-      //   );
-      // }
-
-      // try {
-      //   const alt = node.data.target.fields.title[languageMap[language]];
-      //   const url = node.data.target.fields.file[languageMap[language]].url;
-      //   return (
-      //     <div style={{ width: "100%", display: "flex" }}>
-      //       <img
-      //         style={{ margin: "auto", maxHeight: "800px" }}
-      //         alt={alt}
-      //         src={url}
-      //       />
-      //     </div>
-      //   );
-      // } catch (err) {
-      //   return <></>;
-      // }
     },
 
     [BLOCKS.HEADING_1]: (node, children) => {
@@ -108,7 +74,6 @@ const options: Options = {
 };
 
 
-
 interface BlogPageProps {
   post: any;
 }
@@ -135,14 +100,18 @@ function BlogPage(props: BlogPageProps) {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold md:mb-20">{props.post.fields.title}</h1>
-          <div className="md:flex ml-2 justify-around">
-            {props.post.fields.bulletPoints.map((v: any) => {
-              return <div key="" className="md:flex-col md:w-1/4 border-l-4 md:h-20 border-gray-200 items-center md:mb-20">
-                <div className="w-full pl-2 text-xl mt-2 font-bold">{v.fields.title}</div>
-                {/* <p className="w-full text-lg mt-6 pl-2 font-light"> {v.fields.description}</p> */}
-              </div>
-            })}
-          </div>
+
+          {props.post.fields.bulletPoints && props.post.fields.bulletPoints.length > 0 && (
+            <div className="md:flex ml-2 justify-around">
+              {props.post.fields.bulletPoints.map((v: any, index: number) => (
+                <div key={index} className="md:flex-col md:w-1/4 border-l-4 md:h-20 border-gray-200 items-center md:mb-20">
+                  <div className="w-full pl-2 text-xl mt-2 font-bold">{v.fields.title}</div>
+                  {/* <p className="w-full text-lg mt-6 pl-2 font-light">{v.fields.description}</p> */}
+                </div>
+              ))}
+            </div>
+          )}
+
           <h2 className="mb-3 text-xl font-normal">
             {props.post.fields.description}
           </h2>
