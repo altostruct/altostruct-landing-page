@@ -16,7 +16,7 @@ interface ButtonProps {
   filled?: boolean;
 }
 
-const Button = (props: ButtonProps) => {
+const WordCircle = (props: ButtonProps) => {
   const { children, borderCircle, filled, className, type = "primary" } = props;
 
   return (
@@ -35,4 +35,4 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-export default Button;
+export default WordCircle;

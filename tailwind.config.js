@@ -11,5 +11,5 @@ module.exports = {
   fonts: {
     kthfont: "font-family: KHTeka",
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

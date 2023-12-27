@@ -79,7 +79,7 @@ function Form() {
   };
 
   return (
-    <section className="text-white">
+    <section>
       <form
         ref={form}
         onSubmit={sendEmail}

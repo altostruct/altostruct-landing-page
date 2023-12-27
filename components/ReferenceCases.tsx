@@ -17,9 +17,9 @@ function ReferenceCases(props: ReferenceCasesProps) {
     const { data, title = "Case Studies", start, end } = props
 
     return <Card title={title}>
-        <div className="flex flex-col md:h-max md:flex-row gap-24 md:gap-3 mt-4 divide-gray-800 divide-2">
+        <div className="flex flex-col md:h-max md:flex-row gap-24 md:gap-3 divide-gray-800 divide-2">
             {data.slice(start, end).map((item: any, index: number) => {
-                return <div className="md:w-1/3  text-gray-300 flex flex-col md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
+                return <div className="md:w-1/3 flex flex-col md:first:pl-0 md:px-6 md:last:pr-0" key={index}>
                     <div className="flex justify-between">
                         <div className="mb-3 font-black">
                             <p className="text-2xl md:text-2xl mb-3">{item.fields.shortDescriptionTitle}</p>

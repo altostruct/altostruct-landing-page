@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </Script>
 
-    {/* google ads */}
+      {/* google ads */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-6T55W0J1S2"
         strategy="afterInteractive"
