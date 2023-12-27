@@ -223,7 +223,6 @@ export default function Home() {
           </Content>
         </div>
         <Content>
-          <Formshort />
         </Content>
       </div >
     </>
