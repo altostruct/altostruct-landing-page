@@ -1,20 +1,9 @@
 import * as React from "react";
-import classNames from "classnames";
-// import LanguageSelector from "./LanguageSelector/LanguageSelector";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import Link from "next/link";
-import Brand from "components/Brand/Brand";
-import useTranslation from "hooks/useTranslation";
-import { getContentfulProducts } from "utils/contentful";
 import Dropdown from "./Dropdown";
-import Content from "@components/Content";
 
-// export const Underline = () => {
-//   return (
-//     <div className="border-t origin-bottom-left border-red-400 scale-x-0 transition-all group-hover:scale-x-100"></div>
-//   );
-// };
 
 
 const AnimatedLine = (props: { expanded: boolean }) => {
@@ -50,15 +39,13 @@ const AnimatedLine = (props: { expanded: boolean }) => {
 }
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const { transparent = false, fixed = true } = props;
-  const { t } = useTranslation();
   const [expanded, setExpanded] = React.useState(false);
   const ref = React.useRef<HTMLDivElement>(null);
 
   const threshold = 100;
   const [isAtTop, setIsAtTop] = React.useState(true);
 
-  let counter = 700
-  const addcount = 100
+
 
   React.useEffect(() => {
     const onScoll = () => {

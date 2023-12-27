@@ -1,17 +1,13 @@
 import { PropsWithChildren, ReactNode } from "react";
-import ReferenceCases from "@components/ReferenceCases";
-import useTranslation from "hooks/useTranslation";
 import Quotes from "@components/Quotes";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Topbar from "@components/Topbar/Topbar";
-import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, ContentfulAuthor } from "utils/contentful";
-import classNames from "classnames";
 import { ContentfulImage } from "@components/Contentful";
+import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, ContentfulAuthor } from "utils/contentful";
+import classNames from "classnames";
 import WordCircle from "@components/WordCircle";
-import Form from "@components/Form";
-import Formshort from "@components/Form-short";
-import { unique } from "next/dist/build/utils";
 import formatDate from "utils/formatDate";
+const quotes = require(".data/contentful/customerQuote/all.json")
 
 
 
@@ -48,8 +44,7 @@ const Row = (props: PropsWithChildren<{ className?: string }>) => {
 }
 
 export default function Home() {
-  const { t } = useTranslation();
-  const quotes = require(".data/contentful/customerQuote/all.json")
+
 
 
   return (
@@ -127,7 +122,7 @@ export default function Home() {
               return <div key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 overflow-hidden flex flex-col">
                 {/* <img className="blur-md aspect-square group-hover:blur-0 -z-10 top-0 transition-all group-hover:scale-100" src="/images/backgrounds/nextImageExportOptimizer/cloud-opt-828.WEBP"></img> */}
                 <div className="flex-1">
-                  {v.fields.image && <ContentfulImage image={v.fields.image}></ContentfulImage>}
+                  {v.fields.image && <ContentfulImage alt="" image={v.fields.image}></ContentfulImage>}
                 </div>
                 <p className="text-sm overflow-hidden line-clamp-2 text-ellipsis ">
                   {v.fields.title}
