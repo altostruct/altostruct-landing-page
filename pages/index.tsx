@@ -159,7 +159,7 @@ export function Home() {
             <div>
             </div>
             <div className="cloud-animation flex-1">
-              <img src="/v2/test.png" ></img>
+              <img src="v2/test.png" ></img>
             </div>
           </Row>
 

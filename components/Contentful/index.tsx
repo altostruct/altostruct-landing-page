@@ -26,7 +26,7 @@ export function ContentfulImage(
         image.fields.details?.image.width ||
         image.fields?.file.details.image.width
       }
-      src={"/images/contentful/" + image.sys.id + "." + ext}
+      src={"images/contentful/" + image.sys.id + "." + ext}
       className="w-full"
       style={{
         objectFit: "cover",
