@@ -1,10 +1,6 @@
 import Image from "next-image-export-optimizer";
 import { ImageProps } from "next/image";
 
-import dotenv from "dotenv";
-
-dotenv.config();
-
 export function ContentfulImage(
   props: { image: any } & Omit<ImageProps, "src" | "height" | "width"> &
     Partial<{

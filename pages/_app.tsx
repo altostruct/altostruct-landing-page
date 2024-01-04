@@ -1,5 +1,6 @@
 import Script from "next/script";
 import "../styles/globals.scss";
+import 'dotenv/config'
 
 import type { AppProps } from "next/app";
 
