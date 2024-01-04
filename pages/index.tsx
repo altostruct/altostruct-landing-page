@@ -67,7 +67,7 @@ const Row = (props: PropsWithChildren<{ className?: string }>) => {
 const ArticleList = () => {
   return <Row className="gap-2">
     {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 4).map((v: any, index) => {
-      return <a href={"blog/" + v.fields.slug} key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 flex overflow-hidden flex-col">
+      return <a href={"/blog/" + v.fields.slug} key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 flex overflow-hidden flex-col">
         <div className="flex-1 p-2 bg-red-200">
           {v.fields.image && <ContentfulImage alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
         </div>
