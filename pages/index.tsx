@@ -108,6 +108,7 @@ const CaseList = () => {
                 <div className="w-8 items-center flex">
                   <ContentfulImage alt="" className="w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
                 </div>}
+
               <p>
                 {v.fields.customer.fields.name}
               </p>
