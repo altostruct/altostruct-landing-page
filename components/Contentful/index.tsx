@@ -1,6 +1,5 @@
 import Image from "next-image-export-optimizer";
 import { ImageProps } from "next/image";
-import { env } from 'next-runtime-env';
 
 export function ContentfulImage(
   props: { image: any } & Omit<ImageProps, "src" | "height" | "width"> &
