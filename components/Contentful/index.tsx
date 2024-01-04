@@ -15,6 +15,10 @@ export function ContentfulImage(
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
+    console.log(process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL),
+    console.log("why"),
+    console.log("images/contentful/" + image.sys.id + "." + ext),
+    console.log(process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext),
     <Image
       height={
         height ||
