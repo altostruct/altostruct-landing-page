@@ -15,10 +15,6 @@ export function ContentfulImage(
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
-    console.log(process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL),
-    // console.log("this should display the root"),
-    // console.log(process.env.GITHUB_PAGE_ROOT_URL),
-    // console.log(process.env.GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext),
     <Image
       height={
         height ||
@@ -30,7 +26,7 @@ export function ContentfulImage(
         image.fields.details?.image.width ||
         image.fields?.file.details.image.width
       }
-      src={process.env.GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext}
+      src={process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext}
       className="w-full"
       style={{
         objectFit: "cover",
