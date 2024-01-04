@@ -12,13 +12,12 @@ export function ContentfulImage(
   if (!image.fields.file) return <></>
 
   const ext = image.fields.file.contentType.split("/")[1];
+  const baseUrl = process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL || "/";
+  const imageUrl = baseUrl + "images/contentful/" + image.sys.id + "." + ext;
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
-    console.log(process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL),
-    console.log("why"),
-    console.log("images/contentful/" + image.sys.id + "." + ext),
-    console.log(process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext),
+    console.log(imageUrl),
     <Image
       height={
         height ||
@@ -30,7 +29,7 @@ export function ContentfulImage(
         image.fields.details?.image.width ||
         image.fields?.file.details.image.width
       }
-      src={process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL ?? "/" + "images/contentful/" + image.sys.id + "." + ext}
+      src={imageUrl}
       className="w-full"
       style={{
         objectFit: "cover",
