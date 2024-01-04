@@ -1,9 +1,7 @@
 import contentful from "contentful";
 import addData from "../utils/addData.mjs";
 import fetch from "node-fetch";
-// import dotenv from "dotenv";
 
-// dotenv.config();
 
 async function loadAssets(contentType, path) {
   console.log("Fetching " + contentType + " from contentful");

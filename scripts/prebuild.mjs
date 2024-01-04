@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-import buildHouses from "./services/buildHouses.mjs";
+// import dotenv from "dotenv";
+// import buildHouses from "./services/buildHouses.mjs";
 import contentful from "./services/contentful.mjs";
 
 dotenv.config({ path: ".env.local" });
