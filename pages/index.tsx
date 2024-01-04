@@ -7,7 +7,10 @@ import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, C
 import classNames from "classnames";
 import WordCircle from "@components/WordCircle";
 import formatDate from "utils/formatDate";
-const quotes = require(".data/contentful/customerQuote/all.json")
+import quotes from ".data/contentful/customerQuote/all.json"
+import Footer from "@components/Footer";
+import Form from "@components/Email";
+import Button from "@components/Button";
 
 
 
@@ -20,11 +23,19 @@ const getAuthorsNames = (authors: ContentfulAuthor[]) => {
       return ` & ${author.fields.firstName} ${author.fields.lastName}`
     }
     return `, ${author.fields.firstName} ${author.fields.lastName}`
-  })
+  }).join("")
 }
-const Button = (props: { label: string, icon?: ReactNode }) => {
-  const { label, icon } = props
-  return <a className="p-2 border">{label}</a>
+
+const SectionWithTitle = (props: { title: string, children: ReactNode }) => {
+  const { title, children } = props
+  return <Content>
+    <Row className="gap-8">
+      <div className="flex-1">
+        <h2 className="mb-5 text-5xl"><WordCircle>{title}</WordCircle></h2>
+        {children}
+      </div>
+    </Row>
+  </Content>
 }
 
 const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: boolean }>) => {
@@ -35,15 +46,88 @@ const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: bool
   </section>
 }
 
+
+// const BadgeComponent = (props: { children: ReactNode, className?: string, tag: string }) => {
+//   const { children, className, tag } = props
+//   return <div className={classNames("bg-red-200 w-full relative overflow-visible", className)}>
+//     <div className="text-white bg-black absolute top-0 left-0 -translate-y-full">{tag}</div>
+//     {children}
+//   </div>
+// }
+
 const Row = (props: PropsWithChildren<{ className?: string }>) => {
   const { children, className } = props
 
-  return <div className={classNames("flex items-stretch flex-row w-full ", className)}>
+  return <div className={classNames("flex flex-col items-stretch w-full md:flex-row", className)}>
     {children}
   </div >
 }
 
-export default function Home() {
+
+const ArticleList = () => {
+  return <Row className="gap-2">
+    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 4).map((v: any, index) => {
+      return <a href={"/blog/" + v.fields.slug} key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 flex overflow-hidden flex-col">
+        <div className="flex-1 p-2 bg-red-200">
+          {v.fields.image && <ContentfulImage alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
+        </div>
+        <p className="text-sm overflow-hidden line-clamp-2 text-ellipsis">
+          {v.fields.title}
+        </p>
+        {v.fields.authors && <div className="flex text-xs items-center gap-3 mb-3">
+          <div className="flex flex-row gap-2">
+            {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
+              if (!author.fields.profile) return;
+              return <div key={index} className="h-6 w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
+                <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
+              </div>
+            })}
+          </div>
+          <p className="font-extralight text-xs md:text-sm">
+            {getAuthorsNames(v.fields.authors)} · {formatDate(v.fields.createDate ?? new Date())}
+          </p>
+        </div>
+        }
+
+      </a>
+    })}
+  </Row>
+}
+
+const CaseList = () => {
+  return <Row className="gap-2">
+    {getReferenceCases().slice(0, 4).map((v: any, index) => {
+      return <Row key={index} className="gap-6 divide-x-4 divide-dashed border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
+        <div className="group flex-1 overflow-hidden p-4">
+          <div className="p-4">
+            <div className="h-32 items-center flex">
+              <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
+            </div>
+            <div className="flex gap-2 border-t items-center mt-4 pt-4">
+              {v.fields.customer.fields.logo &&
+                <div className="w-8 items-center flex">
+                  <ContentfulImage alt="" className="w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
+                </div>}
+              <p>
+                {v.fields.customer.fields.name}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Row>
+    })}
+  </Row>
+}
+
+const Column = (props: PropsWithChildren<{ className?: string }>) => {
+  const { children, className } = props
+
+  return <div className={classNames("flex flex-col items-stretch w-full md:flex-row", className)}>
+    {children}
+  </div >
+}
+
+export function Home() {
 
 
 
@@ -52,23 +136,40 @@ export default function Home() {
       <div className="flex flex-col gap-24 my-48">
         <Topbar></Topbar>
         <Content>
-          <Row>
-            <div className="flex-1">
-              <h1 className="text-7xl">
+          <Row >
+            <div className="self-center flex-1 h-fit">
+              <h1 className="text-2xl md:text-7xl ">
                 responsible digilization <br></br>
                 with ai and cloud<span className="text-green-500">.</span>
               </h1>
               <p className="mt-3">AI och molnpartner som hjälper dig och ditt bolag.</p>
+              <Row className="gap-4">
+                <div className="flex mt-6">
+                  <Button label="Kontakta oss" onClick={() => { }}>
+                  </Button>
+                </div>
+                <div className="flex mt-6">
+                  <Button label="Om oss" onClick={() => { }}>
+                  </Button>
+                </div>
+                <div>
+                </div>
+              </Row>
             </div>
             <div>
-
             </div>
-
+            <div className="cloud-animation flex-1">
+              <img src="/v2/test.png" ></img>
+            </div>
           </Row>
+
         </Content>
+
+
+        {/* 
         <Content>
           <div className="border-gray-100 border p-4">
-            <Row className="gap-32 px-24">
+            <Column className="gap-32 px-24">
               <div className="flex-1  flex justify-center" >
                 <img width={"60%"} className="m-auto" src="/v2/aws_logo.png"></img>
               </div>
@@ -81,9 +182,9 @@ export default function Home() {
               <div className="flex-1 flex justify-center" >
                 <img width={"60%"} className="m-auto" src="/v2/open_ai.png"></img>
               </div>
-            </Row>
+            </Column>
           </div>
-        </Content>
+        </Content> */}
         <Content>
           <Quotes counter={4} data={quotes.map((item: any) => ({
             quote: item.fields.quote,
@@ -97,81 +198,26 @@ export default function Home() {
             }
           }))} />
         </Content>
-        <Content>
-          <Row className="gap-8">
-            <div className="flex-1">
-              <h2 className="mb-2"><WordCircle>Effektivisering</WordCircle></h2>
-              <p>
-                Vi på altostruct tror att automation och effektivisering genom AI kommer att förändra alla brancher.
-                Vi vill därför hjälpa er att att
-              </p>
-            </div>
 
-          </Row>
-        </Content>
+        <SectionWithTitle title="Om oss">
+          <p>We are a small team :)</p>
+        </SectionWithTitle>
 
+        <SectionWithTitle title="Effektivisering">
+          <p>
+            Vi på altostruct tror att automation och effektivisering genom AI kommer att förändra alla brancher.
+            Vi vill därför hjälpa er att att
+          </p>
+        </SectionWithTitle>
 
-        <Content>
-          <span className="flex gap-2 items-baseline pb-10">
-            <h2 className="text-center">
-              Nyheter från oss
-            </h2>
-          </span>
-          <Row className="gap-2 group">
-            {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 4).map((v: any, index) => {
-              return <div key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 overflow-hidden flex flex-col">
-                {/* <img className="blur-md aspect-square group-hover:blur-0 -z-10 top-0 transition-all group-hover:scale-100" src="/images/backgrounds/nextImageExportOptimizer/cloud-opt-828.WEBP"></img> */}
-                <div className="flex-1">
-                  {v.fields.image && <ContentfulImage alt="" image={v.fields.image}></ContentfulImage>}
-                </div>
-                <p className="text-sm overflow-hidden line-clamp-2 text-ellipsis ">
-                  {v.fields.title}
-                </p>
-                {v.fields.authors && <div className="flex text-xs items-center gap-3 mb-3">
-                  <div className="flex flex-row gap-2">
-                    {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
-                      if (!author.fields.profile) return;
-                      return <div key={index} className="h-6 w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
-                        <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
-                      </div>
-                    })}
-                  </div>
-                  <p className="font-extralight text-xs md:text-sm">
-                    {getAuthorsNames(v.fields.authors)} · {formatDate(v.fields.createDate ?? new Date())}
-                  </p>
-                </div>
-                }
-              </div>
-            })}
-          </Row>
-          <div className="mt-4">
-            <Button label="Läs mer"></Button>
-          </div>
-        </Content>
+        <SectionWithTitle title="Nyheter från oss">
+          <ArticleList></ArticleList>
+        </SectionWithTitle>
 
-        <Content fullWidth className="w-screen max-w-[100vw] border-black border-y-4 border-dashed flex flex-col">
-          <Row className="gap-6 divide-x-4 divide-dashed divide-black">
-            {getReferenceCases().slice(0, 4).map((v: any, index) => {
-              return <div key={index} className="group flex-1 overflow-hidden p-4">
-                <div className="p-4">
-                  <div className="h-32 items-center flex">
-                    <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
-                  </div>
-                  <div className="flex gap-2 border-t items-center mt-4 pt-4">
-                    {v.fields.customer.fields.logo &&
-                      <div className="w-8 items-center flex">
-                        <ContentfulImage alt="" className="w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
-                      </div>}
-                    <p>
-                      {v.fields.customer.fields.name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            })}
-          </Row>
+        <SectionWithTitle title="Våra cases">
+          <CaseList></CaseList>
+        </SectionWithTitle>
 
-        </Content>
         <Content>
           <div className="p-8">
 
@@ -203,6 +249,14 @@ export default function Home() {
           </div>
         </Content>
 
+        <Content>
+          <Row className="">
+            <div className="flex-1">
+              <Form className="flex-1"></Form>
+            </div>
+          </Row>
+        </Content>
+
         <div className="bg-black py-12 text-white">
           <Content>
             <h2 className="mb-8">vad är molnet.</h2>
@@ -222,9 +276,30 @@ export default function Home() {
             </Row>
           </Content>
         </div>
-        <Content>
-        </Content>
       </div >
+
+      <Content>
+        <div className="border-gray-100 border p-4">
+          <Column className="gap-32 px-24">
+            <div className="flex-1  flex justify-center" >
+              <img width={"60%"} className="m-auto" src="/v2/aws_logo.png"></img>
+            </div>
+            <div className="flex-1  flex justify-center" >
+              <img width={"100%"} className="m-auto" src="/v2/anthoripic.png"></img>
+            </div>
+            <div className="flex-1 flex justify-center" >
+              <img width={"100%"} className="m-auto" src="/v2/Ingram_micro_logo.png"></img>
+            </div>
+            <div className="flex-1 flex justify-center" >
+              <img width={"60%"} className="m-auto" src="/v2/open_ai.png"></img>
+            </div>
+          </Column>
+        </div>
+      </Content>
+      <Footer></Footer>
     </>
+
   );
 }
+
+export default Home;

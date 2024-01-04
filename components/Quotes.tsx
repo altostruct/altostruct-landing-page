@@ -19,18 +19,37 @@ function Quotes(props: QuotesProps) {
 
 
     return <div className="relative border p-5">
-        {/* <div className="text-[28rem] h-fit absolute left-12 top-32 opacity-10 font-mono" style={{ "lineHeight": "12rem" }}>{'”'}</div> */}
-        {/* <div className="text-[14rem] h-fit right-12 absolute -bottom-12 font-mono" style={{ "lineHeight": "0rem" }}>{'”'}</div> */}
         <Carousel
             renderIndicator={(ev, isSelected) => {
                 return <li className={classNames("w-2 h-2 bg-black inline-block mx-2 rounded-xl cursor-pointer self-center transition-all", { "scale-150": isSelected })} onClick={ev} />
             }}
-            centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={false} autoPlay>
+            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+                <>
+                    {hasPrev &&
+                        <div onClick={onClickHandler} title={label} className="absolute flex top-1/2 w-10 h-10 -translate-y-1/2 rounded-full cursor-pointer z-10 ">
+                            <p className="m-auto text-xl">{"<"}</p>
+                        </div>
+                    }
+                </>
+            }
+
+            renderArrowNext={(onClickHandler, hasNext, label) =>
+                <>
+                    {hasNext &&
+                        <div onClick={onClickHandler} title={label} className="absolute flex top-1/2 w-10 h-10 right-0 -translate-y-1/2 rounded-full cursor-pointer z-10 ">
+                            <p className="m-auto text-xl">{">"}</p>
+                        </div>
+                    }
+                </>
+            }
+
+
+            centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={true} autoPlay>
             {data.slice(0, counter).map((item, index) => {
 
-                return <div key={index} className="text-left flex-1 p-3 h-full ">
+                return <div key={index} className="text-left flex-1 px-16 p-3 h-full ">
                     <div className="flex flex-col gap-3 h-full ">
-                        <cite className="text-md   text-3xl flex-1 not-italic pb-2">
+                        <cite className="text-md text-3xl flex-1 not-italic pb-2">
                             {'"'}
                             {item.quote}
                             {'"'}

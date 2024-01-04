@@ -22,18 +22,6 @@ a {
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
 
-p {
-}
-
-h2 {
-  font-size: 3em;
-  font-weight: 600;
-}
-
-h3 {
-  font-size: 1.8em;
-  font-weight: 600;
-}
 
 h1,
 h2 {
@@ -50,4 +38,29 @@ b {
     Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 
   font-weight: 600;
+}
+
+
+@keyframes cloud-animation {
+  0% {
+    // transform: translateY(0px);
+    transform: rotateZ(3600deg);
+
+  }
+
+  50% {}
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+
+
+.cloud-animation {
+
+  animation: cloud-animation 1s ease-in-out forwards;
+
+
+
 }

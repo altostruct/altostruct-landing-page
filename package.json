@@ -21,7 +21,10 @@
   "dependencies": {
     "@builder.io/partytown": "^0.7.3",
     "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@fontsource/poppins": "^4.5.10",
+    "@mui/material": "^5.15.2",
     "@react-three/drei": "^8.18.10",
     "@react-three/fiber": "7.0.26",
     "@tailwindcss/line-clamp": "^0.4.4",

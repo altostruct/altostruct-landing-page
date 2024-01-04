@@ -81,7 +81,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             <img src="/v2/alto_logo.png" width={60}></img>
           </div>
           <div>
-            <GiHamburgerMenu />
+            {/* <GiHamburgerMenu /> */}
           </div>
           <AnimatedLine expanded={!isAtTop}></AnimatedLine>
         </div>
