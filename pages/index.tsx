@@ -216,7 +216,7 @@ export function Home() {
             <Row className="mt-5">
               <div className="flex gap-6 items-center">
                 <div className="flex w-16 h-16 rounded-full overflow-hidden">
-                  <img className="m-auto h-full object-cover" src="/v2/erik.webp"></img>
+                  <img className="m-auto h-full object-cover" src="v2/erik.webp"></img>
                 </div>
                 <div>
                   <p className="text-lg">Erik Rehn - CEO</p>
