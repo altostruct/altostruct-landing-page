@@ -73,7 +73,7 @@
     "@types/three": "^0.141.0",
     "autoprefixer": "^10.4.13",
     "contentful": "^9.2.10",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "node-fetch": "^3.3.0",
     "patch-package": "^6.5.0",
     "pngjs": "^6.0.0",
