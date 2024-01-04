@@ -165,26 +165,6 @@ export function Home() {
 
         </Content>
 
-
-        {/* 
-        <Content>
-          <div className="border-gray-100 border p-4">
-            <Column className="gap-32 px-24">
-              <div className="flex-1  flex justify-center" >
-                <img width={"60%"} className="m-auto" src="/v2/aws_logo.png"></img>
-              </div>
-              <div className="flex-1  flex justify-center" >
-                <img width={"100%"} className="m-auto" src="/v2/anthoripic.png"></img>
-              </div>
-              <div className="flex-1 flex justify-center" >
-                <img width={"100%"} className="m-auto" src="/v2/Ingram_micro_logo.png"></img>
-              </div>
-              <div className="flex-1 flex justify-center" >
-                <img width={"60%"} className="m-auto" src="/v2/open_ai.png"></img>
-              </div>
-            </Column>
-          </div>
-        </Content> */}
         <Content>
           <Quotes counter={4} data={quotes.map((item: any) => ({
             quote: item.fields.quote,
@@ -282,16 +262,16 @@ export function Home() {
         <div className="border-gray-100 border p-4">
           <Column className="gap-32 px-24">
             <div className="flex-1  flex justify-center" >
-              <img width={"60%"} className="m-auto" src="/v2/aws_logo.png"></img>
+              <img width={"60%"} className="m-auto" src="v2/aws_logo.png"></img>
             </div>
             <div className="flex-1  flex justify-center" >
-              <img width={"100%"} className="m-auto" src="/v2/anthoripic.png"></img>
+              <img width={"100%"} className="m-auto" src="v2/anthoripic.png"></img>
             </div>
             <div className="flex-1 flex justify-center" >
-              <img width={"100%"} className="m-auto" src="/v2/Ingram_micro_logo.png"></img>
+              <img width={"100%"} className="m-auto" src="v2/Ingram_micro_logo.png"></img>
             </div>
             <div className="flex-1 flex justify-center" >
-              <img width={"60%"} className="m-auto" src="/v2/open_ai.png"></img>
+              <img width={"60%"} className="m-auto" src="v2/open_ai.png"></img>
             </div>
           </Column>
         </div>
