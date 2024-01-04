@@ -1,10 +1,8 @@
 import Script from "next/script";
 import "../styles/globals.scss";
-import 'dotenv/config'
+
 
 import type { AppProps } from "next/app";
-
-console.log(process.env);
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
