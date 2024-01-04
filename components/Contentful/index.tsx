@@ -17,7 +17,6 @@ export function ContentfulImage(
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
-    console.log(imageUrl),
     <Image
       height={
         height ||

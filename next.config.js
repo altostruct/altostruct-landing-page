@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
+
+const baseUrl = process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL || "/";
+const folderPath = baseUrl + "public/images";
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
@@ -35,7 +39,7 @@ const nextConfig = {
   },
   transpilePackages: ["next-image-export-optimizer"],
   env: {
-    nextImageExportOptimizer_imageFolderPath: "public/images",
+    nextImageExportOptimizer_imageFolderPath: folderPath,
     nextImageExportOptimizer_exportFolderPath: "out",
     nextImageExportOptimizer_quality: 75,
     nextImageExportOptimizer_storePicturesInWEBP: true,
