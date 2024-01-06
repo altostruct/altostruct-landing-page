@@ -83,13 +83,13 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
     return (
         <div className={classNames("flex flex-col my-2 space-y-3", className)} >
             <div>
-                <p className="text-4xl w-fit underline">
+                <p className="text-5xl w-fit underline">
                     <b>
                         Vill du veta mer om Altostruct?
                     </b>
                 </p>
 
-                <div className="my-2">
+                <div className="my-2 text-2xl">
                     <p>
                         Skriv in din email nedan så hör vi av oss!
                     </p>

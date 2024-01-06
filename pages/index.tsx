@@ -6,11 +6,16 @@ import { ContentfulImage } from "@components/Contentful";
 import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, ContentfulAuthor } from "utils/contentful";
 import classNames from "classnames";
 import WordCircle from "@components/WordCircle";
+import { SiAwslambda } from "react-icons/si";
+
 import formatDate from "utils/formatDate";
 import quotes from ".data/contentful/customerQuote/all.json"
 import Footer from "@components/Footer";
 import Form from "@components/Email";
 import Button from "@components/Button";
+import { FcAbout } from "react-icons/fc";
+import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
+
 
 
 
@@ -26,24 +31,45 @@ const getAuthorsNames = (authors: ContentfulAuthor[]) => {
   }).join("")
 }
 
-const SectionWithTitle = (props: { title: string, children: ReactNode }) => {
+const SectionWithTitle = (props: { title: ReactNode, children: ReactNode }) => {
   const { title, children } = props
   return <Content>
-    <Row className="gap-8">
-      <div className="flex-1">
-        <h2 className="mb-5 text-5xl"><WordCircle>{title}</WordCircle></h2>
-        {children}
-      </div>
-    </Row>
+    <div className="flex-1">
+      <h2 className="mb-5 text-4xl">{title}</h2>
+      {children}
+    </div>
+  </Content>
+}
+
+const Label = (props: { children: ReactNode }) => {
+  const { children } = props
+  return <div className="bg-black hover:bg-gray-800 group-hover:translate-x-0 transition-all text-white p-4 text-4xl font-extrabold ">
+    {children}
+  </div>
+}
+
+const SectionWithLabel = (props: { title: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
+  const { title, children, titleAlignement = "right" } = props
+
+  return <Content>
+    <h2 className={classNames("text-3xl bg-black text-white w-fit px-2 translate-y-1", {
+      "ml-auto": titleAlignement === "left"
+    })}>{title}</h2>
+    <div className="border-4 p-6 border-dashed border-black">
+      {children}
+    </div>
   </Content>
 }
 
 const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: boolean }>) => {
   const { children, className, fullWidth = false } = props
 
-  return <section className={classNames(className, { "m-auto max-w-[2048px] w-8/12": !fullWidth })}>
-    {children}
-  </section>
+  return <div className="w-screen">
+    {/* <div className="w-2 h-2 bg-red-400 rounded-xl left-[12vw] absolute top-1/2"></div> */}
+    <section className={classNames(className, { "m-auto max-w-[1048px] w-11/12 md:w-8/12": !fullWidth })}>
+      {children}
+    </section>
+  </div>
 }
 
 
@@ -65,10 +91,10 @@ const Row = (props: PropsWithChildren<{ className?: string }>) => {
 
 
 const ArticleList = () => {
-  return <Row className="gap-2">
-    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 4).map((v: any, index) => {
-      return <a href={"/blog/" + v.fields.slug} key={index} className="border-black border-dashed border-4 hover:border-solid transition-all gap-4 p-4 cursor-pointer group flex-1 flex overflow-hidden flex-col">
-        <div className="flex-1 p-2 bg-red-200">
+  return <Row className="gap-2 flex-wrap">
+    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 8).map((v: any, index) => {
+      return <a href={"/blog/" + v.fields.slug} key={index} className="w-[calc(25%-0.5em)]  border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col">
+        <div className="flex-1 p-2">
           {v.fields.image && <ContentfulImage alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
         </div>
         <p className="text-sm overflow-hidden line-clamp-2 text-ellipsis">
@@ -95,9 +121,9 @@ const ArticleList = () => {
 }
 
 const CaseList = () => {
-  return <Row className="gap-2">
-    {getReferenceCases().slice(0, 4).map((v: any, index) => {
-      return <Row key={index} className="gap-6 divide-x-4 divide-dashed border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
+  return <Row className="gap-2 flex-wrap ">
+    {getReferenceCases().slice(0, 6).map((v: any, index) => {
+      return <Row key={index} className="w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
         <div className="group flex-1 overflow-hidden p-4">
           <div className="p-4">
             <div className="h-32 items-center flex">
@@ -134,33 +160,36 @@ export function Home() {
 
   return (
     <>
-      <div className="flex flex-col gap-24 my-48">
+      <div className="flex flex-col gap-24 my-48 relative">
+        {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
+        <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
         <Topbar></Topbar>
         <Content>
-          <Row >
+          <Row className="gap-">
             <div className="self-center flex-1 h-fit">
-              <h1 className="text-2xl md:text-7xl ">
-                Ansvarsfull Digitalisering <br></br>
-                med AI och Molnet<span className="text-green-500">.</span>
+              <h1 className="text-6xl md:text-8xl">
+                responsible
+                digitalization
+                <span className="text-green-500">.</span><br></br>
               </h1>
-              <p className="mt-3">Bygg ansvarsfullt och skalbart med våra certifierade utvecklare.</p>
-              <Row className="gap-4">
-                <div className="flex mt-6">
-                  <Button label="Kontakta oss" onClick={() => { }}>
-                  </Button>
-                </div>
-                <div className="flex mt-6">
-                  <Button label="Om oss" onClick={() => { }}>
-                  </Button>
-                </div>
-                <div>
-                </div>
-              </Row>
+
+            </div>
+
+            <div className="cloud-animation md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-50 top-0 flex-0">
+              <img src="v2/test.png" ></img>
+            </div>
+          </Row>
+          <p className="mt-3 text-xl">Altostruct är en konsultbyrå som specialiserar sig på automation och AI för att stödja företag. Med fokus på MLOps, skalbar molnarkitektur och CI/CD möjliggör vi ansvarsfull användning av AI-teknologi för att optimera och förbättra verksamheter.</p>
+          <Row className="gap-4">
+            <div className="flex mt-6">
+              <Button label="Kontakta oss" onClick={() => { }}>
+              </Button>
+            </div>
+            <div className="flex mt-6">
+              <Button label="Om oss" onClick={() => { }}>
+              </Button>
             </div>
             <div>
-            </div>
-            <div className="cloud-animation flex-1">
-              <img src="v2/test.png" ></img>
             </div>
           </Row>
 
@@ -181,43 +210,59 @@ export function Home() {
         </Content>
 
 
-        <SectionWithTitle title="Om oss">
-          <p>Vi är ett litet team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för
-            automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
-            företags digitala resa. Våra utvecklare är experter på de senaste verktygen och tjänsterna inom webbutveckling
-            och molnplattformen AWS. Därför känner vi oss trygga med att ta ansvar för att garantera er digital integritet, skalbarhet och effektivitet. </p>
+        {/* <Content className="flex-col group transition-all flex">
+          <div className="bg-black hover:bg-gray-800 group-hover:translate-x-0 transition-all -translate-x-4 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi brinner för AI, webben och cloud.
+            </b>
+          </div>
+          <div className="bg-green-500 hover:bg-gray-800  group-hover:translate-x-0 transition-all translate-x-8 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi gör era problem och utmaningar till våra utmaningar.
+            </b>
+          </div>
+          <div className="bg-black hover:bg-gray-800  group-hover:translate-x-0 transition-all -translate-x-7 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi bygger digitala lösningar på teknik som fungerar.
+            </b>
+          </div>
+          <div className="bg-green-500 hover:bg-gray-800  group-hover:translate-x-0 transition-all translate-x-2 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi gör klart. Kör in i kaklet.
+            </b>
+          </div>
+        </Content> */}
 
-          <p>
-            Har ni frågor eller vill veta mer om oss? Tveka inte på att höra av er!
-          </p>
-        </SectionWithTitle>
 
-        <SectionWithTitle title="Ansvarsfull digitalisering">
-          <p>Vad menas med ansvarsfull digitalisering? Även om vi har en stor passion för den senaste teknologin som exempelvis AI och molnet, så är vi också medvetna om teknologins
-            risker och gränser. Vi har respekt för att göra en digital omställning, vare sig det gäller automatisering av processer, migration av system eller hållbarhet, är alltid ett
-            stort engagemang som innebär risker och noggranna avvägningar. För att minimera dessa risker och garantera en lönsam, hållbar och skalbar digitalisering förespråkar vi det vi kallar för “ansvarsfull digitalisering”.
-          </p>
+        <SectionWithLabel title="Vi gör era problem och utmaningar till våra utmaningar">
+          <Row className="divide-dashed">
+            <p className="flex-1 text-3xl pr-4 ">
+              Vi är ett team av erfarna utvecklare
+              <span className="text-green-300">.</span> Med en passion för teknologi och en djup förståelse för
+              automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
+              företags digitala resa.
+            </p>
+            <div className="flex pl-4 gap-4">
+              <div className="m-auto w-32 h-32 relative group">
+                <SiAwslambda className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <SiAwslambda className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <SiAwslambda className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
 
-          <p>
-            Den ansvarsfulla digitaliseringen präglas av implementationer som löser riktiga problem. Den hoppar inte blint på de senaste trenderna. Den ansvarsfulla digitaliseringen automatiserar tröttsamma manuella processer. Den adderar inte onödiga steg som
-            komplicerar den dagliga verksamheten. Den ansvarsfulla digitaliseringen genomförs med hållbarhet och skalbarhet i siktet. Den är inte beroende av en eller några personer och använder bara den datakraft som är nödvändig.
-          </p>
-        </SectionWithTitle>
 
-        <SectionWithTitle title="Vad erbjuder vi?">
-
-          <Row className="gap-12 text-xl -translate-y-4 border-black ">
-            <div className="flex-1">
-              <p>
-                <b>
-                  Optimering
-                </b> vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
-            </div>
-            <div className="flex-1">
-              <p><b>Migration</b> Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
             </div>
           </Row>
-          <Row className="mt-5">
+
+        </SectionWithLabel>
+
+
+        <SectionWithLabel title="Molnarkitektur">
+
+          <p className="text-3xl">
+            Vi är ett team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för
+          </p>
+
+          {/* <Row className="mt-5">
             <div className="flex gap-6 items-center">
               <div className="flex w-16 h-16 rounded-full overflow-hidden">
                 <img className="m-auto h-full object-cover" src="v2/erik.webp"></img>
@@ -228,22 +273,80 @@ export function Home() {
               </div>
 
             </div>
+          </Row> */}
+
+        </SectionWithLabel>
+
+
+        <SectionWithLabel title="AI och autome ">
+          <Row className="divide-dashed">
+            <p className="flex-1 text-3xl pr-4 ">
+              Vi är ett team av erfarna utvecklare<span className="text-green-600">.</span> Med en passion för teknologi och en djup förståelse för
+              automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
+              företags digitala resa<span className="text-red-600">.</span>
+            </p>
+            <div className="flex pl-4 gap-4">
+              <div className="m-auto w-32 h-32 relative group">
+                <FaCloud className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaCloud className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaCloud className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+              <div className="m-auto w-32 h-32 relative group">
+                <FaCloudscale className="w-32 h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaCloudscale className="w-32 h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaCloudscale className="w-32 h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+              <div className="m-auto w-32 h-32 relative group">
+                <FaFileCode className="w-32 h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaFileCode className="w-32 h-32 my-auto text-yellow-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaFileCode className="w-32 h-32 my-auto text-yellow-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+            </div>
           </Row>
 
-        </SectionWithTitle>
-
-
-
-        {/* <SectionWithTitle title="Effektivisering">
-          <p>
-            Vi på altostruct tror att automation och effektivisering genom AI kommer att förändra alla brancher.
-            Vi vill därför hjälpa er att att
-          </p>
-        </SectionWithTitle> */}
-
-        <SectionWithTitle title="Nyheter från oss">
+        </SectionWithLabel>
+        <SectionWithTitle title={
+          <>
+            Nyheter från oss
+          </>
+        }>
           <ArticleList></ArticleList>
         </SectionWithTitle>
+
+
+        <SectionWithLabel title="Vilka teknologier använder vi oss av">
+          <Row className="divide-dashed">
+            <div className="m-auto w-32 h-32 relative group">
+              <FaCloud className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaCloud className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaCloud className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            </div>
+            <p className="flex-1 m-auto text-3xl pl-8 ">
+              We love the cloud. We are proud partners with AWS
+              We love the cloud. We are proud partners with AWS
+            </p>
+          </Row>
+          <Row className="divide-dashed">
+            <div className="m-auto w-32 h-32 relative group">
+              <FaChessKnight className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaChessKnight className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaChessKnight className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            </div>
+            <p className="flex-1 m-auto text-3xl pl-8 ">
+              Top fron
+              We love the cloud. We are proud partners with AWS
+            </p>
+          </Row>
+          <Row >
+            <div className="flex pl-4">
+              <FaTachographDigital className="w-32 h-32 my-auto " />
+            </div>
+            <p className="flex-1 m-auto text-3xl pl-4 ">
+              We love the cloud. We are proud partners with AWS
+              We love the cloud. We are proud partners with AWS            </p>
+          </Row>
+        </SectionWithLabel>
+
 
         <SectionWithTitle title="Våra cases">
           <CaseList></CaseList>
@@ -288,25 +391,7 @@ export function Home() {
           </Row>
         </Content>
 
-        <div className="bg-black py-12 text-white">
-          <Content>
-            <h2 className="mb-8">vad är molnet.</h2>
-            <Row className="gap-2">
-              <div className="flex-1">
-                <h3>Optimering</h3>
-                <p> Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna.</p>
-              </div>
-              <div className="flex-1">
-                <h3>Migration</h3>
-                <p>Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna.</p>
-              </div>
-              <div className="flex-1">
-                <h3>Skräddarsyr</h3>
-                <p>Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna.</p>
-              </div>
-            </Row>
-          </Content>
-        </div>
+
       </div >
 
       <Content>
