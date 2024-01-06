@@ -140,10 +140,10 @@ export function Home() {
           <Row >
             <div className="self-center flex-1 h-fit">
               <h1 className="text-2xl md:text-7xl ">
-                responsible digilization <br></br>
-                with ai and cloud<span className="text-green-500">.</span>
+                Ansvarsfull Digitalisering <br></br>
+                med AI och Molnet<span className="text-green-500">.</span>
               </h1>
-              <p className="mt-3">AI och molnpartner som hjälper dig och ditt bolag.</p>
+              <p className="mt-3">Bygg ansvarsfullt och skalbart med våra certifierade utvecklare.</p>
               <Row className="gap-4">
                 <div className="flex mt-6">
                   <Button label="Kontakta oss" onClick={() => { }}>
@@ -180,16 +180,66 @@ export function Home() {
           }))} />
         </Content>
 
+
         <SectionWithTitle title="Om oss">
-          <p>We are a small team :)</p>
+          <p>Vi är ett litet team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för
+            automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
+            företags digitala resa. Våra utvecklare är experter på de senaste verktygen och tjänsterna inom webbutveckling
+            och molnplattformen AWS. Därför känner vi oss trygga med att ta ansvar för att garantera er digital integritet, skalbarhet och effektivitet. </p>
+
+          <p>
+            Har ni frågor eller vill veta mer om oss? Tveka inte på att höra av er!
+          </p>
         </SectionWithTitle>
 
-        <SectionWithTitle title="Effektivisering">
+        <SectionWithTitle title="Ansvarsfull digitalisering">
+          <p>Vad menas med ansvarsfull digitalisering? Även om vi har en stor passion för den senaste teknologin som exempelvis AI och molnet, så är vi också medvetna om teknologins
+            risker och gränser. Vi har respekt för att göra en digital omställning, vare sig det gäller automatisering av processer, migration av system eller hållbarhet, är alltid ett
+            stort engagemang som innebär risker och noggranna avvägningar. För att minimera dessa risker och garantera en lönsam, hållbar och skalbar digitalisering förespråkar vi det vi kallar för “ansvarsfull digitalisering”.
+          </p>
+
+          <p>
+            Den ansvarsfulla digitaliseringen präglas av implementationer som löser riktiga problem. Den hoppar inte blint på de senaste trenderna. Den ansvarsfulla digitaliseringen automatiserar tröttsamma manuella processer. Den adderar inte onödiga steg som
+            komplicerar den dagliga verksamheten. Den ansvarsfulla digitaliseringen genomförs med hållbarhet och skalbarhet i siktet. Den är inte beroende av en eller några personer och använder bara den datakraft som är nödvändig.
+          </p>
+        </SectionWithTitle>
+
+        <SectionWithTitle title="Vad erbjuder vi?">
+
+          <Row className="gap-12 text-xl -translate-y-4 border-black ">
+            <div className="flex-1">
+              <p>
+                <b>
+                  Optimering
+                </b> vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
+            </div>
+            <div className="flex-1">
+              <p><b>Migration</b> Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
+            </div>
+          </Row>
+          <Row className="mt-5">
+            <div className="flex gap-6 items-center">
+              <div className="flex w-16 h-16 rounded-full overflow-hidden">
+                <img className="m-auto h-full object-cover" src="v2/erik.webp"></img>
+              </div>
+              <div>
+                <p className="text-lg">Erik Rehn - CEO</p>
+                <p >erik.rehn@altostruct.se</p>
+              </div>
+
+            </div>
+          </Row>
+
+        </SectionWithTitle>
+
+
+
+        {/* <SectionWithTitle title="Effektivisering">
           <p>
             Vi på altostruct tror att automation och effektivisering genom AI kommer att förändra alla brancher.
             Vi vill därför hjälpa er att att
           </p>
-        </SectionWithTitle>
+        </SectionWithTitle> */}
 
         <SectionWithTitle title="Nyheter från oss">
           <ArticleList></ArticleList>
@@ -199,7 +249,7 @@ export function Home() {
           <CaseList></CaseList>
         </SectionWithTitle>
 
-        <Content>
+        {/* <Content>
           <div className="p-8">
 
             <h2 className="mb-6 underline">vad erbjuder vi?</h2>
@@ -228,7 +278,7 @@ export function Home() {
             </Row>
 
           </div>
-        </Content>
+        </Content> */}
 
         <Content>
           <Row className="">

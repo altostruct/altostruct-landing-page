@@ -91,7 +91,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
 
                 <div className="my-2">
                     <p>
-                        Skriv ditt email så hör vi av oss!
+                        Skriv in din email nedan så hör vi av oss!
                     </p>
                 </div>
             </div>
@@ -100,7 +100,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
                 <Button onClick={submit} label="Skicka"></Button>
             </form>
             <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
-                <p>Jag vill prenumerera på Alto:s nyhetsbrev och få tips från AWS-experter.</p>
+                <p>Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
             </Checkbox>
             {isSubmittedSuccessfully && (
                 <HandleAlert severity="success"> Ditt e-postmeddelande har skickats! </HandleAlert>
