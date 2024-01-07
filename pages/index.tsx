@@ -7,6 +7,7 @@ import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, C
 import classNames from "classnames";
 import WordCircle from "@components/WordCircle";
 import { SiAwslambda } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
 import formatDate from "utils/formatDate";
 import quotes from ".data/contentful/customerQuote/all.json"
@@ -15,6 +16,8 @@ import Form from "@components/Email";
 import Button from "@components/Button";
 import { FcAbout } from "react-icons/fc";
 import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
+import ExampleAI from "@components/Logos/ExampleAI";
+import { MdOutlineAccessTime } from "react-icons/md";
 
 
 
@@ -48,20 +51,20 @@ const Label = (props: { children: ReactNode }) => {
   </div>
 }
 
-const SectionWithLabel = (props: { title: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
-  const { title, children, titleAlignement = "right" } = props
+const SectionWithLabel = (props: { title: string, className?: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
+  const { title, children, titleAlignement = "right", className } = props
 
   return <Content>
-    <h2 className={classNames("text-3xl bg-black text-white w-fit px-2 translate-y-1", {
+    <h2 className={classNames("text-2xl bg-black text-white w-fit px-4 translate-y-1", {
       "ml-auto": titleAlignement === "left"
     })}>{title}</h2>
-    <div className="border-4 p-6 border-dashed border-black">
+    <div className={classNames("border-4 p-6 border-dashed flex gap-8 flex-col border-black", className)}>
       {children}
     </div>
   </Content>
 }
 
-const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: boolean }>) => {
+export const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: boolean }>) => {
   const { children, className, fullWidth = false } = props
 
   return <div className="w-screen">
@@ -81,7 +84,7 @@ const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: bool
 //   </div>
 // }
 
-const Row = (props: PropsWithChildren<{ className?: string }>) => {
+export const Row = (props: PropsWithChildren<{ className?: string }>) => {
   const { children, className } = props
 
   return <div className={classNames("flex flex-col items-stretch w-full md:flex-row", className)}>
@@ -167,7 +170,7 @@ export function Home() {
         <Content>
           <Row className="gap-">
             <div className="self-center flex-1 h-fit">
-              <h1 className="text-6xl md:text-8xl">
+              <h1 className="text-6xl bold md:text-8xl">
                 responsible
                 digitalization
                 <span className="text-green-500">.</span><br></br>
@@ -179,7 +182,7 @@ export function Home() {
               <img src="v2/test.png" ></img>
             </div>
           </Row>
-          <p className="mt-3 text-xl">Altostruct är en konsultbyrå som specialiserar sig på automation och AI för att stödja företag. Med fokus på MLOps, skalbar molnarkitektur och CI/CD möjliggör vi ansvarsfull användning av AI-teknologi för att optimera och förbättra verksamheter.</p>
+          <p className="mt-3 text-xl">Altostruct  är en konsultbyrå som specialiserar sig på automation och AI för att stödja företag. Med fokus på MLOps, skalbar molnarkitektur och CI/CD möjliggör vi ansvarsfull användning av AI-teknologi för att optimera och förbättra verksamheter.</p>
           <Row className="gap-4">
             <div className="flex mt-6">
               <Button label="Kontakta oss" onClick={() => { }}>
@@ -234,7 +237,7 @@ export function Home() {
         </Content> */}
 
 
-        <SectionWithLabel title="Vi gör era problem och utmaningar till våra utmaningar">
+        <SectionWithLabel title="Om oss">
           <Row className="divide-dashed">
             <p className="flex-1 text-3xl pr-4 ">
               Vi är ett team av erfarna utvecklare
@@ -252,33 +255,29 @@ export function Home() {
 
             </div>
           </Row>
-
         </SectionWithLabel>
 
+        <Content>
+          <Row className="">
+            <div className="m-auto">
+              <h1 className="text-4xl mb-4">
+                Se hur man använder <br></br>
+                <div className="relative ">
 
-        <SectionWithLabel title="Molnarkitektur">
+                  <span className="text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
+                </div>
 
-          <p className="text-3xl">
-            Vi är ett team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för
-          </p>
-
-          {/* <Row className="mt-5">
-            <div className="flex gap-6 items-center">
-              <div className="flex w-16 h-16 rounded-full overflow-hidden">
-                <img className="m-auto h-full object-cover" src="v2/erik.webp"></img>
-              </div>
-              <div>
-                <p className="text-lg">Erik Rehn - CEO</p>
-                <p >erik.rehn@altostruct.se</p>
-              </div>
-
+              </h1>
             </div>
-          </Row> */}
+            <div className="w-[100rem]">
+              {/* <img src="/v2/real-ai.png"></img> */}
+              <ExampleAI></ExampleAI>
+            </div>
+          </Row>
+        </Content>
 
-        </SectionWithLabel>
 
-
-        <SectionWithLabel title="AI och autome ">
+        <SectionWithLabel title="AI och automation med AWS">
           <Row className="divide-dashed">
             <p className="flex-1 text-3xl pr-4 ">
               Vi är ett team av erfarna utvecklare<span className="text-green-600">.</span> Med en passion för teknologi och en djup förståelse för
@@ -292,9 +291,9 @@ export function Home() {
                 <FaCloud className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
               <div className="m-auto w-32 h-32 relative group">
-                <FaCloudscale className="w-32 h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <FaCloudscale className="w-32 h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <FaCloudscale className="w-32 h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
               <div className="m-auto w-32 h-32 relative group">
                 <FaFileCode className="w-32 h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
@@ -314,36 +313,35 @@ export function Home() {
         </SectionWithTitle>
 
 
-        <SectionWithLabel title="Vilka teknologier använder vi oss av">
+        <SectionWithLabel className="py-8" title="Vad menar vi med ansvarsfull digitalisering?">
           <Row className="divide-dashed">
-            <div className="m-auto w-32 h-32 relative group">
-              <FaCloud className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaCloud className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaCloud className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            <div className="m-auto w-28 h-28 relative group">
+              <FaChessKnight className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaChessKnight className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaChessKnight className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-3xl pl-8 ">
-              We love the cloud. We are proud partners with AWS
-              We love the cloud. We are proud partners with AWS
+            <p className="flex-1 m-auto text-4xl pl-8 bold">
+              Kunniga, nyfikna och passionerade människor i partnerskap
             </p>
           </Row>
           <Row className="divide-dashed">
-            <div className="m-auto w-32 h-32 relative group">
-              <FaChessKnight className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaChessKnight className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaChessKnight className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            <div className="m-auto w-28 h-28 relative group">
+              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-3xl pl-8 ">
-              Top fron
-              We love the cloud. We are proud partners with AWS
+            <p className="flex-1 m-auto text-4xl pl-8 bold">
+              Beprövade agila och hållbara metoder för innovation och automation
             </p>
           </Row>
           <Row >
-            <div className="flex pl-4">
-              <FaTachographDigital className="w-32 h-32 my-auto " />
+            <div className="m-auto w-28 h-28 relative group">
+              <FaAws className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaAws className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaAws className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-3xl pl-4 ">
-              We love the cloud. We are proud partners with AWS
-              We love the cloud. We are proud partners with AWS            </p>
+            <p className="flex-1 m-auto text-4xl pl-8 bold">
+              Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.       </p>
           </Row>
         </SectionWithLabel>
 
