@@ -78,16 +78,16 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     <>
       <header className="flex bg-white z-10 justify-between w-screen fixed top-0">
         <div className="m-auto flex justify-between items-center w-8/12 py-4">
-          <div className="">
-            <img src="v2/alto_logo.png" width={60}></img>
-          </div>
+          <Link href="/">
+            <img src="/v2/alto_logo.png" width={60}></img>
+          </Link>
           <div>
             {/* <GiHamburgerMenu /> */}
           </div>
           <AnimatedLine expanded={!isAtTop}></AnimatedLine>
         </div>
 
-      </header>
+      </header >
     </>
   );
 };

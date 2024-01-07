@@ -68,7 +68,7 @@ b {
 }
 
 .slow-spin {
-  animation: slow-spin 30s ease-in-out infinite;
+  animation: slow-spin 60s linear infinite;
   transform-origin: center;
 }
 

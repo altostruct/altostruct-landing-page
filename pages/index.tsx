@@ -95,25 +95,25 @@ export const Row = (props: PropsWithChildren<{ className?: string }>) => {
 
 const ArticleList = () => {
   return <Row className="gap-2 flex-wrap">
-    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 8).map((v: any, index) => {
-      return <a href={"/blog/" + v.fields.slug} key={index} className="w-[calc(25%-0.5em)]  border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col">
+    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 6).map((v: any, index) => {
+      return <a href={"/blog/" + v.fields.slug} key={index} className="w-[calc(33%-0.5em)]  border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col">
         <div className="flex-1 p-2">
           {v.fields.image && <ContentfulImage alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
         </div>
-        <p className="text-sm overflow-hidden line-clamp-2 text-ellipsis">
+        <p className="text-lg overflow-hidden line-clamp-2 text-ellipsis">
           {v.fields.title}
         </p>
-        {v.fields.authors && <div className="flex text-xs items-center gap-3 mb-3">
+        {v.fields.authors && <div className="flex text-xs items-center gap-3 mt-3 mb-3">
           <div className="flex flex-row gap-2">
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
               if (!author.fields.profile) return;
-              return <div key={index} className="h-6 w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
+              return <div key={index} className="h-8 w-8 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
                 <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
               </div>
             })}
           </div>
           <p className="font-extralight text-xs md:text-sm">
-            {getAuthorsNames(v.fields.authors)} · {formatDate(v.fields.createDate ?? new Date())}
+            {getAuthorsNames(v.fields.authors)} <br></br> {formatDate(v.fields.createDate ?? new Date())}
           </p>
         </div>
         }
@@ -127,7 +127,7 @@ const CaseList = () => {
   return <Row className="gap-2 flex-wrap ">
     {getReferenceCases().slice(0, 6).map((v: any, index) => {
       return <Row key={index} className="w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
-        <div className="group flex-1 overflow-hidden p-4">
+        <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4">
           <div className="p-4">
             <div className="h-32 items-center flex">
               <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
@@ -143,7 +143,7 @@ const CaseList = () => {
               </p>
             </div>
           </div>
-        </div>
+        </a>
       </Row>
     })}
   </Row>
