@@ -4,6 +4,7 @@ import 'dotenv/config'
 
 import type { AppProps } from "next/app";
 import CookieBanner from "@components/CookieBanner";
+import NoSSR from "@components/NoSSR";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -34,7 +35,9 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', 'G-6T55W0J1S2');
         `}
       </Script>
-      <CookieBanner />
+      <NoSSR>
+        <CookieBanner />
+      </NoSSR>
       <div className="w-screen overflow-hidden">
         <Component {...pageProps} />
       </div>
