@@ -177,7 +177,7 @@ export function Home() {
         <Content>
           <Row className="gap-">
             <div className="self-center flex-1 h-fit">
-              <h1 className="text-6xl bold md:text-8xl">
+              <h1 className="text-5xl bold md:text-8xl">
                 responsible
                 digitalization
                 <span className="text-green-500">.</span><br></br>
