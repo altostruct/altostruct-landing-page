@@ -184,18 +184,14 @@ export function Home() {
 
             </div>
 
-            <div className="cloud-animation md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-50 top-0 flex-0">
+            <div className="cloud-animation md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0">
               <img src="v2/test.png" ></img>
             </div>
           </Row>
-          <p className="mt-3 text-xl">Altostruct  är en konsultbyrå som specialiserar sig på automation och AI för att stödja företag. Med fokus på MLOps, skalbar molnarkitektur och CI/CD möjliggör vi ansvarsfull användning av AI-teknologi för att optimera och förbättra verksamheter.</p>
+          <p className="mt-3 text-md md:text-2xl">Altostruct är en expertbyrå inom automation och AI, specialiserad på MLOps och skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>
           <Row className="gap-4">
             <div className="flex mt-6">
-              <Button label="Kontakta oss" onClick={() => { }}>
-              </Button>
-            </div>
-            <div className="flex mt-6">
-              <Button label="Om oss" onClick={() => { }}>
+              <Button link="#contact_us" label="Kontakta oss" onClick={() => { }}>
               </Button>
             </div>
             <div>
@@ -243,7 +239,7 @@ export function Home() {
         </Content> */}
 
 
-        <SectionWithLabel title="Om oss">
+        <SectionWithLabel title="Sedan 2020 har vi arbetat med senaste teknologin">
           <Row className="divide-dashed gap-8 flex-col">
             <p className="flex-1 text-xl md:text-3xl pr-4 ">
               Vi är ett team av erfarna utvecklare
@@ -275,7 +271,7 @@ export function Home() {
 
               </h1>
             </div>
-            <div className="w-64 m-auto">
+            <div className="w-64 md:w-full m-auto">
               {/* <img src="/v2/real-ai.png"></img> */}
               <ExampleAI></ExampleAI>
             </div>
@@ -286,9 +282,7 @@ export function Home() {
         <SectionWithLabel title="AI och automation med AWS">
           <Row className="divide-dashed gap-8 flex-col">
             <p className="flex-1 text-xl md:text-3xl pr-4 ">
-              Vi är ett team av erfarna utvecklare<span className="text-green-600">.</span> Med en passion för teknologi och en djup förståelse för
-              automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
-              företags digitala resa<span className="text-red-600">.</span>
+              Vårt företag är en stolt del av Amazon Partner Network, med en specialisering inom AI och automation. Vår kärnkompetens ligger i att hjälpa organisationer att dra maximal nytta av Machine Learning (ML) och AI.
             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto w-16 h-16 md:w-32 md:h-32  relative group">

@@ -81,7 +81,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
 
 
     return (
-        <div className={classNames("flex flex-col my-2 space-y-3", className)} >
+        <div id="contact_us" className={classNames("flex flex-col my-2 space-y-3", className)} >
             <div>
                 <p className="text-4xl md:text-7xl w-fit underline">
                     <b>
