@@ -19,6 +19,7 @@ import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, 
 import ExampleAI from "@components/Logos/ExampleAI";
 import { MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 
 
 
@@ -186,7 +187,7 @@ export function Home() {
             </div>
 
             <div className="cloud-animation md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0">
-              <img src="v2/test.png" ></img>
+              <Image alt="main" src="v2/test.png" />
             </div>
           </Row>
           <p className="mt-3 text-md md:text-2xl">Altostruct är en expertbyrå inom automation och AI, specialiserad på MLOps och skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>

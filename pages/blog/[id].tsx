@@ -165,7 +165,6 @@ function BlogPage(props: BlogPageProps) {
                     </div>
                 </div>
             </Content>
-            <Footer></Footer>
         </div>
     );
 }

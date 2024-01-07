@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import Link from "next/link";
 import Dropdown from "./Dropdown";
+import Image from "next/image";
 
 
 
@@ -79,7 +80,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       <header className="flex bg-white z-10 justify-between w-screen fixed top-0">
         <div className="m-auto max-w-[1048px] w-11/12 md:w-8/12 flex justify-between items-center  py-4">
           <Link href="/">
-            <img src="/v2/alto_logo.png" width={60}></img>
+            <Image alt="logo" src="/v2/alto_logo.png" width={60} />
           </Link>
           <div>
             {/* <GiHamburgerMenu /> */}
