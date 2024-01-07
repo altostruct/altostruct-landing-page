@@ -55,7 +55,7 @@ const SectionWithLabel = (props: { title: string, className?: string, children: 
   const { title, children, titleAlignement = "right", className } = props
 
   return <Content>
-    <h2 className={classNames("text-2xl bg-black text-white w-fit px-4 translate-y-1", {
+    <h2 className={classNames("text-2xl bg-black text-white w-fit py-2 md:py-0 px-4 translate-y-1", {
       "ml-auto": titleAlignement === "left"
     })}>{title}</h2>
     <div className={classNames("border-4 p-6 border-dashed flex gap-8 flex-col border-black", className)}>
@@ -242,10 +242,7 @@ export function Home() {
         <SectionWithLabel title="Sedan 2020 har vi arbetat med senaste teknologin">
           <Row className="divide-dashed gap-8 flex-col">
             <p className="flex-1 text-xl md:text-3xl pr-4 ">
-              Vi är ett team av erfarna utvecklare
-              <span className="text-green-300">.</span> Med en passion för teknologi och en djup förståelse för
-              automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
-              företags digitala resa.
+              Altoustruct är ett innovativt konsultbolag grundat 2020 som fokuserar på att leverera skräddarsydda AI och ML lösningar inom Amazon Web Services (AWS)-ekosystemet.
             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto h-24 w-24 md:w-32 md:h-32 relative group">
@@ -262,14 +259,15 @@ export function Home() {
         <Content>
           <Row className="">
             <div className="m-auto">
-              <h1 className="text-4xl mb-4">
-                Se hur man använder <br></br>
-                <div className="relative ">
+              <a href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
+                <h1 className="text-4xl mb-4">
+                  Se hur man använder <br></br>
+                  <div className="relative ">
 
-                  <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
-                </div>
-
-              </h1>
+                    <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
+                  </div>
+                </h1>
+              </a>
             </div>
             <div className="w-64 md:w-full m-auto">
               {/* <img src="/v2/real-ai.png"></img> */}
@@ -313,35 +311,36 @@ export function Home() {
         </SectionWithTitle>
 
 
-        <SectionWithLabel className="py-8" title="Vad menar vi med ansvarsfull digitalisering?">
-          <Row className="divide-dashed flex-col-reverse gap-8">
-            <div className="m-auto w-28 h-28 relative group">
-              <FaChessKnight className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaChessKnight className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaChessKnight className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+        <SectionWithLabel className="py-8 md:py-12 flex gap-4 md:gap-8" title="Vad menar vi med ansvarsfull digitalisering?">
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl  bold">
+            <p className="flex-1 m-auto text-xl md:text-4xl  bold">
               Kunniga, nyfikna och passionerade människor i partnerskap
             </p>
           </Row>
-          <Row className="flex-col-reverse gap-8">
-            <div className="m-auto w-28 h-28 relative group">
-              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28  relative group">
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl bold">
+            <p className="flex-1 m-auto text-xl md:text-4xl bold">
               Beprövade agila och hållbara metoder för innovation och automation
             </p>
           </Row>
-          <Row className="flex-col-reverse gap-8">
-            <div className="m-auto w-28 h-28 relative group">
-              <FaAws className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaAws className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaAws className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl bold">
-              Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.       </p>
+            <p className="flex-1 m-auto text-xl md:text-4xl bold">
+              Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.
+            </p>
           </Row>
         </SectionWithLabel>
 
