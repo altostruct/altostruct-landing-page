@@ -18,6 +18,7 @@ import { FcAbout } from "react-icons/fc";
 import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
 import ExampleAI from "@components/Logos/ExampleAI";
 import { MdOutlineAccessTime } from "react-icons/md";
+import Link from "next/link";
 
 
 
@@ -259,7 +260,7 @@ export function Home() {
         <Content>
           <Row className="">
             <div className="m-auto">
-              <a href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
+              <Link href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
                 <h1 className="text-4xl mb-4">
                   Se hur man använder <br></br>
                   <div className="relative ">
@@ -267,7 +268,7 @@ export function Home() {
                     <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
                   </div>
                 </h1>
-              </a>
+              </Link>
             </div>
             <div className="w-64 md:w-full m-auto">
               {/* <img src="/v2/real-ai.png"></img> */}
