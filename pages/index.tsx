@@ -20,6 +20,7 @@ import ExampleAI from "@components/Logos/ExampleAI";
 import { MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
 import Image from "next-image-export-optimizer";
+import SEO from "@components/SEO";
 
 
 
@@ -104,7 +105,7 @@ const ArticleList = () => {
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
               if (!author.fields.profile) return;
               return <div key={index} className="h-4 w-4 md:h-6 md:w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
-                <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
+                <ContentfulImage width={64} height={64} alt="" image={author.fields.profile}></ContentfulImage>
               </div>
             })}
           </div>
@@ -175,6 +176,7 @@ export function Home() {
         {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
         <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
         <Topbar></Topbar>
+        <SEO title="alto | responsible digitalization" description="Cloud, AI och automatisering" />
         <Content>
           <Row className="gap-">
             <div className="self-center flex-1 h-fit">
