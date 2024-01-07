@@ -3,6 +3,7 @@ import "../styles/globals.scss";
 import 'dotenv/config'
 
 import type { AppProps } from "next/app";
+import CookieBanner from "@components/CookieBanner";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -33,6 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', 'G-6T55W0J1S2');
         `}
       </Script>
+      <CookieBanner />
       <div className="w-screen overflow-hidden">
         <Component {...pageProps} />
       </div>
