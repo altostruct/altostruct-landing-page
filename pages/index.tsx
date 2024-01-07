@@ -127,21 +127,26 @@ const ArticleList = () => {
 const CaseList = () => {
   return <Row className="gap-2 flex-wrap flex-col">
     {getReferenceCases().slice(0, 3).map((v: any, index) => {
+
       return <Row key={index} className="md:w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
-        <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4">
-          <div className="p-4">
-            <div className="h-32 items-center flex">
+        <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4 flex">
+          <div className="mx-auto">
+            {/* <div className="h-32 items-center flex">
               <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
-            </div>
-            <div className="flex gap-2 border-t items-center mt-4 pt-4">
+            </div> */}
+            <div className="flex gap-2 items-center flex-col">
               {v.fields.customer.fields.logo &&
-                <div className="w-8 items-center flex">
-                  <ContentfulImage alt="" className="w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
+                <div className="w-32 h-32 items-center flex">
+                  <ContentfulImage alt="" className="w-full max-h-full max-w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
                 </div>}
 
-              <p>
-                {v.fields.customer.fields.name}
-              </p>
+              <div className="items-center flex">
+                <p className="text-2xl bold line-clamp-2">{v.fields.shortDescriptionTitle}<span className="text-red-400">.</span></p>
+              </div>
+
+              <div className=" mr-auto flex flex-wrap gap-2">
+                {v.fields.tags.slice(0, 4).map((v: string) => <p key={v} className="text-xs p-0.5 border rounded-md">{v}</p>)}
+              </div>
             </div>
           </div>
         </a>
