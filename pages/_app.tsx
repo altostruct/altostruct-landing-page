@@ -1,5 +1,6 @@
 import Script from "next/script";
 import "../styles/globals.scss";
+import 'dotenv/config'
 
 import type { AppProps } from "next/app";
 
@@ -19,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         `}
       </Script>
 
-    {/* google ads */}
+      {/* google ads */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-6T55W0J1S2"
         strategy="afterInteractive"
@@ -32,7 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', 'G-6T55W0J1S2');
         `}
       </Script>
-      <Component {...pageProps} />
+      <div className="w-screen overflow-hidden">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }

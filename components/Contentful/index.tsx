@@ -1,6 +1,4 @@
-import dynamic from "next/dynamic";
 import Image from "next-image-export-optimizer";
-import { Suspense } from "react";
 import { ImageProps } from "next/image";
 
 export function ContentfulImage(
@@ -14,6 +12,8 @@ export function ContentfulImage(
   if (!image.fields.file) return <></>
 
   const ext = image.fields.file.contentType.split("/")[1];
+  const baseUrl = process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL || "/";
+  const imageUrl = baseUrl + "images/contentful/" + image.sys.id + "." + ext;
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
@@ -28,7 +28,7 @@ export function ContentfulImage(
         image.fields.details?.image.width ||
         image.fields?.file.details.image.width
       }
-      src={"/images/contentful/" + image.sys.id + "." + ext}
+      src={imageUrl}
       className="w-full"
       style={{
         objectFit: "cover",

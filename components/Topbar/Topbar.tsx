@@ -1,39 +1,52 @@
 import * as React from "react";
-import styles from "./Topbar.module.scss";
+import { GiHamburgerMenu } from "react-icons/gi";
 
-//@ts-ignore
-import Fade from "react-reveal/Fade";
-
-import classNames from "classnames";
-// import LanguageSelector from "./LanguageSelector/LanguageSelector";
 
 import Link from "next/link";
-import Brand from "components/Brand/Brand";
-import useTranslation from "hooks/useTranslation";
-import { getContentfulProducts } from "utils/contentful";
 import Dropdown from "./Dropdown";
 
-// export const Underline = () => {
-//   return (
-//     <div className="border-t origin-bottom-left border-red-400 scale-x-0 transition-all group-hover:scale-x-100"></div>
-//   );
-// };
 
 
+const AnimatedLine = (props: { expanded: boolean }) => {
+  const { expanded } = props
+  const [isExpanded, setIsExpanded] = React.useState(expanded)
+  const ref = React.useRef<SVGLineElement>(null)
+
+
+
+  if (ref.current) {
+    const length = ref.current.getTotalLength();
+
+    if (expanded) {
+      ref.current.animate([{
+        strokeDashoffset: 0
+      }], { duration: 400, easing: "ease-out", iterations: 1, fill: "forwards" })
+    } else {
+      ref.current.animate([{
+        strokeDashoffset: length
+      }], { duration: 400, easing: "ease-out", iterations: 1, fill: "forwards" })
+    }
+
+
+  }
+
+
+
+
+  return <svg className="left-0 bottom-0 absolute" width="100%" preserveAspectRatio="none" height="1px" viewBox="0 0 100 1" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line strokeDasharray={100} strokeDashoffset={100 + ""} ref={ref} x1="0" y1="0" x2="100" y2="0" stroke="black" />
+  </svg>
+
+}
 const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const { transparent = false, fixed = true } = props;
-  const { t } = useTranslation();
-
   const [expanded, setExpanded] = React.useState(false);
-  const [industries, setIndustries] = React.useState(false);
-
   const ref = React.useRef<HTMLDivElement>(null);
 
   const threshold = 100;
   const [isAtTop, setIsAtTop] = React.useState(true);
 
-  let counter = 700
-  const addcount = 100
+
 
   React.useEffect(() => {
     const onScoll = () => {
@@ -50,9 +63,6 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     return window.removeEventListener("scroll", onScoll);
   }, []);
 
-
-
-
   React.useEffect(() => {
     if (!ref.current) return;
     if (expanded) {
@@ -62,253 +72,22 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     }
   }, [expanded]);
 
+
+
   return (
     <>
-      <header
-        className={classNames(styles.topbar, {
-          "bg-[#161616]": !isAtTop,
-          "bg-transparent": isAtTop,
-          fixed: fixed,
-          absolute: !fixed,
-        })}
-      >
-
-
-        <nav style={{ float: "right" }}>
-          <Link href={"/"}>
-            <Brand />
+      <header className="flex bg-white z-10 justify-between w-screen fixed top-0">
+        <div className="m-auto max-w-[1048px] w-11/12 md:w-8/12 flex justify-between items-center  py-4">
+          <Link href="/">
+            <img src="/v2/alto_logo.png" width={60}></img>
           </Link>
-        </nav>
-
-
-
-
-        <nav className="hidden md:flex invisible md:visible ">
-
-
-
-          <Dropdown icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
-            title="Tjänster" className={classNames(styles["button-spacing"], "text-lg")}>
-            {getContentfulProducts().map((v, index) => {
-              return <div className="flex" key={index}>
-                <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                <Link
-                  className={classNames("group")}
-                  href={"/services/" + v.fields.slug}
-                >
-                  {v.fields.name}
-                </Link>
-              </div>
-            })}
-
-          </Dropdown>
-
-          <Dropdown
-            // id={styles["industry-tab"]} icon={
-            //   <div id={styles["industry-animations"]}  className="relative">
-            //     <svg id={styles["industry-cloud"]} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //       <path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503 19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8 8.9375 3 11.2001 3 13.6493Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            //     </svg>
-            //     <svg id={styles["industry-cloud"]}  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //       <path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503 19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8 8.9375 3 11.2001 3 13.6493Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            //     </svg>
-            //     <svg id={styles["industry-cloud"]}  viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //       <path d="M3 13.6493C3 16.6044 5.41766 19 8.4 19L16.5 19C18.9853 19 21 16.9839 21 14.4969C21 12.6503 19.8893 10.9449 18.3 10.25C18.1317 7.32251 15.684 5 12.6893 5C10.3514 5 8.34694 6.48637 7.5 8.5C4.8 8.9375 3 11.2001 3 13.6493Z" stroke="inherit" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            //     </svg>
-            //     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            //       <path id={styles["industry-icon"]} d="M7 16H8M11.5 16H12.5M16 16H17M18.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V4.8C4 4.51997 4 4.37996 4.0545 4.273C4.10243 4.17892 4.17892 4.10243 4.273 4.0545C4.37996 4 4.51997 4 4.8 4H7.2C7.48003 4 7.62004 4 7.727 4.0545C7.82108 4.10243 7.89757 4.17892 7.9455 4.273C8 4.37996 8 4.51997 8 4.8V9.06863C8 9.67445 8 9.97735 8.1198 10.1176C8.22374 10.2393 8.37967 10.3039 8.53923 10.2914C8.72312 10.2769 8.93731 10.0627 9.36569 9.63431L12.6343 6.36569C13.0627 5.93731 13.2769 5.72312 13.4608 5.70865C13.6203 5.69609 13.7763 5.76068 13.8802 5.88238C14 6.02265 14 6.32556 14 6.93137V9.06863C14 9.67445 14 9.97735 14.1198 10.1176C14.2237 10.2393 14.3797 10.3039 14.5392 10.2914C14.7231 10.2769 14.9373 10.0627 15.3657 9.63431L18.6343 6.36569C19.0627 5.93731 19.2769 5.72312 19.4608 5.70865C19.6203 5.69609 19.7763 5.76068 19.8802 5.88238C20 6.02265 20 6.32556 20 6.93137V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20Z" stroke="white" stroke-width="1" stroke-linecap="round" />
-            //     </svg>
-            // </div>
-            // } 
-            icon={<svg className="rotate-180" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>}
-            title="Industrier" className={classNames(styles["button-spacing"], "text-lg")}>
-            <div className="flex">
-              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-              <Link
-                className={classNames("group")}
-                href={"/livsmedel"}
-              >
-                {t("Livsmedel")}
-              </Link>
-            </div>
-
-            <div className="flex">
-              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-              <Link
-                className={classNames("group")}
-                href={"/gaming"}
-              >
-                {t("Underhållning")}
-              </Link>
-            </div>
-
-            <div className="flex">
-              <svg className="rotate-90 mt-[7px] mr-2" width="8px" height="8px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-              <Link
-                className={classNames("group")}
-                href={"/halsa"}
-              >
-                {t("Hälsa")}
-              </Link>
-            </div>
-          </Dropdown>
-
-
-          <Link
-            className={classNames(styles["button-spacing"], "group", "text-lg")}
-            href={"/blog"}
-          >
-            {t("Artiklar")}
-            {/* <Underline></Underline> */}
-          </Link>
-
-          <Link
-            className={classNames(styles["button-spacing"], "group", "text-lg")}
-            href={"/about"}
-          >
-            {t("Om oss")}
-            {/* <Underline></Underline>*/}
-          </Link>
-
-          {/*<LanguageSelector></LanguageSelector>*/}
-        </nav>
-
-        <nav
-          className="flex md:hidden text-xl cursor-pointer"
-          onClick={() => setExpanded(!expanded)}
-        >
-          <div ref={ref}>
-            <svg viewBox="0 0 100 100" width="20" height="20">
-              <rect
-                className="stroke-1	fill-white"
-                y="0"
-                width="100"
-                height="20"
-              ></rect>
-              <rect
-                className="stroke-1	fill-white"
-                y="40"
-                width="100"
-                height="20"
-              ></rect>
-              <rect
-                className="stroke-1	fill-white"
-                y="80"
-                width="100"
-                height="20"
-              ></rect>
-            </svg>
+          <div>
+            {/* <GiHamburgerMenu /> */}
           </div>
-        </nav>
-      </header>
-
-      {expanded && (
-        <div className="md:hidden bg-[#292929] z-20 h-screen w-screen overflow-y-auto right-0 top-0 fixed">
-          <div className="ml-4 my-32 flex-col flex text-2xl max-h-96">
-            <div className="pb-4">
-              <Link
-                className="button-spacing text-white"
-                href="/"
-                onClick={() => setExpanded(!expanded)}
-              >
-                <p className="font-light text-3xl">Startsida</p>
-              </Link>
-            </div>
-
-            <div className="pb-4">
-              <Link
-                className="button-spacing text-white"
-                href="/blog"
-                onClick={() => setExpanded(!expanded)}
-              >
-                <p className="font-light text-3xl">Artiklar</p>
-              </Link>
-            </div>
-
-            <div className="pb-1">
-              <p className="text-3xl font-light"> Industrier </p>
-            </div>
-
-            <div className="pb-5">
-              <Link
-                className="flex text-white text-xl pb-3 pt-2"
-                href={"/livsmedel"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                <p className="w-5/6 text-xl text-start">Livsmedel</p>
-              </Link>
-
-              <Link
-                className="flex text-white text-xl pb-3"
-                href={"/gaming"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                <p className="w-5/6 text-xl text-start">Underhållning</p>
-              </Link>
-
-              <Link
-                className="flex text-white text-xl"
-                href={"/halsa"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                <svg className="w-1/6 rotate-90 mt-1.5 max-w-3 max-h-3 h-full ml-3" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                <p className="w-5/6 text-xl text-start">Hälsa</p>
-              </Link>
-            </div>
-
-
-            <div className="">
-              <p className="text-white text-3xl pb-4"> Tjänster </p>
-              {getContentfulProducts().map((v, index) => {
-                return <div className="" key={index}>
-                  <div className="flex pl-3 pb-3">
-                    <svg className="w-2/12 rotate-90 mt-2 pr-1 max-w-3 max-h-3 h-full" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#c3eec3" d="M8 1.25a2.101 2.101 0 00-1.785.996l.64.392-.642-.388-5.675 9.373-.006.01a2.065 2.065 0 00.751 2.832c.314.183.67.281 1.034.285h11.366a2.101 2.101 0 001.791-1.045 2.064 2.064 0 00-.006-2.072L9.788 2.25l-.003-.004A2.084 2.084 0 008 1.25z" /></svg>
-                    <Link
-                      className={classNames("text-xl text-white w-9/12")}
-                      href={"/services/" + v.fields.slug}
-                    >
-                      <p>{v.fields.name}</p>
-                    </Link>
-                  </div>
-                </div>
-              })}
-            </div>
-
-
-
-            <div className="border-b my-10 text-white"></div>
-
-            <Link
-              className="text-white text-4xl"
-              href={"/contact"}
-              onClick={() => setExpanded(!expanded)}
-            >
-              {t("Kontakta oss")}
-            </Link>
-
-            <div className="pt-2">
-              <Link
-                className="text-white text-4xl"
-                href={"/about"}
-                onClick={() => setExpanded(!expanded)}
-              >
-                {t("Om oss")}
-              </Link>
-            </div>
-
-            {/* <Fade delay={600}>
-              <div className="mx-10 h-36 md:m-10">
-                <LanguageSelector
-                  onSelect={() => setExpanded(false)}
-                  expanded
-                ></LanguageSelector>
-              </div>
-            </Fade> */}
-          </div>
+          <AnimatedLine expanded={!isAtTop}></AnimatedLine>
         </div>
-      )}
+
+      </header >
     </>
   );
 };

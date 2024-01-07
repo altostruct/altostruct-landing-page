@@ -77,7 +77,23 @@ export interface ContentfulPost {
 }
 
 export const getContentfulPosts = (): ContentfulPost[] => {
-  return posts as any;
+  return posts
+    .filter(
+      (post) =>
+        post.fields.isPublished ||
+        process.env.NEXT_PUBLIC_CONTENTFUL_DEV === "TRUE"
+    )
+    .sort((a, b) => {
+      if (a.sys.locale === "sv") return -1;
+      if (a.sys.locale === "en-US") return 1;
+      return 0;
+    })
+    .filter((post, index, arr) => {
+      // make unique by the slug
+      return (
+        arr.map((post) => post.fields.slug).indexOf(post.fields.slug) == index
+      );
+    }) as any;
 };
 
 export const getContentfulProducts = (): any[] => {

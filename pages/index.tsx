@@ -1,158 +1,419 @@
-/* eslint-disable @next/next/no-img-element */
-import SEO from "@components/SEO";
-import Content from "components/Content";
-import Footer from "components/Footer/Footer";
-import Topbar from "components/Topbar/Topbar";
-import useTranslation from "hooks/useTranslation";
-import WordCircled from "components/Word-Circled/Word";
-import React, { useState } from "react";
-import PageStart from "@components/PageStart";
-import Formshort from "@components/Form-short";
-import Button from "@components/Button/Button";
-import Image from "next-image-export-optimizer";
-import Script from "next/script";
-import CookieBanner from "@components/CookieBanner/CookieBanner";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { PropsWithChildren, ReactNode } from "react";
 import Quotes from "@components/Quotes";
-import BigList from "@components/BigList";
-import Newsletter from "@components/Newsletter";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Topbar from "@components/Topbar/Topbar";
+import { ContentfulImage } from "@components/Contentful";
+import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, ContentfulAuthor } from "utils/contentful";
+import classNames from "classnames";
+import WordCircle from "@components/WordCircle";
+import { SiAwslambda } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 
-import { getContentfulProducts, getReferenceCases, getReferenceCasesFromProducts } from "utils/contentful";
-import ReferenceCases from "@components/ReferenceCases";
+import formatDate from "utils/formatDate";
+import quotes from ".data/contentful/customerQuote/all.json"
+import Footer from "@components/Footer";
+import Form from "@components/Email";
+import Button from "@components/Button";
+import { FcAbout } from "react-icons/fc";
+import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
+import ExampleAI from "@components/Logos/ExampleAI";
+import { MdOutlineAccessTime } from "react-icons/md";
+import Link from "next/link";
 
-export default function Home() {
-  const { t } = useTranslation();
-  const quotes = require(".data/contentful/customerQuote/all.json")
+
+
+
+const getAuthorsNames = (authors: ContentfulAuthor[]) => {
+  return authors.map((author, index, arr) => {
+    if (index === 0) {
+      return `${author.fields.firstName} ${author.fields.lastName}`
+    }
+    if (index === arr.length - 1) {
+      return ` & ${author.fields.firstName} ${author.fields.lastName}`
+    }
+    return `, ${author.fields.firstName} ${author.fields.lastName}`
+  }).join("")
+}
+
+const SectionWithTitle = (props: { title: ReactNode, children: ReactNode }) => {
+  const { title, children } = props
+  return <Content>
+    <div className="flex-1">
+      <h2 className="mb-5 text-4xl">{title}</h2>
+      {children}
+    </div>
+  </Content>
+}
+
+const Label = (props: { children: ReactNode }) => {
+  const { children } = props
+  return <div className="bg-black hover:bg-gray-800 group-hover:translate-x-0 transition-all text-white p-4 text-4xl font-extrabold ">
+    {children}
+  </div>
+}
+
+const SectionWithLabel = (props: { title: string, className?: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
+  const { title, children, titleAlignement = "right", className } = props
+
+  return <Content>
+    <h2 className={classNames("text-2xl bg-black text-white w-fit py-2 md:py-0 px-4 translate-y-1", {
+      "ml-auto": titleAlignement === "left"
+    })}>{title}</h2>
+    <div className={classNames("border-4 p-6 border-dashed flex gap-8 flex-col border-black", className)}>
+      {children}
+    </div>
+  </Content>
+}
+
+export const Content = (props: PropsWithChildren<{ className?: string, fullWidth?: boolean }>) => {
+  const { children, className, fullWidth = false } = props
+
+  return <div className="w-screen">
+    {/* <div className="w-2 h-2 bg-red-400 rounded-xl left-[12vw] absolute top-1/2"></div> */}
+    <section className={classNames(className, { "m-auto max-w-[1048px] w-11/12 md:w-8/12": !fullWidth })}>
+      {children}
+    </section>
+  </div>
+}
+
+
+// const BadgeComponent = (props: { children: ReactNode, className?: string, tag: string }) => {
+//   const { children, className, tag } = props
+//   return <div className={classNames("bg-red-200 w-full relative overflow-visible", className)}>
+//     <div className="text-white bg-black absolute top-0 left-0 -translate-y-full">{tag}</div>
+//     {children}
+//   </div>
+// }
+
+export const Row = (props: PropsWithChildren<{ className?: string }>) => {
+  const { children, className } = props
+
+  return <div className={classNames("flex items-stretch w-full md:flex-row", className)}>
+    {children}
+  </div >
+}
+
+
+const ArticleList = () => {
+  return <Row className="gap-2 flex-wrap">
+    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 3).map((v: any, index) => {
+      return <a href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col gap-2">
+        {v.fields.authors && <div className="flex text-xs items-center gap-3">
+          <div className="flex flex-row gap-2">
+            {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
+              if (!author.fields.profile) return;
+              return <div key={index} className="h-4 w-4 md:h-6 md:w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
+                <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
+              </div>
+            })}
+          </div>
+          <p className="font-extralight text-xs md:text-xs">
+            {getAuthorsNames(v.fields.authors)} {formatDate(v.fields.createDate ?? new Date())}
+          </p>
+        </div>
+        }
+        <div className="flex gap-2 flex-row-reverse">
+          <div className="w-16 h-16 flex">
+            {v.fields.image && <ContentfulImage className="m-auto max-w-full max-h-full w-full" alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
+          </div>
+          <p className="text-lg md:text-lg flex-1 m-auto overflow-hidden line-clamp-3 text-ellipsis">
+            {v.fields.title}
+          </p>
+        </div>
+      </a>
+    })}
+  </Row>
+}
+
+const CaseList = () => {
+  return <Row className="gap-2 flex-wrap flex-col">
+    {getReferenceCases().slice(0, 3).map((v: any, index) => {
+
+      return <Row key={index} className="md:w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
+        <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4 flex">
+          <div className="mx-auto">
+            {/* <div className="h-32 items-center flex">
+              <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
+            </div> */}
+            <div className="flex gap-2 items-center flex-col">
+              {v.fields.customer.fields.logo &&
+                <div className="w-32 h-32 items-center flex">
+                  <ContentfulImage alt="" className="w-full max-h-full max-w-full" width={100} height={100} image={v.fields.customer.fields.logo}></ContentfulImage>
+                </div>}
+
+              <div className="items-center flex">
+                <p className="text-2xl bold line-clamp-2">{v.fields.shortDescriptionTitle}<span className="text-red-400">.</span></p>
+              </div>
+
+              <div className=" mr-auto flex flex-wrap gap-2">
+                {v.fields.tags.slice(0, 4).map((v: string) => <p key={v} className="text-xs p-0.5 border rounded-md">{v}</p>)}
+              </div>
+            </div>
+          </div>
+        </a>
+      </Row>
+    })}
+  </Row>
+}
+
+const Column = (props: PropsWithChildren<{ className?: string }>) => {
+  const { children, className } = props
+
+  return <div className={classNames("flex flex-col items-stretch w-full md:flex-row", className)}>
+    {children}
+  </div >
+}
+
+export function Home() {
+
+
 
   return (
     <>
-      <CookieBanner></CookieBanner>
-      <SEO
-        title={t("Altostruct | AWS Services & Support")}
-        description={t("Altostruct är ett AWS konsultbolag i Stockholm.")}
-      />
-      <Topbar></Topbar>
-      <div>
+      <div className="flex flex-col gap-24 my-48 relative">
+        {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
+        <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
+        <Topbar></Topbar>
         <Content>
-          <PageStart
-            title={
-              <>
-                {/* <div className="w-63"><Image width={100} height={100} alt="" src="/images/icons/aws.svg"></Image></div> */}
-                {t("Bygg skalbart med våra certifierade")}{" "}
-                <WordCircled borderCircle={true}>
-                  {t("Amazon Web Services")}
-                </WordCircled>
-                {" "}{t("utvecklare")}
-              </>
-            }
-            cta={<div className="flex gap-2">
-              <Button className="group" icon={
-                <div className="group-hover:translate-x-1 transition-all">
-                  <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                    <path
-                      fill="#c3eec3"
-                      d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
-                  </svg>
-                </div>
-              }
-                link="/contact">Kontakta oss</Button>
-            </div>}
-          />
-        </Content>
-
-        <div>
-          <Content className="my-40 md:mt-0">
-            <Quotes counter={4} data={quotes.map((item: any) => ({
-              quote: item.fields.quote,
-              author: item.fields.author,
-              role: item.fields.authorsRole,
-              company: {
-                name: item.fields.customer.fields.name,
-                url: item.fields.customer.fields.link,
-              }
-            }))}></Quotes>
-          </Content>
-        </div>
-
-        <Content>
-          <div className="mb-20">
-            <div className="flex gap-2 mb-4 md:mb-6">
-              <h1 className="text-2xl md:text-4xl uppercase text-gray-300 pr-2">
-                {t("Vad är Altostruct?")}
+          <Row className="gap-">
+            <div className="self-center flex-1 h-fit">
+              <h1 className="text-5xl bold md:text-8xl">
+                responsible
+                digitalization
+                <span className="text-green-500">.</span><br></br>
               </h1>
-            </div>
-            <div className="font-light md:pb-8 pb-5 text-2xl">
-              Altostruct är erfarna molnkonsulter som hjälper företag att navigera genom molnteknologin. Vi stöttar med  <span className="text-[#c3eec3]">Migration</span>,  <span className="text-[#c3eec3]">Optimering</span> och  <span className="text-[#c3eec3]">Skräddarsyr</span> dina molnprojekt. Vi erbjuder rådgivning för att navigera genom molnets komplexiteter på Amazon Web Services.
+
             </div>
 
-            <Button className="group" icon={
-              <div className="group-hover:translate-x-1 transition-all ">
-                <svg height={"1.2em"} id="Lager_1" data-name="Lager 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-                  <path
-                    fill="#c3eec3"
-                    d="m138.08,71.7v16.59h-16.59v16.59h-16.59v-16.59H21.92v-16.59h82.97v-16.59h16.59v16.59h16.59Zm-33.19-33.19v16.59h-16.59v-16.59h16.59Zm-16.59,66.37h16.59v16.59h-16.59v-16.59Z" />
-                </svg>
-              </div>
-            }
-              link="/contact">{t("Kontakta oss")}
-            </Button>
-          </div>
+            <div className="cloud-animation md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0">
+              <img src="v2/test.png" ></img>
+            </div>
+          </Row>
+          <p className="mt-3 text-md md:text-2xl">Altostruct är en expertbyrå inom automation och AI, specialiserad på MLOps och skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>
+          <Row className="gap-4">
+            <div className="flex mt-6">
+              <Button link="#contact_us" label="Kontakta oss" onClick={() => { }}>
+              </Button>
+            </div>
+            <div>
+            </div>
+          </Row>
+
         </Content>
 
         <Content>
-          <div className="md:pt-18 pt-16 md:pb-0 pb-20">
-            <BigList
-              items={[
-                {
-                  title: t("Optimering"),
-                  description: t(
-                    "Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna."
-                  ),
-                  image: "/images/productivity-green.png",
-                },
-                {
-                  title: t("Migration"),
-                  description: t(
-                    "Vi stöttar dig i att smidigt migrera din nuvarande infrastruktur till AWS för en mer effektiv molnlösning."
-                  ),
-                  image: "/images/migrate.png",
-                },
-                {
-                  title: t("Skräddarsyr"),
-                  description: t(
-                    "Våra molnlösningar är skräddarsydda för att passa din unika infrastruktur och vi hjälper dig optimera dess prestanda."
-                  ),
-                  image: "/images/skraddarsy.png",
-                },
-              ]}
-            ></BigList>
-          </div>
+          <Quotes counter={4} data={quotes.map((item: any) => ({
+            quote: item.fields.quote,
+            author: item.fields.author,
+            role: item.fields.authorsRole,
+            image: item.fields.image,
+
+            company: {
+              name: item.fields.customer.fields.name,
+              url: item.fields.customer.fields.link,
+            }
+          }))} />
         </Content>
 
-        <Content className="md:my-32">
-          <ReferenceCases data={getReferenceCases()} start={0} end={3}></ReferenceCases>
-        </Content >
+
+        {/* <Content className="flex-col group transition-all flex">
+          <div className="bg-black hover:bg-gray-800 group-hover:translate-x-0 transition-all -translate-x-4 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi brinner för AI, webben och cloud.
+            </b>
+          </div>
+          <div className="bg-green-500 hover:bg-gray-800  group-hover:translate-x-0 transition-all translate-x-8 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi gör era problem och utmaningar till våra utmaningar.
+            </b>
+          </div>
+          <div className="bg-black hover:bg-gray-800  group-hover:translate-x-0 transition-all -translate-x-7 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi bygger digitala lösningar på teknik som fungerar.
+            </b>
+          </div>
+          <div className="bg-green-500 hover:bg-gray-800  group-hover:translate-x-0 transition-all translate-x-2 text-white p-8 text-4xl font-extrabold text-center">
+            <b>
+              Vi gör klart. Kör in i kaklet.
+            </b>
+          </div>
+        </Content> */}
 
 
-        <Content className="">
-          <div
-            className="text-white md:pt-20 pt-32 md:w-4/5 mb-10"
-            style={{ fontFamily: "KHTeka-Light" }}
-          >
-            <p className="md:text-6xl text-2xl" style={{ lineHeight: "1.4" }}>
-              Vill du veta mer om Altostruct?
-              <br />
-              Hör av dig så berättar vi mer!
+        <SectionWithLabel title="Sedan 2020 har vi arbetat med senaste teknologin">
+          <Row className="divide-dashed gap-8 flex-col">
+            <p className="flex-1 text-xl md:text-3xl pr-4 ">
+              Altoustruct är ett innovativt konsultbolag grundat 2020 som fokuserar på att leverera skräddarsydda AI och ML lösningar inom Amazon Web Services (AWS)-ekosystemet.
             </p>
-          </div>
-          <Formshort></Formshort>
+            <div className="flex pl-4 gap-4">
+              <div className="m-auto h-24 w-24 md:w-32 md:h-32 relative group">
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
 
-            <Newsletter></Newsletter>
 
+            </div>
+          </Row>
+        </SectionWithLabel>
+
+        <Content>
+          <Row className="">
+            <div className="m-auto">
+              <Link href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
+                <h1 className="text-4xl mb-4">
+                  Se hur man använder <br></br>
+                  <div className="relative ">
+
+                    <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
+                  </div>
+                </h1>
+              </Link>
+            </div>
+            <div className="w-64 md:w-full m-auto">
+              {/* <img src="/v2/real-ai.png"></img> */}
+              <ExampleAI></ExampleAI>
+            </div>
+          </Row>
         </Content>
-      </div >
-      <Footer />
 
+
+        <SectionWithLabel title="AI och automation med AWS">
+          <Row className="divide-dashed gap-8 flex-col">
+            <p className="flex-1 text-xl md:text-3xl pr-4 ">
+              Vårt företag är en stolt del av Amazon Partner Network, med en specialisering inom AI och automation. Vår kärnkompetens ligger i att hjälpa organisationer att dra maximal nytta av Machine Learning (ML) och AI.
+            </p>
+            <div className="flex pl-4 gap-4">
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32  relative group">
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              </div>
+            </div>
+          </Row>
+
+        </SectionWithLabel>
+        <SectionWithTitle title={
+          <>
+            Nyheter från oss
+          </>
+        }>
+          <ArticleList></ArticleList>
+        </SectionWithTitle>
+
+
+        <SectionWithLabel className="py-8 md:py-12 flex gap-4 md:gap-8" title="Vad menar vi med ansvarsfull digitalisering?">
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            </div>
+            <p className="flex-1 m-auto text-xl md:text-4xl  bold">
+              Kunniga, nyfikna och passionerade människor i partnerskap
+            </p>
+          </Row>
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28  relative group">
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            </div>
+            <p className="flex-1 m-auto text-xl md:text-4xl bold">
+              Beprövade agila och hållbara metoder för innovation och automation
+            </p>
+          </Row>
+          <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
+            <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+            </div>
+            <p className="flex-1 m-auto text-xl md:text-4xl bold">
+              Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.
+            </p>
+          </Row>
+        </SectionWithLabel>
+
+
+        <SectionWithTitle title="Våra cases">
+          <CaseList></CaseList>
+        </SectionWithTitle>
+
+        {/* <Content>
+          <div className="p-8">
+
+            <h2 className="mb-6 underline">vad erbjuder vi?</h2>
+            <Row className="gap-8 text-xl -translate-y-4 border-black ">
+              <div className="flex-1">
+                <p>
+                  <b>
+                    Optimering
+                  </b> vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
+              </div>
+              <div className="flex-1">
+                <p><b>Migration</b> Vi hjälper dig att effektivisera din befintliga infrastruktur och minimera kostnaderna. Vi ser till att ni följer senaste standarden och att allting ser korrekt ut. Dessutom kan vi sätta upp verktygen för att ni själv i framtiden</p>
+              </div>
+            </Row>
+            <Row className="mt-5">
+              <div className="flex gap-6 items-center">
+                <div className="flex w-16 h-16 rounded-full overflow-hidden">
+                  <img className="m-auto h-full object-cover" src="v2/erik.webp"></img>
+                </div>
+                <div>
+                  <p className="text-lg">Erik Rehn - CEO</p>
+                  <p >erik.rehn@altostruct.se</p>
+                </div>
+
+              </div>
+            </Row>
+
+          </div>
+        </Content> */}
+
+        <Content>
+          <Row className="">
+            <div className="flex-1">
+              <Form className="flex-1"></Form>
+            </div>
+          </Row>
+        </Content>
+
+
+      </div >
+
+      {/* <Content>
+        <div className="border-gray-100 border p-4">
+          <Column className="gap-32 px-24">
+            <div className="flex-1  flex justify-center" >
+              <img width={"60%"} className="m-auto" src="v2/aws_logo.png"></img>
+            </div>
+            <div className="flex-1  flex justify-center" >
+              <img width={"100%"} className="m-auto" src="v2/anthoripic.png"></img>
+            </div>
+            <div className="flex-1 flex justify-center" >
+              <img width={"100%"} className="m-auto" src="v2/Ingram_micro_logo.png"></img>
+            </div>
+            <div className="flex-1 flex justify-center" >
+              <img width={"60%"} className="m-auto" src="v2/open_ai.png"></img>
+            </div>
+          </Column>
+        </div>
+      </Content> */}
+      {/* <Footer></Footer> */}
     </>
+
   );
 }
+
+export default Home;
