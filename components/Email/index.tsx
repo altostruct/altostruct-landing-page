@@ -2,6 +2,7 @@ import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
 import Button from "../Button";
 import classNames from "classnames";
 import { TemplateParams, sendEmail } from "utils/sendEmail";
+import { useRouter } from "next/router";
 
 
 function Form(props: PropsWithChildren<{ className?: string }>) {
@@ -9,10 +10,12 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
     const { className } = props
 
     const [isDisabled, setIsDisabled] = useState(false);
+    const [isSending, setIsSending] = useState(false);
     const [validationErrors, setValidationErrors] = useState<string[]>([]);
     const [isSubmittedSuccessfully, setIsSubmittedSuccessfully] = useState(false);
     const [newsletter, setNewsletter] = useState(true);
     const form = useRef<HTMLFormElement | null>(null);
+    const router = useRouter()
 
     function isEmailValid(email: string): boolean {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
@@ -46,13 +49,16 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
         setValidationErrors(errors);
 
         if (errors.length > 0) return
-
         try {
-            sendEmail(email);
+            setIsSending(true)
+            await sendEmail(email);
+            await router.push("/events/email-capture")
             setIsSubmittedSuccessfully(true);
         } catch (error) {
             console.error(error);
             setIsSubmittedSuccessfully(false);
+        } finally {
+            setIsSending(false)
         }
     }
 
@@ -64,7 +70,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
         }
 
         if (severity === "failed") {
-            return <div>{children}</div>
+            return <div className="text-red-500">{children}</div>
         }
 
         return <div>{children}</div>
@@ -96,14 +102,14 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
             </div>
             <form ref={form} onSubmit={submit} className="flex gap-4">
                 <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
-                <Button onClick={submit} label="Skicka"></Button>
+                <Button loading={isSending} onClick={submit} label="Skicka"></Button>
             </form>
             <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
                 <p className="max-w-full">Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
             </Checkbox>
-            {isSubmittedSuccessfully && (
+            {/* {isSubmittedSuccessfully && (
                 <HandleAlert severity="success"> Ditt e-postmeddelande har skickats! </HandleAlert>
-            )}
+            )} */}
             {!isSubmittedSuccessfully && validationErrors.length > 0 && (
                 <HandleAlert severity="failed"> {validationErrors} </HandleAlert>
             )}
