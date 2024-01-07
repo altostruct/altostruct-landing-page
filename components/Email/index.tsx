@@ -83,23 +83,23 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
     return (
         <div className={classNames("flex flex-col my-2 space-y-3", className)} >
             <div>
-                <p className="text-7xl w-fit underline">
+                <p className="text-4xl md:text-7xl w-fit underline">
                     <b>
                         Vill du veta mer <br></br> om altostruct?
                     </b>
                 </p>
-                <div className="my-2 text-2xl">
+                <div className="my-2 md:text-2xl">
                     <p>
                         Skriv in din email nedan så hör vi av oss!
                     </p>
                 </div>
             </div>
             <form ref={form} onSubmit={submit} className="flex gap-4">
-                <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
+                <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
                 <Button onClick={submit} label="Skicka"></Button>
             </form>
             <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
-                <p>Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
+                <p className="max-w-full">Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
             </Checkbox>
             {isSubmittedSuccessfully && (
                 <HandleAlert severity="success"> Ditt e-postmeddelande har skickats! </HandleAlert>

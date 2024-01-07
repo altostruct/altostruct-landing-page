@@ -87,7 +87,7 @@ export const Content = (props: PropsWithChildren<{ className?: string, fullWidth
 export const Row = (props: PropsWithChildren<{ className?: string }>) => {
   const { children, className } = props
 
-  return <div className={classNames("flex flex-col items-stretch w-full md:flex-row", className)}>
+  return <div className={classNames("flex items-stretch w-full md:flex-row", className)}>
     {children}
   </div >
 }
@@ -95,38 +95,39 @@ export const Row = (props: PropsWithChildren<{ className?: string }>) => {
 
 const ArticleList = () => {
   return <Row className="gap-2 flex-wrap">
-    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 6).map((v: any, index) => {
-      return <a href={"/blog/" + v.fields.slug} key={index} className="w-[calc(33%-0.5em)]  border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col">
-        <div className="flex-1 p-2">
-          {v.fields.image && <ContentfulImage alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
-        </div>
-        <p className="text-lg overflow-hidden line-clamp-2 text-ellipsis">
-          {v.fields.title}
-        </p>
-        {v.fields.authors && <div className="flex text-xs items-center gap-3 mt-3 mb-3">
+    {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 3).map((v: any, index) => {
+      return <a href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col gap-2">
+        {v.fields.authors && <div className="flex text-xs items-center gap-3">
           <div className="flex flex-row gap-2">
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
               if (!author.fields.profile) return;
-              return <div key={index} className="h-8 w-8 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
+              return <div key={index} className="h-4 w-4 md:h-6 md:w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
                 <ContentfulImage alt="" image={author.fields.profile}></ContentfulImage>
               </div>
             })}
           </div>
-          <p className="font-extralight text-xs md:text-sm">
-            {getAuthorsNames(v.fields.authors)} <br></br> {formatDate(v.fields.createDate ?? new Date())}
+          <p className="font-extralight text-xs md:text-xs">
+            {getAuthorsNames(v.fields.authors)} {formatDate(v.fields.createDate ?? new Date())}
           </p>
         </div>
         }
-
+        <div className="flex gap-2 flex-row-reverse">
+          <div className="w-16 h-16 flex">
+            {v.fields.image && <ContentfulImage className="m-auto max-w-full max-h-full w-full" alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
+          </div>
+          <p className="text-lg md:text-lg flex-1 m-auto overflow-hidden line-clamp-3 text-ellipsis">
+            {v.fields.title}
+          </p>
+        </div>
       </a>
     })}
   </Row>
 }
 
 const CaseList = () => {
-  return <Row className="gap-2 flex-wrap ">
-    {getReferenceCases().slice(0, 6).map((v: any, index) => {
-      return <Row key={index} className="w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
+  return <Row className="gap-2 flex-wrap flex-col">
+    {getReferenceCases().slice(0, 3).map((v: any, index) => {
+      return <Row key={index} className="md:w-[calc(33.3%-0.5rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
         <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4">
           <div className="p-4">
             <div className="h-32 items-center flex">
@@ -238,18 +239,18 @@ export function Home() {
 
 
         <SectionWithLabel title="Om oss">
-          <Row className="divide-dashed">
-            <p className="flex-1 text-3xl pr-4 ">
+          <Row className="divide-dashed gap-8 flex-col">
+            <p className="flex-1 text-xl md:text-3xl pr-4 ">
               Vi är ett team av erfarna utvecklare
               <span className="text-green-300">.</span> Med en passion för teknologi och en djup förståelse för
               automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
               företags digitala resa.
             </p>
             <div className="flex pl-4 gap-4">
-              <div className="m-auto w-32 h-32 relative group">
-                <SiAwslambda className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <SiAwslambda className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <SiAwslambda className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              <div className="m-auto h-24 w-24 md:w-32 md:h-32 relative group">
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
 
 
@@ -264,12 +265,12 @@ export function Home() {
                 Se hur man använder <br></br>
                 <div className="relative ">
 
-                  <span className="text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
+                  <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
                 </div>
 
               </h1>
             </div>
-            <div className="w-[100rem]">
+            <div className="w-64 m-auto">
               {/* <img src="/v2/real-ai.png"></img> */}
               <ExampleAI></ExampleAI>
             </div>
@@ -278,27 +279,27 @@ export function Home() {
 
 
         <SectionWithLabel title="AI och automation med AWS">
-          <Row className="divide-dashed">
-            <p className="flex-1 text-3xl pr-4 ">
+          <Row className="divide-dashed gap-8 flex-col">
+            <p className="flex-1 text-xl md:text-3xl pr-4 ">
               Vi är ett team av erfarna utvecklare<span className="text-green-600">.</span> Med en passion för teknologi och en djup förståelse för
               automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja
               företags digitala resa<span className="text-red-600">.</span>
             </p>
             <div className="flex pl-4 gap-4">
-              <div className="m-auto w-32 h-32 relative group">
-                <FaCloud className="w-32 h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <FaCloud className="w-32 h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <FaCloud className="w-32 h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32  relative group">
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
-              <div className="m-auto w-32 h-32 relative group">
-                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <MdOutlineAccessTime className="w-32 h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
-              <div className="m-auto w-32 h-32 relative group">
-                <FaFileCode className="w-32 h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <FaFileCode className="w-32 h-32 my-auto text-yellow-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <FaFileCode className="w-32 h-32 my-auto text-yellow-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+              <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
             </div>
           </Row>
@@ -314,33 +315,33 @@ export function Home() {
 
 
         <SectionWithLabel className="py-8" title="Vad menar vi med ansvarsfull digitalisering?">
-          <Row className="divide-dashed">
+          <Row className="divide-dashed flex-col-reverse gap-8">
             <div className="m-auto w-28 h-28 relative group">
               <FaChessKnight className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
               <FaChessKnight className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
               <FaChessKnight className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl pl-8 bold">
+            <p className="flex-1 m-auto text-4xl  bold">
               Kunniga, nyfikna och passionerade människor i partnerskap
             </p>
           </Row>
-          <Row className="divide-dashed">
+          <Row className="flex-col-reverse gap-8">
             <div className="m-auto w-28 h-28 relative group">
               <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
               <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
               <MdOutlineAccessTime className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl pl-8 bold">
+            <p className="flex-1 m-auto text-4xl bold">
               Beprövade agila och hållbara metoder för innovation och automation
             </p>
           </Row>
-          <Row >
+          <Row className="flex-col-reverse gap-8">
             <div className="m-auto w-28 h-28 relative group">
               <FaAws className="w-28 h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
               <FaAws className="w-28 h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
               <FaAws className="w-28 h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
-            <p className="flex-1 m-auto text-4xl pl-8 bold">
+            <p className="flex-1 m-auto text-4xl bold">
               Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.       </p>
           </Row>
         </SectionWithLabel>
@@ -392,7 +393,7 @@ export function Home() {
 
       </div >
 
-      <Content>
+      {/* <Content>
         <div className="border-gray-100 border p-4">
           <Column className="gap-32 px-24">
             <div className="flex-1  flex justify-center" >
@@ -409,8 +410,8 @@ export function Home() {
             </div>
           </Column>
         </div>
-      </Content>
-      <Footer></Footer>
+      </Content> */}
+      {/* <Footer></Footer> */}
     </>
 
   );

@@ -33,7 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', 'G-6T55W0J1S2');
         `}
       </Script>
-      <Component {...pageProps} />
+      <div className="w-screen overflow-hidden">
+        <Component {...pageProps} />
+      </div>
     </>
   );
 }
