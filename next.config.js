@@ -47,10 +47,10 @@ const nextConfig = {
     // `placeholder="empty"` to all <ExportedImage> components.
     nextImageExportOptimizer_generateAndUseBlurImages: false,
   },
-  i18n: {
-    locales: ["sv"],
-    defaultLocale: "sv",
-  },
+  // i18n: {
+  //   locales: ["sv"],
+  //   defaultLocale: "sv",
+  // },
   // i18n: {
   //   // These are all the locales you want to support in
   //   // your application
