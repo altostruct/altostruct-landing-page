@@ -159,7 +159,6 @@ a,
 
 @keyframes box {
   0% {
-    opacity: 0;
     scale: 10%;
     // transform: translateY(0px);
     transform: translate(0%, 20%);
@@ -168,10 +167,13 @@ a,
   30% {
     opacity: 1;
   }
+  60% {
+    scale: 100%;
+    opacity: 0;
+  }
 
   100% {
-    scale: 100%;
-    opacity: 1;
+    opacity: 0;
     transform: translate(0%, 50%);
   }
 }

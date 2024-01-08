@@ -277,8 +277,6 @@ export function Home() {
                 <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
                 <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
-
-
             </div>
           </Row>
         </SectionWithLabel>
