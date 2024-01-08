@@ -434,7 +434,7 @@ export function Home() {
           </Column>
         </div>
       </Content> */}
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
 
   );
