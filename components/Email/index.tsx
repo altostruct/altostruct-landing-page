@@ -41,11 +41,11 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
 
         const email: TemplateParams = {
             email: form.current!.email.value,
+            name: form.current!._name.value,
             newsletter: newsletter
         }
-        const errors = validateInput(email);
 
-        console.log(errors);
+        const errors = validateInput(email);
         setValidationErrors(errors);
 
         if (errors.length > 0) return
@@ -89,24 +89,25 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
     return (
         <div id="contact_us" className={classNames("flex flex-col my-2 space-y-3", className)} >
             <div>
-                <p className="text-4xl md:text-7xl w-fit underline">
-                    <b>
-                        Vill du veta mer <br></br> om altostruct?
-                    </b>
+                <p className="text-4xl md:text-7xl w-fit underline bold">
+                    Vill du veta mer <br></br> om altostruct?
                 </p>
                 <div className="my-2 md:text-2xl">
                     <p>
-                        Skriv in din email nedan så hör vi av oss!
+                        Skriv in ditt namn och din mail nedan så hör vi av oss!
                     </p>
                 </div>
             </div>
-            <form ref={form} onSubmit={submit} className="flex gap-4">
+            <form ref={form} onSubmit={submit} className="flex gap-4 flex-col">
+                <input placeholder="Ditt namn" type="text" id="_name" name="_name" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
                 <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
-                <Button loading={isSending} onClick={submit} label="Skicka"></Button>
+                <div className="md:w-fit">
+                    <Button loading={isSending} onClick={submit} label="Skicka"></Button>
+                </div>
             </form>
-            <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
+            {/* <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
                 <p className="max-w-full">Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
-            </Checkbox>
+            </Checkbox> */}
             {/* {isSubmittedSuccessfully && (
                 <HandleAlert severity="success"> Ditt e-postmeddelande har skickats! </HandleAlert>
             )} */}

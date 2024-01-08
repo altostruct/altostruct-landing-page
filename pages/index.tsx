@@ -203,8 +203,9 @@ export function Home() {
             <div>
             </div>
           </Row>
-
         </Content>
+
+
 
         <Content>
           <Quotes counter={4} data={quotes.map((item: any) => ({
@@ -220,6 +221,22 @@ export function Home() {
           }))} />
         </Content>
 
+        <Content>
+          <Row className="flex gap-16">
+            <div className="flex-1">
+              <h1 className="text-2xl mb-4">
+                <div className="relative flex flex-col gap-4">
+
+                  <span className="md:text-6xl cursor-pointer bold">Älskar ni att brottas med ostrukturerad data?</span>
+                  <p>Troligtvis inte. Vi hjälper er samla in, lagra och strukturera er data så att ni kan gå från kaos till klarhet.</p>
+                  <div className="w-fit text-lg">
+                    <Button onClick={() => { }} label="Läs om Fragsheets dataresa"></Button>
+                  </div>
+                </div>
+              </h1>
+            </div>
+          </Row>
+        </Content >
 
         {/* <Content className="flex-col group transition-all flex">
           <div className="bg-black hover:bg-gray-800 group-hover:translate-x-0 transition-all -translate-x-4 text-white p-8 text-4xl font-extrabold text-center">
@@ -243,6 +260,8 @@ export function Home() {
             </b>
           </div>
         </Content> */}
+
+
 
 
         <SectionWithLabel title="Sedan 2020 har vi arbetat med senaste teknologin">

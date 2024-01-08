@@ -5,6 +5,7 @@ emailjs.init(PUBLIC_KEY);
 
 export interface TemplateParams {
   email?: string;
+  name?: string;
   newsletter: boolean;
 }
 
