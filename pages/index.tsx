@@ -99,9 +99,9 @@ export const Row = (props: PropsWithChildren<{ className?: string }>) => {
 const ArticleList = () => {
   return <Row className="gap-2 flex-wrap">
     {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 3).map((v: any, index) => {
-      return <a href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col gap-2">
+      return <a href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col md:gap-2">
         {v.fields.authors && <div className="flex text-xs items-center gap-3">
-          <div className="flex flex-row gap-2">
+          <div className="flex-row gap-2 md:flex hidden  ">
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
               if (!author.fields.profile) return;
               return <div key={index} className="h-4 w-4 md:h-6 md:w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
@@ -114,13 +114,15 @@ const ArticleList = () => {
           </p>
         </div>
         }
-        <div className="flex gap-2 flex-row-reverse">
-          <div className="w-16 h-16 flex">
+        <div className="flex gap-2 flex-row-reverse  md:flex-col flex-1">
+          <div className="w-24 h-24 md:w-full md:flex-1 md:h-full flex">
             {v.fields.image && <ContentfulImage className="m-auto max-w-full max-h-full w-full" alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
           </div>
-          <p className="text-lg md:text-lg flex-1 m-auto overflow-hidden line-clamp-3 text-ellipsis">
-            {v.fields.title}
-          </p>
+          <div className="md:h-24 flex-1 flex">
+            <p className="text-md bold md:text-xl flex-0 my-auto md:mb-auto overflow-hidden line-clamp-3 text-ellipsis">
+              {v.fields.title}
+            </p>
+          </div>
         </div>
       </a>
     })}
@@ -182,7 +184,7 @@ export function Home() {
             <div className="self-center flex-1 h-fit">
               <h1 className="text-5xl bold md:text-8xl">
                 responsible
-                digitalization
+                digitalisation
                 <span className="text-green-500">.</span><br></br>
               </h1>
 
@@ -192,7 +194,7 @@ export function Home() {
               <Image priority className="m-auto w-full max-h-full" alt="main" src="v2/cloud.png" width={640} height={640} />
             </div>
           </Row>
-          <p className="mt-3 text-md md:text-2xl">Altostruct är en expertbyrå inom automation och AI, specialiserad på MLOps och skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>
+          <p className="mt-3 text-md md:text-2xl">Altostruct är ett konsultbolag inom automation och AI, specialiserad på skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>
           <Row className="gap-4">
             <div className="flex mt-6">
               <Button link="#contact_us" label="Kontakta oss" onClick={() => { }}>
@@ -246,8 +248,7 @@ export function Home() {
         <SectionWithLabel title="Sedan 2020 har vi arbetat med senaste teknologin">
           <Row className="divide-dashed gap-8 flex-col">
             <p className="flex-1 text-xl md:text-3xl pr-4 ">
-              Altoustruct är ett innovativt konsultbolag grundat 2020 som fokuserar på att leverera skräddarsydda AI och ML lösningar inom Amazon Web Services (AWS)-ekosystemet.
-            </p>
+              Vi är ett litet team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja företags digitala resa.             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto h-24 w-24 md:w-32 md:h-32 relative group">
                 <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
@@ -261,30 +262,30 @@ export function Home() {
         </SectionWithLabel>
 
         <Content>
-          <Row className="">
-            <div className="m-auto">
-              <Link href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
+          <Link href="/cases/scaling_data_ingestion_7x_faster_and_powering_ai_media_solutions_with_aws:_arty's_transformation_journey">
+            <Row className="">
+              <div className="m-auto">
                 <h1 className="text-4xl mb-4">
-                  Se hur man använder <br></br>
+                  Se hur man implementerar   <br></br>
                   <div className="relative ">
 
                     <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
                   </div>
                 </h1>
-              </Link>
-            </div>
-            <div className="w-64 md:w-full m-auto">
-              {/* <img src="/v2/real-ai.png"></img> */}
-              <ExampleAI></ExampleAI>
-            </div>
-          </Row>
+              </div>
+              <div className="w-64 md:w-full m-auto">
+                {/* <img src="/v2/real-ai.png"></img> */}
+                <ExampleAI></ExampleAI>
+              </div>
+            </Row>
+          </Link>
         </Content>
 
 
         <SectionWithLabel title="AI och automation med AWS">
           <Row className="divide-dashed gap-8 flex-col">
             <p className="flex-1 text-xl md:text-3xl pr-4 ">
-              Vårt företag är en stolt del av Amazon Partner Network, med en specialisering inom AI och automation. Vår kärnkompetens ligger i att hjälpa organisationer att dra maximal nytta av Machine Learning (ML) och AI.
+              Som en stolt medlem i Amazon Partner Network, använder vårt företag den senaste molnteknologin för att snabbt och skalbart leverera maximalt värde till dig som kund.
             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto w-16 h-16 md:w-32 md:h-32  relative group">
@@ -315,7 +316,7 @@ export function Home() {
         </SectionWithTitle>
 
 
-        <SectionWithLabel className="py-8 md:py-12 flex gap-4 md:gap-8" title="Vad menar vi med ansvarsfull digitalisering?">
+        <SectionWithLabel className="py-8 md:py-12 flex gap-4 md:gap-8" title='Vad menar vi med "responsible digitalisation"?'>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
             <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
               <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
@@ -323,7 +324,7 @@ export function Home() {
               <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
             <p className="flex-1 m-auto text-xl md:text-4xl  bold">
-              Kunniga, nyfikna och passionerade människor i partnerskap
+              Implementationer som löser riktiga problem. Vi hoppar inte blint på de senaste trenderna.
             </p>
           </Row>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
@@ -333,7 +334,7 @@ export function Home() {
               <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
             <p className="flex-1 m-auto text-xl md:text-4xl bold">
-              Beprövade agila och hållbara metoder för innovation och automation
+              Beprövade agila och hållbara metoder som främjar automation och innovation.
             </p>
           </Row>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
