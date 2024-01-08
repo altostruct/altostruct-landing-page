@@ -8,7 +8,7 @@ function EmailSuccess() {
     const router = useRouter()
     useEffect(() => {
         setTimeout(() => {
-            router.push("/")
+            router.replace("/")
         }, 2000);
     }, [])
 

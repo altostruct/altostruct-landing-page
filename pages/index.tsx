@@ -21,6 +21,7 @@ import { MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
 import Image from "next-image-export-optimizer";
 import SEO from "@components/SEO";
+import UnstructuredData from "@components/Logos/UnstructuredData";
 
 
 
@@ -222,18 +223,20 @@ export function Home() {
         </Content>
 
         <Content>
-          <Row className="flex gap-16">
-            <div className="flex-1">
-              <h1 className="text-2xl mb-4">
+          <Row className="flex gap-16 flex-col">
+            <div className="flex-1 m-auto">
+              <h1 className="mb-4">
                 <div className="relative flex flex-col gap-4">
-
-                  <span className="md:text-6xl cursor-pointer bold">Älskar ni att brottas med ostrukturerad data?</span>
-                  <p>Troligtvis inte. Vi hjälper er samla in, lagra och strukturera er data så att ni kan gå från kaos till klarhet.</p>
-                  <div className="w-fit text-lg">
-                    <Button onClick={() => { }} label="Läs om Fragsheets dataresa"></Button>
-                  </div>
+                  <span className="md:text-8xl text-4xl bold">Älskar ni att brottas med ostrukturerad data?</span>
+                  <p className="text-xl md:text-3xl">Troligtvis inte. Vi hjälper er samla in, lagra och strukturera er data så att ni kan gå från kaos till klarhet.</p>
                 </div>
               </h1>
+            </div>
+            <div className="flex-0 m-auto flex flex-col">
+              <div className="m-auto">
+                <UnstructuredData></UnstructuredData>
+              </div>
+
             </div>
           </Row>
         </Content >
@@ -270,9 +273,9 @@ export function Home() {
               Vi är ett litet team av erfarna utvecklare. Med en passion för teknologi och en djup förståelse för automatisering och effektivisering av digital infrastruktur erbjuder vi skräddarsydda lösningar för att stödja företags digitala resa.             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto h-24 w-24 md:w-32 md:h-32 relative group">
-                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <SiAwslambda className="h-24 w-24 md:w-32 md:h-32 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
 
 
@@ -308,19 +311,19 @@ export function Home() {
             </p>
             <div className="flex pl-4 gap-4">
               <div className="m-auto w-16 h-16 md:w-32 md:h-32  relative group">
-                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaCloud className="w-16 h-16 md:w-32 md:h-32 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
               <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
-                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <MdOutlineAccessTime className="w-16 h-16 md:w-32 md:h-32 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
               <div className="m-auto w-16 h-16 md:w-32 md:h-32 relative group">
-                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
-                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-2 -translate-y-2 absolute" />
+                <FaFileCode className="w-16 h-16 md:w-32 md:h-32 my-auto text-yellow-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 -translate-x-4 -translate-y-4 absolute" />
               </div>
             </div>
           </Row>
@@ -338,9 +341,9 @@ export function Home() {
         <SectionWithLabel className="py-8 md:py-12 flex gap-4 md:gap-8" title='Vad menar vi med "responsible digitalisation"?'>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
             <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
-              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaChessKnight className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
             <p className="flex-1 m-auto text-xl md:text-4xl  bold">
               Implementationer som löser riktiga problem. Vi hoppar inte blint på de senaste trenderna.
@@ -348,9 +351,9 @@ export function Home() {
           </Row>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
             <div className="m-auto w-14 h-14 md:w-28 md:h-28  relative group">
-              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <MdOutlineAccessTime className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
             <p className="flex-1 m-auto text-xl md:text-4xl bold">
               Beprövade agila och hållbara metoder som främjar automation och innovation.
@@ -358,9 +361,9 @@ export function Home() {
           </Row>
           <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-8">
             <div className="m-auto w-14 h-14 md:w-28 md:h-28 relative group">
-              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all group-hover:translate-x-0 group-hover:translate-y-0 absolute" />
-              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all group-hover:translate-x-0 group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
+              <FaAws className="w-14 h-14 md:w-28 md:h-28 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
             </div>
             <p className="flex-1 m-auto text-xl md:text-4xl bold">
               Lösningar byggda på ledande molnplattformar för skalbarhet, säkerhet och produktivitet.

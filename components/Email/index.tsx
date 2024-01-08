@@ -52,7 +52,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
         try {
             setIsSending(true)
             await sendEmail(email);
-            await router.push("/events/email-capture")
+            await router.replace("/events/email-capture")
             setIsSubmittedSuccessfully(true);
         } catch (error) {
             console.error(error);
