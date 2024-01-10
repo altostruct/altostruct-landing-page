@@ -1,3 +1,4 @@
+import Topbar from "@components/Topbar/Topbar"
 import Script from "next/script"
 
 function NewsLetter() {
@@ -11,6 +12,7 @@ function NewsLetter() {
                     ml('account', '691954');
             `}
         </Script>
+        <Topbar></Topbar>
         <div className="m-auto gap-5 flex flex-col">
             <div className="ml-embedded" data-form="8P5g2R"></div>
         </div>
