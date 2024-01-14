@@ -333,6 +333,9 @@ export function Home() {
           </>
         }>
           <ArticleList></ArticleList>
+          <div className="w-fit mt-2">
+          <Button onClick={()=>{}} link="/blog" label="Läs mer"></Button>
+          </div>
         </SectionWithTitle>
 
 
