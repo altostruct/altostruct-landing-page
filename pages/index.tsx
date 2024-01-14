@@ -192,7 +192,7 @@ export function Home() {
             </div>
 
             <div className="cloud-animation flex md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0">
-              <Image priority className="m-auto w-full max-h-full" alt="main" src="v2/cloud.png" width={640} height={640} />
+              <Image fetchPriority="high" placeholder="empty" priority className="m-auto w-full max-h-full" alt="main" src="/images/v2/cloud.png" width={640} height={640} />
             </div>
           </Row>
           <p className="mt-3 text-md md:text-2xl">Altostruct är ett konsultbolag inom automation och AI, specialiserad på skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>

@@ -14,7 +14,7 @@ const Social = () => {
                     </svg>
                 </a>
                 <a className="m-auto" href="https://partners.amazonaws.com/partners/0018W000025sRvpQAE/Altostruct%20AB">
-                    <Image className="md:w-14 w-9" alt="" width={64} height={64} src={"/v2/aws_logo.png"}></Image>
+                    <Image className="md:w-14 w-9" alt="" width={64} height={64} src={"/images/v2/aws_logo.png"}></Image>
 
                 </a>
             </div>
