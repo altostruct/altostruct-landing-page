@@ -1,13 +1,16 @@
-import React, { PropsWithChildren, useEffect, useRef, useState } from "react";
+import React, { PropsWithChildren, ReactNode, useEffect, useRef, useState } from "react";
 import Button from "../Button";
 import classNames from "classnames";
 import { TemplateParams, sendEmail } from "utils/sendEmail";
 import { useRouter } from "next/router";
 
 
-function Form(props: PropsWithChildren<{ className?: string }>) {
+function Form(props: PropsWithChildren<{ title?: ReactNode, className?: string }>) {
+    const DEFAULT_TITLE = <p className="text-4xl md:text-7xl w-fit underline bold">
+        <> Vill du veta mer <br></br> om altostruct?</>
+    </p>
 
-    const { className } = props
+    const { className, title = DEFAULT_TITLE } = props
 
     const [isDisabled, setIsDisabled] = useState(false);
     const [isSending, setIsSending] = useState(false);
@@ -89,9 +92,7 @@ function Form(props: PropsWithChildren<{ className?: string }>) {
     return (
         <div id="contact_us" className={classNames("flex flex-col my-2 space-y-3", className)} >
             <div>
-                <p className="text-4xl md:text-7xl w-fit underline bold">
-                    Vill du veta mer <br></br> om altostruct?
-                </p>
+                {title}
                 <div className="my-2 md:text-2xl">
                     <p>
                         Skriv in ditt namn och din mail nedan så hör vi av oss!

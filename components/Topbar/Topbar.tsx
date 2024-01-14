@@ -43,27 +43,31 @@ const AnimatedLine = (props: { expanded: boolean }) => {
 function Hamburger(props: { expanded: boolean, onClick: () => void }) {
   const { expanded, onClick } = props
 
-  return <svg  onClick={onClick} className="cursor-pointer w-6 " width="32" height="32" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  return <svg  onClick={onClick} className="cursor-pointer w-6 " width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
     {/* <path d="M10 34H38M10 24H38M10 14H38" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /> */}
     {/* <path className={classNames("transition-all origin-center",{
       "-rotate-45": expanded,
     })} d="M2 34H48 " stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /> */}
     
-    <path className={classNames("origin-bottom-right bg-blue-700 transition-all",{
-      "scale-x-[141.1%] rotate-45": expanded,
-      "-translate-y-1": !expanded,
-    })}
-  d="M6 50H44" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-  
-    <path  className={classNames(" transition-all",{
-      "opacity-0": expanded,
-    })} d="M6 24H44" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
 
     <path className={classNames("origin-top-right bg-blue-700 transition-all",{
       "scale-x-[141.1%] -rotate-45": expanded,
       "translate-y-1": !expanded,
     })}
-  d="M6 0H44" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  d="M6 0H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+ 
+    <path  className={classNames(" transition-all",{
+      "opacity-0": expanded,
+    })} d="M6 18H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+
+   
+<path className={classNames("origin-bottom-right bg-blue-700 transition-all",{
+      "scale-x-[141.1%] rotate-45": expanded,
+      "-translate-y-1": !expanded,
+    })}
+  d="M6 36H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  
   </svg>
 }
 
@@ -107,15 +111,15 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
     <>
      {expanded && <div className="flex h-screen fixed z-10 w-screen bg-white top-0 left-0">
           <div className="m-auto cursor-pointer text-6xl text-center flex flex-col gap-4">
-            <a href="/positions">
+            <Link href="/positions">
               <p className="hover:underline">Jobba hos oss</p>
-            </a>
-            <a href="/blog">
+            </Link>
+            <Link href="/blog">
               <p className="hover:underline">Kunskapsbas</p>
-            </a>
-            <a href="/contact">
+            </Link>
+            <Link href="/contact">
               <p className="hover:underline">Kontakt</p>
-            </a>
+            </Link>
           </div>
       </div>}
       <header className="flex z-10 bg-white justify-between w-screen fixed top-0">
