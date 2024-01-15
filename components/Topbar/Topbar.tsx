@@ -43,31 +43,16 @@ const AnimatedLine = (props: { expanded: boolean }) => {
 function Hamburger(props: { expanded: boolean, onClick: () => void }) {
   const { expanded, onClick } = props
 
-  return <svg  onClick={onClick} className="cursor-pointer w-6 " width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-    {/* <path d="M10 34H38M10 24H38M10 14H38" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /> */}
-    {/* <path className={classNames("transition-all origin-center",{
-      "-rotate-45": expanded,
-    })} d="M2 34H48 " stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" /> */}
-    
+  return <svg onClick={onClick} className="transition-all cursor-pointer " width="24" height="24" viewBox="0 0 6 6" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-    <path className={classNames("origin-top-right bg-blue-700 transition-all",{
-      "scale-x-[141.1%] -rotate-45": expanded,
-      "translate-y-1": !expanded,
-    })}
-  d="M6 0H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+      <path className={classNames("transition-all")} d={!expanded ? "M0.5 0.5 5.5 0.5": "M0.5 0.5 5.5 5.5"} stroke="black" stroke-width="1"  stroke-linecap="round" />
 
- 
-    <path  className={classNames(" transition-all",{
-      "opacity-0": expanded,
-    })} d="M6 18H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
 
-   
-<path className={classNames("origin-bottom-right bg-blue-700 transition-all",{
-      "scale-x-[141.1%] rotate-45": expanded,
-      "-translate-y-1": !expanded,
-    })}
-  d="M6 36H30" stroke="black" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-  
+      <path className={classNames(" transition-all", {
+        "opacity-0": expanded,
+      })} d="M0.5 3 5.5 3" stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" />
+
+      <path className={classNames("transition-all")} d={!expanded ? "M0.5 5.5 5.5 5.5": "M0.5 5.5 5.5 0.5"} stroke="black" stroke-width="1"  stroke-linecap="round" />
   </svg>
 }
 
@@ -109,18 +94,18 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
-     {expanded && <div className="flex h-screen fixed z-10 w-screen bg-white top-0 left-0">
-          <div className="m-auto cursor-pointer text-6xl text-center flex flex-col gap-4">
-            <Link href="/positions">
-              <p className="hover:underline">Jobba hos oss</p>
-            </Link>
-            <Link href="/blog">
-              <p className="hover:underline">Kunskapsbas</p>
-            </Link>
-            <Link href="/contact">
-              <p className="hover:underline">Kontakt</p>
-            </Link>
-          </div>
+      {expanded && <div className="flex h-screen fixed z-10 w-screen bg-white top-0 left-0">
+        <div className="m-auto cursor-pointer text-6xl text-center flex flex-col gap-4">
+          <Link href="/positions">
+            <p className="hover:underline">Jobba hos oss</p>
+          </Link>
+          <Link href="/blog">
+            <p className="hover:underline">Kunskapsbas</p>
+          </Link>
+          <Link href="/contact">
+            <p className="hover:underline">Kontakt</p>
+          </Link>
+        </div>
       </div>}
       <header className="flex z-10 bg-white justify-between w-screen fixed top-0">
         <div className="m-auto max-w-[1048px] w-11/12 md:w-8/12 flex justify-between items-center  py-4">
@@ -128,13 +113,13 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
             <Image placeholder="empty" fetchPriority="high" className="w-full max-w-full max-h-full" alt="logo" src="/images/v2/alto_logo.png" width={64} height={64} />
           </Link>
           <div>
-           
+
             <Hamburger expanded={expanded} onClick={() => setExpanded(!expanded)} />
           </div>
           <AnimatedLine expanded={!expanded && !isAtTop}></AnimatedLine>
         </div>
       </header >
-     
+
     </>
   );
 };
