@@ -418,25 +418,23 @@ export function Home() {
 
 
       </div >
-
-      {/* <Content>
-        <div className="border-gray-100 border p-4">
-          <Column className="gap-32 px-24">
-            <div className="flex-1  flex justify-center" >
-              <img width={"60%"} className="m-auto" src="v2/aws_logo.png"></img>
-            </div>
-            <div className="flex-1  flex justify-center" >
-              <img width={"100%"} className="m-auto" src="v2/anthoripic.png"></img>
-            </div>
-            <div className="flex-1 flex justify-center" >
-              <img width={"100%"} className="m-auto" src="v2/Ingram_micro_logo.png"></img>
-            </div>
-            <div className="flex-1 flex justify-center" >
-              <img width={"60%"} className="m-auto" src="v2/open_ai.png"></img>
-            </div>
-          </Column>
-        </div>
-      </Content> */}
+      <SectionWithLabel title="Våra expertpartners">
+        <Row className="md:gap-32 gap-12">
+          <div className="flex-1  flex justify-center" >
+            <Image alt="aws logo" width={320} height={320} className="m-auto w-2/5" src="/images/v2/aws_logo.png"></Image>
+          </div>
+          {/* <div className="flex-1  flex justify-center" >
+            <img width={"100%"} className="m-auto" src="/images/v2/codon.png"></img>
+          </div> */}
+          <div className="flex-1  flex justify-center" >
+            <Image alt="anthoropic logo" width={320} height={320} className="m-auto w-full" src="/images/v2/anthoripic.png"></Image>
+          </div>
+          <div className="flex-1 flex justify-center" >
+            <Image alt="ingram micro logo" width={320} height={320} className="m-auto w-full" src="/images/v2/Ingram_micro_logo.png"></Image>
+          </div>
+        </Row>
+      </SectionWithLabel>
+    
       <Footer></Footer>
     </>
 
