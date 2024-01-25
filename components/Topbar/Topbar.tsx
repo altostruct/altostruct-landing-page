@@ -94,7 +94,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
 
   return (
     <>
-      {expanded && <div className="flex h-screen fixed z-10 w-screen bg-white top-0 left-0">
+      {expanded && <div className="flex h-screen fixed z-[99] w-screen bg-white top-0 left-0">
         <div className="m-auto cursor-pointer text-6xl text-center flex flex-col gap-4">
           <Link href="/positions">
             <p className="hover:underline">Jobba hos oss</p>

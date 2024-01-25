@@ -21,7 +21,7 @@ import Footer from "@components/Footer";
 export const options: Options = {
     renderNode: {
         [BLOCKS.PARAGRAPH]: (node, children) => {
-            return <p className="inline">{children}</p>;
+            return <p className="inline pb-2">{children}</p>;
         },
 
         [BLOCKS.HR]: (node, children) => {
@@ -46,7 +46,7 @@ export const options: Options = {
         },
 
         [BLOCKS.UL_LIST]: (node, children) => {
-            return <ul className="list-disc list-inside">{children}</ul>;
+            return <ul className="list-disc list-inside flex flex-col gap-2 pb-2">{children}</ul>;
         },
 
         [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -57,7 +57,7 @@ export const options: Options = {
 
         [BLOCKS.HEADING_1]: (node, children) => {
             return (
-                <h1 className="font-bold text-4xl text-white mt-4 mb-2">
+                <h1 className="font-bold text-4xl mt-4 mb-2">
                     {children}
                 </h1>
             );
