@@ -181,18 +181,17 @@ export function Home() {
         <Topbar></Topbar>
         <SEO title="alto/s" description="Cloud, AI och automatisering" />
         <Content>
-          <Row className="gap-">
-            <div className="self-center flex-1 h-fit">
+          <Row className="gap-12">
+            <div className="self-center flex-1 h-fit border-dashed border-black border-b-4 p-4">
               <h1 className="text-5xl bold md:text-8xl">
-                responsible
-                digitalisation
-                <span className="text-green-500">.</span><br></br>
+                AWS made easy
+                <span className="text-green-600">.</span><br></br>
               </h1>
 
             </div>
 
-            <div className="cloud-animation flex md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0">
-              <Image fetchPriority="high" placeholder="empty" priority className="m-auto w-full max-h-full" alt="main" src="/images/v2/cloud.png" width={640} height={640} />
+            <div className="cloud-animation flex md:relative md:blur-none md:opacity-100 absolute -z-10 blur-sm opacity-30 top-0 flex-0 ">
+              {/* <Image fetchPriority="high" placeholder="empty" priority className="m-auto w-full max-h-full" alt="main" src="/images/v2/cloud.png" width={350} height={350} /> */}
             </div>
           </Row>
           <p className="mt-3 text-md md:text-2xl">Altostruct är ett konsultbolag inom automation och AI, specialiserad på skalbar molnarkitektur för att effektivisera och förbättra företagsprocesser.</p>
@@ -286,7 +285,7 @@ export function Home() {
             <Row className="">
               <div className="m-auto">
                 <h1 className="text-4xl mb-4">
-                  Se hur man implementerar   <br></br>
+                  Hur kan AWS anvädas för<br></br>
                   <div className="relative ">
 
                     <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>

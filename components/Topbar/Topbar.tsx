@@ -97,6 +97,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
   const goto = (path: string) => {
     return () => { if (router.pathname === path) setExpanded(false) }
   }
+  
   return (
     <>
       {expanded && <div className="flex h-screen fixed z-[99] w-screen bg-white top-0 left-0">
