@@ -183,7 +183,7 @@ export function Home() {
         <Content>
           <Row className="gap-12">
             <div className="self-center flex-1 h-fit border-dashed border-black border-b-4 p-4">
-              <h1 className="text-5xl bold md:text-8xl">
+              <h1 className="text-7xl bold md:text-8xl">
                 AWS made easy
                 <span className="text-green-600">.</span><br></br>
               </h1>
