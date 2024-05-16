@@ -285,7 +285,7 @@ export function Home() {
             <Row className="">
               <div className="m-auto">
                 <h1 className="text-4xl mb-4">
-                  Hur kan AWS anvädas för<br></br>
+                  Hur kan AWS användas för<br></br>
                   <div className="relative ">
 
                     <span className="md:text-9xl bold cursor-pointer  text-gray-900 hover:underline">artificiell intelligens</span>
