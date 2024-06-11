@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
+  basePath: process.env.BASE_PATH,
   images: { unoptimized: true },
 
   // async exportPathMap(map) {

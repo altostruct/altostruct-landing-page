@@ -286,7 +286,7 @@ export function Home() {
               </div>
             </Row>
           </div>
-          <div className="border-4 border-black w-10 relative items-stretch">
+          <div className="hidden md:block border-4 border-black w-10 relative items-stretch">
             <p style={{ writingMode: "vertical-lr" }} className="top-1/2 uppercase -translate-y-1/2 -translate-x-1/2 left-1/2 absolute text-xl text-black border-3 whitespace-nowrap">
               vad gör vi.
             </p>
@@ -294,7 +294,7 @@ export function Home() {
         </Content>
 
         <Content className="">
-          <div className="flex flex-col text-2xl md:text-6xl gap-2">
+          <div className="flex flex-col text-2xl md:text-4xl gap-2">
             <span className="flex gap-4 md:gap-36 w-full">
               Varför använda sig <br></br>
               <div className="flex-1 rounded-xl flex border-2 border-black text-center">
@@ -328,24 +328,24 @@ export function Home() {
           {(() => {
             const highLightedRef = getReferenceCases()[0] as any
             return <>
-              <div className="flex flex-row gap-12">
-                <div className="w-1/2 flex flex-col gap-3">
+              <div className="flex flex-col-reverse md:flex-row gap-12">
+                <div className="w-full md:w-1/2 flex flex-col gap-3">
                   <div>
                     <p className="font-second">alto x {highLightedRef.fields.customer.fields.name}</p>
                   </div>
-                  <p className="text-5xl">
+                  <p className="text-3xl md:text-5xl">
                     {highLightedRef.fields.title}
                   </p>
 
-                  <p className="text-xl line-clamp-5">{highLightedRef.fields.shortDescription}</p>
+                  <p className="text-md md:text-xl line-clamp-5">{highLightedRef.fields.shortDescription}</p>
                   <Button link={"/cases/" + highLightedRef.fields.slug} className="w-fit" label={"Läs mer om " + highLightedRef.fields.customer.fields.name + " på molnet"}></Button>
                 </div>
-                <div className="w-1/2 flex flex-col">
+                <div className="w-full md:w-1/2 flex flex-col-reverse md:flex-col">
                   <ContentfulImage className="w-full" alt="" image={highLightedRef.fields.image} />
-                  <div className=" mr-auto flex flex-wrap gap-2 pt-2">
+                  <div className="hidden md:flex mr-auto flex-wrap gap-2 pt-2">
                     {highLightedRef.fields.tags.slice(0, 4).map((v: string) => <p key={v} className="text-lg p-0.5 border rounded-md">{v}</p>)}
                   </div>
-                  <a href={highLightedRef.fields.customer.fields.link} className="mt-auto ml-auto border-dashed p-2 border-l-4 border-t-4 border-black">
+                  <a href={highLightedRef.fields.customer.fields.link} className="mt-auto ml-auto border-dashed p-2 md:border-l-4 md:border-t-4 border-black">
                     <ContentfulImage className="inline w-24" alt="" image={highLightedRef.fields.customer.fields.logo} />
                   </a>
                 </div>
@@ -363,10 +363,10 @@ export function Home() {
 
         <Content>
           <div className="flex">
-            <h3 className="inline-block m-auto text-6xl font-second">
+            <h3 className="inline-block m-auto text-2xl md:text-6xl font-second">
               Från ide
-              <div className="inline-block px-10">
-                <svg width="123" height="48" viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="inline-block px-2 md:px-10 w-14 ">
+                <svg  viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 24.3623H112.488" stroke="black" stroke-width="10" stroke-linecap="round" />
                   <path d="M92.9685 42.0546C93.2879 43.0129 94.5507 40.7946 95.2856 40.1017C99.3499 36.2691 103.484 32.4851 108.096 29.3107C110.889 27.3883 114.037 25.4478 117.397 24.7759" stroke="black" stroke-width="10" stroke-linecap="round" />
                   <path d="M100.735 5C101.26 8.41226 104.421 11.8688 106.367 14.4625C109.157 18.1823 111.98 21.2985 115.67 24.0662" stroke="black" stroke-width="10" stroke-linecap="round" />
