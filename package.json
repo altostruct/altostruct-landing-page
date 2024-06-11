@@ -47,6 +47,7 @@
     "next": "13.4.2",
     "next-image-export-optimizer": "^1.6.1",
     "react": "18.2.0",
+    "react-aws-icons": "^1.2.1",
     "react-bootstrap": "^2.8.0",
     "react-calendly": "^4.1.1",
     "react-chartjs-2": "^4.3.1",
@@ -60,11 +61,13 @@
     "react-sizeme": "^3.0.2",
     "react-spring": "^9.5.5",
     "react-tagcloud": "^2.3.1",
+    "react-type-animation": "^3.2.0",
     "react-use-gesture": "^9.1.3",
     "rsuite": "^5.38.0",
     "sass": "^1.56.1",
     "three": "^0.141.0",
-    "typescript": "4.8.4"
+    "typescript": "4.8.4",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.22",

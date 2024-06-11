@@ -30,7 +30,7 @@ const Footer = () => {
                     {/* <a className=" text-6xl underline pb-8">
                         Senaste nyheter
                     </a> */}
-                    <Link href="/#contact_us">
+                    <Link href="/contact">
                         <p className="text-3xl md:text-4xl underline">
                             Kontakta oss
                         </p>

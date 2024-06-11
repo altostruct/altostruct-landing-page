@@ -1,0 +1,25 @@
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+  .content {
+    position: relative;
+    animation: scroll 10s linear infinite;
+    white-space: nowrap;
+    width: fit-content;
+
+    .item {
+      display: inline-block;
+    }
+  }
+}

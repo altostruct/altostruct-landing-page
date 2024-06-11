@@ -21,12 +21,12 @@ export function ContentfulImage(
       height={
         height ||
         image.fields.details?.image.height ||
-        image.fields?.file.details.image.height
+        image.fields?.file.details.image?.height || 1
       }
       width={
         width ||
         image.fields.details?.image.width ||
-        image.fields?.file.details.image.width
+        image.fields?.file.details.image?.width || 1
       }
       src={imageUrl}
       className="w-full"
