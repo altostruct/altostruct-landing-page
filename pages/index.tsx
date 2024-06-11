@@ -60,14 +60,14 @@ const Label = (props: { children: ReactNode }) => {
   </div>
 }
 
-const SectionWithLabel = (props: { title: string, className?: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
+export const SectionWithLabel = (props: { title: string, className?: string, children: ReactNode, titleAlignement?: "left" | "right" }) => {
   const { title, children, titleAlignement = "right", className } = props
 
   return <Content>
     <h2 className={classNames("text-2xl bg-black text-white w-fit py-2 md:py-0 px-4 translate-y-1", {
       "ml-auto": titleAlignement === "left"
     })}>{title}</h2>
-    <div className={classNames("border-4 p-6 flex gap-8 flex-col border-black", className)}>
+    <div className={classNames(className, "border-4 p-6 flex gap-8 flex-col border-black")}>
       {children}
     </div>
   </Content>
@@ -293,7 +293,7 @@ export function Home() {
           </div>
         </Content>
 
-        <Content className="">
+        {/* <Content className="">
           <div className="flex flex-col text-2xl md:text-4xl gap-2">
             <span className="flex gap-4 md:gap-36 w-full">
               Varför använda sig <br></br>
@@ -322,7 +322,7 @@ export function Home() {
               </div>
             </span>
           </div>
-        </Content>
+        </Content> */}
 
         <SectionWithLabel title="Show cases">
           {(() => {
@@ -365,8 +365,8 @@ export function Home() {
           <div className="flex">
             <h3 className="inline-block m-auto text-2xl md:text-6xl font-second">
               Från ide
-              <div className="inline-block px-2 md:px-10 w-14 ">
-                <svg  viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="inline-block px-2 md:px-4 w-32">
+                <svg width="100%" height="100%" viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 24.3623H112.488" stroke="black" stroke-width="10" stroke-linecap="round" />
                   <path d="M92.9685 42.0546C93.2879 43.0129 94.5507 40.7946 95.2856 40.1017C99.3499 36.2691 103.484 32.4851 108.096 29.3107C110.889 27.3883 114.037 25.4478 117.397 24.7759" stroke="black" stroke-width="10" stroke-linecap="round" />
                   <path d="M100.735 5C101.26 8.41226 104.421 11.8688 106.367 14.4625C109.157 18.1823 111.98 21.2985 115.67 24.0662" stroke="black" stroke-width="10" stroke-linecap="round" />
