@@ -204,7 +204,7 @@ export function Home() {
 
           <div className="w-full flex h-fit border-black border-dashed py-4">
             <div className="break-keep w-3/5 my-auto">
-              <h1 className=" text-7xl md:text-7xl">
+              <h1 className="text-5xl md:text-7xl">
                 {/* <span className="bg-gradient-to-l from-red-500 bold to-blue-700 inline-block text-transparent bg-clip-text"> */}
                 super charge your business with amazon web services
                 <span className="text-green-500">.</span>
@@ -219,8 +219,7 @@ export function Home() {
               </Row>
             </div>
 
-            <div className="my-auto w-2/5">
-
+            <div className="my-auto opacity-0 md:opacity-100 absolute  md:relative w-2/5">
               <Image className="m-auto w-full" alt="" width={320} height={320} src="/images/cloud-logo.png"></Image>
             </div>
           </div>
@@ -295,10 +294,10 @@ export function Home() {
         </Content>
 
         <Content className="">
-          <div className="flex flex-col  text-6xl gap-2">
-            <span className="flex gap-36 w-full">
+          <div className="flex flex-col text-2xl md:text-6xl gap-2">
+            <span className="flex gap-4 md:gap-36 w-full">
               Varför använda sig <br></br>
-              <div className="flex-1 rounded-xl flex border-2 text-4xl border-black text-center">
+              <div className="flex-1 rounded-xl flex border-2 border-black text-center">
                 <p className="m-auto">
                   AI och ML
                 </p>
@@ -306,17 +305,17 @@ export function Home() {
               </div>
 
             </span>
-            <span className="flex w-full gap-56">
+            <span className="flex w-full gap-6 md:gap-56">
               av molnet i <br></br>
-              <div className="flex-1 flex rounded-xl border-2 text-4xl border-black text-center">
+              <div className="flex-1 flex rounded-xl border-2 border-black text-center">
                 <p className="m-auto">
                   stora mägnder data
                 </p>
               </div>
             </span>
-            <span className="flex w-full gap-56">
+            <span className="flex w-full gap-2 md:gap-56">
               2024? <br></br>
-              <div className="flex-1 flex rounded-xl border-2 text-4xl border-black text-center">
+              <div className="flex-1 flex rounded-xl border-2 border-black text-center">
                 <p className="m-auto">
                   säkerhet, skalbarhet och enkelhet
                 </p>
@@ -336,17 +335,19 @@ export function Home() {
                   </div>
                   <p className="text-5xl">
                     {highLightedRef.fields.title}
-                    <ContentfulImage className="inline w-12 h-12" alt="" image={highLightedRef.fields.customer.fields.logo} />
                   </p>
 
                   <p className="text-xl line-clamp-5">{highLightedRef.fields.shortDescription}</p>
                   <Button link={"/cases/" + highLightedRef.fields.slug} className="w-fit" label={"Läs mer om " + highLightedRef.fields.customer.fields.name + " på molnet"}></Button>
                 </div>
-                <div className="w-1/2">
+                <div className="w-1/2 flex flex-col">
                   <ContentfulImage className="w-full" alt="" image={highLightedRef.fields.image} />
                   <div className=" mr-auto flex flex-wrap gap-2 pt-2">
                     {highLightedRef.fields.tags.slice(0, 4).map((v: string) => <p key={v} className="text-lg p-0.5 border rounded-md">{v}</p>)}
                   </div>
+                  <a href={highLightedRef.fields.customer.fields.link} className="mt-auto ml-auto border-dashed p-2 border-l-4 border-t-4 border-black">
+                    <ContentfulImage className="inline w-24" alt="" image={highLightedRef.fields.customer.fields.logo} />
+                  </a>
                 </div>
               </div>
             </>
@@ -376,7 +377,7 @@ export function Home() {
           </div>
           <Row className="gap-4 pt-12">
             <div className="w-full p-3 border-4 border-black text-2xl">
-              Allting börjar med en förstudie där vi systematsiskt går igenom era behov och
+              Vår bakgrund är djupt rotad i startup-världen, där tid och leveranskapacitet är avgörande. Därför arbetar vi agilt med projekt och utnyttjar den senaste tekniken inom molntjänster för att snabbt leverera värde till er.
               <Button className="w-fit m-auto mt-12" label="Hämta exempel förstudie"></Button>
             </div>
           </Row>
