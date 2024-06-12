@@ -116,7 +116,7 @@ const Topbar = (props: { transparent?: boolean; fixed?: boolean }) => {
       <header className="flex z-[100] bg-white justify-between w-screen fixed top-0">
         <div className="m-auto max-w-[1048px] w-11/12 md:w-8/12 flex justify-between items-center  py-4">
           <Link onClick={goto("/")} href="/" className="w-16">
-            <Image placeholder="empty" fetchPriority="high" className="w-full max-w-full max-h-full" alt="logo" src="/images/v2/alto_logo.png" width={64} height={64} />
+            <Image placeholder="empty" fetchPriority="high" className="w-full max-w-full max-h-full" alt="logo" src="/images/v2/alto_logo.png" width={64} height={20} />
           </Link>
           <div>
 

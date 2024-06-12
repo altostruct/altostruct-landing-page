@@ -216,7 +216,7 @@ export function Home() {
             </div>
 
             <div className="my-auto opacity-0 md:opacity-100 absolute  md:relative w-2/5">
-              <Image className="m-auto w-full" alt="" width={320} height={320} src="/images/cloud-logo.png"></Image>
+              <Image placeholder="blur"  fetchPriority="high" className="m-auto w-full" alt="" width={336} height={314} src="/images/cloud-logo.png"></Image>
             </div>
           </div>
         </Content>
@@ -363,7 +363,7 @@ export function Home() {
               Från ide
               <div className="inline-block px-2 md:px-4 w-32">
                 <svg width="100%" height="100%" viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 24.3623H112.488" stroke="black" stroke-width="10" stroke-linecap="round" />
+                  <path d="M5 24.3623H112.488" stroke="black" stroke-width="10" strokeLinecap="round" />
                   <path d="M92.9685 42.0546C93.2879 43.0129 94.5507 40.7946 95.2856 40.1017C99.3499 36.2691 103.484 32.4851 108.096 29.3107C110.889 27.3883 114.037 25.4478 117.397 24.7759" stroke="black" stroke-width="10" stroke-linecap="round" />
                   <path d="M100.735 5C101.26 8.41226 104.421 11.8688 106.367 14.4625C109.157 18.1823 111.98 21.2985 115.67 24.0662" stroke="black" stroke-width="10" stroke-linecap="round" />
                 </svg>
