@@ -78,7 +78,6 @@ function BlogPage(props: BlogPageProps) {
                     </div>
                 </div>
             </Content>
-
         </div>
     );
 }

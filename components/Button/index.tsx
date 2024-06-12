@@ -18,7 +18,7 @@ const Button = (props: ButtonProps) => {
         </span>
     }
 
-    return <Link href={link} onClick={onClick} className={classNames("py-1 whitespace-nowrap text-md md:text-lg gap-4 border-4 border-black cursor-pointer text-center flex px-4 md:px-8", className, {
+    return <Link href={link ?? ""} onClick={onClick} className={classNames("py-1 whitespace-nowrap text-md md:text-lg gap-4 border-4 border-black cursor-pointer text-center flex px-4 md:px-8", className, {
         "bg-black text-white": variant == "primary",
         "border-dashed": variant == "secondary"
     })}>
