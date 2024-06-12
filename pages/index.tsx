@@ -21,12 +21,8 @@ import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, 
 import ExampleAI from "@components/Logos/ExampleAI";
 import { MdArrowDropDown, MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import SEO from "@components/SEO";
-import UnstructuredData from "@components/Logos/UnstructuredData";
-import InfiteAnimation from "@components/InfiniteAnimation";
-import { TypeAnimation } from 'react-type-animation';
-import Card from "@components/Card";
 
 
 

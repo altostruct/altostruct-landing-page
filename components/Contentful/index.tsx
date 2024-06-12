@@ -1,4 +1,4 @@
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import { ImageProps } from "next/image";
 
 export function ContentfulImage(
@@ -9,7 +9,7 @@ export function ContentfulImage(
     }>
 ) {
   const { image, height, width, ...rest } = props;
-  if (!image.fields.file) return <></>
+  if (!image?.fields?.file) return <></>
 
   const ext = image.fields.file.contentType.split("/")[1];
   const imageUrl = "/images/contentful/" + image.sys.id + "." + ext;

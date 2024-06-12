@@ -1,5 +1,5 @@
 import Form from "@components/Email";
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import Link from "next/link";
 import { Content, Row } from "pages";
 

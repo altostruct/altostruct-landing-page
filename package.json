@@ -9,6 +9,7 @@
     "prebuild": "node scripts/prebuild.mjs",
     "dev": "next dev",
     "build": "rm -rf out && npm run export && npm run postbuild",
+    "build-simple": "npm run export",
     "start": "next start",
     "lint": "next lint",
     "serve": "serve out",

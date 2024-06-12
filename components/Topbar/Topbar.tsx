@@ -4,7 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import Link from "next/link";
 import Dropdown from "./Dropdown";
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import classNames from "classnames";
 import { useRouter } from "next/router";
 
