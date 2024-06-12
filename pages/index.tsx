@@ -119,7 +119,7 @@ export const Row = (props: PropsWithChildren<{ className?: string }>) => {
 const ArticleList = () => {
   return <Row className="gap-2 flex-wrap overflow-hidden">
     {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 3).map((v: any, index) => {
-      return <a href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col md:gap-2">
+      return <Link href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col md:gap-2">
         {v.fields.authors && <div className="flex text-xs items-center gap-3">
           <div className="flex-row gap-2 md:flex hidden  ">
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
@@ -144,7 +144,7 @@ const ArticleList = () => {
             </p>
           </div>
         </div>
-      </a>
+      </Link>
     })}
   </Row>
 }
@@ -154,7 +154,7 @@ const CaseList = () => {
     {getReferenceCases().slice(1, 4).map((v: any, index) => {
 
       return <Row key={index} className="md:w-[calc(33.3%-0.33rem)] border-dashed border-4 hover:border-solid transition-all border-black cursor-pointer divide-black">
-        <a href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4 flex">
+        <Link href={"/cases/" + v.fields.slug} className="group flex-1 overflow-hidden p-4 flex">
           <div className="mx-auto">
             {/* <div className="h-32 items-center flex">
               <h3 className="text-xl">{v.fields.title}<span className="text-red-400">.</span></h3>
@@ -174,7 +174,7 @@ const CaseList = () => {
               </div>
             </div>
           </div>
-        </a>
+        </Link>
       </Row>
     })}
   </Row>
@@ -239,13 +239,13 @@ export function Home() {
           <div className="gap-20 flex-1 flex flex-col">
             <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
               <div className="m-auto w-16 h-16 md:w-36 md:h-36  relative group">
-                <FaCode className="w-16 h-16 md:w-36 md:h-36 my-auto text-green-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
 
               <div className="flex-1 m-auto flex flex-col gap-2">
-                <h2 className="text-xl bold md:text-5xl">Utveckling</h2>
+                <h2 className="text-3xl bold md:text-5xl">Utveckling</h2>
                 <p className="text-2xl">
                   Vi hjälper er att bygga moderna applikationer med den senaste molntekniken.
                 </p>
@@ -255,12 +255,12 @@ export function Home() {
             <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
               <div className="m-auto w-14 h-14 md:w-36 md:h-36 relative group">
                 <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
 
               <div className="flex-1 m-auto flex flex-col gap-2">
-                <h2 className="text-xl bold md:text-5xl">Kurser</h2>
+                <h2 className="text-3xl bold md:text-5xl">Kurser</h2>
                 <p className="text-2xl">
                   Lär dig hur man bygger skalbara och säkra system på AWS.
                 </p>
@@ -270,11 +270,11 @@ export function Home() {
             <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
               <div className="m-auto w-14 h-14 md:w-36 md:h-36 relative group">
                 <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 absolute" />
-                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-4 -translate-y-4 absolute" />
+                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
               <div className="flex-1 m-auto flex flex-col gap-2">
-                <h2 className="text-xl bold md:text-5xl">Molnstrategi</h2>
+                <h2 className="text-3xl bold md:text-5xl">Molnstrategi</h2>
                 <p className="text-2xl">
                   Vi hjälper er att skapa en strategi för hur ni kan arbeta med molntjänster och AI.
                 </p>
@@ -341,9 +341,9 @@ export function Home() {
                   <div className="hidden md:flex mr-auto flex-wrap gap-2 pt-2">
                     {highLightedRef.fields.tags.slice(0, 4).map((v: string) => <p key={v} className="text-lg p-0.5 border rounded-md">{v}</p>)}
                   </div>
-                  <a href={highLightedRef.fields.customer.fields.link} className="mt-auto ml-auto border-dashed p-2 md:border-l-4 md:border-t-4 border-black">
+                  <Link href={highLightedRef.fields.customer.fields.link} className="mt-auto ml-auto border-dashed p-2 md:border-l-4 md:border-t-4 border-black">
                     <ContentfulImage className="inline w-24" alt="" image={highLightedRef.fields.customer.fields.logo} />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </>
@@ -374,7 +374,7 @@ export function Home() {
           <Row className="gap-4 pt-12">
             <div className="w-full p-3 border-4 border-black text-2xl">
               Vår bakgrund är djupt rotad i startup-världen, där tid och leveranskapacitet är avgörande. Därför arbetar vi agilt med projekt och utnyttjar den senaste tekniken inom molntjänster för att snabbt leverera värde till er.
-              <Button className="w-fit m-auto mt-12" label="Hämta exempel förstudie"></Button>
+              <Button className="w-fit m-auto mt-12" label="Läs mer om vårat arbetssätt"></Button>
             </div>
           </Row>
         </Content>
