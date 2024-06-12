@@ -197,9 +197,8 @@ export function Home() {
         <Topbar></Topbar>
         <SEO title="alto/s" description="Cloud, AI och automatisering" />
         <Content className="">
-
-          <div className="w-full flex h-fit border-black border-dashed py-4">
-            <div className="break-keep w-3/5 my-auto">
+          <div className="w-full flex-col-reverse md:flex-row flex h-fit border-black border-dashed py-4">
+            <div className="break-keep w-full md:w-3/5 my-auto">
               <h1 className="text-5xl md:text-7xl">
                 {/* <span className="bg-gradient-to-l from-red-500 bold to-blue-700 inline-block text-transparent bg-clip-text"> */}
                 super charge your business with amazon web services
@@ -215,7 +214,7 @@ export function Home() {
               </Row>
             </div>
 
-            <div className="my-auto opacity-0 md:opacity-100 absolute  md:relative w-2/5">
+            <div className="my-auto w-1/3 opacity-20 md:opacity-100 translate-y-10 md:translate-y-0 md:w-2/5 m-auto">
               <Image placeholder="blur"  fetchPriority="high" className="m-auto w-full" alt="" width={336} height={314} src="/images/cloud-logo.png"></Image>
             </div>
           </div>
@@ -237,11 +236,11 @@ export function Home() {
 
         <Content className="flex flex-row gap-12">
           <div className="gap-20 flex-1 flex flex-col">
-            <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
-              <div className="m-auto w-16 h-16 md:w-36 md:h-36  relative group">
-                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
-                <FaCode className="w-14 h-14 md:w-36 md:h-36 my-auto text-green-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
+            <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
+              <div className="m-auto w-24 h-24 md:w-36 md:h-36 relative group">
+                <FaCode className="w-24 h-24 md:w-36 md:h-36 my-auto text-green-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <FaCode className="w-24 h-24 md:w-36 md:h-36 my-auto text-green-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <FaCode className="w-24 h-24 md:w-36 md:h-36 my-auto text-green-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
 
               <div className="flex-1 m-auto flex flex-col gap-2">
@@ -252,11 +251,11 @@ export function Home() {
                 <Button link="/consulting-services" className="w-fit" label="Läs mer" variant="secondary"></Button>
               </div>
             </Row>
-            <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
-              <div className="m-auto w-14 h-14 md:w-36 md:h-36 relative group">
-                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
-                <SiDiscourse className="w-14 h-14 md:w-36 md:h-36 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
+            <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
+              <div className="m-auto w-24 h-24 md:w-36 md:h-36 md:w-36 md:h-36 relative group">
+                <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
 
               <div className="flex-1 m-auto flex flex-col gap-2">
@@ -267,11 +266,11 @@ export function Home() {
                 <Button link="/courses" className="w-fit" label="Läs mer" variant="secondary"></Button>
               </div>
             </Row>
-            <Row className="divide-dashed px-2 flex-row-reverse gap-2 md:gap-12 items-center">
-              <div className="m-auto w-14 h-14 md:w-36 md:h-36 relative group">
-                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
-                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
-                <FaChessKnight className="w-14 h-14 md:w-36 md:h-36 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
+            <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
+              <div className="m-auto w-24 h-24 md:w-36 md:h-36 md:w-36 md:h-36 relative group">
+                <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
+                <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
+                <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
               </div>
               <div className="flex-1 m-auto flex flex-col gap-2">
                 <h2 className="text-3xl bold md:text-5xl">Molnstrategi</h2>
@@ -361,7 +360,7 @@ export function Home() {
           <div className="flex">
             <h3 className="inline-block m-auto text-2xl md:text-6xl font-second">
               Från ide
-              <div className="inline-block px-2 md:px-4 w-32">
+              <div className="inline-block px-2 md:px-4 w-16 md:w-32">
                 <svg width="100%" height="100%" viewBox="0 0 123 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M5 24.3623H112.488" stroke="black" stroke-width="10" strokeLinecap="round" />
                   <path d="M92.9685 42.0546C93.2879 43.0129 94.5507 40.7946 95.2856 40.1017C99.3499 36.2691 103.484 32.4851 108.096 29.3107C110.889 27.3883 114.037 25.4478 117.397 24.7759" stroke="black" stroke-width="10" stroke-linecap="round" />
