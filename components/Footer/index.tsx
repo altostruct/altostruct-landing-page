@@ -1,5 +1,5 @@
 import Form from "@components/Email";
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import Link from "next/link";
 import { Content, Row } from "pages";
 
@@ -30,7 +30,7 @@ const Footer = () => {
                     {/* <a className=" text-6xl underline pb-8">
                         Senaste nyheter
                     </a> */}
-                    <Link href="/#contact_us">
+                    <Link href="/contact">
                         <p className="text-3xl md:text-4xl underline">
                             Kontakta oss
                         </p>

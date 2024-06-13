@@ -48,9 +48,9 @@ function Quotes(props: QuotesProps) {
             centerMode={false} showThumbs={false} showStatus={false} swipeable showArrows={true} autoPlay>
             {data.slice(0, counter).map((item, index) => {
 
-                return <div key={index} className="text-left flex-1 md:px-16 p-4 h-full ">
+                return <div key={index} className="text-left flex-1 md:px-6 p-2 h-full ">
                     <div className="flex flex-col gap-3 h-full ">
-                        <cite className="text-sm md:text-3xl flex-1 not-italic pb-2">
+                        <cite className="text-sm md:text-2xl flex-1 not-italic pb-2">
                             {'"'}
                             {item.quote}
                             {'"'}

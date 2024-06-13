@@ -1,11 +1,8 @@
-import * as fs from "fs";
 import posts from ".data/contentful/posts/all.json";
 import products from ".data/contentful/products/all.json";
 import positions from ".data/contentful/positions/all.json";
-import projects from ".data/contentful/projects/all.json";
 import referenceCases from ".data/contentful/referenceCases/all.json";
 import campaignsCases from ".data/contentful/campaigns/all.json";
-import Image from "next-image-export-optimizer";
 
 export interface ContentfulSys {
   locale: string;

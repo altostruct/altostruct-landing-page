@@ -187,7 +187,7 @@ export const getStaticPaths: GetStaticPaths<any> = async () => {
     return {
         paths: posts.filter(post => post.sys.locale === "sv").map((post) => {
             return { params: { id: post.fields.slug } };
-        }),
+        }).filter(v=>v.params.id),
 
         fallback: false, // can also be true or 'blocking'
     };

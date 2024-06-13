@@ -1,4 +1,4 @@
-import Image from "next-image-export-optimizer";
+import Image from "@components/Image";
 import { ImageProps } from "next/image";
 
 export function ContentfulImage(
@@ -9,11 +9,10 @@ export function ContentfulImage(
     }>
 ) {
   const { image, height, width, ...rest } = props;
-  if (!image.fields.file) return <></>
+  if (!image?.fields?.file) return <></>
 
   const ext = image.fields.file.contentType.split("/")[1];
-  const baseUrl = process.env.NEXT_PUBLIC_GITHUB_PAGE_ROOT_URL || "/";
-  const imageUrl = baseUrl + "images/contentful/" + image.sys.id + "." + ext;
+  const imageUrl = "/images/contentful/" + image.sys.id + "." + ext;
 
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
@@ -21,12 +20,12 @@ export function ContentfulImage(
       height={
         height ||
         image.fields.details?.image.height ||
-        image.fields?.file.details.image.height
+        image.fields?.file.details.image?.height || 1
       }
       width={
         width ||
         image.fields.details?.image.width ||
-        image.fields?.file.details.image.width
+        image.fields?.file.details.image?.width || 1
       }
       src={imageUrl}
       className="w-full"

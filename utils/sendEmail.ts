@@ -11,7 +11,6 @@ export interface TemplateParams {
 
 export const sendEmail = async (data: TemplateParams) => {
   const params: Record<string, unknown> = { ...data };
-  console.log("params: ", params);
 
   await emailjs.send(SERVICE_ID, TEMPLATE_ID, params).then(
     function (response) {
