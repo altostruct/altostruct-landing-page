@@ -3,14 +3,12 @@ import Button from "../Button";
 import classNames from "classnames";
 import { TemplateParams, sendEmail } from "utils/sendEmail";
 import { useRouter } from "next/router";
+import Image from "@components/Image";
 
 
-function Form(props: PropsWithChildren<{ title?: ReactNode, className?: string }>) {
-    const DEFAULT_TITLE = <p className="text-4xl md:text-7xl w-fit underline bold">
-        <> Vill du veta mer <br></br> om altostruct?</>
-    </p>
-
-    const { className, title = DEFAULT_TITLE } = props
+function Form(props: PropsWithChildren<{ description?: string; title?: ReactNode, className?: string }>) {
+    const DEFAULT_TITLE = "Kontakta oss gärna"
+    const { className, title = DEFAULT_TITLE, description } = props
 
     const [isDisabled, setIsDisabled] = useState(false);
     const [isSending, setIsSending] = useState(false);
@@ -90,31 +88,38 @@ function Form(props: PropsWithChildren<{ title?: ReactNode, className?: string }
 
 
     return (
-        <div id="contact_us" className={classNames("flex flex-col my-2 space-y-3", className)} >
-            <div>
-                {title}
-                <div className="my-2 md:text-2xl">
-                    <p>
-                        Skriv in ditt namn och din mail nedan så hör vi av oss!
+        <div className="w-full flex gap-12">
+            <div id="contact_us" className={classNames("flex flex-col my-2 space-y-3", className, "w-2/3")} >
+                <div>
+                    <p className="text-4xl md:text-7xl w-fit underline bold">
+                        {title}
                     </p>
+                    <div className="my-2 md:text-2xl">
+                        <p>
+                            {description ?? "Hej! Mitt namn är Erik Rehn och jag är VD och medgrundare av altostruct. Vi skulle gärna vilja prata med dig om ditt nästa projekt. Skriv ditt namn och email nedan så återkommer vi snart."}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <form ref={form} onSubmit={submit} className="flex gap-4 flex-col">
-                <input placeholder="Ditt namn" type="text" id="_name" name="_name" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
-                <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
-                <div className="md:w-fit">
-                    <Button loading={isSending} onClick={submit} label="Skicka"></Button>
-                </div>
-            </form>
-            {/* <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
+                <form ref={form} onSubmit={submit} className="flex gap-4 flex-col">
+                    <input placeholder="Ditt namn" type="text" id="_name" name="_name" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
+                    <input placeholder="Din mejladress" type="email" id="email" name="reply_to" className="h-12 md:w-96 text-white rounded-none inline-block outline-none border pl-2 border-[#7d7d7d]" style={{ color: "black" }} />
+                    <div className="md:w-fit">
+                        <Button loading={isSending} onClick={submit} label="Skicka"></Button>
+                    </div>
+                </form>
+                {/* <Checkbox defaultChecked={newsletter} onChange={e => setNewsletter(e.target.checked)}>
                 <p className="max-w-full">Jag vill prenumerera på Altos nyhetsbrev och få tips från experter.</p>
             </Checkbox> */}
-            {/* {isSubmittedSuccessfully && (
+                {/* {isSubmittedSuccessfully && (
                 <HandleAlert severity="success"> Ditt e-postmeddelande har skickats! </HandleAlert>
             )} */}
-            {!isSubmittedSuccessfully && validationErrors.length > 0 && (
-                <HandleAlert severity="failed"> {validationErrors} </HandleAlert>
-            )}
+                {!isSubmittedSuccessfully && validationErrors.length > 0 && (
+                    <HandleAlert severity="failed"> {validationErrors} </HandleAlert>
+                )}
+            </div>
+            <div className="flex w-1/3">
+                <Image alt="" className="m-auto w-full rounded-full" width={400} height={400} src={"/images/persons/erik_rehn.jpeg"}></Image>
+            </div>
         </div>
     )
 

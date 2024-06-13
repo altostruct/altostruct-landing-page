@@ -1,4 +1,5 @@
 import Button from "@components/Button"
+import Form from "@components/Email"
 import SEO from "@components/SEO"
 import Topbar from "@components/Topbar/Topbar"
 import { Content, SectionWithLabel } from "pages"
@@ -11,7 +12,7 @@ function Courses() {
         <Topbar></Topbar>
         <SEO title="alto/s" description="Cloud, AI och automatisering" />
         <Content>
-            <h1 className="text-6xl">
+            <h1 className="text-6xl pb-2">
                 <SiAwsamplify className="inline pr-2"></SiAwsamplify>
                 Cloud och AWS Kurser</h1>
             <p className="text-2xl">
@@ -22,9 +23,9 @@ function Courses() {
 
         <SectionWithLabel className="flex text-xl gap-2 md:flex-row" title="Introduktion till molnet och AWS">
             <div className="flex-1">
-                Vår introduktionskurs inleds med en heldagsworkshop där vi tillsammans utforskar de grundläggande principerna för arbete i molnet. Under denna intensiva dag får deltagarna en omfattande genomgång av molnteknologi och dess praktiska tillämpningar. Efter workshopen får deltagarna även 
+                Vår introduktionskurs inleds med en heldagsworkshop där vi tillsammans utforskar de grundläggande principerna för arbete i molnet. Under denna intensiva dag får deltagarna en omfattande genomgång av molnteknologi och dess praktiska tillämpningar. Efter workshopen får deltagarna även
                 tilldelade uppgifter att arbeta med på egen hand.
-    
+
                 <Button link={`mailto:info@altostruct.se?subject=Kurs%3A%20Introduktion%20till%20molnet%20och%20AWS&body=Hej%2C%0A%0AJag%20%C3%A4r%20intresserad%20av%20kursen%20%22Introduktion%20till%20molnet%20och%20AWS%22.%20V%C3%A4nligen%20kontakta%20mig%20f%C3%B6r%20att%20hitta%20en%20l%C3%A4mplig%20tid.%0A%0A`} label="Bestäm tid för kurs!" className="w-fit mt-12"></Button>
             </div>
             <div className="px-2">
@@ -69,6 +70,10 @@ function Courses() {
         <SectionWithLabel className="text-4xl font-second " title="AI på AWS">
             Kommer snart!
         </SectionWithLabel>
+
+        <Content>
+            <Form title="Har du frågor kring kurserna?" description="Tveka inte på att höra av dig. Fyll i ditt namn och email så återkommer vi."></Form>
+        </Content>
     </div>
 }
 

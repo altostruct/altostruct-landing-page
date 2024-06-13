@@ -1,4 +1,3 @@
-import * as fs from "fs";
 import posts from ".data/contentful/posts/all.json";
 import products from ".data/contentful/products/all.json";
 import positions from ".data/contentful/positions/all.json";

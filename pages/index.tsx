@@ -121,7 +121,7 @@ const ArticleList = () => {
     {getContentfulPosts().sort((a, b) => new Date(b.fields.createDate).getTime() - new Date(a.fields.createDate).getTime()).slice(0, 3).map((v: any, index) => {
       return <Link href={"/blog/" + v.fields.slug} key={index} className="w-full md:w-[calc(33%-0.5em)] border-black border-dashed border-4 hover:border-solid transition-all p-4 cursor-pointer group flex overflow-hidden flex-col md:flex-col md:gap-2">
         {v.fields.authors && <div className="flex text-xs items-center gap-3">
-          <div className="flex-row gap-2 md:flex hidden  ">
+          <div className="flex-row gap-2 md:flex hidden">
             {v.fields.authors.map((author: ContentfulAuthor, index: number) => {
               if (!author.fields.profile) return;
               return <div key={index} className="h-4 w-4 md:h-6 md:w-6 rounded-full -translate-x-4 first:translate-x-0 overflow-hidden">
@@ -134,13 +134,16 @@ const ArticleList = () => {
           </p>
         </div>
         }
-        <div className="flex gap-2 flex-row-reverse  md:flex-col h-64">
-          <div className="w-24 md:w-full overflow-hidden h-96 ">
+        <div className="flex gap-2 flex-row-reverse  md:flex-col h-32 md:h-64">
+          <div className="w-24 md:w-full overflow-hidden md:h-96 ">
             {v.fields.image && <ContentfulImage className="m-auto max-w-full max-h-full h-full" alt={"Cover Image for " + v.fields.title} image={v.fields.image}></ContentfulImage>}
           </div>
-          <div className="flex-1 flex">
-            <p className="text-md md:text-xl flex-0  overflow-hidden line-clamp-2 text-ellipsis">
+          <div className="flex-1 flex flex-col">
+            <p className="text-xl bold md:text-xl flex-0  overflow-hidden line-clamp-2 text-ellipsis">
               {v.fields.title}
+            </p>
+            <p className="text-md text-gray-800 md:text-xl flex-0  overflow-hidden line-clamp-2 text-ellipsis">
+              {v.fields.description}
             </p>
           </div>
         </div>
@@ -215,7 +218,7 @@ export function Home() {
             </div>
 
             <div className="my-auto w-1/3 opacity-20 md:opacity-100 translate-y-10 md:translate-y-0 md:w-2/5 m-auto">
-              <Image placeholder="blur"  fetchPriority="high" className="m-auto w-full" alt="" width={336} height={314} src="/images/cloud-logo.png"></Image>
+              <Image placeholder="blur" fetchPriority="high" className="m-auto w-full" alt="" width={336} height={314} src="/images/cloud-logo.png"></Image>
             </div>
           </div>
         </Content>
@@ -252,7 +255,7 @@ export function Home() {
               </div>
             </Row>
             <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
-              <div className="m-auto w-24 h-24 md:w-36 md:h-36 md:w-36 md:h-36 relative group">
+              <div className="m-auto w-24 h-24 md:w-36 md:h-36 relative group">
                 <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
                 <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
                 <SiDiscourse className="w-24 h-24 md:w-36 md:h-36 my-auto text-red-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
@@ -266,8 +269,8 @@ export function Home() {
                 <Button link="/courses" className="w-fit" label="Läs mer" variant="secondary"></Button>
               </div>
             </Row>
-            <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
-              <div className="m-auto w-24 h-24 md:w-36 md:h-36 md:w-36 md:h-36 relative group">
+            {/* <Row className="divide-dashed px-2 flex-col md:flex-row gap-2 md:gap-12 items-center">
+              <div className="m-auto w-24 h-24  md:w-36 md:h-36 relative group">
                 <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-900 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 absolute" />
                 <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-700 transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-1 -translate-y-1 md:translate-x-2 md:-translate-y-2 absolute" />
                 <FaChessKnight className="w-24 h-24 md:w-36 md:h-36 my-auto text-blue-500  transition-all md:group-hover:translate-x-0 md:group-hover:translate-y-0 translate-x-2 -translate-y-2 md:translate-x-4 md:-translate-y-4 absolute" />
@@ -279,7 +282,7 @@ export function Home() {
                 </p>
                 <Button link="/cloud-strategy" className="w-fit" label="Läs mer" variant="secondary"></Button>
               </div>
-            </Row>
+            </Row> */}
           </div>
           <div className="hidden md:block border-4 border-black w-10 relative items-stretch">
             <p style={{ writingMode: "vertical-lr" }} className="top-1/2 uppercase -translate-y-1/2 -translate-x-1/2 left-1/2 absolute text-xl text-black border-3 whitespace-nowrap">
@@ -373,7 +376,7 @@ export function Home() {
           <Row className="gap-4 pt-12">
             <div className="w-full p-3 border-4 border-black text-2xl">
               Vår bakgrund är djupt rotad i startup-världen, där tid och leveranskapacitet är avgörande. Därför arbetar vi agilt med projekt och utnyttjar den senaste tekniken inom molntjänster för att snabbt leverera värde till er.
-              <Button className="w-fit m-auto mt-12" label="Läs mer om vårat arbetssätt"></Button>
+              {/* <Button className="w-fit m-auto mt-12" label="Läs mer om vårat arbetssätt"></Button> */}
             </div>
           </Row>
         </Content>
@@ -487,6 +490,9 @@ export function Home() {
             </div>
           </Row>
         </SectionWithLabel>
+        <Content>
+          <Form></Form>
+        </Content>
       </div >
       <Footer></Footer>
     </>
