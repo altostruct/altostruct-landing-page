@@ -11,7 +11,7 @@ function ConsultingServices() {
         {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
     <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
         <Topbar></Topbar>
-        <SEO title="alto/s" description="alto/s | konsulttjänster" />
+        <SEO title="alto/s | AWS konsulter" description="alto/s | konsulttjänster" />
         <Content>
             <h1 className="text-6xl pb-2">
                 <SiAwsamplify className="inline pr-2"></SiAwsamplify>
