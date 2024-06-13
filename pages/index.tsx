@@ -198,13 +198,13 @@ export function Home() {
         {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
         <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
         <Topbar></Topbar>
-        <SEO title="alto/s | AWS Specialister" description="Vi är ett specialistbolag inom cloud, AI och automatisering på AWS." />
+        <SEO title="alto/s | AWS Specialister" description="Vi är ett AWS konsulter inom cloud, AI och automatisering." />
         <Content className="">
           <div className="w-full flex-col-reverse md:flex-row flex h-fit border-black border-dashed py-4">
             <div className="break-keep w-full md:w-3/5 my-auto">
               <h1 className="text-5xl md:text-7xl">
                 {/* <span className="bg-gradient-to-l from-red-500 bold to-blue-700 inline-block text-transparent bg-clip-text"> */}
-                super charge your business with amazon web services
+                supercharge your business with amazon web services
                 <span className="text-green-500">.</span>
               </h1>
               <Row className="gap-4">

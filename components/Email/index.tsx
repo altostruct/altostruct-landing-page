@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import Image from "@components/Image";
 
 
-function Form(props: PropsWithChildren<{ description?: string; title?: ReactNode, className?: string }>) {
+function Form(props: PropsWithChildren<{ image?: boolean; description?: string; title?: ReactNode, className?: string }>) {
     const DEFAULT_TITLE = "Kontakta oss gärna"
-    const { className, title = DEFAULT_TITLE, description } = props
+    const { className, title = DEFAULT_TITLE, description, image= true } = props
 
     const [isDisabled, setIsDisabled] = useState(false);
     const [isSending, setIsSending] = useState(false);
@@ -117,9 +117,9 @@ function Form(props: PropsWithChildren<{ description?: string; title?: ReactNode
                     <HandleAlert severity="failed"> {validationErrors} </HandleAlert>
                 )}
             </div>
-            <div className="flex w-1/3">
+            {image && <div className="flex w-1/3">
                 <Image alt="" className="m-auto w-full rounded-full" width={400} height={400} src={"/images/persons/erik_rehn.jpeg"}></Image>
-            </div>
+            </div>}
         </div>
     )
 

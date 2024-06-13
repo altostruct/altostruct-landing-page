@@ -15,10 +15,10 @@ function ConsultingServices() {
         <Content>
             <h1 className="text-6xl pb-2">
                 <SiAwsamplify className="inline pr-2"></SiAwsamplify>
-                Utnyttja molnets och AI fulla potential
+                Utnyttja molnets och AIs fulla potential
             </h1>
             <p className="text-3xl">
-                Genom certifierade AWS experter erbjuder hjälper vi dig, bygga och underhålla den senaste tekniken.
+                Genom certifierade AWS experter hjälper vi dig att bygga och underhålla den senaste tekniken.
             </p>
             <ul className="flex flex-col gap-4 mt-10 text-2xl">
                 <li><span className="underline">Expertis och Erfarenhet:</span> Vi har omfattande erfarenhet och certifierad expertis inom AWS, vilket garanterar att du får den bästa lösningen för dina specifika behov.</li>

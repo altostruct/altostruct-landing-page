@@ -24,7 +24,7 @@ function PositionsPage(){
         </Content>
 
         <Content className="mt-16">
-            <Form title={<p className="text-5xl bold">Annars tar vi alltid <br></br> emot spontan ansökan.</p>}></Form>            
+            <Form description="" title={<p className="text-5xl bold">Annars tar vi alltid <br></br> emot spontan ansökan.</p>}></Form>            
         </Content>
 
         <Footer></Footer>
