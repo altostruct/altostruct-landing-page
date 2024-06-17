@@ -198,7 +198,7 @@ export function Home() {
         {/* <div className="absolute w-1 -translate-x-1/2 top-0 h-full border-2 border-green-600 border-dashed  left-[12vw] "></div>
         <div className="w-4 -translate-x-1/2 h-4 bg-black  rounded-full fixed left-[12vw]"></div> */}
         <Topbar></Topbar>
-        <SEO title="alto/s | AWS Specialister" description="Vi är ett konsultbolag specialiserat på molntjänster, AI och automatisering, med fokus på AWS.." />
+        <SEO title="AWS Specialister - molntjänster, AI och automatisering" description="Vi är ett konsultbolag specialiserat på molntjänster, AI och automatisering, med fokus på AWS.." />
         <Content className="">
           <div className="w-full flex-col-reverse md:flex-row flex h-fit border-black border-dashed py-4">
             <div className="break-keep w-full md:w-3/5 my-auto">
