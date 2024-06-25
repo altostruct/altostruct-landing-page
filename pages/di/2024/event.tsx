@@ -3,14 +3,15 @@ import Topbar from "@components/Topbar/Topbar"
 import { useRouter } from "next/router"
 import { Content } from "pages"
 import { useEffect } from "react"
-import { sendGAEvent } from '@next/third-parties/google'
+import { sendGAEvent, sendGTMEvent } from '@next/third-parties/google'
+import Button from "@components/Button"
 
 function DIPage() {
     const router = useRouter();
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         (async () => {
-            sendGAEvent("Events", "DI-QR-SCANNED");
+            sendGAEvent({ event: 'visited', value: "DI-QR-SCANNED" })
             router.replace("/events/2024/cloud-and-ai-study-2024")
         })()
     }, [router]);
