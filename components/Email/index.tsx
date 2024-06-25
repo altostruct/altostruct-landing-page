@@ -6,9 +6,9 @@ import { useRouter } from "next/router";
 import Image from "@components/Image";
 
 
-function Form(props: PropsWithChildren<{ image?: boolean; description?: string; title?: ReactNode, className?: string }>) {
+function Form(props: PropsWithChildren<{tag?: string, image?: boolean; description?: string; title?: ReactNode, className?: string }>) {
     const DEFAULT_TITLE = "Kontakta oss gärna"
-    const { className, title = DEFAULT_TITLE, description, image= true } = props
+    const { className, tag, title = DEFAULT_TITLE, description, image= true } = props
 
     const [isDisabled, setIsDisabled] = useState(false);
     const [isSending, setIsSending] = useState(false);
@@ -42,7 +42,7 @@ function Form(props: PropsWithChildren<{ image?: boolean; description?: string; 
 
         const email: TemplateParams = {
             email: form.current!.email.value,
-            name: form.current!._name.value,
+            name: tag ?  tag + "::" +  form.current!._name.value : form.current!._name.value,
             newsletter: newsletter
         }
 

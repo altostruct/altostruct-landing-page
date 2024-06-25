@@ -80,7 +80,7 @@ export const Content = (props: PropsWithChildren<{ className?: string, fullWidth
   </div>
 }
 
-const Expand = (props: { children?: ReactNode, label?: ReactNode }) => {
+export const Expand = (props: { children?: ReactNode, label?: ReactNode }) => {
   const { children, label } = props;
   const [expanded, setExpaded] = useState(false)
 
