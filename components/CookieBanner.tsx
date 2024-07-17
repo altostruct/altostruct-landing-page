@@ -13,7 +13,7 @@ const CookieBanner = () => {
 
     return (
         <>
-            {show ?
+            {show &&
                 <div className="fixed bottom-[0vh] max-w-[40em] rounded-t-xl bg-white border-dashed border left-1/2 -translate-x-1/2  w-full p-3 z-50">
                     <div>
                         <div className="flex gap-10 items-center">
@@ -29,9 +29,7 @@ const CookieBanner = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-
-                : <></>}
+                </div>}
         </>)
 }
 

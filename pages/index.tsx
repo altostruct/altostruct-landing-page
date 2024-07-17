@@ -8,7 +8,7 @@ import { getReferenceCases, getReferenceCasesFromProducts, getContentfulPosts, C
 import classNames from "classnames";
 import WordCircle from "@components/WordCircle";
 import { SiAwslambda } from "react-icons/si";
-import { FaAws, FaComment, FaPhone } from "react-icons/fa";
+import { FaAws, FaComment, FaInfo, FaInfoCircle, FaPhone } from "react-icons/fa";
 import { SiDiscourse } from "react-icons/si";
 
 import formatDate from "utils/formatDate";
@@ -17,7 +17,7 @@ import Footer from "@components/Footer";
 import Form from "@components/Email";
 import Button from "@components/Button";
 import { FcAbout } from "react-icons/fc";
-import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
+import { FaChartLine, FaChessKnight, FaCloud, FaCloudscale, FaCode, FaFileCode, FaFrog, FaLanguage, FaPerson, FaRegComment, FaTachographDigital, FaUser } from "react-icons/fa6";
 import ExampleAI from "@components/Logos/ExampleAI";
 import { MdArrowDropDown, MdOutlineAccessTime } from "react-icons/md";
 import Link from "next/link";
@@ -200,7 +200,7 @@ export function Home() {
         <Topbar></Topbar>
         <SEO title="AWS Specialister - molntjänster, AI och automatisering" description="Vi är ett konsultbolag specialiserat på molntjänster, AI och automatisering, med fokus på AWS.." />
         <Content className="">
-          <div className="w-full flex-col-reverse md:flex-row flex h-fit border-black border-dashed py-4">
+          <div className="relative pb-32 w-full flex-col-reverse md:flex-row flex h-fit border-black border-dashed py-4">
             <div className="break-keep w-full md:w-3/5 my-auto">
               <h1 className="text-5xl md:text-7xl">
                 {/* <span className="bg-gradient-to-l from-red-500 bold to-blue-700 inline-block text-transparent bg-clip-text"> */}
@@ -210,13 +210,17 @@ export function Home() {
               <Row className="gap-4">
                 <div className="flex mt-6 gap-2">
                   <Button icon={<FaCloud></FaCloud>} link="#contact_us" label="kontakta oss" onClick={() => { }} />
-                  <Button variant="secondary" icon={<FaCloud></FaCloud>} link="#contact_us" label="om oss" onClick={() => { }} />
+                  {/* <Button variant="secondary" icon={<FaInfoCircle />} link="#contact_us" label="om oss" onClick={() => { }} /> */}
                 </div>
                 <div>
                 </div>
               </Row>
             </div>
-
+            <div className="absolute w-24 bottom-0 right-0">
+              <Link href="https://partners.amazonaws.com/partners/0018W000025sRvpQAE/Altostruct%20AB">
+              <Image placeholder="blur" fetchPriority="high" className="m-auto w-full" alt="" width={120} height={120} src="/images/partner.png"></Image>
+              </Link>
+            </div>
             <div className="my-auto w-1/3 opacity-20 md:opacity-100 translate-y-10 md:translate-y-0 md:w-2/5 m-auto">
               <Image placeholder="blur" fetchPriority="high" className="m-auto w-full" alt="" width={336} height={314} src="/images/cloud-logo.png"></Image>
             </div>
